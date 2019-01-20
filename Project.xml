@@ -80,4 +80,7 @@
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+
+	<!-- Yeah, I like yaml WAY more than JSON. -->
+	<haxelib name="yaml" version="1.3.0" />
 </project>
