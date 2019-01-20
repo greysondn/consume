@@ -19,6 +19,10 @@ Meta
    
    * Github doesn't know what it is. Great day to be me, I guess.
 
+ * created a workspace for vscode
+
+   * uses the current Flixel template, no less
+
 v0.52.1 (SillySnowFox and greysondn)
 ====================================
 
