@@ -15,6 +15,10 @@ Meta
 
    * Why wasn't he using github issues or something like that? Honestly!
 
+ * added license file
+   
+   * Github doesn't know what it is. Great day to be me, I guess.
+
 v0.52.1 (SillySnowFox and greysondn)
 ====================================
 
