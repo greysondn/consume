@@ -1,4 +1,4 @@
-package;
+package net.darkglass.consume;
 
 import flixel.FlxGame;
 import openfl.display.Sprite;
