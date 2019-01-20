@@ -1,8 +1,15 @@
 # comments shown on title screen
 
-# --------------------------
-# all from V0.52.1 backwards
-# --------------------------
+# -----------------------------------
+# the below is from v0.53.0 backwards
+# -----------------------------------
+
+# consume v0.53.0
+- "Porting this mess wasn't easy, you know (Greysondn, 20 Jan 2019)"
+
+# -----------------------------------
+# the below is from v0.52.1 backwards
+# -----------------------------------
 
 # he sets "smcap" to be textsize-4 at the start of the var file.
 
@@ -12,77 +19,18 @@
 
 # Consume V0.52.1 (and earlier)
 - "Kyra's favroite flavor is strawberry."
-- "Kyra casts Resurrection! It failed 554 times before succeeding. Kyra fainted." # the classic notes for these strings notes that - apparently - this is a reference to the number of days between v0.40 and v0.41.
+- "Kyra casts Resurrection! It failed 554 times before succeeding. Kyra fainted." 
+# the classic notes for these strings notes that - apparently - this second one
+# is a reference to the number of days between v0.40 and v0.41.
 
 # Cowboy Bebop
-- "I think it's time we blow this scene, get eveybody and their stuff together, okay three, two, one. Let's jam." 
 - "See you space cowboy..."
 
-# Critical Role
-- "Is it Thursday yet?"
-- "How do you want to do this?"
-
-# Dresden Files
-- "Sufficiently advanced my ass."
-- "It's like riding a zombie T-Rex through downtown Chicago on Halloween night while polka music plays in the background."
-
-# Fallout 3
-- "The struggle for survival is a war without end and war, war never changes."
-
-# Ghost in the Shell
-- "I thought what I'd do was, I'd pretend I was one of those deaf-mutes."
-- "Or should I?"
-
-# The Lord of the Rings: The Fellowship of the Ring
+# The Lord of the Rings
 - "Even the smallest person can change the course of the future."
-
-# Mass Effect
-- "Shepard"
-- "Wrex"
-
-# Mistborn
-- "There's always another secret"
-- "You were so busy wondering if you could, you never stopped to ask if you should"
-- "A coherent, typically large body of matter"
-
-# NCIS
-- "Rule 9: Always carry a knife."
-- "Hidden chess moves: move two male pawns to the same square to cause all bishops on the table to throw a tantrum and leave."
-
-# Portal
-- "Are you still there?"
-
-# Seemingly random
-- "Using multiple fonts in ActionScript is a pain in the ass."
-- "Tip your driver."
-- "Our forum is gone :C"
 
 # Sherlock Holmes
 - "When you have eliminated the possible, whatever remains, no matter how improbable, must be the truth."
-- "Cats were once worshiped as gods. They have not forgotten this."
 
 # Sin City
 - "Walk down the right back alley... and you could find anything."
-
-# Watchmen
-- "The accumulated filth of all their sex and murder will foam up about their waists and all the whores and politicians will look up and shout 'Save us!'... And I'll look down and whisper 'no.'"
-
-# Some from V0.52.1 backwards were impossible or simply left out for now. They are here.
-# uncommenting them may presently break things.
-# 
-# - "Y<font size = '" + smCap + "'>OU ARE HAVING A NEAR </font>D<font size = '" + smCap + "'>EATH EXPERIENCE, WHICH INESCAPABLY MEANS </font>I<font size = '" + smCap + "'> MUST HAVE A NEAR </font>V<font size = '" + smCap + "'>IMES EXPERIENCE. </font>D<font size = '" + smCap + "'>ON'T MIND ME. </font>C<font size = '" + smCap + "'>ARRY ON WITH WHATEVER YOU WERE DOING. </font>I<font size = '" + smCap + "'> HAVE A BOOK.</font>"
-# - "S<font size = '" + smCap + "'>QUEAK</font>" //Discworld
-
-#		//This says; "There will be a secret here soon"
-# - "01010100 01101000 01100101 01110010 01100101 00100000 01110111 01101001 01101100 01101100 00100000 01100010 01100101 00100000 01100001 00100000 01110011 01100101 01100011 01110010 01100101 01110100 00100000 01101000 01100101 01110010 01100101 00100000 01110011 01101111 01101111 01101110" //There will be a secret here soon
-# - "Now with <font size = '" + (textSize - 4) + "'>more</font> updates!"
-#		//This says; "Are you still translating these?"
-# - "01000001 01110010 01100101 00100000 01111001 01101111 01110101 00100000 01110011 01110100 01101001 01101100 01101100 00100000 01110100 01110010 01100001 01101110 01110011 01101100 01100001 01110100 01101001 01101110 01100111 00100000 01110100 01101000 01100101 01110011 01100101 00111111"
-# - "Prase the Sun!" //Dark Souls
-# - "Amazing chest ahead."
-# - "Let us engage in jolly cooperation!"
-# - "\\[T]/"
-# - "Don't give up, skeleton!"
-# - "If only I could be as gloriously incandescent."
-# - "With hookers!"
-# - "And blackjack!"
