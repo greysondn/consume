@@ -17,6 +17,7 @@ class AlertBox extends Sprite {
 		super();
 		
 		var txtMessage:TextField = new TextField();
+		var btn:MyButton = new MyButton(450, 235);
 		txtMessage.name = "Message Field";
 		txtMessage.x = 150;
 		txtMessage.y = 150;
@@ -31,14 +32,13 @@ class AlertBox extends Sprite {
 		txtMessage.wordWrap = true;
 		
 		if (button) {
-			var btn:MyButton = new MyButton(450, 235);
 			btn.setButton("OK");
-			Lib.current.addChild(btn);
-			btn.z = 5;
 			btn.addEventListener(MouseEvent.CLICK, closeBox);
 		}
 		
 		Lib.current.addChild(txtMessage);
+		if (button)
+			Lib.current.addChild(btn);
 	}
 	
 	public function remove() {

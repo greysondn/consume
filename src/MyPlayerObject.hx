@@ -311,6 +311,54 @@ class MyPlayerObject extends MyCharacter {
 		
 		message += " Two " + this.legs + " support you each ending in " + this.feet + ".</p><br><p>";
 		
+		message += "You estimate your mesurements are currently; " + this.chestSize;
+		
+		if (this.breastSize == 0) {
+			
+		} else if (this.breastSize == 1) {
+			message += "AA";
+		} else if (this.breastSize == 2) {
+			message += "A";
+		} else if (this.breastSize <= 4) {
+			message += "B";
+		} else if (this.breastSize <= 6) {
+			message += "C";
+		} else if (this.breastSize <= 8) {
+			message += "D";
+		} else if (this.breastSize <= 10) {
+			message += "DD";
+		} else if (this.breastSize <= 12) {
+			message += "DDD";
+		} else if (this.breastSize <= 14) {
+			message += "E";
+		} else if (this.breastSize <= 16) {
+			message += "EE";
+		} else if (this.breastSize <= 18) {
+			message += "F";
+		} else if (this.breastSize <= 20) {
+			message += "G";
+		} else if (this.breastSize <= 22) {
+			message += "GG";
+		} else if (this.breastSize <= 24) {
+			message += "H";
+		} else if (this.breastSize <= 26) {
+			message += "HH";
+		} else if (this.breastSize <= 28) {
+			message += "I";
+		} else if (this.breastSize <= 30) {
+			message += "J";
+		} else if (this.breastSize <= 32) {
+			message += "K";
+		} else if (this.breastSize <= 34) {
+			message += "L";
+		} else if (this.breastSize <= 36) {
+			message += "M";
+		} else if (this.breastSize <= 38) {
+			message += "N";
+		}
+		
+		message += "-" + this.waistSize + "-" + (this.hipSize + this.buttSize) + "</p>";
+		
 		if (globals.debugMode) {
 			message += "Stomach Size: " + this.stomachSize();
 			

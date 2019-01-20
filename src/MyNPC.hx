@@ -150,14 +150,17 @@ class MyNPC extends MyCharacter {
 		var npcName:String = "";
 		var globals:Object = Lib.current.getChildByName("GlobalVars");
 		
+		if (globals.allowedGenders.length == 0)
+			globals.allowedGenders = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true]];
+		
 		//First pick gender
-		if (Math.round(Math.random()) == 0)
+		if (Math.round(Math.random()) == 0 && globals.allowBreasts)
 			hasBreasts = true;
-		if (Math.round(Math.random()) == 0)
+		if (Math.round(Math.random()) == 0 && globals.allowVagina)
 			hasVagina = true;
-		if (Math.round(Math.random()) == 0)
+		if (Math.round(Math.random()) == 0 && globals.allowPenis)
 			hasPenis = true;
-		if (Math.round(Math.random()) == 0 && hasPenis)
+		if (Math.round(Math.random()) == 0 && hasPenis && globals.allowBalls)
 			hasBalls = true;
 		
 		//Gender error check;

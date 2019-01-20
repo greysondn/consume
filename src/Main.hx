@@ -61,8 +61,10 @@ class Main {
 	static var newRoom:Bool = true;
 	static var doorFuckCount:Int;
 	static var conversationStep:Int;
+	
 	static var grabbedNPC:Bool; //The Player has a hold of the NPC
 	static var grabbedPC:Bool; //The NPC has a hold of the Player
+	static var combatRan:Bool; //The player fled from combat, no rewards
 	
 	static var fileSaveObject:FileReference = new FileReference();
 	
@@ -76,6 +78,11 @@ class Main {
 	static var timerQTE:MyTimer;
 	
 	static var talkInProgress:Bool;
+	
+	static var deck:Array<PlayCard> = new Array();
+	static var deckShuffled:Array<PlayCard> = new Array();
+	static var playerHand:Array<PlayCard> = new Array();
+	static var dealerHand:Array<PlayCard> = new Array();
 	
 	static function movePlayer( e:MouseEvent ) {
 		//The main movement function
@@ -462,6 +469,10 @@ class Main {
 			case 14:
 				//Sewers
 				
+			case 15:
+				//Blackjack table
+				message += "<p>A figure sits behind the blackjack table.</p>";
+				btns[11].setButton("Blackjack", "Play Blackjack, win prizes", "approch", playBlackjack);
 			}
 		}
 		
@@ -554,556 +565,571 @@ class Main {
 		
 	}
 	
-	static function doVend( e:MouseEvent ) {
-		//Give the player a bottle of BouncyButt (item 4) with a small chance to get a BouncyButt+ (item 5)
-		var tempItem:MyItem_Food = new MyItem_Food();
-		var choice:String = e.currentTarget.btnID;
-		var message:String = "<p>You stand before the vending machine, the graphics depict a horse girl with a very large butt dressed in a tiny pair of exercise shorts. You can't quite be sure, because of how she's turned, but you suspect she isn't wearing a top at all. Explains why the vending machine is tucked away back here and not out on the floor. The name on the machine is &quot;BouncyButt Sports drinks! Put some Bounce in your Butt today!&quot;</p><br>";
-		
-		if (optionsBtn.visible) {
-			optionsBtn.visible = false;
-			charDesc.visible = false;
-			newRoom = false;
-		}
-		
-		clearAllEvents();
-		
-		switch choice {
-		case "list":
-			message += "<p>A bottle costs $1</p><br><p>Buy a bottle?</p>";
-			btns[0].setButton("Buy", null, "buy", doVend);
-		case "buy":
-			if (playerCharacter.getMoney() >= 1) {
-				message += "<p>You feed your dollar into the machine and push the button. The machine rattles and thunks and a bottle drops into the slot. ";
-				
-				if (Math.round(Math.random() * 3) == 0) {
-					message += "You pull it out and discover the machine has given you a bottle of BouncyButt+ rather then the regular stuff it was supposed to.</p>";
-					tempItem = globals.food[5].copyItem();
-				} else {
-					message += "You pull it out and look the bottle over, BouncyButt figures the gym would have a 'health' drink stocked.</p>";
-					tempItem = globals.food[4].copyItem();
-				}
-				
-				playerCharacter.addMoney( -1);
-				
-				message += "<br><p>Buy another?</p>";
-				
-				btns[0].setButton("Buy", null, "buy", doVend);
-			} else {
-				message += "<p>You check your pockets for the money and find yourself coming up short.</p>";
-			}
-			
-			tempItem.give(playerCharacter);
-		}
-		
-		btns[11].setButton("Leave", null, null, movePlayer);
-		outputText(message, "Gym - Staff Room");
-	}
-	
-	static function doShayMachine( e:MouseEvent ) {
-		var message:String = "<p>You eye the contraption that dominates this room, after a bit of work you figure out how to get yourself into it and start working out. How the thing works confuses you slightly but you manage to get it working and work yourself hard.</p><br>";
-		var effects:Array<String> = new Array();
-		effects = ["height", "weight", "fat", "chest", "waist", "hip", "butt", "breast", "penis length", "penis width", "balls"];
-		var rndEffect:Int = Math.round(Math.random() * (effects.length - 1));
-		var posOrNeg:Int = Math.round(Math.random() * 1);
-		var toChange:Float = -1;
-		var oldValue:Float = -1;
-		
-		if (optionsBtn.visible) {
-			optionsBtn.visible = false;
-			charDesc.visible = false;
-			newRoom = false;
-		}
-		
-		clearAllEvents();
-		
-		switch (posOrNeg) {
-		case 0:
-			posOrNeg = -1;
-		case 1:
-			posOrNeg = 1;
-		}
-		
-		if (playerCharacter.lastGoldTrainDay == playerCharacter.day) {
-			//Player has used a Gold Machine today
-			message = "<p>You're still a little sore from the last time you used one of Shay's machines. You'll have to wait to use another.</p>";
-		} else {
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-			switch(effects[rndEffect]) {
-			case "height":
-				oldValue = playerCharacter.tall;
-				toChange = Math.round(Math.random() * 11) + 1;
-				toChange *= posOrNeg;
-				playerCharacter.tall += toChange;
-				if (playerCharacter.tall < globals.minHeight && oldValue == globals.minHeight) {
-					playerCharacter.tall = globals.minHeight;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else if (playerCharacter.tall > globals.maxHeight && oldValue == globals.maxHeight) {
-					playerCharacter.tall = globals.maxHeight;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>You feel strange, when you step out of the machine you find your self slightly taller.</p>";
-					} else {
-						message += "<p>You feel strange, when you step out of the machine you find your self slightly shorter.</p>";
-					}
-				}
-			case "weight":
-				oldValue = playerCharacter.weight;
-				toChange = Math.round(Math.random() * 100) + 10;
-				toChange *= posOrNeg;
-				playerCharacter.weight += toChange;
-				if (playerCharacter.weight < 40 && oldValue == 40) {
-					playerCharacter.weight = 40;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>You feel odd, when you step free of the machine you find yourself slightly heavier.</p>";
-					} else {
-						message += "<p>You feel odd, when you step free of the machine you find yourself slightly lighter.</p>";
-					}
-				}
-			case "fat":
-				oldValue = playerCharacter.fat;
-				toChange = Math.round(Math.random() * 1000) + 50;
-				toChange *= posOrNeg;
-				playerCharacter.fat += Math.round(toChange);
-				if (playerCharacter.fat < 0 && oldValue == 0) {
-					playerCharacter.fat = 0;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>You feel odd, when you step free of the machine you find yourself slightly heavier.</p>";
-					} else {
-						message += "<p>You feel odd, when you step free of the machine you find yourself slightly lighter.</p>";
-					}
-				}
-			case "chest":
-				oldValue = playerCharacter.chestSize;
-				toChange = Math.round(Math.random() * 11) + 1;
-				toChange *= posOrNeg;
-				playerCharacter.chestSize += Math.round(toChange);
-				if (playerCharacter.chestSize < 18 && oldValue == 18) {
-					playerCharacter.chestSize = 18;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>Your chest feels tight, when you step free you find your torso has broadened.</p>";
-					} else {
-						message += "<p>Your chest feels tight, when you step free you find your torso has narrowed.</p>";
-					}
-				}
-			case "waist":
-				oldValue = playerCharacter.waistSize;
-				toChange = Math.round(Math.random() * 11) + 1;
-				toChange *= posOrNeg;
-				playerCharacter.waistSize += Math.round(toChange);
-				if (playerCharacter.waistSize < 12 && oldValue == 12) {
-					playerCharacter.waistSize = 12;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>You feel something pinch around your waist, when you step out you find your waist has thickened.</p>";
-					} else {
-						message += "<p>You feel something pinch around your waist, when you step out you find your waist has narrowed.</p>";
-					}
-				}
-			case "hip":
-				oldValue = playerCharacter.hipSize;
-				toChange = Math.round(Math.random() * 11) + 1;
-				toChange *= posOrNeg;
-				playerCharacter.hipSize += toChange;
-				if (playerCharacter.hipSize < 12 && oldValue == 12) {
-					playerCharacter.hipSize = 12;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>A sharp pain shoots through your hips, you stumble when you exit the machine not expecting the wider hips you now have.</p>";
-					} else {
-						message += "<p>A sharp pain shoots through your hips, you stumble when you exit the machine not expecting the narrower hips you now have.</p>";
-					}
-				}
-			case "butt":
-				oldValue = playerCharacter.buttSize;
-				toChange = Math.round(Math.random() * 4) + 1;
-				toChange *= posOrNeg;
-				playerCharacter.buttSize += Math.round(toChange);
-				if (playerCharacter.buttSize < 1 && oldValue == 1) {
-					playerCharacter.buttSize = 1;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>A feeling like someone just swatted you from behind hits you just before you step out of the machine. You spin around to find no one there. When you check your rear, you find it has grown.</p>";
-					} else {
-						message += "<p>A feeling like someone just swatted you from behind hits you just before you step out of the machine. You spin around to find no one there. When you check your rear, you find it has shrunk.</p>";
-					}
-				}
-			case "breast":
-				oldValue = playerCharacter.breastSize;
-				toChange = Math.round(Math.random() * 6) + 1;
-				toChange *= posOrNeg;
-				playerCharacter.breastSize += Math.round(toChange);
-				if (playerCharacter.breastSize < 1 && oldValue == 1 && playerCharacter.breasts) {
-					playerCharacter.breastSize = 0;
-					playerCharacter.breasts = false;
-					message += "<p>A very strange feeling of cold rushes through your breasts, when it passes and you manage to get yourself free of the machine, you discover your breasts are gone.</p>";
-				} else if (playerCharacter.breastSize >= 1 && !playerCharacter.breasts) {
-					playerCharacter.breasts = true;
-					message += "<p>A very strange feeling of cold rushes through your chest, when it passes and you manage to get yourself free of the machine, you discover you have breasts!</p>";
-				} else if (playerCharacter.breastSize < 1 && oldValue == 0 && !playerCharacter.breasts) {
-					playerCharacter.breastSize = 0;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else if (playerCharacter.breastSize < 1 && oldValue > 1 && playerCharacter.breasts) {
-					playerCharacter.breastSize = 1;
-					message += "<p>A very strange feeling of cold rushes through your breasts, when it passes and you manage to get yourself free of the machine, you discover your breasts have shrunk.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>A very strange feeling of cold rushes through your breasts, when it passes and you manage to get yourself free of the machine, you discover your breasts have grown.</p>";
-					} else {
-						message += "<p>A very strange feeling of cold rushes through your breasts, when it passes and you manage to get yourself free of the machine, you discover your breasts have shrunk.</p>";
-					}
-				}
-			case "penis length":
-				oldValue = playerCharacter.penisL;
-				toChange = Std.parseFloat(truncateDecimalPlaces(Math.random() * 2)) + .5;
-				toChange *= posOrNeg;
-				playerCharacter.penisL += toChange;
-				if (playerCharacter.penisL < .1 && oldValue == .1 && playerCharacter.penis) {
-					playerCharacter.penisL = 0;
-					playerCharacter.penisW = 0;
-					playerCharacter.penis = false;
-					message += "<p>Your penis feels strange, like you have an errection only different. Once you extract yourself from the machine you discover you no longer have a penis.</p>";
-				} else if (playerCharacter.penisL < .1 && oldValue != .1 && playerCharacter.penis) {
-					playerCharacter.penisL = .1;
-					message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten shorter.</p>";
-				} else if (playerCharacter.penisL > 0 && oldValue == 0 && !playerCharacter.penis) {
-					playerCharacter.penis = true;
-					if (playerCharacter.penisW < .1)
-						playerCharacter.penisW = .1;
-					message += "<p>Your crotch feels strange, like you're getting aroused only different. Once you extract yourself from the machine you discover you have a penis.</p>";
-				} else if (playerCharacter.penisL < 0 && oldValue == 0 && !playerCharacter.penis) {
-					playerCharacter.penisL = 0;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten longer.</p>";
-					} else {
-						message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten shorter.</p>";
-					}
-				}
-			case "penis width":
-				oldValue = playerCharacter.penisW;
-				toChange = Std.parseFloat(truncateDecimalPlaces(Math.random() * 1)) + .1;
-				toChange *= posOrNeg;
-				playerCharacter.penisW += toChange;
-				if (playerCharacter.penisW < .1 && oldValue == .1 && playerCharacter.penis) {
-					playerCharacter.penisW = 0;
-					playerCharacter.penisL = 0;
-					playerCharacter.penis = false;
-					message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten thinner.</p>";
-				} else if (playerCharacter.penisW < .1 && oldValue != .1 && playerCharacter.penis) {
-					playerCharacter.penisW = .1;
-					message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten thinner.</p>";
-				} else if (playerCharacter.penisW > 0 && oldValue == 0 && !playerCharacter.penis) {
-					playerCharacter.penis = true;
-					if (playerCharacter.penisL < .1)
-						playerCharacter.penisL = .1;
-					message += "<p>Your crotch feels strange, like you're getting aroused only different. Once you extract yourself from the machine you discover you have a penis.</p>";
-				} else if (playerCharacter.penisW < 0 && oldValue == 0 && !playerCharacter.penis) {
-					playerCharacter.penisW = 0;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten thicker.</p>";
-					} else {
-						message += "<p>Your penis feels like it's getting harder, but when you escape the machine and check it, you discover it's gotten thinner.</p>";
-					}
-				}
-			case "balls":
-				oldValue = playerCharacter.ballSize;
-				toChange = Std.parseFloat(truncateDecimalPlaces(Math.random() * 2)) + .2;
-				toChange *= posOrNeg;
-				playerCharacter.ballSize += toChange;
-				if (playerCharacter.ballSize < .1 && oldValue == .1 && playerCharacter.balls) {
-					playerCharacter.ballSize = 0;
-					playerCharacter.balls = false;
-					message += "<p>A warm feeling spreads through your balls, when it passes and you get yourself out of the machine, you discover your balls have vanished.</p>";
-				} else if (playerCharacter.ballSize < .1 && oldValue != .1 && playerCharacter.balls) {
-					playerCharacter.ballSize = .1;
-					message += "<p>A warm feeling spreads through your balls, when it passes and you get yourself out of the machine, you discover your balls have shrunk.</p>";
-				} else if (playerCharacter.ballSize > 0 && oldValue == 0 && !playerCharacter.balls) {
-					playerCharacter.balls = true;
-					message += "<p>A warm feeling spreads through your crotch, when it passes and you get yourself out of the machine, you discover you have balls.</p>";
-				} else if (playerCharacter.ballSize < 0 && oldValue == 0 && !playerCharacter.balls) {
-					playerCharacter.ballSize = 0;
-					message += "<p>You step free of the machine, nothing happened.</p>";
-				} else {
-					if (posOrNeg == 1) {
-						message += "<p>A warm feeling spreads through your balls, when it passes and you get yourself out of the machine, you discover your balls have grown.</p>";
-					} else {
-						message += "<p>A warm feeling spreads through your balls, when it passes and you get yourself out of the machine, you discover your balls have shrunk.</p>";
-					}
-				}
-			}
-		}
-		
-		outputText(message, "Gym - Staff Room");
-		
-		btns[11].setButton("Leave", null, null, movePlayer);
-	}
-	
-	static function doGoldRoom( e:MouseEvent ) {
-		var message:String = "";
-		var clicked:Dynamic = e.currentTarget.btnID;
-		var increase:Int = 0;
-		var increaseCock:Float = 0;
-		
-		clearAllEvents();
-		
-		switch (clicked) {
-		case "list":
-			optionsBtn.visible = false;
-			charDesc.visible = false;
-			newRoom = false;
-			
-			if (playerCharacter.lastGoldTrainDay == playerCharacter.day) {
-				message += "<p>You eye the machines in the room, but your body still feels sore for your last session. You'll have to come back tomorrow.</p>";
-				btns[11].setButton("Next", null, null, movePlayer);
-			} else {
-				message += "Which machine would you like to use?";
-				
-				btns[0].setButton("Height", "Increase your height", "height", doGoldRoom);
-				btns[1].setButton("Skinny", "Squeeze yourself skinny", "skinny", doGoldRoom);
-				btns[2].setButton("Cock", "Make your cock bigger", "cock", doGoldRoom);
-				if (!playerCharacter.penis)
-					btns[2].disableButton();
-				btns[3].setButton("Balls", "Make your balls bigger", "balls", doGoldRoom);
-				if (!playerCharacter.balls)
-					btns[3].disableButton();
-				btns[4].setButton("Errection", "Make your cock bigger when you have an errection", "errection", doGoldRoom);
-				if (!playerCharacter.penis)
-					btns[4].disableButton();
-				btns[5].setButton("Hips", "Make your hips slimmer", "hips", doGoldRoom);
-				btns[6].setButton("Butt", "Make your butt tighter", "butt", doGoldRoom);
-			}
-		case "height":
-			//Increase player's height by 3-5 inches
-			message += "<p>You strap yourself into the machine and turn it on. The thing vibrates all over your body, a pleasant tingle going over you which quickly increases to an embarrassing level of enjoyment. All too soon the machine beeps that it's finished. You step out, after carefully untangling yourself from the contraption and see that yes, you are a few inches taller then you were when you went in.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			increase = Math.round(Math.random() * 3) + 2;
-			
-			playerCharacter.tall += increase;
-			playerCharacter.arousal += 10;
-			playerCharacter.fat -= Math.round(playerCharacter.fat / 6);
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		case "skinny":
-			//Make the player very skinny
-			message += "<p>You get yourself into the machine, the top closing on you when you turn it on. It's very claustrophobic and as it closes it squeezes tight on you it feels like something is oozing out of you. While it's not totally uncomfortable, it's not really what you would call pleasant either.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			if (playerCharacter.fat > 5)
-				playerCharacter.fat = 5;
-			if (playerCharacter.arousal >= 10)
-				playerCharacter.arousal -= 10;
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		case "cock":
-			//Make the player's Cock slighlty bigger, a player without a cock shouldn't be able to get to this screen.
-			message += "<p>Feeling very uncomfortable, you slide your cock into the slot on the machine. A few twists of a knob and it's secure and tight. You activate the machine and it starts pumping over your shaft, you feel yourself grow hard very quickly, then the strangest sensation as you continue to swell larger. It feels like you grow to a massive size, but when the machine finally finishes and releases you you find you're only slightly larger then you started.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			increaseCock = (Math.round(Math.random() * 3) / 10) + .1;
-			
-			playerCharacter.penisW += increaseCock;
-			playerCharacter.penisL += increaseCock + .2;
-			
-			if (playerCharacter.arousal < 100) {
-				playerCharacter.arousal = 100;
-			} else {
-				playerCharacter.arousal += 30;
-			}
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		case "balls":
-			//Make the player's balls bigger
-			message += "<p>It takes you a moment, but you manage to figure out where you're supposed to put yourself on this bizarre machine. Once you're settled in you adjust everything until the machine is just gripping your balls, then you turn it on. You feel a strange, warm sensation pour out of the machine, your balls feeling like they want to pull up towards you without actually moving. The strange sensation is rather pleasurable ";
-			if (playerCharacter.penis && !playerCharacter.vagina)
-				message += "and your penis quickly responds, growing painfully hard. ";
-			if (playerCharacter.vagina && !playerCharacter.penis)
-				message += " and your slit grows hot and very wet. ";
-			if (playerCharacter.vagina && playerCharacter.penis)
-				message += " and your cock quickly responds, growing painfully hard. Your slit, not to be outdone, heats and almost spills fluid. ";
-			
-			message += "It's all you can do to resist playing with yourself. When the machine finally finishes and you manage to extract yourself you find your balls slightly larger and heavier.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			increaseCock = (Math.round(Math.random() * 2) / 10) + .1;
-			
-			playerCharacter.ballSize += increaseCock;
-			if (playerCharacter.arousal < 100) {
-				playerCharacter.arousal = 100;
-			} else {
-				playerCharacter.arousal += 30;
-			}
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		case "errection":
-			//Make the player's cock bigger when they're aroused
-			message += "<p>This machine is by far the weirdest and most embarrassing one in the room, but you manage to get yourself placed and the machine closed around you. You turn it on and your cock quickly becomes painfully hard, again it feels like your still getting hard even though you can tell you're as hard as you can get. The machine doesn't seem to care and it keeps making you bigger. When the machine finally releases you you find your erection is much bigger then you're used to. When it finally goes down, you see your the same size soft as you usually are.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			increaseCock = (Math.round(Math.random() * 4) / 10) + .1;
-			
-			playerCharacter.errect += increaseCock;
-			if (playerCharacter.arousal < 100) {
-				playerCharacter.arousal = 200;
-			} else {
-				playerCharacter.arousal += 70;
-			}
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		case "hips":
-			//Make the player's hips narrower
-			message += "<p>You slide your waist into the machine and turn it on, the odd sensations going over your hips feel very strange. You can't decide if you like it or not and by the time the machine is done working you still haven't figured out if it's good or not. The machine releases you and you step out, staggering slightly as your legs have moved slightly closer together.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			increase = Math.round(Math.random() * 4) + 1;
-			
-			playerCharacter.hipSize -= increase;
-			if (playerCharacter.hipSize < 15)
-				playerCharacter.hipSize = 15;
-			if (playerCharacter.arousal >= 30)
-				playerCharacter.arousal -= 30;
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		case "butt":
-			//Make the player's ass smaller
-			message += "<p>You back yourself into the machine, the design forcing you to stick your butt out as you close yourself into it. Your turn it on and a very weird feeling, like thousands of tiny paws, swarms over your rear. The whole contraption vibrates around you until it suddenly shutters to a stop. You extract yourself from it and find your butt is noticeably smaller then it was before.</p><br><p>Your body feels oddly sore after your last session with the machine, you're probably going to need to wait before doing another session.</p>";
-			
-			increase = Math.round(Math.random() * 4) + 1;
-			
-			playerCharacter.buttSize -= increase;
-			if (playerCharacter.buttSize < 1)
-				playerCharacter.buttSize = 1;
-			if (playerCharacter.arousal > 40)
-				playerCharacter.arousal -= 40;
-			playerCharacter.lastGoldTrainDay = playerCharacter.day;
-		}
-		
-		btns[11].setButton("Leave", null, null, movePlayer);
-		
-		outputText(message, "Gym - Gold Room");
-	}
-	
-	static function doPerk( e:MouseEvent ) {
-		//System to allow players to buy additional perks
-		//Perks cost 8 * Pride of fat and 8 * Pride of cash per perk rank
-		var actionChoice:String = e.currentTarget.btnID.split("|")[0];
-		var actionValue:Int = Std.parseInt(e.currentTarget.btnID.split("|")[1]);
-		var title:String = "Perk Selection";
-		var message:String = "The machine lights up as you slide your arm into the cuff. The screen lists a number of perks you can choose from, as well as the cost of each. Looks like it will cost an amount of body fat and money to make the changes.</p><br><p>";
-		var perkCost:Int = 0;
-		
-		var perks:Array<MyPerk> = new Array();
-		
-		var dspItem:Int = 0;
-		var dspFirstItem:Int = 0;
-		
-		newRoom = false;
-		optionsBtn.visible = false;
-		charDesc.visible = false;
-		
-		clearAllEvents();
-		
-		for (i in 0...globals.perks.length) {
-			if (globals.perks[i].showPerk)
-				perks.push(globals.perks[i]);
-		}
-		
-		switch (actionChoice) {
-		case "list":
-			//List of avalible perks
-			if (perks.length > 9) {
-				dspFirstItem = actionValue * 9;
-				dspItem = dspFirstItem + 9;
-			}
-			
-			if (dspItem > perks.length)
-				dspItem = perks.length;
-			
-			if (perks.length != 0) {
-				for (i in dspFirstItem...dspItem) {
-					message += perks[i].dispName + " -- " + perks[i].desc + "<br>";
-					btns[i - dspFirstItem].setButton(perks[i].dispName, null, "perk|" + i);
-					btns[i - dspFirstItem].setClickFunc(doPerk);
-				}
-				if (perks.length > dspItem) {
-					message += "More...";
-					btns[10].setButton("Next", null, "list|" + (actionValue + 1));
-					btns[10].setClickFunc(doPerk);
-				}
-				if (dspFirstItem != 0) {
-					btns[9].setButton("Prev", null, "list|" + (actionValue - 1));
-					btns[9].setClickFunc(doPerk);
-				}
-			}
-		case "perk":
-			message = "Would you like to buy this perk?</p><br><p>";
-			
-			message += perks[actionValue].dispName + " --- " + perks[actionValue].desc + "<br>";
-			
-			if ((!perks[actionValue].multipleLevels && playerCharacter.hasPerk(perks[actionValue].name) == false) || perks[actionValue].multipleLevels) {
-				if (playerCharacter.hasPerk(perks[actionValue].name)) {
-					perkCost = Math.round((globals.perkCostMultiplier * playerCharacter.pride) * playerCharacter.perkCount(globals.perks[actionValue].name)) + 27;
-					message += "Fat Cost: " + perkCost + "  Cash Cost: " + perkCost + "</p><br><p>";
-					message += "Perk count: " + playerCharacter.perkCount(globals.perks[actionValue].name);
-				} else {
-					perkCost = Math.round((globals.perkCostMultiplier * playerCharacter.pride) / 2);
-					message += "Fat Cost: " + perkCost + "  Cash Cost: " + perkCost + "</p><br><p>";
-					message += "Perk Unowned";
-				}
-				
-				if (playerCharacter.getMoney() >= perkCost && playerCharacter.fat >= perkCost) {
-					//Player has enough money and fat to buy the perk
-					btns[0].setButton("Buy", null, "buy|" + actionValue);
-					btns[0].setClickFunc(doPerk);
-				} else if (playerCharacter.getMoney() < perkCost && playerCharacter.fat >= perkCost) {
-					//Player does not have enough money for the perk
-					message += "</p><br><p>Not enough money!";
-					btns[0].setButton("Buy", "Not enough money", "error");
-					btns[0].disableButton();
-				} else if (playerCharacter.getMoney() >= perkCost && playerCharacter.fat < perkCost) {
-					//player does not have enough fat for the perk
-					message += "</p><br><p>Not enough fat!";
-					btns[0].setButton("Buy", "Not enough fat", "error");
-					btns[0].disableButton();
-				} else {
-					//player has neither enough fat or money
-					message += "</p><br><p>Not enough fat or money!";
-					btns[0].setButton("Buy", "Not enough fat or money", "error");
-					btns[0].disableButton();
-				}
-			} else {
-				message += "Perk already owned.";
-			}
-			
-			btns[2].setButton("No", null, "list|0");
-			btns[2].setClickFunc(doPerk);
-		case "buy":
-			message = "You make your selection on the machine's display. It whirrs to life and a sharp pinch travels up your arm, you feel your body change in subtle ways. The display shows the process is complete after a moment.";
-			
-			playerCharacter.addPerk(perks[actionValue].name, globals);
-			
-			if (playerCharacter.hasPerk(perks[actionValue].name)) {
-				perkCost = Math.round((globals.perkCostMultiplier * playerCharacter.pride) * playerCharacter.perkCount(globals.perks[actionValue].name)) + 27;
-			} else {
-				perkCost = Math.round((globals.perkCostMultiplier * playerCharacter.pride + 27) / 2);
-			}
-			
-			playerCharacter.fat -= perkCost;
-			playerCharacter.addMoney( -perkCost);
-			
-			updateHUD();
-			
-			btns[0].setButton("Next", null, "perk|" + actionValue);
-			btns[0].setClickFunc(doPerk);
-		}
-		
-	}
-	
 	static function createSewer( e:MouseEvent ) {
 		//Entrance into the dynamically generated sewer systems
 		
+	}
+	
+	static function playBlackjack( e:MouseEvent ) {
+		var message:String = "";
+		var title:String = "Blackjack";
+		var action:String = e.currentTarget.btnID.split("|")[0];
+		var value:String = e.currentTarget.btnID.split("|")[1];
+		var amount:String = e.currentTarget.btnID.split("|")[2];
+		var suits:Array<String> = new Array();
+		var rank:Array<String> = new Array();
+		var playerHighAce:Bool = true;
+		var dealerHighAce:Bool = true;
+		var redeal:Bool = false;
+		
+		suits = ["♥Hearts", "♦Diamonds", "♣Clubs", "♠Spades"];
+		rank = ["Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"];
+		
+		clearAllEvents();
+		
+		if (optionsBtn.visible) {
+			newRoom = false;
+			optionsBtn.visible = false;
+			charDesc.visible = false;
+		}
+		
+		switch (action) {
+		case "approch":
+			//First approching the table
+			title += " - Take a seat";
+			
+			message = "<p>You walk up to the table, there's a couple of other players already sitting down. They seem to be playing Blackjack. The dealer leans forward into the light, reveling a massive bear. He's absolutely huge, by far the biggest creature you have ever seen. He smiles at you, &quot;Take a seat, would you like to know how to play? Or just jump right in?&quot;</p>";
+			
+			globals.betAmount = 0;
+			globals.betTarget = "";
+			
+			deck = new Array();
+			deckShuffled = new Array();
+			playerHand = new Array();
+			dealerHand = new Array();
+			redeal = false;
+			
+			//Build deck
+			for (i in 0...suits.length) {
+				for (h in 1...14) {
+					deck.push(new PlayCard());
+					deck[deck.length - 1].makeCard(suits[i], h);
+				}
+			}
+			
+			btns[0].setButton("How", "Learn how to play blackjack", "rules", playBlackjack);
+			btns[1].setButton("Play", "Just start playing", "shuffle", playBlackjack);
+			btns[2].setButton("Trade", "Trade size of one aspect for size of another", "trade", playBlackjack);
+			btns[11].setButton("Leave", null, null, movePlayer);
+		case "rules":
+			title += " - How to Play";
+			
+			message = "<p>You ask for the rules, the bear leans back and speaks from the darkness, &quot;Blackjack is a simple game. You play against the dealer, that's me, not other players. Place your bet, then I deal each of us two cards, one is face up and one is face down. You can check your own facedown card. Once dealt, we take turns drawing additional cards until we are both finished. The objective is to get as close to a total of 21 as possible without going over and beating my total. If either of us are dealt an Ace and a face card that is Blackjack and pays 1.5 times your bet.</p><br>";
+			message += "<p>&quot;There are a few advance options; splitting and doubling down for example, but that's the basics of the game.</p><br>";
+			message += "<p>&quot;Here at the club, we don't play for money. Instead you bet size. If you win, I make you bigger. If you loose you get smaller. You can bet on parts you don't have, you'll gain them if you win. And if you bet all of a part it's gone.&quot;</p>";
+			
+			btns[0].setButton("Play", "Start playing", "shuffle", playBlackjack);
+			btns[1].setButton("Trade", "Trade size of one aspect for size of another", "trade", playBlackjack);
+			btns[11].setButton("Leave", null, null, movePlayer);
+		case "shuffle":
+			title += " - Shuffle";
+			
+			message = "<p>The bear picks up the deck and effortlessly shuffles the mass of cards.</p><br>";
+			
+			while (deckShuffled.length < 52) {
+				var randomCard:Int = Math.round(Math.random() * deck.length);
+				
+				if (randomCard <= (deck.length - 1)) {
+					deckShuffled.push(deck[randomCard]);
+					deck.remove(deck[randomCard]);
+				}
+			}
+			
+			message += "<p>Once finished he sets the deck on the table in front of you.</p>";
+			
+			btns[0].setButton("Cut", "Cut the deck", "cut|cut", playBlackjack);
+			btns[1].setButton("Tap", "Just tap the deck", "cut|tap", playBlackjack);
+		case "cut":
+			message = "<p>";
+			
+			switch(value) {
+			case "tap":
+				title += " - Tap";
+				
+				message += "You reach out and tap the deck, indicating that you accept the card order as it is. The bear pulls the deck back to himself and says, &quot;Place your bet.&quot;";
+			case "cut":
+				title += " - Cut";
+				
+				message += "You reach out and pick up roughly half the deck and set it to the side. The bear reaches out and replaces the bottom half, squares the deck and pulls it back to himself. &quot;Place your bet.&quot;";
+				
+				var tempArry:Array<PlayCard> = new Array();
+				
+				tempArry = deckShuffled.slice(Math.round(Math.random() * 10) + 44);
+				
+				for (i in 0...tempArry.length) {
+					deckShuffled.remove(tempArry[i]);
+				}
+				
+				for (i in 0...tempArry.length) {
+					deckShuffled.push(tempArry[i]);
+				}
+			case "bet":
+				//coming from the bet system, just want to change bet targets
+				globals.betAmount = 0;
+				globals.betTarget = "";
+				
+				message += "What would you like to bet size from?";
+			}
+			
+			message += "</p>";
+			
+			btns[0].setButton("Breasts", "Bet some size off your chest", "bet|breasts|0", playBlackjack);
+			if (!playerCharacter.breasts)
+				btns[0].disableButton();
+			btns[1].setButton("Penis", "Bet some size off your penis", "bet|penis|0", playBlackjack);
+			if (!playerCharacter.penis)
+				btns[1].disableButton();
+			btns[2].setButton("Balls", "Bet some size off your balls", "bet|balls|0", playBlackjack);
+			if (!playerCharacter.balls)
+				btns[2].disableButton();
+			btns[3].setButton("Height", "Bet some height", "bet|height|0", playBlackjack);
+			if (playerCharacter.tall <= globals.minHeight)
+				btns[3].disableButton();
+			btns[4].setButton("Chest", "Bet some size off your chest", "bet|chest|0", playBlackjack);
+			if (playerCharacter.chestSize <= globals.minChest)
+				btns[4].disableButton();
+			btns[5].setButton("Waist", "Bet some size off your waist", "bet|waist|0", playBlackjack);
+			if (playerCharacter.waistSize <= globals.minWaist)
+				btns[5].disableButton();
+			btns[6].setButton("Hips", "Bet some size off your hips", "bet|hips|0", playBlackjack);
+			if (playerCharacter.hipSize <= globals.minHips)
+				btns[6].disableButton();
+			btns[7].setButton("Butt", "Bet some size off your butt", "bet|butt|0", playBlackjack);
+			if (playerCharacter.buttSize <= 0)
+				btns[7].disableButton();
+			
+			btns[11].setButton("Leave", null, null, movePlayer);
+		case "bet":
+			message = "<p>How much do you want to bet?</p><br><p>Bet ";
+			
+			switch (value) {
+			case "breasts":
+				if (globals.betAmount == 0)
+					globals.betAmount = 1;
+				if (amount == "0") {
+					globals.betAmount = 1;
+				} else if (amount == "2") {
+					globals.betAmount = playerCharacter.breastSize;
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " cups of your breasts.";
+				
+				btns[0].setButton("Less", "Reduce bet amount", "bet|breasts|-1", playBlackjack);
+				if (globals.betAmount == 1)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|breasts|1", playBlackjack);
+				if (globals.betAmount >= playerCharacter.breastSize)
+					btns[1].disableButton();
+			case "penis":
+				if (globals.betAmount == 0)
+					globals.betAmount = .5;
+				if (amount == "0") {
+					globals.betAmount = .5;
+				} else if (amount == "2") {
+					globals.betAmount = playerCharacter.penisL;
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches of your penis.";
+				
+				btns[0].setButton("Less", "Reduce bet amount", "bet|penis|-.5", playBlackjack);
+				if (globals.betAmount == .5)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|penis|.5", playBlackjack);
+				if (globals.betAmount >= playerCharacter.penisL)
+					btns[1].disableButton();
+			case "balls":
+				if (globals.betAmount == 0)
+					globals.betAmount = .5;
+				if (amount == "0") {
+					globals.betAmount = .5;
+				} else if (amount == "2") {
+					globals.betAmount = playerCharacter.ballSize;
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches of your balls.";
+				btns[0].setButton("Less", "Reduce bet amount", "bet|balls|-.5", playBlackjack);
+				if (globals.betAmount == .5)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|balls|.5", playBlackjack);
+				if (globals.betAmount >= playerCharacter.ballSize)
+					btns[1].disableButton();
+			case "height":
+				if (globals.betAmount == 0)
+					globals.betAmount = 6;
+				if (amount == "0") {
+					globals.betAmount = 6;
+				} else if (amount == "2") {
+					globals.betAmount = (playerCharacter.tall - globals.minHeight);
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches of your height.";
+				btns[0].setButton("Less", "Reduce bet amount", "bet|height|-6", playBlackjack);
+				if (globals.betAmount == 6)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|height|6", playBlackjack);
+				if (globals.betAmount >= (playerCharacter.tall - globals.minHeight))
+					btns[1].disableButton();
+			case "chest":
+				if (globals.betAmount == 0)
+					globals.betAmount = 1;
+				if (amount == "0") {
+					globals.betAmount = 1;
+				} else if (amount == "2") {
+					globals.betAmount = (playerCharacter.chestSize - globals.minChest);
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches of your chest.";
+				btns[0].setButton("Less", "Reduce bet amount", "bet|chest|-1", playBlackjack);
+				if (globals.betAmount == .5)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|chest|1", playBlackjack);
+				if (globals.betAmount >= playerCharacter.chestSize)
+					btns[1].disableButton();
+			case "waist":
+				if (globals.betAmount == 0)
+					globals.betAmount = .5;
+				if (amount == "0") {
+					globals.betAmount = .5;
+				} else if (amount == "2") {
+					globals.betAmount = (playerCharacter.waistSize - globals.minWaist);
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches from your waist.";
+				btns[0].setButton("Less", "Reduce bet amount", "bet|waist|-.5", playBlackjack);
+				if (globals.betAmount == .5)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|waist|.5", playBlackjack);
+				if (globals.betAmount >= playerCharacter.waistSize)
+					btns[1].disableButton();
+			case "hips":
+				if (globals.betAmount == 0)
+					globals.betAmount = .5;
+				if (amount == "0") {
+					globals.betAmount = .5;
+				} else if (amount == "2") {
+					globals.betAmount = (playerCharacter.hipSize - globals.minHips);
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches from your hips.";
+				btns[0].setButton("Less", "Reduce bet amount", "bet|hips|-.5", playBlackjack);
+				if (globals.betAmount == .5)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|hips|.5", playBlackjack);
+				if (globals.betAmount >= playerCharacter.hipSize)
+					btns[1].disableButton();
+			case "butt":
+				if (globals.betAmount == 0)
+					globals.betAmount = 1;
+				if (amount == "0") {
+					globals.betAmount = 1;
+				} else if (amount == "2") {
+					globals.betAmount = playerCharacter.buttSize;
+				} else {
+					globals.betAmount += Std.parseFloat(amount);
+				}
+				
+				message += globals.betAmount + " inches from your butt.";
+				btns[0].setButton("Less", "Reduce bet amount", "bet|butt|-1", playBlackjack);
+				if (globals.betAmount == 1)
+					btns[0].disableButton();
+				btns[1].setButton("More", "Increase bet amount", "bet|butt|1", playBlackjack);
+				if (globals.betAmount >= playerCharacter.buttSize)
+					btns[1].disableButton();
+			}
+			btns[3].setButton("Min", "Bet the minimum", "bet|" + value + "|0", playBlackjack);
+			btns[4].setButton("Max", "Bet the maximum", "bet|" + value + "|2", playBlackjack);
+			btns[9].setButton("Back", "Change your bet", "cut|bet", playBlackjack);
+			
+			btns[11].setButton("Deal", "Place your bet and deal the cards", "deal|" + value, playBlackjack);
+		case "deal":
+			//place the bet and deal the cards
+			globals.betTarget = value;
+			
+			message = "<p>You make your decision and let the bear know. He nods and places a chip in front of you. You feel a little strange, but a moment later he starts dealing cards.</p><br>";
+			
+			//Deal the cards; player first
+			playerHand.push(deckShuffled.pop());
+			dealerHand.push(deckShuffled.pop());
+			playerHand.push(deckShuffled.pop());
+			dealerHand.push(deckShuffled.pop());
+			
+			playerHighAce = !handLowAce(playerHand);
+			
+			message += "<p>The dealer hands you a card, then deals one for himself. The second card he places face up in front of you, then a second card for himself, also face up.</p><br>";
+			message += "<p>Dealer is showing the " + dealerHand[1].cardName() + "</p>";
+			message += "<p>You have a total of " + handTotal(playerHand) + " with the cards " + playerHand[0].cardName(playerHighAce) + " and " + playerHand[1].cardName(playerHighAce) + "</p><br>";
+			
+			btns[0].setButton("Hit", "Take another card", "hit", playBlackjack);
+			btns[1].setButton("Stand", "Keep your current total", "stand", playBlackjack);
+			btns[2].setButton("Split", "Seperate two same value cards into two seperate hands", "split", playBlackjack);
+			btns[2].disableButton();
+			btns[3].setButton("Double Down", "Take one more card, double your bet and keep what you have", "double", playBlackjack);
+			btns[3].disableButton();
+		case "hit":
+			//player wants another card
+			message = "<p>You tap the table, indicating you want another card. The dealer nods and lays a new card next to your hand.</p><br>";
+			
+			playerHand.push(deckShuffled.pop());
+			
+			playerHighAce = !handLowAce(playerHand);
+			
+			message += "<p>Dealer is showing the " + dealerHand[1].cardName() + "</p>";
+			message += "<p>You have a total of " + handTotal(playerHand) + " with the cards " + playerHand[0].cardName(playerHighAce);
+			
+			for (i in 1...(playerHand.length - 1)) {
+				message += ", " + playerHand[i].cardName(playerHighAce);
+			}
+			
+			message += " and " + playerHand[playerHand.length - 1].cardName(playerHighAce);
+			
+			if (handTotal(playerHand) > 21) {
+				btns[0].setButton("Bust", "You've gone over 21", "bust", playBlackjack);
+			} else {
+				btns[0].setButton("Hit", "Take another card", "hit", playBlackjack);
+				btns[1].setButton("Stand", "Keep your current hand", "stand", playBlackjack);
+			}
+		case "bust":
+			//Player has gone over 21 and lost the game
+			message = "<p>The dealer shakes his head, &quot;Sorry, looks like you bust.&quot;</p><br>" + doBJWinLose(false);
+			
+			btns[0].setButton("New Hand", "Play another hand", "redeal", playBlackjack);
+			btns[2].setButton("Leave", null, null, movePlayer);
+		case "redeal":
+			//reshuffle and redeal
+			
+			globals.betAmount = 0;
+			globals.betTarget = "";
+			redeal = true;
+			
+			deck = new Array();
+			
+			while (playerHand.length != 0) 
+				deck.push(playerHand.pop());
+			
+			while (dealerHand.length != 0)
+				deck.push(dealerHand.pop());
+			
+			while (deckShuffled.length != 0)
+				deck.push(deckShuffled.pop());
+			
+			deckShuffled = new Array();
+			
+			message = "<p>The dealer collects all the cards and neatly squares them. He nods when you tell him you would like to play again.</p>";
+			
+			btns[0].setButton("Shuffle", "Wait for him to reshuffle", "shuffle", playBlackjack);
+		case "stand":
+			//Player stops taking cards, time for the dealer to deal up
+			//Dealer stands on 18, hits on soft 16
+			
+			var deltCard:PlayCard;
+			
+			dealerHighAce = !handLowAce(dealerHand);
+			
+			message = "<p>You wave your hand over your cards to show you're done taking cards. The dealer nods and turns his hand over.</p><br>";
+			
+			message += "<p>He has a total of " + handTotal(dealerHand) + " with the cards " + dealerHand[0].cardName(dealerHighAce) + " and " + dealerHand[1].cardName(dealerHighAce) + ".</p>";
+			
+			while ((handTotal(dealerHand) <= 16 && dealerHighAce) || (handTotal(dealerHand) < 18 && !dealerHighAce)) {
+				deltCard = deckShuffled.pop();
+				dealerHand.push(deltCard);
+				dealerHighAce = !handLowAce(dealerHand);
+				message += "<p>The dealer deals himself a " + deltCard.cardName(dealerHighAce) + " and now has a total of " + handTotal(dealerHand) + ".</p>";
+			}
+			
+			message += "<br><p>The dealer ";
+			if (handTotal(dealerHand) > 21) {
+				//Dealer goes bust
+				message += "busts! You win! " + doBJWinLose(true);
+			} else if (handTotal(dealerHand) == 21 && dealerHand.length == 2) {
+				//Dealer has blackjack
+				message += "has blackjack! Sorry you've lost this hand. " + doBJWinLose(false);
+			} else if (handTotal(dealerHand) > handTotal(playerHand)) {
+				//Dealer has a higher total then the player
+				message += "has a total of " + handTotal(dealerHand) + " and you have a total of " + handTotal(playerHand) + ". The dealer wins. " + doBJWinLose(false);
+			} else if (handTotal(playerHand) == 21 && playerHand.length == 2) {
+				//Player has blackjack!
+				message += "has lost! You have blackjack! " + doBJWinLose(true, true);
+			} else if (handTotal(dealerHand) < handTotal(playerHand)) {
+				//Player has a higher total then the player
+				message += "has a total of " + handTotal(dealerHand) + " and you have a total of " + handTotal(playerHand) + ". You win! " + doBJWinLose(true);
+			} else if (handTotal(dealerHand) == handTotal(playerHand)) {
+				//Both have the same total (a push)
+				message += "has a total of " + handTotal(dealerHand) + " and you have a total of " + handTotal(playerHand) + ". You Push, your bet is returned to you.";
+			} else {
+				//Something has gone wrong
+				message += "has encountered an issue. Please tell Kyra you got this message and what happened right before it.";
+			}
+			
+			message += "</p>";
+			
+			btns[0].setButton("New Hand", "Play another hand", "redeal", playBlackjack);
+			btns[2].setButton("Leave", "Walk away from the table", null, movePlayer);
+		case "trade":
+			//Allow the player to trade size from one aspect to another.
+			//action|value|amount
+			
+			if (value == null) {
+				message = "<p>You tell the dealer you'd like to trade some sizes around. He nods, &quot;I can do that for you, be aware I will take a little bit of fat each time you do. If that's okay, let me know what you'd like to trade for what.&quot;</p>";
+				message += "<br><p>Where would you like to take size from?</p>";
+				
+				btns[0].setButton("Breasts", "Trade some size off your chest", "trade|breasts", playBlackjack);
+				if (!playerCharacter.breasts)
+					btns[0].disableButton();
+				btns[1].setButton("Penis", "Trade some size off your penis", "trade|penis", playBlackjack);
+				if (!playerCharacter.penis)
+					btns[1].disableButton();
+				btns[2].setButton("Balls", "Trade some size off your balls", "trade|balls", playBlackjack);
+				if (!playerCharacter.balls)
+					btns[2].disableButton();
+				btns[3].setButton("Height", "Trade some height", "trade|height", playBlackjack);
+				if (playerCharacter.tall <= globals.minHeight)
+					btns[3].disableButton();
+				btns[4].setButton("Chest", "Trade some size off your chest", "trade|chest", playBlackjack);
+				if (playerCharacter.chestSize <= globals.minChest)
+					btns[4].disableButton();
+				btns[5].setButton("Waist", "Trade some size off your waist", "trade|waist", playBlackjack);
+				if (playerCharacter.waistSize <= globals.minWaist)
+					btns[5].disableButton();
+				btns[6].setButton("Hips", "Trade some size off your hips", "trade|hips", playBlackjack);
+				if (playerCharacter.hipSize <= globals.minHips)
+					btns[6].disableButton();
+				btns[7].setButton("Butt", "Trade some size off your butt", "trade|butt", playBlackjack);
+				if (playerCharacter.buttSize <= 0)
+					btns[7].disableButton();
+				
+				btns[9].setButton("How", null, "rules", playBlackjack);
+				btns[10].setButton("Play", null, "shuffle", playBlackjack);
+				btns[11].setButton("Leave", null, null, movePlayer);
+			} else if (amount == null) {
+				message = "<p>Where would you like to trade the size to?</p>";
+				
+				btns[0].setButton("Breasts", "Trade some size to your chest", "trade|" + value + "|breasts", playBlackjack);
+				if (value == "breasts")
+					btns[0].disableButton();
+				btns[1].setButton("Penis", "Trade some size to your penis", "trade|" + value + "|penis", playBlackjack);
+				if (value == "penis")
+					btns[1].disableButton();
+				btns[2].setButton("Balls", "Trade some size to your balls", "trade|" + value + "|balls", playBlackjack);
+				if (!playerCharacter.penis || value == "balls")
+					btns[2].disableButton();
+				btns[3].setButton("Height", "Gain some height", "trade|" + value + "|height", playBlackjack);
+				if (playerCharacter.tall >= globals.maxHeight || value == "height")
+					btns[3].disableButton();
+				btns[4].setButton("Chest", "Trade some size to your chest", "trade|" + value + "|chest", playBlackjack);
+				if (playerCharacter.chestSize >= globals.maxChest || value == "chest")
+					btns[4].disableButton();
+				btns[5].setButton("Waist", "Trade some size to your waist", "trade|" + value + "|waist", playBlackjack);
+				if (playerCharacter.waistSize >= globals.maxWaist || value == "waist")
+					btns[5].disableButton();
+				btns[6].setButton("Hips", "Trade some size to your hips", "trade|" + value + "|hips", playBlackjack);
+				if (playerCharacter.hipSize >= globals.maxHips || value == "hips")
+					btns[6].disableButton();
+				btns[7].setButton("Butt", "Trade some size to your butt", "trade|" + value + "|butt", playBlackjack);
+				if (value == "butt")
+					btns[7].disableButton();
+				
+				btns[11].setButton("Back", null, "trade", playBlackjack);
+			} else {
+				message = "<p>Loose " + value + " and gain " + amount + "? This will cost 50 fat.</p>";
+				
+				btns[0].setButton("Yes", null, "doTrade|" + value + "|" + amount, playBlackjack);
+				if (playerCharacter.fat < 50)
+					btns[0].disableButton();
+				btns[2].setButton("No", null, "trade", playBlackjack);
+			}
+		case "doTrade":
+			message = "<p>You tell the bear what you'd like to trade and he nods, trading the chip in front of you for another one. You don't see any difference between the chips, but you feel yourself change slightly.</p>";
+			
+			playerCharacter.fat -= 50;
+			
+			//Shrink player
+			switch (value) {
+			case "breasts":
+				playerCharacter.breastSize -= 1;
+				if (playerCharacter.breastSize <= 0)
+					playerCharacter.breasts = false;
+			case "penis":
+				playerCharacter.penisL -= 1;
+				playerCharacter.penisW -= .5;
+				if (playerCharacter.penisL <= 0 || playerCharacter.penisW <= 0) {
+					playerCharacter.penis = false;
+					playerCharacter.balls = false;
+				}
+			case "balls":
+				playerCharacter.ballSize -= .5;
+				if (playerCharacter.ballSize <= 0)
+					playerCharacter.balls = false;
+			case "height":
+				playerCharacter.tall -= 6;
+			case "chest":
+				playerCharacter.chestSize -= 1;
+			case "waist":
+				playerCharacter.waistSize -= 1;
+			case "hips":
+				playerCharacter.hipSize -= 1;
+			case "butt":
+				playerCharacter.buttSize -= 1;
+			}
+			//Grow player
+			switch (amount) {
+			case "breasts":
+				playerCharacter.breastSize += 1;
+				if (!playerCharacter.breasts)
+					playerCharacter.breasts = true;
+			case "penis":
+				playerCharacter.penisL += 1;
+				playerCharacter.penisW += .5;
+				if (!playerCharacter.penis)
+					playerCharacter.penis = true;
+			case "balls":
+				playerCharacter.ballSize += .5;
+				if (!playerCharacter.balls)
+					playerCharacter.balls = true;
+			case "height":
+				playerCharacter.tall += 6;
+			case "chest":
+				playerCharacter.chestSize += 1;
+			case "waist":
+				playerCharacter.waistSize += 1;
+			case "hips":
+				playerCharacter.hipSize += 1;
+			case "butt":
+				playerCharacter.buttSize += 1;
+			}
+			
+			updateHUD();
+			
+			btns[0].setButton("How", "Learn how to play blackjack", "rules", playBlackjack);
+			btns[1].setButton("Play", "Just start playing", "shuffle", playBlackjack);
+			btns[2].setButton("Trade", "Trade size of one aspect for size of another", "trade", playBlackjack);
+			btns[11].setButton("Leave", null, null, movePlayer);
+		}
+		
+		outputText(message, title);
 	}
 	
 	static function milkMachine( e:MouseEvent ) {
@@ -1299,6 +1325,15 @@ class Main {
 				
 				btns[11].setButton("Next", "Ow", null, movePlayer);
 			}
+		case "release":
+			//Let Bessie out of the chair
+			title = "Release";
+			
+			playerCharacter.quest[5].stage = 5;
+			
+			message = "<p>It's honestly easier to undo the straps on Bessie's chair then it was to strap her in. After a moment you have all the straps off and she stands back up, &quot;Thank you. I need to get cleaned up now. Please leave.&quot;</p>";
+			
+			btns[11].setButton("Next", null, null, movePlayer);
 		}
 		
 		outputText(message, title);
@@ -1930,6 +1965,7 @@ class Main {
 					return;
 				case ">ESCAPE<":
 					message += "The [NPCNAME] turns tail and flees, quickly escaping you.<br>";
+					combatRan = true;
 					btns[0].setButton("Next", null, 12);
 					btns[0].setClickFunc(doCombat);
 					outputText(message, title);
@@ -2044,6 +2080,7 @@ class Main {
 				return;
 			case ">ESCAPE<":
 				message += "The [NPCNAME] turns tail and flees, quickly escaping you.<br>";
+				combatRan = true;
 				btns[0].setButton("Next", null, 12);
 				btns[0].setClickFunc(doCombat);
 				outputText(message, title);
@@ -2074,6 +2111,7 @@ class Main {
 					return;
 				case ">ESCAPE<":
 					message += "The [NPCNAME] turns tail and flees, quickly escaping you.<br>";
+					combatRan = true;
 					btns[0].setButton("Next", null, 12);
 					btns[0].setClickFunc(doCombat);
 					outputText(message, title);
@@ -2113,6 +2151,7 @@ class Main {
 					return;
 				case ">ESCAPE<":
 					message += "The [NPCNAME] turns tail and flees, quickly escaping you.<br>";
+					combatRan = true;
 					btns[0].setButton("Next", null, 12);
 					btns[0].setClickFunc(doCombat);
 					outputText(message, title);
@@ -2127,8 +2166,7 @@ class Main {
 				//Player escapes
 				message += "and quickly leave the [NPCNAME] behind.<br>";
 				
-				btns[0].setButton("Next", null, 12);
-				btns[0].setClickFunc(doCombat);
+				btns[0].setButton("Next", null, 0, movePlayer);
 			}
 		case 5:
 			//Crush
@@ -2236,6 +2274,7 @@ class Main {
 					return;
 				case ">ESCAPE<":
 					message += "The [NPCNAME] turns tail and flees, quickly escaping you.<br>";
+					combatRan = true;
 					btns[0].setButton("Next", null, 12);
 					btns[0].setClickFunc(doCombat);
 					outputText(message, title);
@@ -2263,6 +2302,7 @@ class Main {
 				return;
 			case ">ESCAPE<":
 				message += "The [NPCNAME] turns tail and flees, quickly escaping you.<br>";
+				combatRan = true;
 				btns[0].setButton("Next", null, 12);
 				btns[0].setClickFunc(doCombat);
 				outputText(message, title);
@@ -2282,6 +2322,8 @@ class Main {
 			
 			message += playerCharacter.equipWepObj.finisher;
 			
+			combatRan = false;
+			
 			btns[0].setButton("Next", null, 12);
 			btns[0].setClickFunc(doCombat);
 		case 11:
@@ -2296,6 +2338,8 @@ class Main {
 			playerCharacter.gluttony++;
 			playerCharacter.arousal += 1;
 			
+			combatRan = false;
+			
 			btns[0].setButton("Next", null, 12);
 			btns[0].setClickFunc(doCombat);
 		case 12:
@@ -2305,20 +2349,21 @@ class Main {
 			
 			//items, nothing currently
 			
-			if (roomNPC.weapon != null) {
-				reward.push(roomNPC.weapon);
-			}
-			if (roomNPC.armor != null) {
-				reward.push(roomNPC.armor);
-			}
-			if (Math.round(Math.random() * 10) == 0)
-				reward.push(createItem("ring"));
-			
-			for (i in 0...playerCharacter.greed) {
-				if (Math.round(Math.random() * playerCharacter.luck()) == 1) {
-					reward.push(globals.food[Math.round(Math.random() * globals.food.length - 1)].copyItem());
+			if (!combatRan) { //NPC lost the fight, player can loot them
+				if (roomNPC.weapon != null)
+					reward.push(roomNPC.weapon);
+				if (roomNPC.armor != null)
+					reward.push(roomNPC.armor);
+				if (Math.round(Math.random() * 10) == 0)
+					reward.push(createItem("ring"));
+				
+				for (i in 0...(Math.floor(playerCharacter.greed / 10))) {
+					if (Math.round(Math.random() * playerCharacter.luck()) == 0) {
+						reward.push(globals.food[Math.round(Math.random() * (globals.food.length - 1))].copyItem());
+					}
 				}
 			}
+			
 			//cash
 			if (playerCharacter.greed == 0)
 				playerCharacter.greed = 1;
@@ -3170,127 +3215,6 @@ class Main {
 		outputText(message, title);
 	}
 	
-	static function doQTE( ?e:MouseEvent ) {
-		var message:String = "";
-		var title:String = "Erik the Mighty";
-		
-		clearAllEvents();
-		Lib.current.removeEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-		if (optionsBtn.visible) {
-			optionsBtn.visible = false;
-			charDesc.visible = false;
-			if (globals.debugMode) {
-				txtDebug.removeEventListener(MouseEvent.CLICK, debugMenu);
-				txtDebug.visible = false;
-			}
-		}
-		
-		switch (QTEstage) {
-		case 0:
-			message = "<p>You make your decision and rush forward in an attempt to grab a hold of Erik. He somehow senses you moving towards him and evades your initial rush, his own hand swiping towards your head.</p>";
-			
-			timerQTE = new MyTimer(10, "s", 1, 2);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 1:
-			message = "<p>You quickly evade his sweeping hand and catch it, pinning his arm to his side. The motion is enough to knock the two of you over with you landing on top. His other, still free arm comes towards you fast.</p>";
-			
-			timerQTE = new MyTimer(9, "d", 3, 4);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 2:
-			message = "<p>You move to dodge the hand heading towards your head, but you're not quite fast enough. The huge hand closes around your head before you can evade it and he lifts you into the air, starting to squeeze tightly. Fortuitously, his lift brings your foot level with his crotch.</p>";
-			
-			timerQTE = new MyTimer(15, "a", 8, 9);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 3:
-			message = "<p>You dodge his second sweep, catching his arm and using your weight to pin him to the ground. He struggles under you, kicking with his legs as he attempts to get free. His strength is so great you can tell he will be free in moments.</p>";
-			
-			timerQTE = new MyTimer(11, "e", 5, 6);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 4:
-			message = "<p>You duck to avoid the second swing, but in doing so you release his other arm which he uses to grab you tightly about the waist. He lifts you and stands in one motion, showing off his power muscles as he holds you before him, one hand closing around your face as he starts to squeeze tightly. Fortuitously, his lift brings your foot level with his crotch.</p>";
-			
-			timerQTE = new MyTimer(11, "x", 8, 9);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 5:
-			//Eventually add in options to allow other forms of vore for this guy. Getting crammed into a cock would be a fitting end for him.
-			message = "<p>With only moments before Erik manages to escape your grasp you lunge, mouth open as wide as you can and take his head into it. You begin to swallow powerfully, his neck and shoulders vanishing just as quickly down your throat. With his arms now pinned by your mouth you are able to slow down and take your time getting the rest of the huge man down. It's quite a challenge, his bulk paired with his struggling make you nearly loose him several times, but soon the giant jackass has been reduced to nothing more then a very large bulge in your stomach.</p><br><p>You sit on the ground for a moment, processing what just happened, slightly amazed that you managed to get him down. The struggles and kicks from your stomach slowly lessen and finally stop. Soon Erik the mighty will be nothing more then another layer on your mighty body. Once you think you can manage it, you stand, staggering from the sudden addition of weight in your front, and head home to sleep off your big meal.</p>";
-			
-			title = "Erik the Digested";
-			
-			playerCharacter.stomachContents.push(roomNPC);
-			playerCharacter.stomachCurrent += roomNPC.mass;
-			playerCharacter.numEaten++;
-			playerCharacter.gluttony++;
-			playerCharacter.arousal += 1;
-			
-			playerCharacter.quest[2].stage = 2; //Gold Membership is now avalible
-			
-			newRoom = true;
-			
-			btns[0].setButton("Next", null, 0, movePlayer);
-		case 6:
-			message = "<p>You struggle, trying to get him pinned enough to force him down your throat. Unfortunately his struggles prove too much for you and he kicks you off him. By the time you regain your feet he is rushing towards you, murder in his eyes.</p>";
-			
-			timerQTE = new MyTimer(6, "w", 11, 12);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 7:
-			//Legecy option
-		case 8:
-			message = "<p>You swing your foot back and throw it forward with all your might. The strike landing square in his massively swollen cock. He bellows in pain and drops and you take the chance to pin his arms to his sides and hold him down. He recovers quickly and starts struggling under you, his strength such that he will be free in moments.</p>";
-			
-			timerQTE = new MyTimer(11, "e", 5, 6);
-			Lib.current.addChild(timerQTE);
-			Lib.current.addEventListener(KeyboardEvent.KEY_UP, timerKeyEvent);
-			timerQTE.tmrQuick.addEventListener(TimerEvent.TIMER_COMPLETE, timerFailEvent);
-		case 9:
-			message = "<p>You swing your foot towards his crotch, but he moves at the last moment and you miss, only striking his thigh. He grunts in pain but tightens his grip on you as everything starts to go black. A low growl comes from him and the last thing you hear is something important in your head crack.</p>";
-			
-			playerDied = "Erik";
-			
-			btns[9].setButton("Next", null, null, doDeath);
-		case 10:
-			//Legecy option
-		case 11:
-			message = "<p>Thinking fast you rush forward, leaping to catch him in your open mouth just before he would have hit you. The speed of his rush pushes you back against the far wall, but also shoves him down your throat to his waist. You are able to swallow his struggling lower half quickly, his continuing struggles nearly causing you to loose him several times, but soon the giant jackass has been reduced to nothing more then a very large bulge in your stomach.</p><br><p>You sit on the ground for a moment, processing what just happened, slightly amazed that you managed to get him down. The struggles and kicks from your stomach slowly lessen and finally stop. Soon Erik the mighty will be nothing more then another layer on your mighty body. Once you think you can manage it, you stand, staggering from the sudden addition of weight in your front, and head home to sleep off your big meal.</p>";
-			
-			title = "Erik the Digested";
-			
-			playerCharacter.stomachContents.push(roomNPC);
-			playerCharacter.stomachCurrent += roomNPC.mass;
-			playerCharacter.numEaten++;
-			playerCharacter.gluttony++;
-			playerCharacter.arousal += 1;
-			
-			playerCharacter.quest[2].stage = 2; //Gold Membership is now avalible
-			
-			newRoom = true;
-			
-			btns[0].setButton("Next", null, 0, movePlayer);
-		case 12:
-			message = "<p>You dodge to the side, only to find your path blocked by one of the large machines in the room. Your struggles have gotten you trapped and Erik hits you like a linebacker, shoulder to your chest. You feel something break as he slams you into the far wall. The roundhouse punch that follows is almost overkill, but it does bring on the black that much faster.</p>";
-			
-			playerDied = "Erik";
-			
-			btns[9].setButton("Next", null, null, doDeath);
-		default:
-			new AlertBox("QuickTime Event Failure, Unknown QTE Stage; " + QTEstage + ".");
-		}
-		
-		outputText(message, title);
-	}
-	
 	static function doPoop( e:MouseEvent ) {
 		var message:String = "";
 		var title:String = "";
@@ -3441,55 +3365,6 @@ class Main {
 		
 		playerCharacter.arousal = 0;
 		playerCharacter.cumCurrent = 0;
-		
-		charDesc.visible = false;
-		optionsBtn.visible = false;
-		newRoom = false;
-		
-		clearAllEvents();
-		updateHUD();
-		outputText(message, "Masterbation");
-		
-		btns[0].setButton("Next", null, null, movePlayer);
-	}
-	
-	static function doMasterbate( e:MouseEvent ) {
-		//Player jerks off
-		var message:String = "{Placeholder} ";
-		
-		//Player has only a penis
-		if (playerCharacter.penis && !playerCharacter.vagina) {
-			message += "You wrap your hand around your shaft and begin slowly stroking along your length. ";
-			if (playerCharacter.balls) {
-				message += "Your other hand cups your balls and you tease your length, toying with your head until you feel your orgasm building. With a surge you shoot cum from your cock.";
-			} else {
-				message += "You stroke along your length, toyin with the head of your cock until you feel your orgasm building.";
-				if (playerCharacter.hasPerk("inbal")) {
-					message += " With a surge you shoot cum from your cock.";
-				}
-			}
-		}
-		
-		//Player has only a vagina
-		if (!playerCharacter.penis && playerCharacter.vagina) {
-			message += "You slide a finger inside your slit finding your clit and teasing it until you orgasm.";
-		}
-		
-		//Player has both a vagina and penis
-		if (playerCharacter.penis && playerCharacter.vagina) {
-			message += "You wrap one hand around your cock and slide the other into your vagina teasing both until you shutter and cum hard.";
-		}
-		
-		//Player has neither a vagina or a penis
-		if (!playerCharacter.penis && !playerCharacter.vagina) {
-			if (playerCharacter.breasts) {
-				message += "You cup your breasts and massage them, teasing your nipples until you drive yourself to orgasm.";
-			} else {
-				message += "You slide a finder into your ass, teasing and toying with your prostate until you manage to acheive something close to an orgasm.";
-			}
-		}
-		
-		playerCharacter.arousal = 0;
 		
 		charDesc.visible = false;
 		optionsBtn.visible = false;
@@ -5829,9 +5704,15 @@ class Main {
 			Lib.current.removeChild(gameLogo);
 		
 		var clicked:Int = 0;
+		var action:String = "";
 		
-		if (e != null)
-			clicked = e.currentTarget.btnID;
+		var tempClicked:String = "";
+		
+		if (e != null) {
+			tempClicked = e.currentTarget.btnID + "|null";
+			clicked = Std.parseInt(tempClicked.split("|")[0]);
+			action = tempClicked.split("|")[1];
+		}
 		
 		clearAllEvents();
 		
@@ -5885,6 +5766,7 @@ class Main {
 				btns[6].setButton("Main Menu", "Start a new game. Current game will be lost.", 0);
 				btns[6].setClickFunc(resetGame);
 			}
+			btns[7].setButton("NPC Gender", "Limit NPC Gender options", 6, optionsScreen);
 			
 			btns[11].setButton("Back");
 			
@@ -5951,6 +5833,261 @@ class Main {
 				new AlertBox("Error, cannot increase difficulty");
 			}
 			optionsScreen();
+		case 6:
+			//Gender options
+			switch (action) {
+			case "breast":
+				globals.allowBreasts = !globals.allowBreasts;
+				
+				message = "<p>Breasts set to ";
+				if (globals.allowBreasts) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "vag":
+				globals.allowVagina = !globals.allowVagina;
+				
+				message = "<p>Vagina set to ";
+				if (globals.allowVagina) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "penis":
+				globals.allowPenis = !globals.allowPenis;
+				
+				message = "<p>Penis set to ";
+				if (globals.allowPenis) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "balls":
+				globals.allowBalls = !globals.allowBalls;
+				
+				message = "<p>Balls set to ";
+				if (globals.allowBalls) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "fem":
+				globals.allowedGenders[0][1] = !globals.allowedGenders[0][1];
+				
+				message = "<p>Females set to ";
+				if (globals.allowedGenders[0][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "male":
+				globals.allowedGenders[1][1] = !globals.allowedGenders[1][1];
+				
+				message = "<p>Males set to ";
+				if (globals.allowedGenders[1][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "herm":
+				globals.allowedGenders[2][1] = !globals.allowedGenders[2][1];
+				
+				message = "<p>Herms set to ";
+				if (globals.allowedGenders[2][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "dgirl":
+				globals.allowedGenders[3][1] = !globals.allowedGenders[3][1];
+				
+				message = "<p>Dickgirls set to ";
+				if (globals.allowedGenders[3][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "doll":
+				globals.allowedGenders[4][1] = !globals.allowedGenders[4][1];
+				
+				message = "<p>Dolls set to ";
+				if (globals.allowedGenders[4][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "cboy":
+				globals.allowedGenders[5][1] = !globals.allowedGenders[5][1];
+				
+				message = "<p>Cuntboys set to ";
+				if (globals.allowedGenders[5][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			case "net":
+				globals.allowedGenders[6][1] = !globals.allowedGenders[6][1];
+				
+				message = "<p>Neuters set to ";
+				if (globals.allowedGenders[6][1]) {
+					message += "allowed";
+				} else {
+					message += "not allowed";
+				}
+				message += ".</p>";
+				
+				btns[0].setButton("Next", null, 6, optionsScreen);
+			default:
+				message = "<p>NPC Gender options:</p><br><p>This controls randomly generated NPCs, has no effect on named NPCs or the Player.</p><br><p>Allow Breasts? ";
+				
+				if (globals.allowBreasts) {
+					message += "Yes";
+				} else {
+					message += "No";
+				}
+				message += "</p><p>Allow Vagina? ";
+				if (globals.allowVagina) {
+					message += "Yes";
+				} else {
+					message += "No";
+				}
+				message += "</p><p>Allow Penis? ";
+				if (globals.allowPenis) {
+					message += "Yes";
+				} else {
+					message += "No";
+				}
+				message += "</p><p>Allow Balls? ";
+				if (globals.allowBalls) {
+					message += "Yes";
+				} else {
+					message += "No";
+				}
+				message += "</p><br>";
+				
+				message += "<p>Currently allowed genders;<br>Females (character has breasts and a vagina and no penis): ";
+				
+				if (globals.allowedGenders.length == 0)
+					globals.allowedGenders = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true]];
+				
+				if (globals.allowedGenders[0][1]) {
+					if (globals.allowBreasts && globals.allowVagina) {
+						message += "Allowed";
+					} else {
+						message += "Not Allowed";
+					}
+				} else {
+					message += "Not Allowed";
+				}
+				
+				message += "<br>Males (character has a penis (balls optional) and no breasts or vagina): ";
+				if (globals.allowedGenders[1][1]) {
+					if (globals.allowPenis) {
+						message += "Allowed";
+					} else {
+						message += "Not Allowed";
+					}
+				} else {
+					message += "Not Allowed";
+				}
+				
+				message += "<br>Herms (character has a penis (balls optional) and a vagina(breasts optional)): ";
+				if (globals.allowedGenders[2][1]) {
+					if (globals.allowVagina && globals.allowPenis) {
+						message += "Allowed";
+					} else {
+						message += "Not Allowed";
+					}
+				} else {
+					message += "Not Allowed";
+				}
+				
+				message += "<br>Dickgirl (character has a penis (balls optional) and breasts without a vagina): ";
+				if (globals.allowedGenders[3][1]) {
+					if (globals.allowBreasts && globals.allowPenis) {
+						message += "Allowed";
+					} else {
+						message += "Not Allowed";
+					}
+				} else {
+					message += "Not Allowed";
+				}
+				
+				message += "<br>Doll (character has breasts and no penis or vagina): ";
+				if (globals.allowedGenders[4][1]) {
+					if (globals.allowBreasts) {
+						message += "Allowed";
+					} else {
+						message += "Not Allowed";
+					}
+				} else {
+					message += "Not Allowed";
+				}
+				
+				message += "<br>Cuntboy (character has a vagina and no breasts or penis): ";
+				if (globals.allowedGenders[5][1]) {
+					if (globals.allowVagina) {
+						message += "Allowed";
+					} else {
+						message += "Not Allowed";
+					}
+				} else {
+					message += "Not Allowed";
+				}
+				
+				message += "<br>Neuter (character has nothing): ";
+				if (globals.allowedGenders[6][1]) {
+					message += "Allowed";
+				} else {
+					message += "Not Allowed";
+				}
+				
+				btns[0].setButton("Breast", "Toggle Breasts Allowed", "6|breast", optionsScreen);
+				btns[1].setButton("Vagina", "Toggle Vagina Allowed", "6|vag", optionsScreen);
+				btns[2].setButton("Penis", "Toggle Penis Allowed", "6|penis", optionsScreen);
+				btns[3].setButton("Balls", "Toggle Balls Allowed", "6|balls", optionsScreen);
+				btns[4].setButton("Female", "Toggle females allowed", "6|fem", optionsScreen);
+				btns[5].setButton("Male", "Toggle Males allowed", "6|male", optionsScreen);
+				btns[6].setButton("Herms", "Toggle Herms allowed", "6|herm", optionsScreen);
+				btns[7].setButton("Dickgirl", "Toggle Dickgirls allowed", "6|dgirl", optionsScreen);
+				btns[8].setButton("Doll", "Toggle Dolls allowed", "6|doll", optionsScreen);
+				btns[9].setButton("Cuntboy", "Toggle Cuntboy allowed", "6|cboy", optionsScreen);
+				btns[10].setButton("Neuter", "Toggle Neuters allowed", "6|net", optionsScreen);
+				btns[11].setButton("Back", null, 0, optionsScreen);
+			}
+			
+			outputText(message, "NPC Gender Controls");
 		}
 	}
 	
@@ -6139,16 +6276,12 @@ class Main {
 		credits.push("Gym female oral sex scenes contributed by forum member BeardyKomodo.");
 		credits.push("Bug fixes and code improvements by GitHub member s-r-g-i.");
 		
-		oneLineBackers.push("pelle"); //Dropped to $1 Feb
-		oneLineBackers.push("Writer"); //Paid Feb #10
+		oneLineBackers.push("Anthony Ahlfield");
+		oneLineBackers.push("Spencer Cochran");
+		oneLineBackers.push("Wolf");
 		
-		
-		backerCredits.push("Foxlets"); //Dropped below $5 in October
-		backerCredits.push("Bradley Taylor"); //Paid Feb $5
-		backerCredits.push("OutsideOctaves"); //Paid Feb $5
-		backerCredits.push("Michael Brookins"); //Paid Feb $5
-		backerCredits.push("Erik Camp"); //Paid Feb $5
-		backerCredits.push("Pell Torr"); //Paid Feb $5
+		backerCredits.push("Wolfhouse520");
+		backerCredits.push("benjamin sanchez");
 		
 		
 		for (i in 0...credits.length) {
@@ -6284,6 +6417,241 @@ class Main {
 	 * Non-cickable functions *
 	 *                        *
 	\**************************/
+	
+	static function doBJWinLose(win:Bool, blackJack:Bool = false):String {
+		var message:String = "";
+		
+		message = "<p>You feel a moment of strangeness as your body changes. ";
+		
+		if (win) {
+			//player won the hand
+			
+			if (blackJack)
+				globals.betAmount *= 1.5;
+			
+			switch (globals.betTarget) {
+			case "breasts":
+				message += "You feel your breasts grow slightly.";
+				
+				playerCharacter.breastSize += Math.round(globals.betAmount);
+			case "penis":
+				message += "You feel your penis grow slightly.";
+				
+				playerCharacter.penisL += globals.betAmount;
+				playerCharacter.penisW += (globals.betAmount / 3);
+			case "balls":
+				message += "You feel your balls grow slightly.";
+				
+				playerCharacter.ballSize += globals.betAmount;
+			case "height":
+				message += "You have a strange moment of vertigo as your height increases slightly.";
+				
+				if (playerCharacter.tall >= globals.maxHeight) {
+					message += " You feel your bones creek as nothing changes. It hurts.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.tall += globals.betAmount;
+				}
+				
+				if (playerCharacter.tall > globals.maxHeight) {
+					playerCharacter.tall = globals.maxHeight;
+					message += " You don't feel like you grew as much as you should have.";
+				}
+			case "chest":
+				message += "Your chest tightens as it expands.";
+				
+				if (playerCharacter.chestSize >= globals.maxChest) {
+					message += " Your chest constricts painfully but doesn't otherwise change.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.chestSize += Math.round(globals.betAmount);
+				}
+				
+				if (playerCharacter.chestSize > globals.maxChest) {
+					playerCharacter.chestSize = globals.maxChest;
+					message += " You don't feel like your chest grew as much as it should have.";
+				}
+			case "waist":
+				message += "Your waist tightens as it expands.";
+				
+				if (playerCharacter.waistSize >= globals.maxWaist) {
+					message += " Your waist tightens painfully but doesn't otherwise change.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.waistSize += Math.round(globals.betAmount);
+				}
+				
+				if (playerCharacter.waistSize > globals.maxWaist) {
+					playerCharacter.waistSize = globals.maxWaist;
+					message += " You don't feel like your waist grew as much as it should have.";
+				}
+			case "hips":
+				message += "Your hips grow slightly, forcing you to reposition your legs to compensate.";
+				
+				if (playerCharacter.hipSize >= globals.maxHips) {
+					message += " Your hips pop painfully but don't otherwise change.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.hipSize += globals.betAmount;
+				}
+				
+				if (playerCharacter.hipSize > globals.maxHips) {
+					playerCharacter.hipSize = globals.maxHips;
+					message += " You don't feel like your hips grew as much as they should have.";
+				}
+			case "butt":
+				message += "You feel your butt grow slightly.";
+				
+				playerCharacter.buttSize += Math.round(globals.betAmount);
+			default:
+				message += globals.betTarget;
+			}
+		} else {
+			//player lost the hand
+			switch (globals.betTarget) {
+			case "breasts":
+				message += "You feel your breasts shrink slightly.";
+				
+				playerCharacter.breastSize -= Math.round(globals.betAmount);
+				
+				if (playerCharacter.breastSize <= 0) {
+					playerCharacter.breasts = false;
+					message += " Your breasts shrink away to nothing!";
+					playerCharacter.breastSize = 0;
+				}
+			case "penis":
+				message += "You feel your penis shrink slightly.";
+				
+				playerCharacter.penisL -= globals.betAmount;
+				playerCharacter.penisW -= (globals.betAmount / 3);
+				
+				if (playerCharacter.penisL <= 0 || playerCharacter.penisW <= 0) {
+					playerCharacter.penis = false;
+					playerCharacter.balls = false;
+					message += " You feel your penis shrink away to nothing!";
+					playerCharacter.penisL = 0;
+					playerCharacter.penisW = 0;
+					playerCharacter.ballSize = 0;
+				}
+			case "balls":
+				message += "You feel your balls shrink slightly.";
+				
+				playerCharacter.ballSize -= globals.betAmount;
+				
+				if (playerCharacter.ballSize <= 0) {
+					playerCharacter.balls = false;
+					message += " You feel your balls shrink away to nothing!";
+					playerCharacter.ballSize = 0;
+				}
+			case "height":
+				message += "You have a strange moment of vertigo as your height reduces slightly.";
+				
+				if (playerCharacter.tall <= globals.minHeight) {
+					message += " You feel your bones creek as nothing changes. It hurts.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.tall -= globals.betAmount;
+				}
+				
+				if (playerCharacter.tall < globals.minHeight) {
+					playerCharacter.tall = globals.minHeight;
+					message += " You don't feel like you shrank as much as you should have.";
+				}
+			case "chest":
+				message += "Your chest tightens as it shrinks.";
+				
+				if (playerCharacter.chestSize <= globals.minChest) {
+					message += " Your chest constricts painfully but doesn't otherwise change.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.chestSize -= Math.round(globals.betAmount);
+				}
+				
+				if (playerCharacter.chestSize < globals.minChest) {
+					playerCharacter.chestSize = globals.minChest;
+					message += " You don't feel like your chest shrank as much as it should have.";
+				}
+			case "waist":
+				message += "Your waist tightens as it shrinks.";
+				
+				if (playerCharacter.waistSize <= globals.minWaist) {
+					message += " Your waist tightens painfully but doesn't otherwise change.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.waistSize -= Math.round(globals.betAmount);
+				}
+				
+				if (playerCharacter.waistSize < globals.minWaist) {
+					playerCharacter.waistSize = globals.minWaist;
+					message += " You don't feel like your waist shrank as much as it should have.";
+				}
+			case "hips":
+				message += "Your hips shrink slightly, forcing you to reposition your legs to compensate.";
+				
+				if (playerCharacter.hipSize <= globals.minHips) {
+					message += " Your hips pop painfully but don't otherwise change.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.hipSize -= globals.betAmount;
+				}
+				
+				if (playerCharacter.hipSize < globals.minHips) {
+					playerCharacter.hipSize = globals.minHips;
+					message += " You don't feel like your hips shrank as much as they should have.";
+				}
+			case "butt":
+				message += "You feel your butt shrink slightly.";
+				
+				if (playerCharacter.buttSize <= 0) {
+					message += " You feel your butt tighten like a muscle cramp.";
+					playerCharacter.healPlayer( -(playerCharacter.health() / 2));
+				} else {
+					playerCharacter.buttSize -= Math.round(globals.betAmount);
+				}
+				
+				if (playerCharacter.buttSize <= 0) {
+					playerCharacter.buttSize = 0;
+					message += "You don't feel like your butt shrank as much as it should have.";
+				}
+			default:
+				message += globals.betTarget;
+			}
+		}
+		
+		return message;
+	}
+	
+	static function handTotal(hand:Array<PlayCard>):Int {
+		var total:Int = 0;
+		var hasAce:Bool = false; //if at least one of the cards in the hand is an ace
+		
+		for (i in hand) {
+			total += i.cardValue(true);
+			if (i.ace)
+				hasAce = true;
+		}
+		
+		if (total > 21 && hasAce == true) 
+			total -= 10;
+		
+		return total;
+	}
+	
+	static function handLowAce(hand:Array<PlayCard>):Bool {
+		var total:Int = 0;
+		var hasAce:Bool = false;
+		
+		for (i in hand) {
+			total += i.cardValue(true);
+			if (i.ace)
+				hasAce = true;
+		}
+		
+		if (total > 21 && hasAce == true)
+			return true;
+		
+		return false;
+	}
 	
 	static function timerKeyEvent( e:KeyboardEvent ) {
 		var keyPressed:String = String.fromCharCode(e.charCode).toLowerCase();
@@ -7499,7 +7867,7 @@ class Main {
 		globals.rooms[12] = ["Consume - Bar",			null,	null,	null,	null,	null,	null,	17,		null,	[0],		true,		true,		null,		"A long polished bar, running the length of the room. Like most movie bars the back wall of this one is backed by a mirror with interesting or unique liquor bottles along the shelf before it. Several individuals sit on barstools enjoying various drinks. Most seem more interested in their drink then in talking however, not that the music really allows for conversations."];
 		globals.rooms[13] = ["Consume - Stage",			null,	17,		null,	null,	null,	null,	null,	null,	[0],		false,		true,		null,		"The club's stage. A drumset sits covered and ignored by the crowd. You're not really sure where the music is being piped in from. There's not much of interest here."];
 		globals.rooms[14] = ["Consume - Balcony",		null,	null,	14,		20,		null,	null,	null,	null,	[0],		false,		true,		null,		"An open sided stair leads to a balcony overlooking the dance floor. A number of tables and chairs scattered in groups cover the area and some clever acoustics mute enough of the music to allow for conversation. There are a few groups up here enjoying the relative quiet. Some of them are doing more then just talking. There is a door in the back wall, marked &quot;Lounge&quot;. It's guarded by another of the club's bouncers."];
-		globals.rooms[15] = ["Consume - Lounge",		null,	null,	null,	null,	19,		null,	null,	null,	[0],		true,		true,		null,		"The predator's lounge is a large dark room. Several groups of chairs and couches are arranged around the room allowing predators a place to sit and digest. A number of preds are taking advantage of this, large bellies resting on tables or other rests designed for such use. In the back of the room, under a large light that's giving most of the illumination in the room, sits a poker table. It is currently unoccupied."];
+		globals.rooms[15] = ["Consume - Lounge",		null,	null,	null,	null,	19,		null,	null,	null,	[15],		true,		true,		null,		"The predator's lounge is a large dark room. Several groups of chairs and couches are arranged around the room allowing predators a place to sit and digest. A number of preds are taking advantage of this, large bellies resting on tables or other rests designed for such use. In the back of the room, under a large light that's giving most of the illumination in the room, sits a poker table."];
 		globals.rooms[16] = ["North Main Street",		null,	23,		null,	28,		26,		null,	7,		null,	[0],		false,		true,		null,		"What is probably best referred to as the town's market district. It's rather depressing really, there is only a single general store here, located in a tiny building to the east. Across the street to the west is a modern gym, you've never gone inside it before, but perhaps now it would be worth it to take a peek inside. North of here the road heads out of town eventually leading to the highway and the rest of the country. Before it gets that far, and still within walking distance, sits the town's hospital."];
 		globals.rooms[17] = ["Hospital - Waiting Room",	null,	null,	null,	44,		24,		null,	22,		null,	[0],		true,		true,		null,		"A typical hospital waiting area, the reception desk is always occupied by someone looking tired and slightly haggard. You idly wonder if the expression comes with the job, or if it's the other way around. There isn't much to see or do here other then wait, the staff isn't going to let you any deeper into the hospital unless there's something wrong with you."];
 		globals.rooms[18] = ["Hospital - Pharmacy",		null,	null,	null,	25,		null,	null,	null,	null,	[0],		false,		true,		null,		"The pharmacy counter of the local hospital, the steel cage keeping random people out is closed and no one seems to be around at the moment. Looks like the pharmacist is out at the moment."];

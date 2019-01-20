@@ -14,7 +14,7 @@ class GlobalVars extends Sprite {
 	public var allowSex:Bool = true;
 	public var textSize:Int = 17;
 	public var allowScat:Bool = true;
-	public var allowedGenders:Array<Int> = new Array();
+	public var allowedGenders:Array<Dynamic> = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true], ["neuter", true]];
 	public var currentRoomID:Int;
 	public var difficulty:Float = 1;
 	
@@ -25,7 +25,7 @@ class GlobalVars extends Sprite {
 	public var perkCostMultiplier:Int = 13;
 	
 	//Changes the number that displays in the corner of the play field
-	public var buildVersion:String = "0.52";
+	public var buildVersion:String = "0.53";
 	
 	//Global vars holding temp data
 	public var backTo:String;
@@ -49,8 +49,26 @@ class GlobalVars extends Sprite {
 	public var shopLists:Array<Dynamic>;
 	
 	public var gymFee:Int = 20; //Cost to use the gym, futureproofing
+	
+	//Player min and max values
 	public var maxHeight:Int = 120; //Max player height, in inches: 10'
 	public var minHeight:Int = 24; //Min player height, in inches: 2'
+	public var minChest:Int = 12;
+	public var maxChest:Int = 60;
+	public var minWaist:Int = 8;
+	public var maxWaist:Int = 60;
+	public var minHips:Int = 10;
+	public var maxHips:Int = 70;
+	
+	//Blackjack
+	public var betAmount:Float = 0; //Blackjack bet amount
+	public var betTarget:String = ""; //Blackjack bet target
+	
+	//Random NPC gender control
+	public var allowBreasts:Bool = true;
+	public var allowVagina:Bool = true;
+	public var allowPenis:Bool = true;
+	public var allowBalls:Bool = true;
 	
 	public function new() {
 		super();
@@ -99,7 +117,8 @@ class GlobalVars extends Sprite {
 		welcomeMessage.push("\\[T]/");
 		welcomeMessage.push("Don't give up, skeleton!");
 		welcomeMessage.push("If only I could be as gloriously incandescent.");
-
+		welcomeMessage.push("With hookers!");
+		welcomeMessage.push("And blackjack!");
 		
 	}
 	
