@@ -7,7 +7,13 @@ Meta
     
    * Now has a maintainer listed for every version (fulfills requirements to indicate changes per license).
 
-   * now in markdown so it can be read more easily on github.
+   * Now in markdown so it can be read more easily on github.
+
+ * cleaned up todo
+
+   * Not much going on here. Just markdown with github-style checkboxes.
+
+   * Why wasn't he using github issues or something like that? Honestly!
 
 v0.52.1 (SillySnowFox and greysondn)
 ====================================
