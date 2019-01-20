@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "C:\\Users\\Dorian Greyson\\git\\Consume"
+		}
+	],
+	"settings": {
+		"haxe.diagnosticsPathFilter": "${workspaceRoot}/source",
+		"lime.defaultBuildConfiguration": "Debug",
+		"lime.defaultTarget": "Neko"
+	}
+}
