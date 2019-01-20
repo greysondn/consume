@@ -1,9 +1,17 @@
 package net.darkglass.consume;
 
+import openfl.Assets;
 import flixel.addons.ui.FlxUIState;
+
 import flixel.addons.ui.FlxUISprite;
+import flixel.addons.ui.FlxUIText;
+import flixel.FlxG;
+import flixel.math.FlxRandom;
+
 
 import net.darkglass.consume.Registry;
+
+import yaml.Yaml;
 
 class TitleState extends FlxUIState
 {
@@ -18,14 +26,30 @@ class TitleState extends FlxUIState
         // now ui
         
         // background
+        // ----------
         var titlebg:FlxUISprite = new FlxUISprite(0, 0);
         //                              AARRGGBB   For alpha, FF is opaque and 00 is transparent
         titlebg.makeGraphic(850, 640, 0xFFFFFFFF);
         this.add(titlebg);
 
         // Logo
+        // ----
         var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logoMale);
         this.add(logo);
+
+        // quote
+        // -----
+        // ... this is a bit of a doozy
+        // load quotes
+        // TODO: Make this capable of loading other locales
+        var _yamlFile:String = Assets.getText("assets/data/strings/en-US/welcome_messages.yaml");
+        var msgs:Array<String> = Yaml.parse(_yamlFile);
+        var rng:FlxRandom = new FlxRandom();
+        var rngRoll:Int = rng.int(0, (msgs.length - 1));
+        var quoteStr:String = msgs[rngRoll];
+        FlxG.log.add(quoteStr);
+        // TODO: That works, now add it to the state in its proper place
+
     }
 
     override public function update(elapsed:Float):Void
