@@ -15,7 +15,7 @@ import flash.errors.*;
 
 //Logo images
 @:bitmap("../img/logo_f.png") class LogoF extends BitmapData { }
-@:bitmap("../img/logo_m.png") class LogoM extends BitmapData { }
+// now in registry as logoMale -  @:bitmap("../img/logo_m.png") class LogoM extends BitmapData { }
 @:bitmap("../img/logo_m_notext.png") class LogoMNoText extends BitmapData { }
 @:bitmap("../img/logo_f_notext.png") class LogoFNoText extends BitmapData { }
 

@@ -24,6 +24,13 @@ class Registry
     {
         return Registry.instance;
     }
+    
+	/**
+	 * Path to male logo with text
+	 * 
+	 * TODO: Should this be broken out for localization?
+	 */
+	public var logoMale(default, null):String = "assets/images/logo_male.png";
 
     /**
      * The name of the save data file stored on the player's system. Flash will append '.sol' to the file when it saves.
