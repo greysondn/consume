@@ -5,6 +5,8 @@ import flixel.addons.ui.FlxUIState;
 
 import flixel.addons.ui.FlxUISprite;
 import flixel.addons.ui.FlxUIText;
+import flixel.addons.ui.FlxUIButton;
+import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
 import flixel.text.FlxText.FlxTextFormat;
@@ -73,9 +75,36 @@ class TitleState extends FlxUIState
         this.add(titleQuote);
         
         // menu space
-        // pos 190x354
-        // sz  469 x 252
-        // -------------
+        // pos 190x356
+        // sz  469 x 250
+        // height each: 42
+        // space between: 10
+        // New, Load, Options, Faq, Credits
+        // --------------------------------
+        var buttonSkin:String = "assets/images/gui/classic/nineslice/window.png";
+        var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
+
+        var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game");
+        // later on I will want to know it's
+        //                           normal      hover       click
+        newButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        this.add(newButton);
+
+        var loadButton:FlxUIButton = new FlxUIButton(190, 408, "Load");
+        loadButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        this.add(loadButton);
+
+        var optionsButton:FlxUIButton = new FlxUIButton(190, 460, "Options");
+        optionsButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        this.add(optionsButton);
+
+        var faqButton:FlxUIButton = new FlxUIButton(190, 512, "FAQ");
+        faqButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        this.add(faqButton);
+
+        var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits");
+        creditsButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        this.add(creditsButton);
     }
 
     override public function update(elapsed:Float):Void
