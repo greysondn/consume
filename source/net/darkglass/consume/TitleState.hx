@@ -7,7 +7,7 @@ import flixel.addons.ui.FlxUISprite;
 import flixel.addons.ui.FlxUIText;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
-
+import flixel.text.FlxText.FlxTextFormat;
 
 import net.darkglass.consume.Registry;
 
@@ -17,6 +17,9 @@ class TitleState extends FlxUIState
 {
     override public function create():Void
     {
+        // paint it black
+        var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
+
         // get this out of the way
         super.create();
 
@@ -56,6 +59,11 @@ class TitleState extends FlxUIState
         var rng:FlxRandom = new FlxRandom();
         var rngRoll:Int = rng.int(0, (msgs.length - 1));
         var quoteStr:String = msgs[rngRoll];
+
+        var titleQuote:FlxUIText = new FlxUIText(190, 318, 469, quoteStr);
+        titleQuote.alignment = "center";
+        titleQuote.addFormat(fntcol);
+        this.add(titleQuote);
         
         // menu space
         // pos 190x354
