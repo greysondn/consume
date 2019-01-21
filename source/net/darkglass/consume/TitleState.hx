@@ -37,7 +37,16 @@ class TitleState extends FlxUIState
         var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logoMale);
         this.add(logo);
 
+        // version
+        // pos 489x42
+        
+        // creators
+        // pos 190x293
+        // sz  469x25
+
         // quote
+        // pos 190x318
+        // sz  469x36
         // -----
         // ... this is a bit of a doozy
         // load quotes
@@ -47,9 +56,11 @@ class TitleState extends FlxUIState
         var rng:FlxRandom = new FlxRandom();
         var rngRoll:Int = rng.int(0, (msgs.length - 1));
         var quoteStr:String = msgs[rngRoll];
-        FlxG.log.add(quoteStr);
-        // TODO: That works, now add it to the state in its proper place
-
+        
+        // menu space
+        // pos 190x354
+        // sz  469 x 252
+        // -------------
     }
 
     override public function update(elapsed:Float):Void
