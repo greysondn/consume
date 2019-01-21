@@ -42,6 +42,7 @@ class TitleState extends FlxUIState
 
         // version
         // pos 489x42
+        // sz 162x97
         
         // creators
         // pos 190x293
