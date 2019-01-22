@@ -7,31 +7,21 @@ import flash.geom.Rectangle;
 import flixel.addons.ui.FlxUI;
 import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIButton;
+import flixel.addons.ui.FlxUIRadioGroup;
 import flixel.addons.ui.FlxUITabMenu;
 import flixel.addons.ui.FlxUIText;
+
 import flixel.text.FlxText.FlxTextFormat;
+
+import net.darkglass.consume.Registry;
 
 class OptionSubstate extends FlxUISubState
 {
+    private var registry:Registry = Registry.create();
+
     override public function create():Void 
     {
-        // buttons needed:
-        //
-        // title screen
-        // ------------
-        // Scat
-        // Arousal
-        // Debug
-        // Font Size+
-        // Font Size-
-        // Difficulty +
-        // Difficulty -
-        // NPC Gender
-        //
-        // ingame
-        // -----------------
-        // back to Main Menu
-        // Save
+        // comment was NSFW, scrubbed
         super.create();
 
         // why don't we organize these options? ... But
@@ -81,24 +71,55 @@ class OptionSubstate extends FlxUISubState
         // siz 770x396
 
         // game tab contents
+        // -----------------
         var tabGroupGame:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupGame.name = "tab_1";
 
+        // difficulty title
+        var difficultyTitleTxt:FlxUIText = new FlxUIText(8, 8, 770, "Difficulty", 32);
+        difficultyTitleTxt.alignment = "left";
+        tabGroupGame.add(difficultyTitleTxt);
+
+        // difficulty options radio group
+        var difficultyIDs:Array<String>   = ["diff_easy", "diff_normal", "diff_hard"];
+        var difficultyLabels:Array<String> = ["Easy", "Normal", "Hard"];
+        
+        
+
+        var difficultyRadio:FlxUIRadioGroup = new FlxUIRadioGroup(
+                                                    8,  // x pos
+                                                    40, // y pos
+                                                    difficultyIDs, // code ids
+                                                    difficultyLabels, // user labels
+                                                    this.onSelect_difficulty, // callback
+                                                    50, // vertical space between buttons
+                                                    100, // max width of a button
+                                                    40, // height of a button
+                                                    100 // max width of a label
+                                                        );
+        this.onCreate_initDifficulty(difficultyRadio);
+        tabGroupGame.add(difficultyRadio);
+
         tabMenu.addGroup(tabGroupGame);
 
+        titleTxt.addFormat(fntcol);
+        this.add(titleTxt);
         // contents tab contents
+        // ---------------------
         var tabGroupContents:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupContents.name = "tab_2";
 
         tabMenu.addGroup(tabGroupContents);
 
         // display tab contents
+        // --------------------
         var tabGroupDisplay:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupDisplay.name = "tab_3";
 
         tabMenu.addGroup(tabGroupDisplay);
 
         // debug tab contents
+        // ------------------
         var tabGroupDebug:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupDebug.name = "tab_4";
 
@@ -108,8 +129,54 @@ class OptionSubstate extends FlxUISubState
 		this.add(tabMenu);
     }
 
+    /**
+     * Just closes the substate.
+     */
     public function onClick_back():Void
     {
         this.close();
+    }
+
+    /**
+     * Sets selected id in difficulty radio buttons to match the difficulty set
+     * in registry. Intended for use when this substate is created.
+     * 
+     * @param difficultyRadio radio buttons from the difficulty settings.
+     */
+    public function onCreate_initDifficulty(difficultyRadio:FlxUIRadioGroup)
+    {
+        // TODO: Murder magic strings AND numbers.
+        switch (this.registry.difficulty)
+        {
+            case 0.5:
+                difficultyRadio.selectedId = "diff_easy";
+            case 1.0:
+                difficultyRadio.selectedId = "diff_normal";
+            case 1.5:
+                difficultyRadio.selectedId = "diff_hard";
+            default:
+                // throw error
+        }
+    }
+
+    /**
+     * adjusts difficulty value in game's registry
+     * 
+     * @param diff_id the id of the now selected difficulty
+     */
+    public function onSelect_difficulty(diff_id:String):Void
+    {
+        // TODO: Assasinate magic numbers.
+        switch (diff_id)
+        {
+            case "diff_easy":
+                this.registry.difficulty = 0.5;
+            case "diff_normal":
+                this.registry.difficulty = 1.0;
+            case "diff_hard":
+                this.registry.difficulty = 1.5;
+            default:
+                // throw an error
+        }
     }
 }

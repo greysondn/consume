@@ -47,7 +47,11 @@ class Registry
 	// public var allowScat:Bool = true;
 	// public var allowedGenders:Array<Dynamic> = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true], ["neuter", true]];
 	// public var currentRoomID:Int;
-	// public var difficulty:Float = 1;
+
+	/**
+	 * Combat Difficulty
+	 */
+	public var difficulty:Float = 1;
 
 	//This value tells the game if the save data is going to be missing values so we don't look for them. Saves with a buldNumer lower then 11 are not compatable with this game engine at all.
 	// public var buildNumber:Int = 20;

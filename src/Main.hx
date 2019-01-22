@@ -5721,17 +5721,8 @@ class Main {
 		clearAllEvents();
 		
 		message = "Debug Mode: " + globals.debugMode + "</p><p>Text Size: " + globals.textSize + "</p><p>Allow Scat: " + globals.allowScat + "</p><p>Allow Sex: " + globals.allowSex + "</p><p>Difficulty: ";
-		
-		switch(globals.difficulty) {
-		case 1:
-			message += "Normal";
-		case 0.5:
-			message += "Easy";
-		case 1.5:
-			message += "Hard";
-		}
-		if (globals.debugMode)
-			message += " " + globals.difficulty;
+
+		// difficulty load code was here - ported to new code
 		
 		outputText(message, "Options");
 		
@@ -5753,19 +5744,8 @@ class Main {
 			btns[3].setClickFunc(increaseFontSize);
 			btns[4].setButton("Font Size-");
 			btns[4].setClickFunc(decreaseFontSize);
-			btns[5].setButton("Difficulty-", "Reduce combat difficulty", 4);
-			if (globals.difficulty == 0.5) {
-				btns[5].disableButton();
-			} else {
-				btns[5].setClickFunc(optionsScreen);
-			}
-			btns[8].setButton("Difficulty+", "Increase combat difficulty", 5);
-			if (globals.difficulty == 1.5) {
-				btns[8].disableButton();
-			} else {
-				btns[8].setClickFunc(optionsScreen);
-			}
-			
+			// btns [5] code was here - reduce difficulty - ported to new code
+			// btns [8] code was here - increase difficulty - ported to new code
 			if (globals.backTo != "Welcome") {
 				btns[6].setButton("Main Menu", "Start a new game. Current game will be lost.", 0);
 				btns[6].setClickFunc(resetGame);
@@ -5816,25 +5796,9 @@ class Main {
 			}
 			optionsScreen();
 		case 4:
-			//Decrease Combat Difficulty
-			switch (globals.difficulty) {
-			case 1:
-				globals.difficulty = 0.5;
-			case 1.5:
-				globals.difficulty = 1;
-			default:
-				new AlertBox("Error, cannot decrease difficulty");
-			}
-			optionsScreen();
+			//Decrease Combat Difficulty - already migrated in port
 		case 5:
-			//Increase Combat Difficulty
-			switch (globals.difficulty) {
-			case 0.5:
-				globals.difficulty = 1;
-			case 1:
-				globals.difficulty = 1.5;
-			default:
-				new AlertBox("Error, cannot increase difficulty");
+			//Increase Combat Difficulty - already migrated in port
 			}
 			optionsScreen();
 		case 6:
