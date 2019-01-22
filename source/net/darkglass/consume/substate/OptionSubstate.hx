@@ -6,6 +6,8 @@ import flash.geom.Rectangle;
 
 import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIButton;
+import flixel.addons.ui.FlxUIText;
+import flixel.text.FlxText.FlxTextFormat;
 
 class OptionSubstate extends FlxUISubState
 {
@@ -49,6 +51,15 @@ class OptionSubstate extends FlxUISubState
         var backButton:FlxUIButton = new FlxUIButton(32, 566, "Back", onClick_back);
         backButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, false, -1);
         this.add(backButton);
+
+        // title
+        // loc  32x32
+        // size 786x87
+        var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
+        var titleTxt:FlxUIText = new FlxUIText(32, 32, 786, "Options", 87);
+        titleTxt.alignment = "center";
+        titleTxt.addFormat(fntcol);
+        this.add(titleTxt);
     }
 
     public function onClick_back():Void
