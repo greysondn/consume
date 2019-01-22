@@ -5690,6 +5690,10 @@ class Main {
 		}
 	}
 	
+	// ------------------------------------------------------------------------
+	// Start things to port to OptionSubstate.hx
+	// ------------------------------------------------------------------------
+
 	static function optionsScreen(?e:MouseEvent) {
 		var btnOptions:Object = Lib.current.getChildByName("Options Button");
 		var gameLogo:Object = Lib.current.getChildByName("gameLogo");
@@ -6090,6 +6094,10 @@ class Main {
 			outputText(message, "NPC Gender Controls");
 		}
 	}
+
+	// ------------------------------------------------------------------------
+	// End things to port to OptionSubstate.hx
+	// ------------------------------------------------------------------------
 	
 	static function increaseFontSize( e:MouseEvent ) {
 		var txtOutput:Object = Lib.current.getChildByName("Output Field");
