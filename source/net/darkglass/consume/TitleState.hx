@@ -13,6 +13,8 @@ import flixel.text.FlxText.FlxTextFormat;
 
 import net.darkglass.consume.Registry;
 
+import net.darkglass.consume.substate.OptionSubstate;
+
 import yaml.Yaml;
 
 class TitleState extends FlxUIState
@@ -81,29 +83,34 @@ class TitleState extends FlxUIState
         // space between: 10
         // New, Load, Options, Faq, Credits
         // --------------------------------
-        var buttonSkin:String = "assets/images/gui/classic/nineslice/window.png";
+        var buttonNormalImg:String    = "assets/images/gui/classic/nineslice/window.png";
+        var buttonHoverImg:String     = "assets/images/gui/classic/nineslice/window-hover.png";
+        var buttonClickImg:String     = "assets/images/gui/classic/nineslice/window-click.png";
+        var buttonDisabledImg:String  = "assets/images/gui/classic/nineslice/window-disabled.png";
+
+        var buttonEnabledGFX:Array<String>  = [buttonNormalImg, buttonHoverImg, buttonClickImg];
+        var buttonDisabledGFX:Array<String> = [buttonDisabledImg, buttonDisabledImg, buttonDisabledImg];
+
         var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
 
         var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game");
-        // later on I will want to know it's
-        //                           normal      hover       click
-        newButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        newButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(newButton);
 
         var loadButton:FlxUIButton = new FlxUIButton(190, 408, "Load");
-        loadButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        loadButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(loadButton);
 
         var optionsButton:FlxUIButton = new FlxUIButton(190, 460, "Options");
-        optionsButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        optionsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, false, -1);
         this.add(optionsButton);
 
         var faqButton:FlxUIButton = new FlxUIButton(190, 512, "FAQ");
-        faqButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        faqButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(faqButton);
 
         var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits");
-        creditsButton.loadGraphicSlice9([buttonSkin, buttonSkin, buttonSkin], 469, 42, slicecoords, false, -1);
+        creditsButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(creditsButton);
     }
 
