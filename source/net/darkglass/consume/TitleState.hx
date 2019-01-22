@@ -121,7 +121,7 @@ class TitleState extends FlxUIState
 
     public function onClick_options():Void
     {
-        var optionSubstate:OptionSubstate = new OptionSubstate(0x99000000);
+        var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
 		openSubState(optionSubstate);
     }
 }
