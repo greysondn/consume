@@ -101,7 +101,7 @@ class TitleState extends FlxUIState
         loadButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(loadButton);
 
-        var optionsButton:FlxUIButton = new FlxUIButton(190, 460, "Options");
+        var optionsButton:FlxUIButton = new FlxUIButton(190, 460, "Options", onClick_options);
         optionsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, false, -1);
         this.add(optionsButton);
 
@@ -117,5 +117,10 @@ class TitleState extends FlxUIState
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
+    }
+
+    public function onClick_options():Void
+    {
+        FlxG.log.add("Options! OH NO!");
     }
 }
