@@ -4,8 +4,10 @@ import flixel.addons.ui.FlxUISubState;
 
 import flash.geom.Rectangle;
 
+import flixel.addons.ui.FlxUI;
 import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIButton;
+import flixel.addons.ui.FlxUITabMenu;
 import flixel.addons.ui.FlxUIText;
 import flixel.text.FlxText.FlxTextFormat;
 
@@ -60,6 +62,50 @@ class OptionSubstate extends FlxUISubState
         titleTxt.alignment = "center";
         titleTxt.addFormat(fntcol);
         this.add(titleTxt);
+
+        // basic tab menu (holy crap!)
+        var tabs:Array<{name:String, label:String}> =   [
+                                            { name:"tab_1", label:"Game"},
+                                            { name:"tab_2", label:"Contents"},
+                                            { name:"tab_3", label:"Display"},
+                                            { name:"tab_4", label:"Debug"}
+                                                        ];
+
+        var tabMenu = new FlxUITabMenu(null, tabs, true);
+        tabMenu.x = 32;
+        tabMenu.y = 127;
+        tabMenu.resize(786, 431);
+        
+        // about tab contents
+        // pos 40x154
+        // siz 770x396
+
+        // game tab contents
+        var tabGroupGame:FlxUI = new FlxUI(null, tabMenu, null);
+        tabGroupGame.name = "tab_1";
+
+        tabMenu.addGroup(tabGroupGame);
+
+        // contents tab contents
+        var tabGroupContents:FlxUI = new FlxUI(null, tabMenu, null);
+        tabGroupContents.name = "tab_2";
+
+        tabMenu.addGroup(tabGroupContents);
+
+        // display tab contents
+        var tabGroupDisplay:FlxUI = new FlxUI(null, tabMenu, null);
+        tabGroupDisplay.name = "tab_3";
+
+        tabMenu.addGroup(tabGroupDisplay);
+
+        // debug tab contents
+        var tabGroupDebug:FlxUI = new FlxUI(null, tabMenu, null);
+        tabGroupDebug.name = "tab_4";
+
+        tabMenu.addGroup(tabGroupDebug);
+
+        // remember when we started the tab menu? Now we can add it to the state.
+		this.add(tabMenu);
     }
 
     public function onClick_back():Void
