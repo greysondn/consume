@@ -121,6 +121,7 @@ class TitleState extends FlxUIState
 
     public function onClick_options():Void
     {
-        FlxG.log.add("Options! OH NO!");
+        var optionSubstate:OptionSubstate = new OptionSubstate();
+		openSubState(optionSubstate);
     }
 }
