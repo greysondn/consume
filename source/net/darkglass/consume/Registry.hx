@@ -51,12 +51,22 @@ class Registry
 	public var arousalEnabled:Bool = true;
 
 	/**
+	 * Whether or not user has scat enabled
+	 */
+	public var scatEnabled:Bool = true;
+
+	/**
 	 * Deprecated - Whether or not sex is allowed to happen. Use arousalEnabled instead!
 	 */
 	public var allowSex(get, set):Bool;
 
+
+	 /**
+	  * Deprecated - Whether or not scat is allowed to happen. Use scatEnabled instead!
+	  */
+	 public var allowScat(get, set):Bool;
+
 	// public var textSize:Int = 17;
-	// public var allowScat:Bool = true;
 	// public var allowedGenders:Array<Dynamic> = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true], ["neuter", true]];
 	// public var currentRoomID:Int;
 
@@ -128,4 +138,16 @@ class Registry
 		FlxG.log.warn("Call made to get_allowSex!");
 		return this.arousalEnabled;
 	}
+
+    function set_allowScat(newState:Bool)
+    {
+        FlxG.log.warn("Call made to set_allowScat!");
+        return this.scatEnabled = newState;
+    }
+
+    function get_allowScat()
+    {
+        FlxG.log.warn("Call made to get_allowScat!");
+        return this.scatEnabled;
+    }
 }

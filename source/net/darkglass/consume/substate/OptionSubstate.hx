@@ -30,7 +30,6 @@ class OptionSubstate extends FlxUISubState
         // title screen
         // ------------
         // Scat
-        // Arousal
         // Debug
         // Font Size+
         // Font Size-
@@ -130,6 +129,15 @@ class OptionSubstate extends FlxUISubState
         this.onCreate_initArousal(arousalTickbox);
         tabGroupContents.add(arousalTickbox);
 
+        // scat, with tickbox etc
+        var scatDescriptionText:String = "Enables / Disables scat. Controls if your character defecates or not.";
+        var scatDescription:FlxUIText  = new FlxUIText(8, 132, 372, scatDescriptionText, 12);
+        tabGroupContents.add(scatDescription);
+
+        var scatTickbox:FlxUICheckBox = new FlxUICheckBox(406, 132, null, null, "Scat", 100, null, this.onToggle_scat);
+        this.onCreate_initScat(scatTickbox);
+        tabGroupContents.add(scatTickbox);
+
         tabMenu.addGroup(tabGroupContents);
 
         // display tab contents
@@ -183,7 +191,11 @@ class OptionSubstate extends FlxUISubState
     public function onCreate_initArousal(arousalTicker:FlxUICheckBox):Void
     {
         arousalTicker.checked          = registry.arousalEnabled;
-        // arousalTicker.checkbox_dirty   = true;
+    }
+
+     public function onCreate_initScat(scatTickbox:FlxUICheckBox):Void
+    {
+        scatTickbox.checked          = registry.scatEnabled;
     }
 
     /**
@@ -213,5 +225,13 @@ class OptionSubstate extends FlxUISubState
     public function onToggle_arousal():Void
     {
         registry.arousalEnabled = !registry.arousalEnabled;
+    }
+
+    /**
+     * Performs relevant toggle on scat in game registry.
+     */
+    public function onToggle_scat():Void
+    {
+        registry.scatEnabled = !registry.scatEnabled;
     }
 }

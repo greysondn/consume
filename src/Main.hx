@@ -5734,7 +5734,7 @@ class Main {
 		
 		switch (clicked) {
 		case 0:
-			btns[0].setButton("Scat", "Allow/disallow scat. Controls if your character poops or not.", 1);
+			// btns[0] code was here = toggle scat - ported to new code
 			btns[0].setClickFunc(optionsScreen);
 			// btns[1] code was here - toggle arousal - ported to new code
 			btns[2].setButton("Debug", "Toggle debug mode.", 2);
@@ -5765,15 +5765,7 @@ class Main {
 					new AlertBox("Bad options screen backTo: " + globals.backTo);
 			}
 		case 1:
-			//Toggle scat
-			if (globals.allowScat) {
-				globals.allowScat = false;
-				txtBowels.visible = false;
-			} else {
-				globals.allowScat = true;
-				txtBowels.visible = true;
-			}
-			optionsScreen();
+			//Toggle scat - already migrated to new code
 		case 2:
 			//Toggle debug
 			if ( globals.debugMode ) {
@@ -5791,8 +5783,6 @@ class Main {
 			//Decrease Combat Difficulty - already migrated in port
 		case 5:
 			//Increase Combat Difficulty - already migrated in port
-			}
-			optionsScreen();
 		case 6:
 			//Gender options
 			switch (action) {
