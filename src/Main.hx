@@ -5719,18 +5719,10 @@ class Main {
 		}
 		
 		clearAllEvents();
-		
-		message = "Debug Mode: " + globals.debugMode + "</p><p>Text Size: " + globals.textSize + "</p><p>Allow Scat: " + globals.allowScat + "</p><p>Allow Sex: " + globals.allowSex + "</p><p>Difficulty: ";
 
 		// difficulty load code was here - ported to new code
 		
 		outputText(message, "Options");
-		
-		btnOptions.visible = false;
-		btnDesc.visible = false;
-		txtTime.visible = false;
-		txtPublic.visible = false;
-		newRoom = false;
 		
 		switch (clicked) {
 		case 0:
@@ -5739,10 +5731,7 @@ class Main {
 			// btns[1] code was here - toggle arousal - ported to new code
 			btns[2].setButton("Debug", "Toggle debug mode.", 2);
 			btns[2].setClickFunc(optionsScreen);
-			btns[3].setButton("Font Size+");
-			btns[3].setClickFunc(increaseFontSize);
-			btns[4].setButton("Font Size-");
-			btns[4].setClickFunc(decreaseFontSize);
+			// btns [3] and [4] code was here - font size - placeholders in new code
 			// btns [5] code was here - reduce difficulty - ported to new code
 			// btns [8] code was here - increase difficulty - ported to new code
 			if (globals.backTo != "Welcome") {
@@ -5778,7 +5767,6 @@ class Main {
 			optionsScreen();
 		case 3:
 			// Toggle sex - already migrated to new code
-			optionsScreen();
 		case 4:
 			//Decrease Combat Difficulty - already migrated in port
 		case 5:

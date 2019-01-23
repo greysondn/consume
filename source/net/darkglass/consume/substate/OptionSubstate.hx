@@ -29,10 +29,7 @@ class OptionSubstate extends FlxUISubState
         //
         // title screen
         // ------------
-        // Scat
         // Debug
-        // Font Size+
-        // Font Size-
         // NPC Gender
         //
         // ingame
@@ -143,7 +140,20 @@ class OptionSubstate extends FlxUISubState
         // display tab contents
         // --------------------
         var tabGroupDisplay:FlxUI = new FlxUI(null, tabMenu, null);
+
         tabGroupDisplay.name = "tab_3";
+
+        // just a note for now
+        // 8x8
+        // width 770
+        var displayDescriptionText:String = "So, I'm quite sorry about this, because you're probably in here for font size.\n" +
+                                            "\n" +
+                                            "Long story short, due to some issues, this isn't possible this instant. Rather than spend 20 hours on a workaround, I decided to just write what I could so this port would be released.\n" +
+                                            "\n" +
+                                            "Look for this feature to be returned in a later version, as soon as it's possible.";
+
+        var displayDescription:FlxUIText = new FlxUIText(8, 8, 770, displayDescriptionText, 12);
+        tabGroupDisplay.add(displayDescription);
 
         tabMenu.addGroup(tabGroupDisplay);
 
