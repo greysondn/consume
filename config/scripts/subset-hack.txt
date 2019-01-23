@@ -1,0 +1,25 @@
+Be aware that although I've labelled the sections
+in this, it's done with characters I want in the
+subset anyway. It may not be wise to do so in general
+as this entire file's contents is in the subset.
+
+Numbers:
+1234567890
+
+Text:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+
+Language symbols:
+.?!;:,`'"()[]@&
+
+Mathematical symbols:
++-/\*()[]{}<>=
+
+All the other symbols:
+~@#$%^&*_|
+
+I'm sure eventually we'll need international
+diacriticals in here. Don't be afraid to
+request them if you're writing something for
+the game and need them.
