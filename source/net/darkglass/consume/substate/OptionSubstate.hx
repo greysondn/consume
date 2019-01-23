@@ -84,11 +84,17 @@ class OptionSubstate extends FlxUISubState
         var difficultyIDs:Array<String>   = ["diff_easy", "diff_normal", "diff_hard"];
         var difficultyLabels:Array<String> = ["Easy", "Normal", "Hard"];
         
-        
+
+        var difficultyDescriptionText:String = "Meant to adjust the difficulty of combat\n" +
+                                               "\n" +
+                                               "I don't think this is being used as of yet.";
+
+        var difficultyDescription:FlxUIText = new FlxUIText(8, 68, 374, difficultyDescriptionText, 12);
+        tabGroupGame.add(difficultyDescription);
 
         var difficultyRadio:FlxUIRadioGroup = new FlxUIRadioGroup(
-                                                    8,  // x pos
-                                                    40, // y pos
+                                                    406,  // x pos
+                                                    68, // y pos
                                                     difficultyIDs, // code ids
                                                     difficultyLabels, // user labels
                                                     this.onSelect_difficulty, // callback
@@ -101,9 +107,7 @@ class OptionSubstate extends FlxUISubState
         tabGroupGame.add(difficultyRadio);
 
         tabMenu.addGroup(tabGroupGame);
-
-        titleTxt.addFormat(fntcol);
-        this.add(titleTxt);
+        
         // contents tab contents
         // ---------------------
         var tabGroupContents:FlxUI = new FlxUI(null, tabMenu, null);
