@@ -1,5 +1,7 @@
 package net.darkglass.consume;
 
+import flixel.FlxG;
+
 class Registry
 {
     /**
@@ -42,7 +44,17 @@ class Registry
 
 	//The following values are saved
 	// public var debugMode:Bool = false;
-	// public var allowSex:Bool = true;
+
+	/**
+	 * Whether or not user has arousal enabled.
+	 */
+	public var arousalEnabled:Bool = true;
+
+	/**
+	 * Deprecated - Whether or not sex is allowed to happen. Use arousalEnabled instead!
+	 */
+	public var allowSex(get, set):Bool;
+
 	// public var textSize:Int = 17;
 	// public var allowScat:Bool = true;
 	// public var allowedGenders:Array<Dynamic> = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true], ["neuter", true]];
@@ -104,4 +116,16 @@ class Registry
 	// public var allowVagina:Bool = true;
 	// public var allowPenis:Bool = true;
 	// public var allowBalls:Bool = true;
+
+	function set_allowSex(newState:Bool)
+	{
+		FlxG.log.warn("Call made to set_allowSex!");
+		return this.arousalEnabled = newState;
+	}
+
+	function get_allowSex()
+	{
+		FlxG.log.warn("Call made to get_allowSex!");
+		return this.arousalEnabled;
+	}
 }

@@ -5736,8 +5736,7 @@ class Main {
 		case 0:
 			btns[0].setButton("Scat", "Allow/disallow scat. Controls if your character poops or not.", 1);
 			btns[0].setClickFunc(optionsScreen);
-			btns[1].setButton("Arousal", "Allow/disallow sex. Controls if your character becomes aroused.", 3);
-			btns[1].setClickFunc(optionsScreen);
+			// btns[1] code was here - toggle arousal - ported to new code
 			btns[2].setButton("Debug", "Toggle debug mode.", 2);
 			btns[2].setClickFunc(optionsScreen);
 			btns[3].setButton("Font Size+");
@@ -5786,14 +5785,7 @@ class Main {
 			}
 			optionsScreen();
 		case 3:
-			//Toggle sex
-			if (globals.allowSex) {
-				globals.allowSex = false;
-				txtArousal.visible = false;
-			} else {
-				globals.allowSex = true;
-				txtArousal.visible = true;
-			}
+			// Toggle sex - already migrated to new code
 			optionsScreen();
 		case 4:
 			//Decrease Combat Difficulty - already migrated in port

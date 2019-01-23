@@ -2,11 +2,14 @@ package net.darkglass.consume.substate;
 
 import flixel.addons.ui.FlxUISubState;
 
+import flixel.FlxG;
+
 import flash.geom.Rectangle;
 
 import flixel.addons.ui.FlxUI;
 import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIButton;
+import flixel.addons.ui.FlxUICheckBox;
 import flixel.addons.ui.FlxUIRadioGroup;
 import flixel.addons.ui.FlxUITabMenu;
 import flixel.addons.ui.FlxUIText;
@@ -18,10 +21,25 @@ import net.darkglass.consume.Registry;
 class OptionSubstate extends FlxUISubState
 {
     private var registry:Registry = Registry.create();
+    private var arousalTickbox:FlxUICheckBox; // Todo: tighten scope
 
     override public function create():Void 
     {
-        // comment was NSFW, scrubbed
+        // buttons needed:
+        //
+        // title screen
+        // ------------
+        // Scat
+        // Arousal
+        // Debug
+        // Font Size+
+        // Font Size-
+        // NPC Gender
+        //
+        // ingame
+        // -----------------
+        // back to Main Menu
+        // Save
         super.create();
 
         // why don't we organize these options? ... But
@@ -92,17 +110,7 @@ class OptionSubstate extends FlxUISubState
         var difficultyDescription:FlxUIText = new FlxUIText(8, 68, 374, difficultyDescriptionText, 12);
         tabGroupGame.add(difficultyDescription);
 
-        var difficultyRadio:FlxUIRadioGroup = new FlxUIRadioGroup(
-                                                    406,  // x pos
-                                                    68, // y pos
-                                                    difficultyIDs, // code ids
-                                                    difficultyLabels, // user labels
-                                                    this.onSelect_difficulty, // callback
-                                                    50, // vertical space between buttons
-                                                    100, // max width of a button
-                                                    40, // height of a button
-                                                    100 // max width of a label
-                                                        );
+        var difficultyRadio:FlxUIRadioGroup = new FlxUIRadioGroup(406, 68, difficultyIDs, difficultyLabels, this.onSelect_difficulty);
         this.onCreate_initDifficulty(difficultyRadio);
         tabGroupGame.add(difficultyRadio);
 
@@ -112,6 +120,15 @@ class OptionSubstate extends FlxUISubState
         // ---------------------
         var tabGroupContents:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupContents.name = "tab_2";
+
+        // arousal, with tickbox etc
+        var arousalDescriptionText:String = "Enables / Disables sex. Controls if your character becomes aroused.";
+        var arousalDescription:FlxUIText = new FlxUIText(8, 68, 374, arousalDescriptionText, 12);
+        tabGroupContents.add(arousalDescription);
+
+        arousalTickbox = new FlxUICheckBox(406, 68, null, null, "Arousal", 100, null, this.onToggle_arousal);
+        this.onCreate_initArousal(arousalTickbox);
+        tabGroupContents.add(arousalTickbox);
 
         tabMenu.addGroup(tabGroupContents);
 
@@ -163,6 +180,12 @@ class OptionSubstate extends FlxUISubState
         }
     }
 
+    public function onCreate_initArousal(arousalTicker:FlxUICheckBox):Void
+    {
+        arousalTicker.checked          = registry.arousalEnabled;
+        // arousalTicker.checkbox_dirty   = true;
+    }
+
     /**
      * adjusts difficulty value in game's registry
      * 
@@ -182,5 +205,13 @@ class OptionSubstate extends FlxUISubState
             default:
                 // throw an error
         }
+    }
+
+    /**
+     * Performs relevant toggle on arousal in game registry.
+     */
+    public function onToggle_arousal():Void
+    {
+        registry.arousalEnabled = !registry.arousalEnabled;
     }
 }
