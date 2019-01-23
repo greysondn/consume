@@ -10,6 +10,8 @@ import flixel.addons.ui.FlxUI;
 import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.FlxUICheckBox;
+import flixel.addons.ui.FlxUILine;
+import flixel.addons.ui.FlxUILine.LineAxis;
 import flixel.addons.ui.FlxUIRadioGroup;
 import flixel.addons.ui.FlxUITabMenu;
 import flixel.addons.ui.FlxUIText;
@@ -90,7 +92,7 @@ class OptionSubstate extends FlxUISubState
         tabGroupGame.name = "tab_1";
 
         // difficulty title
-        var difficultyTitleTxt:FlxUIText = new FlxUIText(8, 8, 770, "Difficulty", 32);
+        var difficultyTitleTxt:FlxUIText = new FlxUIText(8, 16, 770, "Difficulty", 32);
         difficultyTitleTxt.alignment = "left";
         tabGroupGame.add(difficultyTitleTxt);
 
@@ -103,10 +105,10 @@ class OptionSubstate extends FlxUISubState
                                                "\n" +
                                                "I don't think this is being used as of yet.";
 
-        var difficultyDescription:FlxUIText = new FlxUIText(8, 68, 374, difficultyDescriptionText, 12);
+        var difficultyDescription:FlxUIText = new FlxUIText(8, 60, 374, difficultyDescriptionText, 12);
         tabGroupGame.add(difficultyDescription);
 
-        var difficultyRadio:FlxUIRadioGroup = new FlxUIRadioGroup(406, 68, difficultyIDs, difficultyLabels, this.onSelect_difficulty);
+        var difficultyRadio:FlxUIRadioGroup = new FlxUIRadioGroup(406, 60, difficultyIDs, difficultyLabels, this.onSelect_difficulty);
         this.onCreate_initDifficulty(difficultyRadio);
         tabGroupGame.add(difficultyRadio);
 
@@ -116,22 +118,31 @@ class OptionSubstate extends FlxUISubState
         // ---------------------
         var tabGroupContents:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupContents.name = "tab_2";
+        
+        // general section title
+        var contentsGeneralTitleTxt:FlxUIText = new FlxUIText(8, 16, 770, "General", 32);
+        contentsGeneralTitleTxt.alignment = "left";
+        tabGroupContents.add(contentsGeneralTitleTxt);
 
         // arousal, with tickbox etc
         var arousalDescriptionText:String = "Enables / Disables sex. Controls if your character becomes aroused.";
-        var arousalDescription:FlxUIText = new FlxUIText(8, 68, 374, arousalDescriptionText, 12);
+        var arousalDescription:FlxUIText = new FlxUIText(8, 60, 374, arousalDescriptionText, 12);
         tabGroupContents.add(arousalDescription);
 
-        arousalTickbox = new FlxUICheckBox(406, 68, null, null, "Arousal", 100, null, this.onToggle_arousal);
+        arousalTickbox = new FlxUICheckBox(406, 60, null, null, "Arousal", 100, null, this.onToggle_arousal);
         this.onCreate_initArousal(arousalTickbox);
         tabGroupContents.add(arousalTickbox);
 
+        // divider
+        var contentsDivider01:FlxUILine = new FlxUILine(4, 90, LineAxis.HORIZONTAL, 778, 0.5, 0x80333333);
+        tabGroupContents.add(contentsDivider01);
+
         // scat, with tickbox etc
         var scatDescriptionText:String = "Enables / Disables scat. Controls if your character defecates or not.";
-        var scatDescription:FlxUIText  = new FlxUIText(8, 132, 372, scatDescriptionText, 12);
+        var scatDescription:FlxUIText  = new FlxUIText(8, 94, 372, scatDescriptionText, 12);
         tabGroupContents.add(scatDescription);
 
-        var scatTickbox:FlxUICheckBox = new FlxUICheckBox(406, 132, null, null, "Scat", 100, null, this.onToggle_scat);
+        var scatTickbox:FlxUICheckBox = new FlxUICheckBox(406, 94, null, null, "Scat", 100, null, this.onToggle_scat);
         this.onCreate_initScat(scatTickbox);
         tabGroupContents.add(scatTickbox);
 
