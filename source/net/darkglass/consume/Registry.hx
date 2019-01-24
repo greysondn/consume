@@ -60,14 +60,12 @@ class Registry
 	 */
 	public var allowSex(get, set):Bool;
 
-
 	 /**
 	  * Deprecated - Whether or not scat is allowed to happen. Use scatEnabled instead!
 	  */
 	 public var allowScat(get, set):Bool;
 
 	// public var textSize:Int = 17;
-	// public var allowedGenders:Array<Dynamic> = [["male", true], ["female", true], ["herm", true], ["dickgirl", true], ["doll", true], ["cuntboy", true], ["neuter", true]];
 	// public var currentRoomID:Int;
 
 	/**
@@ -121,11 +119,151 @@ class Registry
 	// public var betAmount:Float = 0; //Blackjack bet amount
 	// public var betTarget:String = ""; //Blackjack bet target
 	
-	//Random NPC gender control
-	// public var allowBreasts:Bool = true;
-	// public var allowVagina:Bool = true;
-	// public var allowPenis:Bool = true;
-	// public var allowBalls:Bool = true;
+    // -------------------------------------------------------------------------
+    // Random NPC properties
+    // -------------------------------------------------------------------------
+
+    /**
+     * deprecated! use breastsEnabled instead!
+     */
+    public var allowBreasts(get, set):Bool;
+
+    /**
+     * Whether or not random NPCs can have breasts
+     */
+    public var breastsEnabled:Bool = true;
+
+    function set_allowBreasts(newState:Bool)
+    {
+        FlxG.log.warn("Call made to set_allowBreasts!");
+        return this.breastsEnabled = newState;
+    }
+
+    function get_allowBreasts()
+    {
+        FlxG.log.warn("Call made to get_allowBreasts!");
+        return this.breastsEnabled;
+    }
+
+    /**
+     * Deprecated! Use vaginaEnabled instead!
+     */
+    public var allowVagina(get, set):Bool;
+
+    /**
+     * Whether or not random NPCs can have a vagina.
+     */
+    public var vaginaEnabled:Bool = true;
+
+    function set_allowVagina(newState:Bool)
+    {
+        FlxG.log.warn("Call made to set_allowVagina!");
+        return this.vaginaEnabled = newState;
+    }
+
+    function get_allowVagina()
+    {
+        FlxG.log.warn("Call made to get_allowVagina!");
+        return this.vaginaEnabled;
+    }
+
+    /**
+     * Deprecated! Use penisEnabled instead!
+     */
+    public var allowPenis(get, set):Bool;
+
+    /**
+     * Whether or not random NPCs can have a penis. 
+     */
+    public var penisEnabled:Bool = true;
+
+    function set_allowPenis(newState:Bool)
+    {
+        FlxG.log.warn("Call made to set_allowPenis!");
+        return this.penisEnabled = newState;
+    }
+
+    function get_allowPenis()
+    {
+        FlxG.log.warn("Call made to get_allowPenis!");
+        return this.penisEnabled;
+    }
+
+    /**
+     * Deprecated! Use "ballsEnabled" instead!
+     */
+    public var allowBalls(get, set):Bool;
+
+    /**
+     * Whether or not random NPCs can have testicles.
+     */
+    public var ballsEnabled:Bool = true;
+
+    function set_allowBalls(newState:Bool)
+    {
+        FlxG.log.warn("Call made to set_allowBalls!");
+        return this.ballsEnabled = newState;
+    }
+
+    function get_allowBalls()
+    {
+        FlxG.log.warn("Call made to get_allowBalls!");
+        return this.ballsEnabled;
+    }
+
+    /**
+     * Whether or not random NPCs can be cuntboys.
+     * 
+     * Originally globals.allowedGenders[5][1]
+     */
+    public var cuntboyEnabled:Bool = true;
+
+    /**
+     * Whether or not random NPCs can be dickgirls.
+     * 
+     * Originally globals.allowedGenders[3][1]
+     */
+    public var dickgirlEnabled:Bool = true;
+
+    
+    /**
+     * Whether or not random NPCs can be dolls.
+     * 
+     * Originally globals.allowedGenders[4][1]
+     */
+    public var dollEnabled:Bool = true;
+
+    /**
+     * Whether or not random NPCs can be females.
+     * 
+     * Originally globals.allowedGenders[0][1]
+     */
+    public var femaleEnabled:Bool = true;
+
+    /**
+     * Whether or not random NPCs can be herms.
+     * 
+     * Originally globals.allowedGenders[2][1]
+     */
+    public var hermEnabled:Bool = true;
+
+    /**
+     * Whether or not random NPCs can be males.
+     * 
+     * Originally globals.allowedGenders[1][1]
+     */
+    public var maleEnabled:Bool = true;
+
+    /**
+     * Whether or not random NPCs can be neuters.
+     * 
+     * Originally globals.allowedGenders[6][1]
+     */
+    public var neuterEnabled:Bool = true;
+
+    // -------------------------------------------------------------------------
+    // Not NPC stuff
+    // -------------------------------------------------------------------------
 
 	function set_allowSex(newState:Bool)
 	{
