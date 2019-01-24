@@ -197,7 +197,6 @@ class OptionSubstate extends FlxUISubState
         tabGroupContents.add(ballsTickbox);
 
         // sex column
-        // second column 502 x pos
 
         // cuntboy
         this.cuntboyTickbox = new FlxUICheckBox(502, 182, null, null, "Cuntboy", 100, null, this.onToggle_cuntboy);
@@ -234,23 +233,6 @@ class OptionSubstate extends FlxUISubState
         this.onCreate_initNeuter(neuterTickbox);
         tabGroupContents.add(neuterTickbox);
 
-        // females      --> globals.allowedGenders[0][1]
-        //      iff breasts + vagina
-        // males        --> globals.allowedGenders[1][1]
-        //      iff penis
-        // herms        --> globals.allowedGenders[2][1]
-        //      iff vagina + penis
-        // dickgirl     --> globals.allowedGenders[3][1]
-        //      iff breasts _ penis
-        // doll         --> globals.allowedGenders[4][1]
-        //      apparently, by "doll", he meant "breasts but no penis or vagina"
-        //      iff breasts
-        // cuntboy      --> globals.allowedGenders[5][1]
-        //      iff vagina
-        // neuters      --> globals.allowedGenders[6][1]
-        //      iff (true == true)
-        //
-        // these two groups are both toggleable
         tabMenu.addGroup(tabGroupContents);
 
         // display tab contents
