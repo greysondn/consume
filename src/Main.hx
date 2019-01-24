@@ -5695,39 +5695,10 @@ class Main {
 	// ------------------------------------------------------------------------
 
 	static function optionsScreen(?e:MouseEvent) {
-		var btnOptions:Object = Lib.current.getChildByName("Options Button");
-		var gameLogo:Object = Lib.current.getChildByName("gameLogo");
-		var btnDesc:Object = Lib.current.getChildByName("Desc Button");
-		var txtTime:Object = Lib.current.getChildByName("Time");
-		var txtBowels:Object = Lib.current.getChildByName("Bowels");
-		var txtDebug:Object = Lib.current.getChildByName("Debug");
-		var txtArousal:Object = Lib.current.getChildByName("Arousal");
-		var message:String = "";
-		
-		if (gameLogo != null)
-			Lib.current.removeChild(gameLogo);
-		
-		var clicked:Int = 0;
-		var action:String = "";
-		
-		var tempClicked:String = "";
-		
-		if (e != null) {
-			tempClicked = e.currentTarget.btnID + "|null";
-			clicked = Std.parseInt(tempClicked.split("|")[0]);
-			action = tempClicked.split("|")[1];
-		}
-		
-		clearAllEvents();
 
-		// difficulty load code was here - ported to new code
-		
-		outputText(message, "Options");
-		
 		switch (clicked) {
 		case 0:
 			// btns[0] code was here = toggle scat - ported to new code
-			btns[0].setClickFunc(optionsScreen);
 			// btns[1] code was here - toggle arousal - ported to new code
 			btns[2].setButton("Debug", "Toggle debug mode.", 2);
 			btns[2].setClickFunc(optionsScreen);
@@ -5738,7 +5709,7 @@ class Main {
 				btns[6].setButton("Main Menu", "Start a new game. Current game will be lost.", 0);
 				btns[6].setClickFunc(resetGame);
 			}
-			btns[7].setButton("NPC Gender", "Limit NPC Gender options", 6, optionsScreen);
+			// btns[7] code was here - NPC gender stuff - ported to new code already
 			
 			btns[11].setButton("Back");
 			
