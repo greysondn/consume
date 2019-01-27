@@ -260,6 +260,16 @@ class OptionSubstate extends FlxUISubState
         var tabGroupDebug:FlxUI = new FlxUI(null, tabMenu, null);
         tabGroupDebug.name = "tab_4";
 
+        var hackTestTextTxt:String = "1234567890123456789012345678901234567890\n" +
+                                     "The plan, you see, is to put tests in this tab\n" +
+                                     "|\n" +
+                                     "\\|\n" +
+                                     "Okay.. I lied.";
+
+        var hackTestText:FlxUIText = new FlxUIText(8, 8, 500, hackTestTextTxt);
+        hackTestText.setFormat("assets/fonts/hack.ttf", 16);
+        tabGroupDebug.add(hackTestText);
+
         tabMenu.addGroup(tabGroupDebug);
 
         // remember when we started the tab menu? Now we can add it to the state.
@@ -679,6 +689,4 @@ class OptionSubstate extends FlxUISubState
             registry.neuterEnabled     = true;
         }
     }
-
-
 }
