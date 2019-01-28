@@ -98,7 +98,7 @@
   name:  "Main Street"
   wrongFile:
     exits:
-      n: 
+      n: 21
     specials: ""
     npcs:     ""
   flags:
@@ -130,7 +130,7 @@
   name:  "South Main Street"
   wrongFile:
     exits:
-      n: 
+      n: 7
     specials: ""
     npcs:     ""
   flags:
@@ -178,7 +178,7 @@
   name:  "Consume - Dance Floor"
   wrongFile:
     exits:
-      n: 
+      n: 16
     specials: ""
     npcs:     ""
   flags:
@@ -194,7 +194,7 @@
   name:  "Consume - Back Hall"
   wrongFile:
     exits:
-      n: 
+      n: 15
     specials: ""
     npcs:     ""
   flags:
@@ -242,7 +242,7 @@
   name:  "Consume - Stage"
   wrongFile:
     exits:
-      n: 
+      n: 17
     specials: ""
     npcs:     ""
   flags:
@@ -290,7 +290,7 @@
   name:  "North Main Street"
   wrongFile:
     exits:
-      n: 
+      n: 23
     specials: ""
     npcs:     ""
   flags:
@@ -402,7 +402,7 @@
   name:  "Gym - Staff Room"
   wrongFile:
     exits:
-      n: 
+      n: 29
     specials: ""
     npcs:     ""
   flags:
@@ -466,7 +466,7 @@
   name:  "Ice Cream Shop - Backroom"
   wrongFile:
     exits:
-      n: 
+      n: 40
     specials: ""
     npcs:     ""
   flags:
@@ -482,7 +482,7 @@
   name:  "Ice Cream Shop - Freezer"
   wrongFile:
     exits:
-      n: 
+      n: 37
     specials: ""
     npcs:     ""
   flags:
@@ -530,7 +530,7 @@
   name:  "General Store - Warehouse"
   wrongFile:
     exits:
-      n: 
+      n: 43
     specials: ""
     npcs:     ""
   flags:
