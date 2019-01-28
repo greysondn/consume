@@ -65,7 +65,7 @@ class TitleState extends FlxUIState
         // ... this is a bit of a doozy
         // load quotes
         // TODO: Make this capable of loading other locales
-        var _yamlFile:String = Assets.getText("assets/data/strings/en-US/welcome_messages.yaml");
+        var _yamlFile:String = Assets.getText("assets/data/en-us/welcome_messages.yaml");
         var msgs:Array<String> = Yaml.parse(_yamlFile);
         var rng:FlxRandom = new FlxRandom();
         var rngRoll:Int = rng.int(0, (msgs.length - 1));
