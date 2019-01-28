@@ -7031,14 +7031,6 @@ class Main {
 		}
 	}
 	
-	static function onMouseEnter(e:MouseEvent) {
-		Mouse.cursor = "button";
-	}
-	
-	static function onMouseOut(e:MouseEvent) {
-		Mouse.cursor = "auto";
-	}
-	
 	static function drawPlayfield() {
 		var flashSC = flash.Lib.current;
 		var outStyle:StyleSheet = new StyleSheet();
