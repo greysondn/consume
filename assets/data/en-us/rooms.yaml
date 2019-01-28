@@ -117,12 +117,11 @@
   wrongFile:
     exits:
       w: 7
-    specials: ""
-    npcs:     ""
+    specials: '[[1, "active"]]'
   flags:
-    public: false
+    public: true
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -153,10 +152,10 @@
       e:   8
       w:  10
       sw: 11
-    specials: ""
-    npcs:     ""
+    specials: "[3]"
+    npcs:     "0"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -169,8 +168,8 @@
   wrongFile:
     exits:
       ne: 9
-    specials: ""
-    npcs:     ""
+    specials: '[3, [2, "rat"]]'
+    npcs:     "5"
   flags:
     public: false
   permissions:
@@ -189,10 +188,9 @@
       s:  18
       sw: 19
       w:  13
-    specials: ""
-    npcs:     ""
+    specials: '[[1, "passive"]]'
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -221,12 +219,11 @@
   wrongFile:
     exits:
       s: 13
-    specials: ""
-    npcs:     ""
+    specials: "[5]"
   flags:
     public: false
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -283,12 +280,11 @@
   wrongFile:
     exits:
       e: 19
-    specials: ""
-    npcs:     ""
+    specials: "[15]"
   flags:
-    public: false
+    public: true
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -350,10 +346,10 @@
     exits:
       s: 42
       w: 27
-    specials: ""
-    npcs:     ""
+    specials: '[3, [2, "general"]]'
+    npcs:     "6"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -367,10 +363,10 @@
     exits:
       e: 27
       w: 29
-    specials: ""
-    npcs:     ""
+    specials: "[3]"
+    npcs:     "1"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -387,10 +383,9 @@
       s:  32
       sw: 33
       w:  31
-    specials: ""
-    npcs:     ""
+    specials: "[8]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -403,10 +398,9 @@
   wrongFile:
     exits:
       e: 29
-    specials: ""
-    npcs:     ""
+    specials: "[9]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -419,10 +413,9 @@
   wrongFile:
     exits:
       n: 29
-    specials: ""
-    npcs:     ""
+    specials: "[10]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -435,12 +428,11 @@
   wrongFile:
     exits:
       ne: 29
-    specials: ""
-    npcs:     ""
+    specials: "[5]"
   flags:
     public: false
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -467,10 +459,9 @@
     exits:
       e: 37
       w: 36
-    specials: ""
-    npcs:     ""
+    specials: '[[2, "iceCream"]]'
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -516,12 +507,11 @@
   wrongFile:
     exits:
       s: 37
-    specials: ""
-    npcs:     ""
+    specials: "[5]"
   flags:
-    public: false
+    public: true
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -532,8 +522,7 @@
   wrongFile:
     exits:
       w: 37
-    specials: ""
-    npcs:     ""
+    specials: "[12]"
   flags:
     public: false
   permissions:
@@ -548,12 +537,11 @@
   wrongFile:
     exits:
       n: 43
-    specials: ""
-    npcs:     ""
+    specials: "[4]"
   flags:
     public: false
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -564,12 +552,11 @@
   wrongFile:
     exits:
       e: 25
-    specials: ""
-    npcs:     ""
+    specials: "[11]"
   flags:
     public: false
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-

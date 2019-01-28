@@ -7511,30 +7511,9 @@ class Main {
 		
         // Rooms
         globals.rooms = new Array();
-        //                      name                            specials                allowWait   isPublic    roomNPC
-        //  globals.rooms[5]  = ["City Park",                   [[1, "active"]],        true,       true,       null   ];
-        //  globals.rooms[7]  = ["Consume Entryway",            [3],                    false,      true,       0      ];
-        //  globals.rooms[8]  = ["Back Alley",                  [3, [2, "rat"]],        false,      false,      5      ];
-        //  globals.rooms[9]  = ["Consume - Dance Floor",       [[1, "passive"]],       false,      true,       null   ];
-        //  globals.rooms[11] = ["Consume - Restroom",          [5],                    true,       false,      null   ];
-        //  globals.rooms[15] = ["Consume - Lounge",            [15],                   true,       true,       null   ];
-        //  globals.rooms[19] = ["General Store",               [3, [2, "general"]],    false,      true,       6      ];
-        //  globals.rooms[20] = ["Gym - Reception",             [3],                    false,      true,       1      ];
-        //  globals.rooms[21] = ["Gym - Workout Area",          [8],                    false,      true,       null   ];
-        //  globals.rooms[22] = ["Gym - Gold Room",             [9],                    false,      true,       null   ];
-        //  globals.rooms[23] = ["Gym - Staff Room",            [10],                   false,      true,       null   ];
-        //  globals.rooms[24] = ["Gym - Restroom",              [5],                    true,       false,      null   ];
-        //  globals.rooms[26] = ["Ice Cream Shop",              [[2, "iceCream"]],      false,      true,       null   ];
-        //  globals.rooms[29] = ["Ice Cream Shop - Restroom",   [5],                    true,       true,       null   ];
-        //  globals.rooms[30] = ["Ice Cream Shop - Office",     [12],                   false,      false,      null   ];
-        //  globals.rooms[31] = ["General Store - Warehouse",   [4],                    true,       false,      null   ];
-        //  globals.rooms[32] = ["Hospital - Backroom",         [11],                   true,       false,      null   ];
-		
-		
-		
-		
-		
-		currentRoom = new MyRoom(globals.rooms[0]);
+        // migrated to new code, there was code here that defined most the
+        // contents of rooms/yaml basically.
+        currentRoom = new MyRoom(globals.rooms[0]);
 		
 		
 		//Items
