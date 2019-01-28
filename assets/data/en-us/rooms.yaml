@@ -100,6 +100,7 @@
     exits:
       n: 21
       e:  6
+      s:  8
       w:  5
     specials: ""
     npcs:     ""
@@ -150,8 +151,9 @@
   name:  "Consume Entryway"
   wrongFile:
     exits:
-      e:  8
-      w: 10
+      e:   8
+      w:  10
+      sw: 11
     specials: ""
     npcs:     ""
   flags:
@@ -183,9 +185,11 @@
   name:  "Consume - Dance Floor"
   wrongFile:
     exits:
-      n: 16
-      e: 12
-      w: 13
+      n:  16
+      e:  12
+      s:  18
+      sw: 19
+      w:  13
     specials: ""
     npcs:     ""
   flags:
@@ -218,7 +222,7 @@
   name:  "Consume - Restroom"
   wrongFile:
     exits:
-      n: 
+      s: 13
     specials: ""
     npcs:     ""
   flags:
@@ -234,7 +238,7 @@
   name:  "Consume - Bar"
   wrongFile:
     exits:
-      n: 
+      s: 17
     specials: ""
     npcs:     ""
   flags:
@@ -301,6 +305,7 @@
     exits:
       n: 23
       e: 26
+      s:  7
       w: 28
     specials: ""
     npcs:     ""
@@ -318,6 +323,7 @@
   wrongFile:
     exits:
       e: 24
+      s: 22
       w: 44
     specials: ""
     npcs:     ""
@@ -350,6 +356,7 @@
   name:  "General Store"
   wrongFile:
     exits:
+      s: 42
       w: 27
     specials: ""
     npcs:     ""
@@ -383,8 +390,11 @@
   name:  "Gym - Workout Area"
   wrongFile:
     exits:
-      e: 30
-      w: 31
+      e:  30
+      se: 34
+      s:  32
+      sw: 33
+      w:  31
     specials: ""
     npcs:     ""
   flags:
@@ -483,6 +493,7 @@
     exits:
       n: 40
       e: 41
+      s: 39
       w: 38
     specials: ""
     npcs:     ""
@@ -515,7 +526,7 @@
   name:  "Ice Cream Shop - Restroom"
   wrongFile:
     exits:
-      n: 
+      s: 37
     specials: ""
     npcs:     ""
   flags:
