@@ -99,6 +99,8 @@
   wrongFile:
     exits:
       n: 21
+      e:  6
+      w:  5
     specials: ""
     npcs:     ""
   flags:
@@ -114,7 +116,7 @@
   name:  "City Park"
   wrongFile:
     exits:
-      n: 
+      w: 7
     specials: ""
     npcs:     ""
   flags:
@@ -130,7 +132,9 @@
   name:  "South Main Street"
   wrongFile:
     exits:
-      n: 7
+      n:  7
+      e: 35
+      w:  9
     specials: ""
     npcs:     ""
   flags:
@@ -146,7 +150,8 @@
   name:  "Consume Entryway"
   wrongFile:
     exits:
-      n: 
+      e:  8
+      w: 10
     specials: ""
     npcs:     ""
   flags:
@@ -162,7 +167,7 @@
   name:  "Back Alley"
   wrongFile:
     exits:
-      n: 
+      ne: 9
     specials: ""
     npcs:     ""
   flags:
@@ -179,6 +184,8 @@
   wrongFile:
     exits:
       n: 16
+      e: 12
+      w: 13
     specials: ""
     npcs:     ""
   flags:
@@ -195,6 +202,7 @@
   wrongFile:
     exits:
       n: 15
+      e: 14
     specials: ""
     npcs:     ""
   flags:
@@ -258,7 +266,8 @@
   name:  "Consume - Balcony"
   wrongFile:
     exits:
-      n: 
+      ne: 14
+      w:  20
     specials: ""
     npcs:     ""
   flags:
@@ -274,7 +283,7 @@
   name:  "Consume - Lounge"
   wrongFile:
     exits:
-      n: 
+      e: 19
     specials: ""
     npcs:     ""
   flags:
@@ -291,6 +300,8 @@
   wrongFile:
     exits:
       n: 23
+      e: 26
+      w: 28
     specials: ""
     npcs:     ""
   flags:
@@ -306,7 +317,8 @@
   name:  "Hospital - Waiting Room"
   wrongFile:
     exits:
-      n: 
+      e: 24
+      w: 44
     specials: ""
     npcs:     ""
   flags:
@@ -322,7 +334,7 @@
   name:  "Hospital - Pharmacy"
   wrongFile:
     exits:
-      n: 
+      w: 25
     specials: ""
     npcs:     ""
   flags:
@@ -338,7 +350,7 @@
   name:  "General Store"
   wrongFile:
     exits:
-      n: 
+      w: 27
     specials: ""
     npcs:     ""
   flags:
@@ -354,7 +366,8 @@
   name:  "Gym - Reception"
   wrongFile:
     exits:
-      n: 
+      e: 27
+      w: 29
     specials: ""
     npcs:     ""
   flags:
@@ -370,7 +383,8 @@
   name:  "Gym - Workout Area"
   wrongFile:
     exits:
-      n: 
+      e: 30
+      w: 31
     specials: ""
     npcs:     ""
   flags:
@@ -386,7 +400,7 @@
   name:  "Gym - Gold Room"
   wrongFile:
     exits:
-      n: 
+      e: 29
     specials: ""
     npcs:     ""
   flags:
@@ -418,7 +432,7 @@
   name:  "Gym - Restroom"
   wrongFile:
     exits:
-      n: 
+      ne: 29
     specials: ""
     npcs:     ""
   flags:
@@ -450,7 +464,8 @@
   name:  "Ice Cream Shop"
   wrongFile:
     exits:
-      n: 
+      e: 37
+      w: 36
     specials: ""
     npcs:     ""
   flags:
@@ -467,6 +482,8 @@
   wrongFile:
     exits:
       n: 40
+      e: 41
+      w: 38
     specials: ""
     npcs:     ""
   flags:
@@ -514,7 +531,7 @@
   name:  "Ice Cream Shop - Office"
   wrongFile:
     exits:
-      n: 
+      w: 37
     specials: ""
     npcs:     ""
   flags:
@@ -546,7 +563,7 @@
   name:  "Hospital - Backroom"
   wrongFile:
     exits:
-      n: 
+      e: 25
     specials: ""
     npcs:     ""
   flags:
