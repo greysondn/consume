@@ -434,7 +434,7 @@
   name:  "Gym - Showers"
   wrongFile:
     exits:
-      n: 
+      nw: 29
     specials: ""
     npcs:     ""
   flags:
