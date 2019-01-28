@@ -7511,34 +7511,21 @@ class Main {
 		
         // Rooms
         globals.rooms = new Array();
-        // just did: SW, S, SE
         //                      name                            specials                allowWait   isPublic    roomNPC
-            globals.rooms[4]  = ["Main Street",                 [0],                    false,      true,       null   ];
         //  globals.rooms[5]  = ["City Park",                   [[1, "active"]],        true,       true,       null   ];
-        //  globals.rooms[6]  = ["South Main Street",           [0],                    false,      true,       null   ];
         //  globals.rooms[7]  = ["Consume Entryway",            [3],                    false,      true,       0      ];
         //  globals.rooms[8]  = ["Back Alley",                  [3, [2, "rat"]],        false,      false,      5      ];
-            globals.rooms[9]  = ["Consume - Dance Floor",       [[1, "passive"]],       false,      true,       null   ];
-        //  globals.rooms[10] = ["Consume - Back Hall",         [0],                    true,       true,       null   ];
-            globals.rooms[11] = ["Consume - Restroom",          [5],                    true,       false,      null   ];
-            globals.rooms[12] = ["Consume - Bar",               [0],                    true,       true,       null   ];
-        //  globals.rooms[13] = ["Consume - Stage",             [0],                    false,      true,       null   ];
-        //  globals.rooms[14] = ["Consume - Balcony",           [0],                    false,      true,       null   ];
+        //  globals.rooms[9]  = ["Consume - Dance Floor",       [[1, "passive"]],       false,      true,       null   ];
+        //  globals.rooms[11] = ["Consume - Restroom",          [5],                    true,       false,      null   ];
         //  globals.rooms[15] = ["Consume - Lounge",            [15],                   true,       true,       null   ];
-            globals.rooms[16] = ["North Main Street",           [0],                    false,      true,       null   ];
-            globals.rooms[17] = ["Hospital - Waiting Room",     [0],                    true,       true,       null   ];
-        //  globals.rooms[18] = ["Hospital - Pharmacy",         [0],                    false,      true,       null   ];
-            globals.rooms[19] = ["General Store",               [3, [2, "general"]],    false,      true,       6      ];
+        //  globals.rooms[19] = ["General Store",               [3, [2, "general"]],    false,      true,       6      ];
         //  globals.rooms[20] = ["Gym - Reception",             [3],                    false,      true,       1      ];
-            globals.rooms[21] = ["Gym - Workout Area",          [8],                    false,      true,       null   ];
+        //  globals.rooms[21] = ["Gym - Workout Area",          [8],                    false,      true,       null   ];
         //  globals.rooms[22] = ["Gym - Gold Room",             [9],                    false,      true,       null   ];
         //  globals.rooms[23] = ["Gym - Staff Room",            [10],                   false,      true,       null   ];
         //  globals.rooms[24] = ["Gym - Restroom",              [5],                    true,       false,      null   ];
-        //  globals.rooms[25] = ["Gym - Showers",               [0],                    true,       false,      null   ];
         //  globals.rooms[26] = ["Ice Cream Shop",              [[2, "iceCream"]],      false,      true,       null   ];
-            globals.rooms[27] = ["Ice Cream Shop - Backroom",   [0],                    false,      true,       null   ];
-        //  globals.rooms[28] = ["Ice Cream Shop - Freezer",    [0],                    true,       false,      null   ];
-            globals.rooms[29] = ["Ice Cream Shop - Restroom",   [5],                    true,       true,       null   ];
+        //  globals.rooms[29] = ["Ice Cream Shop - Restroom",   [5],                    true,       true,       null   ];
         //  globals.rooms[30] = ["Ice Cream Shop - Office",     [12],                   false,      false,      null   ];
         //  globals.rooms[31] = ["General Store - Warehouse",   [4],                    true,       false,      null   ];
         //  globals.rooms[32] = ["Hospital - Backroom",         [11],                   true,       false,      null   ];

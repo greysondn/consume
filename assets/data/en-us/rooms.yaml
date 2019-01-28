@@ -102,10 +102,9 @@
       e:  6
       s:  8
       w:  5
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -136,10 +135,10 @@
       n:  7
       e: 35
       w:  9
-    specials: ""
+    specials: "[0]"
     npcs:     ""
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -207,12 +206,11 @@
     exits:
       n: 15
       e: 14
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -239,12 +237,11 @@
   wrongFile:
     exits:
       s: 17
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -255,10 +252,9 @@
   wrongFile:
     exits:
       n: 17
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -272,10 +268,9 @@
     exits:
       ne: 14
       w:  20
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -307,10 +302,9 @@
       e: 26
       s:  7
       w: 28
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -325,12 +319,11 @@
       e: 24
       s: 22
       w: 44
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -341,10 +334,9 @@
   wrongFile:
     exits:
       w: 25
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -459,12 +451,11 @@
   wrongFile:
     exits:
       nw: 29
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
     public: false
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
@@ -495,10 +486,9 @@
       e: 41
       s: 39
       w: 38
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
-    public: false
+    public: true
   permissions:
     wait: false
   desc:
@@ -511,12 +501,11 @@
   wrongFile:
     exits:
       n: 37
-    specials: ""
-    npcs:     ""
+    specials: "[0]"
   flags:
     public: false
   permissions:
-    wait: false
+    wait: true
   desc:
     short: "MISSING - SHORT DESC"
     long: >-
