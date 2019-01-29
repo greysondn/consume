@@ -1,0 +1,963 @@
+-
+  index: -1
+  name: "schema"
+  rooms:
+    # these are just conveinient names. In truth, they could be anything.
+    # so don't get too hung up on the fact they're directional names, okay?
+    left:
+      index: -1
+      side:  "n"
+    right:
+      index: -2
+      side:  "s"
+  time:
+    # if this is false, can leave out open and close
+    timed: false
+    open:  0
+    close: 0
+  size:
+    height: 84
+    width:  48
+  desc:
+    name:
+      leftToRight: "the name of right as seen from left"
+      rightToLeft: "the name of left as seen from right"
+    look:
+      leftToRight:  "short string describing right room as seen from left room"
+      rightToLeft:  "same, but other direction. Note this is the code structure"
+    lock:
+      leftToRight:  "small extra bit to show if door is locked looking from left to right"
+      rightToLeft:  "smal extra bit to show if door is locked looking from right to left"
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 0
+  name: ""
+  rooms:
+    left:
+      index: 2 # Apartment - Living Room
+      side:  "s"
+    right:
+      index: 0 # Apartment - Bedroom
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 1
+  name: ""
+  rooms:
+    left:
+      index: 0
+      side:  "e"
+    right:
+      index: 1
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 2
+  name: ""
+  rooms:
+    left:
+      index: 3
+      side:  "e"
+    right:
+      index: 2
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 3
+  name: ""
+  rooms:
+    left:
+      index: 2
+      side:  "n"
+    right:
+      index: 4
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 4
+  name: ""
+  rooms:
+    left:
+      index: 4
+      side:  "e"
+    right:
+      index: 5
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 5
+  name: ""
+  rooms:
+    left:
+      index: 4
+      side:  "s"
+    right:
+      index: 6
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 6
+  name: ""
+  rooms:
+    left:
+      index: 7
+      side:  "e"
+    right:
+      index: 6
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 7
+  name: ""
+  rooms:
+    left:
+      index: 8
+      side:  "ne"
+    right:
+      index: 7
+      side:  "sw"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 8
+  name: ""
+  rooms:
+    left:
+      index: 9
+      side:  "e"
+    right:
+      index: 7
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 9
+  name: ""
+  rooms:
+    left:
+      index: 10
+      side:  "e"
+    right:
+      index: 9
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 10
+  name: ""
+  rooms:
+    left:
+      index: 11
+      side:  "s"
+    right:
+      index: 10
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 11
+  name: ""
+  rooms:
+    left:
+      index: 12
+      side:  "s"
+    right:
+      index: 9
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 12
+  name: ""
+  rooms:
+    left:
+      index: 9
+      side:  "s"
+    right:
+      index: 13
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 13
+  name: ""
+  rooms:
+    left:
+      index: 14
+      side:  "ne"
+    right:
+      index: 9
+      side:  "sw"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 14
+  name: ""
+  rooms:
+    left:
+      index: 15
+      side:  "e"
+    right:
+      index: 14
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 15
+  name: ""
+  rooms:
+    left:
+      index: 6
+      side:  "e"
+    right:
+      index: 26
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 16
+  name: ""
+  rooms:
+    left:
+      index: 26
+      side:  "e"
+    right:
+      index: 27
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 17
+  name: ""
+  rooms:
+    left:
+      index: 27
+      side:  "e"
+    right:
+      index: 30
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 18
+  name: ""
+  rooms:
+    left:
+      index: 29
+      side:  "s"
+    right:
+      index: 27
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 19
+  name: ""
+  rooms:
+    left:
+      index: 27
+      side:  "s"
+    right:
+      index: 28
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 20
+  name: ""
+  rooms:
+    left:
+      index: 16
+      side:  "s"
+    right:
+      index: 4
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 21
+  name: ""
+  rooms:
+    left:
+      index: 16
+      side:  "e"
+    right:
+      index: 19
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 22
+  name: ""
+  rooms:
+    left:
+      index: 19
+      side:  "s"
+    right:
+      index: 31
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 23
+  name: ""
+  rooms:
+    left:
+      index: 17
+      side:  "s"
+    right:
+      index: 16
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 24
+  name: ""
+  rooms:
+    left:
+      index: 17
+      side:  "e"
+    right:
+      index: 18
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 25
+  name: ""
+  rooms:
+    left:
+      index: 32
+      side:  "e"
+    right:
+      index: 17
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 26
+  name: ""
+  rooms:
+    left:
+      index: 20
+      side:  "e"
+    right:
+      index: 16
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 27
+  name: ""
+  rooms:
+    left:
+      index: 21
+      side:  "e"
+    right:
+      index: 20
+      side:  "w"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 28
+  name: ""
+  rooms:
+    left:
+      index: 21
+      side:  "se"
+    right:
+      index: 25
+      side:  "nw"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 29
+  name: ""
+  rooms:
+    left:
+      index: 21
+      side:  "s"
+    right:
+      index: 23
+      side:  "n"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 30
+  name: ""
+  rooms:
+    left:
+      index: 24
+      side:  "ne"
+    right:
+      index: 21
+      side:  "sw"
+  time:
+    timed: null
+    open:  null
+    close: null
+  size:
+    height: null
+    width:  null
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false

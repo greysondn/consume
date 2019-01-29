@@ -2,230 +2,230 @@
 <trizbort>
 	<info />
 	<map>
-		<room id="1" name="Apartment -  Bedroom" x="-64" y="32" w="128" h="128" description="">
+		<room id="1" name="[0] Apartment -  Bedroom" x="-64" y="32" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<room id="2" name="Apartment - Living Room" x="-64" y="-160" w="128" h="128" description="">
-			<objects at="wsw">furniture|  phone</objects>
+		<room id="2" name="[2] Apartment - Living Room" x="-64" y="-160" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<room id="4" name="Apartment - Bathroom" x="128" y="32" w="128" h="128" description="">
-			<objects at="wsw">furniture|  toilet|</objects>
+		<room id="4" name="[1] Apartment - Bathroom" x="128" y="32" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<line id="3">
+		<line id="3" startText="2" midText="[0]" endText="0">
 			<dock index="0" id="2" port="s" />
 			<dock index="1" id="1" port="n" />
 		</line>
-		<line id="5">
+		<line id="5" startText="1" midText="[1]" endText="2">
 			<dock index="0" id="1" port="e" />
 			<dock index="1" id="4" port="w" />
 		</line>
-		<room id="6" name="Apartment - Balcony" x="-256" y="-160" w="128" h="128" description="">
+		<room id="6" name="[3] Apartment - Balcony" x="-256" y="-160" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="7">
+		<line id="7" startText="0" midText="[2]" endText="4">
 			<dock index="0" id="6" port="e" />
 			<dock index="1" id="2" port="w" />
 		</line>
-		<room id="8" name="Main Street" x="320" y="-352" w="128" h="128" description="">
+		<room id="8" name="[4] Main Street" x="320" y="-352" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="9">
+		<line id="9" startText="3" midText="[3]" endText="5">
 			<dock index="0" id="2" port="n" />
 			<dock index="1" id="8" port="w" />
 		</line>
-		<room id="10" name="North Main Street" x="320" y="-736" w="128" h="128" description="">
+		<room id="10" name="[16] North Main Street" x="320" y="-736" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="11">
+		<line id="11" startText="7" midText="[20]" endText="21">
 			<dock index="0" id="10" port="s" />
 			<dock index="1" id="8" port="n" />
 		</line>
-		<room id="12" name="South Main Street" x="320" y="384" w="128" h="128" description="">
+		<room id="12" name="[6] South Main Street" x="320" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="13">
+		<line id="13" startText="7" midText="[5]" endText="8">
 			<dock index="0" id="12" port="n" />
 			<dock index="1" id="8" port="s" />
 		</line>
-		<room id="14" name="City Park" x="512" y="-352" w="128" h="128" description="">
+		<room id="14" name="[5] City Park" x="512" y="-352" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="15">
+		<line id="15" startText="6" midText="[4]" endText="7">
 			<dock index="0" id="8" port="e" />
 			<dock index="1" id="14" port="w" />
 		</line>
-		<room id="16" name="Gym - Reception" x="-64" y="-736" w="128" h="128" description="">
+		<room id="16" name="[20] Gym - Reception" x="-64" y="-736" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="17">
+		<line id="17" startText="28" midText="[26]" endText="27">
 			<dock index="0" id="10" port="w" />
 			<dock index="1" id="16" port="e" />
 		</line>
-		<room id="18" name="Hospital - Waiting Room" x="320" y="-928" w="128" h="128" description="">
+		<room id="18" name="[17] Hospital - Waiting Room" x="320" y="-928" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="19">
+		<line id="19" startText="23" midText="[23]" endText="22">
 			<dock index="0" id="10" port="n" />
 			<dock index="1" id="18" port="s" />
 		</line>
-		<room id="20" name="General Store" x="512" y="-736" w="128" h="128" description="">
+		<room id="20" name="[19] General Store" x="512" y="-736" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="21">
+		<line id="21" startText="26" midText="[21]" endText="27">
 			<dock index="0" id="10" port="e" />
 			<dock index="1" id="20" port="w" />
 		</line>
-		<room id="22" name="Gym - Showers" x="-64" y="-544" w="128" h="128" description="">
+		<room id="22" name="[25] Gym - Showers" x="-64" y="-544" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<room id="23" name="Gym - Workout" x="-256" y="-736" w="128" h="128" description="">
+		<room id="23" name="[21] Gym - Workout" x="-256" y="-736" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="24">
+		<line id="24" startText="30" midText="[27]" endText="29">
 			<dock index="0" id="23" port="e" />
 			<dock index="1" id="16" port="w" />
 		</line>
-		<line id="25">
+		<line id="25" startText="34" midText="[28]" endText="29">
 			<dock index="0" id="23" port="se" />
 			<dock index="1" id="22" port="nw" />
 		</line>
-		<room id="26" name="Gym - Gold Room" x="-448" y="-736" w="128" h="128" description="">
+		<room id="26" name="[22] Gym - Gold Room" x="-448" y="-736" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="27">
+		<line id="27" startText="31" midText="[31]" endText="29">
 			<dock index="0" id="23" port="w" />
 			<dock index="1" id="26" port="e" />
 		</line>
-		<room id="28" name="Gym - Staff Room" x="-256" y="-544" w="128" h="128" description="">
+		<room id="28" name="[23] Gym - Staff Room" x="-256" y="-544" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="29">
+		<line id="29" startText="32" midText="[29]" endText="29">
 			<dock index="0" id="23" port="s" />
 			<dock index="1" id="28" port="n" />
 		</line>
-		<room id="30" name="Gym - Restroom" x="-448" y="-544" w="128" h="128" description="">
-			<objects at="wsw">furniture|  toilet</objects>
+		<room id="30" name="[24] Gym - Restroom" x="-448" y="-544" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<line id="31">
+		<line id="31" startText="33" midText="[30]" endText="29">
 			<dock index="0" id="23" port="sw" />
 			<dock index="1" id="30" port="ne" />
 		</line>
-		<room id="32" name="Hospital - Backroom" x="128" y="-928" w="128" h="128" description="">
-			<objects at="wsw">furniture|  machine</objects>
+		<room id="32" name="[32] Hospital - Backroom" x="128" y="-928" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<line id="33">
+		<line id="33" startText="44" midText="[25]" endText="25">
 			<dock index="0" id="18" port="w" />
 			<dock index="1" id="32" port="e" />
 		</line>
-		<room id="34" name="Hospital - Pharmacy" x="512" y="-928" w="128" h="128" description="">
+		<room id="34" name="[18] Hospital - Pharmacy" x="512" y="-928" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="35">
+		<line id="35" startText="24" midText="[24]" endText="25">
 			<dock index="0" id="18" port="e" />
 			<dock index="1" id="34" port="w" />
 		</line>
-		<room id="36" name="General Store - Warehouse" x="512" y="-544" w="128" h="128" description="">
+		<room id="36" name="[31] General Store - Warehouse" x="512" y="-544" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="37">
+		<line id="37" startText="42" midText="[22]" endText="43">
 			<dock index="0" id="20" port="s" />
 			<dock index="1" id="36" port="n" />
 		</line>
-		<room id="38" name="Consume Entryway" x="128" y="384" w="128" h="128" description="">
-			<objects at="wsw">people|  Mac</objects>
+		<room id="38" name="[7] Consume Entryway" x="128" y="384" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<line id="39">
+		<line id="39" startText="9" midText="[6]" endText="8">
 			<dock index="0" id="12" port="w" />
 			<dock index="1" id="38" port="e" />
 		</line>
-		<room id="40" name="Consume - Dance Floor" x="-256" y="384" w="128" h="128" description="">
+		<room id="40" name="[9] Consume - Dance Floor" x="-256" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="41">
+		<line id="41" startText="10" midText="[8]" endText="12">
 			<dock index="0" id="38" port="w" />
 			<dock index="1" id="40" port="e" />
 		</line>
-		<room id="42" name="Consume - Bar" x="-256" y="192" w="128" h="128" description="">
+		<room id="42" name="[12] Consume - Bar" x="-256" y="192" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="43">
+		<line id="43" startText="16" midText="[11]" endText="17">
 			<dock index="0" id="40" port="n" />
 			<dock index="1" id="42" port="s" />
 		</line>
-		<room id="44" name="Consume - Back Hall" x="-448" y="384" w="128" h="128" description="">
+		<room id="44" name="[10] Consume - Back Hall" x="-448" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="45">
+		<line id="45" startText="13" midText="[9]" endText="14">
 			<dock index="0" id="40" port="w" />
 			<dock index="1" id="44" port="e" />
 		</line>
-		<room id="46" name="Consume - Restroom" x="-448" y="192" w="128" h="128" description="">
-			<objects at="wsw">furniture|  toilet</objects>
+		<room id="46" name="[11] Consume - Restroom" x="-448" y="192" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<line id="47">
+		<line id="47" startText="15" midText="[10]" endText="13">
 			<dock index="0" id="44" port="n" />
 			<dock index="1" id="46" port="s" />
 		</line>
-		<room id="48" name="Consume - Balcony" x="-448" y="576" w="128" h="128" description="">
+		<room id="48" name="[14] Consume - Balcony" x="-448" y="576" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="49">
+		<line id="49" startText="19" midText="[13]" endText="14">
 			<dock index="0" id="40" port="sw" />
 			<dock index="1" id="48" port="ne" />
 		</line>
-		<room id="50" name="Consume - Lounge" x="-640" y="576" w="128" h="128" description="">
-			<objects at="wsw">furniture|  blackjack table</objects>
+		<room id="50" name="[15] Consume - Lounge" x="-640" y="576" w="128" h="128" description="">
+			<objects at="wsw" />
 		</room>
-		<line id="51">
+		<line id="51" startText="19" midText="[14]" endText="20">
 			<dock index="0" id="50" port="e" />
 			<dock index="1" id="48" port="w" />
 		</line>
-		<room id="52" name="Consume - Stage" x="-256" y="576" w="128" h="128" description="">
+		<room id="52" name="[13] Consume - Stage" x="-256" y="576" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="53">
+		<line id="53" startText="18" midText="[12]" endText="17">
 			<dock index="0" id="40" port="s" />
 			<dock index="1" id="52" port="n" />
 		</line>
-		<room id="54" name="Ice Cream Shop" x="512" y="384" w="128" h="128" description="">
+		<room id="54" name="[26] Ice Cream Shop" x="512" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="55">
+		<line id="55" startText="35" midText="[15]" endText="37">
 			<dock index="0" id="12" port="e" />
 			<dock index="1" id="54" port="w" />
 		</line>
-		<room id="56" name="Ice Cream Shop - Backroom" x="704" y="384" w="128" h="128" description="">
+		<room id="56" name="[27] Ice Cream Shop - Backroom" x="704" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="57">
+		<line id="57" startText="36" midText="[16]" endText="38">
 			<dock index="0" id="54" port="e" />
 			<dock index="1" id="56" port="w" />
 		</line>
-		<room id="58" name="Ice Cream Shop - Freezer" x="704" y="576" w="128" h="128" description="">
+		<room id="58" name="[28] Ice Cream Shop - Freezer" x="704" y="576" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="59">
+		<line id="59" startText="39" midText="[19]" endText="37">
 			<dock index="0" id="56" port="s" />
 			<dock index="1" id="58" port="n" />
 		</line>
-		<room id="60" name="Ice Cream Shop - Restroom" x="704" y="224" w="128" h="128" description="">
+		<room id="60" name="[29] Ice Cream Shop - Restroom" x="704" y="192" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="61">
+		<line id="61" startText="40" midText="[18]" endText="37">
 			<dock index="0" id="56" port="n" />
 			<dock index="1" id="60" port="s" />
 		</line>
-		<room id="62" name="Ice Cream Shop - Office" x="896" y="384" w="128" h="128" description="">
+		<room id="62" name="[30] Ice Cream Shop - Office" x="896" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="63">
+		<line id="63" startText="41" midText="[17]" endText="37">
 			<dock index="0" id="56" port="e" />
 			<dock index="1" id="62" port="w" />
 		</line>
-		<room id="64" name="Back Alley" x="-256" y="768" w="128" h="128" description="">
+		<room id="64" name="[8] Back Alley" x="-256" y="768" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="65">
+		<line id="65" startText="9" midText="[7]" endText="11">
 			<dock index="0" id="64" port="ne" />
 			<dock index="1" id="38" port="sw" />
 		</line>
