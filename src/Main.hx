@@ -7448,11 +7448,11 @@ class Main {
         //Exits
         globals.exits = new Array();
         //                  name                hiddenQuestID   keyID   desc
-        globals.exits[0]  = ["Living Room",     null,           null,   "You call it your living room, but it's really the only other room in the aparatment"];
+        globals.exits[0]  = ["Living Room",     null,           null,   "rooms.yaml[2].desc.look"];
         globals.exits[1]  = ["Bathroom",        null,           null,   null];
         globals.exits[2]  = ["Bedroom"          null,           null,   null];
         globals.exits[3]  = ["Outside",         null,           null,   "Outside, where money and food comes from."];
-        globals.exits[4]  = ["Balcony",         null,           null,   "Your small balcony overlooking the parking lot"];
+        globals.exits[4]  = ["Balcony",         null,           null,   "rooms.yaml[?].desc.look"];
         globals.exits[5]  = ["Apartment",       null,           null,   "Your apartment."];
         globals.exits[6]  = ["Park",            null,           null,   "The city park"];
         globals.exits[7]  = ["Main Street",     null,           null,   "The main street of town just outside your apartment"];

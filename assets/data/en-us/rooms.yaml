@@ -73,8 +73,8 @@
   permissions:
     wait: true
   desc:
-    look: "MISSING - DEFAULT LOOK DESC"
-    short: "You call it your living room, but it's really the only other room in the aparatment"
+    look: "You call it your living room, but it's really the only other room in the apartment."
+    short: "MISSING - SHORT DESC"
     long: >-
       Your living room. Or really just the rest of your apartment. You have a
       cheap couch you got from a friend when you moved in. A nice TV you
@@ -92,8 +92,8 @@
   permissions:
     wait: true
   desc:
-    look: "MISSING - DEFAULT LOOK DESC"
-    short: "Your small balcony overlooking the parking lot"
+    look: "Your small balcony overlooking the parking lot."
+    short: "MISSING - SHORT DESC"
     long: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
       be out here, you can't even leave from here, there's no way down. And the
