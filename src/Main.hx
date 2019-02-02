@@ -5977,22 +5977,8 @@ class Main {
 		var gameLogoM:LogoM = new LogoM(469, 259);
 		var gameLogoF:LogoF = new LogoF(469, 259);
 		
-		// for testing startup messages, set to the index of the message to test and uncomment
-		//rndNumer = 26;
-		message = welcomeMessage[rndNumer];
-		
-		//Date specific messages
-		if (month == 7 && day == 8) // my birthday!
-			message = "Happy birthday Kyra!";
-		
-		if (month == 9 && day == 31) //Halloween
-			message = "Happy Halloween!";
-		
-		if (month == 11 && day == 25) //Christmas
-			message = "Merry Christmas!";
-		
-		if (month == 0 && day == 1) //New Years
-			message = "Happy New Year!";
+        // code for selecting random messages was here. Noted in ported code.
+        message = "placeholder for ported shit"
 		
 		if (Math.round(Math.random()) == 0) {
 			logoData = gameLogoM;

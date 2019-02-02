@@ -68,6 +68,18 @@ class TitleState extends FlxUIState
         var _yamlFile:String = Assets.getText("assets/data/en-us/welcome_messages.yaml");
         var msgs:Array<String> = Yaml.parse(_yamlFile);
         var rng:FlxRandom = new FlxRandom();
+
+        // get random quotes
+        // there were some for random dates that we didn't add in yet, I'll have
+        // to redesign the file to do that.
+        //
+        // TODO: redesign the file to do that.
+        //
+        // Jan 01 - New Year's - "Happy New Year!"
+        // Aug 08 - Kyra's BD  - "Happy Birthday Kyra!"
+        // Oct 31 - Halloween  - "Happy Halloween!"
+        // Nov 25 - Greyson BD - "Happy Birthday greysondn!"
+        // Dec 25 - Christmas  - "Merry Christmas!"
         var rngRoll:Int = rng.int(0, (msgs.length - 1));
         var quoteStr:String = msgs[rngRoll];
 
