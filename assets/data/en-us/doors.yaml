@@ -33,14 +33,14 @@
     locked: false
 -
   index: 0
-  name: ""
+  name: "Apartment - Living Room to Bedroom"
   travelTime: 1
   rooms:
     left:
-      index: 2 # Apartment - Living Room
+      index: 2
       side:  "s"
     right:
-      index: 0 # Apartment - Bedroom
+      index: 0
       side:  "n"
   time:
     timed: false
