@@ -83,7 +83,6 @@
     exits:
       e: 0
     specials: "[0]"
-    npcs:     ""
   flags:
     public: true
   permissions:
