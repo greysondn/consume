@@ -11,6 +11,7 @@
   permissions:
     wait: false
   desc:
+    look: "A short default description for when someone looks from elsewhere to this room."
     short: "Just a preview for the schema of this file."
     long: >-
       This more or less provides some insight into the structure
@@ -30,6 +31,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The bedroom of your tiny 2-room apartment. It's really only it's own room
@@ -52,6 +54,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       Your bathroom. Standard stuff for a person living alone. The important
@@ -70,6 +73,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "You call it your living room, but it's really the only other room in the aparatment"
     long: >-
       Your living room. Or really just the rest of your apartment. You have a
@@ -88,6 +92,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "Your small balcony overlooking the parking lot"
     long: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
@@ -108,6 +113,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The street outside your apartment. Three identical buildings
@@ -132,6 +138,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The city park. Though you know it's only a single block, something about
@@ -152,6 +159,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       Most of this area is still under construction. One building is finished,
@@ -172,6 +180,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A short flight of concrete steps leading to a steel door. The landing is
@@ -192,6 +201,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A dim alley running along the side of the club. It ends in a small
@@ -215,6 +225,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The main room of Consume is mostly taken up by a dance floor. Along one
@@ -237,6 +248,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A short hall lined with rooms on either side. Behind each door is a
@@ -255,6 +267,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A standard single-occupancy restroom. The door locks.
@@ -270,6 +283,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A long polished bar, running the length of the room. Like most movie
@@ -290,6 +304,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The club's stage. A drumset sits covered and ignored by the crowd. You're
@@ -308,6 +323,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       An open sided stair leads to a balcony overlooking the dance floor. A
@@ -329,6 +345,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The predator's lounge is a large dark room. Several groups of chairs and
@@ -352,6 +369,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       What is probably best referred to as the town's market district. It's
@@ -376,6 +394,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A typical hospital waiting area, the reception desk is always occupied by
@@ -396,6 +415,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The pharmacy counter of the local hospital, the steel cage keeping
@@ -415,6 +435,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The array of junk occupying this store is truly impressive. You feel
@@ -435,6 +456,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The reception room of this gym is comfortable and modern. Several
@@ -460,6 +482,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A large open room filled with machines of every type. Each one designed
@@ -489,6 +512,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       Calling this room the 'Gold Room' is a bit of a misnomer, the room
@@ -529,6 +553,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       This back room of this gym is clearly not an area customers are intended
@@ -552,6 +577,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A standard single-occupancy restroom. The door locks.
@@ -567,6 +593,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A short hallway leads to several shower stalls, providing gym goers a
@@ -586,6 +613,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       Your old place of employment, the local ice cream shop. They have all
@@ -609,6 +637,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The back room of the ice cream shop set up as a break room, with a table
@@ -629,6 +658,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       The freezer, it's very cold, naturally. And it's filled with tub after
@@ -648,6 +678,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A standard single-occupancy restroom. The door locks.
@@ -663,6 +694,7 @@
   permissions:
     wait: false
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       While you worked here you were never allowed into this room, you were
@@ -700,6 +732,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A massive warehouse under the main shop filled with more stuff then you
@@ -716,6 +749,7 @@
   permissions:
     wait: true
   desc:
+    look: "MISSING - DEFAULT LOOK DESC"
     short: "MISSING - SHORT DESC"
     long: >-
       A small room tucked away in the back of the hospital, almost a closet.
