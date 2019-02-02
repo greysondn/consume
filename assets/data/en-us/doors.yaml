@@ -34,6 +34,7 @@
 -
   index: 0
   name: ""
+  travelTime: 1
   rooms:
     left:
       index: 2 # Apartment - Living Room
@@ -42,12 +43,10 @@
       index: 0 # Apartment - Bedroom
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -64,6 +63,7 @@
 -
   index: 1
   name: ""
+  travelTime: 1
   rooms:
     left:
       index: 0
@@ -72,12 +72,10 @@
       index: 1
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -94,6 +92,7 @@
 -
   index: 2
   name: ""
+  travelTime: 1
   rooms:
     left:
       index: 3
@@ -102,12 +101,10 @@
       index: 2
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -124,6 +121,7 @@
 -
   index: 3
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 2
@@ -132,12 +130,10 @@
       index: 4
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -154,6 +150,7 @@
 -
   index: 4
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 4
@@ -162,12 +159,10 @@
       index: 5
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -184,6 +179,7 @@
 -
   index: 5
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 4
@@ -192,12 +188,10 @@
       index: 6
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -214,6 +208,7 @@
 -
   index: 6
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 7
@@ -222,12 +217,10 @@
       index: 6
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -244,6 +237,7 @@
 -
   index: 7
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 8
@@ -252,12 +246,10 @@
       index: 7
       side:  "sw"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -269,11 +261,12 @@
       leftToRight: null
       rightToLeft: null
   flags:
-    hidden: false
+    hidden: true
     locked: false
 -
   index: 8
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 9
@@ -282,12 +275,10 @@
       index: 7
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  96
   desc:
     name:
       leftToRight: null
@@ -304,6 +295,7 @@
 -
   index: 9
   name: ""
+  travelTime: 2
   rooms:
     left:
       index: 10
@@ -312,12 +304,10 @@
       index: 9
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 90
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -334,6 +324,7 @@
 -
   index: 10
   name: ""
+  travelTime: 2
   rooms:
     left:
       index: 11
@@ -342,12 +333,10 @@
       index: 10
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 90
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -364,6 +353,7 @@
 -
   index: 11
   name: ""
+  travelTime: 1
   rooms:
     left:
       index: 12
@@ -372,12 +362,10 @@
       index: 9
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -394,6 +382,7 @@
 -
   index: 12
   name: ""
+  travelTime: 1
   rooms:
     left:
       index: 9
@@ -402,12 +391,10 @@
       index: 13
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -419,11 +406,12 @@
       leftToRight: null
       rightToLeft: null
   flags:
-    hidden: false
+    hidden: 
     locked: false
 -
   index: 13
   name: ""
+  travelTime: 5 # original had two values - 2 and 5
   rooms:
     left:
       index: 14
@@ -432,12 +420,10 @@
       index: 9
       side:  "sw"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 90
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -454,6 +440,7 @@
 -
   index: 14
   name: ""
+  travelTime: 5 # original had two values - 2 and 5
   rooms:
     left:
       index: 15
@@ -462,12 +449,10 @@
       index: 14
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 90
+    width:  50 # Original had two values - 50 and 96
   desc:
     name:
       leftToRight: null
@@ -484,6 +469,7 @@
 -
   index: 15
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 6
@@ -492,12 +478,12 @@
       index: 26
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: true
+    open:   8
+    close: 20
   size:
-    height: null
-    width:  null
+    height: 86
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -514,6 +500,7 @@
 -
   index: 16
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 26
@@ -522,12 +509,10 @@
       index: 27
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 86
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -544,6 +529,7 @@
 -
   index: 17
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 27
@@ -552,12 +538,10 @@
       index: 30
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 86
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -574,6 +558,7 @@
 -
   index: 18
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 29
@@ -582,12 +567,10 @@
       index: 27
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 86
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -604,6 +587,7 @@
 -
   index: 19
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 27
@@ -612,12 +596,10 @@
       index: 28
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 86
+    width:  50
   desc:
     name:
       leftToRight: null
@@ -634,6 +616,7 @@
 -
   index: 20
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 16
@@ -642,12 +625,10 @@
       index: 4
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -664,6 +645,7 @@
 -
   index: 21
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 16
@@ -672,12 +654,10 @@
       index: 19
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -694,6 +674,7 @@
 -
   index: 22
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 19
@@ -702,12 +683,10 @@
       index: 31
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  55
   desc:
     name:
       leftToRight: null
@@ -724,6 +703,7 @@
 -
   index: 23
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 17
@@ -732,12 +712,10 @@
       index: 16
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 90
+    width:  96
   desc:
     name:
       leftToRight: null
@@ -754,6 +732,7 @@
 -
   index: 24
   name: ""
+  travelTime: 1
   rooms:
     left:
       index: 17
@@ -762,12 +741,10 @@
       index: 18
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 0
+    width:  0
   desc:
     name:
       leftToRight: null
@@ -784,6 +761,7 @@
 -
   index: 25
   name: ""
+  travelTime: 10 # original had two values - 10 and 1
   rooms:
     left:
       index: 32
@@ -792,12 +770,10 @@
       index: 17
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84 # original had two sizes - 0 and 84
+    width:  55 # original had two sizes - 0 and 55
   desc:
     name:
       leftToRight: null
@@ -814,6 +790,7 @@
 -
   index: 26
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 20
@@ -822,12 +799,10 @@
       index: 16
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84 # original had two sizes - 84 and 90
+    width:  96 # original had two values - 48 and 96
   desc:
     name:
       leftToRight: null
@@ -844,6 +819,7 @@
 -
   index: 27
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 21
@@ -852,12 +828,10 @@
       index: 20
       side:  "w"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -874,6 +848,7 @@
 -
   index: 28
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 21
@@ -882,12 +857,10 @@
       index: 25
       side:  "nw"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -904,6 +877,7 @@
 -
   index: 29
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 21
@@ -912,12 +886,10 @@
       index: 23
       side:  "n"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null
@@ -934,6 +906,7 @@
 -
   index: 30
   name: ""
+  travelTime: 5
   rooms:
     left:
       index: 24
@@ -942,12 +915,39 @@
       index: 21
       side:  "sw"
   time:
-    timed: null
-    open:  null
-    close: null
+    timed: false
   size:
-    height: null
-    width:  null
+    height: 84
+    width:  48
+  desc:
+    name:
+      leftToRight: null
+      rightToLeft: null
+    look:
+      leftToRight: null
+      rightToLeft: null
+    lock:
+      leftToRight: null
+      rightToLeft: null
+  flags:
+    hidden: false
+    locked: false
+-
+  index: 31
+  name: ""
+  travelTime: 5
+  rooms:
+    left:
+      index: 22
+      side:  "e"
+    right:
+      index: 21
+      side:  "w"
+  time:
+    timed: false
+  size:
+    height: 84
+    width:  48
   desc:
     name:
       leftToRight: null

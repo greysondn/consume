@@ -253,25 +253,29 @@ class Main {
 		
 		clearAllEvents();
 		updateHUD();
-		
-		//special flags
-		for (i in 0...currentRoom.specialButtons.length) {
-			/* Flags
-			 * 0 - Nothing
-			 * 1 - Hunt, passive (Club) || active (park)
-			 * 2 - Shop, shop invintory
-			 * 3 - Talk
-			 * 4 - Work, work time
-			 * 5 - Toilet
-			 * 6 - Sleep
-			 * 7 - Phone
-			 * 8 - Workout
-			 * 9 - Gold Room
-			 * 10 - Staff Room
-			 * 11 - Hospital, buying additional perks
-			 * 12 - Ice cream shop office/Bessie's Milking Machine
-			 * 
-			 */
+
+        // ---------------------------------------------------------------------
+        // begin special room flags
+        // ---------------------------------------------------------------------
+
+        //special flags
+        for (i in 0...currentRoom.specialButtons.length)
+        {
+            /* Flags
+             * 0 - Nothing
+             * 1 - Hunt, passive (Club) || active (park)
+             * 2 - Shop, shop invintory
+             * 3 - Talk
+             * 4 - Work, work time
+             * 5 - Toilet
+             * 6 - Sleep
+             * 7 - Phone
+             * 8 - Workout
+             * 9 - Gold Room
+             * 10 - Staff Room
+             * 11 - Hospital, buying additional perks
+             * 12 - Ice cream shop office/Bessie's Milking Machine
+             */
 			
 			flagType = Type.typeof(currentRoom.specialButtons[i]);
 			if (flagType != ValueType.TInt) {
@@ -489,19 +493,9 @@ class Main {
 		
 		outputText(output, roomName);
 		
-		exit[0] = currentRoom.exitNW;
-		exit[1] = currentRoom.exitN;
-		exit[2] = currentRoom.exitNE;
-		exit[3] = currentRoom.exitW;
-		exit[4] = null; // Wait button, this is easier
-		exit[5] = currentRoom.exitE;
-		exit[6] = currentRoom.exitSW;
-		exit[7] = currentRoom.exitS;
-		exit[8] = currentRoom.exitSE;
-		
-		exitDirection = ["Northwest", "North", "Northeast", "West", null, "East", "Southwest", "South", "Southeast"];
-		exitDirShort = ["nw", "n", "ne", "w", null, "e", "sw", "s", "se"];
-		
+
+        // code that used to build the direction buttons was here, no need for it.
+
 		for (i in 0...9) {
 			if (exit[i] != null) {
 				btns[i].setButton(exit[i].name, exit[i].desc, exit[i].travelTo + ":" + exit[i].travelTime + ":" + exit[i].doorWidth + ":" + exit[i].doorHeight);
@@ -7451,56 +7445,56 @@ class Main {
 		
 		
 		
-		//Exits
-		globals.exits = new Array();
-		//					name				hidden	timeOpen	timeClose	travelTo	travelTime	doorWidth	doorHeight	desc	hiddenQuestID	keyID
-		globals.exits[0]  = ["Living Room",		false,	0,			0,			2,				1,			48,			84,		"You call it your living room, but it's really the only other room in the aparatment"];
-		globals.exits[1]  = ["Bathroom",		false,	0,			0,			1,				1,			48,			84];
-		globals.exits[2]  = ["Bedroom",			false,	0,			0,			0,				1,			48,			84];
-		globals.exits[3]  = ["Outside",			false,	0,			0,			4,				5,			48,			84,		"Outside, where money and food comes from."];
-		globals.exits[4]  = ["Balcony",			false,	0,			0,			3,				1,			48,			84,		"Your small balcony overlooking the parking lot"];
-		globals.exits[5]  = ["Apartment",		false,	0,			0,			2,				5,			48,			84,		"Your apartment."];
-		globals.exits[6]  = ["Park",			false,	0,			0,			5,				5,			0,			0,		"The city park"];
-		globals.exits[7]  = ["Main Street",		false,	0,			0,			4,				5,			0,			0,		"The main street of town just outside your apartment"];
-		globals.exits[8]  = ["S Main St",		false,	0,			0,			6,				5,			0,			0,		"The main street of town, featuring the new club and the location of your old place of employment"];
-		globals.exits[9]  = ["Club Consume",	false,	0,			0,			7,				5,			0,			0,		"The town's newest (and only) club"];
-		globals.exits[10] = ["Inside",			false,	0,			0,			9,				5,			96,			84,		null,	null,			3];
-		globals.exits[11] = ["Alley",			true,	0,			0,			8,				5,			48,			0,		"A short dim alley running along the side of the club", 0];
-		globals.exits[12] = ["The Street",		false,	0,			0,			7,				5,			96,			84];
-		globals.exits[13] = ["Back Hall",		false,	0,			0,			10,				2,			50,			90,		"The back hall of the club, the restroom and consumption rooms can be found here"];
-		globals.exits[14] = ["Dance floor",		false,	0,			0,			9,				2,			50,			90,		"The club's main area domanated by the dance floor"];
-		globals.exits[15] = ["Restroom",		false,	0,			0,			11,				2,			50,			90,];
-		globals.exits[16] = ["Bar",				false,	0,			0,			12,				1,			0,			0,];
-		globals.exits[17] = ["Dance floor",		false,	0,			0,			9,				1,			0,			0,		"The club's main area domanated by the dance floor"];
-		globals.exits[18] = ["Stage",			false,	0,			0,			13,				1,			0,			0,		"An empty stage just off the dance floor"];
-		globals.exits[19] = ["Balcony",			false,	0,			0,			14,				5,			50,			90,		"An open balcony overlooking the main area of the club"];
-		globals.exits[20] = ["Lounge",			false,	0,			0,			15,				2,			96,			90,		"The predator-only lounge area"];
-		globals.exits[21] = ["N Main St",		false,	0,			0,			16,				5,			0,			0,		"To the market district"];
-		globals.exits[22] = ["Street",			false,	0,			0,			16,				5,			96,			90];
-		globals.exits[23] = ["Hospital",		false,	0,			0,			17,				5,			96,			90,		"The local hospital"];
-		globals.exits[24] = ["Pharmacy",		false,	0,			0,			18,				1,			0,			0,		"The hospital pharmacy counter"];
-		globals.exits[25] = ["Waiting Room",	false,	0,			0,			17,				1,			0,			0,		"The large, mostly empty, waiting area of the hospital"];
-		globals.exits[26] = ["Store",			false,	0,			0,			19,				5,			48,			84,		"The town's lone store, selling everything and mostly filled with junk"];
-		globals.exits[27] = ["Outside",			false,	0,			0,			16,				5,			48,			84];
-		globals.exits[28] = ["Gym",				false,	0,			0,			20,				5,			96,			90];
-		globals.exits[29] = ["Workout",			false,	0,			0,			21,				5,			48,			84,		"The workout area of the gym", null, 0];
-		globals.exits[30] = ["Reception",		false,	0,			0,			20,				5,			48,			84];
-		globals.exits[31] = ["Gold Room",		false,	0,			0,			22,				5,			48,			84,		null,	null,	1];
-		globals.exits[32] = ["Staff Room",		false,	0,			0,			23,				5,			48,			84,		"The staff area of the gym", null, 2];
-		globals.exits[33] = ["Restroom",		false,	0,			0,			24,				5,			48,			84];
-		globals.exits[34] = ["Showers",			false,	0,			0,			25,				5,			48,			84];
-		globals.exits[35] = ["Ice Cream",		false,	8,			20,			26,				5,			50,			86];
-		globals.exits[36] = ["Street",			false,	0,			0,			6,				5,			50,			86];
-		globals.exits[37] = ["Backroom",		false,	0,			0,			27,				5,			50,			86,		null,	null,	4];
-		globals.exits[38] = ["Storefront",		false,	0,			0,			26,				5,			50,			86];
-		globals.exits[39] = ["Freezer",			false,	0,			0,			28,				5,			50,			86,		"The shop's large walk-in freezer"];
-		globals.exits[40] = ["Restroom",		false,	0,			0,			29,				5,			50,			86];
-		globals.exits[41] = ["Office",			false,	0,			0,			30,				5,			50,			86];
-		globals.exits[42] = ["Warehouse",		false,	0,			0,			31,				5,			55,			84,		null,	null,	5];
-		globals.exits[43] = ["Storefront",		false,	0,			0,			19,				5,			55,			84];
-		globals.exits[44] = ["Backroom",		false,	0,			0,			32,				10,			55,			84];
-		
-		
+        //Exits
+        globals.exits = new Array();
+        //                  name                hiddenQuestID   keyID   desc
+        globals.exits[0]  = ["Living Room",     null,           null,   "You call it your living room, but it's really the only other room in the aparatment"];
+        globals.exits[1]  = ["Bathroom",        null,           null,   null];
+        globals.exits[2]  = ["Bedroom"          null,           null,   null];
+        globals.exits[3]  = ["Outside",         null,           null,   "Outside, where money and food comes from."];
+        globals.exits[4]  = ["Balcony",         null,           null,   "Your small balcony overlooking the parking lot"];
+        globals.exits[5]  = ["Apartment",       null,           null,   "Your apartment."];
+        globals.exits[6]  = ["Park",            null,           null,   "The city park"];
+        globals.exits[7]  = ["Main Street",     null,           null,   "The main street of town just outside your apartment"];
+        globals.exits[8]  = ["S Main St",       null,           null,   "The main street of town, featuring the new club and the location of your old place of employment"];
+        globals.exits[9]  = ["Club Consume",    null,           null,   "The town's newest (and only) club"];
+        globals.exits[10] = ["Inside",          null,              3,   null];
+        globals.exits[11] = ["Alley",              0,           null,   "A short dim alley running along the side of the club"];
+        globals.exits[12] = ["The Street"       null,           null,   null];
+        globals.exits[13] = ["Back Hall"        null,           null,   "The back hall of the club, the restroom and consumption rooms can be found here"];
+        globals.exits[14] = ["Dance floor",     null,           null,   "The club's main area domanated by the dance floor"];
+        globals.exits[15] = ["Restroom",        null,           null,   null];
+        globals.exits[16] = ["Bar",             null,           null,   null];
+        globals.exits[17] = ["Dance floor",     null,           null,   "The club's main area domanated by the dance floor"];
+        globals.exits[18] = ["Stage",           null,           null,   "An empty stage just off the dance floor"];
+        globals.exits[19] = ["Balcony",         null,           null,   "An open balcony overlooking the main area of the club"];
+        globals.exits[20] = ["Lounge",          null,           null,   "The predator-only lounge area"];
+        globals.exits[21] = ["N Main St",       null,           null,   "To the market district"];
+        globals.exits[22] = ["Street",          null,           null,   null];
+        globals.exits[23] = ["Hospital",        null,           null,   "The local hospital"];
+        globals.exits[24] = ["Pharmacy",        null,           null,   "The hospital pharmacy counter"];
+        globals.exits[25] = ["Waiting Room",    null,           null,   "The large, mostly empty, waiting area of the hospital"];
+        globals.exits[26] = ["Store",           null,           null,   "The town's lone store, selling everything and mostly filled with junk"];
+        globals.exits[27] = ["Outside",         null,           null,   ];
+        globals.exits[28] = ["Gym",             null,           null,   ];
+        globals.exits[29] = ["Workout",         null,              0,   ];
+        globals.exits[30] = ["Reception",       null,           null,   null];
+        globals.exits[31] = ["Gold Room",       null,              1,   null];
+        globals.exits[32] = ["Staff Room",      null,              2,   "The staff area of the gym"];
+        globals.exits[33] = ["Restroom",        null,           null,   null];
+        globals.exits[34] = ["Showers",         null,           null,   null];
+        globals.exits[35] = ["Ice Cream",       null,           null,   null];
+        globals.exits[36] = ["Street",          null,           null,   null];
+        globals.exits[37] = ["Backroom",        null,              4,   null];
+        globals.exits[38] = ["Storefront",      null,           null,   null];
+        globals.exits[39] = ["Freezer",         null,           null,   "The shop's large walk-in freezer"];
+        globals.exits[40] = ["Restroom",        null,           null,   null];
+        globals.exits[41] = ["Office",          null,           null,   null];
+        globals.exits[42] = ["Warehouse",       null,              5,   null];
+        globals.exits[43] = ["Storefront",      null,           null,   null];
+        globals.exits[44] = ["Backroom",        null,           null,   null];
+        
+        
         // Rooms
         globals.rooms = new Array();
         // migrated to new code, there was code here that defined most the
