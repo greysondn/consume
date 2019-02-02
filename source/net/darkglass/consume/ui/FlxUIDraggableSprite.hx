@@ -90,7 +90,7 @@ class FlxUIDraggableSprite extends FlxUISprite
         }
     }
 
-    private function onClick(whoCares:FlxUIDraggableSprite):Void
+    private function onClick(object:FlxUIDraggableSprite):Void
     {
         this.dragging = true;
         this.lastMousePos.x = FlxG.mouse.x;
