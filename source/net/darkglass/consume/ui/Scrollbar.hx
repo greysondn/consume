@@ -60,12 +60,12 @@ class Scrollbar extends FlxUIGroup
         this.add(handle);
 
         // down
-        var downButton:FlxUISpriteButton = new FlxUISpriteButton(0, 96, null, this.onClick_down);
+        var downButton:FlxUISpriteButton = new FlxUISpriteButton(0, (length - 64), null, this.onClick_down);
         downButton.loadGraphicsUpOverDown("assets/images/gui/classic/scrollbar/button_down.png", false);
         this.add(downButton);
 
         // bottom
-        var bottomButton:FlxUISpriteButton = new FlxUISpriteButton(0, 128, null, this.onClick_bottom);
+        var bottomButton:FlxUISpriteButton = new FlxUISpriteButton(0, (length - 32), null, this.onClick_bottom);
         bottomButton.loadGraphicsUpOverDown("assets/images/gui/classic/scrollbar/button_bottom.png", false);
         this.add(bottomButton);
     }

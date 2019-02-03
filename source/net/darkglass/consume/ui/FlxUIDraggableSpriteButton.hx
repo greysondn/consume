@@ -43,7 +43,7 @@ class FlxUIDraggableSpriteButton extends FlxUISpriteButton
     public function new(X:Float=0,Y:Float=0,vertical:Bool=true, horizontal:Bool=true,SimpleGraphic:Dynamic=null) 
     {
         // super constructor
-        super(X, Y, SimpleGraphic, this.onClick);
+        super(X, Y, SimpleGraphic, null);
 
         // set the two thingies.
         this.dragHorizontal = horizontal;
@@ -58,6 +58,23 @@ class FlxUIDraggableSpriteButton extends FlxUISpriteButton
 
     public function doDrag():Void
     {
+        // see if we just clicked this
+        if (FlxG.mouse.justPressed)
+        {
+            this.lastMousePos.x = FlxG.mouse.x;
+            this.lastMousePos.y = FlxG.mouse.y;
+
+            if(this.overlapsPoint(this.lastMousePos, false, null))
+            {
+                this.onClick();
+            }
+            else
+            {
+                this.lastMousePos.x = 0;
+                this.lastMousePos.y = 0;
+            }
+        }
+
         // make sure we're still dragging
         if (FlxG.mouse.justReleased)
         {
