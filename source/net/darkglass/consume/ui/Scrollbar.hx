@@ -86,13 +86,6 @@ class Scrollbar extends FlxUIGroup
         this.add(bottomButton);
 
         this.prevScroll = this.scrollHandle.y;
-
-        // if scroll changed, fix it all, fix it all, fix it all
-        if (this.scrollHandle.y != this.prevScroll)
-        {
-            this.onScroll(convertScrollToPercent(this.scrollHandle.y));
-            this.prevScroll = this.scrollHandle.y;
-        }
     }
 
     override public function update(elapsed:Float):Void
@@ -116,6 +109,13 @@ class Scrollbar extends FlxUIGroup
 
             this.prevScroll = this.scrollHandle.y;
         }
+    }
+
+    public function updateScrollbarPosition(newPercent:Float)
+    {
+        var newPos:Float = this.convertPercentToScroll(newPercent);
+        this.scrollHandle.y = newPos;
+        this.prevScroll = newPos;
     }
 
     private function onClick_top():Void
