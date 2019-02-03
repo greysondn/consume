@@ -272,7 +272,10 @@ class OptionSubstate extends FlxUISubState
         hackTestText.setFormat("assets/fonts/hack.ttf", 16);
         tabGroupDebug.add(hackTestText);
 
-        tabGroupDebug.add(new Scrollbar(25, 25, 200));
+        var scrss:Scrollbar = new Scrollbar(200, 25, 400);
+        scrss.minScroll = 234;
+        scrss.maxScroll = 474;
+        tabGroupDebug.add(scrss);
 
         tabMenu.addGroup(tabGroupDebug);
 

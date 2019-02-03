@@ -6,6 +6,9 @@ import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIGroup;
 import flixel.addons.ui.FlxUISpriteButton;
 
+import flixel.FlxG;
+import flixel.math.FlxMath;
+
 import net.darkglass.consume.ui.FlxUIDraggableSpriteButton;
 
 /**
@@ -26,9 +29,22 @@ class Scrollbar extends FlxUIGroup
     /**
      * Current percentage between the two
      */
-    public var curScroll:Float;
+    public var curScrollPercent:Float;
 
+    /**
+     * previous scroll dimension
+     */
+    public var prevScroll:Float;
+
+    /**
+     * takes new percentage.
+     */
     public var onScroll:Float->Void;
+
+    /**
+     * handle for the user to drag
+     */
+    private var scrollHandle:FlxUIDraggableSpriteButton;
 
     public function new(x:Float = 0, y:Float = 0, length:Float = 0)
     {
@@ -55,9 +71,9 @@ class Scrollbar extends FlxUIGroup
         this.add(upButton);
 
         // handle
-        var handle:FlxUIDraggableSpriteButton = new FlxUIDraggableSpriteButton(0, 64, true, false);
-        handle.loadGraphicsUpOverDown("assets/images/gui/classic/scrollbar/button_handle.png");
-        this.add(handle);
+        this.scrollHandle = new FlxUIDraggableSpriteButton(0, 64, true, false);
+        this.scrollHandle.loadGraphicsUpOverDown("assets/images/gui/classic/scrollbar/button_handle.png");
+        this.add(this.scrollHandle);
 
         // down
         var downButton:FlxUISpriteButton = new FlxUISpriteButton(0, (length - 64), null, this.onClick_down);
@@ -68,25 +84,80 @@ class Scrollbar extends FlxUIGroup
         var bottomButton:FlxUISpriteButton = new FlxUISpriteButton(0, (length - 32), null, this.onClick_bottom);
         bottomButton.loadGraphicsUpOverDown("assets/images/gui/classic/scrollbar/button_bottom.png", false);
         this.add(bottomButton);
+
+        this.prevScroll = this.scrollHandle.y;
+
+        // if scroll changed, fix it all, fix it all, fix it all
+        if (this.scrollHandle.y != this.prevScroll)
+        {
+            this.onScroll(convertScrollToPercent(this.scrollHandle.y));
+            this.prevScroll = this.scrollHandle.y;
+        }
+    }
+
+    override public function update(elapsed:Float):Void
+    {
+        // preclamp handle
+        this.clampScrollHandle();
+
+        // run super call
+        super.update(elapsed);
+
+        // post clamp handle
+        this.clampScrollHandle();
+
+        // if scroll changed, fix it all, fix it all, fix it all
+        if (this.scrollHandle.y != this.prevScroll)
+        {
+            if (this.onScroll != null)
+            {
+                this.onScroll(convertScrollToPercent(this.scrollHandle.y));
+            }
+
+            this.prevScroll = this.scrollHandle.y;
+        }
     }
 
     private function onClick_top():Void
     {
-        // pass
+        this.scrollHandle.y = this.minScroll;
     }
 
     private function onClick_up():Void
     {
-        // pass
+        this.scrollHandle.y = this.scrollHandle.y - 15;
     }
 
     private function onClick_down():Void
     {
-        // pass
+        this.scrollHandle.y = this.scrollHandle.y + 15;
     }
 
     private function onClick_bottom():Void
     {
-        // pass
+        this.scrollHandle.y = this.maxScroll;
+    }
+
+    private function clampScrollHandle():Void
+    {
+        if (this.scrollHandle.y < this.minScroll)
+        {
+            this.scrollHandle.y = this.minScroll;
+        }
+
+        if (this.scrollHandle.y > this.maxScroll)
+        {
+            this.scrollHandle.y = this.maxScroll;
+        }
+    }
+    
+    private function convertScrollToPercent(val:Float):Float
+    {
+        return FlxMath.remapToRange(val, this.minScroll, this.maxScroll, 0, 100);
+    }
+
+    private function convertPercentToScroll(val:Float):Float
+    {
+        return FlxMath.remapToRange(val, 0, 100, this.minScroll, this.maxScroll);
     }
 }
