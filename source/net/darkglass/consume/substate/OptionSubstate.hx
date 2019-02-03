@@ -20,6 +20,8 @@ import flixel.text.FlxText.FlxTextFormat;
 
 import net.darkglass.consume.Registry;
 
+import net.darkglass.consume.ui.Scrollbar;
+
 class OptionSubstate extends FlxUISubState
 {
     private var registry:Registry = Registry.create();
@@ -270,10 +272,12 @@ class OptionSubstate extends FlxUISubState
         hackTestText.setFormat("assets/fonts/hack.ttf", 16);
         tabGroupDebug.add(hackTestText);
 
+        tabGroupDebug.add(new Scrollbar(25, 25, 200));
+
         tabMenu.addGroup(tabGroupDebug);
 
         // remember when we started the tab menu? Now we can add it to the state.
-		this.add(tabMenu);
+        this.add(tabMenu);
     }
 
     /**
