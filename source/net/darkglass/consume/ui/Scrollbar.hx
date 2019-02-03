@@ -34,6 +34,12 @@ class Scrollbar extends FlxUIGroup
     {
         super(x, y);
 
+        // minimum size for length is 160, thanks
+        if (length < 160)
+        {
+            length = 160;
+        }
+
         // BG
         var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(0, 0, "assets/images/gui/classic/scrollbar/background.png", new Rectangle(0, 0, 32, length), [1, 1, 2, 2]);
         this.add(background);
