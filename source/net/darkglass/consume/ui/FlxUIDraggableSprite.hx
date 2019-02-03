@@ -1,15 +1,14 @@
 package net.darkglass.consume.ui;
 
-import flixel.addons.ui.FlxUISprite;
+import flixel.addons.ui.FlxUISpriteButton;
 import flixel.FlxG;
-import flixel.input.mouse.FlxMouseEventManager;
 import flixel.math.FlxPoint;
 
 /**
  * An FlxUISprite with mouse draggability. Was prerequisite to design a basic
  * scrollbar.
  */
-class FlxUIDraggableSprite extends FlxUISprite
+class FlxUIDraggableSpriteButton extends FlxUISpriteButton
 {
     /**
      * Whether this can be dragged vertically
@@ -44,14 +43,11 @@ class FlxUIDraggableSprite extends FlxUISprite
     public function new(X:Float=0,Y:Float=0,vertical:Bool=true, horizontal:Bool=true,SimpleGraphic:Dynamic=null) 
     {
         // super constructor
-        super(X, Y, SimpleGraphic);
+        super(X, Y, SimpleGraphic, this.onClick);
 
         // set the two thingies.
         this.dragHorizontal = horizontal;
         this.dragVertical   = vertical;
-
-        // add mouse event manager event to read click in bounds
-        FlxMouseEventManager.add(this, this.onClick)
     }
 
     override public function update(elapsed:Float):Void
@@ -90,7 +86,7 @@ class FlxUIDraggableSprite extends FlxUISprite
         }
     }
 
-    private function onClick(object:FlxUIDraggableSprite):Void
+    private function onClick():Void
     {
         this.dragging = true;
         this.lastMousePos.x = FlxG.mouse.x;
