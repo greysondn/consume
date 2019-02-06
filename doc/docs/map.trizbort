@@ -190,14 +190,14 @@
 		<room id="54" name="[26] Ice Cream Shop" x="512" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="55" startText="35" midText="[15]" endText="37">
+		<line id="55" startText="35" midText="[15]" endText="36">
 			<dock index="0" id="12" port="e" />
 			<dock index="1" id="54" port="w" />
 		</line>
 		<room id="56" name="[27] Ice Cream Shop - Backroom" x="704" y="384" w="128" h="128" description="">
 			<objects at="wsw" />
 		</room>
-		<line id="57" startText="36" midText="[16]" endText="38">
+		<line id="57" startText="37" midText="[16]" endText="38">
 			<dock index="0" id="54" port="e" />
 			<dock index="1" id="56" port="w" />
 		</line>
