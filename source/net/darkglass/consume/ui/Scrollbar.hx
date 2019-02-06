@@ -46,6 +46,13 @@ class Scrollbar extends FlxUIGroup
      */
     private var scrollHandle:FlxUIDraggableSpriteButton;
 
+    /**
+     * Creates a scrollbar. Only vertical ones are possible for now.
+     * 
+     * @param x         x coordinate of top left of scrollbar
+     * @param y         y coordinate of top left of scrollbar
+     * @param length    total length along dimensional direction
+     */
     public function new(x:Float = 0, y:Float = 0, length:Float = 0)
     {
         super(x, y);
@@ -111,6 +118,12 @@ class Scrollbar extends FlxUIGroup
         }
     }
 
+    /**
+     * Helper fucntion to set scroll bar to position based on percentage
+     * without triggering movement detection in the awful code.
+     * 
+     * @param newPercent new percentage to scroll window to
+     */
     public function updateScrollbarPosition(newPercent:Float)
     {
         var newPos:Float = this.convertPercentToScroll(newPercent);
@@ -118,26 +131,42 @@ class Scrollbar extends FlxUIGroup
         this.prevScroll = newPos;
     }
 
+    /**
+     * fires on click of top
+     */
     private function onClick_top():Void
     {
         this.scrollHandle.y = this.minScroll;
     }
 
+    /**
+     * fires on click of up
+     */
     private function onClick_up():Void
     {
         this.scrollHandle.y = this.scrollHandle.y - 15;
     }
 
+    /**
+     * fires on click of down
+     */
     private function onClick_down():Void
     {
         this.scrollHandle.y = this.scrollHandle.y + 15;
     }
 
+    /**
+     * fires on click of bottom
+     */
     private function onClick_bottom():Void
     {
         this.scrollHandle.y = this.maxScroll;
     }
 
+    /**
+     * clamps the scroll handle bounds to boundaries of where
+     * it can be set
+     */
     private function clampScrollHandle():Void
     {
         if (this.scrollHandle.y < this.minScroll)
@@ -151,11 +180,22 @@ class Scrollbar extends FlxUIGroup
         }
     }
     
+    /**
+     * Takes a scroll point along the and returns the percent
+     * @param val       scroll point
+     * @return Float    percentage that represents
+     */
     private function convertScrollToPercent(val:Float):Float
     {
         return FlxMath.remapToRange(val, this.minScroll, this.maxScroll, 0, 100);
     }
 
+    /**
+     * Takes a percent and converts it to a scroll point along the axis
+     * 
+     * @param val       percentage
+     * @return Float    scroll point that represents
+     */
     private function convertPercentToScroll(val:Float):Float
     {
         return FlxMath.remapToRange(val, 0, 100, this.minScroll, this.maxScroll);
