@@ -274,43 +274,25 @@ class OptionSubstate extends FlxUISubState
         hackTestText.setFormat("assets/fonts/hack.ttf", 16);
         tabGroupDebug.add(hackTestText);
 
-    /*  // ---------------------------------------------
-        // Old code for this shenanigans
-        // ---------------------------------------------
+        var scrss:Scrollbar = new Scrollbar(730, 65, 300);
+        scrss.minScroll = 274;
+        scrss.maxScroll = 414;
+        tabGroupDebug.add(scrss);
 
-        // var scrss:Scrollbar = new Scrollbar(730, 65, 300);
-        // scrss.minScroll = 274;
-        // scrss.maxScroll = 414;
-        // tabGroupDebug.add(scrss);
-
-        // var wat:WaTTY = new WaTTY(200, 65, 1000);
+        var wat:WaTTY = new WaTTY(200, 65, 1000);
         wat.charWidth = 54;
         wat.charHeight = 16;
-        // scrss.onScroll = wat.scrollToPercent;
-        // wat.onLengthChange = scrss.updateScrollbarPosition;
+        scrss.onScroll = wat.scrollToPercent;
+        wat.onLengthChange = scrss.updateScrollbarPosition;
         
         wat.setFormat("assets/fonts/hack.ttf", 16);
-        //tabGroupDebug.add(wat);
+        tabGroupDebug.add(wat);
 
-        // wat.addText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis lectus maximus, consequat purus quis, egestas leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent accumsan lacus ut pharetra gravida. Nulla augue enim, gravida id dui ac, dictum rhoncus urna. Integer mi quam, pretium nec euismod et, pretium sit amet libero. Nunc ut dolor porttitor, tempor quam ut, pharetra tellus. Aliquam laoreet est eget ex tincidunt dictum. Etiam ex nibh, consectetur eget ultricies eget, faucibus ut orci. Nam nec risus eget lacus dapibus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
-        // wat.addText("\n");
-        // wat.addText("Donec massa magna, aliquet sed volutpat non, porta ac nulla. Etiam ultricies suscipit ligula sed varius. Curabitur pharetra nisl a ante congue pretium. Nullam vestibulum urna blandit leo scelerisque sagittis. Praesent odio orci, aliquam sed sagittis vel, auctor ac purus. Nunc facilisis porttitor diam in vestibulum. Nullam a ullamcorper ipsum, eget hendrerit massa. Vestibulum maximus vestibulum lectus in venenatis. Proin auctor mollis ante id pharetra. In egestas sodales sapien, ut suscipit tortor lacinia id. Cras sed odio tristique, rutrum lacus a, aliquam ante. Quisque pulvinar nec tortor a semper. Ut sodales at nulla ac commodo.");
-        // wat.addText("\n");
-        // wat.addText("Nam volutpat nisi eu blandit volutpat. Etiam ut imperdiet nulla. Sed at eros nec lacus aliquet auctor accumsan vel mauris. Donec luctus massa nec augue dapibus hendrerit. Nam pulvinar ex ac quam sagittis convallis. Phasellus lorem enim, ultrices eu purus sed, dapibus tempus ex. Etiam nibh tortor, consequat non vehicula sit amet, porta at eros. Vestibulum eu volutpat mi. Aliquam nunc enim, ultrices ac pretium sit amet, auctor at justo. Cras vulputate lacus mattis, laoreet arcu in, fermentum ipsum. Curabitur rutrum maximus egestas. Donec id viverra risus. Nulla facilisi. Donec a turpis hendrerit, sagittis quam in, commodo nulla. Duis vestibulum in urna vel bibendum. Quisque non elit imperdiet libero placerat accumsan.");
-    */
-
-        var yeaaaah:WaTTYDisplay = new WaTTYDisplay(200, 65, 500, 300, 113);
-        yeaaaah.changeFormat("assets/fonts/hack.ttf", 16, 100, 100);
-
-
-        tabGroupDebug.add(yeaaaah);
-
-        yeaaaah.addText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis lectus maximus, consequat purus quis, egestas leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent accumsan lacus ut pharetra gravida. Nulla augue enim, gravida id dui ac, dictum rhoncus urna. Integer mi quam, pretium nec euismod et, pretium sit amet libero. Nunc ut dolor porttitor, tempor quam ut, pharetra tellus. Aliquam laoreet est eget ex tincidunt dictum. Etiam ex nibh, consectetur eget ultricies eget, faucibus ut orci. Nam nec risus eget lacus dapibus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
-        yeaaaah.addText("\n");
-        yeaaaah.addText("Donec massa magna, aliquet sed volutpat non, porta ac nulla. Etiam ultricies suscipit ligula sed varius. Curabitur pharetra nisl a ante congue pretium. Nullam vestibulum urna blandit leo scelerisque sagittis. Praesent odio orci, aliquam sed sagittis vel, auctor ac purus. Nunc facilisis porttitor diam in vestibulum. Nullam a ullamcorper ipsum, eget hendrerit massa. Vestibulum maximus vestibulum lectus in venenatis. Proin auctor mollis ante id pharetra. In egestas sodales sapien, ut suscipit tortor lacinia id. Cras sed odio tristique, rutrum lacus a, aliquam ante. Quisque pulvinar nec tortor a semper. Ut sodales at nulla ac commodo.");
-        yeaaaah.addText("\n");
-        yeaaaah.addText("Nam volutpat nisi eu blandit volutpat. Etiam ut imperdiet nulla. Sed at eros nec lacus aliquet auctor accumsan vel mauris. Donec luctus massa nec augue dapibus hendrerit. Nam pulvinar ex ac quam sagittis convallis. Phasellus lorem enim, ultrices eu purus sed, dapibus tempus ex. Etiam nibh tortor, consequat non vehicula sit amet, porta at eros. Vestibulum eu volutpat mi. Aliquam nunc enim, ultrices ac pretium sit amet, auctor at justo. Cras vulputate lacus mattis, laoreet arcu in, fermentum ipsum. Curabitur rutrum maximus egestas. Donec id viverra risus. Nulla facilisi. Donec a turpis hendrerit, sagittis quam in, commodo nulla. Duis vestibulum in urna vel bibendum. Quisque non elit imperdiet libero placerat accumsan.");
-
+        wat.addText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis lectus maximus, consequat purus quis, egestas leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent accumsan lacus ut pharetra gravida. Nulla augue enim, gravida id dui ac, dictum rhoncus urna. Integer mi quam, pretium nec euismod et, pretium sit amet libero. Nunc ut dolor porttitor, tempor quam ut, pharetra tellus. Aliquam laoreet est eget ex tincidunt dictum. Etiam ex nibh, consectetur eget ultricies eget, faucibus ut orci. Nam nec risus eget lacus dapibus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
+        wat.addText("\n");
+        wat.addText("Donec massa magna, aliquet sed volutpat non, porta ac nulla. Etiam ultricies suscipit ligula sed varius. Curabitur pharetra nisl a ante congue pretium. Nullam vestibulum urna blandit leo scelerisque sagittis. Praesent odio orci, aliquam sed sagittis vel, auctor ac purus. Nunc facilisis porttitor diam in vestibulum. Nullam a ullamcorper ipsum, eget hendrerit massa. Vestibulum maximus vestibulum lectus in venenatis. Proin auctor mollis ante id pharetra. In egestas sodales sapien, ut suscipit tortor lacinia id. Cras sed odio tristique, rutrum lacus a, aliquam ante. Quisque pulvinar nec tortor a semper. Ut sodales at nulla ac commodo.");
+        wat.addText("\n");
+        wat.addText("Nam volutpat nisi eu blandit volutpat. Etiam ut imperdiet nulla. Sed at eros nec lacus aliquet auctor accumsan vel mauris. Donec luctus massa nec augue dapibus hendrerit. Nam pulvinar ex ac quam sagittis convallis. Phasellus lorem enim, ultrices eu purus sed, dapibus tempus ex. Etiam nibh tortor, consequat non vehicula sit amet, porta at eros. Vestibulum eu volutpat mi. Aliquam nunc enim, ultrices ac pretium sit amet, auctor at justo. Cras vulputate lacus mattis, laoreet arcu in, fermentum ipsum. Curabitur rutrum maximus egestas. Donec id viverra risus. Nulla facilisi. Donec a turpis hendrerit, sagittis quam in, commodo nulla. Duis vestibulum in urna vel bibendum. Quisque non elit imperdiet libero placerat accumsan.");
 
         tabMenu.addGroup(tabGroupDebug);
 
