@@ -6,25 +6,43 @@ import flixel.addons.ui.FlxUIText;
 
 class WaTTY extends FlxUIText
 {
-    // the textbuffer to draw from
+    /**
+     * the textbuffer to draw from
+     */
     public var textBuffer:Array<String> = [];
 
-    // width this can be, in characters
+    /**
+     * width this can be, in characters
+     */
     public var charWidth:Int = 80;
 
-    // height this can be, in characters
+    /**
+     * height this can be, in characters
+     */
     public var charHeight:Int = 80;
 
-    // line count in buffer
+    /**
+     * line count in buffer
+     */
     public var lineCount:Int = 1;
 
-    // current line in buffer
+    /**
+     * current line in buffer
+     */
     public var currentLine:Int = 0;
 
-    // when the length is changed, has percent
+    /**
+     * when the length is changed, has percent
+     */
     public var onLengthChange:Float->Void;
 
-    // this entire thing, I guess
+    /**
+     * This entire thing, I guess.
+     * 
+     * @param x         x coordinate of top left corner
+     * @param y         y coordinate of top left corner
+     * @param width     width of text field area. I don't think this works.
+     */
     public function new(x:Float = 0, y:Float = 0, width:Float = 0)
     {
         super(x, y, width, null, null, true);
