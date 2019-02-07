@@ -14,6 +14,7 @@ import flixel.text.FlxText.FlxTextFormat;
 import net.darkglass.consume.Registry;
 
 import net.darkglass.consume.substate.OptionSubstate;
+import net.darkglass.consume.substate.PreWarnSubstate;
 
 import yaml.Yaml;
 
@@ -124,6 +125,10 @@ class TitleState extends FlxUIState
         var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits");
         creditsButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(creditsButton);
+
+        // warning!
+        var prewarnSubstate:PreWarnSubstate = new PreWarnSubstate(0x80000000);
+		openSubState(prewarnSubstate);
     }
 
     override public function update(elapsed:Float):Void
