@@ -185,7 +185,7 @@ class WaTTY extends FlxUIText
 
     private function percentToLine(val:Float):Int
     {
-        return Std.int(FlxMath.roundDecimal(FlxMath.remapToRange(val, 0, 100, 80, this.lineCount), 0));
+        return Std.int(FlxMath.roundDecimal(FlxMath.remapToRange(val, 0, 100, 80, this.lineCount - 1), 0));
     }
 
     private function lineToPercent(val:Float):Float
