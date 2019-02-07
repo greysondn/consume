@@ -50,7 +50,7 @@ class TitleState extends FlxUIState
         // version
         // pos 489x42
         // sz 162x97
-        var verText:FlxUIText = new FlxUIText(551, 227, 162, "v0.53pre1\n7 Feb 2019");
+        var verText:FlxUIText = new FlxUIText(551, 227, 162, "v0.53pre2dev\nIn Development");
         verText.alignment = "center";
         verText.addFormat(fntcol);
         this.add(verText);
