@@ -32,7 +32,7 @@ class CreditsSubstate extends FlxUISubState
         this.add(background);
 
         var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
-        var titleTxt:FlxUIText = new FlxUIText(32, 32, 786, "Credits", 87);
+        var titleTxt:FlxUIText = new FlxUIText(32, 32, 786, "Credits", 70); // we really want, like, 87 on non-static targets
         titleTxt.alignment = "center";
         titleTxt.addFormat(fntcol);
         this.add(titleTxt);
@@ -102,7 +102,7 @@ class CreditsSubstate extends FlxUISubState
         wat.scrollToLine(96);
 
         var backButton:FlxUIButton = new FlxUIButton(32, 566, "Back", onClick_back);
-        backButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, false, -1);
+        backButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, 0, -1);
         this.add(backButton);
     }
 

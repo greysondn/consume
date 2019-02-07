@@ -43,7 +43,7 @@ class PreWarnSubstate extends FlxUISubState
         this.add(wat);
 
         var closeButton:FlxUIButton = new FlxUIButton(32, 566, "Okay, okay", onClick_close);
-        closeButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, false, -1);
+        closeButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, 0, -1);
         this.add(closeButton);
 
         wat.addText("The flash you're looking at is not a playable game. It is a preview of progress on an engine overhaul for Consume.");

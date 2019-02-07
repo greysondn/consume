@@ -113,23 +113,23 @@ class TitleState extends FlxUIState
         var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
 
         var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game");
-        newButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
+        newButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(newButton);
 
         var loadButton:FlxUIButton = new FlxUIButton(190, 408, "Load");
-        loadButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
+        loadButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(loadButton);
 
         var optionsButton:FlxUIButton = new FlxUIButton(190, 460, "Options", onClick_options);
-        optionsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, false, -1);
+        optionsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(optionsButton);
 
         var faqButton:FlxUIButton = new FlxUIButton(190, 512, "FAQ", onClick_faq);
-        faqButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, false, -1);
+        faqButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(faqButton);
 
         var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits", onClick_credits);
-        creditsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, false, -1);
+        creditsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(creditsButton);
 
         // warning!

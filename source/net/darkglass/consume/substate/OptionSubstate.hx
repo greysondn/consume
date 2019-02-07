@@ -74,14 +74,14 @@ class OptionSubstate extends FlxUISubState
 
         // clickable button that doesn't suck too hard to close it?
         var backButton:FlxUIButton = new FlxUIButton(32, 566, "Back", onClick_back);
-        backButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, false, -1);
+        backButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, 0, -1);
         this.add(backButton);
 
         // title
         // loc  32x32
         // size 786x87
         var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
-        var titleTxt:FlxUIText = new FlxUIText(32, 32, 786, "Options", 87);
+        var titleTxt:FlxUIText = new FlxUIText(32, 32, 786, "Options", 70);
         titleTxt.alignment = "center";
         titleTxt.addFormat(fntcol);
         this.add(titleTxt);

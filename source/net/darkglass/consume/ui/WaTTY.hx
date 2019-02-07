@@ -55,7 +55,7 @@ class WaTTY extends FlxUIText
      */
     public function new(x:Float = 0, y:Float = 0, width:Float = 0)
     {
-        super(x, y, width, null, null, true);
+        super(x, y, width, null, 12, true);
 
         // append some empty lines
         // just as a sort of rule of thumb exercise
