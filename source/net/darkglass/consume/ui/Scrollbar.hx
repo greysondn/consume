@@ -42,6 +42,17 @@ class Scrollbar extends FlxUIGroup
     public var onScroll:Float->Void;
 
     /**
+     * meant to scroll up one notch and return new percentage
+     */
+    public var scrollUpOne:Void->Float;
+
+    /**
+     * meant to scroll down one notch and return new percentage
+     */
+     public var scrollDownOne:Void->Float;
+
+
+    /**
      * handle for the user to drag
      */
     private var scrollHandle:FlxUIDraggableSpriteButton;
@@ -144,7 +155,8 @@ class Scrollbar extends FlxUIGroup
      */
     private function onClick_up():Void
     {
-        this.scrollHandle.y = this.scrollHandle.y - 15;
+        this.scrollHandle.y = this.convertPercentToScroll(this.scrollUpOne());
+        this.prevScroll = this.scrollHandle.y;
     }
 
     /**
@@ -152,7 +164,8 @@ class Scrollbar extends FlxUIGroup
      */
     private function onClick_down():Void
     {
-        this.scrollHandle.y = this.scrollHandle.y + 15;
+        this.scrollHandle.y = this.convertPercentToScroll(this.scrollDownOne());
+        this.prevScroll = this.scrollHandle.y;
     }
 
     /**

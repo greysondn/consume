@@ -132,6 +132,9 @@ class WaTTY extends FlxUIText
         // make sure that's in range
         ln = this.clampLineNumber(ln);
 
+        // set current line to
+        this.currentLine = ln;
+
         // clear display
         this.text = "";
 
@@ -152,6 +155,18 @@ class WaTTY extends FlxUIText
         this.text = endText;
     }
 
+    public function scrollDownOne():Float
+    {
+        this.scrollToLine(this.currentLine + 1);
+        return this.lineToPercent(this.currentLine);
+    }
+
+    public function scrollUpOne():Float
+    {
+        this.scrollToLine(this.currentLine - 1);
+        return this.lineToPercent(this.currentLine);
+    }
+
     public function scrollToPercent(val:Float):Void
     {
         this.scrollToLine(this.percentToLine(val));
@@ -164,7 +179,7 @@ class WaTTY extends FlxUIText
 
     private function lineToPercent(val:Float):Float
     {
-        return FlxMath.remapToRange(val, 80, this.lineCount, 0, 100);
+        return FlxMath.remapToRange(val, 80, (this.lineCount - 1), 0, 100);
     }
 
     private function clampLineNumber(ln:Int):Int
