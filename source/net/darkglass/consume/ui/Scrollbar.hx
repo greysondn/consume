@@ -135,7 +135,7 @@ class Scrollbar extends FlxUIGroup
      * 
      * @param newPercent new percentage to scroll window to
      */
-    public function updateScrollbarPosition(newPercent:Float)
+    public function updateScrollbarPosition(newPercent:Float):Void
     {
         var newPos:Float = this.convertPercentToScroll(newPercent);
         this.scrollHandle.y = newPos;

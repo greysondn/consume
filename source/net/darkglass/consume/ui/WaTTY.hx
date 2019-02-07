@@ -42,6 +42,11 @@ class WaTTY extends FlxUIText
     public var onLengthChange:Float->Void;
 
     /**
+     * when the line changes, has percent
+     */
+    public var onLineChange:Float->Void;
+
+    /**
      * This entire thing, I guess.
      * 
      * @param x         x coordinate of top left corner
@@ -153,6 +158,12 @@ class WaTTY extends FlxUIText
 
         // set endtext up proper
         this.text = endText;
+
+        // update our line
+        if (null != this.onLineChange)
+        {
+            this.onLineChange(this.lineToPercent(currentLine));
+        }
     }
 
     public function scrollDownOne():Float

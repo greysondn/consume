@@ -293,11 +293,13 @@ class OptionSubstate extends FlxUISubState
         scrss.scrollDownOne = wat.scrollDownOne;
         
         wat.onLengthChange = scrss.updateScrollbarPosition;
+        wat.onLineChange   = scrss.updateScrollbarPosition;
 
         wat.setFormat("assets/fonts/hack.ttf", 16, 0x000000);
 
         tabGroupDebug.add(wat);
 
+        wat.addText("Nope, no secrets here. Nice try though.\n\n\n\n");
         wat.addText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis lectus maximus, consequat purus quis, egestas leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent accumsan lacus ut pharetra gravida. Nulla augue enim, gravida id dui ac, dictum rhoncus urna. Integer mi quam, pretium nec euismod et, pretium sit amet libero. Nunc ut dolor porttitor, tempor quam ut, pharetra tellus. Aliquam laoreet est eget ex tincidunt dictum. Etiam ex nibh, consectetur eget ultricies eget, faucibus ut orci. Nam nec risus eget lacus dapibus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
         wat.addText("\n");
         wat.addText("Donec massa magna, aliquet sed volutpat non, porta ac nulla. Etiam ultricies suscipit ligula sed varius. Curabitur pharetra nisl a ante congue pretium. Nullam vestibulum urna blandit leo scelerisque sagittis. Praesent odio orci, aliquam sed sagittis vel, auctor ac purus. Nunc facilisis porttitor diam in vestibulum. Nullam a ullamcorper ipsum, eget hendrerit massa. Vestibulum maximus vestibulum lectus in venenatis. Proin auctor mollis ante id pharetra. In egestas sodales sapien, ut suscipit tortor lacinia id. Cras sed odio tristique, rutrum lacus a, aliquam ante. Quisque pulvinar nec tortor a semper. Ut sodales at nulla ac commodo.");

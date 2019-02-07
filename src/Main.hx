@@ -5912,53 +5912,10 @@ class Main {
 		btns[8].setClickFunc(welcomeScreen);
 	}	
 	
-	static function displayCredits( e:MouseEvent ) {
-		var logo:Object = Lib.current.getChildByName("gameLogo");
-		
-		var credits:Array<String> = new Array();
-		var backerCredits:Array<String> = new Array();
-		var oneLineBackers:Array<String> = new Array();
-		var message:String = "";
-		
-		clearAllEvents();
-		Lib.current.removeChild(logo);
-		
-		credits.push("Consume logo design by forum member Alcathair.");
-		credits.push("Guffin character created by forum member Foxlets.");
-		credits.push("Ice cream shop content contributed by forum member Foxlets.");
-		credits.push("Scat and gym anal sex scenes contributed by forum member Victor Styche.");
-		credits.push("Gym female oral sex scenes contributed by forum member BeardyKomodo.");
-		credits.push("Bug fixes and code improvements by GitHub member s-r-g-i.");
-		
-		oneLineBackers.push("Anthony Ahlfield");
-		oneLineBackers.push("Spencer Cochran");
-		oneLineBackers.push("Wolf");
-		
-		backerCredits.push("Wolfhouse520");
-		backerCredits.push("benjamin sanchez");
-		
-		
-		for (i in 0...credits.length) {
-			message += "<p>" + credits[i] + "</p>";
-		}
-		
-		message += "<br><p><b>Thanks to my Patreon backers!</b></p><br>";
-		
-		for (i in 0...oneLineBackers.length) {
-			message += "<p>" + oneLineBackers[i] + "</p>";
-		}
-		
-		message += "<br><p>" + backerCredits[0];
-		
-		for (i in 1...backerCredits.length) {
-			message += ", " + backerCredits[i];
-		}
-		
-		outputText("Game code and story by Kyra Sunseeker.</b></p><br>" + message, "Credits");
-		
-		btns[8].setButton("Back");
-		btns[8].setClickFunc(welcomeScreen);
-	}
+    static function displayCredits( e:MouseEvent )
+    {
+        // the credits list was here, but it's in the ported code now.
+    }
 
 	static function welcomeScreen(?event:MouseEvent) {
 		var txtOutput:Object  = Lib.current.getChildByName("Output Field");

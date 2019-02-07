@@ -13,6 +13,7 @@ import flixel.text.FlxText.FlxTextFormat;
 
 import net.darkglass.consume.Registry;
 
+import net.darkglass.consume.substate.CreditsSubstate;
 import net.darkglass.consume.substate.OptionSubstate;
 import net.darkglass.consume.substate.PreWarnSubstate;
 
@@ -122,8 +123,8 @@ class TitleState extends FlxUIState
         faqButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
         this.add(faqButton);
 
-        var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits");
-        creditsButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, false, -1);
+        var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits", onClick_credits);
+        creditsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, false, -1);
         this.add(creditsButton);
 
         // warning!
@@ -140,5 +141,11 @@ class TitleState extends FlxUIState
     {
         var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
 		openSubState(optionSubstate);
+    }
+
+    public function onClick_credits():Void
+    {
+        var creditsSubstate:CreditsSubstate = new CreditsSubstate(0x80000000);
+        openSubState(creditsSubstate);
     }
 }

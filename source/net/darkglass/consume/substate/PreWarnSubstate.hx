@@ -36,7 +36,7 @@ class PreWarnSubstate extends FlxUISubState
         titleTxt.addFormat(fntcol);
         this.add(titleTxt);
 
-        var wat:WaTTY = new WaTTY(32, 119, 738);
+        var wat:WaTTY = new WaTTY(56, 119, 738);
         wat.setFormat("assets/fonts/hack.ttf", 16, 0x000000);
         wat.charWidth  = 76;
         wat.charHeight = 20;
