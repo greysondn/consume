@@ -78,10 +78,20 @@ class WaTTY extends FlxUIText
             var oldLn:String = "";
             var newLn:String = "";
 
+            var firstLine:Bool = true;
+
             for (word in words)
             {
                 // try to assemble new line
-                newLn = oldLn + " " + word;
+                if (firstLine)
+                {
+                    newLn = word;
+                    firstLine = false;
+                }
+                else
+                {
+                    newLn = oldLn + " " + word;
+                }
                 
                 // see if it's longer than limit
                 if (newLn.length > charWidth)
