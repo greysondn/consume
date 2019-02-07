@@ -108,7 +108,7 @@ class FAQSubstate extends FlxUISubState
         wat.addText("");
         wat.addText("Q: Will there be graphics? Can I make graphics for the game?");
         wat.addText("");
-        wat.addText("A: This question is shelved. Please see the question two above. (Greysondn, 7 February 2019)")
+        wat.addText("A: This question is shelved. Please see the question two above. (Greysondn, 7 February 2019)");
         wat.addText("");
         wat.addText("-----------------------------------------------------------------");
         wat.addText("");
@@ -134,7 +134,7 @@ class FAQSubstate extends FlxUISubState
         wat.addText("Q: What did you use to make Consume's HaxeFlixel port?");
         wat.addText("");
         wat.addText("A: Haxe, and Haxeflixel. Genko seems to have not understood the ecosystem very well. I've had years of experience in it, and I've been working with Flixel longer than there's been a Haxe port of it. The IDE is VS-Code; the platform of choice is (regretably) Windows 10. Game testing is done via a debug build for HTML5, running in Google Chrome. Beyond this, it's just a difference in experience - not, I think, in ability. (Greysondn, 7 February 2019)");
-        wat.addText("")
+        wat.addText("");
         wat.addText("-----------------------------------------------------------------");
         wat.addText("");
         wat.addText("Q: Why is it called a WaTTY?");
@@ -150,7 +150,8 @@ class FAQSubstate extends FlxUISubState
         wat.addText("");
         wat.addText("Q: Will you open some kind of community or something?");
         wat.addText("");
-        wat.addText("A: Check the FA description for a Discord server.")
+        wat.addText("A: Check the FA description for a Discord server.");
+        wat.addText("");
 
         wat.scrollToLine(96);
 

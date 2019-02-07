@@ -5882,36 +5882,12 @@ class Main {
 		}
 	}
 	
-	static function displayFAQ( e:MouseEvent ) {
-		var logo:Object = Lib.current.getChildByName("gameLogo");
-		
-		var qanda:Array<String> = new Array();
-		var message:String = "";
-		
-		qanda.push("<p><b>Waaaa The game sucks now! What happened?!</b></p><p>Sorry about that, while working on adding features that I've been asked about a number of times I figured out that it would be easier to rewrite the game to support those features from the ground up rather then trying to shoehorn them into my existing engine. I started working on that in version 0.29, so if you're looking for a playable version you'll have to go back to v0.28 (which you can still find on my furAffinity page). Hopefully I'll have this new engine in a working state soon. Until then, please stick around!</p>");
-		qanda.push("<p><b>Will there be an option for the player to be eaten?</b></p><p>Yes. There are a few scenes in place already. There will be more as the game progresses.</p>");
-		qanda.push("<p><b>Will there be [insert type of vore]?</b></p><p>Yes, it's going to take a while before any besides oral are in place, though there are currently a few types of NPC non-oral vore in place now.</p>");
-		qanda.push("<p><b>Will there be [insert species]?</b></p><p>Working on adding species! There's usually a poll going on the forum to pick which species gets added in the next update. And I'm always willing to hear suggestions.</p>");
-		qanda.push("<p><b>Will you add graphics/Can I make graphics for your game?</b></p><p>Yes! I am always willing to take artwork, see the forums for details. Unfortunitly I can't offer bounties right now, but maybe I will again soon.</p>");
-		qanda.push("<p><b>Can I write scenes?</b></p><p>Yes. Write it up and send it to me, either note or email. If I can get it in the game I'll do so and let you know (and yes you will be credited with writing it in game.) You can also write characters if you'd like, more information, including what slots are open, can be found on the forums.</p>");
-		qanda.push("<p><b>Can I pay your for your wonderful fetish game?</b></p><p>By all means, yes! Yes you can! ... And I've made it even easier for you, just head over to Patreon <a target='_new' href='https://www.patreon.com/SillySnowFox'><u>here</u></a> and pledge a couple dollars!</p>");
-		qanda.push("<p><b>What do you use to make Consume?</b></p><p>Consume is written in ActionScript and compiled into flash by using HaXe. I use FlashDevelop as the debugging environment. This causes a few odd issues as HaXe doesn't support some aspects of ActionScript for some reason but it also doesn't require a subscription.</p>");
-		
-		
-		Lib.current.removeChild(logo);
-		
-		clearAllEvents();
-		
-		for (i in 0...qanda.length) {
-			message += qanda[i] + "<br>";
-		}
-		
-		outputText(message, "Frequently Asked Questions");
-		
-		btns[8].setButton("Back");
-		btns[8].setClickFunc(welcomeScreen);
-	}	
-	
+    static function displayFAQ( e:MouseEvent )
+    {
+        // the code to generate the faq was here, but it's in the ported code
+        // now.
+    }
+
     static function displayCredits( e:MouseEvent )
     {
         // the credits list was here, but it's in the ported code now.
