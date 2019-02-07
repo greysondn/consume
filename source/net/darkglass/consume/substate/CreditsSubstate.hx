@@ -61,7 +61,7 @@ class CreditsSubstate extends FlxUISubState
         wat.addText("HaxeFlixel Port Credits (v0.53 and later)");
         wat.addText("--------------------------------------------");
         wat.addText("");
-        wat.addText("HaxeFlixel and Engine Port");
+        wat.addText("HaxeFlixel Engine Port");
         wat.addText("Greysondn");
         wat.addText("");
         wat.addText("Based Upon Original Work By");
