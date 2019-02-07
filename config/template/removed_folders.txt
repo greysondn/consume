@@ -1,0 +1,9 @@
+I had to keep a list of these somewhere, I suppose.
+
+removed from the flixel template:
+/assets
+/assets/data
+/assets/images
+/assets/music
+/assets/sounds
+/export/*

@@ -1,0 +1,48 @@
+# comments shown on title screen
+
+# -----------------------------------
+# the below is from v0.53.0 backwards
+# -----------------------------------
+
+# Consume v0.53.0pre1
+- "Porting this mess wasn't easy, you know (Greysondn, 20 Jan 2019)"
+
+# Hamilton: An American Musical
+- "There's a million things I haven't done, but just you wait. Just you wait."
+
+# Leather Goddesses of Phobos
+- "The lion takes an experimental bite out of the basketball but spits it out."
+
+# Planetfall
+- "Oh boy, are we going to try something dangerous now?"
+
+# Zork
+- "It is pitch black. You are likely to be eaten by a grue."
+
+# -----------------------------------
+# the below is from v0.52.1 backwards
+# -----------------------------------
+
+# he sets "smcap" to be textsize-4 at the start of the var file.
+
+# Bioshock
+- "A man chooses. A slave obeys"
+- "Would you kindly..."
+
+# Consume V0.52.1 (and earlier)
+- "Kyra's favroite flavor is strawberry."
+- "Kyra casts Resurrection! It failed 554 times before succeeding. Kyra fainted." 
+# the classic notes for these strings notes that - apparently - this second one
+# is a reference to the number of days between v0.40 and v0.41.
+
+# Cowboy Bebop
+- "See you space cowboy..."
+
+# The Lord of the Rings
+- "Even the smallest person can change the course of the future."
+
+# Sherlock Holmes
+- "When you have eliminated the impossible, whatever remains, no matter how improbable, must be the truth."
+
+# Sin City
+- "Walk down the right back alley... and you could find anything."
