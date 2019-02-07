@@ -129,7 +129,7 @@ class TitleState extends FlxUIState
 
         // warning!
         var prewarnSubstate:PreWarnSubstate = new PreWarnSubstate(0x80000000);
-		openSubState(prewarnSubstate);
+        openSubState(prewarnSubstate);
     }
 
     override public function update(elapsed:Float):Void
@@ -140,7 +140,7 @@ class TitleState extends FlxUIState
     public function onClick_options():Void
     {
         var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
-		openSubState(optionSubstate);
+        openSubState(optionSubstate);
     }
 
     public function onClick_credits():Void
