@@ -12,6 +12,11 @@ class WaTTY extends FlxUIText
     public var textBuffer:Array<String> = [];
 
     /**
+     * the actual, factual, full log
+     */
+     public var textLog:Array<String> = [];
+
+    /**
      * width this can be, in characters
      */
     public var charWidth:Int = 80;
@@ -83,6 +88,7 @@ class WaTTY extends FlxUIText
                 {
                     // longer than limit
                     this.textBuffer.push(oldLn);
+                    this.textLog.push(oldLn);
 
                     // create new oldLn
                     oldLn = word;
