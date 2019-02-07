@@ -146,6 +146,7 @@ class FAQSubstate extends FlxUISubState
         wat.addText("Q: Will you reopen the Reddit community? Or start your own?");
         wat.addText("");
         wat.addText("A: Reddit really doesn't like when a banned subreddit changes its name and reopens. I suggest not doing that. (Greysondn, 7 February 2019)");
+        wat.addText("");
         wat.addText("-----------------------------------------------------------------");
         wat.addText("");
         wat.addText("Q: Will you open some kind of community or something?");
