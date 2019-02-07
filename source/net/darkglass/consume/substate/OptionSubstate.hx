@@ -274,16 +274,19 @@ class OptionSubstate extends FlxUISubState
         hackTestText.setFormat("assets/fonts/hack.ttf", 16);
         tabGroupDebug.add(hackTestText);
 
+        var textframe:FlxUI9SliceSprite = new FlxUI9SliceSprite(200, 65, buttonNormalImg, new Rectangle(0, 0, 530, 300), [1, 1, 2, 2]);
+        tabGroupDebug.add(textframe);
+
         var scrss:Scrollbar = new Scrollbar(730, 65, 300);
         scrss.minScroll = 274;
         scrss.maxScroll = 414;
         tabGroupDebug.add(scrss);
 
-        var wat:WaTTY = new WaTTY(200, 65, 1000);
+        var wat:WaTTY = new WaTTY(232, 97, 1000);
         // wat.charWidth = 54;
         // wat.charHeight = 16;
-        wat.charWidth  = 60;
-        wat.charHeight = 25;
+        wat.charWidth  = 48;
+        wat.charHeight = 12;
 
         scrss.onScroll = wat.scrollToPercent;
         scrss.scrollUpOne = wat.scrollUpOne;
@@ -291,52 +294,15 @@ class OptionSubstate extends FlxUISubState
         
         wat.onLengthChange = scrss.updateScrollbarPosition;
 
-        wat.setFormat("assets/fonts/hack.ttf", 16);
+        wat.setFormat("assets/fonts/hack.ttf", 16, 0x000000);
+
         tabGroupDebug.add(wat);
 
-        /*
         wat.addText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis lectus maximus, consequat purus quis, egestas leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent accumsan lacus ut pharetra gravida. Nulla augue enim, gravida id dui ac, dictum rhoncus urna. Integer mi quam, pretium nec euismod et, pretium sit amet libero. Nunc ut dolor porttitor, tempor quam ut, pharetra tellus. Aliquam laoreet est eget ex tincidunt dictum. Etiam ex nibh, consectetur eget ultricies eget, faucibus ut orci. Nam nec risus eget lacus dapibus pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
         wat.addText("\n");
         wat.addText("Donec massa magna, aliquet sed volutpat non, porta ac nulla. Etiam ultricies suscipit ligula sed varius. Curabitur pharetra nisl a ante congue pretium. Nullam vestibulum urna blandit leo scelerisque sagittis. Praesent odio orci, aliquam sed sagittis vel, auctor ac purus. Nunc facilisis porttitor diam in vestibulum. Nullam a ullamcorper ipsum, eget hendrerit massa. Vestibulum maximus vestibulum lectus in venenatis. Proin auctor mollis ante id pharetra. In egestas sodales sapien, ut suscipit tortor lacinia id. Cras sed odio tristique, rutrum lacus a, aliquam ante. Quisque pulvinar nec tortor a semper. Ut sodales at nulla ac commodo.");
         wat.addText("\n");
         wat.addText("Nam volutpat nisi eu blandit volutpat. Etiam ut imperdiet nulla. Sed at eros nec lacus aliquet auctor accumsan vel mauris. Donec luctus massa nec augue dapibus hendrerit. Nam pulvinar ex ac quam sagittis convallis. Phasellus lorem enim, ultrices eu purus sed, dapibus tempus ex. Etiam nibh tortor, consequat non vehicula sit amet, porta at eros. Vestibulum eu volutpat mi. Aliquam nunc enim, ultrices ac pretium sit amet, auctor at justo. Cras vulputate lacus mattis, laoreet arcu in, fermentum ipsum. Curabitur rutrum maximus egestas. Donec id viverra risus. Nulla facilisi. Donec a turpis hendrerit, sagittis quam in, commodo nulla. Duis vestibulum in urna vel bibendum. Quisque non elit imperdiet libero placerat accumsan.");
-        */
-
-        wat.addText("12345678901234567890123456789012345678901234567890");
-        wat.addText("2       10        20        30        40        50");
-        wat.addText("3");
-        wat.addText("4");
-        wat.addText("5");
-        wat.addText("6");
-        wat.addText("7");
-        wat.addText("8");
-        wat.addText("9");
-        wat.addText("0");
-        wat.addText("1");
-        wat.addText("2");
-        wat.addText("3");
-        wat.addText("4");
-        wat.addText("5");
-        wat.addText("6");
-        wat.addText("7");
-        wat.addText("8");
-        wat.addText("9");
-        wat.addText("0");
-        wat.addText("1");
-        wat.addText("2");
-        wat.addText("3");
-        wat.addText("4");
-        wat.addText("5");
-        wat.addText("6");
-        wat.addText("7");
-        wat.addText("8");
-        wat.addText("9");
-        wat.addText("0");
-        wat.addText("1");
-        wat.addText("2");
-        wat.addText("3");
-        wat.addText("4");
-
 
         tabMenu.addGroup(tabGroupDebug);
 
@@ -370,7 +336,7 @@ class OptionSubstate extends FlxUISubState
             case 1.5:
                 difficultyRadio.selectedId = "diff_hard";
             default:
-                FlxG.log.error("Impossible difficulty selected! (WTF?!?)")
+                FlxG.log.error("Impossible difficulty selected! (WTF?!?)");
         }
     }
 

@@ -146,7 +146,7 @@ class WaTTY extends FlxUIText
         var endText:String = "";
 
         // assemble endtext
-        for (index in txtStart...(txtEnd + 1))
+        for (index in txtStart...txtEnd)
         {
             endText = endText + this.textBuffer[index] + "\n";
         }
