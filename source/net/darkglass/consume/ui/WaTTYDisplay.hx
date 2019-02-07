@@ -1,5 +1,7 @@
 package net.darkglass.consume.ui;
 
+import flixel.FlxG;
+
 import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.addons.ui.FlxUIGroup;
 
@@ -33,6 +35,9 @@ class WaTTYDisplay extends FlxUIGroup
      */
     public function new(x:Float, y:Float, width:Float, height:Float, scrollOffset:Float)
     {
+        // warn idiots because they're idiots.
+        FlxG.log.warn("WaTTYDisplay is known to be broken, please don't use it.");
+
         // call parent first
         super(x, y);
 
