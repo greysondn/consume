@@ -98,6 +98,7 @@ class CreditsSubstate extends FlxUISubState
         wat.addText("Spencer Cochran");
         wat.addText("Wolf");
         wat.addText("Wolfhouse 520");
+        wat.addText("");
 
         wat.scrollToLine(96);
 
