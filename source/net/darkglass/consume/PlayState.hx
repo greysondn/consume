@@ -15,8 +15,5 @@ class PlayState extends FlxState
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
-
-        // go ahead and load TitleState, we're not playing yet
-        FlxG.switchState(new TitleState());
     }
 }
