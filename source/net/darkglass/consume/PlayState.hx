@@ -3,8 +3,6 @@ package net.darkglass.consume;
 import flixel.FlxG;
 import flixel.FlxState;
 
-import net.darkglass.consume.TitleState;
-
 class PlayState extends FlxState
 {
     override public function create():Void
