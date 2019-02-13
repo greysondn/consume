@@ -11,6 +11,7 @@ import flixel.FlxG;
 import flixel.math.FlxRandom;
 import flixel.text.FlxText.FlxTextFormat;
 
+import net.darkglass.consume.PlayState;
 import net.darkglass.consume.Registry;
 
 import net.darkglass.consume.substate.CreditsSubstate;
@@ -112,8 +113,8 @@ class TitleState extends FlxUIState
 
         var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
 
-        var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game");
-        newButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, 0, -1);
+        var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game", onClick_play);
+        newButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(newButton);
 
         var loadButton:FlxUIButton = new FlxUIButton(190, 408, "Load");
@@ -146,6 +147,11 @@ class TitleState extends FlxUIState
     {
         var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
         openSubState(optionSubstate);
+    }
+
+    public function onClick_play():Void
+    {
+        FlxG.switchState(new PlayState());
     }
 
     public function onClick_credits():Void
