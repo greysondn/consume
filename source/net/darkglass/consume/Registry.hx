@@ -77,7 +77,7 @@ class Registry
     public var gfxset_buttonDisabled:Array<String>; // assembled in constructor
 
     // -------------------------------------------------------------------------
-    // And all the rest
+    // Logography
     // -------------------------------------------------------------------------
 
     /**
@@ -85,7 +85,35 @@ class Registry
      * 
      * TODO: Should this be broken out for localization?
      */
-    public var logoMale(default, null):String = "assets/images/logo_male.png";
+    public var gfx_maleLogo:String = "assets/images/logo_male.png";
+
+    public var gfx_femaleLogo:String = "assets/images/logo_female.png";
+
+    /**
+     * Virtual getter for logo. This returns a random logo!
+     */
+    public var logo(get, null):String;
+
+    // getter
+    function get_logo()
+    {
+        var ret:String = "";
+
+        if(FlxG.random.bool())
+        {
+            ret = this.gfx_femaleLogo;
+        }
+        else
+        {
+            ret = this.gfx_maleLogo;
+        }
+
+        return ret;
+    }
+
+    // -------------------------------------------------------------------------
+    // And all the rest
+    // -------------------------------------------------------------------------
 
     /**
      * Whether or not user has arousal enabled.

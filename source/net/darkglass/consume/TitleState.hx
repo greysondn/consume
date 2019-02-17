@@ -45,7 +45,7 @@ class TitleState extends FlxUIState
 
         // Logo
         // ----
-        var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logoMale);
+        var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logo);
         this.add(logo);
 
         // version
