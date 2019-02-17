@@ -127,17 +127,6 @@ class Registry
 	// public var lastRoom:Int = -1;
 	// public var prevKey:String = "";
 	
-	//Arrays of data, rooms, exits, npcs and items, populated with a call to main.inilitize
-	// public var welcomeMessage:Array<String> = new Array();
-	// public var perks:Array<MyPerk>;
-	// public var rooms:Array<Dynamic>;
-	// public var exits:Array<Dynamic>;
-	// public var keys:Array<Dynamic>;
-	// public var food:Array<MyItem_Food>;
-	// public var weapons:Array<MyItem_Weapon>;
-	// public var armor:Array<MyItem_Armor>;
-	// public var rings:Array<MyItem_Ring>;
-	
 	// public var shopLists:Array<Dynamic>;
 	
 	// public var gymFee:Int = 20; //Cost to use the gym, futureproofing
