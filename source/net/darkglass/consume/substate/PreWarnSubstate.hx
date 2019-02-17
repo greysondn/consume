@@ -9,10 +9,13 @@ import flixel.addons.ui.FlxUIText;
 
 import flixel.text.FlxText.FlxTextFormat;
 
+import net.darkglass.consume.Registry;
 import net.darkglass.consume.ui.WaTTY;
 
 class PreWarnSubstate extends FlxUISubState
 {
+    private var registry:Registry = Registry.create();
+
     override public function create():Void
     {
         // let parent do the thing
@@ -20,14 +23,10 @@ class PreWarnSubstate extends FlxUISubState
 
         // okay now we can just be unkind
         // if you're trying to make sense of this, look at OptionSubstate.hx
-        var buttonNormalImg:String    = "assets/images/gui/classic/nineslice/window.png";
-        var buttonHoverImg:String     = "assets/images/gui/classic/nineslice/window-hover.png";
-        var buttonClickImg:String     = "assets/images/gui/classic/nineslice/window-click.png";
-
-        var buttonEnabledGFX:Array<String>  = [buttonNormalImg, buttonHoverImg, buttonClickImg];
+        var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
         var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
 
-        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, buttonNormalImg, new Rectangle(0, 0, 804, 594), [1, 1, 2, 2]);
+        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_buttonNormal, new Rectangle(0, 0, 804, 594), [1, 1, 2, 2]);
         this.add(background);
 
         var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);

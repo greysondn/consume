@@ -4,6 +4,10 @@ import flixel.FlxG;
 
 class Registry
 {
+    //--------------------------------------------------------------------------
+    // Singleton stuffs
+    // -------------------------------------------------------------------------
+
     /**
      * Singleton instance of Registry
      */
@@ -14,7 +18,9 @@ class Registry
      */
     private function new()
     {
-        // pass for now
+        // assemble gfxsets where I can access members
+        this.gfxset_buttonEnabled  = [this.gfx_buttonNormal, this.gfx_buttonHover, this.gfx_buttonClick];
+        this.gfxset_buttonDisabled = [this.gfx_buttonDisabled, this.gfx_buttonDisabled, this.gfx_buttonDisabled];
     }
 
     /**
@@ -27,12 +33,43 @@ class Registry
         return Registry.instance;
     }
     
-	/**
-	 * Path to male logo with text
-	 * 
-	 * TODO: Should this be broken out for localization?
-	 */
-	public var logoMale(default, null):String = "assets/images/logo_male.png";
+    // -------------------------------------------------------------------------
+    // New UI element paths etc
+    // -------------------------------------------------------------------------
+
+    /**
+     * Normal graphics for button.
+     * 
+     * TODO: Load this on player preference.
+     */
+    public var gfx_buttonNormal:String = "assets/images/gui/classic/nineslice/window.png";
+
+    public var gfx_buttonHover:String = "assets/images/gui/classic/nineslice/window-hover.png";
+
+    public var gfx_buttonClick:String     = "assets/images/gui/classic/nineslice/window-click.png";
+
+    public var gfx_buttonDisabled:String  = "assets/images/gui/classic/nineslice/window-disabled.png";
+
+    /**
+     * Graphics array for buttons that are enabled
+     */
+    public var gfxset_buttonEnabled:Array<String>; // assembled in constructor
+
+    /**
+     * Graphics array for buttons that are disabled
+     */
+    public var gfxset_buttonDisabled:Array<String>; // assembled in constructor
+
+    // -------------------------------------------------------------------------
+    // And all the rest
+    // -------------------------------------------------------------------------
+
+    /**
+     * Path to male logo with text
+     * 
+     * TODO: Should this be broken out for localization?
+     */
+    public var logoMale(default, null):String = "assets/images/logo_male.png";
 
     /**
      * The name of the save data file stored on the player's system. Flash will append '.sol' to the file when it saves.

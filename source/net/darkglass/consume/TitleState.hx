@@ -103,13 +103,8 @@ class TitleState extends FlxUIState
         // space between: 10
         // New, Load, Options, Faq, Credits
         // --------------------------------
-        var buttonNormalImg:String    = "assets/images/gui/classic/nineslice/window.png";
-        var buttonHoverImg:String     = "assets/images/gui/classic/nineslice/window-hover.png";
-        var buttonClickImg:String     = "assets/images/gui/classic/nineslice/window-click.png";
-        var buttonDisabledImg:String  = "assets/images/gui/classic/nineslice/window-disabled.png";
-
-        var buttonEnabledGFX:Array<String>  = [buttonNormalImg, buttonHoverImg, buttonClickImg];
-        var buttonDisabledGFX:Array<String> = [buttonDisabledImg, buttonDisabledImg, buttonDisabledImg];
+        var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
+        var buttonDisabledGFX:Array<String> = registry.gfxset_buttonDisabled;
 
         var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
 
