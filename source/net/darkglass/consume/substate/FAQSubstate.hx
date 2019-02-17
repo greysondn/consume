@@ -152,6 +152,39 @@ class FAQSubstate extends FlxUISubState
         wat.addText("");
         wat.addText("A: Check the FA description for a Discord server.");
         wat.addText("");
+        wat.addText("-----------------------------------------------------------------");
+        wat.addText("");
+        wat.addText("Q: How many lines are left to port from the old codebase to the new one?");
+        wat.addText("");
+        wat.addText("A: These may be out of date, and it's not a perfect measure of progress but...");
+        
+        var progressTxt:String = "";
+        progressTxt = progressTxt + "Main.hx             -  7 600" + "\n";
+        progressTxt = progressTxt + "" + "\n";
+        progressTxt = progressTxt + "AlertBox.hx         -      0" + "\n";
+        progressTxt = progressTxt + "MyButton.hx         -      0" + "\n";
+        progressTxt = progressTxt + "MyCharacter.hx      -    818" + "\n";
+        progressTxt = progressTxt + "MyExit.hx           -     46" + "\n";
+        progressTxt = progressTxt + "MyFileSaveObject.hx -      0" + "\n";
+        progressTxt = progressTxt + "MyItem_Armor.hx     -     98" + "\n";
+        progressTxt = progressTxt + "MyItem_Food.hx      -    110" + "\n";
+        progressTxt = progressTxt + "MyItem_Key.hx       -     40" + "\n";
+        progressTxt = progressTxt + "MyItem_Ring.hx      -     79" + "\n";
+        progressTxt = progressTxt + "MyItem_Weapon.hx    -    113" + "\n";
+        progressTxt = progressTxt + "MyItem.hx           -     71" + "\n";
+        progressTxt = progressTxt + "MyNPC.hx            -    371" + "\n";
+        progressTxt = progressTxt + "MyPerk.hx           -     26" + "\n";
+        progressTxt = progressTxt + "MyPlayerObject.hx   -    862" + "\n";
+        progressTxt = progressTxt + "MyQuest.hx          -     28" + "\n";
+        progressTxt = progressTxt + "MyRoom.hx           -     67" + "\n";
+        progressTxt = progressTxt + "MySpecies.hx        -    120" + "\n";
+        progressTxt = progressTxt + "MyTimer.hx          -     63" + "\n";
+        progressTxt = progressTxt + "PlayCard.hx         -     65" + "\n";
+        progressTxt = progressTxt + "PlayerCharacter.hx  -    143" + "\n";
+        progressTxt = progressTxt + "" + "\n";
+        progressTxt = progressTxt + "Total               - 10 720" + "\n";
+        wat.addText(progressTxt);
+        wat.addText("");
 
         wat.scrollToLine(96);
 
