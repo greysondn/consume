@@ -111,6 +111,26 @@ class Registry
      */
     public var gfx_bgGeneral_slice:Array<Int> = [1, 1, 2, 2];
 
+    /**
+     * Top bar BG Graphics
+     */
+    public var gfx_bgTopBar:String = "assets/images/gui/classic/nineslice/window.png";
+
+    /**
+     * Top bar graphics slice coords
+     */
+    public var gfx_bgTopBar_slice:Array<Int> = [1, 1, 2, 2];
+
+    /**
+     * Text area bg graphics
+     */
+    public var gfx_bgTextArea:String = "assets/images/gui/classic/nineslice/window.png";
+
+    /**
+     * Text area bg slice coords
+     */
+    public var gfx_bgTextArea_slice:Array<Int> = [1, 1, 2, 2];
+
     // -------------------------------------------------------------------------
     // Logography
     // -------------------------------------------------------------------------
