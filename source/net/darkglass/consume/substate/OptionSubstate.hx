@@ -62,9 +62,9 @@ class OptionSubstate extends FlxUISubState
         // for them. So that's my first task, I suppose.
         var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
         var buttonDisabledGFX:Array<String> = registry.gfxset_buttonDisabled;
-        var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
+        var slicecoords:Array<Array<Int>> = registry.gfxset_buttonEnabled_slice;
 
-        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_buttonNormal, new Rectangle(0, 0, 804, 594), [1, 1, 2, 2]);
+        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_bgGeneral, new Rectangle(0, 0, 804, 594), registry.gfx_bgGeneral_slice);
         this.add(background);
 
         // clickable button that doesn't suck too hard to close it?

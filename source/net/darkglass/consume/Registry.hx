@@ -60,10 +60,25 @@ class Registry
      */
     public var gfx_buttonNormal:String = "assets/images/gui/classic/nineslice/window.png";
 
+    /**
+     * OnHover graphics for button
+     * 
+     * TODO: Load this on player preference
+     */
     public var gfx_buttonHover:String = "assets/images/gui/classic/nineslice/window-hover.png";
 
+    /**
+     * OnClick Graphics for button
+     * 
+     * TODO: Load this on player preference
+     */
     public var gfx_buttonClick:String     = "assets/images/gui/classic/nineslice/window-click.png";
 
+    /**
+     * Disabled graphics for button
+     * 
+     * TODO: Load this on player preference
+     */
     public var gfx_buttonDisabled:String  = "assets/images/gui/classic/nineslice/window-disabled.png";
 
     /**
@@ -72,9 +87,29 @@ class Registry
     public var gfxset_buttonEnabled:Array<String>; // assembled in constructor
 
     /**
+     * Slice array for gfxset_buttonEnabled
+     */
+    public var gfxset_buttonEnabled_slice:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
+
+    /**
      * Graphics array for buttons that are disabled
      */
     public var gfxset_buttonDisabled:Array<String>; // assembled in constructor
+
+    /**
+     * Slice array for gfxset_buttonDisabled
+     */
+    public var gfxset_buttonDisabled_slice:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
+
+    /**
+     * Background graphics for typical backgrounds
+     */
+    public var gfx_bgGeneral:String = "assets/images/gui/classic/nineslice/window.png";
+
+    /**
+     * Background graphics slice coords
+     */
+    public var gfx_bgGeneral_slice:Array<Int> = [1, 1, 2, 2];
 
     // -------------------------------------------------------------------------
     // Logography

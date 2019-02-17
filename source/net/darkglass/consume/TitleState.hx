@@ -106,7 +106,7 @@ class TitleState extends FlxUIState
         var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
         var buttonDisabledGFX:Array<String> = registry.gfxset_buttonDisabled;
 
-        var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
+        var slicecoords:Array<Array<Int>> = registry.gfxset_buttonEnabled_slice;
 
         var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game", onClick_play);
         newButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);

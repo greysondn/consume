@@ -22,9 +22,9 @@ class FAQSubstate extends FlxUISubState
         super.create();
 
         var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
-        var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
+        var slicecoords:Array<Array<Int>>   = registry.gfxset_buttonEnabled_slice;
 
-        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_buttonNormal, new Rectangle(0, 0, 804, 594), [1, 1, 2, 2]);
+        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_bgGeneral, new Rectangle(0, 0, 804, 594), registry.gfx_bgGeneral_slice);
         this.add(background);
 
         var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
@@ -33,7 +33,7 @@ class FAQSubstate extends FlxUISubState
         titleTxt.addFormat(fntcol);
         this.add(titleTxt);
 
-        var textframe:FlxUI9SliceSprite = new FlxUI9SliceSprite(56, 119, registry.gfx_buttonNormal, new Rectangle(0, 0, 706, 391), [1, 1, 2, 2]);
+        var textframe:FlxUI9SliceSprite = new FlxUI9SliceSprite(56, 119, registry.gfx_bgGeneral, new Rectangle(0, 0, 706, 391), registry.gfx_bgGeneral_slice);
         this.add(textframe);
 
         var wat:WaTTY = new WaTTY(88, 151, 642);
