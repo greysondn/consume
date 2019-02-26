@@ -30,6 +30,25 @@ text output area
     background-color:transparent;
 }
 
+#txtoutcontainer
+{
+    padding: 16px;
+}
+
+#cout
+{
+    color:#000000;
+    font-size:16;
+    
+    /* 
+    proper font family hung on
+    https://github.com/haxeui/haxeui-flixel/issues/14
+    
+    Hoping I'm just an idiot
+    font-family: "Hack";
+    */
+}
+
 /*
 ********************************************************************************
 text input area

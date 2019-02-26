@@ -6,7 +6,7 @@ import flixel.FlxState;
 import flixel.group.FlxGroup;
 
 import haxe.ui.Toolkit;
-import haxe.ui.components.Button;
+import haxe.ui.components.Label;
 import haxe.ui.macros.ComponentMacros;
 import haxe.ui.core.Screen;
 
@@ -47,6 +47,8 @@ class PlayState extends FlxState
         var _usi = ComponentMacros.buildComponent("assets/ui/playstate.xml");
         uiGroup.add(_usi);
 
+        // var cout:Label = _ui.findComponent("cout", Label);
+        // cout.style.fontName = "Hack";
         // _ui.findComponent("someButton", Button).onClick = this.testButton;
 
         /*
