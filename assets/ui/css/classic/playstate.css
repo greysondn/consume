@@ -1,0 +1,31 @@
+#stagebg
+{
+    /* background-color: #7F7F7F; */
+    background-color:transparent;
+}
+
+#container
+{
+    /* background-image: "/css/classic/container-bg.png"; */
+    background-color:transparent;
+}
+
+#header
+{
+    background-color:red;
+}
+
+#txtoutput
+{
+    background-color:orange;
+}
+
+#txtinput
+{
+    background-color:yellow;
+}
+
+#controls
+{
+    background-color:green;
+}

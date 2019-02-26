@@ -1,11 +1,14 @@
 package net.darkglass.consume;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
 
 import haxe.ui.Toolkit;
-import haxe.ui.*;
+import haxe.ui.components.Button;
+import haxe.ui.macros.ComponentMacros;
+import haxe.ui.core.Screen;
 
 import net.darkglass.consume.Registry;
 
@@ -19,9 +22,6 @@ class PlayState extends FlxState
     {
         // let parent do its thing
         super.create();
-
-        // mimics substates on title screen in classic
-        this.bgColor = 0xFF7F7F7F;
 
         // build a ui, plox
         this.buildUI();
@@ -37,18 +37,20 @@ class PlayState extends FlxState
      */
     private function buildUI():Void
     {
-        // init ui
+        // init ui bg elements
+        var bg:FlxSprite = new FlxSprite(0, 0, "assets/ui/css/classic/state-bg-faked.png");
+        this.add(bg);
+
+        // init ui loader
         Toolkit.init({ container : uiGroup });
         this.add(this.uiGroup);
+        var _usi = ComponentMacros.buildComponent("assets/ui/playstate.xml");
+        uiGroup.add(_usi);
 
-        // now actually assemble the ui
+        // _ui.findComponent("someButton", Button).onClick = this.testButton;
 
-        /**
-        // background
-        var bg_main:FlxUI9SliceSprite = new FlxUI9SliceSprite(9, 16, registry.gfx_bgGeneral, new Rectangle(0, 0, 832, 608), registry.gfx_bgGeneral_slice, 0, false);
-        this.add(bg_main);
-
-        // Title space
+        /*
+        // dd Title space
         // TODO: Text with area name
         // TODO: Text with date and time
         var bg_top:FlxUI9SliceSprite = new FlxUI9SliceSprite(9, 16, registry.gfx_bgTopBar, new Rectangle(0, 0, 832, 56), registry.gfx_bgTopBar_slice, 0, false);
@@ -60,5 +62,4 @@ class PlayState extends FlxState
         this.add(bg_text);
         */
     }
-    
 }
