@@ -12,20 +12,20 @@
 
 #header
 {
-    background-color:red;
+    background-color:transparent;
 }
 
 #txtoutput
 {
-    background-color:orange;
+    background-color:transparent;
 }
 
 #txtinput
 {
-    background-color:yellow;
+    background-color:transparent;
 }
 
 #controls
 {
-    background-color:green;
+    background-color:transparent;
 }
