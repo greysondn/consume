@@ -44,24 +44,10 @@ class PlayState extends FlxState
         // init ui loader
         Toolkit.init({ container : uiGroup });
         this.add(this.uiGroup);
-        var _udni = ComponentMacros.buildComponent("assets/ui/playstate.xml");
-        uiGroup.add(_udni);
+        var _ui = ComponentMacros.buildComponent("assets/ui/playstate.xml");
+        uiGroup.add(_ui);
 
-        // var cout:Label = _ui.findComponent("cout", Label);
-        // cout.style.fontName = "Hack";
-        // _ui.findComponent("someButton", Button).onClick = this.testButton;
-
-        /*
-        // dd Title space
-        // TODO: Text with area name
-        // TODO: Text with date and time
-        var bg_top:FlxUI9SliceSprite = new FlxUI9SliceSprite(9, 16, registry.gfx_bgTopBar, new Rectangle(0, 0, 832, 56), registry.gfx_bgTopBar_slice, 0, false);
-        this.add(bg_top);
-
-        // text area
-        // TODO: Add WaTTY
-        var bg_text:FlxUI9SliceSprite = new FlxUI9SliceSprite(9, 72, registry.gfx_bgTextArea, new Rectangle(0, 0, 800, 368), registry.gfx_bgTextArea_slice, 0, false);
-        this.add(bg_text);
-        */
+        var cout:Label = _ui.findComponent("cout", Label);
+        cout.width = 770;
     }
 }
