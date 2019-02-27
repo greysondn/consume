@@ -12,19 +12,52 @@
             <!-- actual scroll container -->
             <scrollview id="txtoutscroll" left="0" top="0" width="832" height="368">
                 <!-- mandatory child -->
-                <vbox id="txtoutcontainer">
+                <vbox id="txtoutcontainer" style="background-color:#F00;">
+                    <!-- another box -->
+                    <box>
                     <!-- label -->
-                    <label id="cout" width="752">
-                    000 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt urna pharetra ligula cursus, sit amet varius nunc gravida. Suspendisse vehicula vitae felis in fringilla. Phasellus malesuada aliquet diam vel eleifend. Donec lacinia elementum eros, dapibus sodales risus. Sed accumsan bibendum odio eget elementum. Duis nec blandit tortor. Cras quam elit, scelerisque eu risus sit amet, lobortis venenatis libero. Pellentesque laoreet velit justo, a volutpat urna pharetra eget.
+                    <label id="cout">
+                        There was just lorem ipsum text here before.
 
-Donec lacinia ullamcorper arcu, non interdum mi faucibus pulvinar. Etiam ornare quis sapien vel tempus. Duis vehicula ultrices lacus, a tempus urna sollicitudin at. Vivamus at eros tempor augue facilisis accumsan ut non ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla varius elit mollis, mattis felis at, venenatis justo. Sed lectus purus, efficitur ut pellentesque ut, mattis eu orci. Pellentesque sed erat quis risus malesuada pretium. Ut interdum quis augue sed accumsan. Suspendisse gravida quam tempus dignissim tristique. Cras sed auctor magna. Quisque ut est non purus mollis efficitur eu ac ipsum. Quisque dapibus lectus malesuada condimentum vehicula. Etiam malesuada mollis vulputate.
+                        Hack has struck zeroes. The Flixel font does not. 0000. and do we know how to wrap?
 
-Proin finibus porta massa in cursus. Sed fringilla magna sit amet vulputate congue. Phasellus convallis dui eget mauris mattis fringilla. In sodales magna at tortor tincidunt, aliquam bibendum leo posuere. Nullam congue posuere sem, varius volutpat purus tincidunt ac. Mauris dapibus nunc lacus, nec iaculis ex faucibus sed. Integer in sapien non dui lacinia convallis ut et nibh. Vivamus semper, augue ac venenatis condimentum, lectus eros euismod orci, quis ultricies eros tortor et nunc. Suspendisse lobortis est a semper feugiat. Fusce pretium venenatis ex id iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras sollicitudin sem vitae nisi venenatis, ut condimentum ipsum volutpat. Cras vestibulum eu arcu id luctus. Praesent eu ultrices risus, et sagittis nulla. Maecenas sed massa pulvinar, congue tortor sed, faucibus nisl.
+                        There was just lorem ipsum text here before.
 
-Nam sit amet scelerisque tortor. Nunc ultricies commodo risus porta pharetra. Praesent fringilla dignissim nibh semper congue. Mauris varius leo non ultrices ultricies. Donec tempus nisl eget metus commodo pulvinar. Nulla in nisl sit amet nisi scelerisque auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam ac pretium nulla. In bibendum lectus quis lorem congue, a condimentum turpis eleifend. Etiam ex libero, feugiat eget sollicitudin quis, rutrum molestie odio. Maecenas in mollis lorem.
+                        Hack has struck zeroes. The Flixel font does not. 0000.
 
-Quisque auctor vitae erat sit amet sagittis. Aliquam mi enim, facilisis at arcu at, lacinia cursus elit. Cras eros nulla, lacinia non nunc nec, volutpat sodales turpis. Ut tellus dolor, varius ornare justo nec, viverra lacinia purus. Mauris consequat convallis est vehicula tempor. Etiam vel eros quam. Phasellus suscipit justo vitae purus eleifend, ut consequat metus aliquet. Suspendisse potenti. Aenean ac egestas quam. Cras arcu dolor, efficitur et ullamcorper sed, mattis id arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vel felis mauris. Mauris quis pellentesque ex.
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
+
+                        There was just lorem ipsum text here before.
+
+                        Hack has struck zeroes. The Flixel font does not. 0000.
                     </label>
+                    </box>
                 </vbox>
             </scrollview>
         </absolute>

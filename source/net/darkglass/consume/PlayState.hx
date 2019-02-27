@@ -44,8 +44,8 @@ class PlayState extends FlxState
         // init ui loader
         Toolkit.init({ container : uiGroup });
         this.add(this.uiGroup);
-        var _usi = ComponentMacros.buildComponent("assets/ui/playstate.xml");
-        uiGroup.add(_usi);
+        var _udni = ComponentMacros.buildComponent("assets/ui/playstate.xml");
+        uiGroup.add(_udni);
 
         // var cout:Label = _ui.findComponent("cout", Label);
         // cout.style.fontName = "Hack";

@@ -1,35 +1,3 @@
-#stagebg
-{
-    /* background-color: #7F7F7F; */
-    background-color:transparent;
-}
-
-#container
-{
-    /* background-image: "/css/classic/container-bg.png"; */
-    background-color:transparent;
-}
-
-/*
-********************************************************************************
-Header area
-********************************************************************************
-*/
-#header
-{
-    background-color:transparent;
-}
-
-/*
-********************************************************************************
-text output area
-********************************************************************************
-*/
-#txtoutput
-{
-    background-color:transparent;
-}
-
 #txtoutcontainer
 {
     padding: 16px;
@@ -39,32 +7,7 @@ text output area
 {
     color:#000000;
     font-size:16;
-    
-    /* 
-    proper font family hung on
-    https://github.com/haxeui/haxeui-flixel/issues/14
-    
-    Hoping I'm just an idiot
-    font-family: "Hack";
-    */
+    font-name: "assets/fonts/hack.ttf";
 }
 
-/*
-********************************************************************************
-text input area
-********************************************************************************
-*/
-#txtinput
-{
-    background-color:transparent;
-}
 
-/*
-********************************************************************************
-controls area
-********************************************************************************
-*/
-#controls
-{
-    background-color:transparent;
-}
