@@ -6,11 +6,13 @@ import flixel.FlxState;
 import flixel.group.FlxGroup;
 
 import haxe.ui.Toolkit;
+import haxe.ui.containers.ScrollView;
 import haxe.ui.components.Label;
 import haxe.ui.macros.ComponentMacros;
 import haxe.ui.core.Screen;
 
 import net.darkglass.consume.Registry;
+import net.darkglass.iguttae.Iguttae;
 
 class PlayState extends FlxState
 {
@@ -20,7 +22,10 @@ class PlayState extends FlxState
 
     private var cin:Label;
     private var cout:Label;
+    private var coutContainer:ScrollView;
+    private var interpreter:Iguttae;
 
+    private var prevScroll:Float = 0.0;
 
     override public function create():Void
     {
@@ -29,6 +34,10 @@ class PlayState extends FlxState
 
         // build a ui, plox
         this.buildUI();
+
+        // init iggutae
+        this.interpreter = new Iguttae();
+        this.interpreter.outStream = this.handleOutput;
     }
 
     override public function update(elapsed:Float):Void
@@ -56,7 +65,8 @@ class PlayState extends FlxState
         this.cout = _ui.findComponent("cout", Label);
         this.cout.width = 770;
 
-        this.cout.text = "\n" + "This is just a test.";
+        this.cout.text = "|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n";
+        this.cout.text = cout.text + "\n" + "This is just a test.";
         this.cout.text = cout.text + "\n" + "Not a drill though.";
         this.cout.text = cout.text + "\n";
 
@@ -64,7 +74,10 @@ class PlayState extends FlxState
 
         this.cin = _ui.findComponent("cin", Label);
         this.cin.width = 800;
-        this.cin.text = ">#test test test";
+        this.cin.text = "> ";
+
+        this.coutContainer = _ui.findComponent("txtoutscroll", ScrollView);
+        FlxG.watch.add(this.coutContainer, "vscrollPos");
     }
 
     private function handleKeyboard():Void
@@ -72,12 +85,33 @@ class PlayState extends FlxState
         var res:String = "";
         var val:Int = -1;
 
-        if (FlxG.keys.justPressed.UP ||
-            FlxG.keys.justPressed.DOWN ||
-            FlxG.keys.justPressed.LEFT ||
-            FlxG.keys.justPressed.RIGHT)
+        if (FlxG.keys.justPressed.LEFT || FlxG.keys.justPressed.RIGHT)
         {
             // pass, deliberately
+        }
+        else if (FlxG.keys.justPressed.UP)
+        {
+            this.coutContainer.vscrollPos = this.coutContainer.vscrollPos - 32;
+        }
+        else if (FlxG.keys.justPressed.DOWN)
+        {
+            this.coutContainer.vscrollPos = this.coutContainer.vscrollPos + 32;
+        }
+        else if (FlxG.keys.justPressed.PAGEUP)
+        {
+            this.coutContainer.vscrollPos = this.coutContainer.vscrollPos - 300;
+        }
+        else if (FlxG.keys.justPressed.PAGEDOWN)
+        {
+            this.coutContainer.vscrollPos = this.coutContainer.vscrollPos + 300;
+        }
+        else if (FlxG.keys.justPressed.HOME)
+        {
+            this.coutContainer.vscrollPos = 0;
+        }
+        else if (FlxG.keys.justPressed.END)
+        {
+            this.coutContainer.vscrollPos = this.cout.height + 9001;
         }
         else if (FlxG.keys.justPressed.BACKSPACE)
         {
@@ -88,7 +122,10 @@ class PlayState extends FlxState
         }
         else if (FlxG.keys.justPressed.ENTER)
         {
-            this.cout.text = this.cout.text + "\n" + this.cin.text;
+            var scrollpoint:Float = this.cout.height + 42;
+            this.handleOutput(this.cin.text);
+            this.interpreter.eval(this.cin.text.substring(1));
+            this.coutContainer.vscrollPos = scrollpoint;
             this.cin.text = "> ";
         }
         else
@@ -109,6 +146,32 @@ class PlayState extends FlxState
                 }
 
                 cin.text = cin.text + res;
+            }
+        }
+    }
+
+    public function handleOutput(txt:String):Void
+    {
+        this.cout.text = this.cout.text + "\n\n" + txt;
+    }
+
+    private function scrollToBottom():Void
+    {
+        var prevScroll:Float = this.coutContainer.vscrollPos;
+        
+        var continueScrolling:Bool = true;
+
+        while (continueScrolling)
+        {
+            FlxG.log.add(prevScroll);
+
+            if (this.coutContainer.vscrollPos == prevScroll)
+            {
+                continueScrolling = false;
+            }
+            else
+            {
+                prevScroll = coutContainer.vscrollPos;
             }
         }
     }
