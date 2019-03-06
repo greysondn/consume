@@ -12,52 +12,10 @@
             <!-- actual scroll container -->
             <scrollview id="txtoutscroll" left="0" top="0" width="832" height="368">
                 <!-- mandatory child -->
-                <vbox id="txtoutcontainer" style="background-color:#F00;">
-                    <!-- another box -->
-                    <box>
+                <vbox id="txtoutcontainer">
                     <!-- label -->
                     <label id="cout">
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000. and do we know how to wrap?
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
-
-                        There was just lorem ipsum text here before.
-
-                        Hack has struck zeroes. The Flixel font does not. 0000.
                     </label>
-                    </box>
                 </vbox>
             </scrollview>
         </absolute>

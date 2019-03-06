@@ -49,5 +49,11 @@ class PlayState extends FlxState
 
         var cout:Label = _ui.findComponent("cout", Label);
         cout.width = 770;
+
+        cout.text = "\n" + "This is just a test.";
+        cout.text = cout.text + "\n" + "Not a drill though.";
+        cout.text = cout.text + "\n";
+
+        cout.text = cout.text + "\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum est in sodales auctor. Suspendisse augue ex, laoreet ut congue ac, interdum a est. Pellentesque id metus eu nibh rutrum placerat eget a massa. Proin posuere facilisis tempor. Morbi ac facilisis orci, id iaculis nisi. Suspendisse vel sem nec massa tincidunt gravida id ullamcorper magna. Donec sodales viverra pellentesque. In non quam feugiat, porta urna et, varius erat. Ut dapibus lacus bibendum sem tempor pellentesque. Morbi at risus nec mauris consectetur ultrices.";
     }
 }
