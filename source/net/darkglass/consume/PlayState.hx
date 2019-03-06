@@ -18,6 +18,10 @@ class PlayState extends FlxState
 
     private var uiGroup:FlxGroup = new FlxGroup();
 
+    private var cin:Label;
+    private var cout:Label;
+
+
     override public function create():Void
     {
         // let parent do its thing
@@ -30,6 +34,8 @@ class PlayState extends FlxState
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
+
+        this.handleKeyboard();
     }
 
     /**
@@ -47,13 +53,48 @@ class PlayState extends FlxState
         var _ui = ComponentMacros.buildComponent("assets/ui/playstate.xml");
         uiGroup.add(_ui);
 
-        var cout:Label = _ui.findComponent("cout", Label);
-        cout.width = 770;
+        this.cout = _ui.findComponent("cout", Label);
+        this.cout.width = 770;
 
-        cout.text = "\n" + "This is just a test.";
-        cout.text = cout.text + "\n" + "Not a drill though.";
-        cout.text = cout.text + "\n";
+        this.cout.text = "\n" + "This is just a test.";
+        this.cout.text = cout.text + "\n" + "Not a drill though.";
+        this.cout.text = cout.text + "\n";
 
-        cout.text = cout.text + "\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum est in sodales auctor. Suspendisse augue ex, laoreet ut congue ac, interdum a est. Pellentesque id metus eu nibh rutrum placerat eget a massa. Proin posuere facilisis tempor. Morbi ac facilisis orci, id iaculis nisi. Suspendisse vel sem nec massa tincidunt gravida id ullamcorper magna. Donec sodales viverra pellentesque. In non quam feugiat, porta urna et, varius erat. Ut dapibus lacus bibendum sem tempor pellentesque. Morbi at risus nec mauris consectetur ultrices.";
+        this.cout.text = cout.text + "\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum est in sodales auctor. Suspendisse augue ex, laoreet ut congue ac, interdum a est. Pellentesque id metus eu nibh rutrum placerat eget a massa. Proin posuere facilisis tempor. Morbi ac facilisis orci, id iaculis nisi. Suspendisse vel sem nec massa tincidunt gravida id ullamcorper magna. Donec sodales viverra pellentesque. In non quam feugiat, porta urna et, varius erat. Ut dapibus lacus bibendum sem tempor pellentesque. Morbi at risus nec mauris consectetur ultrices.";
+
+        this.cin = _ui.findComponent("cin", Label);
+        this.cin.width = 800;
+        this.cin.text = "> Text to see how badly this is.";
+    }
+
+    private function handleKeyboard():Void
+    {
+        var res:String = "";
+        var val:Int = -1;
+
+        if (FlxG.keys.justPressed.BACKSPACE)
+        {
+            this.cin.text = this.cin.text.substr(0, -1);
+        }
+        else
+        {
+            val = FlxG.keys.firstJustPressed();
+            
+            if (-1 != val)
+            {
+                res = String.fromCharCode(val);
+
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = res.toUpperCase();
+                }
+                else
+                {
+                    res = res.toLowerCase();
+                }
+
+                cin.text = cin.text + res;
+            }
+        }
     }
 }

@@ -21,6 +21,8 @@
         </absolute>
         <!-- text input area -->
         <absolute id="txtinput" left="0" top="424" width="832" height="56">
+            <label id="cin" left="16" top="16">
+            </label>
         </absolute>
         <!-- control area -->
         <absolute id="controls" left="0" top="480" width="832" height="128">
