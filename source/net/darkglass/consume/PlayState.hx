@@ -64,7 +64,7 @@ class PlayState extends FlxState
 
         this.cin = _ui.findComponent("cin", Label);
         this.cin.width = 800;
-        this.cin.text = "> Text to see how badly this is.";
+        this.cin.text = ">#test test test";
     }
 
     private function handleKeyboard():Void
@@ -72,9 +72,24 @@ class PlayState extends FlxState
         var res:String = "";
         var val:Int = -1;
 
-        if (FlxG.keys.justPressed.BACKSPACE)
+        if (FlxG.keys.justPressed.UP ||
+            FlxG.keys.justPressed.DOWN ||
+            FlxG.keys.justPressed.LEFT ||
+            FlxG.keys.justPressed.RIGHT)
         {
-            this.cin.text = this.cin.text.substr(0, -1);
+            // pass, deliberately
+        }
+        else if (FlxG.keys.justPressed.BACKSPACE)
+        {
+            if (this.cin.text.length > 2)
+            {
+                this.cin.text = this.cin.text.substr(0, -1);
+            }
+        }
+        else if (FlxG.keys.justPressed.ENTER)
+        {
+            this.cout.text = this.cout.text + "\n" + this.cin.text;
+            this.cin.text = "> ";
         }
         else
         {
