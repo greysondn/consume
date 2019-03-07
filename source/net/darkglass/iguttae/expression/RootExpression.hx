@@ -1,14 +1,13 @@
 package net.darkglass.iguttae.expression;
 
 import net.darkglass.iguttae.expression.BaseExpression;
-import net.darkglass.iguttae.expression.EchoExpression;
 import net.darkglass.iguttae.expression.ErrorExpression;
-import net.darkglass.iguttae.expression.HelpExpression;
+import net.darkglass.iguttae.environment.Environment;
 
 
 class RootExpression extends BaseExpression
 {
-    override public function eval(input:String):String
+    override public function eval(input:String, env:Environment):String
     {
         // eventual return
         var ret:String = "";
@@ -25,24 +24,17 @@ class RootExpression extends BaseExpression
         var next:BaseExpression;
 
         // command is based on first one entirely
-        switch inChunks[0]
+        if (env.hasCommand(inChunks[0]))
         {
-            case "echo":
-            {
-                next = new EchoExpression(this.env);
-            }
-            case "help":
-            {
-                next = new HelpExpression(this.env);
-            }
-            default:
-            {
-                next = new ErrorExpression(this.env);
-            }
+            next = env.findCommand(inChunks[0]);
+        }
+        else
+        {
+            next = new ErrorExpression();
         }
 
         // do it
-        ret = next.eval(swap);
+        ret = next.eval(swap, env);
 
         // end?
         return ret;

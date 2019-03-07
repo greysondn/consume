@@ -15,15 +15,16 @@ class Iguttae
      */
     public var outStream:String -> Void;
 
-    public function new()
+    public var env:Environment;
+
+    public function new(environment:Environment)
     {
-        // do nothing
+        this.env = environment;
     }
 
     public function eval(input:String):Void
     {
-        var interpreter:RootExpression = new RootExpression(new Environment());
-
-        outStream(interpreter.eval(input));
+        var interpreter:RootExpression = new RootExpression();
+        outStream(interpreter.eval(input, this.env));
     }
 }

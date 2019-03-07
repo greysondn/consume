@@ -1,10 +1,24 @@
 package net.darkglass.iguttae.expression;
 
+import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.expression.BaseExpression;
 
 class EchoExpression extends BaseExpression
 {
-    override public function eval(input:String):String
+    public function new()
+    {
+        // parent can do the thing
+        super();
+        
+        // now actually build this up
+        this.command = "echo";
+
+        this.helpShow = true;
+        this.helpExample = "echo [words]";
+        this.helpString  = "repeats [words] back to you";
+    }
+
+    override public function eval(input:String, env:Environment):String
     {
         // let's just find out where to chunk it!
         var breakPoint:Int = input.indexOf(" ");

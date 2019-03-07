@@ -13,6 +13,9 @@ import haxe.ui.core.Screen;
 
 import net.darkglass.consume.Registry;
 import net.darkglass.iguttae.Iguttae;
+import net.darkglass.iguttae.environment.Environment;
+import net.darkglass.iguttae.expression.EchoExpression;
+import net.darkglass.iguttae.expression.HelpExpression;
 
 class PlayState extends FlxState
 {
@@ -27,16 +30,21 @@ class PlayState extends FlxState
 
     private var prevScroll:Float = 0.0;
 
+    private var env:Environment = new Environment();
+
     override public function create():Void
     {
         // let parent do its thing
         super.create();
 
+        // build the local environment 
+        this.buildEnv();
+
         // build a ui, plox
         this.buildUI();
 
         // init iggutae
-        this.interpreter = new Iguttae();
+        this.interpreter = new Iguttae(this.env);
         this.interpreter.outStream = this.handleOutput;
     }
 
@@ -45,6 +53,12 @@ class PlayState extends FlxState
         super.update(elapsed);
 
         this.handleKeyboard();
+    }
+
+    private function buildEnv():Void
+    {
+        this.env.commands.push(new HelpExpression());
+        this.env.commands.push(new EchoExpression());
     }
 
     /**
