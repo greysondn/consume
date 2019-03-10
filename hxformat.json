@@ -1,0 +1,11 @@
+{
+    "indentation": {
+        "character": "    ",
+        "trailingWhitespace": true,
+        "tabWidth": 4
+    },
+    "lineEnds": {
+        "leftCurly": "both",
+        "rightCurly": "both"
+    }
+}
