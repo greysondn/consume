@@ -18,7 +18,7 @@ class MyCharacter
     public var sphincter:String;
     // Mesurements
     public var tall:Float; // in inches
-    public var weight:Float; // in pounds, not including stomach contents
+    // public var weight:Float; // in pounds, not including stomach contents
     public var fat:Int; // fatness, in pounds
     public var chestSize:Int; // bra band size, in inches
     public var waistSize:Int; // size around waist, in inches, not including stomach
