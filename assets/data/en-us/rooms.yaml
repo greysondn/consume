@@ -12,8 +12,8 @@
     wait: false
   desc:
     look: "A short default description for when someone looks from elsewhere to this room."
-    short: "Just a preview for the schema of this file."
-    long: >-
+    brief: "Just a preview for the schema of this file."
+    verbose: >-
       This more or less provides some insight into the structure
       of this file, but in case you're not getting it, you can,
       well for now do nothing but later I'll give some better insight
@@ -32,8 +32,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The bedroom of your tiny 2-room apartment. It's really only it's own room
       because of the divider separating it from the rest of the apartment, there 
       isn't even a door.
@@ -55,8 +55,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       Your bathroom. Standard stuff for a person living alone. The important
       bits are the shower and the toilet.
 -
@@ -74,8 +74,8 @@
     wait: true
   desc:
     look: "You call it your living room, but it's really the only other room in the apartment."
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       Your living room. Or really just the rest of your apartment. You have a
       cheap couch you got from a friend when you moved in. A nice TV you
       probably shouldn't have bought and a card table and folding chair. To the
@@ -93,8 +93,8 @@
     wait: true
   desc:
     look: "Your small balcony overlooking the parking lot."
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
       be out here, you can't even leave from here, there's no way down. And the
       view sucks.
@@ -114,8 +114,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The street outside your apartment. Three identical buildings
       sit side-by-side here, they all share a single parking lot accessed by an
       alley. The lot is really too small for the number of apartments in the
@@ -139,8 +139,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The city park. Though you know it's only a single block, something about
       the woods makes it easy to get lost. There are usually a number of less
       then friendly individuals in the woods as well.
@@ -160,8 +160,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       Most of this area is still under construction. One building is finished,
       though most of it is still unoccupied their is a lighted door leading to
       the basement.
@@ -181,8 +181,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A short flight of concrete steps leading to a steel door. The landing is
       mostly taken up by the very large bouncer who eyes you as you come down
       the stairs. A single lamp lights the landing with a second light focusing
@@ -202,8 +202,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A dim alley running along the side of the club. It ends in a small
       loading dock area with a dumpster next to a locked door. There is a short
       drive leading to the street providing access to the dock. Halfway down
@@ -226,8 +226,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The main room of Consume is mostly taken up by a dance floor. Along one
       wall is the bar, several bartenders work behind it serving drinks to
       thirsty patrons. Opposite the bar is a stage for live bands to preform
@@ -249,8 +249,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A short hall lined with rooms on either side. Behind each door is a
       sparsely furnished room with little more then a lamp and a bed. At the
       far end of the hall is a door marked &quot;Staff Only.&quot; All the
@@ -268,8 +268,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 12
@@ -284,8 +284,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A long polished bar, running the length of the room. Like most movie
       bars the back wall of this one is backed by a mirror with interesting or
       unique liquor bottles along the shelf before it. Several individuals sit
@@ -305,8 +305,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The club's stage. A drum set sits covered and ignored by the crowd. You're
       not really sure where the music is being piped in from. There's not much
       of interest here.
@@ -324,8 +324,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       An open sided stair leads to a balcony overlooking the dance floor. A
       number of tables and chairs scattered in groups cover the area and some
       clever acoustics mute enough of the music to allow for conversation.
@@ -346,8 +346,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The predator's lounge is a large dark room. Several groups of chairs and
       couches are arranged around the room allowing predators a place to sit
       and digest. A number of preds are taking advantage of this, large bellies
@@ -370,8 +370,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       What is probably best referred to as the town's market district. It's
       rather depressing really, there is only a single general store here,
       located in a tiny building to the east. Across the street to the west is
@@ -395,8 +395,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A typical hospital waiting area, the reception desk is always occupied by
       someone looking tired and slightly haggard. You idly wonder if the
       expression comes with the job, or if it's the other way around. There
@@ -416,8 +416,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The pharmacy counter of the local hospital, the steel cage keeping
       random people out is closed and no one seems to be around at the moment.
       Looks like the pharmacist is out at the moment.
@@ -436,8 +436,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The array of junk occupying this store is truly impressive. You feel
       that, had you the time and desire, you could find some truly remarkable
       things here. Alas the haphazard piles and disorganized clutter make you
@@ -457,8 +457,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The reception room of this gym is comfortable and modern. Several
       comfortable looking chairs wait to either side, with a reception desk at
       the end of the room. A door next to the desk is
@@ -483,8 +483,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A large open room filled with machines of every type. Each one designed
       to strengthen some aspect of your body. Each machine has a sign next to
       it with a visual description of how to use the machine as well as several
@@ -513,8 +513,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       Calling this room the 'Gold Room' is a bit of a misnomer, the room
       it's self isn't actually gold. Rather it's a smallish room with mirrors
       on all the walls. Machines circle the outside of the room, with a break
@@ -554,8 +554,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       This back room of this gym is clearly not an area customers are intended
       to see. Two walls are covered in the lockers of the employees. The wall
       opposite the door has a door and a window into which is the manager's
@@ -578,8 +578,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 25
@@ -594,8 +594,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A short hallway leads to several shower stalls, providing gym goers a
       place to change and get cleaned up. Rows of small lockers are provided
       for customers to store any personal belongings they don't want to carry
@@ -614,8 +614,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       Your old place of employment, the local ice cream shop. They have all
       the basics; cones, sundaes even a few specialty items like shakes and
       splits. When you worked here you got all the ice cream you wanted, now
@@ -638,8 +638,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The back room of the ice cream shop set up as a break room, with a table
       and several chairs. The old TV you remember from when you worked here is
       still sitting on top of the refrigerator. From here there are three
@@ -659,8 +659,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       The freezer, it's very cold, naturally. And it's filled with tub after
       tub of ice cream ready to be sold in the shop. A quick look around and
       you're pretty sure there's enough here the shop will never run out, even
@@ -679,8 +679,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 30
@@ -695,8 +695,8 @@
     wait: false
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       While you worked here you were never allowed into this room, you were
       pretty sure it was just an office since Bessie was usually in here when
       she was at the shop at all. Now that you can get in here you see that you
@@ -733,8 +733,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A massive warehouse under the main shop filled with more stuff then you
       could possibly sort through in several lifetimes.
 -
@@ -750,8 +750,8 @@
     wait: true
   desc:
     look: null
-    short: null
-    long: >-
+    brief: null
+    verbose: >-
       A small room tucked away in the back of the hospital, almost a closet.
       The only item of note in here is a small machine, examining it closely it
       seems like you can use it to gain new perks for a small fee.
