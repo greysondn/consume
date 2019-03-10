@@ -1,9 +1,128 @@
 package net.darkglass.iguttae.gameworld.actor;
 
+/**
+ * Singleton class of constants for actors
+ */
 class Constants 
 {
-    public function new()
+    /**
+     * The only instance of this class
+     */
+    private static var instance:Constants = new Constants();
+
+    /**
+     * Valid strings to use as prefixes to constants
+     * 
+     * TODO: Externalize this to a file.
+     */
+    private var prefixes:Array<String> = [
+        "container",
+        "flag",
+        "permission"
+    ];
+
+    /**
+     * List of actual constants
+     * 
+     * TODO: Externalize this to a file.
+     */
+    private var keyList:Array<String> = [
+        // ----------
+        // containers
+        // ----------
+        //
+        // whether this is a room/able to be contained in a room
+        "container.room",
+        // whether this is a stomach/able to be contained in a stomach
+        "container.stomach",
+        // whether this is storage/able to be contained in storage
+        "container.storage",
+        // -----
+        // flags
+        // -----
+        //
+        // whether an actor is edible
+        "flag.edible",
+        // whether this area is public
+        "flag.public",
+        // -----------
+        // permissions
+        // -----------
+        //
+        // whether or not an actor can wait and if waiting is allowed here
+        "permission.wait"
+    ];
+
+    /**
+     * dummy constructor to make it private
+     */
+    private function new()
     {
         // pass
+    }
+
+    /**
+     * Call this to ostensibly create a new Constants
+     * 
+     * @return Constants ostensibly new Constants
+     */
+    public static function create():Constants
+    {
+        return Constants.instance;
+    }
+
+    /**
+     * Gives some consistent value that can be used for the key with prefix
+     * 
+     * For now these are ints. Later on I might get more clever with them
+     * 
+     * @param prefix   prefix for key
+     * @param key      key itself
+     * @return Int     a stable value for prefix.key
+     */
+    public function get(prefix:String, key:String):Int
+    {
+        // the impossible value returns!
+        var ret:Int = -1;
+
+        if (this.exists(prefix, key))
+        {
+            ret = this.keyList.indexOf(prefix + "." + key)
+        }
+        else
+        {
+            // yeah, that qualifies as a major error
+            throw ("Invalid constant key asked for! : "  + prefix + "." + key); 
+        }
+
+        return ret;
+    }
+
+    /**
+     * Checks whether this prefix and key even exists
+     * 
+     * @param prefix    prefix for key
+     * @param key       key itself
+     * @return Bool     whether it even exists
+     */
+    public function exists(prefix:String, key:String):Bool
+    {
+        // eventual return
+        var ret:Bool = true;
+
+        // make sure the prefix is valid first
+        if (this.prefixes.indexOf(prefix) == -1)
+        {
+            ret = false;
+        }
+        else
+        {
+            if (this.keyList.indexOf(prefix + "." + key) == -1)
+            {
+                ret = false;
+            }
+        }
+
+        return ret;
     }
 }

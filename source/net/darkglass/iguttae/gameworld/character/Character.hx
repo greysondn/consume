@@ -1,8 +1,12 @@
 package net.darkglass.iguttae.gameworld.character;
 
 import net.darkglass.iguttae.gameworld.actor.Actor;
-import net.darkglass.iguttae.gameworld.actor.ContainerType;
 
+/**
+ * Characters should be derived from this class, or members of this class.
+ * 
+ * This just sets sane defaults for everything.
+ */
 class Character extends Actor
 {
     public function new()
@@ -11,6 +15,9 @@ class Character extends Actor
         super();
 
         // characters are containable in rooms
-        this.addContainableIn(ContainerType.ROOM);
+        this.addContainableIn(this.consts.get("container", "room"));
+
+        // characters are containable in stomaches
+        this.addContainableIn(this.consts.get("container", "stomach"));
     }
 }

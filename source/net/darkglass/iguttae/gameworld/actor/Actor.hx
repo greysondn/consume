@@ -1,8 +1,7 @@
 package net.darkglass.iguttae.gameworld.actor;
 
 import net.darkglass.iguttae.gameworld.actor.Compass;
-import net.darkglass.iguttae.gameworld.actor.ContainerType;
-import net.darkglass.iguttae.gameworld.actor.Permission;
+import net.darkglass.iguttae.gameworld.actor.Constants;
 import net.darkglass.iguttae.gameworld.map.Transition;
 
 /**
@@ -16,7 +15,7 @@ class Actor
      * Don't meddle with this directly! There are functions written to interact
      * with this.
      */
-    private var containerFor:Array<ContainerType> = [];
+    private var containerFor:Array<Int> = [];
     
     /**
      * The types of containers this is containable in
@@ -24,7 +23,7 @@ class Actor
      * Don't meddle with this directly! There are functions written to interact
      * with this.
      */
-    private var containableIn:Array<ContainerType> = [];
+    private var containableIn:Array<Int> = [];
 
     /**
      * The permissions associated with this actor.
@@ -32,7 +31,12 @@ class Actor
      * Don't meddle with this directly! There are functions written to interact
      * with this.
      */
-    private var permissions:Array<Permission> = [];
+    private var permissions:Array<Int> = [];
+
+    /**
+     * Access point for constants
+     */
+    public var consts:Constants = Constants.create();
 
     /**
      * Exits from this, as in a room, typically, but could be anything. A
@@ -40,6 +44,16 @@ class Actor
      */
     public var exits:Map<Compass, Transition>;
     
+    /**
+     * Name of this actor
+     */
+    public var name:String = "ERROR: NO NAME";
+
+    /**
+     * Weight this actor has. In pounds, apparently.
+     */
+    public var weight:Float = 0;
+
     /**
      * Constructor
      */
@@ -49,49 +63,82 @@ class Actor
     }
     
     /**
+     * Helper function to check if a list has a constant
+     * 
+     * @param list      list to check
+     * @param constant  constant to check for
+     * @return Bool     whether constant is in list
+     */
+    private function hasConstant(list:Array<Int>, constant:Int):Bool
+    {
+        return (list.indexOf(constant) != -1);
+    }
+
+    /**
+     * Add constant to list if it isn't already there
+     * 
+     * @param list      list to add to
+     * @param constant  constant to add to list
+     */
+    private function addConstant(list:Array<Int>, constant:Int):Void
+    {
+        if (list.indexOf(constant) == -1)
+        {
+            list.push(constant);
+        }
+    }
+
+    /**
+     * Remove constant from list if it's there
+     * 
+     * @param list      list to remove constant from
+     * @param constant  constant to remove from list
+     */
+    private function removeConstant(list:Array<Int>, constant:Int):Void
+    {
+        list.remove(constant);
+    }
+
+    /**
      * Check whether this is a valid container for cType.
      *
-     * @param cType type we wonder if this is a container for
-     * @return Bool whether it's a container for cType
+     * @param constant  type we wonder if this is a container for
+     * @return Bool     whether it's a container for cType
      */
-    public function isContainerFor(cType:ContainerType):Bool
+    public function isContainerFor(constant:Int):Bool
     {
-        return (-1 != this.containerFor.indexOf(cType));
+        return this.hasConstant(this.containerFor, constant);
     }
     
     /**
      * Makes this now be a container for cType if it wasn't already
      * 
-     * @param cType container type
+     * @param constant container type
      */
-    public function addContainerFor(cType:ContainerType):Void
+    public function addContainerFor(constant:Int):Void
     {
-        // only add it if it's not already there
-        if (-1 == this.containerFor.indexOf(cType))
-        {
-            this.containerFor.push(cType);
-        }
+        this.addConstant(this.containerFor, constant);
     }
 
     /**
      * Makes this now not be a container for cType if it was before
      * 
-     * @param cType container type
+     * @param constant container type
      */
-    public function removeContainerFor(cType:ContainerType):Void
+    public function removeContainerFor(constant:Int):Void
     {
-        this.containerFor.remove(cType);
+        this.removeConstant(containerFor, constant);
     }
 
     /**
      * Check whether this is containable in cType.
      *
-     * @param cType type of container we wonder if this can go into
+     * @param constant type of container we wonder if this can go into
      * @return Bool whether it's containable in cType
      */
-    public function isContainableIn(cType:ContainerType):Bool
+    public function isContainableIn(constant:Int):Bool
     {
-        return (-1 != this.containableIn.indexOf(cType))
+        return this.hasConstant(this.containableIn, constant)
     }
     
     /**
@@ -99,13 +146,9 @@ class Actor
      * 
      * @param cType container type
      */
-    public function addContainableIn(cType:ContainerType):Void
+    public function addContainableIn(constant:Int):Void
     {
-        // only add it if it's not already there
-        if (-1 == this.containableIn.indexOf(cType))
-        {
-            this.containableIn.push(cType);
-        }
+        this.addConstant(this.containableIn, constant);
     }
     
     /**
@@ -113,20 +156,20 @@ class Actor
      * 
      * @param cType container type
      */
-    public function removeContainableIn(cType:ContainerType):Void
+    public function removeContainableIn(constant:Int):Void
     {
-        this.containableIn.remove(cType);
+        this.removeConstant(this.containableIn, constant);
     }
 
     /**
      * Check if this actor has a certain permission
      * 
-     * @param permission 
+     * @param constant
      * @return Bool
      */
-    public function hasPermission(permission:Permission):Bool
+    public function hasPermission(constant:Int):Bool
     {
-        return (-1 != this.permissions.indexOf(permission));
+        return this.hasConstant(this.permissions, constant)
     }
 
     /**
@@ -134,13 +177,9 @@ class Actor
      * 
      * @param permission 
      */
-    public function addPermission(permission:Permission):Void
+    public function addPermission(constant:Int):Void
     {
-        // only add it if it's not already there
-        if (-1 == this.permissions.indexOf(permission))
-        {
-            this.permissions.push(permission);
-        }
+        this.addConstant(this.permissions, constant);
     }
 
     /**
@@ -148,8 +187,8 @@ class Actor
      * 
      * @param permission 
      */
-    public function removePermission(permission:Permission):Void
+    public function removePermission(constant:Int):Void
     {
-        this.permissions.remove(permission);
+        this.removeConstant(this.containableIn, constant);
     }
 }
