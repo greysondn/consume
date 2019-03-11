@@ -2,6 +2,7 @@ package net.darkglass.iguttae.expression;
 
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.expression.BaseExpression;
+import net.darkglass.iguttae.gameworld.actor.Actor;
 
 class EchoExpression extends BaseExpression
 {
@@ -18,7 +19,7 @@ class EchoExpression extends BaseExpression
         this.helpString  = "repeats [words] back to you";
     }
 
-    override public function eval(input:String, env:Environment):String
+    override public function eval(input:String, env:Environment, actor:Actor):String
     {
         // let's just find out where to chunk it!
         var breakPoint:Int = input.indexOf(" ");

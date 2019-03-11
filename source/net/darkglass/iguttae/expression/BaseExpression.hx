@@ -1,6 +1,7 @@
 package net.darkglass.iguttae.expression;
 
 import net.darkglass.iguttae.environment.Environment;
+import net.darkglass.iguttae.gameworld.actor.Actor;
 
 /**
  * Simple expression to base every other expression on
@@ -11,6 +12,11 @@ class BaseExpression
      * the base command for this expression
      */
     public var command:String = "";
+
+    /**
+     * Whether or not the player can use this expression
+     */
+    public var playerAllowed:Bool = true;
 
     /**
      * the aliases for this command's base command
@@ -42,9 +48,10 @@ class BaseExpression
      * 
      * @param input         command to try to run
      * @param env           environment to run it in
+     * @param actor         actor to perform any changes on
      * @return String   result of evaluation
      */
-    public function eval(input:String, env:Environment):String
+    public function eval(input:String, env:Environment, actor:Actor):String
     {
         // pass
         return "Iguttae BaseExpression eval - try overriding?";

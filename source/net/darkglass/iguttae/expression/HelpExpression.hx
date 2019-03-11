@@ -2,6 +2,7 @@ package net.darkglass.iguttae.expression;
 
 import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.environment.Environment;
+import net.darkglass.iguttae.gameworld.actor.Actor;
 
 class HelpExpression extends BaseExpression
 {
@@ -18,7 +19,7 @@ class HelpExpression extends BaseExpression
         this.helpString  = "displays this help text";
     }
 
-    override public function eval(input:String, env:Environment):String
+    override public function eval(input:String, env:Environment, actor:Actor):String
     {
         // yeah no
         var ret:String = "";

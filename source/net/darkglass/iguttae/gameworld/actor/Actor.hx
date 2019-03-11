@@ -39,6 +39,11 @@ class Actor
     public var consts:Constants = Constants.create();
 
     /**
+     * Whether or not this is the player
+     */
+    public var isPlayer:Bool = false;
+
+    /**
      * Exits from this, as in a room, typically, but could be anything. A
      * container even.
      */
@@ -53,6 +58,27 @@ class Actor
      * Weight this actor has. In pounds, apparently.
      */
     public var weight:Float = 0;
+
+    /**
+     * Location this is in. Might be someone else, in which case it means their
+     * stomach.
+     */
+    public var location:Actor;
+
+    /**
+     * String to print when this is looked at from elsewhere
+     */
+    public var longview:String;
+
+    /**
+     * Description to show when "brief" is the current output mode
+     */
+    public var brief:String;
+
+    /**
+     * Description to show when "verbose" is the current output mode
+     */
+    public var verbose:String;
 
     /**
      * Constructor

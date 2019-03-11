@@ -3,7 +3,7 @@ import flash.utils.Object;
 
 class MyCharacter
 {
-    // All characters will start from this class. Players, random NPCs and named NPCs
+    // 
     public var name:String;
     // Physical descriptors
     public var species:MySpecies;

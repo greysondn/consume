@@ -45,6 +45,12 @@ class Constants
         "flag.edible",
         // whether this area is public
         "flag.public",
+        // whether a passage is hidden
+        "flag.hidden",
+        // whether something is locked
+        "flag.locked",
+        // whether something operates on a timer
+        "flag.timer"
         // -----------
         // permissions
         // -----------
@@ -124,5 +130,25 @@ class Constants
         }
 
         return ret;
+    }
+
+    /**
+     * Convert int to key string (future proofed storage)
+     * 
+     * @param incoming int for const
+     */
+    public function intToKey(incoming:Int)
+    {
+        return this.keyList[incoming];
+    }
+
+    /**
+     * Converts key string to int (future proofed storage)
+     * 
+     * @param incoming key string for const
+     */
+    public function keyToInt(incoming:String)
+    {
+        return this.keyList.indexOf(incoming);
     }
 }

@@ -3,11 +3,11 @@ package net.darkglass.iguttae.expression;
 import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.expression.ErrorExpression;
 import net.darkglass.iguttae.environment.Environment;
-
+import net.darkglass.iguttae.gameworld.actor.Actor;
 
 class RootExpression extends BaseExpression
 {
-    override public function eval(input:String, env:Environment):String
+    override public function eval(input:String, env:Environment, actor:Actor):String
     {
         // eventual return
         var ret:String = "";
@@ -33,8 +33,17 @@ class RootExpression extends BaseExpression
             next = new ErrorExpression();
         }
 
+        // make sure the player is allowed to do that if it's the player
+        if (actor.isPlayer)
+        {
+            if (!next.playerAllowed)
+            {
+                next = new ErrorExpression();
+            }
+        }
+
         // do it
-        ret = next.eval(swap, env);
+        ret = next.eval(swap, env, actor);
 
         // end?
         return ret;
