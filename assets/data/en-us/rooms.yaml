@@ -11,7 +11,7 @@
   permissions:
     wait: false
   desc:
-    look: "A short default description for when someone looks from elsewhere to this room."
+    longview: "A short default description for when someone looks from elsewhere to this room."
     brief: "Just a preview for the schema of this file."
     verbose: >-
       This more or less provides some insight into the structure
@@ -31,7 +31,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The bedroom of your tiny 2-room apartment. It's really only it's own room
@@ -54,7 +54,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       Your bathroom. Standard stuff for a person living alone. The important
@@ -73,7 +73,7 @@
   permissions:
     wait: true
   desc:
-    look: "You call it your living room, but it's really the only other room in the apartment."
+    longview: "You call it your living room, but it's really the only other room in the apartment."
     brief: null
     verbose: >-
       Your living room. Or really just the rest of your apartment. You have a
@@ -92,7 +92,7 @@
   permissions:
     wait: true
   desc:
-    look: "Your small balcony overlooking the parking lot."
+    longview: "Your small balcony overlooking the parking lot."
     brief: null
     verbose: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
@@ -113,7 +113,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The street outside your apartment. Three identical buildings
@@ -138,7 +138,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The city park. Though you know it's only a single block, something about
@@ -159,7 +159,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       Most of this area is still under construction. One building is finished,
@@ -180,7 +180,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A short flight of concrete steps leading to a steel door. The landing is
@@ -201,7 +201,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A dim alley running along the side of the club. It ends in a small
@@ -225,7 +225,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The main room of Consume is mostly taken up by a dance floor. Along one
@@ -248,7 +248,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A short hall lined with rooms on either side. Behind each door is a
@@ -267,7 +267,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A standard single-occupancy restroom. The door locks.
@@ -283,7 +283,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A long polished bar, running the length of the room. Like most movie
@@ -304,7 +304,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The club's stage. A drum set sits covered and ignored by the crowd. You're
@@ -323,7 +323,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       An open sided stair leads to a balcony overlooking the dance floor. A
@@ -345,7 +345,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The predator's lounge is a large dark room. Several groups of chairs and
@@ -369,7 +369,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       What is probably best referred to as the town's market district. It's
@@ -394,7 +394,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A typical hospital waiting area, the reception desk is always occupied by
@@ -415,7 +415,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The pharmacy counter of the local hospital, the steel cage keeping
@@ -435,7 +435,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The array of junk occupying this store is truly impressive. You feel
@@ -456,7 +456,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The reception room of this gym is comfortable and modern. Several
@@ -482,7 +482,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A large open room filled with machines of every type. Each one designed
@@ -512,7 +512,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       Calling this room the 'Gold Room' is a bit of a misnomer, the room
@@ -553,7 +553,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       This back room of this gym is clearly not an area customers are intended
@@ -577,7 +577,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A standard single-occupancy restroom. The door locks.
@@ -593,7 +593,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A short hallway leads to several shower stalls, providing gym goers a
@@ -613,7 +613,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       Your old place of employment, the local ice cream shop. They have all
@@ -637,7 +637,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The back room of the ice cream shop set up as a break room, with a table
@@ -658,7 +658,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       The freezer, it's very cold, naturally. And it's filled with tub after
@@ -678,7 +678,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A standard single-occupancy restroom. The door locks.
@@ -694,7 +694,7 @@
   permissions:
     wait: false
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       While you worked here you were never allowed into this room, you were
@@ -732,7 +732,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A massive warehouse under the main shop filled with more stuff then you
@@ -749,7 +749,7 @@
   permissions:
     wait: true
   desc:
-    look: null
+    longview: null
     brief: null
     verbose: >-
       A small room tucked away in the back of the hospital, almost a closet.
