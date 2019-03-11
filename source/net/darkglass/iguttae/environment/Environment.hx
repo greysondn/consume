@@ -4,8 +4,22 @@ import net.darkglass.iguttae.expression.BaseExpression;
 
 class Environment
 {
+    /**
+     * Literally all the commands in the game
+     */
     public var commands:Array<BaseExpression> = [];
 
+
+    /**
+     * Whether we should print literally all messages or not.
+     * 
+     * This is likely most important when the game is loading, to be honest.
+     */
+     public var printAll:Bool = false;
+
+    /**
+     * Constructor
+     */
     public function new()
     {
         // it's got variables! YEAH!
