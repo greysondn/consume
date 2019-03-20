@@ -164,7 +164,7 @@ class Actor
      */
     public function isContainableIn(constant:Int):Bool
     {
-        return this.hasConstant(this.containableIn, constant)
+        return this.hasConstant(this.containableIn, constant);
     }
     
     /**
@@ -195,7 +195,7 @@ class Actor
      */
     public function hasPermission(constant:Int):Bool
     {
-        return this.hasConstant(this.permissions, constant)
+        return this.hasConstant(this.permissions, constant);
     }
 
     /**

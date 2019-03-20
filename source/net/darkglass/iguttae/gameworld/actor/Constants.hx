@@ -50,7 +50,7 @@ class Constants
         // whether something is locked
         "flag.locked",
         // whether something operates on a timer
-        "flag.timer"
+        "flag.timer",
         // -----------
         // permissions
         // -----------
@@ -93,7 +93,7 @@ class Constants
 
         if (this.exists(prefix, key))
         {
-            ret = this.keyList.indexOf(prefix + "." + key)
+            ret = this.keyList.indexOf(prefix + "." + key);
         }
         else
         {
