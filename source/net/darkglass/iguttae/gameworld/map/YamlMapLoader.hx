@@ -27,4 +27,9 @@ class YamlMapLoader
         
         return YamlMapLoader.instance;
     }
+
+    /**
+     * Builds the game map based on Yaml source files
+     */
+    
 }
