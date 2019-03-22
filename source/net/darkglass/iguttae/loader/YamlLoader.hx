@@ -1,11 +1,11 @@
-package net.darkglass.iguttae.gameworld.map;
+package net.darkglass.iguttae.loader;
 
-class YamlMapLoader 
+class YamlLoader 
 {
     /**
      * Singleton instance of class
      */
-    private static var instance:YamlMapLoader;
+    private static var instance:YamlLoader;
 
     /**
      * Constructor.
@@ -18,14 +18,14 @@ class YamlMapLoader
     /**
      * Returns a working, good-as-new YamlMapLoader.
      */
-    public static function create():YamlMapLoader
+    public static function create():YamlLoader
     {
-        if (null == YamlMapLoader.instance)
+        if (null == YamlLoader.instance)
         {
-            YamlMapLoader.instance = new YamlMapLoader();
+            YamlLoader.instance = new YamlLoader();
         }
         
-        return YamlMapLoader.instance;
+        return YamlLoader.instance;
     }
 
     /**
