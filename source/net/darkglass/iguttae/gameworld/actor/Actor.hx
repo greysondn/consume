@@ -81,6 +81,12 @@ class Actor
     public var verbose:String;
 
     /**
+     * Index, for indexed actors. This is considered undefined for arbitrary
+     * actors, but some - like rooms and transitions - are actually indexed.
+     */
+     public var index:Int;
+
+    /**
      * Constructor
      */
     public function new()
@@ -216,5 +222,37 @@ class Actor
     public function removePermission(constant:Int):Void
     {
         this.removeConstant(this.containableIn, constant);
+    }
+
+    /**
+     * Compare actors based on their indexes. Compatible with array sorts
+     * in Haxe.
+     * 
+     * @param left  first actor, left hand of comparisons
+     * @param right second actor, right hand of comparisons
+     * 
+     * @return Int  -1 if left  < right,
+     *               0 if left == right,
+     *               1 if left  > right
+     */
+    public static function cmpIndex(left:Actor, right:Actor):Int
+    {
+        // if you get an error from sort, something has gone horribly wrong.
+        var ret:Int = 9001;
+
+        if (left.index < right.index)
+        {
+            ret = -1;
+        }
+        else if (left.index > right.index)
+        {
+            ret = 1;
+        }
+        else if (left.index == right.index)
+        {
+            ret = 0;
+        }
+
+        return ret;
     }
 }
