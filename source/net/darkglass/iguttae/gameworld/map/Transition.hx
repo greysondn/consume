@@ -12,5 +12,8 @@ class Transition extends Actor
      */
     public var target:Actor;
 
-
+    /**
+     * How long this Transition takes us, in minutes
+     */
+    public var travelTime:Int;
 }
