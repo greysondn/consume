@@ -17,6 +17,11 @@ class Environment
     public var actors:Array<Actor> = [];
 
     /**
+     * This is meant to be an output stream to dump text into
+     */
+    public var outStream:String -> Void;
+
+    /**
      * All rooms in the game. Because they're indexed.
      */
     public var rooms:Array<Actor>  = [];
@@ -32,7 +37,7 @@ class Environment
      * for it. Blaaaaaah.
      */
     public var player:Player = new Player();
-
+    
     /**
      * Whether we should print literally all messages or not.
      * 

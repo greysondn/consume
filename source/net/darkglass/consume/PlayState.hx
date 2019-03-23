@@ -47,7 +47,6 @@ class PlayState extends FlxState
 
         // init iggutae
         this.interpreter = new Iguttae(this.env);
-        this.interpreter.outStream = this.handleOutput;
 
         var y:YamlLoader = YamlLoader.create();
         y.load(this.env);
@@ -62,6 +61,8 @@ class PlayState extends FlxState
 
     private function buildEnv():Void
     {
+        this.env.outStream = this.handleOutput;
+
         this.env.commands.push(new HelpExpression());
         this.env.commands.push(new EchoExpression());
     }

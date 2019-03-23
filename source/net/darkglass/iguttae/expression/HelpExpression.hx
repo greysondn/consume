@@ -19,26 +19,26 @@ class HelpExpression extends BaseExpression
         this.helpString  = "displays this help text";
     }
 
-    override public function eval(input:String, env:Environment, actor:Actor):String
+    override public function eval(input:String, env:Environment, actor:Actor):Void
     {
         // yeah no
-        var ret:String = "";
-        ret = ret + "------------" + "\n";
-        ret = ret + "COMMAND HELP" + "\n";
-        ret = ret + "------------" + "\n";
+        var outStr:String = "";
+        outStr = outStr + "------------" + "\n";
+        outStr = outStr + "COMMAND HELP" + "\n";
+        outStr = outStr + "------------" + "\n";
 
         for (command in env.commands)
         {
             if (command.helpShow)
             {
-                ret = ret + "\n" + "-> " + command.helpExample + "\n";
-                ret = ret + command.helpString + "\n"; 
+                outStr = outStr + "\n" + "-> " + command.helpExample + "\n";
+                outStr = outStr + command.helpString + "\n"; 
             }
         }
 
-        ret = ret + "\n";
-        ret = ret + "There may be other, undocumented commands.";
+        outStr = outStr + "\n";
+        outStr = outStr + "There may be other, undocumented commands.";
 
-        return ret;
+        env.outStream(outStr);
     }
 }

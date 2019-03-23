@@ -44,17 +44,16 @@ class BaseExpression
     public function new(){}
 
     /**
-     * Try to run in and give back output
+     * Try to run in and push output
      * 
      * @param input         command to try to run
      * @param env           environment to run it in
      * @param actor         actor to perform any changes on
-     * @return String   result of evaluation
      */
-    public function eval(input:String, env:Environment, actor:Actor):String
+    public function eval(input:String, env:Environment, actor:Actor):Void
     {
         // pass
-        return "Iguttae BaseExpression eval - try overriding?";
+        env.outStream("Iguttae BaseExpression eval - try overriding?");
     }
 
     /**

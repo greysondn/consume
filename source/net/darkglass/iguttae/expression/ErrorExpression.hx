@@ -6,8 +6,8 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 
 class ErrorExpression extends BaseExpression
 {
-    override public function eval(input:String, env:Environment, actor:Actor):String
+    override public function eval(input:String, env:Environment, actor:Actor):Void
     {
-        return "I don't understand what you're asking me to do.";
+        env.outStream("I don't understand what you're asking me to do.");
     }
 }

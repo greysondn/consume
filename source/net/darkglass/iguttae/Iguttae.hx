@@ -11,11 +11,6 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
  */
 class Iguttae 
 {
-    /**
-     * This is meant to be an output stream to dump text into
-     */
-    public var outStream:String -> Void;
-
     public var env:Environment;
 
     public function new(environment:Environment)
@@ -26,6 +21,6 @@ class Iguttae
     public function eval(input:String):Void
     {
         var interpreter:RootExpression = new RootExpression();
-        outStream(interpreter.eval(input, this.env, this.env.player));
+        interpreter.eval(input, this.env, this.env.player);
     }
 }

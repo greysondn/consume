@@ -7,11 +7,8 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 
 class RootExpression extends BaseExpression
 {
-    override public function eval(input:String, env:Environment, actor:Actor):String
+    override public function eval(input:String, env:Environment, actor:Actor):Void
     {
-        // eventual return
-        var ret:String = "";
-
         // clean that up
         var swap:String = input;
         swap = StringTools.trim(swap);
@@ -43,9 +40,6 @@ class RootExpression extends BaseExpression
         }
 
         // do it
-        ret = next.eval(swap, env, actor);
-
-        // end?
-        return ret;
+        next.eval(swap, env, actor);
     }
 }

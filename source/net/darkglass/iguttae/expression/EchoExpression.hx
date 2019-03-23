@@ -19,12 +19,12 @@ class EchoExpression extends BaseExpression
         this.helpString  = "repeats [words] back to you";
     }
 
-    override public function eval(input:String, env:Environment, actor:Actor):String
+    override public function eval(input:String, env:Environment, actor:Actor):Void
     {
         // let's just find out where to chunk it!
         var breakPoint:Int = input.indexOf(" ");
 
-        // and then return the substring!
-        return input.substring(breakPoint + 1);
+        // and then print the substring!
+        env.outStream(input.substring(breakPoint + 1));
     }
 }
