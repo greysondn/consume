@@ -4,5 +4,12 @@ import net.darkglass.iguttae.gameworld.character.Character;
 
 class Player extends Character
 {
-    // empty class for now
+    public function new()
+    {
+        // let parent do its thing
+        super();
+
+        // we're a player
+        this.isPlayer = true;
+    }
 }
