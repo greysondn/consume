@@ -95,7 +95,8 @@ class PlayState extends FlxState
         this.cout = _ui.findComponent("cout", Label);
         this.cout.width = 770;
 
-        this.cout.text = "";
+        this.cout.text = "This first little bit of text output insists on being difficult. Please just scroll down.\n" + 
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
         this.cin = _ui.findComponent("cin", Label);
         this.cin.width = 800;
