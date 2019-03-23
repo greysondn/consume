@@ -31,7 +31,7 @@ class Environment
      * The player. Sometimes we need things done specifically with it and all
      * for it. Blaaaaaah.
      */
-    public var player:Player;
+    public var player:Player = new Player();
 
     /**
      * Whether we should print literally all messages or not.
