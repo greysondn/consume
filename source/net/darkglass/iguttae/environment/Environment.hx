@@ -2,6 +2,7 @@ package net.darkglass.iguttae.environment;
 
 import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.character.Player;
 
 class Environment
 {
@@ -25,6 +26,12 @@ class Environment
      * we can do actions in the interpreter independent of the player.
      */
     public var god:Actor = new Actor();
+
+    /**
+     * The player. Sometimes we need things done specifically with it and all
+     * for it. Blaaaaaah.
+     */
+    public var player:Player;
 
     /**
      * Whether we should print literally all messages or not.
