@@ -14,8 +14,10 @@ import haxe.ui.core.Screen;
 import net.darkglass.consume.Registry;
 import net.darkglass.iguttae.Iguttae;
 import net.darkglass.iguttae.environment.Environment;
+
 import net.darkglass.iguttae.expression.EchoExpression;
 import net.darkglass.iguttae.expression.HelpExpression;
+import net.darkglass.iguttae.expression.TeleportExpression;
 
 import net.darkglass.iguttae.loader.YamlLoader;
 
@@ -48,8 +50,15 @@ class PlayState extends FlxState
         // init iggutae
         this.interpreter = new Iguttae(this.env);
 
+        // load environment
         var y:YamlLoader = YamlLoader.create();
         y.load(this.env);
+
+        // add player to environment
+        // TODO: don't hardcode this, move to file
+        this.env.player.location = this.env.getRoom(0);
+        this.env.player.location.insert(this.env.player);
+        this.env.outStream(this.env.player.location.verbose);
     }
 
     override public function update(elapsed:Float):Void
@@ -65,6 +74,7 @@ class PlayState extends FlxState
 
         this.env.commands.push(new HelpExpression());
         this.env.commands.push(new EchoExpression());
+        this.env.commands.push(new TeleportExpression());
     }
 
     /**
@@ -85,12 +95,7 @@ class PlayState extends FlxState
         this.cout = _ui.findComponent("cout", Label);
         this.cout.width = 770;
 
-        this.cout.text = "|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n";
-        this.cout.text = cout.text + "\n" + "This is just a test.";
-        this.cout.text = cout.text + "\n" + "Not a drill though.";
-        this.cout.text = cout.text + "\n";
-
-        this.cout.text = cout.text + "\n" + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum est in sodales auctor. Suspendisse augue ex, laoreet ut congue ac, interdum a est. Pellentesque id metus eu nibh rutrum placerat eget a massa. Proin posuere facilisis tempor. Morbi ac facilisis orci, id iaculis nisi. Suspendisse vel sem nec massa tincidunt gravida id ullamcorper magna. Donec sodales viverra pellentesque. In non quam feugiat, porta urna et, varius erat. Ut dapibus lacus bibendum sem tempor pellentesque. Morbi at risus nec mauris consectetur ultrices.";
+        this.cout.text = "";
 
         this.cin = _ui.findComponent("cin", Label);
         this.cin.width = 800;

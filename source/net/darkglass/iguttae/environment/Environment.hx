@@ -27,6 +27,11 @@ class Environment
     public var rooms:Array<Actor>  = [];
 
     /**
+     * Whether we can use god commands as a player
+     */
+    public var iddqd:Bool = true;
+
+    /**
      * Sometimes, you just need the hand of god. Well, actually, this is so
      * we can do actions in the interpreter independent of the player.
      */
@@ -132,6 +137,11 @@ class Environment
     {
         this.rooms.remove(room);
         this.removeActor(room);
+    }
+
+    public function getRoom(index:Int):Actor
+    {
+        return this.rooms[index];
     }
 
     public function checkIndexIntegrity(roster:Array<Actor>):Bool
