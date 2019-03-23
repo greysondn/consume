@@ -221,7 +221,7 @@ class Actor
      */
     public function removePermission(constant:Int):Void
     {
-        this.removeConstant(this.containableIn, constant);
+        this.removeConstant(this.permissions, constant);
     }
 
     /**
