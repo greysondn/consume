@@ -16,12 +16,6 @@ class Iguttae
      */
     public var outStream:String -> Void;
 
-    /**
-     * Sometimes, you just need the hand of god. Well, actually, this is so
-     * we can do actions in the interpreter independent of the player.
-     */
-    public var god:Actor = new Actor();
-
     public var env:Environment;
 
     public function new(environment:Environment)
@@ -32,6 +26,6 @@ class Iguttae
     public function eval(input:String):Void
     {
         var interpreter:RootExpression = new RootExpression();
-        outStream(interpreter.eval(input, this.env, this.god));
+        outStream(interpreter.eval(input, this.env, this.env.god));
     }
 }

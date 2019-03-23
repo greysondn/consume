@@ -21,6 +21,12 @@ class Environment
     public var rooms:Array<Actor>  = [];
 
     /**
+     * Sometimes, you just need the hand of god. Well, actually, this is so
+     * we can do actions in the interpreter independent of the player.
+     */
+    public var god:Actor = new Actor();
+
+    /**
      * Whether we should print literally all messages or not.
      * 
      * This is likely most important when the game is loading, to be honest.
