@@ -26,6 +26,11 @@ class Actor
     private var containableIn:Array<Int> = [];
 
     /**
+     * The things this is containing
+     */
+    private var contents:Array<Actor> = [];
+
+    /**
      * The permissions associated with this actor.
      * 
      * Don't meddle with this directly! There are functions written to interact
@@ -194,6 +199,31 @@ class Actor
     }
 
     /**
+     * Tells us whether this can contain actor.
+     * 
+     * TODO: Finish docs
+     * 
+     * @param actor 
+     * @return Bool
+     */
+    public function canContain(actor:Actor):Bool
+    {
+        // eventual return
+        var ret:Bool = false;
+
+        // iterate
+        for (cType in this.containerFor)
+        {
+            if (actor.isContainableIn(cType))
+            {
+                ret = true;
+            }
+        }
+        // end
+        return ret;
+    }
+
+    /**
      * Check if this actor has a certain permission
      * 
      * @param constant
@@ -222,6 +252,22 @@ class Actor
     public function removePermission(constant:Int):Void
     {
         this.removeConstant(this.permissions, constant);
+    }
+
+    public function insert(actor:Actor):Void
+    {
+        if (-1 == this.contents.indexOf(actor))
+        {
+            if (this.canContain(actor))
+            {
+                this.contents.push(actor);
+            }
+        }
+    }
+
+    public function remove(actor:Actor):Void
+    {
+        this.contents.remove(actor);
     }
 
     /**
