@@ -19,6 +19,19 @@
       well for now do nothing but later I'll give some better insight
       into how this works.
 -
+  index: -2
+  # Reading? - whether we're reading things in code.
+  name:      true
+  wrongFile: false
+  flags:
+    public: true
+  permissions:
+    wait: true
+  desc:
+    longview: true
+    brief:    true
+    verbose:  true
+-
   index: 0
   name:  "Apartment - Bedroom"
   wrongFile:

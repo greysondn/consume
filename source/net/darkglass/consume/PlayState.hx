@@ -17,6 +17,8 @@ import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.expression.EchoExpression;
 import net.darkglass.iguttae.expression.HelpExpression;
 
+import net.darkglass.iguttae.loader.YamlLoader;
+
 class PlayState extends FlxState
 {
     private var registry:Registry = Registry.create();
@@ -46,6 +48,9 @@ class PlayState extends FlxState
         // init iggutae
         this.interpreter = new Iguttae(this.env);
         this.interpreter.outStream = this.handleOutput;
+
+        var y:YamlLoader = YamlLoader.create();
+        y.load(this.env);
     }
 
     override public function update(elapsed:Float):Void
