@@ -26,6 +26,6 @@ class Iguttae
     public function eval(input:String):Void
     {
         var interpreter:RootExpression = new RootExpression();
-        outStream(interpreter.eval(input, this.env, this.env.god));
+        outStream(interpreter.eval(input, this.env, this.env.player));
     }
 }
