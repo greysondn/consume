@@ -5,6 +5,7 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Player;
 import net.darkglass.iguttae.enums.Verbosity;
 import net.darkglass.iguttae.gameworld.actor.Compass;
+import net.darkglass.iguttae.exceptions.CompassError;
 
 class Environment
 {
@@ -178,6 +179,8 @@ class Environment
      * @param str string input
      * 
      * @return Compass corrosponding to str
+     * 
+     * @throws CompassError if str doesn't corrospond to a Compass
      */
     public function stringToCompass(str:String):Compass
     {
@@ -188,53 +191,57 @@ class Environment
         var swp:String = str.toLowerCase();
 
         // this is all pretty straightforward
-        if ("n" == swp)
+        if (("n" == swp) || ("north" == swp))
         {
             ret = Compass.NORTH;
         }
-        else if ("ne" == swp)
+        else if (("ne" == swp) || ("northeast" == swp))
         {
             ret = Compass.NORTHEAST;
         }
-        else if ("e" == swp)
+        else if (("e" == swp) || ("east" == swp))
         {
             ret = Compass.EAST;
         }
-        else if ("se" == swp)
+        else if (("se" == swp) || ("southeast" == swp))
         {
             ret = Compass.SOUTHEAST;
         }
-        else if ("s" == swp)
+        else if (("s" == swp) || ("south" == swp))
         {
             ret = Compass.SOUTH;
         }
-        else if ("sw" == swp)
+        else if (("sw" == swp) || ("southwest" == swp))
         {
             ret = Compass.SOUTHWEST;
         }
-        else if ("w" == swp)
+        else if (("w" == swp) || ("west" == swp))
         {
             ret = Compass.WEST;
         }
-        else if ("nw" == swp)
+        else if (("nw" == swp) || ("northwest" == swp))
         {
             ret = Compass.NORTHWEST;
         }
-        else if ("i" == swp)
+        else if (("i" == swp) || ("in" == swp))
         {
             ret = Compass.IN;
         }
-        else if ("o" == swp)
+        else if (("o" == swp) || ("out" == swp))
         {
             ret = Compass.OUT;
         }
-        else if ("u" == swp)
+        else if (("u" == swp) || ("up" == swp))
         {
             ret = Compass.UP;
         }
-        else if ("d" == swp)
+        else if (("d" == swp) || ("down" == swp))
         {
             ret = Compass.DOWN;
+        }
+        else
+        {
+            throw (new CompassError("Couldn't parse direction - " + swp));
         }
 
         // return
