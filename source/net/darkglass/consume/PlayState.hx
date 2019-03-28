@@ -1,5 +1,7 @@
 package net.darkglass.consume;
 
+import haxe.ui.containers.VBox;
+import haxe.ui.containers.Absolute;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -14,6 +16,7 @@ import haxe.ui.core.Screen;
 import net.darkglass.consume.Registry;
 import net.darkglass.iguttae.Iguttae;
 import net.darkglass.iguttae.environment.Environment;
+import haxe.ui.styles.Style;
 
 import net.darkglass.iguttae.expression.EchoExpression;
 import net.darkglass.iguttae.expression.HelpExpression;
@@ -31,7 +34,9 @@ class PlayState extends FlxState
     private var cin:Label;
     private var cout:Label;
     private var coutContainer:ScrollView;
+    private var coutFrame:VBox;
     private var interpreter:Iguttae;
+    private var justCycled:Bool = false;
 
     private var prevScroll:Float = 0.0;
 
@@ -66,7 +71,16 @@ class PlayState extends FlxState
     {
         super.update(elapsed);
 
-        this.handleKeyboard();
+        if (!this.justCycled)
+        {
+            // cycleCout();
+            this.handleKeyboard();
+        }
+        else
+        {
+            this.handleOutput("Cycled text!");
+            this.justCycled = false;
+        }
     }
 
     private function buildEnv():Void
@@ -97,15 +111,14 @@ class PlayState extends FlxState
         this.cout = _ui.findComponent("cout", Label);
         this.cout.width = 770;
 
-        this.cout.text = "This first little bit of text output insists on being difficult. Please just scroll down.\n" + 
-        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+        this.cout.text = "Welcome to consume! Currently being ported.\n";
 
         this.cin = _ui.findComponent("cin", Label);
         this.cin.width = 800;
         this.cin.text = "> ";
 
         this.coutContainer = _ui.findComponent("txtoutscroll", ScrollView);
-        FlxG.watch.add(this.coutContainer, "vscrollPos");
+        this.coutFrame     = _ui.findComponent("txtoutcontainer", VBox);
     }
 
     private function handleKeyboard():Void
@@ -150,7 +163,8 @@ class PlayState extends FlxState
         }
         else if (FlxG.keys.justPressed.ENTER)
         {
-            var scrollpoint:Float = this.cout.height + 42;
+            // now add new text
+            var scrollpoint:Float = this.coutContainer.contentHeight - 12;         // this.cout.height + 42;
             this.handleOutput(this.cin.text);
             this.interpreter.eval(this.cin.text.substring(1));
             this.coutContainer.vscrollPos = scrollpoint;
@@ -180,7 +194,13 @@ class PlayState extends FlxState
 
     public function handleOutput(txt:String):Void
     {
-        this.cout.text = this.cout.text + "\n\n" + txt;
+        // instead of creating a new cout, what happens if we just add a new
+        // label?
+        var swp:Label = new Label();
+        swp.styleString = "width:770;color:#000000;font-size:24;font-name: \"assets/fonts/hack.ttf\"";
+        swp.text = txt;
+
+        this.coutFrame.addComponent(swp);
     }
 
     private function scrollToBottom():Void
@@ -201,6 +221,38 @@ class PlayState extends FlxState
             {
                 prevScroll = coutContainer.vscrollPos;
             }
+        }
+    }
+
+    /**
+     * Cycles the current cout if it needs it... by replacing it with a new one.
+     */
+    private function cycleCout():Void
+    {
+        // the max length is somewhat arbitrary
+        if (this.cout.text.length >= 2000)
+        {
+            // stash old text and style
+            var oldText:String = this.cout.text + "";
+
+            // remove from state
+            this.coutFrame.removeComponent(this.cout, true);
+            
+            // make a new label
+            this.cout = new Label();
+
+            // set style
+            // this.cout.width = 770;
+            this.cout.styleString = "width:770;color:#000000;font-size:24;font-name: \"assets/fonts/hack.ttf\";";
+
+            // add to state
+            this.coutFrame.addComponent(this.cout);
+
+            // just put the new one in, don't worry about the rest yet
+            this.cout.text = "Test" + oldText.substring(1900);
+
+            // we just cycled!
+            this.justCycled = true;
         }
     }
 }
