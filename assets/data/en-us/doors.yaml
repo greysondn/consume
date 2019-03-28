@@ -32,6 +32,37 @@
     hidden: false
     locked: false
 -
+  index: -2
+  # Reading? - whether we're reading things in code.
+  name: true
+  rooms:
+    left:
+      index: true
+      side:  true
+    right:
+      index: true
+      side:  true
+  time:
+    timed: false
+    open:  false
+    close: false
+  size:
+    height: false
+    width:  false
+  desc:
+    name:
+      leftToRight: false
+      rightToLeft: false
+    look:
+      leftToRight:  false
+      rightToLeft:  false
+    lock:
+      leftToRight:  false
+      rightToLeft:  false
+  flags:
+    hidden: false
+    locked: false
+-
   index: 0
   name: "Apartment - Living Room to Bedroom"
   travelTime: 1

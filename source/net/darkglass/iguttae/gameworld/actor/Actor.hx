@@ -54,7 +54,7 @@ class Actor
      * Exits from this, as in a room, typically, but could be anything. A
      * container even.
      */
-    public var exits:Map<Compass, Transition>;
+    public var exits:Map<Compass, Transition> = new Map<Compass, Transition>();
     
     /**
      * Name of this actor
@@ -314,5 +314,17 @@ class Actor
         }
 
         return ret;
+    }
+
+    /**
+     * TODO: Document
+     * 
+     * @param side 
+     * @param trans 
+     */
+    public function addExit(side:Compass, trans:Transition):Void
+    {
+        // validation? Never heard of it.
+        this.exits[side] = trans;
     }
 }

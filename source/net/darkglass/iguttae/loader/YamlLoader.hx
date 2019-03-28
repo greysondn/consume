@@ -4,6 +4,7 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.map.Room;
 import net.darkglass.iguttae.gameworld.map.Transition;
+import net.darkglass.iguttae.gameworld.actor.Compass;
 
 import openfl.Assets;
 
@@ -52,6 +53,8 @@ class YamlLoader
         // if you look in the helper functions, strong casts are done in
         // there. Hey, it was that or give up on having a flexible YAML
         // structure. Hell forbid.
+
+        // rooms first
         var roomStr:String  = Assets.getText(roomSrc);
         var roomDat:Array<ObjectMap<String, Dynamic>> = Yaml.parse(roomStr);
         this.loadRooms(env, roomDat);
@@ -62,9 +65,11 @@ class YamlLoader
             throw "Room integrity failure!";
         }
 
+        // transitions between rooms now
         var tranStr:String  = Assets.getText(tranSrc);
         var tranDat:Dynamic = Yaml.parse(tranStr);
-
+        this.loadTransitions(env, tranDat);
+        // no validation function would work here
 
     }
 
@@ -114,5 +119,120 @@ class YamlLoader
                 env.addRoom(swp);
             }
         }
+    }
+
+    /**
+     * Helper function to load transitions rooms
+     * 
+     * TODO: Finish documenting
+     * 
+     * @param env 
+     * @param transDat
+     */
+    private function loadTransitions(env:Environment, transDat:Array<ObjectMap<String, Dynamic>>):Void
+    {
+        for (entry in transDat)
+        {
+            // real entries have an index greater than or equal to zero
+            if (entry.get("index") >= 0)
+            {
+                // need a pair of transitions here
+                var swpL:Transition = new Transition();
+                var swpR:Transition = new Transition();
+
+                // index
+                swpL.index = entry.get("index");
+                swpR.index = entry.get("index");
+
+                // name, will do well enough for now
+                swpL.name = entry.get("name");
+                swpR.name = entry.get("name");
+
+                // get the two rooms
+                var leftR:Actor  = env.getRoom(entry.get("rooms").get("left").get("index"));
+                var rightR:Actor = env.getRoom(entry.get("rooms").get("right").get("index"));
+
+                // get sides the transitions go on
+                var sideL:Compass = this.stringToCompass(entry.get("rooms").get("left").get("side"));
+                var sideR:Compass = this.stringToCompass(entry.get("rooms").get("right").get("side"));
+
+                // set targets
+                swpL.target = rightR;
+                swpR.target = leftR;
+
+                // connect rooms to swaps
+                leftR.addExit(sideL, swpL);
+                rightR.addExit(sideR, swpR);
+            }
+        }
+    }
+    
+    /**
+     * Helper function to determine compass based on string
+     * 
+     * @param str string input
+     * 
+     * @return Compass corrosponding to str
+     */
+    private function stringToCompass(str:String):Compass
+    {
+        // eventual return
+        var ret:Compass = Compass.NORTH;
+
+        // convert to lowercase so I can have simpler checks
+        var swp:String = str.toLowerCase();
+
+        // this is all pretty straightforward
+        if ("n" == swp)
+        {
+            ret = Compass.NORTH;
+        }
+        else if ("ne" == swp)
+        {
+            ret = Compass.NORTHEAST;
+        }
+        else if ("e" == swp)
+        {
+            ret = Compass.EAST;
+        }
+        else if ("se" == swp)
+        {
+            ret = Compass.SOUTHEAST;
+        }
+        else if ("s" == swp)
+        {
+            ret = Compass.SOUTH;
+        }
+        else if ("sw" == swp)
+        {
+            ret = Compass.SOUTHWEST;
+        }
+        else if ("w" == swp)
+        {
+            ret = Compass.WEST;
+        }
+        else if ("nw" == swp)
+        {
+            ret = Compass.NORTHWEST;
+        }
+        else if ("i" == swp)
+        {
+            ret = Compass.IN;
+        }
+        else if ("o" == swp)
+        {
+            ret = Compass.OUT;
+        }
+        else if ("u" == swp)
+        {
+            ret = Compass.UP;
+        }
+        else if ("d" == swp)
+        {
+            ret = Compass.DOWN;
+        }
+
+        // return
+        return ret;
     }
 }
