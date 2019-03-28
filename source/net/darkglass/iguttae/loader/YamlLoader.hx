@@ -153,8 +153,8 @@ class YamlLoader
                 var rightR:Actor = env.getRoom(entry.get("rooms").get("right").get("index"));
 
                 // get sides the transitions go on
-                var sideL:Compass = this.stringToCompass(entry.get("rooms").get("left").get("side"));
-                var sideR:Compass = this.stringToCompass(entry.get("rooms").get("right").get("side"));
+                var sideL:Compass = env.stringToCompass(entry.get("rooms").get("left").get("side"));
+                var sideR:Compass = env.stringToCompass(entry.get("rooms").get("right").get("side"));
 
                 // set targets
                 swpL.target = rightR;
@@ -165,74 +165,5 @@ class YamlLoader
                 rightR.addExit(sideR, swpR);
             }
         }
-    }
-    
-    /**
-     * Helper function to determine compass based on string
-     * 
-     * @param str string input
-     * 
-     * @return Compass corrosponding to str
-     */
-    private function stringToCompass(str:String):Compass
-    {
-        // eventual return
-        var ret:Compass = Compass.NORTH;
-
-        // convert to lowercase so I can have simpler checks
-        var swp:String = str.toLowerCase();
-
-        // this is all pretty straightforward
-        if ("n" == swp)
-        {
-            ret = Compass.NORTH;
-        }
-        else if ("ne" == swp)
-        {
-            ret = Compass.NORTHEAST;
-        }
-        else if ("e" == swp)
-        {
-            ret = Compass.EAST;
-        }
-        else if ("se" == swp)
-        {
-            ret = Compass.SOUTHEAST;
-        }
-        else if ("s" == swp)
-        {
-            ret = Compass.SOUTH;
-        }
-        else if ("sw" == swp)
-        {
-            ret = Compass.SOUTHWEST;
-        }
-        else if ("w" == swp)
-        {
-            ret = Compass.WEST;
-        }
-        else if ("nw" == swp)
-        {
-            ret = Compass.NORTHWEST;
-        }
-        else if ("i" == swp)
-        {
-            ret = Compass.IN;
-        }
-        else if ("o" == swp)
-        {
-            ret = Compass.OUT;
-        }
-        else if ("u" == swp)
-        {
-            ret = Compass.UP;
-        }
-        else if ("d" == swp)
-        {
-            ret = Compass.DOWN;
-        }
-
-        // return
-        return ret;
     }
 }

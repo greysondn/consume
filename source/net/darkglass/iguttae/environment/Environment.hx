@@ -4,6 +4,7 @@ import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Player;
 import net.darkglass.iguttae.enums.Verbosity;
+import net.darkglass.iguttae.gameworld.actor.Compass;
 
 class Environment
 {
@@ -169,5 +170,74 @@ class Environment
     public function checkRoomIntegrity():Bool
     {
         return this.checkIndexIntegrity(this.rooms);
+    }
+
+    /**
+     * Helper function to determine compass based on string
+     * 
+     * @param str string input
+     * 
+     * @return Compass corrosponding to str
+     */
+    public function stringToCompass(str:String):Compass
+    {
+        // eventual return
+        var ret:Compass = Compass.NORTH;
+
+        // convert to lowercase so I can have simpler checks
+        var swp:String = str.toLowerCase();
+
+        // this is all pretty straightforward
+        if ("n" == swp)
+        {
+            ret = Compass.NORTH;
+        }
+        else if ("ne" == swp)
+        {
+            ret = Compass.NORTHEAST;
+        }
+        else if ("e" == swp)
+        {
+            ret = Compass.EAST;
+        }
+        else if ("se" == swp)
+        {
+            ret = Compass.SOUTHEAST;
+        }
+        else if ("s" == swp)
+        {
+            ret = Compass.SOUTH;
+        }
+        else if ("sw" == swp)
+        {
+            ret = Compass.SOUTHWEST;
+        }
+        else if ("w" == swp)
+        {
+            ret = Compass.WEST;
+        }
+        else if ("nw" == swp)
+        {
+            ret = Compass.NORTHWEST;
+        }
+        else if ("i" == swp)
+        {
+            ret = Compass.IN;
+        }
+        else if ("o" == swp)
+        {
+            ret = Compass.OUT;
+        }
+        else if ("u" == swp)
+        {
+            ret = Compass.UP;
+        }
+        else if ("d" == swp)
+        {
+            ret = Compass.DOWN;
+        }
+
+        // return
+        return ret;
     }
 }
