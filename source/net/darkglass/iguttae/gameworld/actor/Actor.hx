@@ -327,4 +327,80 @@ class Actor
         // validation? Never heard of it.
         this.exits[side] = trans;
     }
+
+    /**
+     * TODO: Document
+     * 
+     * @param env
+     * @return String
+     */
+    public function getExitList(env:Environment):String
+    {
+        var ret:String = "";
+        var verbosity:Verbosity = env.verbosity;
+        ret = ret + "Exits from here:";
+
+        if (verbosity == Verbosity.VERBOSE)
+        {
+            for (dir in this.exits.keys())
+            {
+                if (Compass.NORTH == dir)
+                {
+                    ret = ret + "\n" + "- North : " + this.exits[dir].name;
+                }
+                else if (Compass.NORTHEAST == dir)
+                {
+                    ret = ret + "\n" + "- Northeast : " + this.exits[dir].name;
+                }
+                else if (Compass.EAST == dir)
+                {
+                    ret = ret + "\n" + "- East : " + this.exits[dir].name;
+                }
+                else if (Compass.SOUTHEAST == dir)
+                {
+                    ret = ret + "\n" + "- Southeast : " + this.exits[dir].name;
+                }
+                else if (Compass.SOUTH == dir)
+                {
+                    ret = ret + "\n" + "- South : " + this.exits[dir].name;
+                }
+                else if (Compass.SOUTHWEST == dir)
+                {
+                    ret = ret + "\n" + "- Southwest : " + this.exits[dir].name;
+                }
+                else if (Compass.WEST == dir)
+                {
+                    ret = ret + "\n" + "- West : " + this.exits[dir].name;
+                }
+                else if (Compass.NORTHWEST == dir)
+                {
+                    ret = ret + "\n" + "- Northwest : " + this.exits[dir].name;
+                }
+                else if (Compass.UP == dir)
+                {
+                    ret = ret + "\n" + "- Up : " + this.exits[dir].name;
+                }
+                else if (Compass.DOWN == dir)
+                {
+                    ret = ret + "\n" + "- Down : " + this.exits[dir].name;
+                }
+                else if (Compass.IN == dir)
+                {
+                    ret = ret + "\n" + "- In : " + this.exits[dir].name;
+                }
+                else if (Compass.OUT == dir)
+                {
+                    ret = ret + "\n" + "- Out : " + this.exits[dir].name;
+                }
+                else
+                {
+                    // impossible!
+                    throw "Impossible!";
+                }
+            }
+        }
+
+        // return
+        return ret;
+    }
 }

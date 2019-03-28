@@ -145,8 +145,17 @@ class YamlLoader
                 swpR.index = entry.get("index");
 
                 // name, will do well enough for now
-                swpL.name = entry.get("name");
-                swpR.name = entry.get("name");
+                swpL.name = entry.get("desc").get("name").get("leftToRight");
+                swpR.name = entry.get("desc").get("name").get("rightToLeft");
+
+                if ("" == swpL.name || null == swpL.name)
+                {
+                    swpL.name = "Unnamed transition " + swpL.index + ".L";
+                }
+                if ("" == swpR.name || null == swpR.name)
+                {
+                    swpR.name = "Unnamed transition " + swpR.index + ".R";
+                }
 
                 // get the two rooms
                 var leftR:Actor  = env.getRoom(entry.get("rooms").get("left").get("index"));

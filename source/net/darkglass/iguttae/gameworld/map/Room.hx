@@ -28,5 +28,6 @@ class Room extends Actor
 
         env.outStream(wrapper + "\n" + this.name + "\n" + wrapper);
         super.describe(env);
+        env.outStream(this.getExitList(env));
     }
 }

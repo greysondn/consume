@@ -34,7 +34,7 @@
 -
   index: -2
   # Reading? - whether we're reading things in code.
-  name: true
+  name: false
   rooms:
     left:
       index: true
@@ -51,8 +51,8 @@
     width:  false
   desc:
     name:
-      leftToRight: false
-      rightToLeft: false
+      leftToRight: True
+      rightToLeft: True
     look:
       leftToRight:  false
       rightToLeft:  false
@@ -80,8 +80,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Bedroom"
+      rightToLeft: "Living Room"
     look:
       leftToRight: null
       rightToLeft: null
@@ -109,8 +109,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Bathroom"
+      rightToLeft: "Bedroom"
     look:
       leftToRight: null
       rightToLeft: null
