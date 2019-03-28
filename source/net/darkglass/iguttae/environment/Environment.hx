@@ -3,6 +3,7 @@ package net.darkglass.iguttae.environment;
 import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Player;
+import net.darkglass.iguttae.enums.Verbosity;
 
 class Environment
 {
@@ -36,6 +37,11 @@ class Environment
      * we can do actions in the interpreter independent of the player.
      */
     public var god:Actor = new Actor();
+
+    /**
+     * Our current verbosity setting
+     */
+    public var verbosity:Verbosity = Verbosity.VERBOSE;
 
     /**
      * The player. Sometimes we need things done specifically with it and all

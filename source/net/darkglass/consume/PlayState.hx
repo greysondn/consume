@@ -58,7 +58,7 @@ class PlayState extends FlxState
         // TODO: don't hardcode this, move to file
         this.env.player.location = this.env.getRoom(0);
         this.env.player.location.insert(this.env.player);
-        this.env.outStream(this.env.player.location.verbose);
+        this.env.player.location.describe(this.env);
     }
 
     override public function update(elapsed:Float):Void

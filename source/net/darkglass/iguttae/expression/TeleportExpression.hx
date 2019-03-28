@@ -32,6 +32,6 @@ class TeleportExpression extends BaseExpression
         actor.location.insert(actor);
 
         // output new description
-        env.outStream(actor.location.verbose);
+        actor.location.describe(env);
     }
 }

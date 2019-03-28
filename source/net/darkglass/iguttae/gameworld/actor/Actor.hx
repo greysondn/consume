@@ -1,8 +1,10 @@
 package net.darkglass.iguttae.gameworld.actor;
 
+import net.darkglass.iguttae.enums.Verbosity;
 import net.darkglass.iguttae.gameworld.actor.Compass;
 import net.darkglass.iguttae.gameworld.actor.Constants;
 import net.darkglass.iguttae.gameworld.map.Transition;
+import net.darkglass.iguttae.environment.Environment;
 
 /**
  * Parent for interactibles ingame. Not really meant to be called itself.
@@ -268,6 +270,18 @@ class Actor
     public function remove(actor:Actor):Void
     {
         this.contents.remove(actor);
+    }
+
+    public function describe(env:Environment):Void
+    {
+        if (Verbosity.VERBOSE == env.verbosity)
+        {
+            env.outStream(this.verbose);
+        }
+        else
+        {
+            throw "WHAT IS VERBOSITY EVEN TO YOU";
+        }
     }
 
     /**
