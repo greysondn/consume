@@ -54,12 +54,18 @@ class YamlLoader
         // structure. Hell forbid.
         var roomStr:String  = Assets.getText(roomSrc);
         var roomDat:Array<ObjectMap<String, Dynamic>> = Yaml.parse(roomStr);
+        this.loadRooms(env, roomDat);
+        
+        if(!env.checkRoomIntegrity())
+        {
+            // unpossible status
+            throw "Room integrity failure!";
+        }
 
         var tranStr:String  = Assets.getText(tranSrc);
         var tranDat:Dynamic = Yaml.parse(tranStr);
 
-        // trace(tranDat[2]["name"]);
-        this.loadRooms(env, roomDat);
+
     }
 
     /**

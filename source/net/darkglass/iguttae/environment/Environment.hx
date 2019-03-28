@@ -165,4 +165,9 @@ class Environment
 
         return ret;
     }
+
+    public function checkRoomIntegrity():Bool
+    {
+        return this.checkIndexIntegrity(this.rooms);
+    }
 }
