@@ -2,8 +2,6 @@
   index: -1
   name:  "Schema"
   wrongFile:
-    exits:
-      n: -2
     specials: "string"
     roomNPC: "string"
   flags:
@@ -35,9 +33,6 @@
   index: 0
   name:  "Apartment - Bedroom"
   wrongFile:
-    exits:
-      n: 0
-      e: 1
     specials: "[6]"
   flags:
     public: false
@@ -59,8 +54,6 @@
   index: 1
   name:  "Apartment - Bathroom"
   wrongFile:
-    exits:
-      w: 2
     specials: "[5]"
   flags:
     public: false
@@ -76,10 +69,6 @@
   index: 2
   name:  "Apartment - Living Room"
   wrongFile:
-    exits:
-      n: 3
-      w: 4
-      s: 2
     specials: "[7]"
   flags:
     public: false
@@ -97,8 +86,6 @@
   index: 3
   name:  "Apartment - Balcony"
   wrongFile:
-    exits:
-      e: 0
     specials: "[0]"
   flags:
     public: true
@@ -115,11 +102,6 @@
   index: 4
   name:  "Main Street"
   wrongFile:
-    exits:
-      n: 21
-      e:  6
-      s:  8
-      w:  5
     specials: "[0]"
   flags:
     public: true
@@ -143,8 +125,6 @@
   index: 5
   name:  "City Park"
   wrongFile:
-    exits:
-      w: 7
     specials: '[[1, "active"]]'
   flags:
     public: true
@@ -161,10 +141,6 @@
   index: 6
   name:  "South Main Street"
   wrongFile:
-    exits:
-      n:  7
-      e: 35
-      w:  9
     specials: "[0]"
     npcs:     ""
   flags:
@@ -182,10 +158,6 @@
   index: 7
   name:  "Consume Entryway"
   wrongFile:
-    exits:
-      e:   8
-      w:  10
-      sw: 11
     specials: "[3]"
     npcs:     "0"
   flags:
@@ -206,8 +178,6 @@
   index: 8
   name:  "Back Alley"
   wrongFile:
-    exits:
-      ne: 9
     specials: '[3, [2, "rat"]]'
     npcs:     "5"
   flags:
@@ -227,12 +197,6 @@
   index: 9
   name:  "Consume - Dance Floor"
   wrongFile:
-    exits:
-      n:  16
-      e:  12
-      s:  18
-      sw: 19
-      w:  13
     specials: '[[1, "passive"]]'
   flags:
     public: true
@@ -253,9 +217,6 @@
   index: 10
   name:  "Consume - Back Hall"
   wrongFile:
-    exits:
-      n: 15
-      e: 14
     specials: "[0]"
   flags:
     public: true
@@ -273,8 +234,6 @@
   index: 11
   name:  "Consume - Restroom"
   wrongFile:
-    exits:
-      s: 13
     specials: "[5]"
   flags:
     public: false
@@ -289,8 +248,6 @@
   index: 12
   name:  "Consume - Bar"
   wrongFile:
-    exits:
-      s: 17
     specials: "[0]"
   flags:
     public: true
@@ -310,8 +267,6 @@
   index: 13
   name:  "Consume - Stage"
   wrongFile:
-    exits:
-      n: 17
     specials: "[0]"
   flags:
     public: true
@@ -328,9 +283,6 @@
   index: 14
   name:  "Consume - Balcony"
   wrongFile:
-    exits:
-      ne: 14
-      w:  20
     specials: "[0]"
   flags:
     public: true
@@ -351,8 +303,6 @@
   index: 15
   name:  "Consume - Lounge"
   wrongFile:
-    exits:
-      e: 19
     specials: "[15]"
   flags:
     public: true
@@ -372,11 +322,6 @@
   index: 16
   name:  "North Main Street"
   wrongFile:
-    exits:
-      n: 23
-      e: 26
-      s:  7
-      w: 28
     specials: "[0]"
   flags:
     public: true
@@ -398,10 +343,6 @@
   index: 17
   name:  "Hospital - Waiting Room"
   wrongFile:
-    exits:
-      e: 24
-      s: 22
-      w: 44
     specials: "[0]"
   flags:
     public: true
@@ -421,8 +362,6 @@
   index: 18
   name:  "Hospital - Pharmacy"
   wrongFile:
-    exits:
-      w: 25
     specials: "[0]"
   flags:
     public: true
@@ -439,9 +378,6 @@
   index: 19
   name:  "General Store"
   wrongFile:
-    exits:
-      s: 42
-      w: 27
     specials: '[3, [2, "general"]]'
     npcs:     "6"
   flags:
@@ -460,9 +396,6 @@
   index: 20
   name:  "Gym - Reception"
   wrongFile:
-    exits:
-      e: 27
-      w: 29
     specials: "[3]"
     npcs:     "1"
   flags:
@@ -484,12 +417,6 @@
   index: 21
   name:  "Gym - Workout Area"
   wrongFile:
-    exits:
-      e:  30
-      se: 34
-      s:  32
-      sw: 33
-      w:  31
     specials: "[8]"
   flags:
     public: true
@@ -518,8 +445,6 @@
   index: 22
   name:  "Gym - Gold Room"
   wrongFile:
-    exits:
-      e: 29
     specials: "[9]"
   flags:
     public: true
@@ -559,8 +484,6 @@
   index: 23
   name:  "Gym - Staff Room"
   wrongFile:
-    exits:
-      n: 29
     specials: "[10]"
   flags:
     public: true
@@ -583,8 +506,6 @@
   index: 24
   name:  "Gym - Restroom"
   wrongFile:
-    exits:
-      ne: 29
     specials: "[5]"
   flags:
     public: false
@@ -599,8 +520,6 @@
   index: 25
   name:  "Gym - Showers"
   wrongFile:
-    exits:
-      nw: 29
     specials: "[0]"
   flags:
     public: false
@@ -618,9 +537,6 @@
   index: 26
   name:  "Ice Cream Shop"
   wrongFile:
-    exits:
-      e: 37
-      w: 36
     specials: '[[2, "iceCream"]]'
   flags:
     public: true
@@ -640,11 +556,6 @@
   index: 27
   name:  "Ice Cream Shop - Backroom"
   wrongFile:
-    exits:
-      n: 40
-      e: 41
-      s: 39
-      w: 38
     specials: "[0]"
   flags:
     public: true
@@ -664,8 +575,6 @@
   index: 28
   name:  "Ice Cream Shop - Freezer"
   wrongFile:
-    exits:
-      n: 37
     specials: "[0]"
   flags:
     public: false
@@ -684,8 +593,6 @@
   index: 29
   name:  "Ice Cream Shop - Restroom"
   wrongFile:
-    exits:
-      s: 37
     specials: "[5]"
   flags:
     public: true
@@ -700,8 +607,6 @@
   index: 30
   name:  "Ice Cream Shop - Office"
   wrongFile:
-    exits:
-      w: 37
     specials: "[12]"
   flags:
     public: false
@@ -738,8 +643,6 @@
   index: 31
   name:  "General Store - Warehouse"
   wrongFile:
-    exits:
-      n: 43
     specials: "[4]"
   flags:
     public: false
@@ -755,8 +658,6 @@
   index: 32
   name:  "Hospital - Backroom"
   wrongFile:
-    exits:
-      e: 25
     specials: "[11]"
   flags:
     public: false
