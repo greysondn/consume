@@ -836,8 +836,8 @@
     width:  96 # original had two values - 48 and 96
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Main Street"
+      rightToLeft: "Gym"
     look:
       leftToRight: null
       rightToLeft: null
@@ -865,8 +865,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Reception"
+      rightToLeft: "Workout Area"
     look:
       leftToRight: null
       rightToLeft: null
@@ -894,8 +894,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Showers"
+      rightToLeft: "Workout Area"
     look:
       leftToRight: null
       rightToLeft: null
@@ -923,8 +923,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Staff Room"
+      rightToLeft: "Workout Area"
     look:
       leftToRight: null
       rightToLeft: null
@@ -952,8 +952,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Workout Area"
+      rightToLeft: "Restroom"
     look:
       leftToRight: null
       rightToLeft: null
@@ -981,8 +981,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Workout Area"
+      rightToLeft: "Gold Room"
     look:
       leftToRight: null
       rightToLeft: null
