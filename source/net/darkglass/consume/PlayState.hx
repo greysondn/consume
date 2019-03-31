@@ -11,12 +11,10 @@ import haxe.ui.Toolkit;
 import haxe.ui.containers.ScrollView;
 import haxe.ui.components.Label;
 import haxe.ui.macros.ComponentMacros;
-import haxe.ui.core.Screen;
 
 import net.darkglass.consume.Registry;
 import net.darkglass.iguttae.Iguttae;
 import net.darkglass.iguttae.environment.Environment;
-import haxe.ui.styles.Style;
 
 import net.darkglass.iguttae.expression.EchoExpression;
 import net.darkglass.iguttae.expression.HelpExpression;
@@ -29,6 +27,10 @@ class PlayState extends FlxState
 {
     private var registry:Registry = Registry.create();
 
+    // This makes me angry.
+    private var outBuffer:Array<String> = [];
+    private var lastCommandIndex:Int = 0;
+
     private var uiGroup:FlxGroup = new FlxGroup();
 
     private var cin:Label;
@@ -36,9 +38,6 @@ class PlayState extends FlxState
     private var coutContainer:ScrollView;
     private var coutFrame:VBox;
     private var interpreter:Iguttae;
-    private var justCycled:Bool = false;
-
-    private var prevScroll:Float = 0.0;
 
     private var env:Environment = new Environment();
 
@@ -70,17 +69,8 @@ class PlayState extends FlxState
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
-
-        if (!this.justCycled)
-        {
-            // cycleCout();
-            this.handleKeyboard();
-        }
-        else
-        {
-            this.handleOutput("Cycled text!");
-            this.justCycled = false;
-        }
+        
+        this.handleKeyboard();
     }
 
     private function buildEnv():Void
@@ -111,7 +101,8 @@ class PlayState extends FlxState
         this.cout = _ui.findComponent("cout", Label);
         this.cout.width = 770;
 
-        this.cout.text = "Welcome to consume! Currently being ported.\n";
+        this.cout.text = "";
+        this.handleCommandOutput("Welcome to consume! Currently being ported.");
 
         this.cin = _ui.findComponent("cin", Label);
         this.cin.width = 800;
@@ -164,10 +155,9 @@ class PlayState extends FlxState
         else if (FlxG.keys.justPressed.ENTER)
         {
             // now add new text
-            var scrollpoint:Float = this.coutContainer.contentHeight - 12;         // this.cout.height + 42;
-            this.handleOutput(this.cin.text);
+            this.handleCommandOutput(this.cin.text);
             this.interpreter.eval(this.cin.text.substring(1));
-            this.coutContainer.vscrollPos = scrollpoint;
+            this.coutContainer.vscrollPos = 0;
             this.cin.text = "> ";
         }
         else
@@ -194,65 +184,34 @@ class PlayState extends FlxState
 
     public function handleOutput(txt:String):Void
     {
-        // instead of creating a new cout, what happens if we just add a new
-        // label?
-        var swp:Label = new Label();
-        swp.styleString = "width:770;color:#000000;font-size:24;font-name: \"assets/fonts/hack.ttf\"";
-        swp.text = txt;
-
-        this.coutFrame.addComponent(swp);
+        this.handleOutputCore(txt, false);
     }
 
-    private function scrollToBottom():Void
+    public function handleCommandOutput(txt:String)
     {
-        var prevScroll:Float = this.coutContainer.vscrollPos;
+        this.handleOutputCore(txt, true);
+    }
+
+    public function handleOutputCore(txt:String, isCommand:Bool)
+    {
+        // append to string array
+        this.outBuffer.push(txt);
+
+        // if it's a command, we update the height to scroll to
+        if (isCommand)
+        {
+            this.lastCommandIndex = this.outBuffer.length - 1;
+        }
+
+        // angry on the level of wanting to quit, seriously
+        var newText:String = "";
         
-        var continueScrolling:Bool = true;
-
-        while (continueScrolling)
+        // give it!
+        for (i in this.lastCommandIndex ... this.outBuffer.length)
         {
-            FlxG.log.add(prevScroll);
-
-            if (this.coutContainer.vscrollPos == prevScroll)
-            {
-                continueScrolling = false;
-            }
-            else
-            {
-                prevScroll = coutContainer.vscrollPos;
-            }
+            newText = newText + this.outBuffer[i] + "\n\n";
         }
-    }
 
-    /**
-     * Cycles the current cout if it needs it... by replacing it with a new one.
-     */
-    private function cycleCout():Void
-    {
-        // the max length is somewhat arbitrary
-        if (this.cout.text.length >= 2000)
-        {
-            // stash old text and style
-            var oldText:String = this.cout.text + "";
-
-            // remove from state
-            this.coutFrame.removeComponent(this.cout, true);
-            
-            // make a new label
-            this.cout = new Label();
-
-            // set style
-            // this.cout.width = 770;
-            this.cout.styleString = "width:770;color:#000000;font-size:24;font-name: \"assets/fonts/hack.ttf\";";
-
-            // add to state
-            this.coutFrame.addComponent(this.cout);
-
-            // just put the new one in, don't worry about the rest yet
-            this.cout.text = "Test" + oldText.substring(1900);
-
-            // we just cycled!
-            this.justCycled = true;
-        }
+        this.cout.text = newText;
     }
 }
