@@ -2,8 +2,6 @@
   index: -1
   name:  "Schema"
   wrongFile:
-    exits:
-      n: -2
     specials: "string"
     roomNPC: "string"
   flags:
@@ -11,33 +9,44 @@
   permissions:
     wait: false
   desc:
-    look: "A short default description for when someone looks from elsewhere to this room."
-    short: "Just a preview for the schema of this file."
-    long: >-
+    longview: "A short default description for when someone looks from elsewhere to this room."
+    brief: "Just a preview for the schema of this file."
+    verbose: >-
       This more or less provides some insight into the structure
       of this file, but in case you're not getting it, you can,
       well for now do nothing but later I'll give some better insight
       into how this works.
 -
+  index: -2
+  # Reading? - whether we're reading things in code.
+  name:      true
+  wrongFile: false
+  flags:
+    public: true
+  permissions:
+    wait: true
+  desc:
+    longview: true
+    brief:    true
+    verbose:  true
+-
   index: 0
   name:  "Apartment - Bedroom"
   wrongFile:
-    exits:
-      n: 0
-      e: 1
     specials: "[6]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The bedroom of your tiny 2-room apartment. It's really only it's own room
       because of the divider separating it from the rest of the apartment, there 
       isn't even a door.
       
+
       Contains all the normal bedroom stuff; bed, dirty clothes, clean clothes.
       A dresser that gets used less then it should. There's a rather nice sized
       closet that's currently stuffed so full of junk you don't feel safe
@@ -46,36 +55,30 @@
   index: 1
   name:  "Apartment - Bathroom"
   wrongFile:
-    exits:
-      w: 2
     specials: "[5]"
   flags:
     public: false
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       Your bathroom. Standard stuff for a person living alone. The important
       bits are the shower and the toilet.
 -
   index: 2
   name:  "Apartment - Living Room"
   wrongFile:
-    exits:
-      n: 3
-      w: 4
-      s: 2
     specials: "[7]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: "You call it your living room, but it's really the only other room in the apartment."
-    short: null
-    long: >-
+    longview: "You call it your living room, but it's really the only other room in the apartment."
+    brief: null
+    verbose: >-
       Your living room. Or really just the rest of your apartment. You have a
       cheap couch you got from a friend when you moved in. A nice TV you
       probably shouldn't have bought and a card table and folding chair. To the
@@ -84,17 +87,15 @@
   index: 3
   name:  "Apartment - Balcony"
   wrongFile:
-    exits:
-      e: 0
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: "Your small balcony overlooking the parking lot."
-    short: null
-    long: >-
+    longview: "Your small balcony overlooking the parking lot."
+    brief: null
+    verbose: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
       be out here, you can't even leave from here, there's no way down. And the
       view sucks.
@@ -102,20 +103,15 @@
   index: 4
   name:  "Main Street"
   wrongFile:
-    exits:
-      n: 21
-      e:  6
-      s:  8
-      w:  5
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The street outside your apartment. Three identical buildings
       sit side-by-side here, they all share a single parking lot accessed by an
       alley. The lot is really too small for the number of apartments in the
@@ -130,17 +126,15 @@
   index: 5
   name:  "City Park"
   wrongFile:
-    exits:
-      w: 7
     specials: '[[1, "active"]]'
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The city park. Though you know it's only a single block, something about
       the woods makes it easy to get lost. There are usually a number of less
       then friendly individuals in the woods as well.
@@ -148,10 +142,6 @@
   index: 6
   name:  "South Main Street"
   wrongFile:
-    exits:
-      n:  7
-      e: 35
-      w:  9
     specials: "[0]"
     npcs:     ""
   flags:
@@ -159,9 +149,9 @@
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       Most of this area is still under construction. One building is finished,
       though most of it is still unoccupied their is a lighted door leading to
       the basement.
@@ -169,10 +159,6 @@
   index: 7
   name:  "Consume Entryway"
   wrongFile:
-    exits:
-      e:   8
-      w:  10
-      sw: 11
     specials: "[3]"
     npcs:     "0"
   flags:
@@ -180,20 +166,20 @@
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A short flight of concrete steps leading to a steel door. The landing is
       mostly taken up by the very large bouncer who eyes you as you come down
       the stairs. A single lamp lights the landing with a second light focusing
-      on the small sign affixed to the door.</p><p>The sign
-      reads,&quot;Welcome to Consume.&quot;
+      on the small sign affixed to the door.
+      
+
+      The sign reads,"Welcome to Consume".
 -
   index: 8
   name:  "Back Alley"
   wrongFile:
-    exits:
-      ne: 9
     specials: '[3, [2, "rat"]]'
     npcs:     "5"
   flags:
@@ -201,9 +187,9 @@
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A dim alley running along the side of the club. It ends in a small
       loading dock area with a dumpster next to a locked door. There is a short
       drive leading to the street providing access to the dock. Halfway down
@@ -213,21 +199,15 @@
   index: 9
   name:  "Consume - Dance Floor"
   wrongFile:
-    exits:
-      n:  16
-      e:  12
-      s:  18
-      sw: 19
-      w:  13
     specials: '[[1, "passive"]]'
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The main room of Consume is mostly taken up by a dance floor. Along one
       wall is the bar, several bartenders work behind it serving drinks to
       thirsty patrons. Opposite the bar is a stage for live bands to preform
@@ -239,53 +219,46 @@
   index: 10
   name:  "Consume - Back Hall"
   wrongFile:
-    exits:
-      n: 15
-      e: 14
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A short hall lined with rooms on either side. Behind each door is a
       sparsely furnished room with little more then a lamp and a bed. At the
-      far end of the hall is a door marked &quot;Staff Only.&quot; All the
+      far end of the hall is a door marked "Staff Only." All the
       doors are locked from this side.
 -
   index: 11
   name:  "Consume - Restroom"
   wrongFile:
-    exits:
-      s: 13
     specials: "[5]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 12
   name:  "Consume - Bar"
   wrongFile:
-    exits:
-      s: 17
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A long polished bar, running the length of the room. Like most movie
       bars the back wall of this one is backed by a mirror with interesting or
       unique liquor bottles along the shelf before it. Several individuals sit
@@ -296,17 +269,15 @@
   index: 13
   name:  "Consume - Stage"
   wrongFile:
-    exits:
-      n: 17
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The club's stage. A drum set sits covered and ignored by the crowd. You're
       not really sure where the music is being piped in from. There's not much
       of interest here.
@@ -314,40 +285,35 @@
   index: 14
   name:  "Consume - Balcony"
   wrongFile:
-    exits:
-      ne: 14
-      w:  20
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       An open sided stair leads to a balcony overlooking the dance floor. A
       number of tables and chairs scattered in groups cover the area and some
       clever acoustics mute enough of the music to allow for conversation.
       There are a few groups up here enjoying the relative quiet. Some of them
       are doing more then just talking. There is a door in the back wall,
-      marked &quot;Lounge&quot;. It's guarded by another of the club's
+      marked "Lounge". It's guarded by another of the club's
       bouncers.
 -
   index: 15
   name:  "Consume - Lounge"
   wrongFile:
-    exits:
-      e: 19
     specials: "[15]"
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The predator's lounge is a large dark room. Several groups of chairs and
       couches are arranged around the room allowing predators a place to sit
       and digest. A number of preds are taking advantage of this, large bellies
@@ -358,20 +324,15 @@
   index: 16
   name:  "North Main Street"
   wrongFile:
-    exits:
-      n: 23
-      e: 26
-      s:  7
-      w: 28
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       What is probably best referred to as the town's market district. It's
       rather depressing really, there is only a single general store here,
       located in a tiny building to the east. Across the street to the west is
@@ -384,19 +345,15 @@
   index: 17
   name:  "Hospital - Waiting Room"
   wrongFile:
-    exits:
-      e: 24
-      s: 22
-      w: 44
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A typical hospital waiting area, the reception desk is always occupied by
       someone looking tired and slightly haggard. You idly wonder if the
       expression comes with the job, or if it's the other way around. There
@@ -407,17 +364,15 @@
   index: 18
   name:  "Hospital - Pharmacy"
   wrongFile:
-    exits:
-      w: 25
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The pharmacy counter of the local hospital, the steel cage keeping
       random people out is closed and no one seems to be around at the moment.
       Looks like the pharmacist is out at the moment.
@@ -425,9 +380,6 @@
   index: 19
   name:  "General Store"
   wrongFile:
-    exits:
-      s: 42
-      w: 27
     specials: '[3, [2, "general"]]'
     npcs:     "6"
   flags:
@@ -435,9 +387,9 @@
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The array of junk occupying this store is truly impressive. You feel
       that, had you the time and desire, you could find some truly remarkable
       things here. Alas the haphazard piles and disorganized clutter make you
@@ -446,9 +398,6 @@
   index: 20
   name:  "Gym - Reception"
   wrongFile:
-    exits:
-      e: 27
-      w: 29
     specials: "[3]"
     npcs:     "1"
   flags:
@@ -456,13 +405,13 @@
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The reception room of this gym is comfortable and modern. Several
       comfortable looking chairs wait to either side, with a reception desk at
       the end of the room. A door next to the desk is
-      marked &quot;Members Only&quot; and seems to lead into the main workout
+      marked "Members Only" and seems to lead into the main workout
       area, visible from outside though the large floor to ceiling windows
       along the street facing wall. A keycard reader next to the door ensures
       only those with the proper access can get in the building.
@@ -470,74 +419,93 @@
   index: 21
   name:  "Gym - Workout Area"
   wrongFile:
-    exits:
-      e:  30
-      se: 34
-      s:  32
-      sw: 33
-      w:  31
     specials: "[8]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A large open room filled with machines of every type. Each one designed
       to strengthen some aspect of your body. Each machine has a sign next to
       it with a visual description of how to use the machine as well as several
       warnings about using them correctly. The machines also seem to be grouped
       and numbered, it looks like if you pick a group and follow the numbers in
-      sequence you'll get a good workout in that area.</p><br><p>The back wall
+      sequence you'll get a good workout in that area.
+      
+
+      The back wall
       of the room is a large mirror, both letting you see yourself working out
       and giving the illusion that the room is much larger then it appears.
       There are three doors in the room, the first heads back out through the
       reception area and then outside. Across the room from that is another
       door secured with a card reader, it has a sign on it that
-      reads &quot;Gold Room&quot;. Set in the mirrored wall, and nearly
-      invisible is a third door, a small &quot;Staff&quot; sign attached to
-      it.</p><br><p>There are several others in various states of fitness
+      reads "Gold Room". Set in the mirrored wall, and nearly
+      invisible is a third door, a small "Staff" sign attached to
+      it.
+      
+
+      There are several others in various states of fitness
       moving around, though not enough to make the place feel crowded.
 -
   index: 22
   name:  "Gym - Gold Room"
   wrongFile:
-    exits:
-      e: 29
     specials: "[9]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       Calling this room the 'Gold Room' is a bit of a misnomer, the room
       it's self isn't actually gold. Rather it's a smallish room with mirrors
       on all the walls. Machines circle the outside of the room, with a break
       in the line for the door. The machines claim to do all kinds of strange
       things to your body, and studying them closely you can almost
-      understand why the gym owner limits their use.</p><br><p>The first
+      understand why the gym owner limits their use.
+      
+
+      The first
       machine to your left is the one the ill-fated ass Erik demonstrated for
       you, the straps and levers inside the machine will, somehow, make you
-      several inches taller when you use it.</p><br><p>The next machine looks
+      several inches taller when you use it.
+      
+
+      The next machine looks
       a lot like a play-doh press, only person-sized. The sticker on it states
       that it will squeeze the fat out of your body, leaving you with as close
-      to 0% body fat as it's possible to get.</p><br><p>Siting next to that
+      to 0% body fat as it's possible to get.
+      
+
+      Siting next to that
       one, looking for all the world like some kind of lewd sex machine is
       one which the label states will make your dick, assuming you have one,
-      larger.</p><br><p>Unsurprisingly the next machine, which looks a lot like
+      larger.
+      
+
+      Unsurprisingly the next machine, which looks a lot like
       a steampunk bidet, claims to make the balls of anyone who uses it larger.
-      You have to wonder why Erik didn't bother with it.</p><br><p>The next
+      You have to wonder why Erik didn't bother with it.
+      
+
+      The next
       contraption is very odd looking, it seems to be a combination of the
       last two, but different in some way you can't really pin down just by
       looking. The label on this machine says that it will make your erections
-      larger.</p><br><p>Next is a machine that you almost recognize, it looks
+      larger.
+
+      
+      Next is a machine that you almost recognize, it looks
       like a thigh sculptor, only more advanced. This machine says that it will
-      slim your hips and thighs.</p><br><p>Last, the machine directly to your
+      slim your hips and thighs.
+      
+
+      Last, the machine directly to your
       right as you come in, is another nearly familiar machine. This machine
       appears to be an advanced squat machine, the label saying that it will
       give you a smaller, tighter butt.
@@ -545,22 +513,23 @@
   index: 23
   name:  "Gym - Staff Room"
   wrongFile:
-    exits:
-      n: 29
     specials: "[10]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       This back room of this gym is clearly not an area customers are intended
       to see. Two walls are covered in the lockers of the employees. The wall
       opposite the door has a door and a window into which is the manager's
       office. Shay can usually be found somewhere in the area. Along side the
-      window sits a vending machine mostly selling health drinks.</p><br><p>The
+      window sits a vending machine mostly selling health drinks.
+      
+
+      The
       middle of the room is dominated by an impressive contraption, you can't
       fathom what all the parts are supposed to be used for. According to Shay,
       this machine is supposed to make your chest bigger. Also according to
@@ -569,33 +538,29 @@
   index: 24
   name:  "Gym - Restroom"
   wrongFile:
-    exits:
-      ne: 29
     specials: "[5]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 25
   name:  "Gym - Showers"
   wrongFile:
-    exits:
-      nw: 29
     specials: "[0]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A short hallway leads to several shower stalls, providing gym goers a
       place to change and get cleaned up. Rows of small lockers are provided
       for customers to store any personal belongings they don't want to carry
@@ -604,18 +569,15 @@
   index: 26
   name:  "Ice Cream Shop"
   wrongFile:
-    exits:
-      e: 37
-      w: 36
     specials: '[[2, "iceCream"]]'
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       Your old place of employment, the local ice cream shop. They have all
       the basics; cones, sundaes even a few specialty items like shakes and
       splits. When you worked here you got all the ice cream you wanted, now
@@ -626,20 +588,15 @@
   index: 27
   name:  "Ice Cream Shop - Backroom"
   wrongFile:
-    exits:
-      n: 40
-      e: 41
-      s: 39
-      w: 38
     specials: "[0]"
   flags:
     public: true
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The back room of the ice cream shop set up as a break room, with a table
       and several chairs. The old TV you remember from when you worked here is
       still sitting on top of the refrigerator. From here there are three
@@ -650,17 +607,15 @@
   index: 28
   name:  "Ice Cream Shop - Freezer"
   wrongFile:
-    exits:
-      n: 37
     specials: "[0]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       The freezer, it's very cold, naturally. And it's filled with tub after
       tub of ice cream ready to be sold in the shop. A quick look around and
       you're pretty sure there's enough here the shop will never run out, even
@@ -670,33 +625,29 @@
   index: 29
   name:  "Ice Cream Shop - Restroom"
   wrongFile:
-    exits:
-      s: 37
     specials: "[5]"
   flags:
     public: true
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 30
   name:  "Ice Cream Shop - Office"
   wrongFile:
-    exits:
-      w: 37
     specials: "[12]"
   flags:
     public: false
   permissions:
     wait: false
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       While you worked here you were never allowed into this room, you were
       pretty sure it was just an office since Bessie was usually in here when
       she was at the shop at all. Now that you can get in here you see that you
@@ -705,7 +656,10 @@
       files. An old computer monitor takes up one corner of the desk. You're
       pretty sure there's a keyboard somewhere under the papers, but you'd have
       to dig to find it. A pair of filing cabinets rest against the back wall,
-      flanking the desk to either side.</p><br><p>Where the idea of a typical
+      flanking the desk to either side.
+      
+      
+      Where the idea of a typical
       office breaks down is the area to the left of the desk. A raised lip
       separates the two areas and probably helps keep any spills from
       reaching the office or escaping out the door. The floor is tiled and
@@ -724,34 +678,30 @@
   index: 31
   name:  "General Store - Warehouse"
   wrongFile:
-    exits:
-      n: 43
     specials: "[4]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A massive warehouse under the main shop filled with more stuff then you
       could possibly sort through in several lifetimes.
 -
   index: 32
   name:  "Hospital - Backroom"
   wrongFile:
-    exits:
-      e: 25
     specials: "[11]"
   flags:
     public: false
   permissions:
     wait: true
   desc:
-    look: null
-    short: null
-    long: >-
+    longview: null
+    brief: null
+    verbose: >-
       A small room tucked away in the back of the hospital, almost a closet.
       The only item of note in here is a small machine, examining it closely it
       seems like you can use it to gain new perks for a small fee.

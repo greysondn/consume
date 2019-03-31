@@ -32,6 +32,37 @@
     hidden: false
     locked: false
 -
+  index: -2
+  # Reading? - whether we're reading things in code.
+  name: false
+  rooms:
+    left:
+      index: true
+      side:  true
+    right:
+      index: true
+      side:  true
+  time:
+    timed: false
+    open:  false
+    close: false
+  size:
+    height: false
+    width:  false
+  desc:
+    name:
+      leftToRight: True
+      rightToLeft: True
+    look:
+      leftToRight:  false
+      rightToLeft:  false
+    lock:
+      leftToRight:  false
+      rightToLeft:  false
+  flags:
+    hidden: false
+    locked: false
+-
   index: 0
   name: "Apartment - Living Room to Bedroom"
   travelTime: 1
@@ -49,8 +80,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Bedroom"
+      rightToLeft: "Living Room"
     look:
       leftToRight: null
       rightToLeft: null
@@ -78,8 +109,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Bathroom"
+      rightToLeft: "Bedroom"
     look:
       leftToRight: null
       rightToLeft: null
@@ -107,8 +138,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Living Room"
+      rightToLeft: "Balcony"
     look:
       leftToRight: null
       rightToLeft: null
@@ -136,8 +167,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Main Street"
+      rightToLeft: "Apartment"
     look:
       leftToRight: null
       rightToLeft: null
@@ -165,8 +196,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "City Park"
+      rightToLeft: "Main Street"
     look:
       leftToRight: null
       rightToLeft: null
@@ -194,8 +225,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "South Main Street"
+      rightToLeft: "Main Street"
     look:
       leftToRight: null
       rightToLeft: null
@@ -223,8 +254,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Main Street"
+      rightToLeft: "Consume"
     look:
       leftToRight: null
       rightToLeft: null
@@ -252,8 +283,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Entryway"
+      rightToLeft: "Back Alley"
     look:
       leftToRight: null
       rightToLeft: null
@@ -281,8 +312,8 @@
     width:  96
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Entryway"
+      rightToLeft: "Dance Floor"
     look:
       leftToRight: null
       rightToLeft: null
@@ -310,8 +341,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Dance Floor"
+      rightToLeft: "Back Hall"
     look:
       leftToRight: null
       rightToLeft: null
@@ -339,8 +370,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Back Hall"
+      rightToLeft: "Restroom"
     look:
       leftToRight: null
       rightToLeft: null
@@ -368,8 +399,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Dance Floor"
+      rightToLeft: "Bar"
     look:
       leftToRight: null
       rightToLeft: null
@@ -397,8 +428,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Stage"
+      rightToLeft: "Dance Floor"
     look:
       leftToRight: null
       rightToLeft: null
@@ -426,8 +457,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Stage"
+      rightToLeft: "Balcony"
     look:
       leftToRight: null
       rightToLeft: null
@@ -455,8 +486,8 @@
     width:  50 # Original had two values - 50 and 96
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Stage"
+      rightToLeft: "Balcony"
     look:
       leftToRight: null
       rightToLeft: null
@@ -486,8 +517,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Ice Cream Shop"
+      rightToLeft: "Main Street"
     look:
       leftToRight: null
       rightToLeft: null
@@ -515,8 +546,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Back Room"
+      rightToLeft: "Front of Shop"
     look:
       leftToRight: null
       rightToLeft: null
@@ -529,7 +560,7 @@
 -
   index: 17
   name: ""
-  travelTime: 5
+  travelTime: 5-
   rooms:
     left:
       index: 27
@@ -544,8 +575,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Office"
+      rightToLeft: "Back Room"
     look:
       leftToRight: null
       rightToLeft: null
@@ -573,8 +604,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Back Room"
+      rightToLeft: "Restroom"
     look:
       leftToRight: null
       rightToLeft: null
@@ -602,8 +633,8 @@
     width:  50
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Freezer"
+      rightToLeft: "Back Room"
     look:
       leftToRight: null
       rightToLeft: null
@@ -631,8 +662,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Main Street"
+      rightToLeft: "North Main Street"
     look:
       leftToRight: null
       rightToLeft: null
@@ -660,8 +691,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "General Store"
+      rightToLeft: "Main Street"
     look:
       leftToRight: null
       rightToLeft: null
@@ -689,8 +720,8 @@
     width:  55
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Warehouse"
+      rightToLeft: "Front of Store"
     look:
       leftToRight: null
       rightToLeft: null
@@ -718,8 +749,8 @@
     width:  96
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Main Street"
+      rightToLeft: "Hospital"
     look:
       leftToRight: null
       rightToLeft: null
@@ -747,8 +778,8 @@
     width:  0
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Pharmacy"
+      rightToLeft: "Waiting Room"
     look:
       leftToRight: null
       rightToLeft: null
@@ -776,8 +807,8 @@
     width:  55 # original had two sizes - 0 and 55
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Waiting Room"
+      rightToLeft: "Back Room"
     look:
       leftToRight: null
       rightToLeft: null
@@ -805,8 +836,8 @@
     width:  96 # original had two values - 48 and 96
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Main Street"
+      rightToLeft: "Gym"
     look:
       leftToRight: null
       rightToLeft: null
@@ -834,8 +865,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Reception"
+      rightToLeft: "Workout Area"
     look:
       leftToRight: null
       rightToLeft: null
@@ -863,8 +894,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Showers"
+      rightToLeft: "Workout Area"
     look:
       leftToRight: null
       rightToLeft: null
@@ -892,8 +923,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Staff Room"
+      rightToLeft: "Workout Area"
     look:
       leftToRight: null
       rightToLeft: null
@@ -921,8 +952,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Workout Area"
+      rightToLeft: "Restroom"
     look:
       leftToRight: null
       rightToLeft: null
@@ -950,8 +981,8 @@
     width:  48
   desc:
     name:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Workout Area"
+      rightToLeft: "Gold Room"
     look:
       leftToRight: null
       rightToLeft: null

@@ -1,30 +1,3 @@
-package;
-
-import flash.*;
-import flash.net.*;
-import flash.ui.Mouse;
-import flash.utils.*;
-import flash.text.*;
-import flash.events.*;
-import flash.display.*;
-import flash.net.FileReference;
-import haxe.remoting.AMFConnection;
-import Type.ValueType;
-import haxe.xml.Check.Attrib;
-import flash.errors.*;
-
-//Logo images
-@:bitmap("../img/logo_f.png") class LogoF extends BitmapData { }
-// now in registry as logoMale -  @:bitmap("../img/logo_m.png") class LogoM extends BitmapData { }
-@:bitmap("../img/logo_m_notext.png") class LogoMNoText extends BitmapData { }
-@:bitmap("../img/logo_f_notext.png") class LogoFNoText extends BitmapData { }
-
-//Named Character images
-@:bitmap("../img/kyra.png") class KyraAvi extends BitmapData { }
-
-//Random NPC images
-
-
 class Main {
 	static var globals:GlobalVars;
 	static var species:Array<MySpecies>;
@@ -97,25 +70,9 @@ class Main {
 		var flag:Int = -1;
 		var flagValue:String = "";
 		var flagType:ValueType = null;
-		var exit:Array<MyExit> = new Array();
-		var exitDirection:Array<String> = new Array();
-		var exitDirShort:Array<String> = new Array();
 		
 		var timeReturnArray:Array<String> = new Array();
 		var timeGoesBy:Int = 0;
-		
-		if (!btnDebugDump.visible)
-			btnDebugDump.visible = true;
-		
-		if (!optionsBtn.visible) {
-			optionsBtn.visible = true;
-			charDesc.visible = true;
-			globals.backTo = "move";
-			talkInProgress = false;
-			if (globals.debugMode) {
-				txtDebug.addEventListener(MouseEvent.CLICK, debugMenu);
-				txtDebug.visible = true;
-			}
 		}
 		
 		//If the player signed up to be prey, we need to flip them right to the consumption scene rather then letting them move about.
@@ -495,40 +452,6 @@ class Main {
 		
 
         // code that used to build the direction buttons was here, no need for it.
-
-		for (i in 0...9) {
-			if (exit[i] != null) {
-				btns[i].setButton(exit[i].name, exit[i].desc, exit[i].travelTo + ":" + exit[i].travelTime + ":" + exit[i].doorWidth + ":" + exit[i].doorHeight);
-				if (exit[i].exitClosed || exit[i].travelTo == -1) {
-					btns[i].disableButton();
-				} else {
-					btns[i].setClickFunc(movePlayer);
-				}
-				if (exit[i].hidden) {
-					if (playerCharacter.quest[exit[i].hiddenQuestID].stage == 0) {
-						btns[i].setButton(exitDirection[i], null, exitDirShort[i]);
-						btns[i].disableButton();
-						btns[i].setClickFunc(showHidden);
-					}
-				}
-				if (exit[i].keyID != -1) {
-					if (playerCharacter.hasKey(exit[i].keyID) == -1) {
-						btns[i].disableButton();
-						//btns[i].clearClickFunc(); Redundant
-					}
-				}
-				if (exit[i].timeOpen != exit[i].timeClose) {
-					if (playerCharacter.hour < exit[i].timeOpen || playerCharacter.hour >= exit[i].timeClose) {
-						btns[i].disableButton();
-					}
-				}
-			} else {
-				if (exitDirection[i] != null) {
-					btns[i].setButton(exitDirection[i]);
-					btns[i].disableButton();
-				}
-			}
-		}
 		
 		//Wait, btn 4
 		if (currentRoom.allowWait && currentRoom.isPublic && playerCharacter.arousal < 100) {
@@ -556,11 +479,6 @@ class Main {
 			new AlertBox("Masturbate logic test failed. " + playerCharacter.arousal + ", Public: " + currentRoom.isPublic + ", Allow Wait: " + currentRoom.allowWait);
 		}
 		
-		
-	}
-	
-	static function createSewer( e:MouseEvent ) {
-		//Entrance into the dynamically generated sewer systems
 		
 	}
 	
@@ -5881,109 +5799,31 @@ class Main {
 			playerCharacter.quest[currentRoom.exitSE.hiddenQuestID].stage = 1;
 		}
 	}
-	
-    static function displayFAQ( e:MouseEvent )
+
+    // code to generate FAQ was here, but it's ported now
+    static function displayFAQ( e:MouseEvent ){}
+
+    // the credits list was here, but it's in the ported code now.
+    static function displayCredits( e:MouseEvent ) {}
+
+    // done-ish
+    static function welcomeScreen(?event:MouseEvent)
     {
-        // the code to generate the faq was here, but it's in the ported code
-        // now.
+        // almost all the titlescreen stuff is no longer needed and is ported.
+
+        // byline was here - nothing needed there except the actual string
+        // "Created by Kyra Sunseeker <a href=\"https://twitter.com/SillySnowFox\">Follow @SillySnowFox</a>"
     }
 
-    static function displayCredits( e:MouseEvent )
-    {
-        // the credits list was here, but it's in the ported code now.
-    }
+    // dummied out display scroll functions - already have tools to do this in
+    // place in the new code.
+    static function scrollTop( e:MouseEvent ) {} // dummied
+    static function scrollUp( e:MouseEvent ) {}  // dummied
+    static function scrollDn( e:MouseEvent ) {}  // dummied
+    static function scrollBm( e:MouseEvent ) {}  // dummied
 
-	static function welcomeScreen(?event:MouseEvent) {
-		var txtOutput:Object  = Lib.current.getChildByName("Output Field");
-		var welcomeMessage:Array<String> = globals.welcomeMessage;
-		var date:Date = Date.now();
-		var textSize:Int = globals.textSize;
-		
-		var message:String = "";
-		var rndNumer:Int = Math.round(Math.random() * (welcomeMessage.length - 1));
-		var month:Int = date.getMonth();
-		var day:Int = date.getDate();
-		
-		var logo:Bitmap = new Bitmap();
-		var logoData:BitmapData = new BitmapData(469, 259);
-		
-		var gameLogoM:LogoM = new LogoM(469, 259);
-		var gameLogoF:LogoF = new LogoF(469, 259);
-		
-        // code for selecting random messages was here. Noted in ported code.
-        message = "placeholder for ported shit"
-		
-		if (Math.round(Math.random()) == 0) {
-			logoData = gameLogoM;
-		} else {
-			logoData = gameLogoF;
-		}
-		
-		logo.bitmapData = logoData;
-		logo.name = "gameLogo";
-		logo.x = 10;
-		logo.y = 11;
-		logo.visible = true;
-		Lib.current.addChild(logo);
-		
-		txtOutput.htmlText = "<body><br><br><p><span class='byline'>Created by Kyra Sunseeker</span></p><br><br><p><span class = 'heading'>&nbsp;&nbsp;Welcome to</span></p><br><br><br><br><br><br><br><p><font size='" + textSize + "'><br><br><p align = 'center'><u><a href=\"https://twitter.com/SillySnowFox\">Follow @SillySnowFox</a></u></p><br><br><br><font size = '" + textSize + "'><p align = 'center'>" + message + "</p></font></body>";
-		
-		clearAllEvents();
-		
-		btns[0].setButton("New Game", "Start a new game", 0);
-		btns[0].setClickFunc(newGame);
-		btns[1].setButton("Load", "Load a saved game", 0);
-		btns[1].setClickFunc(loadGame);
-		btns[2].setButton("Options");
-		btns[2].setClickFunc(optionsScreen);
-		
-		btns[6].setButton("F.A.Q.");
-		btns[6].setClickFunc(displayFAQ);
-		
-		btns[8].setButton("Credits");
-		btns[8].setClickFunc(displayCredits);
-		
-		globals.backTo = "Welcome";
-	}
-	
-	static function scrollTop( e:MouseEvent ) {
-		var txtOutput:Object = Lib.current.getChildByName("Output Field");
-		
-		txtOutput.scrollV = 1;
-	}
-	
-	static function scrollUp( e:MouseEvent ) {
-		var txtOutput:Object = Lib.current.getChildByName("Output Field");
-		
-		txtOutput.scrollV -= 3;
-	}
-	
-	static function scrollDn( e:MouseEvent ) {
-		var txtOutput:Object = Lib.current.getChildByName("Output Field");
-		
-		txtOutput.scrollV += 3;
-	}
-	
-	static function scrollBm( e:MouseEvent ) {
-		var txtOutput:Object = Lib.current.getChildByName("Output Field");
-		
-		txtOutput.scrollV = txtOutput.maxScrollV;
-	}
-	
-	static function debugDump( e:MouseEvent ) {
-		//Dump data to the screen, hopefully this will help with crashes
-		var message:String = "";
-		
-		clearAllEvents();
-		
-		newRoom = true;
-		
-		message = "Current Room ID: " + globals.currentRoomID;
-		
-		outputText(message);
-		
-		btns[0].setButton("Recover", "Attempt game recovery", 0, movePlayer);
-	}
+    // dummied out debug dump function - won't be necessary
+    static function debugDump( e:MouseEvent ) {}
 	
 	/**************************\
 	 *                        *
@@ -7670,11 +7510,4 @@ class Main {
 			btns[i].clearClickFunc();
 		}
 	}
-	
-	static function main() {
-		initialize();
-		drawPlayfield();
-		welcomeScreen();
-	}
-	
 }

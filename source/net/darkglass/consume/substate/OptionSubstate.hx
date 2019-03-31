@@ -60,16 +60,11 @@ class OptionSubstate extends FlxUISubState
         // why don't we organize these options? ... But
         // first! ... We'll need to build a window proper
         // for them. So that's my first task, I suppose.
-        var buttonNormalImg:String    = "assets/images/gui/classic/nineslice/window.png";
-        var buttonHoverImg:String     = "assets/images/gui/classic/nineslice/window-hover.png";
-        var buttonClickImg:String     = "assets/images/gui/classic/nineslice/window-click.png";
-        var buttonDisabledImg:String  = "assets/images/gui/classic/nineslice/window-disabled.png";
+        var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
+        var buttonDisabledGFX:Array<String> = registry.gfxset_buttonDisabled;
+        var slicecoords:Array<Array<Int>> = registry.gfxset_buttonEnabled_slice;
 
-        var buttonEnabledGFX:Array<String>  = [buttonNormalImg, buttonHoverImg, buttonClickImg];
-        var buttonDisabledGFX:Array<String> = [buttonDisabledImg, buttonDisabledImg, buttonDisabledImg];
-        var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
-
-        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, buttonNormalImg, new Rectangle(0, 0, 804, 594), [1, 1, 2, 2]);
+        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_bgGeneral, new Rectangle(0, 0, 804, 594), registry.gfx_bgGeneral_slice);
         this.add(background);
 
         // clickable button that doesn't suck too hard to close it?
@@ -274,7 +269,7 @@ class OptionSubstate extends FlxUISubState
         hackTestText.setFormat("assets/fonts/hack.ttf", 16);
         tabGroupDebug.add(hackTestText);
 
-        var textframe:FlxUI9SliceSprite = new FlxUI9SliceSprite(200, 65, buttonNormalImg, new Rectangle(0, 0, 530, 300), [1, 1, 2, 2]);
+        var textframe:FlxUI9SliceSprite = new FlxUI9SliceSprite(200, 65, registry.gfx_buttonNormal, new Rectangle(0, 0, 530, 300), [1, 1, 2, 2]);
         tabGroupDebug.add(textframe);
 
         var scrss:Scrollbar = new Scrollbar(730, 65, 300);

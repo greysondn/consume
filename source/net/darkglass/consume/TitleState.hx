@@ -6,11 +6,11 @@ import flixel.addons.ui.FlxUIState;
 import flixel.addons.ui.FlxUISprite;
 import flixel.addons.ui.FlxUIText;
 import flixel.addons.ui.FlxUIButton;
-import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
 import flixel.text.FlxText.FlxTextFormat;
 
+import net.darkglass.consume.PlayState;
 import net.darkglass.consume.Registry;
 
 import net.darkglass.consume.substate.CreditsSubstate;
@@ -44,13 +44,13 @@ class TitleState extends FlxUIState
 
         // Logo
         // ----
-        var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logoMale);
+        var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logo);
         this.add(logo);
 
         // version
         // pos 489x42
         // sz 162x97
-        var verText:FlxUIText = new FlxUIText(551, 227, 162, "v0.53pre1\n7 Feb 2019");
+        var verText:FlxUIText = new FlxUIText(551, 227, 162, registry.release);
         verText.alignment = "center";
         verText.addFormat(fntcol);
         this.add(verText);
@@ -102,18 +102,13 @@ class TitleState extends FlxUIState
         // space between: 10
         // New, Load, Options, Faq, Credits
         // --------------------------------
-        var buttonNormalImg:String    = "assets/images/gui/classic/nineslice/window.png";
-        var buttonHoverImg:String     = "assets/images/gui/classic/nineslice/window-hover.png";
-        var buttonClickImg:String     = "assets/images/gui/classic/nineslice/window-click.png";
-        var buttonDisabledImg:String  = "assets/images/gui/classic/nineslice/window-disabled.png";
+        var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
+        var buttonDisabledGFX:Array<String> = registry.gfxset_buttonDisabled;
 
-        var buttonEnabledGFX:Array<String>  = [buttonNormalImg, buttonHoverImg, buttonClickImg];
-        var buttonDisabledGFX:Array<String> = [buttonDisabledImg, buttonDisabledImg, buttonDisabledImg];
+        var slicecoords:Array<Array<Int>> = registry.gfxset_buttonEnabled_slice;
 
-        var slicecoords:Array<Array<Int>> = [[1, 1, 2, 2], [1, 1, 2, 2], [1, 1, 2, 2]];
-
-        var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game");
-        newButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, 0, -1);
+        var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game", onClick_play);
+        newButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(newButton);
 
         var loadButton:FlxUIButton = new FlxUIButton(190, 408, "Load");
@@ -146,6 +141,11 @@ class TitleState extends FlxUIState
     {
         var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
         openSubState(optionSubstate);
+    }
+
+    public function onClick_play():Void
+    {
+        FlxG.switchState(new PlayState());
     }
 
     public function onClick_credits():Void
