@@ -137,6 +137,9 @@ class MoveExpression extends BaseExpression
             actor.location = destTran.target;
             actor.location.insert(actor);
 
+            // update location
+            env.onLocationChange(actor.location.name);
+
             // output new description
             actor.location.describe(env);
         }

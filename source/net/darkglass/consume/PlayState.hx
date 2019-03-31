@@ -35,6 +35,7 @@ class PlayState extends FlxState
 
     private var cin:Label;
     private var cout:Label;
+    private var location:Label;
     private var coutContainer:ScrollView;
     private var coutFrame:VBox;
     private var interpreter:Iguttae;
@@ -64,6 +65,7 @@ class PlayState extends FlxState
         this.env.player.location = this.env.getRoom(0);
         this.env.player.location.insert(this.env.player);
         this.env.player.location.describe(this.env);
+        this.location.text = this.env.player.location.name;
     }
 
     override public function update(elapsed:Float):Void
@@ -76,6 +78,7 @@ class PlayState extends FlxState
     private function buildEnv():Void
     {
         this.env.outStream = this.handleOutput;
+        this.env.onLocationChange = this.onLocationChange;
 
         this.env.commands.push(new HelpExpression());
         this.env.commands.push(new EchoExpression());
@@ -110,6 +113,8 @@ class PlayState extends FlxState
 
         this.coutContainer = _ui.findComponent("txtoutscroll", ScrollView);
         this.coutFrame     = _ui.findComponent("txtoutcontainer", VBox);
+
+        this.location = _ui.findComponent("location", Label);
     }
 
     private function handleKeyboard():Void
@@ -213,5 +218,10 @@ class PlayState extends FlxState
         }
 
         this.cout.text = newText;
+    }
+
+    public function onLocationChange(newLocationName:String):Void
+    {
+        this.location.text = newLocationName;
     }
 }

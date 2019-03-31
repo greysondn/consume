@@ -25,6 +25,11 @@ class Environment
     public var outStream:String -> Void;
 
     /**
+     * Command to call on location changes
+     */
+    public var onLocationChange:String -> Void;
+
+    /**
      * All rooms in the game. Because they're indexed.
      */
     public var rooms:Array<Actor>  = [];

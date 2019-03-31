@@ -26,7 +26,8 @@ class Room extends Actor
             wrapper = wrapper + "-";
         }
 
-        env.outStream(wrapper + "\n" + this.name + "\n" + wrapper);
+        // if we ever get scrollback working, or log, this needs changed
+        // env.outStream(wrapper + "\n" + this.name + "\n" + wrapper);
         super.describe(env);
         env.outStream(this.getExitList(env));
     }

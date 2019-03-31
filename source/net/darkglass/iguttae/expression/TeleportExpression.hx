@@ -31,6 +31,9 @@ class TeleportExpression extends BaseExpression
         actor.location = env.getRoom(dest);
         actor.location.insert(actor);
 
+        // update display
+        env.onLocationChange(actor.location.name);
+
         // output new description
         actor.location.describe(env);
     }
