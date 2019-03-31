@@ -23,6 +23,7 @@ import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.expression.HelpExpression;
 // import net.darkglass.iguttae.expression.TeleportExpression;
 import net.darkglass.iguttae.expression.MoveExpression;
+import net.darkglass.iguttae.expression.LookExpression;
 
 import net.darkglass.iguttae.loader.YamlLoader;
 
@@ -87,6 +88,7 @@ class PlayState extends FlxState
         // this.env.commands.push(new EchoExpression());
         // this.env.commands.push(new TeleportExpression());
         this.env.commands.push(new MoveExpression());
+        this.env.commands.push(new LookExpression());
     }
 
     /**
@@ -157,7 +159,10 @@ class PlayState extends FlxState
         // var button_o:Button = _ui.findComponent("button_o", Button);
         // button_o.onClick    = this.onPress_button_o;
 
-
+        // common action rack buttons
+        var button_look:Button = _ui.findComponent("button_look", Button);
+        button_look.onClick    = this.onPress_button_look;
+        
     }
 
     private function handleKeyboard():Void
@@ -334,5 +339,10 @@ class PlayState extends FlxState
     private function onPress_button_o(e:UIEvent):Void
     {
         this.handleButton("move out");
+    }
+
+    private function onPress_button_look(e:UIEvent):Void
+    {
+        this.handleButton("look");
     }
 }

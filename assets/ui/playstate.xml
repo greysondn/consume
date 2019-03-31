@@ -51,6 +51,8 @@
             <button id="button_o" left="160" top="72" width="24" height="40">O</button>
             -->
 
+            <!-- common action rack -->
+            <button id="button_look" left="210" top="16" width="48" height="24">LOOK</button>
         </absolute>
     </absolute>
 </absolute>
