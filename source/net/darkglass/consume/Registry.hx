@@ -40,7 +40,7 @@ class Registry
     /**
      * Release string for title state
      */
-    public var release:String = "v0.53pre2dev\nIn Development";
+    public var release:String = "v0.53pre2";
 
     /**
      * Version number, anywhere an int is needed

@@ -6,7 +6,6 @@ import flixel.addons.ui.FlxUIState;
 import flixel.addons.ui.FlxUISprite;
 import flixel.addons.ui.FlxUIText;
 import flixel.addons.ui.FlxUIButton;
-import flixel.addons.ui.FlxUI9SliceSprite;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
 import flixel.text.FlxText.FlxTextFormat;

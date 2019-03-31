@@ -51,11 +51,9 @@ class PreWarnSubstate extends FlxUISubState
         wat.addText("");
         wat.addText("I want to let people see, in a tangible way, where progress for the code is.");
         wat.addText("");
-        wat.addText("Right now, options work without crashing the game and are persistent, but nothing saves longer term. Scrollboxes - which didn't exist in HaxeFlixel and had to be assembled from parts - seem to be working properly enough. Buttons work and are disabled if they should be disabled. The tabbed menu interface works - I'd say works well, even.");
+        wat.addText("Please read the description thoroughly if you have a bug to report or want to get in touch with us.");
         wat.addText("");
-        wat.addText("I am not taking requests or contributions at this time, in any form. Please wait until I'm ready for them. I will announce it. Promise.");
-        wat.addText("");
-        wat.addText("Greysondn, 7 February 2019");
+        wat.addText("Greysondn, 31 March 2019");
         wat.addText("");
     }
 
