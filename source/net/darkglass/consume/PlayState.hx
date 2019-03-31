@@ -19,9 +19,9 @@ import net.darkglass.consume.Registry;
 import net.darkglass.iguttae.Iguttae;
 import net.darkglass.iguttae.environment.Environment;
 
-import net.darkglass.iguttae.expression.EchoExpression;
+// import net.darkglass.iguttae.expression.EchoExpression;
 import net.darkglass.iguttae.expression.HelpExpression;
-import net.darkglass.iguttae.expression.TeleportExpression;
+// import net.darkglass.iguttae.expression.TeleportExpression;
 import net.darkglass.iguttae.expression.MoveExpression;
 
 import net.darkglass.iguttae.loader.YamlLoader;
@@ -84,7 +84,7 @@ class PlayState extends FlxState
         this.env.onLocationChange = this.onLocationChange;
 
         this.env.commands.push(new HelpExpression());
-        this.env.commands.push(new EchoExpression());
+        // this.env.commands.push(new EchoExpression());
         // this.env.commands.push(new TeleportExpression());
         this.env.commands.push(new MoveExpression());
     }
