@@ -29,6 +29,28 @@
         </absolute>
         <!-- control area -->
         <absolute id="controls" left="0" top="480" width="832" height="128">
+            <!-- Up and down -->
+            <!--
+            <button id="button_u" left="16" top="16" width="24" height="40">U</button>
+            <button id="button_d" left="16" top="72" width="24" height="40">D</button>
+            -->
+            
+            <!-- standard compass -->
+            <button id="button_n"  left="88"  top="16" width="24" height="24">N</button>
+            <button id="button_ne" left="124" top="16" width="24" height="24">NE</button>
+            <button id="button_e"  left="124" top="52" width="24" height="24">E</button>
+            <button id="button_se" left="124" top="88" width="24" height="24">SE</button>
+            <button id="button_s"  left="88"  top="88" width="24" height="24">S</button>
+            <button id="button_sw" left="52"  top="88" width="24" height="24">SW</button>
+            <button id="button_w"  left="52"  top="52" width="24" height="24">W</button>
+            <button id="button_nw" left="52"  top="16" width="24" height="24">NW</button>
+
+            <!-- In and Out -->
+            <!-- 
+            <button id="button_i" left="160" top="16" width="24" height="40">I</button>
+            <button id="button_o" left="160" top="72" width="24" height="40">O</button>
+            -->
+
         </absolute>
     </absolute>
 </absolute>

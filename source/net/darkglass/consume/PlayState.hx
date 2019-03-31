@@ -11,6 +11,9 @@ import haxe.ui.Toolkit;
 import haxe.ui.containers.ScrollView;
 import haxe.ui.components.Label;
 import haxe.ui.macros.ComponentMacros;
+import haxe.ui.events.UIEvent;
+import haxe.ui.components.Button;
+
 
 import net.darkglass.consume.Registry;
 import net.darkglass.iguttae.Iguttae;
@@ -115,6 +118,46 @@ class PlayState extends FlxState
         this.coutFrame     = _ui.findComponent("txtoutcontainer", VBox);
 
         this.location = _ui.findComponent("location", Label);
+
+        // navigational buttons
+        
+        // var button_u:Button = _ui.findComponent("button_u", Button);
+        // button_u.onClick    = this.onPress_button_u;
+        
+        // var button_d:Button = _ui.findComponent("button_d", Button);
+        // button_d.onClick    = this.onPress_button_d;
+
+        var button_n:Button = _ui.findComponent("button_n", Button);
+        button_n.onClick    = this.onPress_button_n;
+
+        var button_ne:Button = _ui.findComponent("button_ne", Button);
+        button_ne.onClick    = this.onPress_button_ne;
+
+        var button_e:Button = _ui.findComponent("button_e", Button);
+        button_e.onClick    = this.onPress_button_e;
+
+        var button_se:Button = _ui.findComponent("button_se", Button);
+        button_se.onClick    = this.onPress_button_se;
+
+        var button_s:Button = _ui.findComponent("button_s", Button);
+        button_s.onClick    = this.onPress_button_s;
+
+        var button_sw:Button = _ui.findComponent("button_sw", Button);
+        button_sw.onClick    = this.onPress_button_sw;
+
+        var button_w:Button = _ui.findComponent("button_w", Button);
+        button_w.onClick    = this.onPress_button_w;
+
+        var button_nw:Button = _ui.findComponent("button_nw", Button);
+        button_nw.onClick    = this.onPress_button_nw;
+
+        // var button_i:Button = _ui.findComponent("button_i", Button);
+        // button_i.onClick    = this.onPress_button_i;
+
+        // var button_o:Button = _ui.findComponent("button_o", Button);
+        // button_o.onClick    = this.onPress_button_o;
+
+
     }
 
     private function handleKeyboard():Void
@@ -223,5 +266,73 @@ class PlayState extends FlxState
     public function onLocationChange(newLocationName:String):Void
     {
         this.location.text = newLocationName;
+    }
+
+    private function handleButton(command:String):Void
+    {
+        this.handleCommandOutput("> " + command);
+        this.interpreter.eval(command);
+        this.coutContainer.vscrollPos = 0;
+        this.cin.text = "> ";
+    }
+
+    private function onPress_button_u(e:UIEvent):Void
+    {
+        this.handleButton("move up");
+    }
+
+    private function onPress_button_d(e:UIEvent):Void
+    {
+        this.handleButton("move down");
+    }
+
+    private function onPress_button_n(e:UIEvent):Void
+    {
+        this.handleButton("move north");
+    }
+
+    private function onPress_button_ne(e:UIEvent):Void
+    {
+        this.handleButton("move northeast");
+    }
+
+    private function onPress_button_e(e:UIEvent):Void
+    {
+        this.handleButton("move east");
+    }
+
+    private function onPress_button_se(e:UIEvent):Void
+    {
+        this.handleButton("move southeast");
+    }
+
+    private function onPress_button_s(e:UIEvent):Void
+    {
+        this.handleButton("move south");
+    }
+
+    private function onPress_button_sw(e:UIEvent):Void
+    {
+        this.handleButton("move southwest");
+    }
+
+    private function onPress_button_w(e:UIEvent):Void
+    {
+        this.handleButton("move west");
+    }
+
+    private function onPress_button_nw(e:UIEvent):Void
+    {
+        this.handleButton("move northwest");
+    }
+
+    private function onPress_button_i(e:UIEvent):Void
+    {
+        this.handleButton("move in");
+    }
+
+    private function onPress_button_o(e:UIEvent):Void
+    {
+        this.handleButton("move out");
     }
 }
