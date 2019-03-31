@@ -1,28 +1,3 @@
-package;
-
-import flash.*;
-import flash.net.*;
-import flash.ui.Mouse;
-import flash.utils.*;
-import flash.text.*;
-import flash.events.*;
-import flash.display.*;
-import flash.net.FileReference;
-import haxe.remoting.AMFConnection;
-import Type.ValueType;
-import haxe.xml.Check.Attrib;
-import flash.errors.*;
-
-//Logo images
-@:bitmap("../img/logo_m_notext.png") class LogoMNoText extends BitmapData { }
-@:bitmap("../img/logo_f_notext.png") class LogoFNoText extends BitmapData { }
-
-//Named Character images
-@:bitmap("../img/kyra.png") class KyraAvi extends BitmapData { }
-
-//Random NPC images
-
-
 class Main {
 	static var globals:GlobalVars;
 	static var species:Array<MySpecies>;
@@ -95,25 +70,9 @@ class Main {
 		var flag:Int = -1;
 		var flagValue:String = "";
 		var flagType:ValueType = null;
-		var exit:Array<MyExit> = new Array();
-		var exitDirection:Array<String> = new Array();
-		var exitDirShort:Array<String> = new Array();
 		
 		var timeReturnArray:Array<String> = new Array();
 		var timeGoesBy:Int = 0;
-		
-		if (!btnDebugDump.visible)
-			btnDebugDump.visible = true;
-		
-		if (!optionsBtn.visible) {
-			optionsBtn.visible = true;
-			charDesc.visible = true;
-			globals.backTo = "move";
-			talkInProgress = false;
-			if (globals.debugMode) {
-				txtDebug.addEventListener(MouseEvent.CLICK, debugMenu);
-				txtDebug.visible = true;
-			}
 		}
 		
 		//If the player signed up to be prey, we need to flip them right to the consumption scene rather then letting them move about.
@@ -493,40 +452,6 @@ class Main {
 		
 
         // code that used to build the direction buttons was here, no need for it.
-
-		for (i in 0...9) {
-			if (exit[i] != null) {
-				btns[i].setButton(exit[i].name, exit[i].desc, exit[i].travelTo + ":" + exit[i].travelTime + ":" + exit[i].doorWidth + ":" + exit[i].doorHeight);
-				if (exit[i].exitClosed || exit[i].travelTo == -1) {
-					btns[i].disableButton();
-				} else {
-					btns[i].setClickFunc(movePlayer);
-				}
-				if (exit[i].hidden) {
-					if (playerCharacter.quest[exit[i].hiddenQuestID].stage == 0) {
-						btns[i].setButton(exitDirection[i], null, exitDirShort[i]);
-						btns[i].disableButton();
-						btns[i].setClickFunc(showHidden);
-					}
-				}
-				if (exit[i].keyID != -1) {
-					if (playerCharacter.hasKey(exit[i].keyID) == -1) {
-						btns[i].disableButton();
-						//btns[i].clearClickFunc(); Redundant
-					}
-				}
-				if (exit[i].timeOpen != exit[i].timeClose) {
-					if (playerCharacter.hour < exit[i].timeOpen || playerCharacter.hour >= exit[i].timeClose) {
-						btns[i].disableButton();
-					}
-				}
-			} else {
-				if (exitDirection[i] != null) {
-					btns[i].setButton(exitDirection[i]);
-					btns[i].disableButton();
-				}
-			}
-		}
 		
 		//Wait, btn 4
 		if (currentRoom.allowWait && currentRoom.isPublic && playerCharacter.arousal < 100) {
@@ -554,11 +479,6 @@ class Main {
 			new AlertBox("Masturbate logic test failed. " + playerCharacter.arousal + ", Public: " + currentRoom.isPublic + ", Allow Wait: " + currentRoom.allowWait);
 		}
 		
-		
-	}
-	
-	static function createSewer( e:MouseEvent ) {
-		//Entrance into the dynamically generated sewer systems
 		
 	}
 	
@@ -7590,11 +7510,4 @@ class Main {
 			btns[i].clearClickFunc();
 		}
 	}
-	
-	static function main() {
-		initialize();
-		drawPlayfield();
-		welcomeScreen();
-	}
-	
 }

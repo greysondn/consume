@@ -1,11 +1,6 @@
-import flash.*;
-import flash.utils.Object;
-
 class MyCharacter
 {
-    // 
-    public var name:String;
-    // Physical descriptors
+   // Physical descriptors
     public var species:MySpecies;
     public var skin:String;
     public var tail:Bool;
