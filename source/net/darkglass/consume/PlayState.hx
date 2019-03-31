@@ -85,7 +85,7 @@ class PlayState extends FlxState
 
         this.env.commands.push(new HelpExpression());
         this.env.commands.push(new EchoExpression());
-        this.env.commands.push(new TeleportExpression());
+        // this.env.commands.push(new TeleportExpression());
         this.env.commands.push(new MoveExpression());
     }
 
