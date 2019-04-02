@@ -37,6 +37,8 @@ class Constants
         "container.stomach",
         // whether this is storage/able to be contained in storage
         "container.storage",
+        // whether this has an inventory/is able to be contained in an inventory
+        "container.inventory",
         // -----
         // flags
         // -----
