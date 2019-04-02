@@ -19,5 +19,8 @@ class Character extends Actor
 
         // characters are containable in stomaches
         this.addContainableIn(this.consts.get("container", "stomach"));
+
+        // characters can hold things in inventories, whee!
+        this.addContainerFor(this.consts.get("container", "inventory"));
     }
 }

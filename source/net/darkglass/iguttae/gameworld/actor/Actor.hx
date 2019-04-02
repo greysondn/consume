@@ -51,6 +51,11 @@ class Actor
     public var isPlayer:Bool = false;
 
     /**
+     * This thing's inventory, if it has one.
+     */
+    public var inventory:Array<Actor> = [];
+
+    /**
      * Exits from this, as in a room, typically, but could be anything. A
      * container even.
      */
