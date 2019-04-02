@@ -84,7 +84,7 @@
       rightToLeft: "Living Room"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "You call it your living room, but it's really the only other room in the apartment."
     lock:
       leftToRight: null
       rightToLeft: null
@@ -141,8 +141,8 @@
       leftToRight: "Living Room"
       rightToLeft: "Balcony"
     look:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "You call it your living room, but it's really the only other room in the apartment."
+      rightToLeft: "Your small balcony overlooking the parking lot."
     lock:
       leftToRight: null
       rightToLeft: null
@@ -170,8 +170,8 @@
       leftToRight: "Main Street"
       rightToLeft: "Apartment"
     look:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "Outside, where money and food comes from."
+      rightToLeft: "Your apartment."
     lock:
       leftToRight: null
       rightToLeft: null
@@ -199,8 +199,8 @@
       leftToRight: "City Park"
       rightToLeft: "Main Street"
     look:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "The city park"
+      rightToLeft: "The main street of town just outside your apartment"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -228,7 +228,7 @@
       leftToRight: "South Main Street"
       rightToLeft: "Main Street"
     look:
-      leftToRight: null
+      leftToRight: "The main street of town, featuring the new club and the location of your old place of employment"
       rightToLeft: null
     lock:
       leftToRight: null
@@ -258,7 +258,7 @@
       rightToLeft: "Consume"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "The town's newest (and only) club"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -287,7 +287,7 @@
       rightToLeft: "Back Alley"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "A short dim alley running along the side of the club"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -344,8 +344,8 @@
       leftToRight: "Dance Floor"
       rightToLeft: "Back Hall"
     look:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "The club's main area domanated by the dance floor"
+      rightToLeft: "The back hall of the club, the restroom and consumption rooms can be found here"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -431,7 +431,7 @@
       leftToRight: "Stage"
       rightToLeft: "Dance Floor"
     look:
-      leftToRight: null
+      leftToRight: "An empty stage just off the dance floor"
       rightToLeft: null
     lock:
       leftToRight: null
@@ -461,7 +461,7 @@
       rightToLeft: "Balcony"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "An open balcony overlooking the main area of the club"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -486,11 +486,11 @@
     width:  50 # Original had two values - 50 and 96
   desc:
     name:
-      leftToRight: "Stage"
-      rightToLeft: "Balcony"
+      leftToRight: "Balcony"
+      rightToLeft: "Lounge"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "The predator-only lounge area"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -636,7 +636,7 @@
       leftToRight: "Freezer"
       rightToLeft: "Back Room"
     look:
-      leftToRight: null
+      leftToRight: "The shop's large walk-in freezer"
       rightToLeft: null
     lock:
       leftToRight: null
@@ -666,7 +666,7 @@
       rightToLeft: "North Main Street"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "To the market district"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -694,7 +694,7 @@
       leftToRight: "General Store"
       rightToLeft: "Main Street"
     look:
-      leftToRight: null
+      leftToRight: "The town's lone store, selling everything and mostly filled with junk"
       rightToLeft: null
     lock:
       leftToRight: null
@@ -753,7 +753,7 @@
       rightToLeft: "Hospital"
     look:
       leftToRight: null
-      rightToLeft: null
+      rightToLeft: "The local hospital"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -781,8 +781,8 @@
       leftToRight: "Pharmacy"
       rightToLeft: "Waiting Room"
     look:
-      leftToRight: null
-      rightToLeft: null
+      leftToRight: "The hospital pharmacy counter"
+      rightToLeft: "The large, mostly empty, waiting area of the hospital"
     lock:
       leftToRight: null
       rightToLeft: null
@@ -926,7 +926,7 @@
       leftToRight: "Staff Room"
       rightToLeft: "Workout Area"
     look:
-      leftToRight: null
+      leftToRight: "The staff area of the gym"
       rightToLeft: null
     lock:
       leftToRight: null

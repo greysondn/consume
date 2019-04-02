@@ -76,7 +76,7 @@
   permissions:
     wait: true
   desc:
-    longview: "You call it your living room, but it's really the only other room in the apartment."
+    longview: null
     brief: null
     verbose: >-
       Your living room. Or really just the rest of your apartment. You have a
@@ -93,7 +93,7 @@
   permissions:
     wait: true
   desc:
-    longview: "Your small balcony overlooking the parking lot."
+    longview: null
     brief: null
     verbose: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
