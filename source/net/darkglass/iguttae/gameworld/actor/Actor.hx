@@ -408,4 +408,55 @@ class Actor
         // return
         return ret;
     }
+
+    /**
+     * Put item into this thing's inventory. As opposed to "inside this thing".
+     * 
+     * @param item  item to put into inventory
+     * 
+     * @return Bool whether or not it was moved into inventory. If it wasn't,
+     *              most likely it's in the place it started.
+     */
+    public function hold(item:Actor):Bool
+    {
+        // eventual return
+        var ret:Bool = true;
+
+        // put item in inventory
+        this.inventory.push(item);
+
+        // return
+        return ret;
+    }
+
+    /**
+     * Ask actor to remove this item from its inventory. As opposed to its
+     * insides. Caller is responsible for taking care of the item in question.
+     * 
+     * @param item  item to drop
+     * 
+     * @return Bool whether we actually managed to drop it
+     */
+    public function drop(item:Actor):Bool
+    {
+        // eventual return
+        var ret:Bool = true;
+        
+        // attempt to remove it
+        ret = this.inventory.remove(item);
+
+        // return
+        return ret;
+    }
+
+    /**
+     * List this actor's inventory. Don't do anything fancy with this -
+     * the inventory this returns is literally the player's inventory right now.
+     * 
+     * @return Array<Inventory> the players inventory
+     */
+    public function listInventory():Array<Actor>
+    {
+        return this.inventory;
+    }
 }
