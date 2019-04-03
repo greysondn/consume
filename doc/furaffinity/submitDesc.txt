@@ -1,0 +1,56 @@
+This is a preview of a engine overhaul and port for Consume, a vore-themed Flash game. It is not a complete game. If you want a playable version, Genko's last version was 0.52 ... and the next planned fully playable version is 0.54.
+
+[h2]New Features (Port)[/h2]
+
+* the map properly linked together  
+* the ability to move around the map
+* an entire goddamn text parser, what do you want from me? These things take time!
+* a look command
+* literally nothing else new 
+
+[h2]Accepted Input For This Version[/h2]
+
+If you find typos or unnamed exits from rooms in the list at the bottom of the room's description, let me know over on Reddit. https://www.reddit.com/r/ConsumeGame/
+
+I don't think there are any other bugs, but you're welcome to report them if you find any. I'm not accepting input on missing features or requests for new features at this time.
+
+Reddit is the place for bugs. I'm ignoring ones pointed out on FA when my brain's working and I remember I have a dedicated place for them.
+
+[h2]Links to Know Exist for Consume on Reddit[/h2]
+
+[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BBug%20Report%5D%22%20and%20flair%3A%22%5BKnown%5D%22&restrict_sr=1]Known Bugs[/url]
+[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BFixed%5D%22%20and%20flair%3A%22%5B0.53pre3%5D%22&restrict_sr=1]Fixed bugs since last preview[/url]
+[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BFixed%5D%22%20and%20flair%3A%22%5B0.53pre4%5D%22&restrict_sr=1]Bugs already fixed for next preview[/url]
+[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BBug%20Report%5D%22&restrict_sr=1]All bugs in the subreddit[/url]
+
+[h2]Things Planned for the Next Preview[/h2]
+
+* Basic inventory
+* Only items planned are (working) keys
+* Locked doors (if you've been around, you know which ones)
+* Literally nothing else
+
+[h2]Things Planned for a Future Version[/h2]
+
+* A way to copy/paste the play log out.
+* If it's ever possible in a stable way, I want to have an infinite scrollback.
+* We're using two UI libraries right now. Getting this over to "just" one UI library would be sexy.
+* The engine supports four new directions compared to the original - up, down, in, and out. Enabling these and making use of them would be totes mcgoats cool.
+* I'm being lazy and using a god object and no documentation really as of this moment. Later on, breaking up the god object and writing docs will be a thing. (If you're not a programmer, you can ignore this one.)
+
+The long term roadmap sees us having the same features Genko had when he abandoned the project, but in a new interface and engine. No new features will be added until that benchmark is met. That is the goal for 0.54. There will never be a "final" declared 0.53 release to help avoid confusion; all of them will be preview releases on the 0.53 line.
+
+[h2]Community links[/h2]
+
+Consume's Reddit: Bug reports and community space
+https://www.reddit.com/r/ConsumeGame/
+
+My discord: linked to my repo so you can see when I'm working
+https://discord.gg/Yu4WAAT
+
+Genko's discord (assign yourself a role!): probably the best place to catch either of us if you want to socialize
+https://discord.gg/yax5H3Q
+
+[h2]The Last Word[/h2]
+
+Sure as the room is turning cold.
