@@ -7067,25 +7067,7 @@ class Main {
 		flashSC.addChild(txtAgi);
 		flashSC.addChild(txtEnd);
 		flashSC.addChild(txtInt);
-		
-		btns = new Array();
-		btns[0] = new MyButton(10, 490);
-		btns[1] = new MyButton(105, 490);
-		btns[2] = new MyButton(200, 490);
-		btns[3] = new MyButton(10, 525);
-		btns[4] = new MyButton(105, 525);
-		btns[5] = new MyButton(200, 525);
-		btns[6] = new MyButton(10, 560);
-		btns[7] = new MyButton(105, 560);
-		btns[8] = new MyButton(200, 560);
-		btns[9] = new MyButton(10, 595);
-		btns[10] = new MyButton(105, 595);
-		btns[11] = new MyButton(200, 595);
-		
-		charDesc = new MyButton(720, 300);
-		optionsBtn = new MyButton(720, 335);
-		btnDebugDump = new MyButton(720, 265);
-		
+				
 		btns[0].addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, reportError);
 		
 		charDesc.name = "Desc Button";
@@ -7213,7 +7195,7 @@ class Main {
         globals.exits[5]  = ["Apartment",       null,           null];
         globals.exits[6]  = ["Park",            null,           null];
         globals.exits[7]  = ["Main Street",     null,           null];
-        globals.exits[8]  = ["S Main St",       null,           null];
+        globals.exits[8]  = ["S *Main St",       null,           null];
         globals.exits[9]  = ["Club Consume",    null,           null];
         globals.exits[10] = ["Inside",          null,              3];
         globals.exits[11] = ["Alley",              0,           null];
@@ -7264,11 +7246,7 @@ class Main {
 		//Keys				Name						keyID	desc
 		globals.keys = new Array();
 		globals.keys[0] = ["Gym Membership Keycard",	0,		"A credit-card sized square of plastic with the gym's logo printed on it and a black background"];
-		globals.keys[1] = ["Gym Gold Membership",		1,		"A credit-card sized square of plastic with the gym's logo printed on it and a gold background"];
-		globals.keys[2] = ["Gym Staff Key",				2,		"A key you got from Shay, it opens the staff room door at the gym"];
 		globals.keys[3] = ["Consume Red Band",			3,		"A tight fitting band with the logo of the local club on it. You can't get it off, but you often forget you're even wearing it."];
-		globals.keys[4] = ["Ice Cream Shop Backroom key", 4,	"A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there."];
-		globals.keys[5] = ["General Store key",			5,		"A key you got after agreeing to help out at the general store."];
 		
 		//Food
 		globals.food = new Array();
@@ -7500,12 +7478,5 @@ class Main {
 		nonPlayerCharacters[6] = ["Shopkeeper",				species[2], false,	false,	true,	true,	62,		650,	shopTalk,		null];
 		nonPlayerCharacters[7] = ["Erik",					species[0], false,	false,	true,	true,	78,		700,	erikTalk,		null];
 		
-	}
-
-	static function clearAllEvents() {
-		for (i in 0...btns.length) {
-			btns[i].setButton(" ");
-			btns[i].clearClickFunc();
-		}
 	}
 }
