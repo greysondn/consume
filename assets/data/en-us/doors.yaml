@@ -53,8 +53,8 @@
     width:  false
   desc:
     name:
-      leftToRight: True
-      rightToLeft: True
+      leftToRight: true
+      rightToLeft: true
     look:
       leftToRight:  false
       rightToLeft:  false
@@ -63,9 +63,9 @@
       rightToLeft:  false
   flags:
     hidden: false
-    locked: false
+    locked: true
   key:
-    combo: false
+    combo: true
 -
   index: 0
   name: "Apartment - Living Room to Bedroom"

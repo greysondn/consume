@@ -161,13 +161,34 @@ class YamlLoader
                 var leftR:Actor  = env.getRoom(entry.get("rooms").get("left").get("index"));
                 var rightR:Actor = env.getRoom(entry.get("rooms").get("right").get("index"));
 
+                // set targets
+                swpL.target = rightR;
+                swpR.target = leftR;
+
                 // get sides the transitions go on
                 var sideL:Compass = env.stringToCompass(entry.get("rooms").get("left").get("side"));
                 var sideR:Compass = env.stringToCompass(entry.get("rooms").get("right").get("side"));
 
-                // set targets
-                swpL.target = rightR;
-                swpR.target = leftR;
+                // get whether or not the rooms are locked
+                var areLocked:Bool = entry.get("flags").get("locked");
+
+                if (areLocked)
+                {
+                    // set locked
+                    swpL.locked = true;
+                    swpR.locked = true;
+
+                    // since they're locked, let's get combo for them
+                    var theirCombo:Int = entry.get("key").get("combo");
+                    
+                    swpL.combo = theirCombo;
+                    swpR.combo = theirCombo;
+                }
+                else
+                {
+                    swpL.locked = false;
+                    swpR.locked = false;
+                }
 
                 // connect rooms to swaps
                 leftR.addExit(sideL, swpL);
