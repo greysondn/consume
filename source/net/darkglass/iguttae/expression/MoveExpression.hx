@@ -133,7 +133,6 @@ class MoveExpression extends BaseExpression
             {
                 // exists
 
-                
                 // see if it's locked
                 if (destTran.locked == true)
                 {
