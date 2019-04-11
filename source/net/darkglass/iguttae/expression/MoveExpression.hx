@@ -125,8 +125,21 @@ class MoveExpression extends BaseExpression
 
             if (destTran == null)
             {
+                // doesn't exist
                 env.outStream("There's no exit in that direction.");
                 continueEval = false;
+            }
+            else
+            {
+                // exists
+
+                
+                // see if it's locked
+                if (destTran.locked == true)
+                {
+                    env.outStream("That direction is apparently locked, so you can't go there right now.");
+                    continueEval = false;
+                }
             }
         }
 
