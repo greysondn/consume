@@ -15,15 +15,15 @@
 -
   index: -2
   # Reading? - whether we're reading things in code.
-  name: false
-  desc: false
+  name: true
+  desc: true
   key:
-    isKey: false
-    combos: false
+    isKey: true
+    combos: true
   flags:
-    indestructible: false
-    key: false
-    unique: false
+    indestructible: true
+    key: true
+    unique: true
 -
   index: 0
   name: "Gym Staff Key"
