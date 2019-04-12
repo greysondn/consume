@@ -101,7 +101,7 @@ class Actor
     /**
      * Whether this is unique or not. Mostly matters for items, honestly.
      */
-    public var unique:Bool = false;
+    public var isUnique:Bool = false;
 
     /**
      * Spawn count. Again, mostly matters for items.
@@ -486,7 +486,7 @@ class Actor
         var ret:Bool = true;
 
         // however, if it's unique and one is spawned already, we can't
-        if (this.unique)
+        if (this.isUnique)
         {
             if (this.cloneCount >= 1)
             {
@@ -566,7 +566,7 @@ class Actor
         }
 
         // unique
-        ret.unique = this.unique;
+        ret.isUnique = this.isUnique;
         
         // verbose
         ret.verbose = this.verbose;
