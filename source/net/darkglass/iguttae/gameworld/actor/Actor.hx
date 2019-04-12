@@ -506,10 +506,9 @@ class Actor
 
     /**
      * As in this is just a prototype with frills. Make sure you canClone()
-     * first.
+     * first. This won't try to stop you if you fail to check for yourself!
      * 
-     * @return Actor a clone of this actor if we can clone it, with everything
-     * but clone count set correctly.
+     * @return Actor a clone of this actor
      */
     public function clone():Actor
     {
