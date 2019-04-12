@@ -56,6 +56,16 @@ class Actor
     public var consts:Constants = Constants.create();
 
     /**
+     * Whether this object is indestructible
+     */
+    public var isIndestructible:Bool = false;
+
+    /**
+     * Whether this object is a key item
+     */
+    public var isKeyItem:Bool = false;
+
+    /**
      * Whether or not this is the player
      */
     public var isPlayer:Bool = false;
@@ -586,6 +596,12 @@ class Actor
 
         // unique
         ret.isUnique = this.isUnique;
+
+        // key item
+        ret.isKeyItem = this.isKeyItem;
+
+        // indestructibe
+        ret.isIndestructible = this.isIndestructible;
         
         // verbose
         ret.verbose = this.verbose;
