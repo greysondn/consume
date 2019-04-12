@@ -17,7 +17,17 @@ class Environment
     /**
      * All actors in the game
      */
-    public var actors:Array<Actor> = [];
+    public var actors:ActorArray = new ActorArray();
+
+    /**
+     * All items in the game
+     */
+    public var items:ActorArray = new ActorArray();
+
+    /**
+     * All rooms in the game. Because they're indexed.
+     */
+    public var rooms:ActorArray  = new ActorArray();
 
     /**
      * This is meant to be an output stream to dump text into
@@ -28,11 +38,6 @@ class Environment
      * Command to call on location changes
      */
     public var onLocationChange:String -> Void;
-
-    /**
-     * All rooms in the game. Because they're indexed.
-     */
-    public var rooms:Array<Actor>  = [];
 
     /**
      * Whether we can use god commands as a player
@@ -68,7 +73,8 @@ class Environment
      */
     public function new()
     {
-        // it's got variables! YEAH!
+        this.rooms.metaList = this.actors;
+        this.items.metaList = this.items;
     }
 
     public function hasCommand(mneumonic:String):Bool
@@ -99,83 +105,6 @@ class Environment
         }
 
         return ret;
-    }
-
-    /**
-     * Add an actor to this game's environment
-     * 
-     * @param actor actor to add
-     */
-    public function addActor(actor:Actor):Void
-    {
-        if (-1 == this.actors.indexOf(actor))
-        {
-            this.actors.push(actor);
-        }
-    }
-
-    /**
-     * Remove an actor from this game's environment
-     * 
-     * @param actor actor to remove
-     */
-    public function removeActor(actor:Actor):Void
-    {
-        this.actors.remove(actor);
-    }
-
-    /**
-     * Add room to this game's environment. Actually an indexed thing so...
-     * you know, it matters.
-     * 
-     * @param room room to add
-     */
-    public function addRoom(room:Actor):Void
-    {
-        if (-1 == this.rooms.indexOf(room))
-        {
-            this.rooms.push(room);
-            this.rooms.sort(Actor.cmpIndex);
-        }
-
-        this.addActor(room);
-    }
-
-    /**
-     * Remove room from this environment.
-     * 
-     * @param room room to remove.
-     */
-    public function removeRoom(room:Actor):Void
-    {
-        this.rooms.remove(room);
-        this.removeActor(room);
-    }
-
-    public function getRoom(index:Int):Actor
-    {
-        return this.rooms[index];
-    }
-
-    public function checkIndexIntegrity(roster:Array<Actor>):Bool
-    {
-        // return. true if integrity exists fine
-        var ret = true;
-
-        for (i in 0...roster.length)
-        {
-            if (roster[i].index != i)
-            {
-                ret = false;
-            }
-        }
-
-        return ret;
-    }
-
-    public function checkRoomIntegrity():Bool
-    {
-        return this.checkIndexIntegrity(this.rooms);
     }
 
     /**

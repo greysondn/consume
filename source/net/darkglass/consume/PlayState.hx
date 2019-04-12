@@ -66,7 +66,7 @@ class PlayState extends FlxState
 
         // add player to environment
         // TODO: don't hardcode this, move to file
-        this.env.player.location = this.env.getRoom(0);
+        this.env.player.location = this.env.rooms.get(0);
         this.env.player.location.insert(this.env.player);
         this.env.player.location.describe(this.env);
         this.location.text = this.env.player.location.name;

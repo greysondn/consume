@@ -46,8 +46,15 @@ class YamlLoader
      * @param env       Environment to load things into.
      * @param roomSrc   Source for room data
      * @param tranSrc   Source for room-to-room connection data
+     * @param itemSrc   Source for item base data
+     * @param spwnSrc   Source for spawning data for everything else
      */
-    public function load(env:Environment, ?roomSrc:String="assets/data/en-us/rooms.yaml", ?tranSrc:String="assets/data/en-us/doors.yaml"):Void
+    public function load(env:Environment,
+                            ?roomSrc:String="assets/data/en-us/rooms.yaml",
+                            ?tranSrc:String="assets/data/en-us/doors.yaml",
+                            ?itemSrc:String="assets/data/en-us/items.yml",
+                            ?spwnSrc:String="assets/data/en-us/spawns.yaml"
+                        ):Void
     {
         // this typing is bad and there's no elegant fix
         // if you look in the helper functions, strong casts are done in
@@ -59,7 +66,7 @@ class YamlLoader
         var roomDat:Array<ObjectMap<String, Dynamic>> = Yaml.parse(roomStr);
         this.loadRooms(env, roomDat);
         
-        if(!env.checkRoomIntegrity())
+        if(!env.rooms.checkIntegrity())
         {
             // unpossible status
             throw "Room integrity failure!";
@@ -71,6 +78,15 @@ class YamlLoader
         this.loadTransitions(env, tranDat);
         // no validation function would work here
 
+        // can now load items
+        var itemStr:String  = Assets.getText(itemSrc);
+        var itemDat:Dynamic = Yaml.parse(itemStr);
+        // this.loadItems(env, itemStr);
+
+        // and spawn everything where it goes
+        var spwnStr:String  = Assets.getText(spwnSrc);
+        var spwnDat:Dynamic = Yaml.parse(spwnStr);
+        // this.loadSpawns(env, spwnStr);
     }
 
     /**
@@ -116,7 +132,7 @@ class YamlLoader
                 swp.verbose  = entry.get("desc").get("verbose");
 
                 // push into environment
-                env.addRoom(swp);
+                env.rooms.add(swp);
             }
         }
     }
@@ -158,8 +174,8 @@ class YamlLoader
                 }
 
                 // get the two rooms
-                var leftR:Actor  = env.getRoom(entry.get("rooms").get("left").get("index"));
-                var rightR:Actor = env.getRoom(entry.get("rooms").get("right").get("index"));
+                var leftR:Actor  = env.rooms.get(entry.get("rooms").get("left").get("index"));
+                var rightR:Actor = env.rooms.get(entry.get("rooms").get("right").get("index"));
 
                 // set targets
                 swpL.target = rightR;
