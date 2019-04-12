@@ -33,6 +33,16 @@ class Actor
     private var contents:Array<Actor> = [];
 
     /**
+     * Whether this is a key
+     */
+    public var isKey:Bool = false;
+
+    /**
+     * Combos for this object
+     */
+    public var combos:Array<Int> = [];
+
+    /**
      * The permissions associated with this actor.
      * 
      * Don't meddle with this directly! There are functions written to interact
@@ -537,6 +547,12 @@ class Actor
         this.cloneCount = this.cloneCount + 1;
         ret.cloneCount = this.cloneCount;
 
+        // combos
+        for (i in 0...this.combos.length)
+        {
+            ret.combos.push(this.combos[i]);
+        }
+
         // contents, I'm thinking we really shouldn't
 
         // exits, can skip I think
@@ -548,6 +564,9 @@ class Actor
 
         // isClone - we aren't but ret is
         ret.isClone = true;
+
+        // isKey
+        ret.isKey = this.isKey;
 
         // isPlayer, shouldn't confuse the matter
 
