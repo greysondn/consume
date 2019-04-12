@@ -43,18 +43,28 @@ class Room extends Actor
     {
         var invOut:String = "You see ";
 
-        if (this.contents.length > 1)
+        var tmpOut:Array<String> = [];
+
+        for (i in 0...this.contents.length)
         {
-            for (i in 0...(this.contents.length - 1))
+            if (!this.contents[i].isPlayer)
             {
-                invOut = invOut + this.contents[i].name + ", ";
+                tmpOut.push(this.contents[i].name);
+            }
+        }
+
+        if (tmpOut.length > 1)
+        {
+            for (i in 0...(tmpOut.length - 1))
+            {
+                invOut = invOut + tmpOut[i] + ", ";
             }
 
-            invOut = invOut + "and " + this.contents[this.contents.length - 1] + ".";
+            invOut = invOut + "and " + tmpOut[tmpOut.length - 1] + ".";
         }
-        else if (this.contents.length == 1)
+        else if (tmpOut.length == 1)
         {
-            invOut = invOut + this.contents[0] + ".";
+            invOut = invOut + tmpOut[0] + ".";
         }
         else
         {
