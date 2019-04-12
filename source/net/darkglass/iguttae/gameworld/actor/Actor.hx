@@ -99,6 +99,21 @@ class Actor
      public var index:Int;
 
     /**
+     * Whether this is unique or not. Mostly matters for items, honestly.
+     */
+    public var unique:Bool = false;
+
+    /**
+     * Spawn count. Again, mostly matters for items.
+     */
+    public var cloneCount:Int = 0;
+
+    /**
+     * Whether this is a clone or not. Don't clone clones brah.
+     */
+    public var isClone:Bool = false;
+
+    /**
      * Constructor
      */
     public function new()
@@ -458,5 +473,109 @@ class Actor
     public function listInventory():Array<Actor>
     {
         return this.inventory;
+    }
+
+    /**
+     * Whether or not we can clone this.
+     * 
+     * @return Bool true if we can, false if we can't.
+     */
+    public function canClone():Bool
+    {
+        // generally, we can
+        var ret:Bool = true;
+
+        // however, if it's unique and one is spawned already, we can't
+        if (this.unique)
+        {
+            if (this.cloneCount >= 1)
+            {
+                ret = false;
+            }
+        }
+
+        // shouldn't be cloning clones either
+        if (this.isClone)
+        {
+            ret = false;
+        }
+
+        // end
+        return ret;
+    }
+
+    /**
+     * As in this is just a prototype with frills. Make sure you canClone()
+     * first.
+     * 
+     * @return Actor a clone of this actor if we can clone it, with everything
+     * but clone count set correctly.
+     */
+    public function clone():Actor
+    {
+        var ret:Actor = new Actor();
+        
+        // ------------------------
+        // copy all the properties!
+        // ------------------------
+
+        // brief
+        ret.brief = this.brief;
+
+        // containableIn
+        for (i in 0...this.containableIn.length)
+        {
+            ret.addContainableIn(this.containableIn[i]);
+        }
+
+        // containerFor
+        for (i in 0...this.containerFor.length)
+        {
+            ret.addContainableIn(this.containerFor[i]);
+        }
+
+        // clone count
+        this.cloneCount = this.cloneCount + 1;
+        ret.cloneCount = this.cloneCount;
+
+        // contents, I'm thinking we really shouldn't
+
+        // exits, can skip I think
+
+        // index
+        ret.index = this.index;
+
+        // inventory, can skip I think
+
+        // isClone - we aren't but ret is
+        ret.isClone = true;
+
+        // isPlayer, shouldn't confuse the matter
+
+        // location - can skip, I think
+
+        // longview
+        ret.longview = this.longview;
+
+        // name
+        ret.name = this.name;
+
+        // permissions
+        for (i in 0...this.permissions.length)
+        {
+            ret.addPermission(this.permissions[i]);
+        }
+
+        // unique
+        ret.unique = this.unique;
+        
+        // verbose
+        ret.verbose = this.verbose;
+
+        // weight
+        ret.weight = this.weight;
+
+        // return
+        return ret;
     }
 }
