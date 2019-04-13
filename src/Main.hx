@@ -6785,259 +6785,89 @@ class Main {
 	}
 	
 	static function drawPlayfield() {
-		var flashSC = flash.Lib.current;
-		var outStyle:StyleSheet = new StyleSheet();
-		var headStyle:StyleSheet = new StyleSheet();
-		var bodyStyle:StyleSheet = new StyleSheet();
-		var byStyle:StyleSheet = new StyleSheet();
-		var pStyle:StyleSheet = new StyleSheet();
-		var titleStyle:StyleSheet = new StyleSheet();
-		
-		var labelFormat:TextFormat = new TextFormat();
-		var charNameFormat:TextFormat = new TextFormat();
-		var versionFormat:TextFormat = new TextFormat();
-		var textSize:Int = globals.textSize;
-		
-		headStyle.fontWeight = "bold";
-		headStyle.fontSize = textSize + 20;
-		headStyle.textAlign = "center";
-		
-		bodyStyle.textSize = textSize;
-		pStyle.textSize = textSize +2;
-		
-		byStyle.fontStyle = "italic";
-		byStyle.fontSize = textSize - 2;
-		byStyle.textAlign = "center";
-		
-		titleStyle.fontWeight = "bold";
-		titleStyle.fontSize = textSize + 8;
-		
-		outStyle.setStyle(".heading", headStyle);
-		outStyle.setStyle(".byline", byStyle);
-		outStyle.setStyle("p", pStyle);
-		outStyle.setStyle("body", bodyStyle);
-		outStyle.setStyle(".title", titleStyle);
-		
-		labelFormat.size = textSize;
-		charNameFormat.size = textSize + 4;
-		versionFormat.align = RIGHT;
-		versionFormat.italic = true;
-		versionFormat.size = 10;
-
 		txtPublic = new TextField();
 		txtPublic.name = "Public";
-		txtPublic.x = 676;
-		txtPublic.y = 12;
-		txtPublic.width = 34;
-		txtPublic.height = 26;
-		txtPublic.border = false;
 		txtPublic.text = "Public";
-		txtPublic.visible = false;
-		txtPublic.background = true;
 		
 		var txtOutput:TextField = new TextField();
 		txtOutput.name = "Output Field";
-		txtOutput.x = 10;
-		txtOutput.y = 10;
-		txtOutput.width = 700;
-		txtOutput.height = 470;
-		txtOutput.border = true;
-		txtOutput.borderColor = 0x000000;
-		txtOutput.multiline = true;
 		txtOutput.htmlText = "";
-		txtOutput.wordWrap = true;
-		txtOutput.styleSheet = outStyle;
 		
 		var toTop:TextField = new TextField();
 		toTop.name = "U2T";
-		toTop.x = 710;
-		toTop.y = 400;
-		toTop.width = 20;
-		toTop.height = 20;
-		toTop.border = true;
-		toTop.textColor = 0x808080;
 		toTop.text = "Tp";
-		toTop.visible = true;
-		toTop.addEventListener(MouseEvent.ROLL_OVER, onMouseEnter);
-		toTop.addEventListener(MouseEvent.ROLL_OUT, onMouseOut);
 		
 		var upThreeLines:TextField = new TextField();
 		upThreeLines.name = "U3L";
-		upThreeLines.x = 710;
-		upThreeLines.y = 420;
-		upThreeLines.width = 20;
-		upThreeLines.height = 20;
-		upThreeLines.border = true;
-		upThreeLines.textColor = 0x808080;
 		upThreeLines.text = "Up";
-		upThreeLines.visible = true;
-		upThreeLines.addEventListener(MouseEvent.ROLL_OVER, onMouseEnter);
-		upThreeLines.addEventListener(MouseEvent.ROLL_OUT, onMouseOut);
 		
 		var downThreeLines:TextField = new TextField();
 		downThreeLines.name = "D3L";
-		downThreeLines.x = 710;
-		downThreeLines.y = 440;
-		downThreeLines.width = 20;
-		downThreeLines.height = 20;
-		downThreeLines.border = true;
-		downThreeLines.textColor = 0x808080;
 		downThreeLines.text = "Dn";
-		downThreeLines.visible = true;
-		downThreeLines.addEventListener(MouseEvent.ROLL_OVER, onMouseEnter);
-		downThreeLines.addEventListener(MouseEvent.ROLL_OUT, onMouseOut);
 		
 		var toBottom:TextField = new TextField();
 		toBottom.name = "D2B";
-		toBottom.x = 710;
-		toBottom.y = 460;
-		toBottom.width = 20;
-		toBottom.height = 20;
-		toBottom.border = true;
-		toBottom.textColor = 0x808080;
 		toBottom.text = "Bm";
-		toBottom.visible = true;
-		toBottom.addEventListener(MouseEvent.ROLL_OVER, onMouseEnter);
-		toBottom.addEventListener(MouseEvent.ROLL_OUT, onMouseOut);
 		
 		var txtName:TextField = new TextField();
 		txtName.name = "Character Name";
-		txtName.x = 720;
-		txtName.y = 10;
-		txtName.width = 200;
-		txtName.height = 26;
 		txtName.htmlText = " ";
-		txtName.selectable = false;
 
 		var txtHealth:TextField = new TextField();
 		txtHealth.name = "Health";
-		txtHealth.x = 720;
-		txtHealth.y = 40;
-		txtHealth.width = 200;
-		txtHealth.height = 26;
 		txtHealth.htmlText = "Health: 0/0";
-		txtHealth.selectable = false;
 
 		var txtStr:TextField = new TextField();
 		txtStr.name = "Strength";
-		txtStr.x = 720;
-		txtStr.y = 480;
-		txtStr.width = 120;
-		txtStr.height = 20;
 		txtStr.htmlText = "Strength: ";
-		txtStr.selectable = false;
 
 		var txtAgi:TextField = new TextField();
 		txtAgi.name = "Agility";
-		txtAgi.x = 720;
-		txtAgi.y = 510;
-		txtAgi.width = 120;
-		txtAgi.height = 20;
 		txtAgi.htmlText = "Agility: ";
-		txtAgi.selectable = false;
 
 		var txtEnd:TextField = new TextField();
 		txtEnd.name = "Endurance";
-		txtEnd.x = 720;
-		txtEnd.y = 540;
-		txtEnd.width = 120;
-		txtEnd.height = 20;
 		txtEnd.htmlText = "Endurance: ";
-		txtEnd.selectable = false;
 
 		var txtInt:TextField = new TextField();
 		txtInt.name = "Intelligence";
-		txtInt.x = 720;
-		txtInt.y = 570;
-		txtInt.width = 120;
-		txtInt.height = 20;
 		txtInt.htmlText = "Intelligence: ";
-		txtInt.selectable = false;
 
 		var txtStomach:TextField = new TextField();
 		txtStomach.name = "Stomach";
-		txtStomach.x = 300;
-		txtStomach.y = 490;
-		txtStomach.width = 220;
-		txtStomach.height = 22;
 		txtStomach.htmlText = "Fullness: 0/0";
-		txtStomach.selectable = false;
 
 		var txtBowels:TextField = new TextField();
 		txtBowels.name = "Bowels";
-		txtBowels.x = 300;
-		txtBowels.y = 525;
-		txtBowels.width = 220;
-		txtBowels.height = 22;
 		txtBowels.htmlText = "Bowels: 0/0";
-		txtBowels.selectable = false;
 
 		var txtWeight:TextField = new TextField();
 		txtWeight.name = "Weight";
-		txtWeight.x = 530;
-		txtWeight.y = 490;
-		txtWeight.width = 150;
-		txtWeight.height = 22;
 		txtWeight.htmlText = "Weight: 0lbs";
-		txtWeight.selectable = false;
 
 		var txtFat:TextField = new TextField();
 		txtFat.name = "Fat";
-		txtFat.x = 530;
-		txtFat.y = 525;
-		txtFat.width = 150;
-		txtFat.height = 22;
 		txtFat.htmlText = "Fat: ";
-		txtFat.selectable = false;
 
 		var txtBuildVersion:TextField = new TextField();
 		txtBuildVersion.name = "Version";
-		txtBuildVersion.x = 800;
-		txtBuildVersion.y = 620;
-		txtBuildVersion.width = 30;
-		txtBuildVersion.height = 20;
 		txtBuildVersion.htmlText = globals.buildVersion;
-		txtBuildVersion.selectable = false;
 
 		var txtDebugTag:TextField = new TextField();
 		txtDebugTag.name = "Debug";
-		txtDebugTag.x = 720;
-		txtDebugTag.y = 620;
-		txtDebugTag.width = 70;
-		txtDebugTag.height = 20;
 		txtDebugTag.htmlText = "Debug Mode";
-		txtDebugTag.selectable = false;
-		txtDebugTag.visible = false;
-		txtDebug = txtDebugTag;
 
 		var txtArousal:TextField = new TextField();
 		txtArousal.name = "Arousal";
-		txtArousal.x = 300;
-		txtArousal.y = 560;
-		txtArousal.width = 220;
-		txtArousal.height = 22;
 		txtArousal.htmlText = "Arousal: 0%";
-		txtArousal.selectable = false;
 
 		var txtMoney:TextField = new TextField();
 		txtMoney.name = "Money";
-		txtMoney.x = 300;
-		txtMoney.y = 585;
-		txtMoney.width = 220;
-		txtMoney.height = 22;
 		txtMoney.htmlText = "Money: ";
-		txtMoney.selectable = false;
 		
 		var txtTime:TextField = new TextField();
 		txtTime.name = "Time";
-		txtTime.x = 590;
-		txtTime.y = 458;
-		txtTime.width = 200;
-		txtTime.height = 22;
 		txtTime.htmlText = "Time";
-		txtTime.selectable = false;
-		txtTime.visible = false;
-		txtTime.background = true;
 
 		txtName.setTextFormat(charNameFormat);
 		txtHealth.setTextFormat(labelFormat);
@@ -7045,31 +6875,6 @@ class Main {
 		txtBowels.setTextFormat(labelFormat);
 		txtBuildVersion.setTextFormat(versionFormat);
 
-		flashSC.addChild(txtOutput);
-		flashSC.addChild(txtName);
-		flashSC.addChild(txtHealth);
-		flashSC.addChild(txtStomach);
-		flashSC.addChild(txtWeight);
-		flashSC.addChild(txtFat);
-		flashSC.addChild(txtMoney);
-		flashSC.addChild(txtArousal);
-		flashSC.addChild(txtBuildVersion);
-		flashSC.addChild(txtDebugTag);
-		flashSC.addChild(txtBowels);
-		flashSC.addChild(txtTime);
-		flashSC.addChild(txtPublic);
-		flashSC.addChild(downThreeLines);
-		flashSC.addChild(toBottom);
-		flashSC.addChild(toTop);
-		flashSC.addChild(upThreeLines);
-
-		flashSC.addChild(txtStr);
-		flashSC.addChild(txtAgi);
-		flashSC.addChild(txtEnd);
-		flashSC.addChild(txtInt);
-				
-		btns[0].addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, reportError);
-		
 		charDesc.name = "Desc Button";
 		optionsBtn.name = "Options Button";
 		
@@ -7122,10 +6927,6 @@ class Main {
 		allSpecies[5] = ["Tiger",	"fur",		true,		"long fluffy",	"muzzle",	"legs",		"arms",		"handpaws",	"footpaws",	64,		73,		95,		100,	22,		31,		18,		31,		29,		32,		1,		5,		2,			4,			2,			1,			2,			25,			20,			3,			3,		2,		1,		 .3,	 .6,				40,						30,						30,					15,					5,							10,						5,						2,						"tailhole"];
 		allSpecies[6] = ["Rat",		"fur",		true,		"thin hairless", "muzzle",	"legs",		"arms",		"handpaws",	"footpaws",	55,		59,		70,		85,		20,		25,		18,		24,		20,		25,		1,		2,		1,			2,			1,			.25,		1.5,		50,			10,			3,			2,		2,		1,		 2,		 .5,				70,						40,						30,					10,					20,							20,						10,						5,						"tailhole"];
 		
-		
-		
-		
-		
 		for (i in 0...allSpecies.length) {
 			species.push(new MySpecies());
 			species[species.length - 1].newSpecies(allSpecies[i]);
@@ -7163,12 +6964,9 @@ class Main {
 		perks.push(["amale",	"Always Male",		"You will always be referred to in the masculane, reguardless of genitalia.", "GENDER:Male", true,  false]);
 		perks.push(["aherm",	"Always Herm",		"You will always be referred to in the hermaphroditic, reguardless of genitalia.", "GENDER:Herm", true, false]);
 		
-		
 		perks.push(["taur",		"Taur",				"You have the elongated lower half of a taur. Not Implamented.",	"TAUR WEIGHT:+100 STOMACHCAP:+100 IMMOBILE:-100", true, false]);
 		
 		perks.push(["dbg1",		"DEBUG1 -- Huge",	"For debugging only; hugeness -- Warning may cause problems, enable at own risk", "BREASTSIZE:+24 BELLYSIZE:+65000 BALLSIZE:+24 PENISLENGTH:+50 PENISWIDTH:+45",	true, false]);
-		
-		
 		
 		//vore types
 		perks.push(["cv",	"Cock Vore",	"Consume prey using your cock and turn them into cum.",		"COCKVORE",		false, false]);
@@ -7184,62 +6982,16 @@ class Main {
 			}
 		}
 		
-		
-		
         //Exits
         globals.exits = new Array();
         //                  name                hiddenQuestID
-        globals.exits[0]  = ["Living Room",     null];
-        globals.exits[3]  = ["Outside",         null];
-        globals.exits[4]  = ["Balcony",         null];
-        globals.exits[5]  = ["Apartment",       null];
-        globals.exits[6]  = ["Park",            null];
-        globals.exits[7]  = ["Main Street",     null];
-        globals.exits[8]  = ["S Main St",       null];
-        globals.exits[9]  = ["Club Consume",    null];
-        globals.exits[10] = ["Inside",          null];
         globals.exits[11] = ["Alley",              0];
-        globals.exits[12] = ["The Street"       null];
-        globals.exits[13] = ["Back Hall"        null];
-        globals.exits[14] = ["Dance floor",     null];
-        globals.exits[15] = ["Restroom",        null];
-        globals.exits[16] = ["Bar",             null];
-        globals.exits[17] = ["Dance floor",     null];
-        globals.exits[18] = ["Stage",           null];
-        globals.exits[19] = ["Balcony",         null];
-        globals.exits[20] = ["Lounge",          null];
-        globals.exits[21] = ["N Main St",       null];
-        globals.exits[22] = ["Street",          null];
-        globals.exits[23] = ["Hospital",        null];
-        globals.exits[24] = ["Pharmacy",        null];
-        globals.exits[25] = ["Waiting Room",    null];
-        globals.exits[26] = ["Store",           null];
-        globals.exits[27] = ["Outside",         null];
-        globals.exits[28] = ["Gym",             null];
-        globals.exits[29] = ["Workout",         null];
-        globals.exits[30] = ["Reception",       null];
-        globals.exits[31] = ["Gold Room",       null];
-        globals.exits[32] = ["Staff Room",      null];
-        globals.exits[33] = ["Restroom",        null];
-        globals.exits[34] = ["Showers",         null];
-        globals.exits[35] = ["Ice Cream",       null];
-        globals.exits[36] = ["Street",          null];
-        globals.exits[37] = ["Backroom",        null];
-        globals.exits[38] = ["Storefront",      null];
-        globals.exits[39] = ["Freezer",         null];
-        globals.exits[40] = ["Restroom",        null];
-        globals.exits[41] = ["Office",          null];
-        globals.exits[42] = ["Warehouse",       null];
-        globals.exits[43] = ["Storefront",      null];
-        globals.exits[44] = ["Backroom",        null];
-        
         
         // Rooms
         globals.rooms = new Array();
         // migrated to new code, there was code here that defined most the
         // contents of rooms/yaml basically.
         currentRoom = new MyRoom(globals.rooms[0]);
-		
 		
 		//Items
 		
@@ -7260,7 +7012,6 @@ class Main {
 		foods.push(["BouncyButt", 5, 1, "A popular 'health' drink. It's basically just sugar and water.", ["heal|.05"], "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little, disappointed as you don't seem to have any more bounce then you did before."]);
 		foods.push(["BouncyButt+", 5, 250, "A bottle of a popular 'health' drink, BouncyButt, that has been modified in some way.", ["heal|.05", "butt|1"], "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little and find there's just a little more bounce then there was before."]);
 		foods.push(["Tub of Ice Cream", 10, 50, "A tub of ice cream from the town's ice cream shop", ["heal|.01"], "You pull the lid off the tub and start scooping the fresh ice cream into your mouth. Despite being unflavored it is delicious and filling, your stomach is quickly full of cold milky goodness."]);
-		
 		
 		for (i in 0...foods.length) {
 			if (foods[i] != null) {
@@ -7330,10 +7081,8 @@ class Main {
 		var genShop:Array<Dynamic> = new Array();
 		genShop = ["food|0", "food|1"]; //Item IDs for the items that are to be sold in the shop
 		
-		
 		globals.shopLists = new Array();
 		globals.shopLists[0] = genShop;
-		
 		
 		//Quests
 		//			Name		dispName			hidden		stageDesc	KeyID/Stage to give
@@ -7347,7 +7096,6 @@ class Main {
 		quests[7] = ["foxboi",	"Guffin's Fate",	true,		["", "You've been fucking Guffin", "You've eaten Guffin. He was as tasty as you'd hoped."], null];
 		quests[8] = ["lac",		"Lactation",		true,		["", "Your breasts are producting milk"], null];
 		quests[9] = ["bescock",	"Bessie's Cum Milking", true,	["", "You've gotten the idea to modify Bessie's Milking machine to include a cock cup, now you just need to figure out how", "You've built the cock cup, now to install it", "Installed the cup"], null];
-		
 		
 		/* Conversation flags;
 		 * 0 - Normal
@@ -7465,7 +7213,6 @@ class Main {
 		erikTalk[6] = ["You follow the big human, he pauses at the door to type something into the pad then pushes the door open. He actually starts pushing before the system unlocks and rather then letting go so it can unlock and starting again he just pushes harder until the poor lock squeals and releases, the door popping open. He steps through and you dart in after, the door locking shut behind you.</p><br><p>You look around getting your first look of the nearly mythical Gold Room. It's not really all that impressive, 7 machines sit in a semi circle around the outside of the room, with the door being the only section that hasn't got a machine. The outer walls have floor to ceiling mirrors just like the main room. Erik the jackass goes over to one of the machines, an almost medieval torture looking contraption. He takes another bug gulp from his water jug and tosses it in the general direction of the room's trash can. He misses, then he starts working himself into the machine.</p><br><p>&quot;You'll like this one cupcake. Makes me taller, more room for all these muscles.&quot; He winks at you and nods towards another machine, &quot;We can use that one next. It makes little me, less little.&quot; He seems to think that's funny and chuckles to himself as he keeps working himself into the straps. He's rather distracted right now, and there's no one in the room and no one is likely to enter any time soon either. You could probably get rid of him...", ["talk"], [["Wait", "You kinda want to see how this thing works. It's worth putting up with him calling you 'cupcake'", 7], ["Grab", "He's distracted and not in the machine completly yet. Now's your chance.", -7]]];
 		erikTalk[7] = ["You decide to wait, watching as he finally gets all the various straps and harnesses in place and turns the machine on. It starts working over his body, tightening and pulling all over him and he makes several groans and moans, at first you think he's in pain until you notice how much his shorts appear to have shrunk, a massively over sized cock outlined clearly though the thin fabric. Amusingly he seems to have neglected his balls, you can't even see them.</p><br><p>When you look back up you see that he's watching you, a big stupid grin on his face. The machine gives a soft beep and the straps release, Erik pulls himself free mostly by simply stepping out of it. He grins and flexes for you and you can see that he's several inches taller then he was before getting in it. &quot;You like?&quot; He does a little spin, his cock straining his poor gym shorts, which break off as he flexes his muscles. His huge cock bursting free and bouncing towards you, his grin turns lecherous.</p><br><p>&quot;Well well, I see you like the look I've got here.&quot; He steps closer to you, aiming his cock towards you. &quot;So what do you say cupcake? You want to give my big hard bod a ride?&quot; He runs his hand over his cock, watching you.", ["talk"], [["Grab", "He's so eager to be inside someone...", -7], ["Leave", "Screw this, just leave.", -1]]];
 		
-		
 		//NPCs
 		nonPlayerCharacters = new Array();
 		//							Name					Species		Breasts	Vagina	Penis	Balls	Height	Mass	Conversation	image
@@ -7477,6 +7224,5 @@ class Main {
 		nonPlayerCharacters[5] = ["Shifty Rat",				species[6],	false,	false,	true,	true,	60,		80,		ratTalk,		null];
 		nonPlayerCharacters[6] = ["Shopkeeper",				species[2], false,	false,	true,	true,	62,		650,	shopTalk,		null];
 		nonPlayerCharacters[7] = ["Erik",					species[0], false,	false,	true,	true,	78,		700,	erikTalk,		null];
-		
 	}
 }

@@ -3,12 +3,10 @@ import flash.utils.*;
 import haxe.macro.Type.ClassField;
 
 class MyItem {
-	//Ur-Item class. All other items will be based on this one.
-	
-	public var name:String;
+	// public var name:String;
 	public var mass:Int;
 	public var value:Int;
-	public var desc:String;
+	// public var desc:String;
 	public var count:Int = 1;
 	public var specials:Array<String> = new Array();
 	public var rarity:String;
@@ -63,9 +61,4 @@ class MyItem {
 		
 		return "<p>You pop the " + this.name.toLowerCase() + " into your mouth and swallow it down.</p><br>";
 	}
-	
-	public function new() {
-		
-	}
-	
 }
