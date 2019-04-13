@@ -10,11 +10,11 @@
 -
   index: -2
   location:
-    type:   false
-    index:  false
+    type:   true
+    index:  true
   object:
-    type:   false
-    index:  false
+    type:   true
+    index:  true
 -
   index: -1
   # schema

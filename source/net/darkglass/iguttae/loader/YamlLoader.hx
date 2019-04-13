@@ -87,7 +87,7 @@ class YamlLoader
         // and spawn everything where it goes
         var spwnStr:String  = Assets.getText(spwnSrc);
         var spwnDat:Dynamic = Yaml.parse(spwnStr);
-        // this.loadSpawns(env, spwnStr);
+        this.loadSpawns(env, spwnDat);
     }
 
     /**
@@ -265,6 +265,59 @@ class YamlLoader
         if (!env.items.checkIntegrity())
         {
             throw "HEY DUMMY YOU BOTCHED THE ITEM LIST, FIX IT";
+        }
+    }
+
+    private function loadSpawns(env:Environment, spwnDat:Array<ObjectMap<String, Dynamic>>)
+    {
+        for (entry in spwnDat)
+        {
+            // real entries start at index zero
+            if (entry.get("index") >= 0)
+            {
+                // just a record of where to put things
+                // so let's pull it all here so we can work with it
+                var locType:String = entry.get("location").get("type");
+                var locIndex:Int   = entry.get("location").get("index");
+                var objType:String = entry.get("object").get("type");
+                var objIndex:Int   = entry.get("object").get("index");
+
+                // holders for location and actor,
+                // but deliberately uninitialized
+                var loc:Actor = new Actor();
+                var obj:Actor = new Actor();
+
+                // get location itself
+                if ("room" == locType)
+                {
+                    loc = env.rooms.get(locIndex);
+                }
+                else
+                {
+                    throw ("Unknown spawn location type! : " + locType);
+                }
+
+                // get object itself
+                if ("item" == objType)
+                {
+                    // well, yes, but...
+                    var toCheck:Actor = env.items.get(objIndex);
+
+                    // can we clone it?
+                    if (toCheck.canClone())
+                    {
+                        // yeah okay, clone it
+                        obj = toCheck.clone();
+                    }
+                }
+                else
+                {
+                    throw ("Unknown spawn object type! : " + objType);
+                }
+
+                // put it in there
+                loc.insert(obj);
+            }
         }
     }
 }
