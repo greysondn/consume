@@ -3,6 +3,9 @@
   name: "schema"
   desc: >-
     This is the description the player is shown when this is examined closer.
+  alias: # this item's aliases. Note that the item's name gets injected by default, this can be empty
+      - "scheme"
+      - "uh"
   # properties about keys, literally
   key:
     isKey: false # whether this even is a key, if it's not can skip the rest
@@ -17,6 +20,7 @@
   # Reading? - whether we're reading things in code.
   name: true
   desc: true
+  alias: false
   key:
     isKey: true
     combos: true
@@ -29,6 +33,10 @@
   name: "Gym Staff Key"
   desc: >-
     A key you got from Shay, it opens the staff room door at the gym
+  alias:
+    - "key"
+    - "staff key"
+    - "gym key"
   key:
     isKey: true 
     combos:
@@ -44,6 +52,12 @@
     A key you got from Bessie that will let you into the back rooms of the ice
     cream shop. You're pretty sure this is the same key you had when you worked
     there.
+  alias:
+    - "key"
+    - "backroom key"
+    - "shop key"
+    - "ice cream key"
+    - "Bessie's key"
   key:
     isKey: true 
     combos:
@@ -57,6 +71,10 @@
   name: "General Store key"
   desc: >-
     A key you got after agreeing to help out at the general store.
+  alias:
+    - "key"
+    - "store key"
+    - "warehouse key"
   key:
     isKey: true 
     combos:
@@ -71,6 +89,13 @@
   desc: >-
     A credit-card sized square of plastic with the gym's logo printed on it and
     a gold background
+  alias:
+    - "card"
+    - "gym card"
+    - "gym gold card"
+    - "gold card"
+    - "membership card"
+    - "keycard"
   key:
     isKey: true 
     combos:

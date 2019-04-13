@@ -234,8 +234,10 @@ class YamlLoader
 
                 // and the "fun" part
                 swp.index   = entry.get("index");
-                swp.name    = entry.get("name");
                 swp.verbose = entry.get("desc");
+
+                swp.name    = entry.get("name");
+                swp.addAlias(swp.name);
 
                 // things specifically for keys
                 if (entry.get("key").get("isKey"))
@@ -249,6 +251,14 @@ class YamlLoader
                     {
                         swp.combos.push(comboEntry);
                     }
+                }
+
+                // aliases
+                var aliasArray:Array<String> = entry.get("alias");
+
+                for (entry in aliasArray)
+                {
+                    swp.addAlias(entry);
                 }
 
                 // flags

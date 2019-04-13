@@ -18,6 +18,11 @@ class Actor
      * with this.
      */
     private var containerFor:Array<Int> = [];
+
+    /**
+     * Aliases for this object - as in things it answers to
+     */
+    private var aliases:Array<String> = [];
     
     /**
      * The types of containers this is containable in
@@ -610,6 +615,84 @@ class Actor
         ret.weight = this.weight;
 
         // return
+        return ret;
+    }
+
+    public function addAlias(alias:String):Void
+    {
+        this.aliases.push(alias);
+    }
+
+    public function answersTo(alias:String):Bool
+    {
+        var ret:Bool = false;
+
+        for (entry in this.aliases)
+        {
+            if (entry.toLowerCase() == alias.toLowerCase())
+            {
+                ret = true;
+            }
+        }
+
+        return ret;
+    }
+
+    public function hasSomethingAnswering(alias:String):Bool
+    {
+        // normally, no, I guess
+        var ret:Bool = false;
+
+        // search all contents, inventory, etc
+        if (this.answersTo(alias))
+        {
+            ret = true;
+        }
+
+        for (item in this.inventory)
+        {
+            if (item.answersTo(alias))
+            {
+                ret = true;
+            }
+        }
+
+        for (item in this.contents)
+        {
+            if (item.answersTo(alias))
+            {
+                ret = true;
+            }
+        }
+
+        return ret;
+    }
+
+    public function getAllAnswering(alias:String):Array<Actor>
+    {
+        var ret:Array<Actor> = [];
+
+        if (this.answersTo(alias))
+        {
+            ret.push(this);
+        }
+
+        for (item in this.inventory)
+        {
+            if (item.answersTo(alias))
+            {
+                ret.push(item);
+            }
+        }
+
+        for (item in this.contents)
+        {
+            if (item.answersTo(alias))
+            {
+                ret.push(item);
+            }
+        }
+
         return ret;
     }
 }
