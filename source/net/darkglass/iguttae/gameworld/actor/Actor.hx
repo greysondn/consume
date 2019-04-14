@@ -452,6 +452,8 @@ class Actor
     /**
      * Put item into this thing's inventory. As opposed to "inside this thing".
      * 
+     * TODO: Write more of this function, checks etc
+     * 
      * @param item  item to put into inventory
      * 
      * @return Bool whether or not it was moved into inventory. If it wasn't,
@@ -614,6 +616,12 @@ class Actor
         // weight
         ret.weight = this.weight;
 
+        // aliases
+        for (alias in this.aliases)
+        {
+            ret.addAlias(alias);
+        }
+
         // return
         return ret;
     }
@@ -629,6 +637,7 @@ class Actor
 
         for (entry in this.aliases)
         {
+            // debugging
             if (entry.toLowerCase() == alias.toLowerCase())
             {
                 ret = true;
@@ -638,7 +647,7 @@ class Actor
         return ret;
     }
 
-    public function hasSomethingAnswering(alias:String):Bool
+    public function hasAnyAnswering(alias:String):Bool
     {
         // normally, no, I guess
         var ret:Bool = false;
