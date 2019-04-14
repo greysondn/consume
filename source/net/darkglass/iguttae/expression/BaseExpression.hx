@@ -86,4 +86,25 @@ class BaseExpression
         // end
         return ret;
     }
+
+    public function removeFirstWord(input:String):String
+    {
+        var ret:String = "";
+
+        var breakPoint:Int  = input.indexOf(" ");
+
+        // if the breakpoint even exists - it very well may not
+        if (-1 == breakPoint)
+        {
+            // just return the string
+            ret = input;
+        }
+        else
+        {
+            // break it off!
+            ret = input.substring(breakPoint + 1);
+        }
+
+        return ret;
+    }
 }

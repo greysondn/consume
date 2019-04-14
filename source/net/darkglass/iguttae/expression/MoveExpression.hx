@@ -82,22 +82,8 @@ class MoveExpression extends BaseExpression
     override public function eval(input:String, env:Environment, actor:Actor):Void
     {
         // decipher command
-        var breakPoint:Int  = input.indexOf(" ");
-        var dirStr:String = "";
+        var dirStr:String = this.removeFirstWord(input);
         var continueEval:Bool = false;
-    
-
-        // if the breakpoint even exists - it very well may not
-        if (-1 == breakPoint)
-        {
-            // then we should be looking at string already
-            dirStr = input;
-        }
-        else
-        {
-            // break and you got it
-            dirStr = input.substring(breakPoint + 1);
-        }
 
         // so if this errors, we'll just stop running
         // scope direction
