@@ -3,7 +3,7 @@ This is a preview of a engine overhaul and port for Consume, a vore-themed Flash
 [h2]New Features (Port)[/h2]
 
 * the map properly linked together  
-* the ability to move around the map
+* Tthe ability to move around the map
 * an entire goddamn text parser, what do you want from me? These things take time!
 * a look command
 * literally nothing else new 
