@@ -2,10 +2,10 @@ package net.darkglass.iguttae.gameworld.actor;
 
 import net.darkglass.iguttae.enums.Verbosity;
 import net.darkglass.iguttae.gameworld.actor.Compass;
-import net.darkglass.iguttae.gameworld.actor.Constants;
+import net.darkglass.iguttae.gameworld.Constants;
 import net.darkglass.iguttae.gameworld.map.Transition;
 import net.darkglass.iguttae.environment.Environment;
-import net.darkglass.iguttae.gameworld.actor.ConstantList;
+import net.darkglass.iguttae.gameworld.ConstantList;
 
 /**
  * Parent for interactibles ingame. Not really meant to be called itself.

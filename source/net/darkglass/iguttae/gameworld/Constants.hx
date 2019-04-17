@@ -1,4 +1,4 @@
-package net.darkglass.iguttae.gameworld.actor;
+package net.darkglass.iguttae.gameworld;
 
 /**
  * Singleton class of constants for actors
