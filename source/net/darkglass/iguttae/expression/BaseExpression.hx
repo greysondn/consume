@@ -124,7 +124,7 @@ class BaseExpression
         var ret:Bool = true;
 
         // now check if the first member matches
-        if (-1 == swp.indexOf(expected))
+        if (-1 == expected.indexOf(swp[0]))
         {
                 // not there
                 ret = false;
