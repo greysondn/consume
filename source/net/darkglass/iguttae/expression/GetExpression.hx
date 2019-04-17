@@ -77,7 +77,6 @@ class GetExpression extends BaseExpression
         }
         else
         {
-            trace("Has nothing?");
             // has no such thing
             env.outStream("There's no " + item + " here.");
         }
