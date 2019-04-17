@@ -119,12 +119,12 @@ class YamlLoader
                 if (entry.get("flags").get("public"))
                 {
                     // flag --> public - whether this is a public place
-                    swp.addPermission(swp.consts.get("flag", "public"));
+                    swp.permissions.add(swp.consts.get("flag", "public"));
                 }
                 if (entry.get("permissions").get("wait"))
                 {
                     // permissions --> wait - whether we can wait here
-                    swp.addPermission(swp.consts.get("permission", "wait"));
+                    swp.permissions.add(swp.consts.get("permission", "wait"));
                 }
 
                 // get descriptions

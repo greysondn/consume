@@ -14,7 +14,7 @@ class Room extends Actor
         super();
 
         // and now... it's a container for room stuff!
-        this.addContainerFor(this.consts.get("container", "room"));
+        this.containerFor.add(this.consts.get("container", "room"));
     }
 
     override public function describe(env:Environment)
