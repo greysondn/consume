@@ -107,4 +107,30 @@ class BaseExpression
 
         return ret;
     }
+
+    /**
+     * Makes sure the next thing is at least one of what is expected.
+     * 
+     * @param input     input to check next
+     * @param expected  array of things that can go here
+     * @return Bool     whether that's next
+     */
+    public function isNextOrFalse(input:String, expected:Array<String>):Bool
+    {
+        // break it up
+        var swp:Array<String> = input.split(" ");
+        
+        // ret
+        var ret:Bool = true;
+
+        // now check if the first member matches
+        if (-1 == swp.indexOf(expected))
+        {
+                // not there
+                ret = false;
+        }
+
+        // end
+        return ret;
+    }
 }
