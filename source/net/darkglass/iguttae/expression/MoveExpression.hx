@@ -131,9 +131,9 @@ class MoveExpression extends BaseExpression
         if (continueEval)
         {
             // actually move the actor
-            actor.location.remove(actor);
+            actor.location.inventory.remove(actor);
             actor.location = destTran.target;
-            actor.location.insert(actor);
+            actor.location.inventory.add(actor);
 
             // update location
             env.onLocationChange(actor.location.name);

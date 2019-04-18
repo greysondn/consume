@@ -6,19 +6,9 @@ package net.darkglass.iguttae.gameworld;
 class Entity
 {
     /**
-     * The types of containables this can contain.
-     */
-    public var containerFor:ConstantList = new ConstantList();
-    
-    /**
      * The types of containers this is containable in.
      */
     public var containableIn:ConstantList = new ConstantList();
-
-    /**
-     * The things this is containing
-     */
-    private var contents:Array<Entity> = [];
 
     /**
      * Access point for constants
@@ -128,9 +118,6 @@ class Entity
 
         // containableIn
         ret.containableIn = this.containableIn.clone();
-
-        // containerFor
-        ret.containerFor = this.containerFor.clone();
 
         // clone count
         this.cloneCount = this.cloneCount + 1;

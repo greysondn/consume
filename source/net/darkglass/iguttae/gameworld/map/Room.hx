@@ -14,7 +14,7 @@ class Room extends Actor
         super();
 
         // and now... it's a container for room stuff!
-        this.containerFor.add(this.consts.get("container", "room"));
+        this.inventory.containerFor.add(this.consts.get("container", "room"));
     }
 
     override public function describe(env:Environment)
@@ -29,8 +29,6 @@ class Room extends Actor
         // if we ever get scrollback working, or log, this needs changed
         // env.outStream(wrapper + "\n" + this.name + "\n" + wrapper);
         super.describe(env);
-        
-
 
         // items
         this.printItems(env);
@@ -45,11 +43,12 @@ class Room extends Actor
 
         var tmpOut:Array<String> = [];
 
-        for (i in 0...this.contents.length)
+        // TODO: MAKE THIS NOT SUCK SO HARD
+        for (i in 0...this.inventory.list().length)
         {
-            if (!this.contents[i].isPlayer)
+            if (!this.inventory.list()[i].isPlayer)
             {
-                tmpOut.push(this.contents[i].name);
+                tmpOut.push(this.inventory.list()[i].name);
             }
         }
 

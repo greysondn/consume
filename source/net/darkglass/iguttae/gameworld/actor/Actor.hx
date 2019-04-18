@@ -6,6 +6,7 @@ import net.darkglass.iguttae.gameworld.map.Transition;
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.ConstantList;
 import net.darkglass.iguttae.gameworld.Entity;
+import net.darkglass.iguttae.gameworld.container.EntityContainer;
 
 /**
  * Parent for interactibles ingame. Not really meant to be called itself.
@@ -41,9 +42,9 @@ class Actor extends Entity
     public var isKeyItem:Bool = false;
 
     /**
-     * This thing's inventory, if it has one.
+     * This thing's inventory, if it has anything in it.
      */
-    public var inventory:Array<Actor> = [];
+    public var inventory:EntityContainer = new EntityContainer();
 
     /**
      * Exits from this, as in a room, typically, but could be anything. A
@@ -83,22 +84,6 @@ class Actor extends Entity
     public function new()
     {
         super();
-    }
-
-    public function insert(actor:Actor):Void
-    {
-        if (-1 == this.contents.indexOf(actor))
-        {
-            // if (this.canContain(actor))
-            // {
-                this.contents.push(actor);
-            // }
-        }
-    }
-
-    public function remove(actor:Actor):Void
-    {
-        this.contents.remove(actor);
     }
 
     public function describe(env:Environment):Void
@@ -234,59 +219,6 @@ class Actor extends Entity
     }
 
     /**
-     * Put item into this thing's inventory. As opposed to "inside this thing".
-     * 
-     * TODO: Write more of this function, checks etc
-     * 
-     * @param item  item to put into inventory
-     * 
-     * @return Bool whether or not it was moved into inventory. If it wasn't,
-     *              most likely it's in the place it started.
-     */
-    public function hold(item:Actor):Bool
-    {
-        // eventual return
-        var ret:Bool = true;
-
-        // put item in inventory
-        this.inventory.push(item);
-
-        // return
-        return ret;
-    }
-
-    /**
-     * Ask actor to remove this item from its inventory. As opposed to its
-     * insides. Caller is responsible for taking care of the item in question.
-     * 
-     * @param item  item to drop
-     * 
-     * @return Bool whether we actually managed to drop it
-     */
-    public function drop(item:Actor):Bool
-    {
-        // eventual return
-        var ret:Bool = true;
-        
-        // attempt to remove it
-        ret = this.inventory.remove(item);
-
-        // return
-        return ret;
-    }
-
-    /**
-     * List this actor's inventory. Don't do anything fancy with this -
-     * the inventory this returns is literally the player's inventory right now.
-     * 
-     * @return Array<Inventory> the players inventory
-     */
-    public function listInventory():Array<Actor>
-    {
-        return this.inventory;
-    }
-
-    /**
      * As in this is just a prototype with frills. Make sure you canClone()
      * first. This won't try to stop you if you fail to check for yourself!
      * 
@@ -305,9 +237,6 @@ class Actor extends Entity
 
         // containableIn
         ret.containableIn = this.containableIn.clone();
-
-        // containerFor
-        ret.containerFor = this.containerFor.clone();
 
         // clone count
         this.cloneCount = this.cloneCount + 1;
@@ -372,36 +301,6 @@ class Actor extends Entity
         return ret;
     }
 
-    public function hasAnyAnswering(alias:String):Bool
-    {
-        // normally, no, I guess
-        var ret:Bool = false;
-
-        // search all contents, inventory, etc
-        if (this.answersTo(alias))
-        {
-            ret = true;
-        }
-
-        for (item in this.inventory)
-        {
-            if (item.answersTo(alias))
-            {
-                ret = true;
-            }
-        }
-
-        for (item in this.contents)
-        {
-            if (item.answersTo(alias))
-            {
-                ret = true;
-            }
-        }
-
-        return ret;
-    }
-
     public function getAllAnswering(alias:String):Array<Actor>
     {
         var ret:Array<Actor> = [];
@@ -411,20 +310,9 @@ class Actor extends Entity
             ret.push(this);
         }
 
-        for (item in this.inventory)
+        for (item in this.inventory.getAllAnswering(alias))
         {
-            if (item.answersTo(alias))
-            {
-                ret.push(item);
-            }
-        }
-
-        for (item in this.contents)
-        {
-            if (item.answersTo(alias))
-            {
-                ret.push(cast(item, Actor));
-            }
+            ret.push(cast(item, Actor));
         }
 
         return ret;

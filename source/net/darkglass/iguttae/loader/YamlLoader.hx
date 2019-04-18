@@ -326,7 +326,8 @@ class YamlLoader
                 }
 
                 // put it in there
-                loc.insert(obj);
+                loc.inventory.add(obj);
+                obj.location = loc;
             }
         }
     }

@@ -1,6 +1,7 @@
 package net.darkglass.iguttae.expression;
 
 import net.darkglass.iguttae.expression.BaseExpression;
+import net.darkglass.iguttae.gameworld.Entity;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.environment.Environment;
 
@@ -33,53 +34,48 @@ class GetExpression extends BaseExpression
         // what?
         var item:String = this.removeFirstWord(input);
 
-        // ask if it has any
-        if (loc.hasAnyAnswering(item))
+        // try to get it
+        var locItems:Array<Entity> = loc.inventory.getAllAnswering(item);
+
+        // check it
+        if (0 == locItems.length)
         {
-            // has something anyway, so let's get it
-            var itemHere:Array<Actor> = loc.getAllAnswering(item);
+            // nobody here but us chicken
+            env.outStream("There's no " + item + " here.");
+        }
+        else if (1 == locItems.length)
+        {
+            // only one, we can do this
+            var actualItem:Actor = cast(locItems[0], Actor);
 
-            // just one?
-            if (1 == itemHere.length)
+            if (actor.inventory.add(actualItem))
             {
-                // just one, can try it
-                var actualItem:Actor = itemHere[0];
-
-                if(actor.hold(actualItem))
-                {
-                    // say it!
-                    env.outStream("You picked up " + actualItem.name);
-                }
-                else
-                {
-                    // you couldn't do it
-                    env.outStream("For whatever reason, you couldn't pick up " + item);
-                }
-
+                // set location and say it
+                actualItem.location.inventory.remove(actualItem);
+                actualItem.location = actor;
+                env.outStream("You picked up " + actualItem.name);
             }
             else
             {
-                // more than one, ask to disambiguate
-                env.outStream("Which item did you mean? There's multiple that " + 
-                              "might match what you asked for. They are:");
-
-                // oh no!
-                var itemList:String = "";
-
-                for (item in itemHere)
-                {
-                    itemList = itemList + "- " + item.name + "\n";
-                }
-
-                env.outStream(itemList);
+                // you couldn't do it
+                env.outStream("For whatever reason, you couldn't pick up " + item);
             }
-
         }
         else
         {
-            // has no such thing
-            env.outStream("There's no " + item + " here.");
-        }
+            // more than one, ask to disambiguate
+            env.outStream("Which item did you mean? There's multiple that " + 
+                            "might match what you asked for. They are:");
 
+            // oh no!
+            var itemList:String = "";
+
+            for (item in locItems)
+            {
+                itemList = itemList + "- " + item.name + "\n";
+            }
+
+            env.outStream(itemList);
+        }
     }
 }
