@@ -25,6 +25,7 @@ import net.darkglass.iguttae.expression.HelpExpression;
 import net.darkglass.iguttae.expression.MoveExpression;
 import net.darkglass.iguttae.expression.LookExpression;
 import net.darkglass.iguttae.expression.GetExpression;
+import net.darkglass.iguttae.expression.InventoryExpression;
 
 import net.darkglass.iguttae.loader.YamlLoader;
 
@@ -91,6 +92,7 @@ class PlayState extends FlxState
         this.env.commands.push(new MoveExpression());
         this.env.commands.push(new LookExpression());
         this.env.commands.push(new GetExpression());
+        this.env.commands.push(new InventoryExpression());
     }
 
     /**
