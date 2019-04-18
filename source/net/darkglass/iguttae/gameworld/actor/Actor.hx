@@ -2,39 +2,16 @@ package net.darkglass.iguttae.gameworld.actor;
 
 import net.darkglass.iguttae.enums.Verbosity;
 import net.darkglass.iguttae.gameworld.actor.Compass;
-import net.darkglass.iguttae.gameworld.Constants;
 import net.darkglass.iguttae.gameworld.map.Transition;
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.ConstantList;
+import net.darkglass.iguttae.gameworld.Entity;
 
 /**
  * Parent for interactibles ingame. Not really meant to be called itself.
  */
-class Actor
+class Actor extends Entity
 {
-    /**
-     * The types of containables this can contain.
-     */
-    public var containerFor:ConstantList = new ConstantList();
-
-    /**
-     * Aliases for this object - as in things it answers to
-     */
-    private var aliases:Array<String> = [];
-    
-    /**
-     * The types of containers this is containable in
-     * 
-     * Don't meddle with this directly! There are functions written to interact
-     * with this.
-     */
-    public var containableIn:ConstantList = new ConstantList();
-
-    /**
-     * The things this is containing
-     */
-    private var contents:Array<Actor> = [];
-
     /**
      * Whether this is a key
      */
@@ -54,11 +31,6 @@ class Actor
     public var permissions:ConstantList = new ConstantList();
 
     /**
-     * Access point for constants
-     */
-    public var consts:Constants = Constants.create();
-
-    /**
      * Whether this object is indestructible
      */
     public var isIndestructible:Bool = false;
@@ -67,11 +39,6 @@ class Actor
      * Whether this object is a key item
      */
     public var isKeyItem:Bool = false;
-
-    /**
-     * Whether or not this is the player
-     */
-    public var isPlayer:Bool = false;
 
     /**
      * This thing's inventory, if it has one.
@@ -83,11 +50,6 @@ class Actor
      * container even.
      */
     public var exits:Map<Compass, Transition> = new Map<Compass, Transition>();
-    
-    /**
-     * Name of this actor
-     */
-    public var name:String = "ERROR: NO NAME";
 
     /**
      * Weight this actor has. In pounds, apparently.
@@ -116,32 +78,11 @@ class Actor
     public var verbose:String;
 
     /**
-     * Index, for indexed actors. This is considered undefined for arbitrary
-     * actors, but some - like rooms and transitions - are actually indexed.
-     */
-     public var index:Int;
-
-    /**
-     * Whether this is unique or not. Mostly matters for items, honestly.
-     */
-    public var isUnique:Bool = false;
-
-    /**
-     * Spawn count. Again, mostly matters for items.
-     */
-    public var cloneCount:Int = 0;
-
-    /**
-     * Whether this is a clone or not. Don't clone clones brah.
-     */
-    public var isClone:Bool = false;
-
-    /**
      * Constructor
      */
     public function new()
     {
-        // pass for now
+        super();
     }
 
     public function insert(actor:Actor):Void
@@ -346,41 +287,12 @@ class Actor
     }
 
     /**
-     * Whether or not we can clone this.
-     * 
-     * @return Bool true if we can, false if we can't.
-     */
-    public function canClone():Bool
-    {
-        // generally, we can
-        var ret:Bool = true;
-
-        // however, if it's unique and one is spawned already, we can't
-        if (this.isUnique)
-        {
-            if (this.cloneCount >= 1)
-            {
-                ret = false;
-            }
-        }
-
-        // shouldn't be cloning clones either
-        if (this.isClone)
-        {
-            ret = false;
-        }
-
-        // end
-        return ret;
-    }
-
-    /**
      * As in this is just a prototype with frills. Make sure you canClone()
      * first. This won't try to stop you if you fail to check for yourself!
      * 
      * @return Actor a clone of this actor
      */
-    public function clone():Actor
+    public override function clone():Actor
     {
         var ret:Actor = new Actor();
         
@@ -460,27 +372,6 @@ class Actor
         return ret;
     }
 
-    public function addAlias(alias:String):Void
-    {
-        this.aliases.push(alias);
-    }
-
-    public function answersTo(alias:String):Bool
-    {
-        var ret:Bool = false;
-
-        for (entry in this.aliases)
-        {
-            // debugging
-            if (entry.toLowerCase() == alias.toLowerCase())
-            {
-                ret = true;
-            }
-        }
-
-        return ret;
-    }
-
     public function hasAnyAnswering(alias:String):Bool
     {
         // normally, no, I guess
@@ -532,7 +423,7 @@ class Actor
         {
             if (item.answersTo(alias))
             {
-                ret.push(item);
+                ret.push(cast(item, Actor));
             }
         }
 
