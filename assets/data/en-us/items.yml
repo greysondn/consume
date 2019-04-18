@@ -57,6 +57,7 @@
     - "backroom key"
     - "shop key"
     - "ice cream key"
+    - "ice cream shop key"
     - "Bessie's key"
   key:
     isKey: true 
