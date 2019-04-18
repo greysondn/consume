@@ -38,34 +38,7 @@ class GetExpression extends BaseExpression
         var locItems:Array<Entity> = loc.inventory.getAllAnswering(what);
 
         // make item pool unique-ish
-        var locItemsUniq:Array<Entity> = [];
-
-        for (item in locItems)
-        {
-            // see if it's really unique 
-            var unique:Bool = true;
-
-            // yep...
-            for (uniq in locItemsUniq)
-            {
-                // so the two properties I'mma check are
-                // index and name. Figure if those match the dev
-                // is trying to break things.
-                if (item.name == uniq.name)
-                {
-                    if (item.index == uniq.index)
-                    {
-                        unique = false;
-                    }
-                }
-            }
-
-            // apparently it's unique
-            if (unique)
-            {
-                locItemsUniq.push(item);
-            }
-        }
+        var locItemsUniq:Array<Entity> = this.removeDuplicates(locItems);
 
         // check it
         if (0 == locItemsUniq.length)
