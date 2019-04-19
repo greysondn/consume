@@ -4,10 +4,13 @@ import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.Entity;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.environment.Environment;
+import net.darkglass.iguttae.expression.clause.ItemClause;
 
 class GetExpression extends BaseExpression
 {
-    
+    // yeah, I'll need this
+    private var outStream:String -> Void;
+
     public function new()
     {
         // parent always gotta be starting something
@@ -28,57 +31,49 @@ class GetExpression extends BaseExpression
 
     override public function eval(input:String, env:Environment, actor:Actor):Void
     {
-        // where?
-        var loc:Actor = actor.location;
-
         // what?
         var what:String = this.removeFirstWord(input);
 
+        // set outstream in case we need it
+        this.outStream = env.outStream;
+
+        // create clause
+        var itemClause:ItemClause = new ItemClause();
+
         // try to get it
-        var locItems:Array<Entity> = loc.inventory.getAllAnswering(what);
+        var item:Actor = itemClause.fromLoc(actor, what, this.onAmbiguity, this.onNone);
 
-        // make item pool unique-ish
-        var locItemsUniq:Array<Entity> = this.removeDuplicates(locItems);
-
-        // check it
-        if (0 == locItemsUniq.length)
+        // well then. That will set -1 for index if it failed.
+        if (-1 != item.index)
         {
-            // nobody here but us chicken
-            env.outStream("There's no " + what + " here.");
+            // set location and say it
+            item.location.inventory.remove(item);
+            actor.inventory.add(item);
+            item.location = actor;
+            env.outStream("You picked up " + item.name);
         }
-        else if (1 == locItemsUniq.length)
+    }
+
+    // actor:Actor, itemName:String, onAmbiguity:Array<Actor> -> String -> Void, onNone:String -> Void
+
+    private function onAmbiguity(list:Array<Actor>):Void
+    {
+        this.outStream("Which item did you mean? There's multiple that " + 
+                "might match what you asked for. They are:");
+
+        // oh no!
+        var itemList:String = "";
+
+        for (item in list)
         {
-            // only one, we can do this
-            var actualItem:Actor = cast(locItemsUniq[0], Actor);
-
-            if (actor.inventory.add(actualItem))
-            {
-                // set location and say it
-                actualItem.location.inventory.remove(actualItem);
-                actualItem.location = actor;
-                env.outStream("You picked up " + actualItem.name);
-            }
-            else
-            {
-                // you couldn't do it
-                env.outStream("For whatever reason, you couldn't pick up " + what);
-            }
+            itemList = itemList + "- " + item.name + "\n";
         }
-        else
-        {
-            // more than one, ask to disambiguate
-            env.outStream("Which item did you mean? There's multiple that " + 
-                            "might match what you asked for. They are:");
 
-            // oh no!
-            var itemList:String = "";
+        this.outStream(itemList);
+    }
 
-            for (item in locItemsUniq)
-            {
-                itemList = itemList + "- " + item.name + "\n";
-            }
-
-            env.outStream(itemList);
-        }
+    private function onNone(item:String):Void
+    {
+        this.outStream("There's no " + item + " here.");
     }
 }

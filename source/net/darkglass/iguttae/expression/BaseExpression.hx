@@ -134,35 +134,4 @@ class BaseExpression
         // end
         return ret;
     }
-
-    public function removeDuplicates(list:Array<Entity>):Array<Entity>
-    {
-        var ret:Array<Entity> = [];
-
-        for (item in list)
-        {
-            var unique:Bool = true;
-
-            for (retItem in ret)
-            {
-                // so the two properties I'mma check are
-                // index and name. Figure if those match the dev
-                // is trying to break things.
-                if (item.name == retItem.name)
-                {
-                    if (item.index == retItem.index)
-                    {
-                        unique = false;
-                    }
-                }
-            }
-
-            if (unique)
-            {
-                ret.push(item);
-            }
-        }
-
-        return ret;
-    }
 }

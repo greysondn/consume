@@ -4,9 +4,13 @@ import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.Entity;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.environment.Environment;
+import net.darkglass.iguttae.expression.clause.ItemClause;
 
 class DropExpression extends BaseExpression
 {
+    // yeah, I'll need this
+    private var outStream:String -> Void;
+
     public function new()
     {
         // parent always gotta be starting something
@@ -27,35 +31,27 @@ class DropExpression extends BaseExpression
 
     override public function eval(input:String, env:Environment, actor:Actor):Void
     {
-        // where?
-        var loc:Actor = actor.location;
-
         // what?
         var what:String = this.removeFirstWord(input);
 
+        // set outstream in case we need it
+        this.outStream = env.outStream;
+
+        // create clause
+        var itemClause:ItemClause = new ItemClause();
+
         // try to get it
-        var actorItems:Array<Entity> = actor.inventory.getAllAnswering(what);
+        var item:Actor = itemClause.fromInv(actor, what, this.onAmbiguity, this.onNone);
 
-        // make item pool unique-ish
-        var actorItemsUniq:Array<Entity> = this.removeDuplicates(actorItems);
-
-        // check it
-        if (0 == actorItemsUniq.length)
+        // that sets item index to -1 if it's invalid
+        if (-1 != item.index)
         {
-            // nobody here but us chicken
-            env.outStream("There's no " + what + " in your inventory.");
-        }
-        else if (1 == actorItemsUniq.length)
-        {
-            // only one, we can do this
-            var actualItem:Actor = cast(actorItemsUniq[0], Actor);
-
-            if (actor.location.inventory.add(actualItem))
+            if (actor.location.inventory.add(item))
             {
                 // set location and say it
-                actualItem.location.inventory.remove(actualItem);
-                actualItem.location = actor.location;
-                env.outStream("You dropped " + actualItem.name);
+                item.location.inventory.remove(item);
+                item.location = actor.location;
+                env.outStream("You dropped " + item.name);
             }
             else
             {
@@ -63,21 +59,26 @@ class DropExpression extends BaseExpression
                 env.outStream("For whatever reason, you couldn't drop " + what);
             }
         }
-        else
+    }
+
+    private function onAmbiguity(list:Array<Actor>):Void
+    {
+        this.outStream("Which item did you mean? There's multiple that " + 
+                "might match what you asked for. They are:");
+
+        // oh no!
+        var itemList:String = "";
+
+        for (item in list)
         {
-            // more than one, ask to disambiguate
-            env.outStream("Which item did you mean? There's multiple that " + 
-                            "might match what you asked for. They are:");
-
-            // oh no!
-            var itemList:String = "";
-
-            for (item in actorItemsUniq)
-            {
-                itemList = itemList + "- " + item.name + "\n";
-            }
-
-            env.outStream(itemList);
+            itemList = itemList + "- " + item.name + "\n";
         }
+
+        this.outStream(itemList);
+    }
+
+    private function onNone(item:String):Void
+    {
+        this.outStream("There's no " + item + " in your inventory.");
     }
 }
