@@ -43,8 +43,8 @@ class UnlockExpression extends BaseExpression
         if (trans.index != -1)
         {
             // search inventory of actor, try keys
-            var foundKey:Bool = false; // found a working key?
-            var key:Actor;             // key?
+            var foundKey:Bool = false;   // found a working key?
+            var key:Actor = new Actor(); // key?
 
             for (item in actor.inventory.contents)
             {
