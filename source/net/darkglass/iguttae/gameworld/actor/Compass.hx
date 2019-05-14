@@ -64,4 +64,9 @@ enum Compass
      * Out, as in "towards the outside of something"
      */
     OUT;
+    
+    /**
+     * Here just to have some sane known-invalid.
+     */
+    INVALID;
 }
