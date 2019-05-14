@@ -28,13 +28,34 @@ class Transition extends Actor
     public var combo:Int;
 
     /**
-     * Test a key in this lock
-     * 
-     * @param code  code the key corrosponds to
-     * 
-     * @return Bool whether or not the key works
+     * TODO: Document
+     *  
+     * @param codes 
+     * @return Bool
      */
-    public function keyWorks(code:Int):Bool
+    public function anyCodeWorks(codes:Array<Int>):Bool
+    {
+        var ret:Bool = false;
+
+        for (code in codes)
+        {
+            if (this.codeWorks(code))
+            {
+                ret = true;
+            }
+        }
+
+        return ret;
+    }
+
+    /**
+     * Test a code in this lock
+     * 
+     * @param code  code to check
+     * 
+     * @return Bool whether or not the code works
+     */
+    public function codeWorks(code:Int):Bool
     {
         // whether that matches even
         var ret:Bool = false;
@@ -51,20 +72,78 @@ class Transition extends Actor
     }
 
     /**
+     * Check whether a key works in this door at all
+     * 
+     * @param key       key to check
+     * @return Bool     whether or not it works
+     */
+    public function keyWorks(key:Actor):Bool
+    {
+        return this.anyCodeWorks(key.combos);
+    }
+
+    public function getWorkingCode(codes:Array<Int>):Int
+    {
+        var ret:Int = -1;
+
+        for (code in codes)
+        {
+            if (this.codeWorks(code))
+            {
+                ret = code;
+            }
+        }
+
+        return ret;
+    }
+
+    /**
      * Turn a key in this lock
      * 
-     * @param code  key's code
-     * @return Bool whether we swapped the state
+     * @param key  key to turn
+     * @return Bool whether the key turned in the lock
      */
-    public function turnKey(code:Int):Bool
+    public function turnKey(key:Actor):Bool
     {
-        var ret:Bool = this.keyWorks(code);
+        var ret:Bool = this.keyWorks(key);
         
+        // we can skip the formalities, after all
         if (ret)
         {
             this.locked = !this.locked;
         }
         
+        return ret;
+    }
+
+    /**
+     * TODO
+     * @param key 
+     * @return Bool whether the key turned in the lock
+     */
+    public function unlockWithKey(key:Actor):Bool
+    {
+        var ret:Bool = false;
+
+        if (this.keyWorks(key))
+        {
+            this.locked = false;
+            ret = true;
+        }
+
+        return ret;
+    }
+
+    public function lockWithKey(key:Actor):Bool
+    {
+        var ret:Bool = false;
+
+        if (this.keyWorks(key))
+        {
+            this.locked = true;
+            ret = true;
+        }
+
         return ret;
     }
 }
