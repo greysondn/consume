@@ -12,15 +12,21 @@ class DirectionClause
 
     public function stringToRoom(actor:Actor, str:String, noExit:String -> Void, noDir:String -> Void):Actor
     {
-        // oohdelady.
+        // placeholder
         var ret:Actor = new Actor();
         ret.index = -1;
 
-        // okay
-        var compass:Compass = this.stringToCompass(str);
+        // get the compass bearing
+        var exitCompass:Compass = this.stringToCompass(str);
 
-        // uh, great comments, right?
+        // and now try to get the room in question
+        if (actor.exits[exitCompass] != null)
+        {
+            ret = actor.exits[exitCompass];
+        }
 
+        // and now we
+        return ret;
     }
 
     /**
