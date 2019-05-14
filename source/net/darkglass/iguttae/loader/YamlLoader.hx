@@ -6,6 +6,7 @@ import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.map.Room;
 import net.darkglass.iguttae.gameworld.map.Transition;
 import net.darkglass.iguttae.gameworld.actor.Compass;
+import net.darkglass.iguttae.expression.clause.DirectionClause;
 
 import openfl.Assets;
 
@@ -21,11 +22,19 @@ class YamlLoader
     private static var instance:YamlLoader;
 
     /**
+     * Direction clause, because helper functions.
+     */
+    private var dirClause:DirectionClause;
+
+    /**
      * Constructor.
      */
     private function new()
     {
         // dummy so we can have a singleton
+
+        // also dirclause
+        this.dirClause = new DirectionClause();
     }
 
     /**
@@ -183,8 +192,8 @@ class YamlLoader
                 swpR.target = leftR;
 
                 // get sides the transitions go on
-                var sideL:Compass = env.stringToCompass(entry.get("rooms").get("left").get("side"));
-                var sideR:Compass = env.stringToCompass(entry.get("rooms").get("right").get("side"));
+                var sideL:Compass = this.dirClause.stringToCompass(entry.get("rooms").get("left").get("side"), env);
+                var sideR:Compass = this.dirClause.stringToCompass(entry.get("rooms").get("right").get("side"), env);
 
                 // get whether or not the rooms are locked
                 var areLocked:Bool = entry.get("flags").get("locked");

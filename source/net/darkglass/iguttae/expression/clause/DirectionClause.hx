@@ -2,6 +2,8 @@ package net.darkglass.iguttae.expression.clause;
 
 import net.darkglass.iguttae.gameworld.actor.Compass;
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.map.Transition;
+import net.darkglass.iguttae.environment.Environment;
 
 class DirectionClause
 {
@@ -10,19 +12,30 @@ class DirectionClause
         // half of nothing!
     }
 
-    public function stringToRoom(actor:Actor, str:String, noExit:String -> Void, noDir:String -> Void):Actor
+    public function stringToExit(actor:Actor, str:String, env:Environment):Transition
     {
         // placeholder
-        var ret:Actor = new Actor();
+        var ret:Transition = new Transition();
         ret.index = -1;
 
         // get the compass bearing
-        var exitCompass:Compass = this.stringToCompass(str);
+        var exitCompass:Compass = this.stringToCompass(str, env);
 
-        // and now try to get the room in question
-        if (actor.exits[exitCompass] != null)
+        // so we would have output the error string, whatever
+        // now we make sure that's valid anyway
+        if (exitCompass != Compass.INVALID)
         {
-            ret = actor.exits[exitCompass];
+            // and now try to get the exit in question
+            if (actor.location.exits[exitCompass] == null)
+            {
+                // doesn't exist
+                env.outStream("There's no exit in that direction.");
+            }
+            else
+            {
+                // it exists!
+                ret = actor.location.exits[exitCompass];
+            }
         }
 
         // and now we
@@ -36,7 +49,7 @@ class DirectionClause
      * 
      * @return Compass corrosponding to str, or Compass.INVALID if none corrosponds
      */
-    public function stringToCompass(str:String, noDir:String -> Void):Compass
+    public function stringToCompass(str:String, env:Environment):Compass
     {
         // eventual return
         var ret:Compass = Compass.INVALID;
@@ -98,7 +111,7 @@ class DirectionClause
         if (Compass.INVALID == ret)
         {
             // there's no direction, whee
-            noDir(swp);
+            env.outStream("That wasn't a direction.");
         }
 
         // return
