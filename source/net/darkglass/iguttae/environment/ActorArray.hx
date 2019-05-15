@@ -25,7 +25,7 @@ class ActorArray
      * 
      * @param actor actor to add
      */
-    public function add(actor:Actor)
+    public function add(actor:Actor):Void
     {
         if (-1 == this.store.indexOf(actor))
         {

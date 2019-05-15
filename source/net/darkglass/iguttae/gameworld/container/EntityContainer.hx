@@ -3,6 +3,9 @@ package net.darkglass.iguttae.gameworld.container;
 import net.darkglass.iguttae.gameworld.Entity;
 import net.darkglass.iguttae.gameworld.ConstantList;
 
+/**
+ * Just a type limited (or not) entity container.
+ */
 class EntityContainer extends Entity
 {
     /**
@@ -41,41 +44,37 @@ class EntityContainer extends Entity
      * 
      * TODO: Write more of this function, checks etc
      * 
-     * @param item  item to put into inventory
+     * @param ent  entity to put into inventory
      * 
      * @return Bool whether or not it was moved into inventory. If it wasn't,
      *              most likely it's in the place it started.
      */
-    public function add(item:Entity):Bool
+    public function add(ent:Entity):Bool
     {
         // eventual return
         var ret:Bool = true;
 
         // put item in inventory
-        this.contents.push(item);
+        this.contents.push(ent);
 
         // return
         return ret;
     }
 
     /**
+     * TODO: Fix docs
+     * 
      * Ask actor to remove this item from its inventory. As opposed to its
      * insides. Caller is responsible for taking care of the item in question.
      * 
-     * @param item  item to drop
+     * @param ent  entity to drop
      * 
      * @return Bool whether we actually managed to drop it
      */
-    public function remove(item:Entity):Bool
+    public function remove(ent:Entity):Bool
     {
-        // eventual return
-        var ret:Bool = true;
-        
-        // attempt to remove it
-        ret = this.contents.remove(item);
-
-        // return
-        return ret;
+        // one liner
+        return this.contents.remove(ent);
     }
 
     /**
