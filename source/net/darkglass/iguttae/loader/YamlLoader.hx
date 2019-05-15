@@ -1,10 +1,12 @@
 package net.darkglass.iguttae.loader;
 
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.item.Item;
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.map.Room;
 import net.darkglass.iguttae.gameworld.map.Transition;
 import net.darkglass.iguttae.gameworld.actor.Compass;
+import net.darkglass.iguttae.expression.clause.DirectionClause;
 
 import openfl.Assets;
 
@@ -20,11 +22,19 @@ class YamlLoader
     private static var instance:YamlLoader;
 
     /**
+     * Direction clause, because helper functions.
+     */
+    private var dirClause:DirectionClause;
+
+    /**
      * Constructor.
      */
     private function new()
     {
         // dummy so we can have a singleton
+
+        // also dirclause
+        this.dirClause = new DirectionClause();
     }
 
     /**
@@ -46,8 +56,15 @@ class YamlLoader
      * @param env       Environment to load things into.
      * @param roomSrc   Source for room data
      * @param tranSrc   Source for room-to-room connection data
+     * @param itemSrc   Source for item base data
+     * @param spwnSrc   Source for spawning data for everything else
      */
-    public function load(env:Environment, ?roomSrc:String="assets/data/en-us/rooms.yaml", ?tranSrc:String="assets/data/en-us/doors.yaml"):Void
+    public function load(env:Environment,
+                            ?roomSrc:String="assets/data/en-us/rooms.yaml",
+                            ?tranSrc:String="assets/data/en-us/doors.yaml",
+                            ?itemSrc:String="assets/data/en-us/items.yml",
+                            ?spwnSrc:String="assets/data/en-us/spawns.yaml"
+                        ):Void
     {
         // this typing is bad and there's no elegant fix
         // if you look in the helper functions, strong casts are done in
@@ -59,7 +76,7 @@ class YamlLoader
         var roomDat:Array<ObjectMap<String, Dynamic>> = Yaml.parse(roomStr);
         this.loadRooms(env, roomDat);
         
-        if(!env.checkRoomIntegrity())
+        if(!env.rooms.checkIntegrity())
         {
             // unpossible status
             throw "Room integrity failure!";
@@ -71,6 +88,15 @@ class YamlLoader
         this.loadTransitions(env, tranDat);
         // no validation function would work here
 
+        // can now load items
+        var itemStr:String  = Assets.getText(itemSrc);
+        var itemDat:Dynamic = Yaml.parse(itemStr);
+        this.loadItems(env, itemDat);
+
+        // and spawn everything where it goes
+        var spwnStr:String  = Assets.getText(spwnSrc);
+        var spwnDat:Dynamic = Yaml.parse(spwnStr);
+        this.loadSpawns(env, spwnDat);
     }
 
     /**
@@ -102,12 +128,12 @@ class YamlLoader
                 if (entry.get("flags").get("public"))
                 {
                     // flag --> public - whether this is a public place
-                    swp.addPermission(swp.consts.get("flag", "public"));
+                    swp.permissions.add(swp.consts.get("flag", "public"));
                 }
                 if (entry.get("permissions").get("wait"))
                 {
                     // permissions --> wait - whether we can wait here
-                    swp.addPermission(swp.consts.get("permission", "wait"));
+                    swp.permissions.add(swp.consts.get("permission", "wait"));
                 }
 
                 // get descriptions
@@ -116,7 +142,7 @@ class YamlLoader
                 swp.verbose  = entry.get("desc").get("verbose");
 
                 // push into environment
-                env.addRoom(swp);
+                env.rooms.add(swp);
             }
         }
     }
@@ -158,20 +184,159 @@ class YamlLoader
                 }
 
                 // get the two rooms
-                var leftR:Actor  = env.getRoom(entry.get("rooms").get("left").get("index"));
-                var rightR:Actor = env.getRoom(entry.get("rooms").get("right").get("index"));
-
-                // get sides the transitions go on
-                var sideL:Compass = env.stringToCompass(entry.get("rooms").get("left").get("side"));
-                var sideR:Compass = env.stringToCompass(entry.get("rooms").get("right").get("side"));
+                var leftR:Actor  = env.rooms.get(entry.get("rooms").get("left").get("index"));
+                var rightR:Actor = env.rooms.get(entry.get("rooms").get("right").get("index"));
 
                 // set targets
                 swpL.target = rightR;
                 swpR.target = leftR;
 
+                // get sides the transitions go on
+                var sideL:Compass = this.dirClause.stringToCompass(entry.get("rooms").get("left").get("side"), env);
+                var sideR:Compass = this.dirClause.stringToCompass(entry.get("rooms").get("right").get("side"), env);
+
+                // get whether or not the rooms are locked
+                var areLocked:Bool = entry.get("flags").get("locked");
+
+                if (areLocked)
+                {
+                    // set locked
+                    swpL.locked = true;
+                    swpR.locked = true;
+
+                    // since they're locked, let's get combo for them
+                    var theirCombo:Int = entry.get("key").get("combo");
+                    
+                    swpL.combo = theirCombo;
+                    swpR.combo = theirCombo;
+                }
+                else
+                {
+                    swpL.locked = false;
+                    swpR.locked = false;
+                }
+
                 // connect rooms to swaps
                 leftR.addExit(sideL, swpL);
                 rightR.addExit(sideR, swpR);
+            }
+        }
+    }
+
+    /**
+     * Helper function to load raw item data in
+     * 
+     * TODO: FINISH DOCUMENTING
+     * 
+     * @param env 
+     * @param itemDat 
+     */
+    private function loadItems(env:Environment, itemDat:Array<ObjectMap<String, Dynamic>>):Void
+    {
+        for (entry in itemDat)
+        {
+            // real indexes start at zero
+            if (entry.get("index") >= 0)
+            {
+                // swap holder, to later be injected into env
+                var swp:Item = new Item();
+
+                // and the "fun" part
+                swp.index   = entry.get("index");
+                swp.verbose = entry.get("desc");
+
+                swp.name    = entry.get("name");
+                swp.addAlias(swp.name);
+
+                // things specifically for keys
+                if (entry.get("key").get("isKey"))
+                {
+                    swp.isKey = true;
+
+                    // coerce combos so they're iterable
+                    var comboArray:Array<Int> = entry.get("key").get("combos");
+
+                    for (comboEntry in comboArray)
+                    {
+                        swp.combos.push(comboEntry);
+                    }
+                }
+
+                // aliases
+                var aliasArray:Array<String> = entry.get("alias");
+
+                for (entry in aliasArray)
+                {
+                    swp.addAlias(entry);
+                }
+
+                // flags
+                swp.isIndestructible = entry.get("flags").get("indestructible");
+                swp.isKeyItem        = entry.get("flags").get("key");
+                swp.isUnique         = entry.get("flags").get("unique");
+
+                // push into env
+                env.items.add(swp);
+            }
+        }
+
+        // perform integrity check on items
+        if (!env.items.checkIntegrity())
+        {
+            throw "HEY DUMMY YOU BOTCHED THE ITEM LIST, FIX IT";
+        }
+    }
+
+    private function loadSpawns(env:Environment, spwnDat:Array<ObjectMap<String, Dynamic>>)
+    {
+        for (entry in spwnDat)
+        {
+            // real entries start at index zero
+            if (entry.get("index") >= 0)
+            {
+                // just a record of where to put things
+                // so let's pull it all here so we can work with it
+                var locType:String = entry.get("location").get("type");
+                var locIndex:Int   = entry.get("location").get("index");
+                var objType:String = entry.get("object").get("type");
+                var objIndex:Int   = entry.get("object").get("index");
+
+                // holders for location and actor,
+                // but deliberately uninitialized
+                var loc:Actor = new Actor();
+                var obj:Actor = new Actor();
+
+                // get location itself
+                if ("room" == locType)
+                {
+                    loc = env.rooms.get(locIndex);
+                }
+                else
+                {
+                    throw ("Unknown spawn location type! : " + locType);
+                }
+
+                // get object itself
+                if ("item" == objType)
+                {
+                    // well, yes, but...
+                    var toCheck:Actor = env.items.get(objIndex);
+
+                    // can we clone it?
+                    if (toCheck.canClone())
+                    {
+                        // yeah okay, clone it
+                        obj = toCheck.clone();
+                    }
+                }
+                else
+                {
+                    throw ("Unknown spawn object type! : " + objType);
+                }
+
+                // put it in there
+                loc.inventory.add(obj);
+                obj.location = loc;
             }
         }
     }

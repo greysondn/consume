@@ -24,12 +24,21 @@ import net.darkglass.iguttae.expression.HelpExpression;
 // import net.darkglass.iguttae.expression.TeleportExpression;
 import net.darkglass.iguttae.expression.MoveExpression;
 import net.darkglass.iguttae.expression.LookExpression;
+import net.darkglass.iguttae.expression.GetExpression;
+import net.darkglass.iguttae.expression.InventoryExpression;
+import net.darkglass.iguttae.expression.DropExpression;
+import net.darkglass.iguttae.expression.UnlockExpression;
 
 import net.darkglass.iguttae.loader.YamlLoader;
 
 class PlayState extends FlxState
 {
     private var registry:Registry = Registry.create();
+
+    // so we can double use direction buttons, mostly
+    private var secondButton:Bool = false;
+    private var firstText:String = "";
+
 
     // This makes me angry.
     private var outBuffer:Array<String> = [];
@@ -66,8 +75,8 @@ class PlayState extends FlxState
 
         // add player to environment
         // TODO: don't hardcode this, move to file
-        this.env.player.location = this.env.getRoom(0);
-        this.env.player.location.insert(this.env.player);
+        this.env.player.location = this.env.rooms.get(0);
+        this.env.player.location.inventory.add(this.env.player);
         this.env.player.location.describe(this.env);
         this.location.text = this.env.player.location.name;
     }
@@ -89,6 +98,10 @@ class PlayState extends FlxState
         // this.env.commands.push(new TeleportExpression());
         this.env.commands.push(new MoveExpression());
         this.env.commands.push(new LookExpression());
+        this.env.commands.push(new GetExpression());
+        this.env.commands.push(new InventoryExpression());
+        this.env.commands.push(new DropExpression());
+        this.env.commands.push(new UnlockExpression());
     }
 
     /**
@@ -162,6 +175,9 @@ class PlayState extends FlxState
         // common action rack buttons
         var button_look:Button = _ui.findComponent("button_look", Button);
         button_look.onClick    = this.onPress_button_look;
+
+        var button_unlock:Button = _ui.findComponent("button_unlock", Button);
+        button_unlock.onClick    = this.onPress_button_unlock;
         
     }
 
@@ -281,68 +297,102 @@ class PlayState extends FlxState
         this.cin.text = "> ";
     }
 
+    private function handleMoveButton(str:String):Void
+    {
+        if (this.secondButton)
+        {
+            this.handleButton(this.firstText + str);
+            this.firstText = "";
+            this.secondButton = false;
+        }
+        else
+        {
+            this.handleButton("move " + str);
+        }
+    }
+
     private function onPress_button_u(e:UIEvent):Void
     {
-        this.handleButton("move up");
+        this.handleMoveButton("up");
     }
 
     private function onPress_button_d(e:UIEvent):Void
     {
-        this.handleButton("move down");
+        this.handleMoveButton("down");
     }
 
     private function onPress_button_n(e:UIEvent):Void
     {
-        this.handleButton("move north");
+        this.handleMoveButton("north");
     }
 
     private function onPress_button_ne(e:UIEvent):Void
     {
-        this.handleButton("move northeast");
+        this.handleMoveButton("northeast");
     }
 
     private function onPress_button_e(e:UIEvent):Void
     {
-        this.handleButton("move east");
+        this.handleMoveButton("east");
     }
 
     private function onPress_button_se(e:UIEvent):Void
     {
-        this.handleButton("move southeast");
+        this.handleMoveButton("southeast");
     }
 
     private function onPress_button_s(e:UIEvent):Void
     {
-        this.handleButton("move south");
+        this.handleMoveButton("south");
     }
 
     private function onPress_button_sw(e:UIEvent):Void
     {
-        this.handleButton("move southwest");
+        this.handleMoveButton("southwest");
     }
 
     private function onPress_button_w(e:UIEvent):Void
     {
-        this.handleButton("move west");
+        this.handleMoveButton("west");
     }
 
     private function onPress_button_nw(e:UIEvent):Void
     {
-        this.handleButton("move northwest");
+        this.handleMoveButton("northwest");
     }
 
     private function onPress_button_i(e:UIEvent):Void
     {
-        this.handleButton("move in");
+        this.handleMoveButton("in");
     }
 
     private function onPress_button_o(e:UIEvent):Void
     {
-        this.handleButton("move out");
+        this.handleMoveButton("out");
     }
 
     private function onPress_button_look(e:UIEvent):Void
     {
-        this.handleButton("look");
+        if (!this.secondButton)
+        {
+            this.handleButton("look");
+        }
+    }
+
+    private function onPress_button_unlock(e:UIEvent):Void
+    {
+        // oh boy, I hate this ricko.
+        if (this.secondButton)
+        {
+            this.cin.text = "> ";
+            this.firstText = "";
+            this.secondButton = false;
+        }
+        else
+        {
+            this.firstText = "unlock ";
+            this.secondButton = true;
+            this.cin.text = "< SELECT DIRECTION TO UNLOCK, CLICK AGAIN TO CANCEL >";
+        }
     }
 }

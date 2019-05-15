@@ -1,0 +1,107 @@
+-
+  index: -1
+  name: "schema"
+  desc: >-
+    This is the description the player is shown when this is examined closer.
+  alias: # this item's aliases. Note that the item's name gets injected by default, this can be empty
+      - "scheme"
+      - "uh"
+  # properties about keys, literally
+  key:
+    isKey: false # whether this even is a key, if it's not can skip the rest
+    combos: # what combos this key holds - part of how key system works
+      - 42
+  flags:
+    indestructible: false # whether this item is indestructible.
+    key:            false # whether this is a key item (not to be confused with a key)
+    unique:         false # whether this item should spawn exactly once, including placements by spawn
+-
+  index: -2
+  # Reading? - whether we're reading things in code.
+  name: true
+  desc: true
+  alias: false
+  key:
+    isKey: true
+    combos: true
+  flags:
+    indestructible: true
+    key: true
+    unique: true
+-
+  index: 0
+  name: "Gym Staff Key"
+  desc: >-
+    A key you got from Shay, it opens the staff room door at the gym
+  alias:
+    - "key"
+    - "staff key"
+    - "gym key"
+  key:
+    isKey: true 
+    combos:
+      - 314159 # pi, at least to the 9 and without decimal point.
+  flags:
+    indestructible: false
+    key: false
+    unique: false
+-
+  index: 1
+  name: "Ice Cream Shop Backroom key"
+  desc: >-
+    A key you got from Bessie that will let you into the back rooms of the ice
+    cream shop. You're pretty sure this is the same key you had when you worked
+    there.
+  alias:
+    - "key"
+    - "backroom key"
+    - "shop key"
+    - "ice cream key"
+    - "ice cream shop key"
+    - "Bessie's key"
+  key:
+    isKey: true 
+    combos:
+      - 420 # b-b-b-b-blaze it!
+  flags:
+    indestructible: false
+    key: false
+    unique: false
+-
+  index: 2
+  name: "General Store key"
+  desc: >-
+    A key you got after agreeing to help out at the general store.
+  alias:
+    - "key"
+    - "store key"
+    - "warehouse key"
+  key:
+    isKey: true 
+    combos:
+      - 1729 # Ramajudan's number, a taxicab number
+  flags:
+    indestructible: false
+    key: false
+    unique: false
+-
+  index: 3
+  name: "Gym Gold Membership"
+  desc: >-
+    A credit-card sized square of plastic with the gym's logo printed on it and
+    a gold background
+  alias:
+    - "card"
+    - "gym card"
+    - "gym gold card"
+    - "gold card"
+    - "membership card"
+    - "keycard"
+  key:
+    isKey: true 
+    combos:
+      - 8675309 # Jenny's phone number
+  flags:
+    indestructible: false
+    key: false
+    unique: false

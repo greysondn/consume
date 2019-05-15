@@ -4,10 +4,13 @@ import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.map.Transition;
 import net.darkglass.iguttae.gameworld.actor.Compass;
-import net.darkglass.iguttae.exceptions.CompassError;
+import net.darkglass.iguttae.expression.clause.DirectionClause;
 
 class MoveExpression extends BaseExpression
 {
+    // helper for processing directions yo
+    private var dirClause:DirectionClause = new DirectionClause();
+
     public function new()
     {
         // parent
@@ -81,67 +84,38 @@ class MoveExpression extends BaseExpression
 
     override public function eval(input:String, env:Environment, actor:Actor):Void
     {
-        // decipher command
-        var breakPoint:Int  = input.indexOf(" ");
-        var dirStr:String = "";
-        var continueEval:Bool = false;
-    
+        var dirStr:String = this.removeFirstWord(input);
+        var destTran:Transition = this.dirClause.stringToExit(actor, dirStr, env);
 
-        // if the breakpoint even exists - it very well may not
-        if (-1 == breakPoint)
+        // destTran will have an index of -1 if there's a problem.
+        if (destTran.index != -1)
         {
-            // then we should be looking at string already
-            dirStr = input;
-        }
-        else
-        {
-            // break and you got it
-            dirStr = input.substring(breakPoint + 1);
-        }
-
-        // so if this errors, we'll just stop running
-        // scope direction
-        var dirCom:Compass = Compass.NORTH;
-
-        try
-        {
-            dirCom = env.stringToCompass(dirStr);
-            continueEval = true;
-        }
-        catch (e:CompassError)
-        {
-            // we can just put out an error on that
-            env.outStream("Couldn't understand move command (did you type it correctly?)");
-            continueEval = false;
-        }
-
-        // and so it continues, I suppose
-        var destTran:Null<Transition> = null;
-
-        if (continueEval)
-        {
-            // try to get a destination
-            destTran = actor.location.exits[dirCom];
-
-            if (destTran == null)
+            // see if it's locked
+            if (destTran.locked == true)
             {
-                env.outStream("There's no exit in that direction.");
-                continueEval = false;
+                env.outStream("That direction is apparently locked, so you can't go there right now.");
+            }
+            else
+            {
+                // should be fine
+                this.doMove(actor, destTran.target, env);
             }
         }
 
-        if (continueEval)
-        {
+        // end eval, returns void
+    }
+
+    private function doMove(actor:Actor, dest:Actor, env:Environment)
+    {
             // actually move the actor
-            actor.location.remove(actor);
-            actor.location = destTran.target;
-            actor.location.insert(actor);
+            actor.location.inventory.remove(actor);
+            actor.location = dest;
+            actor.location.inventory.add(actor);
 
             // update location
             env.onLocationChange(actor.location.name);
 
             // output new description
             actor.location.describe(env);
-        }
     }
 }

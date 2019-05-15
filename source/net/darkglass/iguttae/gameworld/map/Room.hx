@@ -14,7 +14,7 @@ class Room extends Actor
         super();
 
         // and now... it's a container for room stuff!
-        this.addContainerFor(this.consts.get("container", "room"));
+        this.inventory.containerFor.add(this.consts.get("container", "room"));
     }
 
     override public function describe(env:Environment)
@@ -29,6 +29,47 @@ class Room extends Actor
         // if we ever get scrollback working, or log, this needs changed
         // env.outStream(wrapper + "\n" + this.name + "\n" + wrapper);
         super.describe(env);
+
+        // items
+        this.printItems(env);
+
+        // exits
         env.outStream(this.getExitList(env));
+    }
+
+    public function printItems(env:Environment):Void
+    {
+        var invOut:String = "You see ";
+
+        var tmpOut:Array<String> = [];
+
+        // TODO: MAKE THIS NOT SUCK SO HARD
+        for (i in 0...this.inventory.list().length)
+        {
+            if (!this.inventory.list()[i].isPlayer)
+            {
+                tmpOut.push(this.inventory.list()[i].name);
+            }
+        }
+
+        if (tmpOut.length > 1)
+        {
+            for (i in 0...(tmpOut.length - 1))
+            {
+                invOut = invOut + tmpOut[i] + ", ";
+            }
+
+            invOut = invOut + "and " + tmpOut[tmpOut.length - 1] + ".";
+        }
+        else if (tmpOut.length == 1)
+        {
+            invOut = invOut + tmpOut[0] + ".";
+        }
+        else
+        {
+            invOut = invOut + "no items here.";
+        }
+
+        env.outStream(invOut);
     }
 }

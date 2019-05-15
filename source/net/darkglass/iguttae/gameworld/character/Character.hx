@@ -15,9 +15,12 @@ class Character extends Actor
         super();
 
         // characters are containable in rooms
-        this.addContainableIn(this.consts.get("container", "room"));
+        this.containableIn.add(this.consts.get("container", "room"));
 
-        // characters are containable in stomaches
-        this.addContainableIn(this.consts.get("container", "stomach"));
+        // characters are containable in stomachs
+        this.containableIn.add(this.consts.get("container", "stomach"));
+
+        // characters can hold things in inventories, whee!
+        this.inventory.containerFor.add(this.consts.get("container", "inventory"));
     }
 }

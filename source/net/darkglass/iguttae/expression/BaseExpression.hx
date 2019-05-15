@@ -2,6 +2,7 @@ package net.darkglass.iguttae.expression;
 
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.Entity;
 
 /**
  * Simple expression to base every other expression on
@@ -81,6 +82,53 @@ class BaseExpression
             {
                 ret = true;
             }
+        }
+
+        // end
+        return ret;
+    }
+
+    public function removeFirstWord(input:String):String
+    {
+        var ret:String = "";
+
+        var breakPoint:Int  = input.indexOf(" ");
+
+        // if the breakpoint even exists - it very well may not
+        if (-1 == breakPoint)
+        {
+            // just return the string
+            ret = input;
+        }
+        else
+        {
+            // break it off!
+            ret = input.substring(breakPoint + 1);
+        }
+
+        return ret;
+    }
+
+    /**
+     * Makes sure the next thing is at least one of what is expected.
+     * 
+     * @param input     input to check next
+     * @param expected  array of things that can go here
+     * @return Bool     whether that's next
+     */
+    public function isNextOrFalse(input:String, expected:Array<String>):Bool
+    {
+        // break it up
+        var swp:Array<String> = input.split(" ");
+        
+        // ret
+        var ret:Bool = true;
+
+        // now check if the first member matches
+        if (-1 == expected.indexOf(swp[0]))
+        {
+                // not there
+                ret = false;
         }
 
         // end

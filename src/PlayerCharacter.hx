@@ -121,7 +121,7 @@ class PlayerCharacter {
 	
 	public var quest:Array<Dynamic> = [0, 0, 0, 0, 0];
 	// Outdated, use invObject
-	public var invObject:Array<Dynamic> = new Array();
+	// public var invObject:Array<Dynamic> = new Array();
 	public var equipWepObj:MyItem_Weapon;
 	public var equipArmObj:MyItem_Armor;
 	

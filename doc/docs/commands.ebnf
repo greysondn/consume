@@ -1,0 +1,56 @@
+/* This is meant to be used with */
+/* https://www.bottlecaps.de/rr/ui */
+/* to visualize the command syntax */
+
+/* Just the basic user characters */
+
+CHAR       ::= [a-zA-Z]
+TERMINATOR ::= 'NEWLINE'
+INT        ::= [0-9]+
+WORD       ::= CHAR+
+
+/* objects which exist */
+
+NAME ::= WORD+
+
+/* Clauses that are used in multiple player commands */
+
+DIRECTION ::= ((n | ne | e | se | s | sw | w | nw | u | d | i | o) | (north | northeast | east | southeast | south | southwest | west | northwest | up | down| in | out))
+ITEM ::= NAME /* alias with intent */
+
+/* Actual player commands */
+
+DropExpression      ::= ('d' | 'drop') ITEM
+GetExpression       ::= ('g' | 'get')  ITEM
+HelpExpression      ::= 'help'
+InventoryExpression ::= ('i' | 'inventory')
+LockExpression      ::= 'lock' DIRECTION ('with' ITEM)?
+LookExpression      ::= ('l' | 'look')
+MoveExpression      ::= ('go' DIRECTION) | DIRECTION
+UnlockExpression    ::= 'unlock' DIRECTION ('with' ITEM)?
+
+/* Debug commands */
+EchoExpression      ::= 'echo' WORD+
+TeleportExpression  ::= 'teleport' INT
+
+/* Interpreter commands, non-player */
+/* wait nothing here? */
+
+/* And bringing it all together */
+PlayerExpression ::= (
+                         DropExpression      |
+                         GetExpression       |
+                         HelpExpression      |
+                         InventoryExpression |
+                         LockExpression      |
+                         LookExpression      |
+                         MoveExpression      |
+                         UnlockExpression
+                     )
+
+DebugExpression ::=  (
+                         EchoExpression      |
+                         TeleportExpression
+                     )
+
+Command ::= (PlayerExpression | DebugExpression) Terminator
