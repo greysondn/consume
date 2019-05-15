@@ -3,18 +3,6 @@ class MySpecies
     public function newSpecies(data:Array<Dynamic>)
     {
         name = data[0];                     // name
-        legs = data[5];                     // parts.desc.legs
-        arms = data[6];                     // parts.desc.arms
-        hands = data[7];                    // parts.desc.hands
-        feet = data[8];                     // parts.desc.feet
-        minHeight = data[9];                // measures.height.min
-        maxHeight = data[10];               // measures.height.max
-        minWeight = data[11];               // measures.weight.min
-        maxWeight = data[12];               // measures.weight.max
-        minChest = data[13];                // measures.chest.min
-        maxChest = data[14];                // measures.chest.max
-        minWaist = data[15];                // measures.waist.min
-        maxWaist = data[16];                // measures.waist.max
         minHips = data[17];                 // measures.hips.min
         maxHips = data[18];                 // measures.hips.max
         minButt = data[19];                 // measures.butt.min
@@ -40,6 +28,5 @@ class MySpecies
         stretchAmountBowels = data[39];     // start.stretch.amount.bowels
         stretchAmountMilk = data[40];       // start.stretch.amount.breasts
         stretchAmountCum = data[41];        // start.stretch.amount.testes
-        sphincter = data[42];               // parts.desc.sphincter
     }
 }

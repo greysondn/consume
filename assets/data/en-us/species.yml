@@ -215,60 +215,60 @@
       arms:      arms
       hands:     handpaws
       feet:      footpaws
-      sphincter: 
+      sphincter: tailhole
     optional:
       tail:
         has:  true
         desc: large fluffy
   measures:
     height:
-      min: 
-      max: 
+      min: 60
+      max: 69
     weight:
-      min: 
-      max: 
+      min: 85
+      max: 100
     chest:
-      min: 
-      max: 
+      min: 22
+      max: 26
     waist:
-      min: 
-      max: 
+      min: 20
+      max: 25
     hips:
-      min: 
-      max: 
+      min: 20
+      max: 24
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 3
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 8.0
+      balls:   0.5
+      erect:   3.0
       penis:
-        length: 
-        width:  
+        length: 3
+        width:  1.5
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 15
+      bowels:  15
+      breast:   2.5
+      testes:   2
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:    4.0
+      milk:   0.3
+      spunk:  0.4
     digestion:
-      damage: 
+      damage: 0.2
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  15
+        bowels:   10
+        breasts:  15
+        testes:   20
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  15
+        bowels:   15
+        breasts:   1.5
+        testes:    2
 -
   index: 2
   name: Dragon
@@ -280,60 +280,60 @@
       arms:      arms
       hands:     claws
       feet:      feet
-      sphincter: 
+      sphincter: tailhole
     optional:
       tail:
         has:  true
         desc: thick scaly
   measures:
     height:
-      min: 
-      max: 
+      min: 78
+      max: 82
     weight:
-      min: 
-      max: 
+      min: 150
+      max: 210
     chest:
-      min: 
-      max: 
+      min: 30
+      max: 38
     waist:
-      min: 
-      max: 
+      min: 28
+      max: 37
     hips:
-      min: 
-      max: 
+      min: 30
+      max: 34
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 4
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 10
+      balls:   1
+      erect:   3.5
       penis:
-        length: 
-        width:  
+        length: 6
+        width:  2
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 30
+      bowels:  20
+      breast:  4
+      testes:  4
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:   6
+      milk:  1.5
+      spunk: 0.7
     digestion:
-      damage: 
+      damage: 0.5
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach: 40 
+        bowels:   10
+        breasts:  5
+        testes:   5
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  40
+        bowels:   5
+        breasts:  10
+        testes:   2
 -
   index: 3
   name: Wolf
@@ -345,24 +345,24 @@
       arms:      arms
       hands:     handpaws
       feet:      footpaws
-      sphincter: 
+      sphincter: tailhole
     optional:
       tail:
         has:  true
         desc: thin fluffy
   measures:
     height:
-      min: 
-      max: 
+      min: 63
+      max: 72
     weight:
-      min: 
-      max: 
+      min: 100
+      max: 150
     chest:
-      min: 
-      max: 
+      min: 26
+      max: 32
     waist:
-      min: 
-      max: 
+      min: 26
+      max: 31
     hips:
       min: 
       max: 
@@ -406,28 +406,28 @@
     desc:
       skin:      skin
       mouth:     muzzle
-      legs:      
-      arms:      
-      hands:     
-      feet:      
-      sphincter: 
+      legs:      legs
+      arms:      arms
+      hands:     handhoofs
+      feet:      foothoofs
+      sphincter: tailhole
     optional:
       tail:
         has:  true
         desc: thin whiplike
   measures:
     height:
-      min: 
-      max: 
+      min: 65
+      max: 80
     weight:
-      min: 
-      max: 
+      min: 160
+      max: 210
     chest:
-      min: 
-      max: 
+      min: 34
+      max: 36
     waist:
-      min: 
-      max: 
+      min: 30
+      max: 31
     hips:
       min: 
       max: 
@@ -471,28 +471,28 @@
     desc:
       skin:      fur
       mouth:     muzzle
-      legs:      
-      arms:      
-      hands:     
-      feet:      
-      sphincter: 
+      legs:      legs
+      arms:      arms
+      hands:     handpaws
+      feet:      footpaws
+      sphincter: tailhole
     optional:
       tail:
         has:  true
         desc: long fluffy
   measures:
     height:
-      min: 
-      max: 
+      min: 64
+      max: 73
     weight:
-      min: 
-      max: 
+      min: 95
+      max: 100
     chest:
-      min: 
-      max: 
+      min: 22
+      max: 31
     waist:
-      min: 
-      max: 
+      min: 18
+      max: 31
     hips:
       min: 
       max: 
@@ -536,28 +536,28 @@
     desc:
       skin:      fur
       mouth:     muzzle
-      legs:      
-      arms:      
-      hands:     
-      feet:      
-      sphincter: 
+      legs:      legs
+      arms:      arms
+      hands:     handpaws
+      feet:      footpaws
+      sphincter: tailhole
     optional:
       tail:
         has:  true
         desc: thin hairless
   measures:
     height:
-      min: 
-      max: 
+      min: 55
+      max: 59
     weight:
-      min: 
-      max: 
+      min: 70
+      max: 85
     chest:
-      min: 
-      max: 
+      min: 20
+      max: 25
     waist:
-      min: 
-      max: 
+      min: 18
+      max: 24
     hips:
       min: 
       max: 
