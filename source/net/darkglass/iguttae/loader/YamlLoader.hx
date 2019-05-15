@@ -272,7 +272,7 @@ class YamlLoader
 
                 // flags
                 swp.isIndestructible = entry.get("flags").get("indestructible");
-                swp.isKey            = entry.get("flags").get("key");
+                swp.isKeyItem        = entry.get("flags").get("key");
                 swp.isUnique         = entry.get("flags").get("unique");
 
                 // push into env
