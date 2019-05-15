@@ -1,20 +1,19 @@
 This is a preview of a engine overhaul and port for Consume, a vore-themed Flash game. It is not a complete game. If you want a playable version, Genko's last version was 0.52 ... and the next planned fully playable version is 0.54.
 
+[h2]Community Note[/h2]
+Please post new bugs into the subreddit. I'm going to delete and ignore ones posted on Furaffinity from now on. (We still aren't taking feature and content requests, but when we do, it will be in the reddit as well.)
+
+There is no triage system for FA comments and I worry with how many watches I've gotten since starting this project that it's going to get messy if I don't rein it in early to somewhere that I can triage things properly.
+
+You're always more than welcome to leave general comments on FA, or to give me a gentle poke to make sure I'm still alive. I usually try to dump some quick notes on status when I reply to comments anyway.
+
 [h2]New Features (Port)[/h2]
 
-* the map properly linked together  
-* Tthe ability to move around the map
-* an entire goddamn text parser, what do you want from me? These things take time!
-* a look command
-* literally nothing else new 
-
-[h2]Accepted Input For This Version[/h2]
-
-If you find typos or unnamed exits from rooms in the list at the bottom of the room's description, let me know over on Reddit. https://www.reddit.com/r/ConsumeGame/
-
-I don't think there are any other bugs, but you're welcome to report them if you find any. I'm not accepting input on missing features or requests for new features at this time.
-
-Reddit is the place for bugs. I'm ignoring ones pointed out on FA when my brain's working and I remember I have a dedicated place for them.
+* Basic inventory
+* Working  keys - I dropped them near where they're needed. You can just pick them up.
+* Locked doors - and yes, you can unlock them! You'll need the key, though.
+* Upstream work gave us a scrollbar. Yes, it's a little iffy. It works.
+* Literally nothing else... sorta.
 
 [h2]Links to Know Exist for Consume on Reddit[/h2]
 
@@ -25,10 +24,8 @@ Reddit is the place for bugs. I'm ignoring ones pointed out on FA when my brain'
 
 [h2]Things Planned for the Next Preview[/h2]
 
-* Basic inventory
-* Only items planned are (working) keys
-* Locked doors (if you've been around, you know which ones)
-* Literally nothing else
+* Haven't decided, honestly. I know a lot is missing, but it requires me to sit down and think about it some.
+* The same upstream work that gave us a scroll bar might make copying out text possible. I'll look into it.
 
 [h2]Things Planned for a Future Version[/h2]
 
@@ -45,12 +42,15 @@ The long term roadmap sees us having the same features Genko had when he abandon
 Consume's Reddit: Bug reports and community space
 https://www.reddit.com/r/ConsumeGame/
 
-My discord: linked to my repo so you can see when I'm working
-https://discord.gg/Yu4WAAT
-
-Genko's discord (assign yourself a role!): probably the best place to catch either of us if you want to socialize
+Consume's discord (assign yourself a role!): probably the best place to catch either of us if you want to socialize
 https://discord.gg/yax5H3Q
+
+Drop in on Genko's twitch streams sometime! His schedule is on his stream page.
+https://www.twitch.tv/sillysnowfox
 
 [h2]The Last Word[/h2]
 
-Sure as the room is turning cold.
+Far be it for I
+To leave all this beauty behind;
+I will remain
+To watch you wither away
