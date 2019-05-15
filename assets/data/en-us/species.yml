@@ -142,7 +142,7 @@
         testes:   false 
 -
   index: 0
-  name: 
+  name: Human
   parts:
     desc:
       skin:      
@@ -154,8 +154,7 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  false
   measures:
     height:
       min: 
@@ -207,7 +206,7 @@
         testes:   
 -
   index: 1
-  name: 
+  name: Fox
   parts:
     desc:
       skin:      
@@ -219,8 +218,8 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  true
+        desc: large fluffy
   measures:
     height:
       min: 
@@ -272,7 +271,7 @@
         testes:   
 -
   index: 2
-  name: 
+  name: Dragon
   parts:
     desc:
       skin:      
@@ -284,8 +283,8 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  true
+        desc: thick scaly
   measures:
     height:
       min: 
@@ -337,7 +336,7 @@
         testes:   
 -
   index: 3
-  name: 
+  name: Wolf
   parts:
     desc:
       skin:      
@@ -349,8 +348,8 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  true
+        desc: thin fluffy
   measures:
     height:
       min: 
@@ -402,7 +401,7 @@
         testes:   
 -
   index: 4
-  name: 
+  name: Bovine
   parts:
     desc:
       skin:      
@@ -414,8 +413,8 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  true
+        desc: thin whiplike
   measures:
     height:
       min: 
@@ -467,7 +466,7 @@
         testes:   
 -
   index: 5
-  name: 
+  name: Tiger
   parts:
     desc:
       skin:      
@@ -479,8 +478,8 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  true
+        desc: long fluffy
   measures:
     height:
       min: 
@@ -532,7 +531,7 @@
         testes:   
 -
   index: 6
-  name: 
+  name: Rat
   parts:
     desc:
       skin:      
@@ -544,8 +543,8 @@
       sphincter: 
     optional:
       tail:
-        has:  
-        desc: 
+        has:  true
+        desc: thin hairless
   measures:
     height:
       min: 

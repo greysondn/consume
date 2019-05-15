@@ -3,9 +3,6 @@ class MySpecies
     public function newSpecies(data:Array<Dynamic>)
     {
         name = data[0];                     // name
-        skin = data[1];                     // parts.desc.skin
-        tail = data[2];                     // parts.tail.has
-        taliDesc = data[3];                 // parts.tail.desc
         mouth = data[4];                    // parts.desc.mouth
         legs = data[5];                     // parts.desc.legs
         arms = data[6];                     // parts.desc.arms
