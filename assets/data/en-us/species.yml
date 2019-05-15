@@ -145,7 +145,7 @@
   name: Human
   parts:
     desc:
-      skin:      
+      skin:      skin
       mouth:     
       legs:      
       arms:      
@@ -209,7 +209,7 @@
   name: Fox
   parts:
     desc:
-      skin:      
+      skin:      fur
       mouth:     
       legs:      
       arms:      
@@ -274,7 +274,7 @@
   name: Dragon
   parts:
     desc:
-      skin:      
+      skin:      scales
       mouth:     
       legs:      
       arms:      
@@ -339,7 +339,7 @@
   name: Wolf
   parts:
     desc:
-      skin:      
+      skin:      fur
       mouth:     
       legs:      
       arms:      
@@ -404,7 +404,7 @@
   name: Bovine
   parts:
     desc:
-      skin:      
+      skin:      skin
       mouth:     
       legs:      
       arms:      
@@ -469,7 +469,7 @@
   name: Tiger
   parts:
     desc:
-      skin:      
+      skin:      fur
       mouth:     
       legs:      
       arms:      
@@ -534,7 +534,7 @@
   name: Rat
   parts:
     desc:
-      skin:      
+      skin:      fur
       mouth:     
       legs:      
       arms:      
