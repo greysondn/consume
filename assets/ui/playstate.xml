@@ -53,6 +53,7 @@
 
             <!-- common action rack -->
             <button id="button_look" left="210" top="16" width="48" height="24">LOOK</button>
+            <button id="button_unlock" left="210" top="52" width="48" height="24">UNLOCK</button>
         </absolute>
     </absolute>
 </absolute>
