@@ -29,6 +29,8 @@ import net.darkglass.iguttae.expression.InventoryExpression;
 import net.darkglass.iguttae.expression.DropExpression;
 import net.darkglass.iguttae.expression.UnlockExpression;
 
+import net.darkglass.iguttae.gameworld.actor.Actor;
+
 import net.darkglass.iguttae.loader.YamlLoader;
 
 class PlayState extends FlxState
@@ -75,7 +77,7 @@ class PlayState extends FlxState
 
         // add player to environment
         // TODO: don't hardcode this, move to file
-        this.env.player.location = this.env.rooms.get(0);
+        this.env.player.location = cast(this.env.rooms.get(0), Actor);
         this.env.player.location.inventory.add(this.env.player);
         this.env.player.location.describe(this.env);
         this.location.text = this.env.player.location.name;

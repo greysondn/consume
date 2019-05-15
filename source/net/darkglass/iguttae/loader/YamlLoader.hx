@@ -184,8 +184,8 @@ class YamlLoader
                 }
 
                 // get the two rooms
-                var leftR:Actor  = env.rooms.get(entry.get("rooms").get("left").get("index"));
-                var rightR:Actor = env.rooms.get(entry.get("rooms").get("right").get("index"));
+                var leftR:Actor  = cast(env.rooms.get(entry.get("rooms").get("left").get("index")), Actor);
+                var rightR:Actor = cast(env.rooms.get(entry.get("rooms").get("right").get("index")), Actor);
 
                 // set targets
                 swpL.target = rightR;
@@ -309,7 +309,7 @@ class YamlLoader
                 // get location itself
                 if ("room" == locType)
                 {
-                    loc = env.rooms.get(locIndex);
+                    loc = cast(env.rooms.get(locIndex), Actor);
                 }
                 else
                 {
@@ -320,7 +320,7 @@ class YamlLoader
                 if ("item" == objType)
                 {
                     // well, yes, but...
-                    var toCheck:Actor = env.items.get(objIndex);
+                    var toCheck:Actor = cast(env.items.get(objIndex), Actor);
 
                     // can we clone it?
                     if (toCheck.canClone())

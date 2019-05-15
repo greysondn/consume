@@ -4,6 +4,7 @@ import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Player;
 import net.darkglass.iguttae.enums.Verbosity;
+import net.darkglass.iguttae.gameworld.container.IndexedEntityContainer;
 
 class Environment
 {
@@ -15,17 +16,17 @@ class Environment
     /**
      * All actors in the game
      */
-    public var actors:ActorArray = new ActorArray();
+    public var actors:IndexedEntityContainer = new IndexedEntityContainer();
 
     /**
      * All items in the game
      */
-    public var items:ActorArray = new ActorArray();
+    public var items:IndexedEntityContainer = new IndexedEntityContainer();
 
     /**
      * All rooms in the game. Because they're indexed.
      */
-    public var rooms:ActorArray  = new ActorArray();
+    public var rooms:IndexedEntityContainer  = new IndexedEntityContainer();
 
     /**
      * This is meant to be an output stream to dump text into
@@ -71,8 +72,8 @@ class Environment
      */
     public function new()
     {
-        this.rooms.metaList = this.actors;
-        this.items.metaList = this.actors;
+        this.rooms.metacontainer = this.actors;
+        this.items.metacontainer = this.actors;
     }
 
     public function hasCommand(mneumonic:String):Bool
