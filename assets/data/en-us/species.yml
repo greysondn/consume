@@ -146,75 +146,75 @@
   parts:
     desc:
       skin:      skin
-      mouth:     
-      legs:      
-      arms:      
-      hands:     
-      feet:      
-      sphincter: 
+      mouth:     mouth
+      legs:      legs
+      arms:      arms
+      hands:     hands
+      feet:      feet
+      sphincter: asshole
     optional:
       tail:
         has:  false
   measures:
     height:
-      min: 
-      max: 
+      min: 63
+      max: 72
     weight:
-      min: 
-      max: 
+      min: 90
+      max: 140
     chest:
-      min: 
-      max: 
+      min: 24
+      max: 30
     waist:
-      min: 
-      max: 
+      min: 22
+      max: 29
     hips:
-      min: 
-      max: 
+      min: 22
+      max: 26
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 2
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 3.0
+      balls:   0.5
+      erect:   2.0
       penis:
-        length: 
-        width:  
+        length: 4.0
+        width:  1.0
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 20
+      bowels:  10
+      breast:   3
+      testes:   1
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:   5.0
+      milk:  0.5
+      spunk: 0.1
     digestion:
-      damage: 
+      damage: 0.1
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  30
+        bowels:   20
+        breasts:  20
+        testes:   15
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach: 20.0
+        bowels:  10.0
+        breasts:  1.0
+        testes:   0.5
 -
   index: 1
   name: Fox
   parts:
     desc:
       skin:      fur
-      mouth:     
-      legs:      
-      arms:      
-      hands:     
-      feet:      
+      mouth:     muzzle
+      legs:      legs
+      arms:      arms
+      hands:     handpaws
+      feet:      footpaws
       sphincter: 
     optional:
       tail:
@@ -275,11 +275,11 @@
   parts:
     desc:
       skin:      scales
-      mouth:     
-      legs:      
-      arms:      
-      hands:     
-      feet:      
+      mouth:     maw
+      legs:      legs
+      arms:      arms
+      hands:     claws
+      feet:      feet
       sphincter: 
     optional:
       tail:
@@ -340,11 +340,11 @@
   parts:
     desc:
       skin:      fur
-      mouth:     
-      legs:      
-      arms:      
-      hands:     
-      feet:      
+      mouth:     muzzle
+      legs:      legs
+      arms:      arms
+      hands:     handpaws
+      feet:      footpaws
       sphincter: 
     optional:
       tail:
@@ -405,7 +405,7 @@
   parts:
     desc:
       skin:      skin
-      mouth:     
+      mouth:     muzzle
       legs:      
       arms:      
       hands:     
@@ -470,7 +470,7 @@
   parts:
     desc:
       skin:      fur
-      mouth:     
+      mouth:     muzzle
       legs:      
       arms:      
       hands:     
@@ -535,7 +535,7 @@
   parts:
     desc:
       skin:      fur
-      mouth:     
+      mouth:     muzzle
       legs:      
       arms:      
       hands:     
