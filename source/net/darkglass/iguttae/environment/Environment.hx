@@ -4,8 +4,6 @@ import net.darkglass.iguttae.expression.BaseExpression;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Player;
 import net.darkglass.iguttae.enums.Verbosity;
-import net.darkglass.iguttae.gameworld.actor.Compass;
-import net.darkglass.iguttae.exceptions.CompassError;
 
 class Environment
 {
@@ -74,7 +72,7 @@ class Environment
     public function new()
     {
         this.rooms.metaList = this.actors;
-        this.items.metaList = this.items;
+        this.items.metaList = this.actors;
     }
 
     public function hasCommand(mneumonic:String):Bool
