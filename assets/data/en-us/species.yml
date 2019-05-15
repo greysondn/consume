@@ -1,0 +1,142 @@
+-
+  index: -1
+  # this is one file where it may be easier to look at others for examples
+  name: "schema" # species name
+  parts:
+    desc:
+      # bunch of descriptors
+      skin:   "skin"         # skin, fur, feathers, scales...
+      mouth:  "mouth"        # mouth, muzzle, beak...
+      legs:   "legs"         # legs
+      arms:   "arms"         # arms
+      hands:  "hands"        # hands
+      feet:   "feet"         # feet
+      sphincter: "bootyhole" # bootyhole
+    optional:
+      # optional body parts
+      tail:
+        # tail
+        has: False # whether species even has a tail
+        desc: "descriptor" # descriptor for tail
+  measures:
+    # measurements
+    height:
+      min:   1  # shortest possible (Female)
+      max: 100  # tallest  possible (Male)
+    weight:
+      min:   1  # lightest possible (female)
+      max: 100  # heaviest possible (male)
+    chest:
+      min:   1  # smallest chest measure (female)
+      max: 100  # largest chest measure (male)
+    waist:
+      min:   1  # narrowest (female)
+      max: 100  # thickest  (male)
+    hips:
+      min:   1  # slimmest (male)
+      max: 100  # widest   (female)
+    butt:
+      min:   1  # smallest (male)
+      max: 100  # largest (female)
+  start:
+    # starting stats
+    measures:
+      breasts: 1
+      balls:   1
+      erect:   1 # erection multiplier
+      penis:
+        length: 1
+        width:  1
+    capacity:
+      stomach: 1
+      bowels:  1
+      breast:  1 # milk
+      testes:  1 # spunk
+    gains:
+      fat:  1
+      milk: 1
+      spunk: 1
+    digestion:
+      # how much damage per tick (minute) player's stomach does to
+      # consumed objects
+      damage: 1 
+    stretch:
+      time:
+        # how many ticks (minutes) need to be over capacity to stretch larger
+        # for each
+        stomach:  1
+        bowels:   1
+        breasts:  1
+        testes:   1
+      amount:
+        # how much it stretches on stretch
+        stomach:  1
+        bowels:   1
+        breasts:  1
+        testes:   1
+-
+  index: -2
+  # Reading? - whether we're reading things in code.
+  name: false
+  parts:
+    desc:
+      skin:      false
+      mouth:     false
+      legs:      false
+      arms:      false
+      hands:     false
+      feet:      false
+      sphincter: false
+    optional:
+      tail:
+        has:  false
+        desc: false
+  measures:
+    height:
+      min: false
+      max: false
+    weight:
+      min: false
+      max: false
+    chest:
+      min: false
+      max: false
+    waist:
+      min: false
+      max: false
+    hips:
+      min: false
+      max: false
+    butt:
+      min: false
+      max: false
+  start:
+    measures:
+      breasts: false
+      balls:   false
+      erect:   false
+      penis:
+        length: false
+        width:  false
+    capacity:
+      stomach: false
+      bowels:  false
+      breast:  false
+      testes:  false
+    gains:
+      fat:  false
+      milk: false
+      spunk: false
+    digestion:
+      damage: false 
+    stretch:
+      time:
+        stomach:  false
+        bowels:   false
+        breasts:  false
+        testes:   false
+      amount:
+        stomach:  false
+        bowels:   false
+        breasts:  false
+        testes:   false
