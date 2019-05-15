@@ -110,7 +110,7 @@ class Entity
      * As in this is just a prototype with frills. Make sure you canClone()
      * first. This won't try to stop you if you fail to check for yourself!
      * 
-     * @return Actor a clone of this actor
+     * @return Actor a clone of this entity
      */
     public function clone():Entity
     {
