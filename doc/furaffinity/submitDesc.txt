@@ -18,8 +18,8 @@ You're always more than welcome to leave general comments on FA, or to give me a
 [h2]Links to Know Exist for Consume on Reddit[/h2]
 
 [url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BBug%20Report%5D%22%20and%20flair%3A%22%5BKnown%5D%22&restrict_sr=1]Known Bugs[/url]
-[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BFixed%5D%22%20and%20flair%3A%22%5B0.53pre3%5D%22&restrict_sr=1]Fixed bugs since last preview[/url]
-[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BFixed%5D%22%20and%20flair%3A%22%5B0.53pre4%5D%22&restrict_sr=1]Bugs already fixed for next preview[/url]
+[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BFixed%5D%22%20and%20flair%3A%22%5B0.53pre4%5D%22&restrict_sr=1]Fixed bugs since last preview[/url]
+[url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BFixed%5D%22%20and%20flair%3A%22%5B0.53pre5%5D%22&restrict_sr=1]Bugs already fixed for next preview[/url]
 [url=https://www.reddit.com/r/ConsumeGame/search?q=flair%3A%22%5BBug%20Report%5D%22&restrict_sr=1]All bugs in the subreddit[/url]
 
 [h2]Things Planned for the Next Preview[/h2]
