@@ -364,41 +364,41 @@
       min: 26
       max: 31
     hips:
-      min: 
-      max: 
+      min: 28
+      max: 28
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 2
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 4
+      balls:   1
+      erect:   2
       penis:
-        length: 
-        width:  
+        length: 5
+        width:  2.5
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 25
+      bowels:  10
+      breast:   5
+      testes:   1
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:   3
+      milk:  1
+      spunk: 2
     digestion:
-      damage: 
+      damage: 1
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  30
+        bowels:   20
+        breasts:  10
+        testes:   10
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  30
+        bowels:   10
+        breasts:  10
+        testes:    5
 -
   index: 4
   name: Bovine
@@ -429,41 +429,41 @@
       min: 30
       max: 31
     hips:
-      min: 
-      max: 
+      min: 30
+      max: 46
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 6
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 9
+      balls:   2.5
+      erect:   4
       penis:
-        length: 
-        width:  
+        length: 8
+        width:  3
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 40
+      bowels:  30
+      breast:  10
+      testes:   6
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:   10
+      milk:   3
+      spunk:  0.2
     digestion:
-      damage: 
+      damage: 1
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  20
+        bowels:   15
+        breasts:  15
+        testes:   10
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  50
+        bowels:   20
+        breasts:  20
+        testes:   10
 -
   index: 5
   name: Tiger
@@ -494,41 +494,41 @@
       min: 18
       max: 31
     hips:
-      min: 
-      max: 
+      min: 29
+      max: 32
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 5
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 2
+      balls:   1
+      erect:   2
       penis:
-        length: 
-        width:  
+        length: 4
+        width:  2
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 25
+      bowels:  20
+      breast:   3
+      testes:   3
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:   2
+      milk:  1
+      spunk: 0.3
     digestion:
-      damage: 
+      damage: 0.6
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  40
+        bowels:   30
+        breasts:  30
+        testes:   15
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  5
+        bowels:   10
+        breasts:  5
+        testes:   2
 -
   index: 6
   name: Rat
@@ -559,38 +559,38 @@
       min: 18
       max: 24
     hips:
-      min: 
-      max: 
+      min: 20
+      max: 25
     butt:
-      min: 
-      max: 
+      min: 1
+      max: 2
   start:
     measures:
-      breasts: 
-      balls:   
-      erect:   
+      breasts: 1
+      balls:   0.25
+      erect:   1.5
       penis:
-        length: 
-        width:  
+        length: 2
+        width:  1
     capacity:
-      stomach: 
-      bowels:  
-      breast:  
-      testes:  
+      stomach: 50
+      bowels:  10
+      breast:   3
+      testes:   2
     gains:
-      fat:  
-      milk: 
-      spunk: 
+      fat:   2
+      milk:  1
+      spunk: 2
     digestion:
-      damage: 
+      damage: 0.5
     stretch:
       time:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  70
+        bowels:   40
+        breasts:  30
+        testes:   10
       amount:
-        stomach:  
-        bowels:   
-        breasts:  
-        testes:   
+        stomach:  20
+        bowels:   20
+        breasts:  10
+        testes:    5

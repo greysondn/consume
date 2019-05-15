@@ -6891,44 +6891,6 @@ class Main {
 	}
 	
 	static function initialize() {
-		var allSpecies:Array<Dynamic> = new Array();
-		var perks:Array<Dynamic> = new Array();
-		var characters:Array<Dynamic> = new Array();
-		var weapons:Array<Dynamic> = new Array();
-		var armor:Array<Dynamic> = new Array();
-		var ring:Array<Dynamic> = new Array();
-		
-		quests = new Array();
-		globals = new GlobalVars();
-		globals.name = "GlobalVars";
-		Lib.current.addChild(globals);
-		
-		AMFConnection.registerClassAlias("consume.playerObject", MyPlayerObject);
-		AMFConnection.registerClassAlias("consume.questObject", MyQuest);
-		AMFConnection.registerClassAlias("consume.perkObject", MyPerk);
-		AMFConnection.registerClassAlias("consume.speciesObject", MySpecies);
-		AMFConnection.registerClassAlias("consume.NPCObject", MyNPC);
-		AMFConnection.registerClassAlias("consume.keyObject", MyItem_Key);
-		AMFConnection.registerClassAlias("consume.weaponObject", MyItem_Weapon);
-		AMFConnection.registerClassAlias("consume.fileSaveObject", MyFileSaveObject);
-		AMFConnection.registerClassAlias("consume.armorObject", MyItem_Armor);
-		AMFConnection.registerClassAlias("consume.ringObject", MyItem_Ring);
-		
-		//Species, both playable and non
-		species = new Array();
-		
-		//							Hips			Butt																		Capacity									Gain
-		//allSpecies = [0 name,		17 min,	18 max, 19 min, 20 max, 21 breasts, 22 penisL,	23 penisW,	24 balls,	25 errect,	26 stomach, 27 bowels,	28 milk,	29 cum, 30 fat, 31 milk, 32 cum, 33 digestDamage,	34 stretchRateStomach,	35 stretchRateBowels,	36 stretchRateMilk, 37 stretchRateCum,	38 stretchAmountStomach,	39 stretchAmountBowels, 40 stretchAmountMilk,	41 stretchAmountCum,
-		allSpecies[3] = ["Wolf",	28,		28,		1,		2,		4,			5,			2.5,		1,			2,			25,			10,			5,			1,		3,		1,		 2,		 1,					30,						20,						10,					10,					30,							10,						10,						5,					];
-		allSpecies[4] = ["Bovine",	30,		46,		1,		6,		9,			8,			3,			2.5,		4,			40,			30,			10,			6,		10,		3,		 .2,	 1,					20,						15,						15,					10,					50,							20,						20,						10,					];
-		allSpecies[5] = ["Tiger",	29,		32,		1,		5,		2,			4,			2,			1,			2,			25,			20,			3,			3,		2,		1,		 .3,	 .6,				40,						30,						30,					15,					5,							10,						5,						2,					];
-		allSpecies[6] = ["Rat",		20,		25,		1,		2,		1,			2,			1,			.25,		1.5,		50,			10,			3,			2,		2,		1,		 2,		 .5,				70,						40,						30,					10,					20,							20,						10,						5,					];
-		
-		for (i in 0...allSpecies.length) {
-			species.push(new MySpecies());
-			species[species.length - 1].newSpecies(allSpecies[i]);
-		}
-		
 		//Perks, even hidden ones
 		globals.perks = new Array();
 		
@@ -6972,23 +6934,10 @@ class Main {
 		perks.push(["ub",	"Unbirth",		"Consume prey using your vagina, then absorb them.",		"UNBIRTH",		false, false]);
 		//other types?
 		
-		for (i in 0...perks.length) {
-			if (perks[i] != null) {
-				globals.perks.push(new MyPerk());
-				globals.perks[globals.perks.length - 1].newPerk(perks[i]);
-			}
-		}
-		
         //Exits
         globals.exits = new Array();
         //                  name                hiddenQuestID
         globals.exits[11] = ["Alley",              0];
-        
-        // Rooms
-        globals.rooms = new Array();
-        // migrated to new code, there was code here that defined most the
-        // contents of rooms/yaml basically.
-        currentRoom = new MyRoom(globals.rooms[0]);
 		
 		//Items
 		
@@ -7010,13 +6959,6 @@ class Main {
 		foods.push(["BouncyButt+", 5, 250, "A bottle of a popular 'health' drink, BouncyButt, that has been modified in some way.", ["heal|.05", "butt|1"], "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little and find there's just a little more bounce then there was before."]);
 		foods.push(["Tub of Ice Cream", 10, 50, "A tub of ice cream from the town's ice cream shop", ["heal|.01"], "You pull the lid off the tub and start scooping the fresh ice cream into your mouth. Despite being unflavored it is delicious and filling, your stomach is quickly full of cold milky goodness."]);
 		
-		for (i in 0...foods.length) {
-			if (foods[i] != null) {
-				globals.food.push(new MyItem_Food());
-				globals.food[globals.food.length - 1].newFood(foods[i]);
-			}
-		}
-		
 		//Weapons
 		globals.weapons = new Array();
 		//Weapons    Name           Mass Value Desc                                   Attack TwoHand Finisher Specials
@@ -7028,12 +6970,6 @@ class Main {
 		weapons.push(["Hammer",       5,   11, "A workman's tool.",                     3,    false, null,    null]);
 		weapons.push(["Sledge",      20,   15, "A heavy hammer made for breaking rocks.", 6,  true,  null,    null]);
 		
-		for (i in 0...weapons.length) {
-			if (weapons[i] != null) {
-				globals.weapons.push(new MyItem_Weapon());
-				globals.weapons[globals.weapons.length - 1].newWeapon(weapons[i]);
-			}
-		}
 		//Armor
 		
 		globals.armor = new Array();
@@ -7042,13 +6978,6 @@ class Main {
 		armor.push(["Leather Jacket", 5, 10, "A thick leather biker's jacket. Not really intended for combat.", 2, null]);
 		armor.push(["Armored Coat", 7, 15, "A heavy leather coat reinforced with hard plastic panels.", 7, null]);
 		armor.push(["Breastplate", 20, 20, "A solid peice of shaped metal. Heavy, but good protection.", 10, null]);
-		
-		for (i in 0...armor.length) {
-			if (armor[i] != null) {
-				globals.armor.push(new MyItem_Armor());
-				globals.armor[globals.armor.length - 1].newArmor(armor[i]);
-			}
-		}
 		
 		globals.rings = new Array();
 		
@@ -7059,12 +6988,6 @@ class Main {
 		ring.push(["Gold Ruby Ring", 0, 75, "A small gold ring set with a professionally cut ruby."]);
 		ring.push(["Electrum Ruby Ring", 0, 55, "A small electrum ring set with a professionally cut ruby."]);
 		
-		for (i in 0...ring.length) {
-			if (ring[i] != null) {
-				globals.rings.push(new MyItem_Ring());
-				globals.rings[globals.rings.length - 1].newRing(ring[i]);
-			}
-		}
 		//Shoplists
 		
 		/* Shop format
