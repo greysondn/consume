@@ -28,6 +28,12 @@ class Transition extends Actor
     public var combo:Int;
 
     /**
+     * Opposite side of this door. Doesn't necessarily have to exist. Will be
+     * locked/unlocked/etc if it does exist.
+     */
+    public var oppositeSide:Transition;
+
+    /**
      * TODO: Document
      *  
      * @param codes 
@@ -111,6 +117,11 @@ class Transition extends Actor
         if (ret)
         {
             this.locked = !this.locked;
+
+            if (null != this.oppositeSide)
+            {
+                this.oppositeSide.locked = !this.oppositeSide.locked;
+            }
         }
         
         return ret;
@@ -129,6 +140,11 @@ class Transition extends Actor
         {
             this.locked = false;
             ret = true;
+
+            if (null != this.oppositeSide)
+            {
+                this.oppositeSide.locked = false;
+            }
         }
 
         return ret;
@@ -142,6 +158,11 @@ class Transition extends Actor
         {
             this.locked = true;
             ret = true;
+
+            if (null != this.oppositeSide)
+            {
+                this.oppositeSide.locked = true;
+            }
         }
 
         return ret;

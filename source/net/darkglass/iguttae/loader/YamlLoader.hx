@@ -219,6 +219,10 @@ class YamlLoader
                 // connect rooms to swaps
                 leftR.addExit(sideL, swpL);
                 rightR.addExit(sideR, swpR);
+
+                // connect swaps to each other
+                swpL.oppositeSide = swpR;
+                swpR.oppositeSide = swpL;
             }
         }
     }
