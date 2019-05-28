@@ -156,7 +156,7 @@ class TitleState extends FlxUIState
 
     public function onClick_faq():Void
     {
-        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000);
+        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000, this);
         openSubState(faqSubstate);
     }
 }

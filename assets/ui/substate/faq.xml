@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<absolute left="23" top="23" width="804" height="594" style="background-color:transparent;">
+    <label left="318" top="9" style="font-size: 70;">FAQ</label>
+    <box left="25" top="25" width="25" height="25" style="background-color:#000000;">
+    </box>
+</absolute>
