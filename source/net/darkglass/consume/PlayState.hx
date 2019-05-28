@@ -4,7 +4,6 @@ import haxe.ui.containers.VBox;
 import haxe.ui.containers.Absolute;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.FlxState;
 import flixel.group.FlxGroup;
 
 import haxe.ui.Toolkit;
@@ -29,11 +28,13 @@ import net.darkglass.iguttae.expression.InventoryExpression;
 import net.darkglass.iguttae.expression.DropExpression;
 import net.darkglass.iguttae.expression.UnlockExpression;
 
+import net.darkglass.util.flixel.FlxHaxeUiState;
+
 import net.darkglass.iguttae.gameworld.actor.Actor;
 
 import net.darkglass.iguttae.loader.YamlLoader;
 
-class PlayState extends FlxState
+class PlayState extends FlxHaxeUiState
 {
     private var registry:Registry = Registry.create();
 
@@ -116,7 +117,7 @@ class PlayState extends FlxState
         this.add(bg);
 
         // init ui loader
-        Toolkit.init({ container : uiGroup });
+        Toolkit.screen.options = { container : uiGroup };
         this.add(this.uiGroup);
         var _ui = ComponentMacros.buildComponent("assets/ui/playstate.xml");
         uiGroup.add(_ui);
