@@ -12,7 +12,6 @@ import openfl.Assets;
 
 import yaml.Yaml;
 import yaml.util.ObjectMap;
-import yaml.util.ObjectMap.TObjectMap;
 
 class YamlLoader 
 {
