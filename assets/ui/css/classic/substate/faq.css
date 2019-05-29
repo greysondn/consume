@@ -1,0 +1,16 @@
+/** if you're in VS-code, setting
+    "css.validate": false
+    may help you maintain sanity here **/
+
+#cout
+{
+    color:#000000;
+    font-size:24;
+    font-name: "assets/fonts/hack.ttf";
+}
+
+#coutcontainer
+{
+    padding: 16px;
+    width: 700;
+}

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <absolute left="23" top="23" width="804" height="594" style="background-color:transparent;">
+    <style source="../css/classic/substate/faq.css" />
     <label left="318" top="9" style="font-size: 70;">FAQ</label>
-    <box left="25" top="25" width="25" height="25" style="background-color:#000000;">
-    </box>
+    <scrollview left="33" top="96" width="738" height="392">
+        <vbox id="coutcontainer">
+            <label id="cout">
+            </label>
+        </vbox>
+    </scrollview>
+    <button id="close" left="32"  top="520" width="738" height="42" style="font-size: 28;">Back</button>
 </absolute>

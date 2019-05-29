@@ -1,75 +1,54 @@
 package net.darkglass.consume.substate;
 
 import flixel.group.FlxGroup;
-import flash.geom.Rectangle;
-
-import flixel.addons.ui.FlxUI9SliceSprite;
-import flixel.addons.ui.FlxUIButton;
-import flixel.addons.ui.FlxUIText;
-
-import flixel.text.FlxText.FlxTextFormat;
+import flixel.FlxSprite;
 
 import net.darkglass.consume.Registry;
-import net.darkglass.consume.ui.Scrollbar;
-import net.darkglass.consume.ui.WaTTY;
-
 import net.darkglass.util.flixel.FlxHaxeUiSubstate;
 
 import haxe.ui.Toolkit;
 import haxe.ui.macros.ComponentMacros;
+import haxe.ui.components.Label;
+import haxe.ui.containers.VBox;
+import haxe.ui.components.Button;
+import haxe.ui.events.UIEvent;
 
 class FAQSubstate extends FlxHaxeUiSubstate
 {
     private var registry:Registry = Registry.create();
     private var uiGroup:FlxGroup = new FlxGroup();
 
-
     override public function create():Void
     {
+        // parent
         super.create();
 
-        var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
-        var slicecoords:Array<Array<Int>>   = registry.gfxset_buttonEnabled_slice;
-
-        var background:FlxUI9SliceSprite = new FlxUI9SliceSprite(23, 23, registry.gfx_bgGeneral, new Rectangle(0, 0, 804, 594), registry.gfx_bgGeneral_slice);
-        this.add(background);
-
-        var textframe:FlxUI9SliceSprite = new FlxUI9SliceSprite(56, 119, registry.gfx_bgGeneral, new Rectangle(0, 0, 706, 391), registry.gfx_bgGeneral_slice);
-        this.add(textframe);
-
-        var wat:WaTTY = new WaTTY(88, 151, 642);
-        wat.setFormat("assets/fonts/hack.ttf", 16, 0x000000);
-        wat.charWidth  = 66;
-        wat.charHeight = 17;
-        this.add(wat);
-
-        var sb:Scrollbar = new Scrollbar(762, 119, 391);
-        sb.minScroll = 183;
-        sb.maxScroll = 414;
-        this.add(sb);
-
-        sb.onScroll        = wat.scrollToPercent;
-        sb.scrollUpOne     = wat.scrollUpOne;
-        sb.scrollDownOne   = wat.scrollDownOne;
-        wat.onLengthChange = sb.updateScrollbarPosition;
-        wat.onLineChange   = sb.updateScrollbarPosition;
-        
-        wat.addText("");
-
-        wat.scrollToLine(96);
-
-        var backButton:FlxUIButton = new FlxUIButton(32, 566, "Back", onClick_back);
-        backButton.loadGraphicSlice9(buttonEnabledGFX, 786, 42, slicecoords, 0, -1);
-        this.add(backButton);
+        // fake bg
+        var bg_faked:FlxSprite = new FlxSprite(23, 23, "assets/images/gui/classic/bg/faq_faked.png");
+        this.add(bg_faked);
 
         // ui toolkit
         Toolkit.screen.options = { container : this.uiGroup };
         this.add(this.uiGroup);
         var _ui = ComponentMacros.buildComponent("assets/ui/substate/faq.xml");
         uiGroup.add(_ui);
+
+        var cout:Label = _ui.findComponent("cout", Label);
+        cout.width = 686;
+
+        var but:Button = _ui.findComponent("close", Button);
+        but.onClick = this.onClick_back;
+
+        // load text from YAML
+        this.loadText(cout);
     }
 
-    private function onClick_back():Void
+    private function loadText(cout:Label):Void
+    {
+        cout.text = "test";
+    }
+
+    private function onClick_back(ignored:UIEvent):Void
     {
         this.close();
     }
