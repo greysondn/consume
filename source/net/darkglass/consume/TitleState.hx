@@ -154,8 +154,6 @@ class TitleState extends FlxUIState
         this.add(optionsButton);
 
         var faqButton:FlxUIButton = new FlxUIButton(190, 512, "FAQ", onClick_faq);
-        faqButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
-        this.add(faqButton);
 
         var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits", onClick_credits);
         creditsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);

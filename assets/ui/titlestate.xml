@@ -15,9 +15,9 @@
     <!-- TODO -->
 
     <!-- Buttons -->
-    <!-- New Game: Todo -->
-    <!-- Load Game: Todo --> 
-    <!-- Options: Todo -->
-    <!-- FAQ: Todo -->
-    <!-- Credits: Todo -->
+    <button id="new"     left="190"  top="356" width="469" height="42" style="font-size: 28;">New Game</button>
+    <!-- <button id="data"    left="190"  top="408" width="469" height="42" style="font-size: 28;">Data/Load</button>-->
+    <button id="options" left="190"  top="460" width="469" height="42" style="font-size: 28;">Options</button>
+    <button id="faq"     left="190"  top="512" width="469" height="42" style="font-size: 28;">FAQ</button>
+    <button id="credits" left="190"  top="564" width="469" height="42" style="font-size: 28;">Credits</button>
 </absolute>
