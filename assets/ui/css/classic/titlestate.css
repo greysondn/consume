@@ -1,0 +1,29 @@
+/** if you're in VS-code, setting
+    "css.validate": false
+    may help you maintain sanity here **/
+#txtoutcontainer
+{
+    padding: 16px;
+    width: 800;
+}
+
+#cout
+{
+    color:#000000;
+    font-size:24;
+    font-name: "assets/fonts/hack.ttf";
+}
+
+#cin
+{
+    color:#000000;
+    font-size:24;
+    font-name: "assets/fonts/hack.ttf";
+}
+
+#location
+{
+    color:#000000;
+    font-size:24;
+    font-name: "assets/fonts/hack.ttf";
+}

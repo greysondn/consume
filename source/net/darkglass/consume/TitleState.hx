@@ -20,6 +20,40 @@ import net.darkglass.consume.substate.PreWarnSubstate;
 
 import yaml.Yaml;
 
+// new version pieces
+import net.darkglass.util.flixel.FlxHaxeUiState;
+import flixel.group.FlxGroup;
+import flixel.FlxSprite;
+import haxe.ui.Toolkit;
+import haxe.ui.macros.ComponentMacros;
+
+class TitleState extends FlxHaxeUiState
+{
+    public var uiGroup:FlxGroup;
+
+    override public function create():Void
+    {
+        // parent
+        super.create();
+
+        // set ui stuffs
+        this.uiGroup = new FlxGroup();
+
+        var bg:FlxSprite = new FlxSprite(0, 0, "assets/images/gui/classic/bg/title_faked.png");
+        this.add(bg);
+
+        // init ui loader
+        Toolkit.screen.options = { container : this.uiGroup };
+        this.add(this.uiGroup);
+        var _ui = ComponentMacros.buildComponent("assets/ui/titlestate.xml");
+        uiGroup.add(_ui);
+
+        // wire up the buttons
+        // TODO, need to get the buttons first
+    }
+}
+
+/**
 class TitleState extends FlxUIState
 {
     override public function create():Void
@@ -160,3 +194,4 @@ class TitleState extends FlxUIState
         openSubState(faqSubstate);
     }
 }
+*/
