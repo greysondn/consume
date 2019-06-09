@@ -26,6 +26,8 @@ import flixel.group.FlxGroup;
 import flixel.FlxSprite;
 import haxe.ui.Toolkit;
 import haxe.ui.macros.ComponentMacros;
+import haxe.ui.components.Button;
+import haxe.ui.events.UIEvent;
 
 class TitleState extends FlxHaxeUiState
 {
@@ -49,12 +51,13 @@ class TitleState extends FlxHaxeUiState
         uiGroup.add(_ui);
 
         // wire up the buttons
-        // TODO, need to get the buttons first
+        var faq =  _ui.findComponent("faq", Button);
+        faq.onClick = this.onClick_faq;
     }
 
-    public function onClick_faq():Void
+    public function onClick_faq(ignored:UIEvent):Void
     {
-        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000, this);
+        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000, this.uiGroup);
         openSubState(faqSubstate);
     }
 }
