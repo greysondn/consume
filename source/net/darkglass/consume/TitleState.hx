@@ -51,6 +51,12 @@ class TitleState extends FlxHaxeUiState
         // wire up the buttons
         // TODO, need to get the buttons first
     }
+
+    public function onClick_faq():Void
+    {
+        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000, this);
+        openSubState(faqSubstate);
+    }
 }
 
 /**
@@ -184,12 +190,6 @@ class TitleState extends FlxUIState
     {
         var creditsSubstate:CreditsSubstate = new CreditsSubstate(0x80000000);
         openSubState(creditsSubstate);
-    }
-
-    public function onClick_faq():Void
-    {
-        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000, this);
-        openSubState(faqSubstate);
     }
 }
 */
