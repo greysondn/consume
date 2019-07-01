@@ -38,7 +38,10 @@ class TitleState extends FlxHaxeUiState
         // parent
         super.create();
 
-        // set ui stuffs
+        // handle to the registry please
+        var registry:Registry = Registry.create();
+
+        // new ui stuffs
         this.uiGroup = new FlxGroup();
 
         var bg:FlxSprite = new FlxSprite(0, 0, "assets/images/gui/classic/bg/title_faked.png");
@@ -53,6 +56,13 @@ class TitleState extends FlxHaxeUiState
         // wire up the buttons
         var faq =  _ui.findComponent("faq", Button);
         faq.onClick = this.onClick_faq;
+
+        // old ui stuffs we're still doing
+
+        // Logo
+        // ----
+        var logo:FlxSprite = new FlxSprite(190, 34, registry.logo);
+        this.add(logo);
     }
 
     public function onClick_faq(ignored:UIEvent):Void
@@ -73,8 +83,7 @@ class TitleState extends FlxUIState
         // get this out of the way
         super.create();
 
-        // handle to the registry please
-        var registry:Registry = Registry.create();
+
 
         // now ui
         
@@ -84,11 +93,6 @@ class TitleState extends FlxUIState
         //                              AARRGGBB   For alpha, FF is opaque and 00 is transparent
         titlebg.makeGraphic(850, 640, 0xFFFFFFFF);
         this.add(titlebg);
-
-        // Logo
-        // ----
-        var logo:FlxUISprite = new FlxUISprite(190, 34, registry.logo);
-        this.add(logo);
 
         // version
         // pos 489x42
