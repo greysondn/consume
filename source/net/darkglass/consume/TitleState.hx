@@ -114,6 +114,10 @@ class TitleState extends FlxHaxeUiState
         titleQuote.alignment = "center";
         titleQuote.addFormat(fntcol);
         this.add(titleQuote);
+
+        // warning!
+        var prewarnSubstate:PreWarnSubstate = new PreWarnSubstate(0x80000000);
+        openSubState(prewarnSubstate);
     }
 
     public function onClick_faq(ignored:UIEvent):Void
@@ -164,15 +168,6 @@ class TitleState extends FlxUIState
         var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits", onClick_credits);
         creditsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
         this.add(creditsButton);
-
-        // warning!
-        var prewarnSubstate:PreWarnSubstate = new PreWarnSubstate(0x80000000);
-        openSubState(prewarnSubstate);
-    }
-
-    override public function update(elapsed:Float):Void
-    {
-        super.update(elapsed);
     }
 
     public function onClick_options():Void
