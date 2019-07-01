@@ -122,8 +122,11 @@ class TitleState extends FlxHaxeUiState
 
     public function onClick_faq(ignored:UIEvent):Void
     {
-        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000);
-        openSubState(faqSubstate);
+        if (this.doHxui)
+        {
+            var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000);
+            openSubState(faqSubstate);
+        }
     }
 }
 
