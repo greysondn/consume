@@ -8,6 +8,7 @@ import flixel.addons.ui.FlxUIText;
 import flixel.addons.ui.FlxUIButton;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
+import flixel.text.FlxText;
 import flixel.text.FlxText.FlxTextFormat;
 
 import net.darkglass.consume.PlayState;
@@ -59,10 +60,21 @@ class TitleState extends FlxHaxeUiState
 
         // old ui stuffs we're still doing
 
+        // paint it black
+        var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
+
         // Logo
         // ----
         var logo:FlxSprite = new FlxSprite(190, 34, registry.logo);
         this.add(logo);
+
+        // version
+        // pos 489x42
+        // sz 162x97
+        var verText:FlxText = new FlxText(551, 227, 162, registry.release);
+        verText.alignment = "center";
+        verText.addFormat(fntcol);
+        this.add(verText);
     }
 
     public function onClick_faq(ignored:UIEvent):Void
@@ -77,16 +89,6 @@ class TitleState extends FlxUIState
 {
     override public function create():Void
     {
-        // paint it black
-        var fntcol:FlxTextFormat = new FlxTextFormat(0xFF000000);
-
-        // get this out of the way
-        super.create();
-
-
-
-        // now ui
-        
         // background
         // ----------
         var titlebg:FlxUISprite = new FlxUISprite(0, 0);
@@ -94,13 +96,7 @@ class TitleState extends FlxUIState
         titlebg.makeGraphic(850, 640, 0xFFFFFFFF);
         this.add(titlebg);
 
-        // version
-        // pos 489x42
-        // sz 162x97
-        var verText:FlxUIText = new FlxUIText(551, 227, 162, registry.release);
-        verText.alignment = "center";
-        verText.addFormat(fntcol);
-        this.add(verText);
+
         
         // creators
         // pos 190x293
