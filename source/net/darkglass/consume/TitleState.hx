@@ -75,6 +75,15 @@ class TitleState extends FlxHaxeUiState
         verText.alignment = "center";
         verText.addFormat(fntcol);
         this.add(verText);
+
+        // creators
+        // pos 190x293
+        // sz  469x25
+        var creatorStr:String = "By copb_phoenix. Based upon an original work by GenkoKitsu.";
+        var titleCreate:FlxText = new FlxText(190, 305, 469, creatorStr);
+        titleCreate.alignment = "center";
+        titleCreate.addFormat(fntcol);
+        this.add(titleCreate);
     }
 
     public function onClick_faq(ignored:UIEvent):Void
@@ -98,15 +107,7 @@ class TitleState extends FlxUIState
 
 
         
-        // creators
-        // pos 190x293
-        // sz  469x25
-        var creatorStr = "By copb_phoenix. Based upon an original work by GenkoKitsu.";
-        
-        var titleCreate:FlxUIText = new FlxUIText(190, 305, 469, creatorStr);
-        titleCreate.alignment = "center";
-        titleCreate.addFormat(fntcol);
-        this.add(titleCreate);
+
 
         // quote
         // pos 190x318
