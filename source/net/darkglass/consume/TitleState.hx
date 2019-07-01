@@ -84,32 +84,8 @@ class TitleState extends FlxHaxeUiState
         titleCreate.alignment = "center";
         titleCreate.addFormat(fntcol);
         this.add(titleCreate);
-    }
 
-    public function onClick_faq(ignored:UIEvent):Void
-    {
-        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000);
-        openSubState(faqSubstate);
-    }
-}
-
-/**
-class TitleState extends FlxUIState
-{
-    override public function create():Void
-    {
-        // background
-        // ----------
-        var titlebg:FlxUISprite = new FlxUISprite(0, 0);
-        //                              AARRGGBB   For alpha, FF is opaque and 00 is transparent
-        titlebg.makeGraphic(850, 640, 0xFFFFFFFF);
-        this.add(titlebg);
-
-
-        
-
-
-        // quote
+                // quote
         // pos 190x318
         // sz  469x36
         // -----
@@ -134,10 +110,30 @@ class TitleState extends FlxUIState
         var rngRoll:Int = rng.int(0, (msgs.length - 1));
         var quoteStr:String = msgs[rngRoll];
 
-        var titleQuote:FlxUIText = new FlxUIText(190, 318, 469, quoteStr);
+        var titleQuote:FlxText = new FlxText(190, 318, 469, quoteStr);
         titleQuote.alignment = "center";
         titleQuote.addFormat(fntcol);
         this.add(titleQuote);
+    }
+
+    public function onClick_faq(ignored:UIEvent):Void
+    {
+        var faqSubstate:FAQSubstate = new FAQSubstate(0x80000000);
+        openSubState(faqSubstate);
+    }
+}
+
+/**
+class TitleState extends FlxUIState
+{
+    override public function create():Void
+    {
+        // background
+        // ----------
+        var titlebg:FlxUISprite = new FlxUISprite(0, 0);
+        //                              AARRGGBB   For alpha, FF is opaque and 00 is transparent
+        titlebg.makeGraphic(850, 640, 0xFFFFFFFF);
+        this.add(titlebg);        
         
         // menu space
         // pos 190x356
