@@ -1,11 +1,6 @@
 package net.darkglass.consume;
 
 import openfl.Assets;
-import flixel.addons.ui.FlxUIState;
-
-import flixel.addons.ui.FlxUISprite;
-import flixel.addons.ui.FlxUIText;
-import flixel.addons.ui.FlxUIButton;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
 import flixel.text.FlxText;
@@ -29,6 +24,7 @@ import haxe.ui.Toolkit;
 import haxe.ui.macros.ComponentMacros;
 import haxe.ui.components.Button;
 import haxe.ui.events.UIEvent;
+import haxe.ui.events.MouseEvent;
 
 class TitleState extends FlxHaxeUiState
 {
@@ -55,8 +51,19 @@ class TitleState extends FlxHaxeUiState
         uiGroup.add(_ui);
 
         // wire up the buttons
-        var faq =  _ui.findComponent("faq", Button);
+        var newBut:Button = _ui.findComponent("new", Button);
+        newBut.onClick = this.onClick_new;
+
+        // load would go here
+
+        var option:Button = _ui.findComponent("options", Button);
+        option.onClick = this.onClick_options;
+
+        var faq:Button =  _ui.findComponent("faq", Button);
         faq.onClick = this.onClick_faq;
+
+        var credits:Button = _ui.findComponent("credits", Button);
+        credits.onClick = this.onClick_credits;
 
         // old ui stuffs we're still doing
 
@@ -120,6 +127,29 @@ class TitleState extends FlxHaxeUiState
         openSubState(prewarnSubstate);
     }
 
+    // new game
+    // load
+    // options
+    // faq
+    // credits
+
+    public function onClick_new(ignored:UIEvent):Void
+    {
+        if (this.doHxui)
+        {
+            FlxG.switchState(new PlayState());
+        }
+    }
+
+    public function onClick_options(ignored:UIEvent):Void
+    {
+        if (this.doHxui)
+        {
+            var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
+            openSubState(optionSubstate);
+        }
+    }
+
     public function onClick_faq(ignored:UIEvent):Void
     {
         if (this.doHxui)
@@ -128,66 +158,13 @@ class TitleState extends FlxHaxeUiState
             openSubState(faqSubstate);
         }
     }
-}
 
-/**
-class TitleState extends FlxUIState
-{
-    override public function create():Void
+    public function onClick_credits(ignored:UIEvent):Void
     {
-        // background
-        // ----------
-        var titlebg:FlxUISprite = new FlxUISprite(0, 0);
-        //                              AARRGGBB   For alpha, FF is opaque and 00 is transparent
-        titlebg.makeGraphic(850, 640, 0xFFFFFFFF);
-        this.add(titlebg);        
-        
-        // menu space
-        // pos 190x356
-        // sz  469 x 250
-        // height each: 42
-        // space between: 10
-        // New, Load, Options, Faq, Credits
-        // --------------------------------
-        var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
-        var buttonDisabledGFX:Array<String> = registry.gfxset_buttonDisabled;
-
-        var slicecoords:Array<Array<Int>> = registry.gfxset_buttonEnabled_slice;
-
-        var newButton:FlxUIButton = new FlxUIButton(190, 356, "New Game", onClick_play);
-        newButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
-        this.add(newButton);
-
-        var loadButton:FlxUIButton = new FlxUIButton(190, 408, "Load");
-        loadButton.loadGraphicSlice9(buttonDisabledGFX, 469, 42, slicecoords, 0, -1);
-        this.add(loadButton);
-
-        var optionsButton:FlxUIButton = new FlxUIButton(190, 460, "Options", onClick_options);
-        optionsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
-        this.add(optionsButton);
-
-        var faqButton:FlxUIButton = new FlxUIButton(190, 512, "FAQ", onClick_faq);
-
-        var creditsButton:FlxUIButton = new FlxUIButton(190, 564, "Credits", onClick_credits);
-        creditsButton.loadGraphicSlice9(buttonEnabledGFX, 469, 42, slicecoords, 0, -1);
-        this.add(creditsButton);
-    }
-
-    public function onClick_options():Void
-    {
-        var optionSubstate:OptionSubstate = new OptionSubstate(0x80000000);
-        openSubState(optionSubstate);
-    }
-
-    public function onClick_play():Void
-    {
-        FlxG.switchState(new PlayState());
-    }
-
-    public function onClick_credits():Void
-    {
-        var creditsSubstate:CreditsSubstate = new CreditsSubstate(0x80000000);
-        openSubState(creditsSubstate);
+        if (this.doHxui && (this.subState == null))
+        {
+            var creditsSubstate:CreditsSubstate = new CreditsSubstate(0x80000000);
+            openSubState(creditsSubstate);
+        }
     }
 }
-*/
