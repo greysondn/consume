@@ -60,4 +60,19 @@ class BodyPartCollection
     {
         return (this.count(_id) > 0);
     }
+
+    public function clone():BodyPartCollection
+    {
+        // eventual return
+        var ret:BodyPartCollection = new BodyPartCollection();
+
+        // systematically clone and add all members
+        for (prt in this.contents)
+        {
+            ret.add(prt.clone());
+        }
+
+        // return
+        return ret;
+    }
 }
