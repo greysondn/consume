@@ -24,7 +24,6 @@ import haxe.ui.Toolkit;
 import haxe.ui.macros.ComponentMacros;
 import haxe.ui.components.Button;
 import haxe.ui.events.UIEvent;
-import haxe.ui.events.MouseEvent;
 
 class TitleState extends FlxHaxeUiState
 {
