@@ -61,4 +61,24 @@ class Species
 
         return ret;
     }
+
+    public static function cmpIndex(left:Species, right:Species):Int
+    {
+        var ret:Int = 9001;
+
+        if (left.index < right.index)
+        {
+            ret = -1;
+        }
+        else if (left.index > right.index)
+        {
+            ret = 1;
+        }
+        else if (left.index == right.index)
+        {
+            ret = 0;
+        }
+
+        return ret;
+    }
 }
