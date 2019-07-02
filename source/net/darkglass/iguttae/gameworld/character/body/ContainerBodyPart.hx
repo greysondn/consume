@@ -38,4 +38,18 @@ class ContainerBodyPart
      * Set this all by hand.
      */
     public function new() {}
+
+    public function clone():ContainerBodyPart
+    {
+        var ret:ContainerBodyPart = new ContainerBodyPart();
+
+        ret.measure = this.measure;
+        ret.capacity = this.capacity;
+        ret.gains = this.gains;
+        ret.stretchTime = this.stretchTime;
+        ret.stretchAmount = this.stretchAmount;
+        ret.damage = this.damage;
+
+        return ret;
+    }
 }
