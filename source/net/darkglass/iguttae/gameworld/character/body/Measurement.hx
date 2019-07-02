@@ -30,4 +30,9 @@ class Measurement
         this.max = maximum;
         this.cur = current;
     }
+
+    public function clone():Measurement
+    {
+        return  new Measurement(this.min, this.max, this.cur);
+    }
 }
