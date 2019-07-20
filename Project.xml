@@ -87,4 +87,7 @@
 	<!-- Test haxeui with flixel with this, what could possibly go right? -->
 	<haxelib name="haxeui-core" />
 	<haxelib name="haxeui-flixel" />
+
+	<!-- deprecations are upstream from me for now. I should check this later on -->
+	<haxedef name="no-deprecation-warnings" />
 </project>

@@ -85,53 +85,53 @@
       tail:      true
   measures:
     height:
-      min: false
-      max: false
+      min: true
+      max: true
     weight:
-      min: false
-      max: false
+      min: true
+      max: true
     chest:
-      min: false
-      max: false
+      min: true
+      max: true
     waist:
-      min: false
-      max: false
+      min: true
+      max: true
     hips:
-      min: false
-      max: false
+      min: true
+      max: true
     butt:
-      min: false
-      max: false
+      min: true
+      max: true
   start:
     measures:
-      breasts: false
-      balls:   false
-      erect:   false
+      breasts: true
+      balls:   true
+      erect:   true
       penis:
-        length: false
-        width:  false
+        length: true
+        width:  true
     capacity:
-      stomach: false
-      bowels:  false
-      breast:  false
-      testes:  false
+      stomach: true
+      bowels:  true
+      breasts: true
+      testes:  true
     gains:
-      fat:  false
-      milk: false
-      spunk: false
+      fat:   true
+      milk:  true
+      spunk: true
     digestion:
-      damage: false 
+      damage: true 
     stretch:
       time:
-        stomach:  false
-        bowels:   false
-        breasts:  false
-        testes:   false
+        stomach:  true
+        bowels:   true
+        breasts:  true
+        testes:   true
       amount:
-        stomach:  false
-        bowels:   false
-        breasts:  false
-        testes:   false 
+        stomach:  true
+        bowels:   true
+        breasts:  true
+        testes:   true 
 -
   index: 0
   name: Human
