@@ -5,6 +5,7 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Player;
 import net.darkglass.iguttae.enums.Verbosity;
 import net.darkglass.iguttae.gameworld.container.IndexedEntityContainer;
+import net.darkglass.iguttae.gameworld.character.SpeciesIndex;
 
 class Environment
 {
@@ -59,6 +60,11 @@ class Environment
      * for it. Blaaaaaah.
      */
     public var player:Player = new Player();
+
+    /**
+     * collection of species to build all the other things out from
+     */
+    public var species:SpeciesIndex = new SpeciesIndex();
     
     /**
      * Whether we should print literally all messages or not.

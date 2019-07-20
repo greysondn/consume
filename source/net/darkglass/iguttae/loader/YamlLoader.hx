@@ -1,6 +1,8 @@
 package net.darkglass.iguttae.loader;
 
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.character.Species;
+import net.darkglass.iguttae.gameworld.character.body.BodyPart;
 import net.darkglass.iguttae.gameworld.item.Item;
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.map.Room;
@@ -62,7 +64,8 @@ class YamlLoader
                             ?roomSrc:String="assets/data/en-us/rooms.yaml",
                             ?tranSrc:String="assets/data/en-us/doors.yaml",
                             ?itemSrc:String="assets/data/en-us/items.yml",
-                            ?spwnSrc:String="assets/data/en-us/spawns.yaml"
+                            ?spwnSrc:String="assets/data/en-us/spawns.yaml",
+                            ?speciesSrc:String="assets/data/en-us/species.yaml"
                         ):Void
     {
         // this typing is bad and there's no elegant fix
@@ -86,6 +89,11 @@ class YamlLoader
         var tranDat:Dynamic = Yaml.parse(tranStr);
         this.loadTransitions(env, tranDat);
         // no validation function would work here
+
+        // and now the species
+        var speciesStr:String  = Assets.getText(speciesSrc);
+        var speciesDat:Dynamic = Yaml.parse(speciesStr);
+        this.loadSpecies(env, speciesDat);
 
         // can now load items
         var itemStr:String  = Assets.getText(itemSrc);
@@ -222,6 +230,38 @@ class YamlLoader
                 // connect swaps to each other
                 swpL.oppositeSide = swpR;
                 swpR.oppositeSide = swpL;
+            }
+        }
+    }
+
+    private function loadSpecies(env:Environment, speciesDat:Array<ObjectMap<String, Dynamic>>):Void
+    {
+        for (entry in speciesDat)
+        {
+            // real indexes start at zero
+            if (entry.get("index") >= 0)
+            {
+                // I'm a general now, whee!
+                var swp:Species = new Species();
+
+                // and we proceed
+                swp.index = entry.get("index");
+                swp.name  = entry.get("name");
+
+                // some body parts
+                swp.bodyParts.add(new BodyPart("skin",      entry.get("parts").get("desc").get("skin")));
+                swp.bodyParts.add(new BodyPart("mouth",     entry.get("parts").get("desc").get("mouth")));
+                swp.bodyParts.add(new BodyPart("legs",      entry.get("parts").get("desc").get("legs")));
+                swp.bodyParts.add(new BodyPart("arms",      entry.get("parts").get("desc").get("arms")));
+                swp.bodyParts.add(new BodyPart("hands",     entry.get("parts").get("desc").get("hands")));
+                swp.bodyParts.add(new BodyPart("feet",      entry.get("parts").get("desc").get("feet")));
+                swp.bodyParts.add(new BodyPart("sphincter", entry.get("parts").get("desc").get("sphincter")));
+
+                // some optional body parts
+                if (entry.get("parts").get("desc").get("tail") != null)
+                {
+                    swp.bodyParts.add(new BodyPart("sphincter", entry.get("parts").get("desc").get("sphincter")));
+                }
             }
         }
     }

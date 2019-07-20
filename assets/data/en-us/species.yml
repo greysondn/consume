@@ -5,19 +5,14 @@
   parts:
     desc:
       # bunch of descriptors
-      skin:   "skin"         # skin, fur, feathers, scales...
-      mouth:  "mouth"        # mouth, muzzle, beak...
-      legs:   "legs"         # legs
-      arms:   "arms"         # arms
-      hands:  "hands"        # hands
-      feet:   "feet"         # feet
-      sphincter: "bootyhole" # bootyhole
-    optional:
-      # optional body parts
-      tail:
-        # tail
-        has: False # whether species even has a tail
-        desc: "descriptor" # descriptor for tail
+      skin:      "skin"         # skin, fur, feathers, scales...
+      mouth:     "mouth"        # mouth, muzzle, beak...
+      legs:      "legs"         # legs
+      arms:      "arms"         # arms
+      hands:     "hands"        # hands
+      feet:      "feet"         # feet
+      sphincter: "bootyhole"    # bootyhole
+      tail:      "tail"         # tail, omit if absent
   measures:
     # measurements
     height:
@@ -77,20 +72,17 @@
 -
   index: -2
   # Reading? - whether we're reading things in code.
-  name: false
+  name: true
   parts:
     desc:
-      skin:      false
-      mouth:     false
-      legs:      false
-      arms:      false
-      hands:     false
-      feet:      false
-      sphincter: false
-    optional:
-      tail:
-        has:  false
-        desc: false
+      skin:      true
+      mouth:     true
+      legs:      true
+      arms:      true
+      hands:     true
+      feet:      true
+      sphincter: true
+      tail:      true
   measures:
     height:
       min: false
@@ -152,9 +144,6 @@
       hands:     hands
       feet:      feet
       sphincter: asshole
-    optional:
-      tail:
-        has:  false
   measures:
     height:
       min: 63
@@ -216,10 +205,7 @@
       hands:     handpaws
       feet:      footpaws
       sphincter: tailhole
-    optional:
-      tail:
-        has:  true
-        desc: large fluffy
+      tail:      large fluffy
   measures:
     height:
       min: 60
@@ -281,10 +267,7 @@
       hands:     claws
       feet:      feet
       sphincter: tailhole
-    optional:
-      tail:
-        has:  true
-        desc: thick scaly
+      tail:      thick scaly
   measures:
     height:
       min: 78
@@ -346,10 +329,7 @@
       hands:     handpaws
       feet:      footpaws
       sphincter: tailhole
-    optional:
-      tail:
-        has:  true
-        desc: thin fluffy
+      tail:      thin fluffy
   measures:
     height:
       min: 63
@@ -411,10 +391,7 @@
       hands:     handhoofs
       feet:      foothoofs
       sphincter: tailhole
-    optional:
-      tail:
-        has:  true
-        desc: thin whiplike
+      tail:      thin whiplike
   measures:
     height:
       min: 65
@@ -476,10 +453,7 @@
       hands:     handpaws
       feet:      footpaws
       sphincter: tailhole
-    optional:
-      tail:
-        has:  true
-        desc: long fluffy
+      tail:      long fluffy
   measures:
     height:
       min: 64
@@ -541,10 +515,7 @@
       hands:     handpaws
       feet:      footpaws
       sphincter: tailhole
-    optional:
-      tail:
-        has:  true
-        desc: thin hairless
+      tail:      thin hairless
   measures:
     height:
       min: 55
