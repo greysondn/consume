@@ -5,9 +5,14 @@
 /* Just the basic user characters */
 
 CHAR       ::= [a-zA-Z]
-TERMINATOR ::= 'NEWLINE'
+TERMINATOR ::= 'NEWLINE'| ';'
 INT        ::= [0-9]+
+MATHOP     ::= '+' | '-' | '*' | '/'
+LOGICOP    ::= '||' | '&&' | '!'
+COMPARATOR ::= '==' | '!=' | '>' | '>=' | '<' | '<='
 WORD       ::= CHAR+
+SPACE      ::= ' '
+PRINTABLE  ::= CHAR | INT | SPACE | PUNCTUATION
 
 /* objects which exist */
 
@@ -34,23 +39,38 @@ EchoExpression      ::= 'echo' WORD+
 TeleportExpression  ::= 'teleport' INT
 
 /* Interpreter commands, non-player */
-/* wait nothing here? */
+PrintExpression ::= 'print' PRINTABLE+
+CommentExpression ::= '#' ((ANY)?)* 'NEWLINE'
 
 /* And bringing it all together */
-PlayerExpression ::= (
-                         DropExpression      |
-                         GetExpression       |
-                         HelpExpression      |
-                         InventoryExpression |
-                         LockExpression      |
-                         LookExpression      |
-                         MoveExpression      |
-                         UnlockExpression
-                     )
+PlayerExpression ::=        (
+                                DropExpression      |
+                                GetExpression       |
+                                HelpExpression      |
+                                InventoryExpression |
+                                LockExpression      |
+                                LookExpression      |
+                                MoveExpression      |
+                                UnlockExpression
+                            )
 
-DebugExpression ::=  (
-                         EchoExpression      |
-                         TeleportExpression
-                     )
+DebugExpression ::=         (
+                                EchoExpression      |
+                                TeleportExpression
+                            )
 
-Command ::= (PlayerExpression | DebugExpression) Terminator
+InterpreterExpression::=    (
+                                PrintExpression |
+                                CommentExpression
+                            )
+
+STATEMENT ::= (PlayerExpression | DebugExpression | InterpreterExpression) TERMINATOR
+BODY      ::= STATEMENT+
+
+/* Meta-level expressions are a bit different */
+ComparisonClause  ::= 'VALUE' COMPARATOR 'VALUE'
+BooleanClause     ::= 'BOOLEAN' ((LOGICOP 'BOOLEAN')?)*
+OptionClause      ::= '[option' PRINTABLE+ ']'
+ChoiceClause      ::= '[choice]' 'NEWLINE' (OptionClause 'NEWLINE' BODY)+ 'NEWLINE' '[end]'
+IfElseClause      ::= '[if' BooleanClause ']' 'NEWLINE' BODY 'NEWLINE' (('[elif' BooleanClause ']' 'NEWLINE' BODY 'NEWLINE')?)+ ('else' 'NEWLINE' BODY 'NEWLINE')? '[end]'
+TextEscapeClause  ::= '[' ( 'lbrack' | 'rbrack' | 'numbersign' ) ']'
