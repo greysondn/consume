@@ -147,13 +147,9 @@ class PlayState extends FlxHaxeUiState
         uiGroup.add(_ui);
 
         this.cout = _ui.findComponent("cout", Label);
-        this.cout.width = 770;
-
-        this.cout.text = "";
         this.handleCommandOutput("Welcome to consume! Currently being ported.");
 
         this.cin = _ui.findComponent("cin", Label);
-        this.cin.width = 800;
         this.cin.text = "> ";
 
         this.coutContainer = _ui.findComponent("txtoutscroll", ScrollView);
@@ -271,15 +267,19 @@ class PlayState extends FlxHaxeUiState
             
             if (-1 != val)
             {
+                this.handleOutput("Base: " + val + " >> " + String.fromCharCode(val));
+
                 res = String.fromCharCode(val);
 
                 if (FlxG.keys.pressed.SHIFT)
                 {
                     res = res.toUpperCase();
+                    this.handleOutput("Shifted: " + res.charCodeAt(0) + " >> " + res);
                 }
                 else
                 {
                     res = res.toLowerCase();
+                    this.handleOutput("Unshifted: " + res.charCodeAt(0) + " >> " + res);
                 }
 
                 cin.text = cin.text + res;
