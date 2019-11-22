@@ -42,9 +42,7 @@ enum TokenType
     IDENTIFIER;
     STRING;
     NUMBER;
-
-    TRUE;
-    FALSE;
+    BOOLEAN;
 
     // keywords: Core language
     IF;
@@ -55,25 +53,26 @@ enum TokenType
     INCLUDE;
 
     // keywords: directions
-    NORTH;      // 'n'  | 'north'
-    NORTHEAST;  // 'ne' | 'northeast'
-    EAST;       // 'e'  | 'east'
-    SOUTHEAST;  // 'se' | 'southeast'
-    SOUTH;      // 's'  | 'south'
-    SOUTHWEST;  // 'sw' | 'southwest'
-    WEST;       // 'w'  | 'west'
-    NORTHWEST;  // 'nw' | 'northwest'
+    DIRECTION;
+    
+    // 'n'  | 'north'
+    // 'ne' | 'northeast'
+    // 'e'  | 'east'
+    // 'se' | 'southeast'
+    // 's'  | 'south'
+    // 'sw' | 'southwest'
+    // 'w'  | 'west'
+    // 'nw' | 'northwest'
+    // 'u'  | 'up'
+    // 'd'  | 'down'
 
-    UP;         // 'u'  | 'up'
-    DOWN;       // 'd'  | 'down'
-
-    IN;         // 'in'
-    OUT;        // 'out'
+    // 'in'
+    // 'out'
 
     // keywords - pop goes the preposition?
     WITH;       // 'with'
 
-    // keywords - commands
+    // keywords - commands (NOT RECOGNIZED RIGHT NOW)
     DROP;       //  'd' | 'drop'
     GET;        //  'g' | 'get'
     HELP;       //        'help'
@@ -83,7 +82,7 @@ enum TokenType
     GO;         //        'go'
     UNLOCK;     //        'unlock'
 
-    // keywords - debug commands?
+    // keywords - debug commands (NOT RECOGNIZED RIGHT NOW)
     ECHO;       // 'echo'
     TELEPORT;   // 'teleport'
 
@@ -91,5 +90,5 @@ enum TokenType
     EOF;
 
     // missing from CI: CLASS, FUN, FOR, NIL, RETURN, SUPER, THIS, WHILE
-    // missing from language def: 'option', 'choice', comments
+    // missing from language def: 'option', 'choice',
 }

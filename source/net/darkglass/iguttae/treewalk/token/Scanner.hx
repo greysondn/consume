@@ -3,6 +3,7 @@ package net.darkglass.iguttae.treewalk.token;
 import net.darkglass.iguttae.treewalk.context.GlobalContext;
 import net.darkglass.iguttae.treewalk.token.Token;
 import net.darkglass.iguttae.treewalk.token.TokenType;
+import net.darkglass.iguttae.treewalk.token.Keywords;
 
 /**
  * Scanner for our tokens.
@@ -18,6 +19,9 @@ class Scanner
      */
     private var source:String = "";
 
+    /**
+     * Global context we're operating in. Mostly used for output.
+     */
     private var global:GlobalContext;
 
     /**
@@ -40,6 +44,11 @@ class Scanner
         this.global = _global;
     }
 
+    /**
+     * Scan all the tokens in our source
+     * 
+     * @return Array<Token> all the tokens in our source
+     */
     public function scanTokens():Array<Token>
     {
         while (!this.isAtEnd())
@@ -188,7 +197,11 @@ class Scanner
             default:
                 if (this.isDigit(char))
                 {
-                    scanNumber();
+                    this.scanNumber();
+                }
+                else if (this.isAlpha(char))
+                {
+                    this.scanIdentifier();
                 }
                 else
                 {
@@ -287,6 +300,9 @@ class Scanner
         return ret;
     }
 
+    /**
+     * Scan what should be a string and add the token to our token list
+     */
     private function scanString():Void
     {
         while((this.peek() != "\"") && (!isAtEnd()))
@@ -330,6 +346,9 @@ class Scanner
         return ((ord >= "0".charCodeAt(0)) && (ord <= "9".charCodeAt(0)));
     } 
 
+    /**
+     * Scan what should be a number and add the token to our token list
+     */
     private function scanNumber():Void
     {
         // first batch of digits
@@ -352,6 +371,11 @@ class Scanner
         this.addToken(NUMBER, Std.parseFloat(this.source.substring(this.start, this.current)));
     }
     
+    /**
+     * Peeks the next symbol. (The one after peek().)
+     * 
+     * @return String next symbol, or NULL terminator if it's past EOF
+     */
     private function peekNext():String
     {
         var ret:String = "";
@@ -366,5 +390,63 @@ class Scanner
         }
 
         return ret;
+    }
+
+    /**
+     * Decides whether or not a character is alphabetic.
+     * 
+     * @param _char character to decide.
+     * 
+     * @return Bool whether character is alphabetic.
+     */
+    private function isAlpha(_char:String):Bool
+    {
+        var code:Int = _char.charCodeAt(0);
+
+        return ((code >= "a".code) && (code <= "z".code)) ||
+               ((code >= "A".code) && (code <= "Z".code)) ||
+               (code == "_".code);
+    }
+
+    /**
+     * Decides is a given character is an alphanumeric character
+     * 
+     * @param _char character to decide
+     * 
+     * @return Bool whether the given character is alphanumeric
+     */
+    private function isAlphaNumeric(_char:String):Bool
+    {
+        return (this.isAlpha(_char) || this.isDigit(_char));
+    }
+
+    /**
+     * Peeks what should be an identifier and adds it to the token list.
+     */
+    private function scanIdentifier():Void
+    {
+        while(this.isAlphaNumeric(this.peek()))
+        {
+            this.advance();
+        }
+
+        // let's check for reserved words
+        var text:String = source.substring(start, current);
+
+        // need the object holding our keywords for us here
+        var keywords:Keywords = Keywords.create();
+        var kw:Map<String, TokenType> = keywords.dict;
+
+        // check for it
+        if (kw.exists(text))
+        {
+            // that's a keyword!
+            this.addTokenViaType(kw[text]);
+        }
+        else
+        {
+            // that should be an identifier!
+            this.addTokenViaType(IDENTIFIER);
+        }
     }
 }
