@@ -41,8 +41,7 @@ enum TokenType
     // literal values
     IDENTIFIER;
     STRING;
-    INTEGER;
-    FLOAT;
+    NUMBER;
 
     TRUE;
     FALSE;
