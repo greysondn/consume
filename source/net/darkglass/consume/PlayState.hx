@@ -1,6 +1,10 @@
 package net.darkglass.consume;
 
 import net.darkglass.iguttae.treewalk.context.GlobalContext;
+import net.darkglass.iguttae.treewalk.expression.*;
+import net.darkglass.iguttae.treewalk.token.TokenType;
+import net.darkglass.iguttae.treewalk.token.Token;
+
 import haxe.ui.containers.VBox;
 import haxe.ui.containers.Absolute;
 import flixel.FlxG;
@@ -255,7 +259,8 @@ class PlayState extends FlxHaxeUiState
             }
             else
             {
-                this.testParser.eval(this.gContext, this.oContext, this.lContext, this.cin.text.substring(1));
+                // this.testParser.eval(this.gContext, this.oContext, this.lContext, this.cin.text.substring(1));
+                this.handleOutput(this.astTest());
             }
             
             this.coutContainer.vscrollPos = 0;
@@ -430,5 +435,31 @@ class PlayState extends FlxHaxeUiState
             this.secondButton = true;
             this.cin.text = "< SELECT DIRECTION TO UNLOCK, CLICK AGAIN TO CANCEL >";
         }
+    }
+
+    /**
+     * Tests AST and visitor by creating one, visiting it, and outputting the
+     * string.
+     * 
+     * @return String AST Stringified
+     */
+    private function astTest():String
+    {
+        var expr:BinaryExpr = new BinaryExpr(
+            new UnaryExpr(
+                new Token(MINUS, "-", null, 1),
+                new LiteralExpr(123)
+            ),
+
+            new Token(STAR, "*", null, 1),
+
+            new GroupingExpr(
+                new LiteralExpr(45.67)
+            )
+        );
+
+        var printer:AstPrinter = new AstPrinter();
+
+        return printer.print(expr);
     }
 }
