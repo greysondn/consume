@@ -441,6 +441,10 @@ class PlayState extends FlxHaxeUiState
      * Tests AST and visitor by creating one, visiting it, and outputting the
      * string.
      * 
+     * DCE will likely remove this on compilation, which is fine. Any method to
+     * run this and print the string would work. Originally I used a modified
+     * version of the standard user input hook, in fact.
+     * 
      * @return String AST Stringified
      */
     private function astTest():String
