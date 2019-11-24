@@ -48,6 +48,12 @@
 /* R. DIVISION                                                                */
 /* T. ADDITION                                                                */
 /* T. SUBTRACTION                                                             */
+/* V. GREATER THAN                                                            */
+/* V. GREATER THAN OR EQUAL TO                                                */
+/* V. LESS THAN                                                               */
+/* V. LESS THAN OR EQUAL TO                                                   */
+/* X. EQUALITY                                                                */
+/* X. INEQUALITY                                                              */
 /*                                                                            */
 /* That is due to be expanded as the engine itself progresses.                */
 /* Ample room to expand it has been left as a consequence.                    */
@@ -136,7 +142,14 @@ INCLUDE ::= 'include'
 /* These go from low to high so that the descent, you know, works.            */
 /* -------------------------------------------------------------------------- */
 
-Expression ::= AddSubExpr
+Expression ::= EqualityExpr
+
+/** equality and non-equality **/
+EqualityExpr ::= ComparisonExpr ((NOT_EQUAL | IS_EQUAL) ComparisonExpr)*
+
+/** Greater and less than conjugates **/
+ComparisonExpr ::= AddSubExpr ((GREATER_THAN | GREATER_THAN_OR_EQUAL |
+                        LESS_THAN    | LESS_THAN_OR_EQUAL) AddSubExpr)*
 
 /** addition and subtraction **/
 AddSubExpr ::= MultDivExpr ((MINUS | PLUS) MultDivExpr)*
@@ -161,8 +174,6 @@ SPACE      ::= ' '
 
 MATHOP     ::= PLUS | MINUS | STAR | SLASH
 LOGICOP    ::= '||' | '&&' | NOT
-COMPARATOR ::= IS_EQUAL | NOT_EQUAL | GREATER_THAN | GREATER_THAN_OR_EQUAL |
-               LESS_THAN | LESS_THAN_OR_EQUAL
 
 PRINTABLE  ::= ALPHANUMERIC | SPACE | PUNCTUATION
 
