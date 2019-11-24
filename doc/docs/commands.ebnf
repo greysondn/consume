@@ -1,26 +1,177 @@
-/* This is meant to be used with */
-/* https://www.bottlecaps.de/rr/ui */
-/* to visualize the command syntax */
+/* -------------------------------------------------------------------------- */
+/* This is meant to be used with                                              */
+/* https://www.bottlecaps.de/rr/ui                                            */
+/* to visualize the command syntax                                            */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* PRECEDENCE                                                                 */
+/* -------------------------------------------------------------------------- */
+/* As the third interpreter is recursive descent, it's important to define    */
+/* rules for intended proceedance. Those are taken directly from Python, as   */
+/* it's one of my favorite languages and should be something I wouldn't get   */
+/* tripped up by.                                                             */
+/*                                                                            */
+/* See, for example:                                                          */
+/* https://docs.python.org/3/reference/expressions.html#operator-precedence   */
+/*                                                                            */
+/* Note also that Python's listing as of this writing is reverse the order    */
+/* here; I have listed from most-to-least whereas the listing runs            */
+/* from least-to-most. NOTE THIS IS AS REFERENCE, NOT THE ONE IN USE.         */
+/*                                                                            */
+/* 1. GROUPING                                                                */
+/* 2. FUNCTION                                                                */
+/* 3. ATTRIBUTE                                                               */
+/* 4. EXPONENTIATION                                                          */
+/* 5. NEGATION                                                                */
+/* 5. POSITIVE                                                                */
+/* 5. NEGATIVE                                                                */
+/* 6. MULTIPLICATION                                                          */
+/* 6. DIVISION                                                                */
+/* 6. MODULO                                                                  */
+/* 7. ADDITION                                                                */
+/* 7. SUBTRACTION                                                             */
+/* 8. BITWISE OPERATORS                                                       */
+/* 9. COMPARISONS                                                             */
+/* 9. IDENTITY                                                                */
+/* A. BOOLEAN NOT                                                             */
+/* A. BOOLEAN AND                                                             */
+/* A. BOOLEAN OR                                                              */
+/* B. LAMBDA                                                                  */
+/*                                                                            */
+/* This is simultaneously partly incomplete and partly inapplicable. The one  */
+/* in use follows below, however, and is derived from it.                     */
+/*                                                                            */
+/* N. GROUPING                                                                */
+/* Q. NEGATIVE                                                                */
+/* R. MULTIPLICATION                                                          */
+/* R. DIVISION                                                                */
+/* T. ADDITION                                                                */
+/* T. SUBTRACTION                                                             */
+/*                                                                            */
+/* That is due to be expanded as the engine itself progresses.                */
+/* Ample room to expand it has been left as a consequence.                    */
+
+/* -------------------------------------------------------------------------- */
+/* Just the basic user characters                                             */
+/* -------------------------------------------------------------------------- */
+
+NEWLINE ::= '\n'
+
+/* net.darkglass.iguttae.treewalk.token.Scanner.isAlpha()                     */
+ALPHA      ::= ([a-z] | [A-Z] | '_')
+
+/* net.darkglass.iguttae.treewalk.token.Scanner.isDigit()                     */
+DIGIT      ::= [0-9]
+
+/* net.darkglass.iguttae.treewalk.token.Scanner.scanNumber()                  */
+NUMBER     ::= DIGIT+ ('.' DIGIT+)?
+
+/* net.darkglass.iguttae.treewalk.token.Scanner.isAlphaNumeric()              */
+ALPHANUMERIC ::= ALPHA | NUMBER
+
+/* Keywords are identified alongside alphanumerics in codebase so...          */
+/* ... kinda a loaded gun here. Sorry. Main method for it at                  */
+/* net.darkglass.iguttae.treewalk.token.Scanner.scanIdentifier()              */
+IDENTIFIER ::= ALPHA ALPHANUMERIC+
+
+/* Until stated otherwise, these are analyzed and tokenized in                */
+/* net.darkglass.iguttae.treewalk.token.Scanner.scanToken()                   */
+DOT ::= '.'
+COMMA ::= ','
+
+PLUS  ::= '+'
+MINUS ::= '-'
+STAR  ::= '*'
+
+SEMICOLON ::= ';'
+
+LEFT_PAREN  ::= '('
+RIGHT_PAREN ::= ')'
+LEFT_BRACE  ::= '{'
+RIGHT_BRACE ::= '}'
+LEFT_BRACK  ::= '['
+RIGHT_BRACK ::= ']'
+
+NOT         ::= '!'
+NOT_EQUAL   ::= '!='
+
+ASSIGNMENT  ::= '='
+IS_EQUAL    ::= '=='
+
+LESS_THAN          ::= '<'
+LESS_THAN_OR_EQUAL ::= '<='
+
+GREATER_THAN       ::= '>'
+GREATER_THAN_OR_EQUAL ::= '>='
+
+COMMENT            ::= '//' ANYTHING* NEWLINE
+SLASH              ::= '/'
+
+/* This is me stating otherwise. Moving on. */
+
+STRING     ::= '"' ANYTHING '"'
+TERMINATOR ::=  SEMICOLON
+
+/* Until stated otherwise, these are keywords defined in */
+/* net.darkglass.iguttae.treewalk.token.Keywords */
+
+BOOLEAN ::= 'true' | 'false'
+
+DIRECTION ::= ((n | ne | e | se | s | sw | w | nw | u | d | i | o) | (north | northeast | east | southeast | south | southwest | west | northwest | up | down| in | out))
+
+WITH ::= 'with'
+
+IF ::= 'if'
+ELIF ::= 'elif'
+ELSE ::= 'else'
+LABEL ::= 'label'
+GOTO ::= 'goto'
+INCLUDE ::= 'include'
+
+/* This is me stating otherwise. Moving on. */
+
+/* -------------------------------------------------------------------------- */
+/* Expressions (implementing preceedence rules for recursive-descent)         */
+/* These go from low to high so that the descent, you know, works.            */
+/* -------------------------------------------------------------------------- */
+
+Expression ::= AddSubExpr
+
+/** addition and subtraction **/
+AddSubExpr ::= MultDivExpr ((MINUS | PLUS) MultDivExpr)*
+
+/** multiplication and division (and presumably later modulo) **/
+MultDivExpr ::=  UnaryExpr ((SLASH | STAR) UnaryExpr)*
+
+/** Negation, positive, and negative **/
+UnaryExpr ::= (NOT | MINUS) UnaryExpr | PrimaryExpr
+
+/** Literals and parentheticals **/
+PrimaryExpr ::= NUMBER | STRING | BOOLEAN | LEFT_PAREN Expression RIGHT_PAREN
+
+/* -------------------------------------------------------------------------- */
+/* Old file contents not yet in the interpreter itself                        */
+/* (I did however translate them to use the new names where possible)         */
+/* -------------------------------------------------------------------------- */
 
 /* Just the basic user characters */
-
-CHAR       ::= [a-zA-Z]
-TERMINATOR ::= 'NEWLINE'| ';'
-INT        ::= [0-9]+
-MATHOP     ::= '+' | '-' | '*' | '/'
-LOGICOP    ::= '||' | '&&' | '!'
-COMPARATOR ::= '==' | '!=' | '>' | '>=' | '<' | '<='
-WORD       ::= CHAR+
+WORD ::= ALPHA+
 SPACE      ::= ' '
-PRINTABLE  ::= CHAR | INT | SPACE | PUNCTUATION
+
+MATHOP     ::= PLUS | MINUS | STAR | SLASH
+LOGICOP    ::= '||' | '&&' | NOT
+COMPARATOR ::= IS_EQUAL | NOT_EQUAL | GREATER_THAN | GREATER_THAN_OR_EQUAL |
+               LESS_THAN | LESS_THAN_OR_EQUAL
+
+PRINTABLE  ::= ALPHANUMERIC | SPACE | PUNCTUATION
 
 /* objects which exist */
 
-NAME ::= WORD+
+NAME ::= WORD (SPACE WORD)*
 
 /* Clauses that are used in multiple player commands */
 
-DIRECTION ::= ((n | ne | e | se | s | sw | w | nw | u | d | i | o) | (north | northeast | east | southeast | south | southwest | west | northwest | up | down| in | out))
 ITEM ::= NAME /* alias with intent */
 
 /* Actual player commands */
@@ -29,10 +180,10 @@ DropExpression      ::= ('d' | 'drop') ITEM
 GetExpression       ::= ('g' | 'get')  ITEM
 HelpExpression      ::= 'help'
 InventoryExpression ::= ('i' | 'inventory')
-LockExpression      ::= 'lock' DIRECTION ('with' ITEM)?
+LockExpression      ::= 'lock' DIRECTION (WITH ITEM)?
 LookExpression      ::= ('l' | 'look')
 MoveExpression      ::= ('go' DIRECTION) | DIRECTION
-UnlockExpression    ::= 'unlock' DIRECTION ('with' ITEM)?
+UnlockExpression    ::= 'unlock' DIRECTION (WITH ITEM)?
 
 /* Debug commands */
 EchoExpression      ::= 'echo' WORD+
@@ -40,7 +191,6 @@ TeleportExpression  ::= 'teleport' INT
 
 /* Interpreter commands, non-player */
 PrintExpression ::= 'print' PRINTABLE+
-CommentExpression ::= '#' ((ANY)?)* 'NEWLINE'
 
 /* And bringing it all together */
 PlayerExpression ::=        (
