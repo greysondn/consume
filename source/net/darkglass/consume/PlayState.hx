@@ -267,27 +267,262 @@ class PlayState extends FlxHaxeUiState
         }
         else
         {
-            val = FlxG.keys.firstJustPressed();
-            
-            if (-1 != val)
+            if (FlxG.keys.justPressed.ONE)
             {
-                this.handleOutput("Base: " + val + " >> " + String.fromCharCode(val));
-
-                res = String.fromCharCode(val);
-
                 if (FlxG.keys.pressed.SHIFT)
                 {
-                    res = res.toUpperCase();
-                    this.handleOutput("Shifted: " + res.charCodeAt(0) + " >> " + res);
+                    res = "!";
                 }
                 else
                 {
-                    res = res.toLowerCase();
-                    this.handleOutput("Unshifted: " + res.charCodeAt(0) + " >> " + res);
+                    res = "1";
                 }
-
-                cin.text = cin.text + res;
             }
+            if (FlxG.keys.justPressed.TWO)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "@";
+                }
+                else
+                {
+                    res = "2";
+                }
+            }
+            if (FlxG.keys.justPressed.THREE)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "#";
+                }
+                else
+                {
+                    res = "3";
+                }
+            }
+            if (FlxG.keys.justPressed.FOUR)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "$";
+                }
+                else
+                {
+                    res = "4";
+                }
+            }
+            if (FlxG.keys.justPressed.FIVE)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "%";
+                }
+                else
+                {
+                    res = "5";
+                }
+            }
+            if (FlxG.keys.justPressed.SIX)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "^";
+                }
+                else
+                {
+                    res = "6";
+                }
+            }
+            if (FlxG.keys.justPressed.SEVEN)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "&";
+                }
+                else
+                {
+                    res = "7";
+                }
+            }
+            if (FlxG.keys.justPressed.EIGHT)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "*";
+                }
+                else
+                {
+                    res = "8";
+                }
+            }
+            if (FlxG.keys.justPressed.NINE)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "(";
+                }
+                else
+                {
+                    res = "9";
+                }
+            }
+            if (FlxG.keys.justPressed.ZERO)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = ")";
+                }
+                else
+                {
+                    res = "0";
+                }
+            }
+            if (FlxG.keys.justPressed.BACKSLASH)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "|";
+                }
+                else
+                {
+                    res = "\\";
+                }
+            }
+            else if (FlxG.keys.justPressed.COMMA)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "<";
+                }
+                else
+                {
+                    res = ",";
+                }
+            }
+            else if (FlxG.keys.justPressed.GRAVEACCENT)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "~";
+                }
+                else
+                {
+                    res = "`";
+                }
+            }
+            else if (FlxG.keys.justPressed.LBRACKET)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "{";
+                }
+                else
+                {
+                    res = "[";
+                }
+            }
+            else if (FlxG.keys.justPressed.MINUS)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "_";
+                }
+                else
+                {
+                    res = "-";
+                }
+            }
+            else if (FlxG.keys.justPressed.PERIOD)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = ">";
+                }
+                else
+                {
+                    res = ".";
+                }
+            }
+            else if (FlxG.keys.justPressed.PLUS)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "+";
+                }
+                else
+                {
+                    res = "=";
+                }
+            }
+            else if (FlxG.keys.justPressed.QUOTE)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "\"";
+                }
+                else
+                {
+                    res = "'";
+                }
+            }
+            else if (FlxG.keys.justPressed.RBRACKET)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "}";
+                }
+                else
+                {
+                    res = "]";
+                }
+            }
+            else if (FlxG.keys.justPressed.SEMICOLON)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = ":";
+                }
+                else
+                {
+                    res = ";";
+                }
+            }
+            else if (FlxG.keys.justPressed.SLASH)
+            {
+                if (FlxG.keys.pressed.SHIFT)
+                {
+                    res = "?";
+                }
+                else
+                {
+                    res = "/";
+                }
+            }
+            else if (FlxG.keys.justPressed.SHIFT)
+            {
+                // pass
+            }
+            else
+            {
+                val = FlxG.keys.firstJustPressed();
+
+                if (-1 != val)
+                {
+                    res = String.fromCharCode(val);
+
+                    if (FlxG.keys.pressed.SHIFT)
+                    {
+                        res = res.toUpperCase();
+                    }
+                    else
+                    {
+                        res = res.toLowerCase();
+                    }
+                }
+            }
+
+            cin.text = cin.text + res;
+            
         }
     }
 
