@@ -1,5 +1,8 @@
 package net.darkglass.iguttae.treewalk.context;
 
+import net.darkglass.iguttae.treewalk.token.Token;
+import net.darkglass.iguttae.treewalk.token.TokenType;
+
 class GlobalContext
 {
     public var cout:String -> Void;
@@ -34,6 +37,18 @@ class GlobalContext
         this.report(_line, "", _message);
     }
 
+    public function errorOnToken(_token:Token, _message:String):Void
+    {
+        if (_token.type == EOF)
+        {
+            this.report(_token.line, " at end", _message);
+        }
+        else
+        {
+            this.report(_token.line, ("at '" + _token.lexeme + "'"), _message);
+        }
+    }
+
     public function report(_line:Int, _where:String, _message:String)
     {
         // https://www.craftinginterpreters.com/scanning.html
@@ -52,4 +67,6 @@ class GlobalContext
         this.cerr("[line " + _line + "] Error" + _where + ": " + _message);
         this.hadError = true;
     }
+
+
 }
