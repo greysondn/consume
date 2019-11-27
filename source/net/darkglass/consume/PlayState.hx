@@ -259,8 +259,7 @@ class PlayState extends FlxHaxeUiState
             }
             else
             {
-                // this.testParser.eval(this.gContext, this.oContext, this.lContext, this.cin.text.substring(1));
-                this.handleOutput(this.astTest());
+                this.testParser.eval(this.gContext, this.oContext, this.lContext, this.cin.text.substring(1));
             }
             
             this.coutContainer.vscrollPos = 0;
@@ -435,35 +434,5 @@ class PlayState extends FlxHaxeUiState
             this.secondButton = true;
             this.cin.text = "< SELECT DIRECTION TO UNLOCK, CLICK AGAIN TO CANCEL >";
         }
-    }
-
-    /**
-     * Tests AST and visitor by creating one, visiting it, and outputting the
-     * string.
-     * 
-     * DCE will likely remove this on compilation, which is fine. Any method to
-     * run this and print the string would work. Originally I used a modified
-     * version of the standard user input hook, in fact.
-     * 
-     * @return String AST Stringified
-     */
-    private function astTest():String
-    {
-        var expr:BinaryExpr = new BinaryExpr(
-            new UnaryExpr(
-                new Token(MINUS, "-", null, 1),
-                new LiteralExpr(123)
-            ),
-
-            new Token(STAR, "*", null, 1),
-
-            new GroupingExpr(
-                new LiteralExpr(45.67)
-            )
-        );
-
-        var printer:AstPrinter = new AstPrinter();
-
-        return printer.print(expr);
     }
 }
