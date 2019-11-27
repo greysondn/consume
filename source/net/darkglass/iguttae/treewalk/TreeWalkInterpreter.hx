@@ -11,8 +11,6 @@ import net.darkglass.iguttae.treewalk.token.*;
 
 class TreeWalkInterpreter
 {
-    public var hadError:Bool = false;
-
     public function new()
     {
         // that's right, half of nothing. Context free, baby!
@@ -39,7 +37,18 @@ class TreeWalkInterpreter
 
     public function run(_global:GlobalContext, _object:ObjectContext, _local:LocalContext, _source:String)
     {
+        // I'm resetting this here. This might be wrong to do
+        _global.hadError = false;
+
+        // and now we move along
         var scanner:Scanner = new Scanner(_global, _source);
         var tokens:Array<Token> = scanner.scanTokens();
+        var parser:Parser = new Parser(tokens, _global);
+        var expr:IExpression = parser.parse();
+
+        if (!_global.hadError)
+        {
+            _global.cout(new AstPrinter().print(expr));
+        }
     }
 }
