@@ -4,6 +4,7 @@ import net.darkglass.iguttae.treewalk.context.LocalContext;
 import net.darkglass.iguttae.treewalk.context.ObjectContext;
 import net.darkglass.iguttae.treewalk.context.GlobalContext;
 import net.darkglass.iguttae.treewalk.expression.*;
+import net.darkglass.iguttae.treewalk.parser.Parser;
 import net.darkglass.iguttae.treewalk.token.*;
 
 
@@ -40,34 +41,5 @@ class TreeWalkInterpreter
     {
         var scanner:Scanner = new Scanner(_global, _source);
         var tokens:Array<Token> = scanner.scanTokens();
-
-        for (token in tokens)
-        {
-            _global.cout(token.toString());
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // various debug and test functions
-    // -------------------------------------------------------------------------
-    /**
-     * Tests AST and visitor by creating one, visiting it, and outputting the
-     * string.
-     *
-     * DCE will likely remove this on compilation, which is fine. Any method to
-     * run this and print the string would work. Originally I used a modified
-     * version of the standard user input hook for IGUTTAE, in fact.
-     *
-     * @return String AST Stringified
-     */
-    private function astTest():String
-    {
-        var expr:BinaryExpr = new BinaryExpr(new UnaryExpr(new Token(MINUS, "-", null, 1), new LiteralExpr(123)), new Token(STAR, "*", null, 1),
-        
-            new GroupingExpr(new LiteralExpr(45.67)));
-            
-        var printer:AstPrinter = new AstPrinter();
-        
-        return printer.print(expr);
     }
 }
