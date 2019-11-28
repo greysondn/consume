@@ -2,6 +2,7 @@ package net.darkglass.iguttae.treewalk.context;
 
 import net.darkglass.iguttae.treewalk.token.Token;
 import net.darkglass.iguttae.treewalk.token.TokenType;
+import net.darkglass.iguttae.treewalk.error.*;
 
 class GlobalContext
 {
@@ -68,5 +69,12 @@ class GlobalContext
         this.hadError = true;
     }
 
+    public function typeError(_err:TypeError):Void
+    {
+        this.cout(_err.message + "\n[line " + _err.token.line + "]");
+        // supposed to set a this.hadtypeerror but...
+        // this isn't made to be called directly from shell.
+        // so nope.
+    }
 
 }

@@ -6,6 +6,7 @@ import net.darkglass.iguttae.treewalk.context.GlobalContext;
 import net.darkglass.iguttae.treewalk.expression.*;
 import net.darkglass.iguttae.treewalk.parser.Parser;
 import net.darkglass.iguttae.treewalk.token.*;
+import net.darkglass.iguttae.treewalk.interpreter.Interpreter;
 
 
 
@@ -45,10 +46,13 @@ class TreeWalkInterpreter
         var tokens:Array<Token> = scanner.scanTokens();
         var parser:Parser = new Parser(tokens, _global);
         var expr:IExpression = parser.parse();
+        // this should be part of the class properties!
+        // TODO: refactor
+        var interpreter:Interpreter = new Interpreter(_global);
 
         if (!_global.hadError)
         {
-            _global.cout(new AstPrinter().print(expr));
+            interpreter.interpret(expr);
         }
     }
 }
