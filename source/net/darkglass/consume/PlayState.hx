@@ -269,113 +269,43 @@ class PlayState extends FlxHaxeUiState
         {
             if (FlxG.keys.justPressed.ONE)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "!";
-                }
-                else
-                {
-                    res = "1";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.TWO)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "@";
-                }
-                else
-                {
-                    res = "2";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.THREE)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "#";
-                }
-                else
-                {
-                    res = "3";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.FOUR)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "$";
-                }
-                else
-                {
-                    res = "4";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.FIVE)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "%";
-                }
-                else
-                {
-                    res = "5";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.SIX)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "^";
-                }
-                else
-                {
-                    res = "6";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.SEVEN)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "&";
-                }
-                else
-                {
-                    res = "7";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.EIGHT)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "*";
-                }
-                else
-                {
-                    res = "8";
-                }
+                res = "8";
             }
             if (FlxG.keys.justPressed.NINE)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = "(";
-                }
-                else
-                {
-                    res = "9";
-                }
+                res = "9";
             }
             if (FlxG.keys.justPressed.ZERO)
             {
-                if (FlxG.keys.pressed.SHIFT)
-                {
-                    res = ")";
-                }
-                else
-                {
-                    res = "0";
-                }
+                res = "0";
             }
             if (FlxG.keys.justPressed.BACKSLASH)
             {
@@ -518,6 +448,38 @@ class PlayState extends FlxHaxeUiState
                     {
                         res = res.toLowerCase();
                     }
+                }
+            }
+
+            // for whatever reason, shift + numbers didn't work so...
+            // wanted to go ahead and handle that here, I'm hoping
+            // so I can use my entire effin keyboard.
+            if (FlxG.keys.pressed.SHIFT)
+            {
+                switch(res)
+                {
+                    case "0":
+                        res = ")";
+                    case "1":
+                        res = "!";
+                    case "2":
+                        res = "@";
+                    case "3":
+                        res = "#";
+                    case "4":
+                        res = "$";
+                    case "5":
+                        res = "%";
+                    case "6":
+                        res = "^";
+                    case "7":
+                        res = "&";
+                    case "8":
+                        res = "*";
+                    case "9":
+                        res = "(";
+                    default:
+                        // if it's not one of those, just pass.
                 }
             }
 
