@@ -164,6 +164,18 @@ UnaryExpr ::= (NOT | MINUS) UnaryExpr | PrimaryExpr
 PrimaryExpr ::= NUMBER | STRING | BOOLEAN | LEFT_PAREN Expression RIGHT_PAREN
 
 /* -------------------------------------------------------------------------- */
+/* Statements and Statement Structures                                        */
+/* Sometimes Expressions just aren't enough, you know? ... grumbl' ...                       */
+/* -------------------------------------------------------------------------- */
+Program ::= Statement* EOF
+
+Statement ::= ExprStmt | PrintStmt
+
+ExprStmt ::= expression TERMINATOR
+
+PrintStmt ::= "print" Expression TERMINATOR
+
+/* -------------------------------------------------------------------------- */
 /* Old file contents not yet in the interpreter itself                        */
 /* (I did however translate them to use the new names where possible)         */
 /* -------------------------------------------------------------------------- */
@@ -224,9 +236,6 @@ InterpreterExpression::=    (
                                 PrintExpression |
                                 CommentExpression
                             )
-
-STATEMENT ::= (PlayerExpression | DebugExpression | InterpreterExpression) TERMINATOR
-BODY      ::= STATEMENT+
 
 /* Meta-level expressions are a bit different */
 ComparisonClause  ::= 'VALUE' COMPARATOR 'VALUE'
