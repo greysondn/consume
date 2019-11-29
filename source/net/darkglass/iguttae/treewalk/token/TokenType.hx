@@ -69,6 +69,9 @@ enum TokenType
     // 'in'
     // 'out'
 
+    // keywords - debug commands that are actually recognized
+    ECHO; // 'echo'
+
     // keywords - pop goes the preposition?
     WITH;       // 'with'
 
@@ -83,8 +86,9 @@ enum TokenType
     UNLOCK;     //        'unlock'
 
     // keywords - debug commands (NOT RECOGNIZED RIGHT NOW)
-    ECHO;       // 'echo'
     TELEPORT;   // 'teleport'
+
+    // keywords - verboten
 
     // end of the line?
     EOF;

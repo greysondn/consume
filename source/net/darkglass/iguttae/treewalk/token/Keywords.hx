@@ -61,7 +61,11 @@ class Keywords
         this.dict["goto"] = GOTO;
         this.dict["include"] = INCLUDE;
 
-        // commands? Leave them for now?
+        // debug commands
+        this.dict["echo"] = ECHO;
+        this.dict["print"] = ECHO;
+
+        // rest of commands omitted for now, I guess.
 
         Keywords.inited = true;
     }

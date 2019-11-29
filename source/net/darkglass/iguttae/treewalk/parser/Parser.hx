@@ -5,6 +5,7 @@ import net.darkglass.iguttae.treewalk.token.TokenType;
 import net.darkglass.iguttae.treewalk.token.Token;
 import net.darkglass.iguttae.treewalk.expression.*;
 import net.darkglass.iguttae.treewalk.error.SyntaxError;
+import net.darkglass.iguttae.treewalk.statement.*;
 
 
 class Parser
@@ -26,18 +27,15 @@ class Parser
     // -------------------------------------------------------------------------
     // Main parser function itself
     // -------------------------------------------------------------------------
-    public function parse():IExpression
+    public function parse():Array<IStatement>
     {
-        var ret:IExpression = new LiteralExpr("ERR! PARSE NEVER RAN!");
+        var ret:Array<IStatement> = new Array<IStatement>();
 
-        try
+        while (!this.isAtEnd())
         {
-            ret = this.expression();
+            ret.push(this.statement());
         }
-        catch (e:SyntaxError)
-        {
-            ret = new LiteralExpr("ERR! PARSER FAILED WITH SYNTAX ERROR");
-        }
+
 
         return ret;
     }
@@ -172,6 +170,41 @@ class Parser
         }
 
         return ret;
+    }
+
+    // -------------------------------------------------------------------------
+    // Main statement matching functions
+    // -------------------------------------------------------------------------
+    private function statement():IStatement
+    {
+        // yeah, I know. It's just meant as a sane default.
+        var ret:IStatement = new PrintStmt(new LiteralExpr("INVALID STATEMENT MATCH"));
+
+        // anyway
+        if (this.match([ECHO]))
+        {
+            ret = this.printStmt();
+        }
+        else
+        {
+            ret = this.expressionStmt();
+        }
+
+        return ret;
+    }
+
+    private function printStmt():IStatement
+    {
+        var value:IExpression = this.expression();
+        this.consume(SEMICOLON, "Expect ';' after value.");
+        return (new PrintStmt(value));
+    }
+
+    private function expressionStmt():IStatement
+    {
+        var expr:IExpression = this.expression();
+        this.consume(SEMICOLON, "Expect ';' after expression.");
+        return (new ExpressionStmt(expr));
     }
 
     // -------------------------------------------------------------------------

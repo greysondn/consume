@@ -5,8 +5,9 @@ import net.darkglass.iguttae.treewalk.expression.*;
 import net.darkglass.iguttae.treewalk.token.Token;
 import net.darkglass.iguttae.treewalk.token.TokenType;
 import net.darkglass.iguttae.treewalk.error.TypeError;
+import net.darkglass.iguttae.treewalk.statement.*;
 
-class Interpreter implements IExprVisitor<Dynamic>
+class Interpreter implements IExprVisitor<Dynamic> implements IStmtVisitor<Void>
 {
     // globals, mostly so we can print it
     private var global:GlobalContext;
@@ -19,19 +20,38 @@ class Interpreter implements IExprVisitor<Dynamic>
     // -------------------------------------------------------------------------
     // Main OOMPH function
     // -------------------------------------------------------------------------
-    public function interpret(_expr:IExpression):Void
+    public function interpret(_statements:Array<IStatement>):Void
     {
         try
         {
-            // oh boy ren
-            var val:Dynamic = this.evaluate(_expr);
-            this.global.cout(this.stringify(val));
+            for (_stmt in _statements)
+            {
+                this.execute(_stmt);
+            }
         }
         catch (_typeError:TypeError)
         {
             // let global deal with it.
             this.global.typeError(_typeError);
         }
+    }
+    // -------------------------------------------------------------------------
+    // Main statement Visitation functions (IStmtVisitor)
+    // -------------------------------------------------------------------------
+    public function execute(_stmt:IStatement):Void
+    {
+        _stmt.accept(this);
+    }
+
+    public function visitExpressionStmt(_stmt:ExpressionStmt):Void
+    {
+        this.evaluate(_stmt.expr);
+    }
+
+    public function visitPrintStmt(_stmt:PrintStmt):Void
+    {
+        var value:Dynamic = this.evaluate(_stmt.expr);
+        this.global.cout(this.stringify(value));
     }
 
     // -------------------------------------------------------------------------
