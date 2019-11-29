@@ -34,6 +34,21 @@ class Scanner
     private var line:Int = 1;
 
     /**
+     * Regular expression for alphabetic characters
+     */
+    private var isAlpha:EReg = new EReg("[A-Za-z_]", "");
+
+    /**
+     * Regular expression for numeric characters
+     */
+     private var isDigit:EReg = new EReg("[0-9]", "");
+
+    /**
+     * Regular expression for alphanumeric characters
+     */
+     private var isAlphaNumeric:EReg = new EReg("[A-Za-z0-9_]", "");
+
+    /**
      * Constructor.
      * 
      * @param _source source of tokens for scanner to emit.
@@ -195,11 +210,11 @@ class Scanner
 
             // fallback
             default:
-                if (this.isDigit(char))
+                if (this.isDigit.match((char)))
                 {
                     this.scanNumber();
                 }
-                else if (this.isAlpha(char))
+                else if (this.isAlpha.match(char))
                 {
                     this.scanIdentifier();
                 }
@@ -333,35 +348,21 @@ class Scanner
     }
 
     /**
-     * Determines whether character is a digit.
-     * 
-     * There's got to be faster ways to do this.
-     * 
-     * @param _char character
-     * @return Bool whether it's a digit
-     */
-    private function isDigit(_char:String):Bool
-    {
-        var ord = _char.charCodeAt(0);
-        return ((ord >= "0".charCodeAt(0)) && (ord <= "9".charCodeAt(0)));
-    } 
-
-    /**
      * Scan what should be a number and add the token to our token list
      */
     private function scanNumber():Void
     {
         // first batch of digits
-        while(this.isDigit(this.peek()))
+        while(this.isDigit.match(this.peek()))
         {
             this.advance();
         }
 
         // advance if it's digits
-        if ((this.peek() == ".") && (this.isDigit(this.peekNext())))
+        if ((this.peek() == ".") && (this.isDigit.match(this.peekNext())))
         {
             advance();
-            while(this.isDigit(this.peek()))
+            while(this.isDigit.match(this.peek()))
             {
                 this.advance();
             }
@@ -393,39 +394,11 @@ class Scanner
     }
 
     /**
-     * Decides whether or not a character is alphabetic.
-     * 
-     * @param _char character to decide.
-     * 
-     * @return Bool whether character is alphabetic.
-     */
-    private function isAlpha(_char:String):Bool
-    {
-        var code:Int = _char.charCodeAt(0);
-
-        return ((code >= "a".code) && (code <= "z".code)) ||
-               ((code >= "A".code) && (code <= "Z".code)) ||
-               (code == "_".code);
-    }
-
-    /**
-     * Decides is a given character is an alphanumeric character
-     * 
-     * @param _char character to decide
-     * 
-     * @return Bool whether the given character is alphanumeric
-     */
-    private function isAlphaNumeric(_char:String):Bool
-    {
-        return (this.isAlpha(_char) || this.isDigit(_char));
-    }
-
-    /**
      * Peeks what should be an identifier and adds it to the token list.
      */
     private function scanIdentifier():Void
     {
-        while(this.isAlphaNumeric(this.peek()))
+        while(this.isAlphaNumeric.match(this.peek()))
         {
             this.advance();
         }
