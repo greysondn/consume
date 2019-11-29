@@ -1,7 +1,7 @@
 package net.darkglass.iguttae.treewalk.expression;
 
 import net.darkglass.iguttae.treewalk.expression.IExpression;
-import net.darkglass.iguttae.treewalk.expression.IVisitor;
+import net.darkglass.iguttae.treewalk.expression.IExprVisitor;
 
 
 class GroupingExpr implements IExpression
@@ -16,7 +16,7 @@ class GroupingExpr implements IExpression
         this.expression = _expression;
     }
 
-    public function accept<T>(_visitor:IVisitor<T>):T
+    public function accept<T>(_visitor:IExprVisitor<T>):T
     {
         return _visitor.visitGroupingExpr(this);
     }

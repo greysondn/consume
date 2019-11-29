@@ -11,7 +11,7 @@ import net.darkglass.iguttae.treewalk.expression.BinaryExpr;
  * Where `T` is a type (eg; a class)... But not necessarily
  * always the same class.
  */
-interface IVisitor<T>
+interface IExprVisitor<T>
 {
     /**
      * Visit a binary expression.

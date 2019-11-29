@@ -1,7 +1,7 @@
 package net.darkglass.iguttae.treewalk.expression;
 
 import net.darkglass.iguttae.treewalk.expression.IExpression;
-import net.darkglass.iguttae.treewalk.expression.IVisitor;
+import net.darkglass.iguttae.treewalk.expression.IExprVisitor;
 import net.darkglass.iguttae.treewalk.token.Token;
 
 /**
@@ -38,7 +38,7 @@ class BinaryExpr implements IExpression
         this.right    = _right;
     }
 
-    public function accept<T>(_visitor:IVisitor<T>):T
+    public function accept<T>(_visitor:IExprVisitor<T>):T
     {
         return _visitor.visitBinaryExpr(this);
     }

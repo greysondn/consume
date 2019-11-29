@@ -1,7 +1,7 @@
 package net.darkglass.iguttae.treewalk.expression;
 
 import net.darkglass.iguttae.treewalk.expression.IExpression;
-import net.darkglass.iguttae.treewalk.expression.IVisitor;
+import net.darkglass.iguttae.treewalk.expression.IExprVisitor;
 
 class LiteralExpr implements IExpression
 {
@@ -12,7 +12,7 @@ class LiteralExpr implements IExpression
         this.value = _value;
     }
 
-    public function accept<T>(_visitor:IVisitor<T>):T
+    public function accept<T>(_visitor:IExprVisitor<T>):T
     {
         return _visitor.visitLiteralExpr(this);
     }

@@ -6,7 +6,7 @@ import net.darkglass.iguttae.treewalk.token.Token;
 import net.darkglass.iguttae.treewalk.token.TokenType;
 import net.darkglass.iguttae.treewalk.error.TypeError;
 
-class Interpreter implements IVisitor<Dynamic>
+class Interpreter implements IExprVisitor<Dynamic>
 {
     // globals, mostly so we can print it
     private var global:GlobalContext;
@@ -35,7 +35,7 @@ class Interpreter implements IVisitor<Dynamic>
     }
 
     // -------------------------------------------------------------------------
-    // Main expression Visitation functions (IVisitor)
+    // Main expression Visitation functions (IExprVisitor)
     // -------------------------------------------------------------------------
 
     public function visitBinaryExpr(_expr:BinaryExpr):Dynamic
