@@ -173,7 +173,9 @@ Statement ::= ExprStmt | PrintStmt
 
 ExprStmt ::= expression TERMINATOR
 
-PrintStmt ::= "print" Expression TERMINATOR
+
+/* backwards compatible alias. */
+PrintStmt ::= ("echo" | "print") Expression TERMINATOR
 
 /* -------------------------------------------------------------------------- */
 /* Old file contents not yet in the interpreter itself                        */
@@ -209,11 +211,8 @@ MoveExpression      ::= ('go' DIRECTION) | DIRECTION
 UnlockExpression    ::= 'unlock' DIRECTION (WITH ITEM)?
 
 /* Debug commands */
-EchoExpression      ::= 'echo' WORD+
-TeleportExpression  ::= 'teleport' INT
 
-/* Interpreter commands, non-player */
-PrintExpression ::= 'print' PRINTABLE+
+TeleportExpression  ::= 'teleport' INT
 
 /* And bringing it all together */
 PlayerExpression ::=        (
@@ -228,12 +227,10 @@ PlayerExpression ::=        (
                             )
 
 DebugExpression ::=         (
-                                EchoExpression      |
                                 TeleportExpression
                             )
 
 InterpreterExpression::=    (
-                                PrintExpression |
                                 CommentExpression
                             )
 
