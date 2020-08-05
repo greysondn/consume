@@ -4,68 +4,356 @@
 			"name": "rooms",
 			"columns": [
 				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
 					"typeStr": "1",
 					"name": "name",
 					"display": null
 				},
 				{
-					"typeStr": "1",
-					"name": "wrongfile_specials",
+					"typeStr": "8",
+					"name": "wrongfile",
 					"opt": true
 				},
 				{
-					"typeStr": "1",
-					"name": "wrongfile_roomNPC",
-					"opt": true
+					"typeStr": "8",
+					"name": "flag"
 				},
 				{
-					"typeStr": "2",
-					"name": "flag_public"
+					"typeStr": "8",
+					"name": "permission",
+					"display": null
 				},
 				{
-					"typeStr": "2",
-					"name": "perm_wait"
-				},
-				{
-					"typeStr": "1",
-					"name": "desc_longview",
-					"opt": true
-				},
-				{
-					"typeStr": "1",
-					"name": "desc_brief",
-					"opt": true
-				},
-				{
-					"typeStr": "1",
-					"name": "desc_verbose",
+					"typeStr": "8",
+					"name": "description",
 					"display": null
 				}
 			],
 			"lines": [
 				{
 					"name": "Apartment - Bedroom",
-					"wrongfile_specials": "[6]",
-					"flag_public": false,
-					"perm_wait": true,
-					"desc_verbose": "The bedroom of your tiny 2-room apartment. It's really only it's own room because of the divider separating it from the rest of the apartment, there isn't even a door.\\n\\n\\nContains all the normal bedroom stuff; bed, dirty clothes, clean clothes. A dresser that gets used less then it should. There's a rather nice sized closet that's currently stuffed so full of junk you don't feel safe opening the door.",
-					"index": 0
+					"index": 0,
+					"flag": [
+						{
+							"public": false
+						}
+					],
+					"permission": [
+						{
+							"wait": true
+						}
+					],
+					"description": [
+						{
+							"longview": "",
+							"brief": "",
+							"verbose": "The bedroom of your tiny 2-room apartment. It's really only it's own room because of the divider separating it from the rest of the apartment, there isn't even a door.\\n\\n\\nContains all the normal bedroom stuff; bed, dirty clothes, clean clothes. A dresser that gets used less then it should. There's a rather nice sized closet that's currently stuffed so full of junk you don't feel safe opening the door."
+						}
+					],
+					"wrongfile": [
+						{
+							"specials": "[6]"
+						}
+					],
+					"uid": "_0000"
 				},
 				{
 					"name": "Apartment - Bathroom",
-					"wrongfile_specials": "[5]",
-					"flag_public": false,
-					"perm_wait": false,
-					"desc_verbose": "Your bathroom. Standard stuff for a person living alone. The important bits are the shower and the toilet.",
-					"index": 1
+					"index": 1,
+					"flag": [
+						{
+							"public": false
+						}
+					],
+					"permission": [
+						{
+							"wait": false
+						}
+					],
+					"description": [
+						{
+							"longview": "",
+							"brief": "",
+							"verbose": "Your bathroom. Standard stuff for a person living alone. The important bits are the shower and the toilet."
+						}
+					],
+					"wrongfile": [
+						{
+							"specials": "[5]"
+						}
+					],
+					"uid": "_0001"
 				},
 				{
 					"name": "Apartment - Living Room",
-					"flag_public": false,
-					"perm_wait": true,
-					"desc_verbose": "Your living room. Or really just the rest of your apartment. You have a cheap couch you got from a friend when you moved in. A nice TV you probably shouldn't have bought and a card table and folding chair. To the side is your kitchen, depressingly empty as usual.",
 					"index": 2,
-					"wrongfile_specials": "[7]"
+					"flag": [
+						{
+							"public": false
+						}
+					],
+					"permission": [
+						{
+							"wait": true
+						}
+					],
+					"description": [
+						{
+							"longview": "",
+							"brief": "",
+							"verbose": "Your living room. Or really just the rest of your apartment. You have a cheap couch you got from a friend when you moved in. A nice TV you probably shouldn't have bought and a card table and folding chair. To the side is your kitchen, depressingly empty as usual."
+						}
+					],
+					"wrongfile": [
+						{
+							"specials": "[7]"
+						}
+					],
+					"uid": "_0002"
+				},
+				{
+					"name": "Apartment - Balcony",
+					"index": 3,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0003"
+				},
+				{
+					"name": "Main Street",
+					"index": 4,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0004"
+				},
+				{
+					"name": "City Park",
+					"index": 5,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0005"
+				},
+				{
+					"name": "South Main Street",
+					"index": 6,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0006"
+				},
+				{
+					"name": "Consume Entryway",
+					"index": 7,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0007"
+				},
+				{
+					"name": "Back Alley",
+					"index": 8,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0008"
+				},
+				{
+					"name": "Consume - Dance Floor",
+					"index": 9,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0009"
+				},
+				{
+					"name": "Consume - Back Hall",
+					"index": 10,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0010"
+				},
+				{
+					"name": "Consume - Restroom",
+					"index": 11,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0011"
+				},
+				{
+					"name": "Consume - Bar",
+					"index": 12,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0012"
+				},
+				{
+					"name": "Consume - Stage",
+					"index": 13,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0013"
+				},
+				{
+					"name": "Consume - Balcony",
+					"index": 14,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0014"
+				},
+				{
+					"name": "Consume - Lounge",
+					"index": 15,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0015"
+				},
+				{
+					"name": "North Main Street",
+					"index": 16,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0016"
+				},
+				{
+					"name": "Hospital - Waiting Room",
+					"index": 17,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0017"
+				},
+				{
+					"name": "Hospital - Pharmacy",
+					"index": 18,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0018"
+				},
+				{
+					"name": "General Store",
+					"index": 19,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0019"
+				},
+				{
+					"name": "Gym - Reception",
+					"index": 20,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0020"
+				},
+				{
+					"name": "Gym - Workout Area",
+					"index": 21,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0021"
+				},
+				{
+					"name": "Gym - Gold Room",
+					"index": 22,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0022"
+				},
+				{
+					"name": "Gym - Staff Room",
+					"index": 23,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0023"
+				},
+				{
+					"name": "Gym - Restroom",
+					"index": 24,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0024"
+				},
+				{
+					"name": "Gym - Showers",
+					"index": 25,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0025"
+				},
+				{
+					"name": "Ice Cream Shop",
+					"index": 26,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0026"
+				},
+				{
+					"name": "Ice Cream Shop - Backroom",
+					"index": 27,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0027"
+				},
+				{
+					"name": "Ice Cream Shop - Freezer",
+					"index": 28,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0028"
+				},
+				{
+					"name": "Ice Cream Shop - Restroom",
+					"index": 29,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0029"
+				},
+				{
+					"name": "Ice Cream Shop - Office",
+					"index": 30,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0030"
+				},
+				{
+					"name": "General Store - Warehouse",
+					"index": 31,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0031"
+				},
+				{
+					"name": "Hospital - Backroom",
+					"index": 32,
+					"flag": [],
+					"permission": [],
+					"description": [],
+					"uid": "_0032"
 				}
 			],
 			"separators": [],
@@ -73,6 +361,466 @@
 				"displayColumn": "name",
 				"hasIndex": true
 			}
+		},
+		{
+			"name": "items",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "description"
+				},
+				{
+					"typeStr": "8",
+					"name": "alias",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "key",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "flag",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"name": "Gym Staff Key",
+					"description": "A key you got from Shay. It opens the staff room door at the gym.",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "staff key"
+						},
+						{
+							"value": "gym key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 314159
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 0,
+					"uid": "_0000"
+				},
+				{
+					"name": "Ice Cream Shop Backroom key",
+					"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "backroom key"
+						},
+						{
+							"value": "shop key"
+						},
+						{
+							"value": "ice cream key"
+						},
+						{
+							"value": "ice cream shop key"
+						},
+						{
+							"value": "Bessie's key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 420
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 1,
+					"uid": "_0001"
+				},
+				{
+					"name": "General Store key",
+					"description": "A key you got after agreeing to help out at the general store.",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "store key"
+						},
+						{
+							"value": "warehouse key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 1729
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 2,
+					"uid": "_0002"
+				},
+				{
+					"name": "Gym Gold Membership",
+					"description": "A credit-card sized square of plastic with the gym's logo printed on it and a gold background.",
+					"alias": [
+						{
+							"value": "card"
+						},
+						{
+							"value": "gym card"
+						},
+						{
+							"value": "gym gold card"
+						},
+						{
+							"value": "gold card"
+						},
+						{
+							"value": "membership card"
+						},
+						{
+							"value": "keycard"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 8675309
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 3,
+					"uid": "_0003"
+				}
+			],
+			"separators": [],
+			"props": {
+				"hasIndex": true,
+				"displayColumn": "name"
+			}
+		},
+		{
+			"name": "items@key",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "isKey",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "combo"
+				}
+			]
+		},
+		{
+			"name": "items@key@combo",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "items@alias",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "items@flag",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "indestructible",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "keyItem",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "unique"
+				}
+			]
+		},
+		{
+			"name": "rooms@flag",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "public",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "rooms@permission",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "wait",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "rooms@description",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "longview",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "brief",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "verbose",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "rooms@wrongfile",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "specials",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "roomNPC",
+					"opt": true,
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "spawns",
+			"columns": [
+				{
+					"typeStr": "8",
+					"name": "location",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "object",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"location": [
+						{
+							"type": 0,
+							"room": "_0026"
+						}
+					],
+					"object": [
+						{
+							"type": 0,
+							"item": "_0001"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": 0,
+							"room": "_0019"
+						}
+					],
+					"object": [
+						{
+							"type": 0,
+							"item": "_0002"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": 0,
+							"room": "_0021"
+						}
+					],
+					"object": [
+						{
+							"type": 0,
+							"item": "_0000"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": 0,
+							"room": "_0021"
+						}
+					],
+					"object": [
+						{
+							"type": 0,
+							"item": "_0003"
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "spawns@location",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "5:room",
+					"name": "type",
+					"display": null
+				},
+				{
+					"typeStr": "6:rooms",
+					"name": "room",
+					"opt": true,
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "spawns@object",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "5:item",
+					"name": "type",
+					"display": null
+				},
+				{
+					"typeStr": "6:items",
+					"name": "item",
+					"opt": true,
+					"display": null
+				}
+			]
 		}
 	],
 	"customTypes": [],
