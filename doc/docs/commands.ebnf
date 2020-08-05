@@ -8,12 +8,19 @@
 /* Just the basic user characters                                             */
 /* -------------------------------------------------------------------------- */
 
-NEWLINE ::= '\n'
+NEWLINE    ::= '\n'
+TERMINATOR ::= NEWLINE
 ALPHA      ::= ([a-z] | [A-Z] | '_')
 DIGIT      ::= [0-9]
 NUMBER     ::= DIGIT+ ('.' DIGIT+)?
 ALPHANUMERIC ::= ALPHA | NUMBER
 SPACE ::= ' '
+WORD ::= ALPHA+
+PRINTABLE  ::= ALPHANUMERIC | SPACE
+
+/* -------------------------------------------------------------------------- */
+/* Enumerations, basically                                                    */
+/* -------------------------------------------------------------------------- */
 
 DIRECTION ::= (
     n  | north     |
@@ -31,48 +38,79 @@ DIRECTION ::= (
 )
 
 /* -------------------------------------------------------------------------- */
-/* Commands that should be in the interpreter itself                        */
+/* Terms commonly used as shorthand for things in interpreter                 */
 /* -------------------------------------------------------------------------- */
-
-/* Just the basic user characters */
-WORD ::= ALPHA+
-
-PRINTABLE  ::= ALPHANUMERIC | SPACE
 
 /* objects which exist */
 NAME ::= WORD (SPACE WORD)*
 
-/* Clauses that are used in multiple player commands */
-ITEM ::= NAME /* alias with intent */
+/* alias with intention behind it */
+ITEM ::= NAME 
 
-/* Actual player commands */
+/* -------------------------------------------------------------------------- */
+/* Reoccuring clauses in interpreter                                          */
+/* -------------------------------------------------------------------------- */
 
-PrintCommand     ::= ("echo" | "print") WORD (SPACE WORD)*
+/* Suffix clause, used to indicate what item to use for given task */
+WithClause ::= 'with' ITEM
+
+/* -------------------------------------------------------------------------- */
+/* Actual interpreter commands                                                */
+/* -------------------------------------------------------------------------- */
+
+/* Drop an item */
 DropCommand      ::= ('d' | 'drop') ITEM
+
+/* Pick up an item */ 
 GetCommand       ::= ('g' | 'get')  ITEM
+
+/* print command help */
 HelpCommand      ::= 'help'
+
+/* list inventory */
 InventoryCommand ::= ('i' | 'inventory')
+
+/* Attempt to lock passage to a given direction */
 LockCommand      ::= 'lock' DIRECTION (WITH ITEM)?
+
+/* look at current environment */
 LookCommand      ::= ('l' | 'look')
+
+/* attempt to move in a given direction */
 MoveCommand      ::= ('go' DIRECTION) | DIRECTION
+
+/* just repeats what its told */ 
+PrintCommand     ::= ("echo" | "print") WORD (SPACE WORD)*
+
+/* attempt to unlock passage to a given direction */
 UnlockCommand    ::= 'unlock' DIRECTION (WITH ITEM)?
 
-/* Debug commands */
+/* Debug - teleport to a given room index */
+TeleportCommand  ::= 'teleport' INT
 
-TeleportExpression  ::= 'teleport' INT
+/* -------------------------------------------------------------------------- */
+/* Collections for clarity sake in the interpreter                            */
+/* -------------------------------------------------------------------------- */
 
-/* And bringing it all together */
-PlayerExpression ::=        (
-                                DropExpression      |
-                                GetExpression       |
-                                HelpExpression      |
-                                InventoryExpression |
-                                LockExpression      |
-                                LookExpression      |
-                                MoveExpression      |
-                                UnlockExpression
+/* commands the player can run at will */
+PlayerCommands ::=          (
+                                DropCommand         |
+                                GetCommand          |
+                                HelpCommand         |
+                                InventoryCommand    |
+                                LockCommand         |
+                                LookCommand         |
+                                MoveCommand         |
+                                PrintCommand        |
+                                UnlockCommand
                             )
 
-DebugExpression ::=         (
+/* Commands only available in debug mode */
+DebugCommands ::=           (
                                 TeleportExpression
                             )
+
+/* -------------------------------------------------------------------------- */
+/* Collections for clarity sake in the interpreter                            */
+/* -------------------------------------------------------------------------- */
+Commands ::= PlayerCommands | DebugCommands
