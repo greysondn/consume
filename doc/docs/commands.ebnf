@@ -173,7 +173,6 @@ Statement ::= ExprStmt | PrintStmt
 
 ExprStmt ::= expression TERMINATOR
 
-
 /* backwards compatible alias. */
 PrintStmt ::= ("echo" | "print") Expression TERMINATOR
 
