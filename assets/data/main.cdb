@@ -1,0 +1,80 @@
+{
+	"sheets": [
+		{
+			"name": "rooms",
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "wrongfile_specials",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "wrongfile_roomNPC",
+					"opt": true
+				},
+				{
+					"typeStr": "2",
+					"name": "flag_public"
+				},
+				{
+					"typeStr": "2",
+					"name": "perm_wait"
+				},
+				{
+					"typeStr": "1",
+					"name": "desc_longview",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "desc_brief",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "desc_verbose",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"name": "Apartment - Bedroom",
+					"wrongfile_specials": "[6]",
+					"flag_public": false,
+					"perm_wait": true,
+					"desc_verbose": "The bedroom of your tiny 2-room apartment. It's really only it's own room because of the divider separating it from the rest of the apartment, there isn't even a door.\\n\\n\\nContains all the normal bedroom stuff; bed, dirty clothes, clean clothes. A dresser that gets used less then it should. There's a rather nice sized closet that's currently stuffed so full of junk you don't feel safe opening the door.",
+					"index": 0
+				},
+				{
+					"name": "Apartment - Bathroom",
+					"wrongfile_specials": "[5]",
+					"flag_public": false,
+					"perm_wait": false,
+					"desc_verbose": "Your bathroom. Standard stuff for a person living alone. The important bits are the shower and the toilet.",
+					"index": 1
+				},
+				{
+					"name": "Apartment - Living Room",
+					"flag_public": false,
+					"perm_wait": true,
+					"desc_verbose": "Your living room. Or really just the rest of your apartment. You have a cheap couch you got from a friend when you moved in. A nice TV you probably shouldn't have bought and a card table and folding chair. To the side is your kitchen, depressingly empty as usual.",
+					"index": 2,
+					"wrongfile_specials": "[7]"
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name",
+				"hasIndex": true
+			}
+		}
+	],
+	"customTypes": [],
+	"compress": false
+}

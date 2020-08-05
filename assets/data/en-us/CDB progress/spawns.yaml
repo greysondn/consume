@@ -1,0 +1,62 @@
+-
+  index: -1
+  # schema
+  location:         # location where object goes
+    type:   "room"  # which type of location
+    index:  0       # index of location
+  object:           # object which goes in location
+    type:   "item"  # type of object to place in location
+    index:  0       # index of object
+-
+  index: -2
+  location:
+    type:   true
+    index:  true
+  object:
+    type:   true
+    index:  true
+-
+  index: -1
+  # schema
+  location:         # location where object goes
+    type:   "room"  # which type of location
+    index:  0       # index of location
+  object:           # object which goes in location
+    type:   "item"  # type of object to place in location
+    index:  0       # index of object
+-
+  index: 0
+  # put ice cream shop key in ice cream shop
+  location:
+    type:   "room"
+    index:  26
+  object:
+    type:   "item"
+    index:  1
+-
+  index: 1
+  # put warehouse key in front of general store
+  location:
+    type:   "room"
+    index:  19
+  object:
+    type:   "item"
+    index:  2
+-
+  index: 2
+  # put gym staff room key in gym's workout area
+  location:
+    type:   "room"
+    index:  21
+  object:
+    type:   "item"
+    index:  0
+-
+  index: 3
+  # put gym gold room key in gym's workout area
+  location:
+    type:   "room"
+    index:  21
+  object:
+    type:   "item"
+    index:  3
