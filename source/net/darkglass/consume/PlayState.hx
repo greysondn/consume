@@ -1,10 +1,5 @@
 package net.darkglass.consume;
 
-import net.darkglass.iguttae.treewalk.context.GlobalContext;
-import net.darkglass.iguttae.treewalk.expression.*;
-import net.darkglass.iguttae.treewalk.token.TokenType;
-import net.darkglass.iguttae.treewalk.token.Token;
-
 import haxe.ui.containers.VBox;
 import haxe.ui.containers.Absolute;
 import flixel.FlxG;
@@ -39,22 +34,8 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 
 import net.darkglass.iguttae.loader.YamlLoader;
 
-import net.darkglass.iguttae.treewalk.context.GlobalContext;
-import net.darkglass.iguttae.treewalk.context.ObjectContext;
-import net.darkglass.iguttae.treewalk.context.LocalContext;
-import net.darkglass.iguttae.treewalk.TreeWalkInterpreter;
-
 class PlayState extends FlxHaxeUiState
 {
-    // -------------------------------------------------------------------------
-    // testing igguate's third parser
-    // -------------------------------------------------------------------------
-    private var testEnable:Bool = true;
-    private var gContext:GlobalContext = new GlobalContext();
-    private var oContext:ObjectContext = new ObjectContext();
-    private var lContext:LocalContext = new LocalContext();
-    private var testParser:TreeWalkInterpreter = new TreeWalkInterpreter();
-
     // -------------------------------------------------------------------------
     // Iggutae's second parser
     // -------------------------------------------------------------------------
@@ -104,12 +85,6 @@ class PlayState extends FlxHaxeUiState
         this.env.player.location.inventory.add(this.env.player);
         this.env.player.location.describe(this.env);
         this.location.text = this.env.player.location.name;
-
-        if (this.testEnable)
-        {
-            this.gContext.cout = this.handleOutput;
-            this.gContext.cerr = this.handleOutput;
-        }
     }
 
     override public function update(elapsed:Float):Void
@@ -253,14 +228,7 @@ class PlayState extends FlxHaxeUiState
             // now add new text
             this.handleCommandOutput(this.cin.text);
 
-            if (!this.testEnable)
-            {
-                this.interpreter.eval(this.cin.text.substring(1));
-            }
-            else
-            {
-                this.testParser.eval(this.gContext, this.oContext, this.lContext, this.cin.text.substring(1));
-            }
+            this.interpreter.eval(this.cin.text.substring(1));
             
             this.coutContainer.vscrollPos = 0;
             this.cin.text = "> ";
