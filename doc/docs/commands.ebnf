@@ -16,35 +16,18 @@ ALPHANUMERIC ::= ALPHA | NUMBER
 SPACE ::= ' '
 
 DIRECTION ::= (
-    (
-        n  | 
-        ne | 
-        e  | 
-        se | 
-        s  | 
-        sw | 
-        w  | 
-        nw | 
-        u  | 
-        d  | 
-        i  | 
-        o
-    )
-    |
-    (
-        north | 
-        northeast | 
-        east | 
-        southeast | 
-        south | 
-        southwest | 
-        west | 
-        northwest | 
-        up | 
-        down| 
-        in | 
-        out
-    )
+    n  | north     |
+    ne | northeast |
+    e  | east      |
+    se | southeast |
+    s  | south     |
+    sw | southwest |
+    w  | west      |
+    nw | northwest |
+    u  | up        |
+    d  | down      |
+    i  | in        |
+    o  | out
 )
 
 /* -------------------------------------------------------------------------- */
