@@ -4,7 +4,6 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.Species;
 import net.darkglass.iguttae.gameworld.character.body.BodyPart;
 import net.darkglass.iguttae.gameworld.character.body.Measurement;
-import net.darkglass.iguttae.gameworld.item.Item;
 import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.gameworld.map.Room;
 import net.darkglass.iguttae.gameworld.map.Transition;
@@ -95,16 +94,6 @@ class YamlLoader
         var speciesStr:String  = Assets.getText(speciesSrc);
         var speciesDat:Dynamic = Yaml.parse(speciesStr);
         this.loadSpecies(env, speciesDat);
-
-        // can now load items
-        var itemStr:String  = Assets.getText(itemSrc);
-        var itemDat:Dynamic = Yaml.parse(itemStr);
-        this.loadItems(env, itemDat);
-
-        // and spawn everything where it goes
-        var spwnStr:String  = Assets.getText(spwnSrc);
-        var spwnDat:Dynamic = Yaml.parse(spwnStr);
-        this.loadSpawns(env, spwnDat);
     }
 
     /**
@@ -336,70 +325,7 @@ class YamlLoader
         }
     }
 
-    /**
-     * Helper function to load raw item data in
-     * 
-     * TODO: FINISH DOCUMENTING
-     * 
-     * @param env 
-     * @param itemDat 
-     */
-    private function loadItems(env:Environment, itemDat:Array<ObjectMap<String, Dynamic>>):Void
-    {
-        for (entry in itemDat)
-        {
-            // real indexes start at zero
-            if (entry.get("index") >= 0)
-            {
-                // swap holder, to later be injected into env
-                var swp:Item = new Item();
-
-                // and the "fun" part
-                swp.index   = entry.get("index");
-                swp.verbose = entry.get("desc");
-
-                swp.name    = entry.get("name");
-                swp.addAlias(swp.name);
-
-                // things specifically for keys
-                if (entry.get("key").get("isKey"))
-                {
-                    swp.isKey = true;
-
-                    // coerce combos so they're iterable
-                    var comboArray:Array<Int> = entry.get("key").get("combos");
-
-                    for (comboEntry in comboArray)
-                    {
-                        swp.combos.push(comboEntry);
-                    }
-                }
-
-                // aliases
-                var aliasArray:Array<String> = entry.get("alias");
-
-                for (entry in aliasArray)
-                {
-                    swp.addAlias(entry);
-                }
-
-                // flags
-                swp.isIndestructible = entry.get("flags").get("indestructible");
-                swp.isKeyItem        = entry.get("flags").get("key");
-                swp.isUnique         = entry.get("flags").get("unique");
-
-                // push into env
-                env.items.add(swp);
-            }
-        }
-
-        // perform integrity check on items
-        if (!env.items.checkIntegrity())
-        {
-            throw "HEY DUMMY YOU BOTCHED THE ITEM LIST, FIX IT";
-        }
-    }
-
+/*
     private function loadSpawns(env:Environment, spwnDat:Array<ObjectMap<String, Dynamic>>)
     {
         for (entry in spwnDat)
@@ -453,4 +379,5 @@ class YamlLoader
             }
         }
     }
+*/
 }

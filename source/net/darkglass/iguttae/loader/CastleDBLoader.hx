@@ -66,6 +66,54 @@ class CastleDBLoader {
      */
     private function loadItems(env:Environment):Void
     {
-        trace(this.data);
+        for (entry in this.data.items.all)
+        {
+            // placeholder item
+            var swp:Item = new Item();
+
+            // populate some simple fields, nothing fancy here
+            swp.index = entry.index;
+            swp.verbose = entry.description;
+            swp.name = entry.name;
+            
+            // stuff for keys - as in a lock
+            if (entry.key[0].isKey)
+            {
+                // is key
+                swp.isKey = true;
+
+                // combos
+                for (comboEntry in entry.key[0].combo)
+                {
+                    swp.combos.push(comboEntry.value);
+                }
+            }
+
+            // stuff for aliases
+            swp.addAlias(swp.name);
+
+            for (aliasEntry in entry.alias)
+            {
+                swp.addAlias(aliasEntry.value);
+            }
+
+            // flags
+            var flags = entry.flag[0];
+
+            swp.isIndestructible = flags.indestructible;
+            swp.isKeyItem        = flags.keyItem;
+            swp.isUnique         = flags.unique;
+
+            // push into env
+            env.items.add(swp);
+        }
+
+        // perform integrity check on items
+        if (!env.items.checkIntegrity())
+        {
+            // just going to mention, this is more likely to indicate an issue
+            // in the loader now with CDB assigning dense array indexes.
+            throw "HEY DUMMY YOU BOTCHED THE ITEM LIST, FIX IT";
+        }
     }
 }
