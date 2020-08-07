@@ -117,6 +117,438 @@
 			}
 		},
 		{
+			"name": "doors",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid"
+				},
+				{
+					"typeStr": "3",
+					"name": "idx"
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "flag"
+				},
+				{
+					"typeStr": "3",
+					"name": "travelTime"
+				},
+				{
+					"typeStr": "8",
+					"name": "rooms",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "timed",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "description",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "size",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "lock",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "Apartment - Living Room to Bedroom",
+					"flag": [
+						{
+							"isHidden": false
+						}
+					],
+					"travelTime": 1,
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0002",
+							"side": "_0004"
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000"
+						}
+					],
+					"timed": [
+						{
+							"isTimed": false
+						}
+					],
+					"description": [
+						{
+							"uid": "leftToRight",
+							"name": "Bedroom",
+							"look": "",
+							"lock": ""
+						},
+						{
+							"uid": "rightToLeft",
+							"name": "Living Room",
+							"look": "You call it your living room, but it's really the only other room in the apartment.",
+							"lock": ""
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"lock": [
+						{
+							"isLocked": false
+						}
+					],
+					"index": 0,
+					"idx": 0
+				}
+			],
+			"separators": [],
+			"props": {
+				"hasIndex": true,
+				"displayColumn": "name"
+			}
+		},
+		{
+			"name": "faq",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "question",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "answer",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "byline",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "date",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"question": "The game really, really sucks now! What is even going on with this anymore?",
+					"answer": "Genko's code was a real mess. Instead of trying to work with it, I decided to port the core game and redesign it to be more tolerable.",
+					"byline": "greysondn",
+					"date": "7 February 2019",
+					"uid": "_0000"
+				},
+				{
+					"question": "Who are you anyway? Why did you take this project over?",
+					"answer": "My name is pretty insignificant in the grand scheme. I studied a lot of game design and am a fan of older text adventure games, and Consume always bothered me in that arena but I felt that there was no reason to poke it until recent when it was declared abandoned. My reasons are somewhat myriad and not all pure; in the long run, I'm hoping to make enough money and design a text interpreter to step from here to releasing more conventional games.",
+					"byline": "greysondn",
+					"date": "7 February 2019",
+					"uid": "_0001"
+				},
+				{
+					"question": "Make money? How?",
+					"answer": "More likely than not, Patreon or donations on this specific project. This isn't exactly storefront friendly material, after all. But the engine could be used to make games that could be more viable, I think, as long as I design it right.",
+					"byline": "greysondn",
+					"date": "7 February 2019",
+					"uid": "_0002"
+				},
+				{
+					"uid": "_0003",
+					"question": "Are you going to write in new content? More scenes of the player being eaten? More types of vore?",
+					"answer": "I haven't ruled this out, but it's not on my list just yet. The first priority MUST be to get the game in a more maintainable state. If that happens, then even if I abandon it someone else would find it easier to pick up and fiddle with later on. So given that, everything else is on the back burner until the porting process is done.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0004",
+					"question": "Will there be [insert type of vore]? Will there be [insert species]?",
+					"answer": "No promises. See above question. TBD. Etc.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0005",
+					"question": "Will there be graphics? Can I make graphics for the game?",
+					"answer": "This question is shelved. Please see the question two above.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0006",
+					"question": "Can I write scenes then?",
+					"answer": "Much like the above answers, I don't want to try to slide in new content while I'm working on the port. Wait for now. There will come a point I'm open to contributions and write a guide for people to follow.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0007",
+					"question": "Can I pay for this game? Who should I pay, even?",
+					"answer": "I guess that gets complicated to follow, but basically, I hope I eventually reach a point where I can say I've done enough work and paying me isn't a sin. For now? I'd suggest probably nobody; I'm the one currently working on this, and I'm not taking money until I feel I've earned it.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0008",
+					"question": "What did you use to make Consume's HaxeFlixel port?",
+					"answer": "Haxe, and Haxeflixel. Genko seems to have not understood the ecosystem very well. I've had years of experience in it, and I've been working with Flixel longer than there's been a Haxe port of it. The IDE is VS-Code; the platform of choice is (regretably) Windows 10. Game testing is done via a debug build for HTML5, running in Google Chrome. Beyond this, it's just a difference in experience - not, I think, in ability.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0009",
+					"question": "Why is it called a WaTTY?",
+					"answer": "Very few people will come to this question, but there is a category of people who will. Wa is Japanese for bad, and a TTY is a text interface used for extremely old machinery and text-to-speech systems. The joke here is that it's not a very good TTY (it's not, it just gets the job done)... and also I get to name every instance of WaTTY a wat for extra points, because wat is even going on anymore.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0010",
+					"question": "Will you reopen the Reddit community? Or start your own?",
+					"answer": "Reddit really doesn't like when a banned subreddit changes its name and reopens. I suggest not doing that.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0011",
+					"question": "Will you open some kind of community or something?",
+					"answer": "Check the FA description for a Discord server.",
+					"byline": "greysondn",
+					"date": "7 February 2019"
+				},
+				{
+					"uid": "_0012",
+					"question": "How many lines are left to port from the old codebase to the new one?",
+					"answer": "There used to be a listing of this, but I let it slip so far out of date that I'll just leave it at more than zero for now.",
+					"byline": "greysondn",
+					"date": "28 May 2019"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "items",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "description"
+				},
+				{
+					"typeStr": "8",
+					"name": "alias",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "key",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "flag",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"name": "Gym Staff Key",
+					"description": "A key you got from Shay. It opens the staff room door at the gym.",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "staff key"
+						},
+						{
+							"value": "gym key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 314159
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 0,
+					"uid": "_0000"
+				},
+				{
+					"name": "Ice Cream Shop Backroom key",
+					"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "backroom key"
+						},
+						{
+							"value": "shop key"
+						},
+						{
+							"value": "ice cream key"
+						},
+						{
+							"value": "ice cream shop key"
+						},
+						{
+							"value": "Bessie's key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 420
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 1,
+					"uid": "_0001"
+				},
+				{
+					"name": "General Store key",
+					"description": "A key you got after agreeing to help out at the general store.",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "store key"
+						},
+						{
+							"value": "warehouse key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 1729
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 2,
+					"uid": "_0002"
+				},
+				{
+					"name": "Gym Gold Membership",
+					"description": "A credit-card sized square of plastic with the gym's logo printed on it and a gold background.",
+					"alias": [
+						{
+							"value": "card"
+						},
+						{
+							"value": "gym card"
+						},
+						{
+							"value": "gym gold card"
+						},
+						{
+							"value": "gold card"
+						},
+						{
+							"value": "membership card"
+						},
+						{
+							"value": "keycard"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 8675309
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false
+						}
+					],
+					"index": 3,
+					"uid": "_0003"
+				}
+			],
+			"separators": [],
+			"props": {
+				"hasIndex": true,
+				"displayColumn": "name"
+			}
+		},
+		{
 			"name": "rooms",
 			"columns": [
 				{
@@ -479,254 +911,6 @@
 			}
 		},
 		{
-			"name": "doors",
-			"columns": [
-				{
-					"typeStr": "0",
-					"name": "uid"
-				},
-				{
-					"typeStr": "1",
-					"name": "name",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "flag"
-				},
-				{
-					"typeStr": "3",
-					"name": "travelTime"
-				},
-				{
-					"typeStr": "8",
-					"name": "rooms",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "timed",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "description",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "size",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "lock",
-					"display": null
-				}
-			],
-			"lines": [],
-			"separators": [],
-			"props": {
-				"hasIndex": true,
-				"displayColumn": "name"
-			}
-		},
-		{
-			"name": "items",
-			"columns": [
-				{
-					"typeStr": "0",
-					"name": "uid",
-					"display": null
-				},
-				{
-					"typeStr": "1",
-					"name": "name",
-					"display": null
-				},
-				{
-					"typeStr": "1",
-					"name": "description"
-				},
-				{
-					"typeStr": "8",
-					"name": "alias",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "key",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "flag",
-					"display": null
-				}
-			],
-			"lines": [
-				{
-					"name": "Gym Staff Key",
-					"description": "A key you got from Shay. It opens the staff room door at the gym.",
-					"alias": [
-						{
-							"value": "key"
-						},
-						{
-							"value": "staff key"
-						},
-						{
-							"value": "gym key"
-						}
-					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 314159
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false
-						}
-					],
-					"index": 0,
-					"uid": "_0000"
-				},
-				{
-					"name": "Ice Cream Shop Backroom key",
-					"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
-					"alias": [
-						{
-							"value": "key"
-						},
-						{
-							"value": "backroom key"
-						},
-						{
-							"value": "shop key"
-						},
-						{
-							"value": "ice cream key"
-						},
-						{
-							"value": "ice cream shop key"
-						},
-						{
-							"value": "Bessie's key"
-						}
-					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 420
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false
-						}
-					],
-					"index": 1,
-					"uid": "_0001"
-				},
-				{
-					"name": "General Store key",
-					"description": "A key you got after agreeing to help out at the general store.",
-					"alias": [
-						{
-							"value": "key"
-						},
-						{
-							"value": "store key"
-						},
-						{
-							"value": "warehouse key"
-						}
-					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 1729
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false
-						}
-					],
-					"index": 2,
-					"uid": "_0002"
-				},
-				{
-					"name": "Gym Gold Membership",
-					"description": "A credit-card sized square of plastic with the gym's logo printed on it and a gold background.",
-					"alias": [
-						{
-							"value": "card"
-						},
-						{
-							"value": "gym card"
-						},
-						{
-							"value": "gym gold card"
-						},
-						{
-							"value": "gold card"
-						},
-						{
-							"value": "membership card"
-						},
-						{
-							"value": "keycard"
-						}
-					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 8675309
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false
-						}
-					],
-					"index": 3,
-					"uid": "_0003"
-				}
-			],
-			"separators": [],
-			"props": {
-				"hasIndex": true,
-				"displayColumn": "name"
-			}
-		},
-		{
 			"name": "items@key",
 			"props": {
 				"hide": true
@@ -1080,11 +1264,11 @@
 			"columns": [
 				{
 					"typeStr": "3",
-					"name": "width"
+					"name": "height"
 				},
 				{
 					"typeStr": "3",
-					"name": "height"
+					"name": "width"
 				}
 			]
 		},
