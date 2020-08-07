@@ -81,6 +81,9 @@
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
 
+	<!-- castledb support, OH WOWEE! -->
+	<haxelib name="castle" />
+
 	<!-- Yeah, I like yaml WAY more than JSON. -->
 	<haxelib name="yaml" />
 
