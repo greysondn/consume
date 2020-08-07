@@ -40,7 +40,7 @@ class YamlLoader
     }
 
     /**
-     * Returns a working, good-as-new YamlMapLoader.
+     * Returns a working, good-as-new YamlLoader.
      */
     public static function create():YamlLoader
     {
