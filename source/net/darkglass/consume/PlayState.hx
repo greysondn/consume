@@ -33,6 +33,8 @@ import net.darkglass.util.flixel.FlxHaxeUiState;
 import net.darkglass.iguttae.gameworld.actor.Actor;
 
 import net.darkglass.iguttae.loader.YamlLoader;
+import net.darkglass.iguttae.loader.CastleDBLoader;
+
 
 class PlayState extends FlxHaxeUiState
 {
@@ -80,7 +82,7 @@ class PlayState extends FlxHaxeUiState
         y.load(this.env);
 
         // load environment - new castledb
-        
+        var cdb:CastleDBLoader = CastleDBLoader.create();
 
         // add player to environment
         // TODO: don't hardcode this, move to file

@@ -1,10 +1,17 @@
 package net.darkglass.iguttae.loader;
 
+import net.darkglass.iguttae.loader.CastleDBData;
+
 class CastleDBLoader {
     /**
      * Singleton instance of class
      */
     private static var instance:CastleDBLoader;
+
+    /**
+     * Just a handy dandy pointer into our data class.
+     */
+    private var data = CastleDBData;
 
     /**
      * Constructor.
