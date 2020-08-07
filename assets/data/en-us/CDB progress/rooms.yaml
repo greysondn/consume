@@ -1,10 +1,6 @@
 -
   index: 3
   name:  "Apartment - Balcony"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -17,10 +13,6 @@
 -
   index: 4
   name:  "Main Street"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -40,10 +32,6 @@
 -
   index: 5
   name:  "City Park"
-  wrongFile:
-    specials: '[[1, "active"]]'
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -56,11 +44,6 @@
 -
   index: 6
   name:  "South Main Street"
-  wrongFile:
-    specials: "[0]"
-    npcs:     ""
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -73,11 +56,6 @@
 -
   index: 7
   name:  "Consume Entryway"
-  wrongFile:
-    specials: "[3]"
-    npcs:     "0"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -94,11 +72,6 @@
 -
   index: 8
   name:  "Back Alley"
-  wrongFile:
-    specials: '[3, [2, "rat"]]'
-    npcs:     "5"
-  flags:
-    public: false
   permissions:
     wait: false
   desc:
@@ -113,10 +86,6 @@
 -
   index: 9
   name:  "Consume - Dance Floor"
-  wrongFile:
-    specials: '[[1, "passive"]]'
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -133,10 +102,6 @@
 -
   index: 10
   name:  "Consume - Back Hall"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -150,10 +115,6 @@
 -
   index: 11
   name:  "Consume - Restroom"
-  wrongFile:
-    specials: "[5]"
-  flags:
-    public: false
   permissions:
     wait: true
   desc:
@@ -164,10 +125,6 @@
 -
   index: 12
   name:  "Consume - Bar"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -183,10 +140,6 @@
 -
   index: 13
   name:  "Consume - Stage"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -199,10 +152,6 @@
 -
   index: 14
   name:  "Consume - Balcony"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -219,10 +168,6 @@
 -
   index: 15
   name:  "Consume - Lounge"
-  wrongFile:
-    specials: "[15]"
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -238,10 +183,6 @@
 -
   index: 16
   name:  "North Main Street"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -259,10 +200,6 @@
 -
   index: 17
   name:  "Hospital - Waiting Room"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -278,10 +215,6 @@
 -
   index: 18
   name:  "Hospital - Pharmacy"
-  wrongFile:
-    specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -297,8 +230,6 @@
   wrongFile:
     specials: '[3, [2, "general"]]'
     npcs:     "6"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -315,8 +246,6 @@
   wrongFile:
     specials: "[3]"
     npcs:     "1"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -335,8 +264,6 @@
   name:  "Gym - Workout Area"
   wrongFile:
     specials: "[8]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -369,8 +296,6 @@
   name:  "Gym - Gold Room"
   wrongFile:
     specials: "[9]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -429,8 +354,6 @@
   name:  "Gym - Staff Room"
   wrongFile:
     specials: "[10]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -454,8 +377,6 @@
   name:  "Gym - Restroom"
   wrongFile:
     specials: "[5]"
-  flags:
-    public: false
   permissions:
     wait: true
   desc:
@@ -468,8 +389,6 @@
   name:  "Gym - Showers"
   wrongFile:
     specials: "[0]"
-  flags:
-    public: false
   permissions:
     wait: true
   desc:
@@ -485,8 +404,6 @@
   name:  "Ice Cream Shop"
   wrongFile:
     specials: '[[2, "iceCream"]]'
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -504,8 +421,6 @@
   name:  "Ice Cream Shop - Backroom"
   wrongFile:
     specials: "[0]"
-  flags:
-    public: true
   permissions:
     wait: false
   desc:
@@ -523,8 +438,6 @@
   name:  "Ice Cream Shop - Freezer"
   wrongFile:
     specials: "[0]"
-  flags:
-    public: false
   permissions:
     wait: true
   desc:
@@ -541,8 +454,6 @@
   name:  "Ice Cream Shop - Restroom"
   wrongFile:
     specials: "[5]"
-  flags:
-    public: true
   permissions:
     wait: true
   desc:
@@ -555,8 +466,6 @@
   name:  "Ice Cream Shop - Office"
   wrongFile:
     specials: "[12]"
-  flags:
-    public: false
   permissions:
     wait: false
   desc:
@@ -594,8 +503,6 @@
   name:  "General Store - Warehouse"
   wrongFile:
     specials: "[4]"
-  flags:
-    public: false
   permissions:
     wait: true
   desc:
@@ -609,8 +516,6 @@
   name:  "Hospital - Backroom"
   wrongFile:
     specials: "[11]"
-  flags:
-    public: false
   permissions:
     wait: true
   desc:

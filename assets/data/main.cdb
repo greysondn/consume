@@ -666,135 +666,285 @@
 				{
 					"name": "Apartment - Balcony",
 					"index": 3,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0003"
+					"uid": "_0003",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Main Street",
 					"index": 4,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0004"
+					"uid": "_0004",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "City Park",
 					"index": 5,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0005"
+					"uid": "_0005",
+					"wrongfile": [
+						{
+							"specials": "[[1, \"active\"]]"
+						}
+					]
 				},
 				{
 					"name": "South Main Street",
 					"index": 6,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0006"
+					"uid": "_0006",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Consume Entryway",
 					"index": 7,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0007"
+					"uid": "_0007",
+					"wrongfile": [
+						{
+							"specials": "[3]",
+							"roomNPC": "0"
+						}
+					]
 				},
 				{
 					"name": "Back Alley",
 					"index": 8,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0008"
+					"uid": "_0008",
+					"wrongfile": [
+						{
+							"specials": "[3, [2, \"rat\"]]",
+							"roomNPC": "5"
+						}
+					]
 				},
 				{
 					"name": "Consume - Dance Floor",
 					"index": 9,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0009"
+					"uid": "_0009",
+					"wrongfile": [
+						{
+							"specials": "[[1, \"passive\"]]"
+						}
+					]
 				},
 				{
 					"name": "Consume - Back Hall",
 					"index": 10,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0010"
+					"uid": "_0010",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Consume - Restroom",
 					"index": 11,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0011"
+					"uid": "_0011",
+					"wrongfile": [
+						{
+							"specials": "[5]"
+						}
+					]
 				},
 				{
 					"name": "Consume - Bar",
 					"index": 12,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0012"
+					"uid": "_0012",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Consume - Stage",
 					"index": 13,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0013"
+					"uid": "_0013",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Consume - Balcony",
 					"index": 14,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0014"
+					"uid": "_0014",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Consume - Lounge",
 					"index": 15,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0015"
+					"uid": "_0015",
+					"wrongfile": [
+						{
+							"specials": "[15]"
+						}
+					]
 				},
 				{
 					"name": "North Main Street",
 					"index": 16,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0016"
+					"uid": "_0016",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Hospital - Waiting Room",
 					"index": 17,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0017"
+					"uid": "_0017",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "Hospital - Pharmacy",
 					"index": 18,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
-					"uid": "_0018"
+					"uid": "_0018",
+					"wrongfile": [
+						{
+							"specials": "[0]"
+						}
+					]
 				},
 				{
 					"name": "General Store",
 					"index": 19,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0019"
@@ -802,7 +952,11 @@
 				{
 					"name": "Gym - Reception",
 					"index": 20,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0020"
@@ -810,7 +964,11 @@
 				{
 					"name": "Gym - Workout Area",
 					"index": 21,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0021"
@@ -818,7 +976,11 @@
 				{
 					"name": "Gym - Gold Room",
 					"index": 22,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0022"
@@ -826,7 +988,11 @@
 				{
 					"name": "Gym - Staff Room",
 					"index": 23,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0023"
@@ -834,7 +1000,11 @@
 				{
 					"name": "Gym - Restroom",
 					"index": 24,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0024"
@@ -842,7 +1012,11 @@
 				{
 					"name": "Gym - Showers",
 					"index": 25,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0025"
@@ -850,7 +1024,11 @@
 				{
 					"name": "Ice Cream Shop",
 					"index": 26,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0026"
@@ -858,7 +1036,11 @@
 				{
 					"name": "Ice Cream Shop - Backroom",
 					"index": 27,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0027"
@@ -866,7 +1048,11 @@
 				{
 					"name": "Ice Cream Shop - Freezer",
 					"index": 28,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0028"
@@ -874,7 +1060,11 @@
 				{
 					"name": "Ice Cream Shop - Restroom",
 					"index": 29,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": true
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0029"
@@ -882,7 +1072,11 @@
 				{
 					"name": "Ice Cream Shop - Office",
 					"index": 30,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0030"
@@ -890,7 +1084,11 @@
 				{
 					"name": "General Store - Warehouse",
 					"index": 31,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0031"
@@ -898,7 +1096,11 @@
 				{
 					"name": "Hospital - Backroom",
 					"index": 32,
-					"flag": [],
+					"flag": [
+						{
+							"isPublic": false
+						}
+					],
 					"permission": [],
 					"description": [],
 					"uid": "_0032"
