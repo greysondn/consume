@@ -142,11 +142,11 @@ class CastleDBLoader {
              * WITH THE FOLLOWING SWITCH BLOCK'S CONTENTS
              *
              * This implementation assumes:
-             *  0 - room
+             *  _0000 - room
              */
-            switch (entLoc.type.toInt())
+            switch (entLoc.type.uid.toString())
             {
-                case 0:
+                case "_0000":
                     loc = cast(env.rooms.get(entLoc.room.index), Actor);
                 default:
                     throw("Unknown spawn location type! Check values of SpawnDest!");
@@ -160,11 +160,11 @@ class CastleDBLoader {
              * WITH THE FOLLOWING SWITCH BLOCK'S CONTENTS
              *
              * This implementation assumes:
-             *  0 - item
+             *  _0001 - item
              */
-            switch (entObj.type.toInt())
+            switch (entObj.type.uid.toString())
             {
-                case 0:
+                case "_0001":
                     // we have to make sure it can be cloned first
                     var toCheck:Actor = cast(env.items.get(entObj.item.index), Actor);
 

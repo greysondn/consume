@@ -1,6 +1,122 @@
 {
 	"sheets": [
 		{
+			"name": "directions",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "shortname",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "north",
+					"index": 0,
+					"shortname": "n"
+				},
+				{
+					"uid": "_0001",
+					"shortname": "ne",
+					"name": "northeast",
+					"index": 1
+				},
+				{
+					"uid": "_0002",
+					"shortname": "e",
+					"name": "east",
+					"index": 2
+				},
+				{
+					"uid": "_0003",
+					"shortname": "se",
+					"name": "southeast",
+					"index": 3
+				},
+				{
+					"uid": "_0004",
+					"shortname": "s",
+					"name": "south",
+					"index": 4
+				},
+				{
+					"uid": "_0005",
+					"shortname": "sw",
+					"name": "southwest",
+					"index": 5
+				},
+				{
+					"uid": "_0006",
+					"shortname": "w",
+					"name": "west",
+					"index": 6
+				},
+				{
+					"uid": "_0007",
+					"shortname": "nw",
+					"name": "northwest",
+					"index": 7
+				},
+				{
+					"uid": "_0008",
+					"shortname": "i",
+					"name": "in",
+					"index": 8
+				},
+				{
+					"uid": "_0009",
+					"shortname": "o",
+					"name": "out",
+					"index": 9
+				}
+			],
+			"separators": [],
+			"props": {
+				"hasIndex": true,
+				"displayColumn": "shortname"
+			}
+		},
+		{
+			"name": "types",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "room"
+				},
+				{
+					"uid": "_0001",
+					"name": "item"
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
 			"name": "rooms",
 			"columns": [
 				{
@@ -359,6 +475,21 @@
 			"separators": [],
 			"props": {
 				"displayColumn": "name",
+				"hasIndex": true
+			}
+		},
+		{
+			"name": "doors",
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				}
+			],
+			"lines": [],
+			"separators": [],
+			"props": {
 				"hasIndex": true
 			}
 		},
@@ -722,56 +853,56 @@
 				{
 					"location": [
 						{
-							"type": 0,
-							"room": "_0026"
+							"room": "_0026",
+							"type": "_0000"
 						}
 					],
 					"object": [
 						{
-							"type": 0,
-							"item": "_0001"
+							"item": "_0001",
+							"type": "_0001"
 						}
 					]
 				},
 				{
 					"location": [
 						{
-							"type": 0,
-							"room": "_0019"
+							"room": "_0019",
+							"type": "_0000"
 						}
 					],
 					"object": [
 						{
-							"type": 0,
-							"item": "_0002"
+							"item": "_0002",
+							"type": "_0001"
 						}
 					]
 				},
 				{
 					"location": [
 						{
-							"type": 0,
-							"room": "_0021"
+							"room": "_0021",
+							"type": "_0000"
 						}
 					],
 					"object": [
 						{
-							"type": 0,
-							"item": "_0000"
+							"item": "_0000",
+							"type": "_0001"
 						}
 					]
 				},
 				{
 					"location": [
 						{
-							"type": 0,
-							"room": "_0021"
+							"room": "_0021",
+							"type": "_0000"
 						}
 					],
 					"object": [
 						{
-							"type": 0,
-							"item": "_0003"
+							"item": "_0003",
+							"type": "_0001"
 						}
 					]
 				}
@@ -788,7 +919,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "5:room",
+					"typeStr": "6:types",
 					"name": "type",
 					"display": null
 				},
@@ -809,7 +940,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "5:item",
+					"typeStr": "6:types",
 					"name": "type",
 					"display": null
 				},
