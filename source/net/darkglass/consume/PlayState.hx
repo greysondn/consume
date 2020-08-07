@@ -75,9 +75,12 @@ class PlayState extends FlxHaxeUiState
         // init iggutae
         this.interpreter = new Iguttae(this.env);
 
-        // load environment
+        // load environment - old yaml
         var y:YamlLoader = YamlLoader.create();
         y.load(this.env);
+
+        // load environment - new castledb
+        
 
         // add player to environment
         // TODO: don't hardcode this, move to file
