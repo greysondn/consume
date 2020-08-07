@@ -1,7 +1,7 @@
 {
 	"sheets": [
 		{
-			"name": "directions",
+			"name": "enumDirections",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -88,7 +88,7 @@
 			}
 		},
 		{
-			"name": "types",
+			"name": "enumTypes",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -482,15 +482,53 @@
 			"name": "doors",
 			"columns": [
 				{
+					"typeStr": "0",
+					"name": "uid"
+				},
+				{
 					"typeStr": "1",
 					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "flag"
+				},
+				{
+					"typeStr": "3",
+					"name": "travelTime"
+				},
+				{
+					"typeStr": "8",
+					"name": "rooms",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "timed",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "description",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "size",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "lock",
 					"display": null
 				}
 			],
 			"lines": [],
 			"separators": [],
 			"props": {
-				"hasIndex": true
+				"hasIndex": true,
+				"displayColumn": "name"
 			}
 		},
 		{
@@ -919,7 +957,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:types",
+					"typeStr": "6:enumTypes",
 					"name": "type",
 					"display": null
 				},
@@ -940,7 +978,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:types",
+					"typeStr": "6:enumTypes",
 					"name": "type",
 					"display": null
 				},
@@ -948,6 +986,155 @@
 					"typeStr": "6:items",
 					"name": "item",
 					"opt": true,
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "doors@rooms",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "6:rooms",
+					"name": "room",
+					"display": null
+				},
+				{
+					"typeStr": "6:enumDirections",
+					"name": "side",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "doors@timed",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "isTimed",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "open",
+					"opt": true
+				},
+				{
+					"typeStr": "3",
+					"name": "close",
+					"opt": true
+				}
+			]
+		},
+		{
+			"name": "doors@description",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "look",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "lock",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "doors@size",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "width"
+				},
+				{
+					"typeStr": "3",
+					"name": "height"
+				}
+			]
+		},
+		{
+			"name": "doors@lock",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "isLocked",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "combo",
+					"opt": true,
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "doors@lock@combo",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "value",
+					"opt": true
+				}
+			]
+		},
+		{
+			"name": "doors@flag",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "isHidden",
 					"display": null
 				}
 			]
