@@ -83,6 +83,7 @@ class PlayState extends FlxHaxeUiState
 
         // load environment - new castledb
         var cdb:CastleDBLoader = CastleDBLoader.create();
+        cdb.load(this.env);
 
         // add player to environment
         // TODO: don't hardcode this, move to file
