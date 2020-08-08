@@ -18,7 +18,8 @@ class Constants
     private var prefixes:Array<String> = [
         "container",
         "flag",
-        "permission"
+        "permission",
+        "slot"
     ];
 
     /**
@@ -58,7 +59,27 @@ class Constants
         // -----------
         //
         // whether or not an actor can wait and if waiting is allowed here
-        "permission.wait"
+        "permission.wait",
+        // -----
+        // slots
+        // -----
+        // Either this means that such equipment slots exist
+        // OR
+        // that such a thing can be equipped in an equipment slot
+        // OR
+        // that this entry represents the given equipment slot.
+
+        // the left ring finger - or the only ring slot
+        // if you're playing classic.
+        "slot.ringLeftRing",
+
+        // a one handed weapon - or the only weapon slot
+        // if you're playing classic.
+        "slot.weapon.onehanded",
+
+        // the torso armor - or the only armor slot
+        // if you're playing classic.
+        "slot.armor.torso"
     ];
 
     /**

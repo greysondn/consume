@@ -117,6 +117,38 @@
 			}
 		},
 		{
+			"name": "enumEquipSlots",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name"
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "ring.left.ring"
+				},
+				{
+					"uid": "_0001",
+					"name": "weapon.onehanded"
+				},
+				{
+					"uid": "_0002",
+					"name": "armor.torso"
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
 			"name": "doors",
 			"columns": [
 				{
@@ -377,12 +409,22 @@
 				},
 				{
 					"typeStr": "8",
+					"name": "flag",
+					"display": null
+				},
+				{
+					"typeStr": "8",
 					"name": "key",
 					"display": null
 				},
 				{
 					"typeStr": "8",
-					"name": "flag",
+					"name": "slots",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "stats",
 					"display": null
 				}
 			],
@@ -419,7 +461,14 @@
 						}
 					],
 					"index": 0,
-					"uid": "_0000"
+					"uid": "_0000",
+					"slots": [],
+					"stats": [
+						{
+							"mass": 0,
+							"value": 0
+						}
+					]
 				},
 				{
 					"name": "Ice Cream Shop Backroom key",
@@ -462,7 +511,14 @@
 						}
 					],
 					"index": 1,
-					"uid": "_0001"
+					"uid": "_0001",
+					"slots": [],
+					"stats": [
+						{
+							"mass": 0,
+							"value": 0
+						}
+					]
 				},
 				{
 					"name": "General Store key",
@@ -496,7 +552,14 @@
 						}
 					],
 					"index": 2,
-					"uid": "_0002"
+					"uid": "_0002",
+					"slots": [],
+					"stats": [
+						{
+							"mass": 0,
+							"value": 0
+						}
+					]
 				},
 				{
 					"name": "Gym Gold Membership",
@@ -539,7 +602,14 @@
 						}
 					],
 					"index": 3,
-					"uid": "_0003"
+					"uid": "_0003",
+					"slots": [],
+					"stats": [
+						{
+							"mass": 0,
+							"value": 0
+						}
+					]
 				}
 			],
 			"separators": [],
@@ -1522,6 +1592,38 @@
 					"typeStr": "2",
 					"name": "isHidden",
 					"display": null
+				}
+			]
+		},
+		{
+			"name": "items@slots",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:enumEquipSlots",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "items@stats",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "mass"
+				},
+				{
+					"typeStr": "3",
+					"name": "value"
 				}
 			]
 		}

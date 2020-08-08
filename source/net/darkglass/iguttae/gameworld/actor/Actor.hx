@@ -24,6 +24,16 @@ class Actor extends Entity
     public var combos:Array<Int> = [];
 
     /**
+     * This object's equipment slots - and what's in them
+     */
+    public var equipment:Map<Int, Null<Actor>> = [];
+
+    /**
+     * Slots this object can be fitted into, if any
+     */
+    public var validSlots:ConstantList = new ConstantList();
+
+    /**
      * The permissions associated with this actor.
      * 
      * Don't meddle with this directly! There are functions written to interact
@@ -219,6 +229,175 @@ class Actor extends Entity
     }
 
     /**
+     * Adds an equipment slot to this Actor for no clear reason.
+     *
+     * @param slot which slot to add, per Constants.hx
+     */
+    public function addEquipmentSlot(slot:Int):Void
+    {
+        this.equipment[slot] = null;
+    }
+
+    /**
+     * Removes an equipment slot from this actor for no clear reason
+     * 
+     * @param slot which slot to remove, per Constants.hx
+     * 
+     * @return the Actor that was in that slot.
+     */
+    public function removeEquipmentSlot(slot:Int):Null<Actor>
+    {
+        var ret:Actor = null;
+
+        if(this.equipment.exists(slot))
+        {
+            ret = this.equipment[slot];
+            this.equipment.remove(slot);
+        }
+
+        return ret;
+    }
+
+    public function equip(item:Actor, ?slot:Null<Int> = null):Bool
+    {
+        // default to the notion we can't equip it.
+        var ret:Bool = false;
+
+        // We start with if slot is set, as it's the only valid option in that
+        // case.
+        if (null != slot)
+        {
+            // does the slot exist?
+            if (this.equipment.exists(slot))
+            {
+                // is this a valid slot for the equipment?
+                if (item.validSlots.contains(slot))
+                {
+                    // deoccupy the slot
+                    this.unequip(slot);
+                
+                    // put this in it
+                    this.equipment[slot] = item;
+
+                    // mark successful
+                    ret = true;
+                }
+            }
+        }
+        else
+        {
+            // we'll have to try the slots and just take the first one
+            var slotFound:Bool = false;
+
+            for (k in this.equipment.keys())
+            {
+                if (item.validSlots.contains(k))
+                {
+                    if (!slotFound)
+                    {
+                        // we found a slot anyway
+                        slotFound = true;
+
+                        // we can just call this with a preferred slot
+                        ret = this.equip(item, k);
+                    }
+                    else if (!ret)
+                    {
+                        // it wasn't succesfully put in, try again
+                        ret = this.equip(item, k);
+                    }
+                    else
+                    {
+                        // pass. It's been equipped to some slot.
+                        // we don't want to equip it twice.
+                    }
+                }
+            } 
+        }
+
+        // finally return
+        return ret;
+    }
+
+    /**
+     * Attempts to remove either whatever may be in the given slot or the given
+     * item (but not both from the slot in question. SPECIFY EXACTLY ONE INPUT.
+     * 
+     * @param slot slot to remove item from.
+     * @param item item to remove from whatever slot it's in.
+     * @return Bool Whether it was successfully removed. (Subjectively.)
+     */
+    public function unequip(?slot:Null<Int> = null, ?item:Null<Actor> = null):Bool
+    {
+        // eventual return
+        var ret:Bool = false;
+
+        // make sure programmer isn't an idiot
+        if (slot != null && item != null)
+        {
+            throw "TOO MANY ARGUMENTS TO ACTOR.UNEQUIP()!!!";
+        }
+        else
+        {
+            // okay, now try, maybe programmer was smart.
+            if (slot != null)
+            {
+                if (this.equipment.exists(slot))
+                {
+                    // okay, just set it to null
+                    // maybe some checks here later, but it's this simple
+                    this.equipment[slot] = null;
+                    ret = true;
+                }
+                else
+                {
+                    // a nonexistent slot is always emptied successfully.
+                    // separated because the if block may be expanded later.
+                    ret = true;
+                }
+            }
+            else if (item != null)
+            {
+                // some special logic in case we want to complicate this later.
+                var found = false;
+
+                // we have to iterate the keys of that dictionary looking for it.
+                for (k in this.equipment.keys())
+                {
+                    if (this.equipment[k].answersTo(item.name))
+                    {
+                        // it's a match!
+                        found = true;
+
+                        // might want more complex logic later, but this works
+                        // for now.
+                        this.equipment[k] = null;
+
+                        // might want more complex 
+                        ret = true;
+                    }
+                }
+
+                // if we never found it, it counts as removed (it wasn't on to
+                // begin with)
+                if (!found)
+                {
+                    ret = true;
+                }
+            }
+            else
+            {
+                // they're both null. How does this programmer manage to remember
+                // how to breathe?
+                throw "TOO FEW ARGUMENTS TO ACTOR.UNEQUIP()!!!";
+            }
+        }
+
+        // return
+        return ret;
+    }
+
+    /**
      * As in this is just a prototype with frills. Make sure you canClone()
      * first. This won't try to stop you if you fail to check for yourself!
      * 
@@ -249,6 +428,8 @@ class Actor extends Entity
         }
 
         // contents, I'm thinking we really shouldn't
+
+        // equipment, I'm thinking we really shouldn't
 
         // exits, can skip I think
 
