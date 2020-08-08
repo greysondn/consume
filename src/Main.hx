@@ -6946,10 +6946,6 @@ class Main {
 		globals.keys[0] = ["Gym Membership Keycard",	0,		"A credit-card sized square of plastic with the gym's logo printed on it and a black background"];
 		globals.keys[3] = ["Consume Red Band",			3,		"A tight fitting band with the logo of the local club on it. You can't get it off, but you often forget you're even wearing it."];
 		
-		//Food
-		globals.food = new Array();
-		var foods:Array<Dynamic> = new Array();
-		
 		//Weapons
 		globals.weapons = new Array();
 		//Weapons    Name           Mass Value Desc                                   Attack TwoHand Finisher Specials
@@ -6960,16 +6956,8 @@ class Main {
 		weapons.push(["Longsword",   10,   15, "A heavy knight's weapon.",             10,    true,  null,    null]);
 		weapons.push(["Hammer",       5,   11, "A workman's tool.",                     3,    false, null,    null]);
 		weapons.push(["Sledge",      20,   15, "A heavy hammer made for breaking rocks.", 6,  true,  null,    null]);
-		
-		//Armor
-		
-		globals.armor = new Array();
-		//Armor     Name   Mass  Value  Desc               Def  Special
-		armor.push(["Skin", 0,     0,   "Your naked flesh", 0,   null]);
-		armor.push(["Leather Jacket", 5, 10, "A thick leather biker's jacket. Not really intended for combat.", 2, null]);
-		armor.push(["Armored Coat", 7, 15, "A heavy leather coat reinforced with hard plastic panels.", 7, null]);
-		armor.push(["Breastplate", 20, 20, "A solid peice of shaped metal. Heavy, but good protection.", 10, null]);
-		
+        
+        // rings
 		globals.rings = new Array();
 		
 		ring.push(["Gold Ring", 0, 50, "A small gold ring."]);
