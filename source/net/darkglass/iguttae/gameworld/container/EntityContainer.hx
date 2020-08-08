@@ -18,12 +18,21 @@ class EntityContainer extends Entity
      */
     public var containerFor:ConstantList = new ConstantList();
 
+    /**
+     * Constructor.
+     */
     public function new()
     {
         // ya guessed it
         super();
     }
 
+    /**
+     * Get all contents answering a given alias
+     * 
+     * @param alias             Alias to check
+     * @return Array<Entity>    everything that answers to it
+     */
     public function getAllAnswering(alias:String):Array<Entity>
     {
         var ret:Array<Entity> = [];
