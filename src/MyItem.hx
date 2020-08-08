@@ -30,11 +30,13 @@ class MyItem {
      * @param playerCharacter   the Player's character (really?)
      * @return String           the output string corrosponding to the item.
      */
-    public function give(playerCharacter:MyPlayerObject):String {
+    public function give(playerCharacter:MyPlayerObject):String
+    {
         // I've decimated this down to just the string now.
         // yes, yes I did. ~greysondn, 8 August 2020
         return "<p>You tuck the " + this.name.toLowerCase() +
-        " away in your pocket.</p><br><p>You have " + itemCount + " of them.</p><br>";
+        " away in your pocket.</p><br><p>You have " + itemCount +
+        " of them.</p><br>";
     }
     
     /**
@@ -43,20 +45,27 @@ class MyItem {
      * @param playerCharacter the Player's character (really?)
      * @return String         the output string corrosponding to the item.
      */
-    public function toss(playerCharacter:MyPlayerObject):String {
-        
+    public function toss(playerCharacter:MyPlayerObject):String
+    {
+        // I've decimated this down to just the string now.
+        // yes, yes I did. ~greysondn, 8 August 2020
         return "<p>You drop the " + this.name.toLowerCase() + ".</p><br>";
     }
     
-    public function eat(playerCharacter:MyPlayerObject):String {
+    /**
+     * Makes the player eat this, complete with a this.toss/this.count decrement
+     * and everything.
+     * 
+     * @param playerCharacter   the Player's character (really?)
+     * @return String           the output string corrosponding to the item.
+     */
+    public function eat(playerCharacter:MyPlayerObject):String
+    {
         playerCharacter.stomachCurrent += this.mass;
         
-        if (this.count > 1) {
-            this.count -= 1;
-        } else {
-            this.toss(playerCharacter);
-        }
+        // decrement count/toss here
         
-        return "<p>You pop the " + this.name.toLowerCase() + " into your mouth and swallow it down.</p><br>";
+        return "<p>You pop the " + this.name.toLowerCase() + 
+        " into your mouth and swallow it down.</p><br>";
     }
 }
