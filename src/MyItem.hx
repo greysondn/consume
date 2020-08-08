@@ -24,19 +24,6 @@ class MyItem {
     public var type:String;
     
     /**
-     * Equivalent to the player throwing away this item.
-     * 
-     * @param playerCharacter the Player's character (really?)
-     * @return String         the output string corrosponding to the item.
-     */
-    public function toss(playerCharacter:MyPlayerObject):String
-    {
-        // I've decimated this down to just the string now.
-        // yes, yes I did. ~greysondn, 8 August 2020
-        return "<p>You drop the " + this.name.toLowerCase() + ".</p><br>";
-    }
-    
-    /**
      * Makes the player eat this, complete with a this.toss/this.count decrement
      * and everything.
      * 

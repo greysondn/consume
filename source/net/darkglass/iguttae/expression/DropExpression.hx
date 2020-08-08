@@ -51,7 +51,7 @@ class DropExpression extends BaseExpression
                 // set location and say it
                 item.location.inventory.remove(item);
                 item.location = actor.location;
-                env.outStream("You dropped " + item.name);
+                env.outStream("You drop the " + item.name + ".");
             }
             else
             {
