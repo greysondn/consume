@@ -73,9 +73,11 @@ class Constants
         // if you're playing classic.
         "slot.ringLeftRing",
 
-        // a one handed weapon - or the only weapon slot
-        // if you're playing classic.
+        // a one handed weapon
         "slot.weapon.onehanded",
+
+        // a two handed weapon
+        "slot.weapon.twohanded",
 
         // the torso armor - or the only armor slot
         // if you're playing classic.
