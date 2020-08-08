@@ -6941,11 +6941,6 @@ class Main {
 		
 		//Items
 		
-		//Keys				Name						keyID	desc
-		globals.keys = new Array();
-		globals.keys[0] = ["Gym Membership Keycard",	0,		"A credit-card sized square of plastic with the gym's logo printed on it and a black background"];
-		globals.keys[3] = ["Consume Red Band",			3,		"A tight fitting band with the logo of the local club on it. You can't get it off, but you often forget you're even wearing it."];
-		
 		//Weapons
 		globals.weapons = new Array();
 		//Weapons    Name           Mass Value Desc                                   Attack TwoHand Finisher Specials

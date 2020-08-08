@@ -1143,6 +1143,46 @@
 					"index": 11
 				},
 				{
+					"uid": "_0017",
+					"type": "key?",
+					"name": "Consume Red Band",
+					"description": [
+						{
+							"description": "A tight fitting band with the logo of the local club on it. You can't get it off, but you often forget you're even wearing it.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 12
+				},
+				{
 					"name": "General Store key",
 					"alias": [
 						{
@@ -1174,7 +1214,7 @@
 							"canDrink": false
 						}
 					],
-					"index": 12,
+					"index": 13,
 					"uid": "_0002",
 					"slots": [],
 					"stats": [
@@ -1191,60 +1231,6 @@
 						{
 							"description": "A key you got after agreeing to help out at the general store.",
 							"onEat": "onEat MISSING ITEM _0002",
-							"onFinisher": "onFinisher MISSING ITEM ????"
-						}
-					],
-					"type": "key"
-				},
-				{
-					"name": "Gym Staff Key",
-					"alias": [
-						{
-							"value": "key"
-						},
-						{
-							"value": "staff key"
-						},
-						{
-							"value": "gym key"
-						}
-					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 314159
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"index": 13,
-					"uid": "_0006",
-					"slots": [],
-					"stats": [
-						{
-							"value": 0,
-							"type": "_0000"
-						},
-						{
-							"type": "_0001",
-							"value": 0
-						}
-					],
-					"description": [
-						{
-							"description": "A key you got from Shay. It opens the staff room door at the gym.",
-							"onEat": "onEat MISSING ITEM _0000",
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					],
@@ -1314,6 +1300,100 @@
 					"type": "key"
 				},
 				{
+					"uid": "_0016",
+					"type": "key?",
+					"name": "Gym Membership Keycard",
+					"description": [
+						{
+							"description": "A credit-card sized square of plastic with the gym's logo printed on it and a black background",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 15
+				},
+				{
+					"name": "Gym Staff Key",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "staff key"
+						},
+						{
+							"value": "gym key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 314159
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"index": 16,
+					"uid": "_0006",
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"description": [
+						{
+							"description": "A key you got from Shay. It opens the staff room door at the gym.",
+							"onEat": "onEat MISSING ITEM _0000",
+							"onFinisher": "onFinisher MISSING ITEM ????"
+						}
+					],
+					"type": "key"
+				},
+				{
 					"name": "Ice Cream Shop Backroom key",
 					"alias": [
 						{
@@ -1354,7 +1434,7 @@
 							"canDrink": false
 						}
 					],
-					"index": 15,
+					"index": 17,
 					"uid": "_0001",
 					"slots": [],
 					"stats": [
