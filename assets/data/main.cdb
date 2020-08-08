@@ -460,6 +460,11 @@
 				},
 				{
 					"typeStr": "1",
+					"name": "type",
+					"display": null
+				},
+				{
+					"typeStr": "1",
 					"name": "name",
 					"display": null
 				},
@@ -496,111 +501,432 @@
 			],
 			"lines": [
 				{
-					"name": "Gym Staff Key",
-					"alias": [
+					"uid": "_0000",
+					"type": "template",
+					"name": "",
+					"description": [
 						{
-							"value": "key"
-						},
-						{
-							"value": "staff key"
-						},
-						{
-							"value": "gym key"
+							"description": "desc.desc MISSING ITEM ????",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
 						}
 					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 314159
-								}
-							]
-						}
-					],
+					"alias": [],
 					"flag": [
 						{
 							"indestructible": false,
 							"keyItem": false,
-							"unique": false
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
 						}
 					],
-					"index": 0,
-					"uid": "_0000",
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
 					"slots": [],
 					"stats": [
 						{
-							"value": 0,
-							"type": "_0000"
+							"type": "_0000",
+							"value": 0
 						},
 						{
 							"type": "_0001",
 							"value": 0
 						}
 					],
-					"description": [
-						{
-							"description": "A key you got from Shay. It opens the staff room door at the gym.",
-							"onEat": "onEat MISSING ITEM _0000",
-							"onFinisher": "onFinisher MISSING ITEM ????"
-						}
-					]
+					"index": 0
 				},
 				{
-					"name": "Ice Cream Shop Backroom key",
-					"alias": [
+					"uid": "_0005",
+					"type": "food",
+					"name": "Apple",
+					"description": [
 						{
-							"value": "key"
-						},
-						{
-							"value": "backroom key"
-						},
-						{
-							"value": "shop key"
-						},
-						{
-							"value": "ice cream key"
-						},
-						{
-							"value": "ice cream shop key"
-						},
-						{
-							"value": "Bessie's key"
+							"description": "A ripe healthy apple",
+							"onEat": "Apple eat",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
 						}
 					],
-					"key": [
+					"alias": [
 						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 420
-								}
-							]
+							"value": "food"
+						},
+						{
+							"value": "fruit"
 						}
 					],
 					"flag": [
 						{
 							"indestructible": false,
 							"keyItem": false,
-							"unique": false
+							"unique": false,
+							"canEat": true,
+							"canDrink": false
 						}
 					],
-					"index": 1,
-					"uid": "_0001",
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
 					"slots": [],
 					"stats": [
 						{
-							"value": 0,
-							"type": "_0000"
+							"type": "_0000",
+							"value": 3
+						},
+						{
+							"type": "_0001",
+							"value": 5
+						},
+						{
+							"type": "_0004",
+							"value": 30
 						}
 					],
+					"index": 1
+				},
+				{
+					"uid": "_0009",
+					"type": "food",
+					"name": "BouncyButt",
 					"description": [
 						{
-							"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
-							"onEat": "onEat MISSING ITEM _0001",
+							"description": "A popular 'health' drink. It's basically just sugar and water.",
+							"onEat": "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little, disappointed as you don't seem to have any more bounce then you did before.",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "food"
+						},
+						{
+							"value": "beverage"
+						},
+						{
+							"value": "drink"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 5
+						},
+						{
+							"type": "_0001",
+							"value": 1
+						},
+						{
+							"type": "_0004",
+							"value": 5
+						}
+					],
+					"index": 2
+				},
+				{
+					"uid": "_0010",
+					"type": "food",
+					"name": "BouncyButt+",
+					"description": [
+						{
+							"description": "A bottle of a popular 'health' drink, BouncyButt, that has been modified in some way.",
+							"onEat": "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little and find there's just a little more bounce then there was before.",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "food"
+						},
+						{
+							"value": "beverage"
+						},
+						{
+							"value": "drink"
+						},
+						{
+							"value": "bouncybutt"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 5
+						},
+						{
+							"type": "_0001",
+							"value": 250
+						},
+						{
+							"type": "_0004",
+							"value": 5
+						},
+						{
+							"type": "_0005",
+							"value": 1
+						}
+					],
+					"index": 3
+				},
+				{
+					"uid": "_0004",
+					"type": "food",
+					"name": "Cheeseburger",
+					"description": [
+						{
+							"description": "A thick greesy cheeseburger",
+							"onEat": "Cheeseburger eat",
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
-					]
+					],
+					"alias": [
+						{
+							"value": "food"
+						},
+						{
+							"value": "burger"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": true,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 5
+						},
+						{
+							"type": "_0001",
+							"value": 2
+						},
+						{
+							"type": "_0004",
+							"value": 10
+						}
+					],
+					"index": 4
+				},
+				{
+					"uid": "_0007",
+					"type": "food",
+					"name": "Cherry Pie",
+					"description": [
+						{
+							"description": "A large cherry pie",
+							"onEat": "Cherry pie eat",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "food"
+						},
+						{
+							"value": "dessert"
+						},
+						{
+							"value": "fruit pie"
+						},
+						{
+							"value": "pie"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": true,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 10
+						},
+						{
+							"type": "_0001",
+							"value": 5
+						},
+						{
+							"type": "_0004",
+							"value": 20
+						}
+					],
+					"index": 5
+				},
+				{
+					"uid": "_0008",
+					"type": "food",
+					"name": "Chocolate Cake",
+					"description": [
+						{
+							"description": "A huge chocolate cake, you're not really going to eat the whole thing are you?",
+							"onEat": "Chocolate cake eat",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "food"
+						},
+						{
+							"value": "cake"
+						},
+						{
+							"value": "chocolate"
+						},
+						{
+							"value": "dessert"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": true,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 20
+						},
+						{
+							"type": "_0001",
+							"value": 7
+						},
+						{
+							"type": "_0004",
+							"value": 1
+						}
+					],
+					"index": 6
+				},
+				{
+					"uid": "_0011",
+					"type": "food",
+					"name": "Tub of Ice Cream",
+					"description": [
+						{
+							"description": "A tub of ice cream from the town's ice cream shop",
+							"onEat": "You pull the lid off the tub and start scooping the fresh ice cream into your mouth. Despite being unflavored it is delicious and filling, your stomach is quickly full of cold milky goodness.",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "food"
+						},
+						{
+							"value": "dessert"
+						},
+						{
+							"value": "ice cream"
+						},
+						{
+							"value": "tub"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": true,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 10
+						},
+						{
+							"type": "_0001",
+							"value": 50
+						},
+						{
+							"type": "_0004",
+							"value": 1
+						}
+					],
+					"index": 7
 				},
 				{
 					"name": "General Store key",
@@ -629,16 +955,22 @@
 						{
 							"indestructible": false,
 							"keyItem": false,
-							"unique": false
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
 						}
 					],
-					"index": 2,
+					"index": 8,
 					"uid": "_0002",
 					"slots": [],
 					"stats": [
 						{
 							"value": 0,
 							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
 						}
 					],
 					"description": [
@@ -647,7 +979,62 @@
 							"onEat": "onEat MISSING ITEM _0002",
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
-					]
+					],
+					"type": "key"
+				},
+				{
+					"name": "Gym Staff Key",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "staff key"
+						},
+						{
+							"value": "gym key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 314159
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"index": 9,
+					"uid": "_0006",
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"description": [
+						{
+							"description": "A key you got from Shay. It opens the staff room door at the gym.",
+							"onEat": "onEat MISSING ITEM _0000",
+							"onFinisher": "onFinisher MISSING ITEM ????"
+						}
+					],
+					"type": "key"
 				},
 				{
 					"name": "Gym Gold Membership",
@@ -685,16 +1072,22 @@
 						{
 							"indestructible": false,
 							"keyItem": false,
-							"unique": false
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
 						}
 					],
-					"index": 3,
+					"index": 10,
 					"uid": "_0003",
 					"slots": [],
 					"stats": [
 						{
 							"value": 0,
 							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
 						}
 					],
 					"description": [
@@ -703,10 +1096,77 @@
 							"onEat": "onEat MISSING ITEM _0003",
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
-					]
+					],
+					"type": "key"
+				},
+				{
+					"name": "Ice Cream Shop Backroom key",
+					"alias": [
+						{
+							"value": "key"
+						},
+						{
+							"value": "backroom key"
+						},
+						{
+							"value": "shop key"
+						},
+						{
+							"value": "ice cream key"
+						},
+						{
+							"value": "ice cream shop key"
+						},
+						{
+							"value": "Bessie's key"
+						}
+					],
+					"key": [
+						{
+							"isKey": true,
+							"combo": [
+								{
+									"value": 420
+								}
+							]
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"index": 11,
+					"uid": "_0001",
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"description": [
+						{
+							"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
+							"onEat": "onEat MISSING ITEM _0001",
+							"onFinisher": "onFinisher MISSING ITEM ????"
+						}
+					],
+					"type": "key"
 				}
 			],
-			"separators": [],
+			"separators": [
+				1,
+				8
+			],
 			"props": {
 				"hasIndex": true,
 				"displayColumn": "name"
@@ -1344,6 +1804,16 @@
 				{
 					"typeStr": "2",
 					"name": "unique"
+				},
+				{
+					"typeStr": "2",
+					"name": "canEat",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "canDrink",
+					"display": null
 				}
 			]
 		},

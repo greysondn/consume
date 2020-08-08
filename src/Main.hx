@@ -6950,15 +6950,6 @@ class Main {
 		globals.food = new Array();
 		var foods:Array<Dynamic> = new Array();
 		
-		//          Name    Mass  Value   Description                    Healing value   Consume String
-		foods.push(["Cheeseburger", 5, 2, "A thick greesy cheeseburger", ["heal|.1"], "Cheeseburger eat"]);
-		foods.push(["Apple", 3, 5, "A ripe healthy apple", ["heal|.3"], "Apple eat"]);
-		foods.push(["Cherry Pie", 10, 5, "A large cherry pie", ["heal|.2"], "Cherry pie eat"]);
-		foods.push(["Chocolate Cake", 20, 7, "A huge chocolate cake, you're not really going to eat the whole thing are you?", ["heal|.01"], "Chocolate cake eat"]);
-		foods.push(["BouncyButt", 5, 1, "A popular 'health' drink. It's basically just sugar and water.", ["heal|.05"], "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little, disappointed as you don't seem to have any more bounce then you did before."]);
-		foods.push(["BouncyButt+", 5, 250, "A bottle of a popular 'health' drink, BouncyButt, that has been modified in some way.", ["heal|.05", "butt|1"], "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little and find there's just a little more bounce then there was before."]);
-		foods.push(["Tub of Ice Cream", 10, 50, "A tub of ice cream from the town's ice cream shop", ["heal|.01"], "You pull the lid off the tub and start scooping the fresh ice cream into your mouth. Despite being unflavored it is delicious and filling, your stomach is quickly full of cold milky goodness."]);
-		
 		//Weapons
 		globals.weapons = new Array();
 		//Weapons    Name           Mass Value Desc                                   Attack TwoHand Finisher Specials
