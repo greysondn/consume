@@ -2,10 +2,9 @@
 
 @ECHO "-----------------------------------"
 @ECHO "Generating required XML"
-@ECHO "You can just close the flash window"
 @ECHO "This might fail if compilation fails"
 @ECHO "-----------------------------------"
-lime test flash -debug -Dfdb -xml
+lime build flash -debug -Dfdb -xml
 
 
 @REM Gen docs
