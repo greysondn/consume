@@ -49,6 +49,19 @@ class EntityContainer extends Entity
     }
 
     /**
+     * Counts how many contents answer a given alias.
+     * 
+     * In reality, this just asks for the length of this.getAllAnswering().
+     * 
+     * @param alias alias to check
+     * @return Int  how many things answer to it
+     */
+    public function countAllAnswering(alias:String):Int
+    {
+        return getAllAnswering(alias).length;
+    }
+
+    /**
      * Put item into this thing's inventory. As opposed to "inside this thing".
      * 
      * TODO: Write more of this function, checks etc

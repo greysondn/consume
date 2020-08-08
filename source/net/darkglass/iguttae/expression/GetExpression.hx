@@ -50,7 +50,8 @@ class GetExpression extends BaseExpression
             item.location.inventory.remove(item);
             actor.inventory.add(item);
             item.location = actor;
-            env.outStream("You picked up " + item.name);
+            env.outStream("You tuck the " + item.name + " away in your pocket." + "\n" + 
+            "You have " + actor.inventory.countAllAnswering(item.name) + " of them.");
         }
     }
 

@@ -24,22 +24,6 @@ class MyItem {
     public var type:String;
     
     /**
-     * Gives the playerCharacter an instance of this item. Not to be confused
-     * with a character giving another character an item.
-     * 
-     * @param playerCharacter   the Player's character (really?)
-     * @return String           the output string corrosponding to the item.
-     */
-    public function give(playerCharacter:MyPlayerObject):String
-    {
-        // I've decimated this down to just the string now.
-        // yes, yes I did. ~greysondn, 8 August 2020
-        return "<p>You tuck the " + this.name.toLowerCase() +
-        " away in your pocket.</p><br><p>You have " + itemCount +
-        " of them.</p><br>";
-    }
-    
-    /**
      * Equivalent to the player throwing away this item.
      * 
      * @param playerCharacter the Player's character (really?)
