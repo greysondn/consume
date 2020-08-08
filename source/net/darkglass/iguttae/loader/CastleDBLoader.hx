@@ -77,7 +77,7 @@ class CastleDBLoader {
 
             // populate some simple fields, nothing fancy here
             swp.index = entry.index;
-            swp.verbose = entry.description;
+            swp.verbose = entry.description[0].description;
             swp.name = entry.name;
             
             // stuff for keys - as in a lock

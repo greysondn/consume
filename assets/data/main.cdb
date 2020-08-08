@@ -1,7 +1,7 @@
 {
 	"sheets": [
 		{
-			"name": "enumDirections",
+			"name": "eDirections",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -88,36 +88,7 @@
 			}
 		},
 		{
-			"name": "enumTypes",
-			"columns": [
-				{
-					"typeStr": "0",
-					"name": "uid",
-					"display": null
-				},
-				{
-					"typeStr": "1",
-					"name": "name",
-					"display": null
-				}
-			],
-			"lines": [
-				{
-					"uid": "_0000",
-					"name": "room"
-				},
-				{
-					"uid": "_0001",
-					"name": "item"
-				}
-			],
-			"separators": [],
-			"props": {
-				"displayColumn": "name"
-			}
-		},
-		{
-			"name": "enumEquipSlots",
+			"name": "eSlots",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -139,8 +110,102 @@
 					"name": "weapon.onehanded"
 				},
 				{
+					"uid": "_0003",
+					"name": "weapon.twohanded"
+				},
+				{
 					"uid": "_0002",
 					"name": "armor.torso"
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
+			"name": "eStats",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "comment",
+					"opt": true,
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "mass",
+					"comment": "The mass of an item, in arbitrary units."
+				},
+				{
+					"uid": "_0001",
+					"name": "value",
+					"comment": "The value of an item, I think in cents."
+				},
+				{
+					"uid": "_0002",
+					"name": "attack",
+					"comment": "The attack stat"
+				},
+				{
+					"uid": "_0003",
+					"name": "defense",
+					"comment": "The defense stat"
+				},
+				{
+					"uid": "_0004",
+					"name": "healPercentage",
+					"comment": "Percentage of health this heals"
+				},
+				{
+					"uid": "_0005",
+					"name": "buttExpansion",
+					"comment": "??? No idea."
+				}
+			],
+			"separators": [
+				2,
+				4,
+				5
+			],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
+			"name": "eTypes",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "room"
+				},
+				{
+					"uid": "_0001",
+					"name": "item"
 				}
 			],
 			"separators": [],
@@ -399,8 +464,9 @@
 					"display": null
 				},
 				{
-					"typeStr": "1",
-					"name": "description"
+					"typeStr": "8",
+					"name": "description",
+					"display": null
 				},
 				{
 					"typeStr": "8",
@@ -431,7 +497,6 @@
 			"lines": [
 				{
 					"name": "Gym Staff Key",
-					"description": "A key you got from Shay. It opens the staff room door at the gym.",
 					"alias": [
 						{
 							"value": "key"
@@ -465,14 +530,24 @@
 					"slots": [],
 					"stats": [
 						{
-							"mass": 0,
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
 							"value": 0
+						}
+					],
+					"description": [
+						{
+							"description": "A key you got from Shay. It opens the staff room door at the gym.",
+							"onEat": "onEat MISSING ITEM _0000",
+							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					]
 				},
 				{
 					"name": "Ice Cream Shop Backroom key",
-					"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
 					"alias": [
 						{
 							"value": "key"
@@ -515,14 +590,20 @@
 					"slots": [],
 					"stats": [
 						{
-							"mass": 0,
-							"value": 0
+							"value": 0,
+							"type": "_0000"
+						}
+					],
+					"description": [
+						{
+							"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
+							"onEat": "onEat MISSING ITEM _0001",
+							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					]
 				},
 				{
 					"name": "General Store key",
-					"description": "A key you got after agreeing to help out at the general store.",
 					"alias": [
 						{
 							"value": "key"
@@ -556,14 +637,20 @@
 					"slots": [],
 					"stats": [
 						{
-							"mass": 0,
-							"value": 0
+							"value": 0,
+							"type": "_0000"
+						}
+					],
+					"description": [
+						{
+							"description": "A key you got after agreeing to help out at the general store.",
+							"onEat": "onEat MISSING ITEM _0002",
+							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					]
 				},
 				{
 					"name": "Gym Gold Membership",
-					"description": "A credit-card sized square of plastic with the gym's logo printed on it and a gold background.",
 					"alias": [
 						{
 							"value": "card"
@@ -606,8 +693,15 @@
 					"slots": [],
 					"stats": [
 						{
-							"mass": 0,
-							"value": 0
+							"value": 0,
+							"type": "_0000"
+						}
+					],
+					"description": [
+						{
+							"description": "A credit-card sized square of plastic with the gym's logo printed on it and a gold background.",
+							"onEat": "onEat MISSING ITEM _0003",
+							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					]
 				}
@@ -1413,7 +1507,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:enumTypes",
+					"typeStr": "6:eTypes",
 					"name": "type",
 					"display": null
 				},
@@ -1434,7 +1528,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:enumTypes",
+					"typeStr": "6:eTypes",
 					"name": "type",
 					"display": null
 				},
@@ -1465,7 +1559,7 @@
 					"display": null
 				},
 				{
-					"typeStr": "6:enumDirections",
+					"typeStr": "6:eDirections",
 					"name": "side",
 					"display": null
 				}
@@ -1604,7 +1698,7 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:enumEquipSlots",
+					"typeStr": "6:eSlots",
 					"name": "value"
 				}
 			]
@@ -1618,12 +1712,38 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "3",
-					"name": "mass"
+					"typeStr": "6:eStats",
+					"name": "type",
+					"display": null
 				},
 				{
 					"typeStr": "3",
 					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "items@description",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "description",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "onEat",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "onFinisher",
+					"display": null
 				}
 			]
 		}
