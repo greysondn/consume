@@ -124,6 +124,108 @@
 			}
 		},
 		{
+			"name": "eRarity",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "idx"
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "defaultOdds"
+				},
+				{
+					"typeStr": "3",
+					"name": "abilities"
+				},
+				{
+					"typeStr": "8",
+					"name": "abilityMultiplier"
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "common",
+					"abilities": 1,
+					"defaultOdds": 60,
+					"idx": 1,
+					"abilityMultiplier": [
+						{
+							"min": 0,
+							"max": 10
+						}
+					]
+				},
+				{
+					"uid": "_0001",
+					"name": "uncommon",
+					"defaultOdds": 20,
+					"abilities": 2,
+					"idx": 2,
+					"abilityMultiplier": [
+						{
+							"min": 0,
+							"max": 20
+						}
+					]
+				},
+				{
+					"uid": "_0002",
+					"name": "rare",
+					"defaultOdds": 10,
+					"abilities": 3,
+					"idx": 3,
+					"abilityMultiplier": [
+						{
+							"min": 0,
+							"max": 30
+						}
+					]
+				},
+				{
+					"uid": "_0003",
+					"name": "epic",
+					"defaultOdds": 9,
+					"abilities": 4,
+					"idx": 4,
+					"abilityMultiplier": [
+						{
+							"min": 0,
+							"max": 40
+						}
+					]
+				},
+				{
+					"uid": "_0004",
+					"name": "legendary",
+					"defaultOdds": 1,
+					"abilities": 5,
+					"idx": 5,
+					"abilityMultiplier": [
+						{
+							"min": 0,
+							"max": 50
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
 			"name": "eStats",
 			"columns": [
 				{
@@ -137,6 +239,11 @@
 					"display": null
 				},
 				{
+					"typeStr": "8",
+					"name": "validUses",
+					"display": null
+				},
+				{
 					"typeStr": "1",
 					"name": "comment",
 					"opt": true,
@@ -147,38 +254,233 @@
 				{
 					"uid": "_0000",
 					"name": "mass",
-					"comment": "The mass of an item, in arbitrary units."
+					"comment": "The mass of an item, in arbitrary units.",
+					"validUses": [
+						{
+							"item.any": true,
+							"item.equipment": true,
+							"item.food": true,
+							"item.key": true,
+							"character": true
+						}
+					]
 				},
 				{
 					"uid": "_0001",
 					"name": "value",
-					"comment": "The value of an item, I think in cents."
+					"comment": "The value of an item, in dollars.",
+					"validUses": [
+						{
+							"item.any": true,
+							"item.equipment": true,
+							"item.food": true,
+							"item.key": true,
+							"character": true
+						}
+					]
+				},
+				{
+					"uid": "_0006",
+					"name": "str",
+					"comment": "Strength",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0007",
+					"name": "agi",
+					"comment": "Agility",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0008",
+					"name": "end",
+					"comment": "Endurance",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0009",
+					"name": "int",
+					"comment": "Intelligence",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0010",
+					"name": "health",
+					"comment": "Health",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0011",
+					"name": "dodge",
+					"comment": "Spot",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0012",
+					"name": "run",
+					"comment": "Dodge",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0013",
+					"name": "melee",
+					"comment": "Run",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0014",
+					"name": "sneak",
+					"comment": "Melee",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
+				},
+				{
+					"uid": "_0015",
+					"name": "spot",
+					"comment": "Sneak",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
 				},
 				{
 					"uid": "_0002",
 					"name": "attack",
-					"comment": "The attack stat"
+					"comment": "The attack stat",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
 				},
 				{
 					"uid": "_0003",
 					"name": "defense",
-					"comment": "The defense stat"
+					"comment": "The defense stat",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": true,
+							"item.food": false,
+							"item.key": false,
+							"character": false
+						}
+					]
 				},
 				{
 					"uid": "_0004",
 					"name": "healPercentage",
-					"comment": "Percentage of health this heals"
+					"comment": "Percentage of health this heals",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": false,
+							"item.food": true,
+							"item.key": false,
+							"character": false
+						}
+					]
 				},
 				{
 					"uid": "_0005",
 					"name": "buttExpansion",
-					"comment": "??? No idea."
+					"comment": "??? No idea.",
+					"validUses": [
+						{
+							"item.any": false,
+							"item.equipment": false,
+							"item.food": true,
+							"item.key": false,
+							"character": false
+						}
+					]
 				}
 			],
 			"separators": [
 				2,
-				4,
-				5
+				12,
+				14,
+				15
 			],
 			"props": {
 				"displayColumn": "name"
@@ -196,19 +498,107 @@
 					"typeStr": "1",
 					"name": "name",
 					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "validUses",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "comment",
+					"display": null
 				}
 			],
 			"lines": [
 				{
 					"uid": "_0000",
-					"name": "room"
+					"name": "room",
+					"comment": "",
+					"validUses": [
+						{
+							"spawnLocation": true,
+							"spawnObject": true,
+							"itemType": false
+						}
+					]
 				},
 				{
 					"uid": "_0001",
-					"name": "item"
+					"name": "item",
+					"comment": "",
+					"validUses": [
+						{
+							"spawnLocation": true,
+							"spawnObject": true,
+							"itemType": false
+						}
+					]
+				},
+				{
+					"uid": "_0002",
+					"name": "item.equipment.armor",
+					"validUses": [
+						{
+							"itemType": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "Armor items"
+				},
+				{
+					"uid": "_0003",
+					"name": "item.equipment.ring",
+					"validUses": [
+						{
+							"itemType": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "Rings"
+				},
+				{
+					"uid": "_0004",
+					"name": "item.equipment.weapon",
+					"validUses": [
+						{
+							"itemType": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "Weapons"
+				},
+				{
+					"uid": "_0005",
+					"name": "item.food",
+					"validUses": [
+						{
+							"itemType": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "Foodstuff - includes drinks"
+				},
+				{
+					"uid": "_0006",
+					"name": "item.key",
+					"validUses": [
+						{
+							"itemType": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "Keys (not to be confused with key items)"
 				}
 			],
-			"separators": [],
+			"separators": [
+				2
+			],
 			"props": {
 				"displayColumn": "name"
 			}
@@ -459,7 +849,7 @@
 					"display": null
 				},
 				{
-					"typeStr": "1",
+					"typeStr": "6:eTypes",
 					"name": "type",
 					"display": null
 				},
@@ -502,7 +892,6 @@
 			"lines": [
 				{
 					"uid": "_0000",
-					"type": "template",
 					"name": "",
 					"description": [
 						{
@@ -540,11 +929,11 @@
 							"value": 0
 						}
 					],
-					"index": 0
+					"index": 0,
+					"type": "_0006"
 				},
 				{
 					"uid": "_0012",
-					"type": "armor",
 					"name": "Skin",
 					"description": [
 						{
@@ -594,11 +983,11 @@
 							"value": 0
 						}
 					],
-					"index": 1
+					"index": 1,
+					"type": "_0002"
 				},
 				{
 					"uid": "_0013",
-					"type": "armor",
 					"name": "Leather Jacket",
 					"description": [
 						{
@@ -651,11 +1040,11 @@
 							"value": 2
 						}
 					],
-					"index": 2
+					"index": 2,
+					"type": "_0002"
 				},
 				{
 					"uid": "_0014",
-					"type": "armor",
 					"name": "Armored Coat",
 					"description": [
 						{
@@ -708,11 +1097,11 @@
 							"value": 7
 						}
 					],
-					"index": 3
+					"index": 3,
+					"type": "_0002"
 				},
 				{
 					"uid": "_0015",
-					"type": "armor",
 					"name": "Breastplate",
 					"description": [
 						{
@@ -762,11 +1151,11 @@
 							"value": 10
 						}
 					],
-					"index": 4
+					"index": 4,
+					"type": "_0002"
 				},
 				{
 					"uid": "_0005",
-					"type": "food",
 					"name": "Apple",
 					"description": [
 						{
@@ -815,11 +1204,11 @@
 							"value": 30
 						}
 					],
-					"index": 5
+					"index": 5,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0009",
-					"type": "food",
 					"name": "BouncyButt",
 					"description": [
 						{
@@ -871,11 +1260,11 @@
 							"value": 5
 						}
 					],
-					"index": 6
+					"index": 6,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0010",
-					"type": "food",
 					"name": "BouncyButt+",
 					"description": [
 						{
@@ -934,11 +1323,11 @@
 							"value": 1
 						}
 					],
-					"index": 7
+					"index": 7,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0004",
-					"type": "food",
 					"name": "Cheeseburger",
 					"description": [
 						{
@@ -987,11 +1376,11 @@
 							"value": 10
 						}
 					],
-					"index": 8
+					"index": 8,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0007",
-					"type": "food",
 					"name": "Cherry Pie",
 					"description": [
 						{
@@ -1046,11 +1435,11 @@
 							"value": 20
 						}
 					],
-					"index": 9
+					"index": 9,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0008",
-					"type": "food",
 					"name": "Chocolate Cake",
 					"description": [
 						{
@@ -1105,11 +1494,11 @@
 							"value": 1
 						}
 					],
-					"index": 10
+					"index": 10,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0011",
-					"type": "food",
 					"name": "Tub of Ice Cream",
 					"description": [
 						{
@@ -1164,11 +1553,11 @@
 							"value": 1
 						}
 					],
-					"index": 11
+					"index": 11,
+					"type": "_0005"
 				},
 				{
 					"uid": "_0017",
-					"type": "key?",
 					"name": "Consume Red Band",
 					"description": [
 						{
@@ -1206,7 +1595,8 @@
 							"value": 0
 						}
 					],
-					"index": 12
+					"index": 12,
+					"type": "_0006"
 				},
 				{
 					"name": "General Store key",
@@ -1262,7 +1652,7 @@
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					],
-					"type": "key"
+					"type": "_0006"
 				},
 				{
 					"name": "Gym Gold Membership",
@@ -1327,11 +1717,10 @@
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					],
-					"type": "key"
+					"type": "_0006"
 				},
 				{
 					"uid": "_0016",
-					"type": "key?",
 					"name": "Gym Membership Keycard",
 					"description": [
 						{
@@ -1369,7 +1758,8 @@
 							"value": 0
 						}
 					],
-					"index": 15
+					"index": 15,
+					"type": "_0006"
 				},
 				{
 					"name": "Gym Staff Key",
@@ -1425,7 +1815,7 @@
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					],
-					"type": "key"
+					"type": "_0006"
 				},
 				{
 					"name": "Ice Cream Shop Backroom key",
@@ -1490,11 +1880,10 @@
 							"onFinisher": "onFinisher MISSING ITEM ????"
 						}
 					],
-					"type": "key"
+					"type": "_0006"
 				},
 				{
 					"uid": "_0027",
-					"type": "ring",
 					"name": "Electrum Ring",
 					"description": [
 						{
@@ -1540,11 +1929,11 @@
 							"value": 30
 						}
 					],
-					"index": 18
+					"index": 18,
+					"type": "_0003"
 				},
 				{
 					"uid": "_0030",
-					"type": "ring",
 					"name": "Electrum Ruby Ring",
 					"description": [
 						{
@@ -1590,11 +1979,11 @@
 							"value": 55
 						}
 					],
-					"index": 19
+					"index": 19,
+					"type": "_0003"
 				},
 				{
 					"uid": "_0025",
-					"type": "ring",
 					"name": "Gold Ring",
 					"description": [
 						{
@@ -1640,11 +2029,11 @@
 							"value": 50
 						}
 					],
-					"index": 20
+					"index": 20,
+					"type": "_0003"
 				},
 				{
 					"uid": "_0029",
-					"type": "ring",
 					"name": "Gold Ruby Ring",
 					"description": [
 						{
@@ -1690,11 +2079,11 @@
 							"value": 75
 						}
 					],
-					"index": 21
+					"index": 21,
+					"type": "_0003"
 				},
 				{
 					"uid": "_0026",
-					"type": "ring",
 					"name": "Silver Ring",
 					"description": [
 						{
@@ -1740,11 +2129,11 @@
 							"value": 25
 						}
 					],
-					"index": 22
+					"index": 22,
+					"type": "_0003"
 				},
 				{
 					"uid": "_0028",
-					"type": "ring",
 					"name": "Silver Ruby Ring",
 					"description": [
 						{
@@ -1790,11 +2179,11 @@
 							"value": 50
 						}
 					],
-					"index": 23
+					"index": 23,
+					"type": "_0003"
 				},
 				{
 					"uid": "_0018",
-					"type": "weapon",
 					"name": "Fists",
 					"description": [
 						{
@@ -1840,11 +2229,11 @@
 							"value": 0
 						}
 					],
-					"index": 24
+					"index": 24,
+					"type": "_0004"
 				},
 				{
 					"uid": "_0019",
-					"type": "weapon",
 					"name": "Knife",
 					"description": [
 						{
@@ -1894,11 +2283,11 @@
 							"value": 2
 						}
 					],
-					"index": 25
+					"index": 25,
+					"type": "_0004"
 				},
 				{
 					"uid": "_0020",
-					"type": "weapon",
 					"name": "Short Sword",
 					"description": [
 						{
@@ -1951,11 +2340,11 @@
 							"value": 4
 						}
 					],
-					"index": 26
+					"index": 26,
+					"type": "_0004"
 				},
 				{
 					"uid": "_0021",
-					"type": "weapon",
 					"name": "Curved Sword",
 					"description": [
 						{
@@ -2008,11 +2397,11 @@
 							"value": 6
 						}
 					],
-					"index": 27
+					"index": 27,
+					"type": "_0004"
 				},
 				{
 					"uid": "_0022",
-					"type": "weapon",
 					"name": "Longsword",
 					"description": [
 						{
@@ -2065,11 +2454,11 @@
 							"value": 10
 						}
 					],
-					"index": 28
+					"index": 28,
+					"type": "_0004"
 				},
 				{
 					"uid": "_0023",
-					"type": "weapon",
 					"name": "Hammer",
 					"description": [
 						{
@@ -2122,11 +2511,11 @@
 							"value": 3
 						}
 					],
-					"index": 29
+					"index": 29,
+					"type": "_0004"
 				},
 				{
 					"uid": "_0024",
-					"type": "weapon",
 					"name": "Sledge",
 					"description": [
 						{
@@ -2182,7 +2571,8 @@
 							"value": 6
 						}
 					],
-					"index": 30
+					"index": 30,
+					"type": "_0004"
 				}
 			],
 			"separators": [
@@ -3248,6 +3638,526 @@
 					"typeStr": "1",
 					"name": "onFinisher",
 					"display": null
+				}
+			]
+		},
+		{
+			"name": "eRarity@abilityMultiplier",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "min"
+				},
+				{
+					"typeStr": "3",
+					"name": "max"
+				}
+			]
+		},
+		{
+			"name": "eTypes@validUses",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "itemType",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "spawnLocation",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "spawnObject",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "eStats@validUses",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "item.any"
+				},
+				{
+					"typeStr": "2",
+					"name": "item.equipment",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "item.food",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "item.key",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "character",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "stores",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uuid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "items"
+				},
+				{
+					"typeStr": "8",
+					"name": "randomItemCount",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "randomItems",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "canSellTo",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "sellToFactor"
+				},
+				{
+					"typeStr": "8",
+					"name": "canBeSold"
+				}
+			],
+			"lines": [
+				{
+					"uuid": "_0000",
+					"name": "General Store",
+					"items": [
+						{
+							"item": "_0005",
+							"infiniteStock": true,
+							"rarityOverrides": [],
+							"statOverrides": []
+						},
+						{
+							"item": "_0009",
+							"infiniteStock": true,
+							"statOverrides": [],
+							"rarityOverrides": []
+						},
+						{
+							"item": "_0010",
+							"infiniteStock": true,
+							"statOverrides": [],
+							"rarityOverrides": []
+						},
+						{
+							"item": "_0004",
+							"infiniteStock": true,
+							"statOverrides": [],
+							"rarityOverrides": []
+						},
+						{
+							"item": "_0007",
+							"infiniteStock": true,
+							"statOverrides": [],
+							"rarityOverrides": []
+						},
+						{
+							"item": "_0008",
+							"infiniteStock": true,
+							"statOverrides": [],
+							"rarityOverrides": []
+						},
+						{
+							"item": "_0011",
+							"infiniteStock": true,
+							"statOverrides": [],
+							"rarityOverrides": []
+						}
+					],
+					"randomItems": [
+						{
+							"item": "_0014",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0015",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0021",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0027",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0030",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0025",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0029",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0023",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0019",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0013",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0022",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0026",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0028",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0020",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						},
+						{
+							"item": "_0024",
+							"statOverrides": [],
+							"rarityOverrides": [],
+							"odds": 1
+						}
+					],
+					"randomItemCount": [
+						{
+							"min": 1,
+							"max": 6
+						}
+					],
+					"sellToFactor": 0.5,
+					"canSellTo": true,
+					"canBeSold": [
+						{
+							"item": "_0005"
+						},
+						{
+							"item": "_0014"
+						},
+						{
+							"item": "_0009"
+						},
+						{
+							"item": "_0010"
+						},
+						{
+							"item": "_0015"
+						},
+						{
+							"item": "_0004"
+						},
+						{
+							"item": "_0007"
+						},
+						{
+							"item": "_0008"
+						},
+						{
+							"item": "_0021"
+						},
+						{
+							"item": "_0027"
+						},
+						{
+							"item": "_0030"
+						},
+						{
+							"item": "_0025"
+						},
+						{
+							"item": "_0029"
+						},
+						{
+							"item": "_0023"
+						},
+						{
+							"item": "_0019"
+						},
+						{
+							"item": "_0013"
+						},
+						{
+							"item": "_0022"
+						},
+						{
+							"item": "_0026"
+						},
+						{
+							"item": "_0028"
+						},
+						{
+							"item": "_0020"
+						},
+						{
+							"item": "_0024"
+						},
+						{
+							"item": "_0011"
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "stores@items",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:items",
+					"name": "item",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "infiniteStock",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "priceOverride",
+					"opt": true
+				},
+				{
+					"typeStr": "8",
+					"name": "statOverrides"
+				},
+				{
+					"typeStr": "8",
+					"name": "rarityOverrides",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "stores@items@statOverrides",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eStats",
+					"name": "stat",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "stores@items@rarityOverrides",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eRarity",
+					"name": "rarity",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "odds"
+				}
+			]
+		},
+		{
+			"name": "stores@randomItems",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:items",
+					"name": "item",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "odds"
+				},
+				{
+					"typeStr": "3",
+					"name": "priceOverride",
+					"opt": true
+				},
+				{
+					"typeStr": "8",
+					"name": "statOverrides"
+				},
+				{
+					"typeStr": "8",
+					"name": "rarityOverrides",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "stores@randomItemCount",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "min"
+				},
+				{
+					"typeStr": "3",
+					"name": "max"
+				}
+			]
+		},
+		{
+			"name": "stores@randomItems@statOverrides",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eStats",
+					"name": "stat"
+				},
+				{
+					"typeStr": "3",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "stores@randomItems@rarityOverrides",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eRarity",
+					"name": "rarity",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "odds",
+					"opt": true
+				}
+			]
+		},
+		{
+			"name": "stores@willBuy",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:items",
+					"name": "item",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "priceOverride",
+					"opt": true
 				}
 			]
 		}

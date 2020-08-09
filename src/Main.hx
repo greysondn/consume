@@ -4212,170 +4212,119 @@ class Main {
         outputText(message, title);
     }
     
+
+
+    // greysondn - 9 August 2020
+    // I hacked this listing apart into just the strings
+    // the plan is to make this an exhaustive list and to make this
+    // something that makes more sense as a GUI, so I shouldn't need
+    // the entire display logic.
     static function doShop( e:MouseEvent ) {
         // rat - black market
         // gen - general store
         
-        var shopAction:String = e.currentTarget.btnID.split("|")[1];
-        var shopType:String = e.currentTarget.btnID.split("|")[0];
-        var shopActionValue:Int = Std.parseInt(e.currentTarget.btnID.split("|")[2]);
-        var canSell:Bool = false;
-        var message:String = "";
-        var title:String = "";
-        
-        var dspItems:Int = 9;
-        var dspFirstItem:Int = 0;
-        
-        var tempItem:MyItem = new MyItem();
-        
-        newRoom = false;
-        
-        clearAllEvents();
-        updateHUD();
-        optionsBtn.visible = false;
-        charDesc.visible = false;
-        
-        switch (shopType) {
-        case "gen":
-            //General Store
-            if (shopListMade == false) {
-                shopList = new Array();
-                for (i in 0...globals.shopLists[0].length) {
-                    switch (globals.shopLists[0][i].split("|")[0]) {
-                    case "food":
-                        tempItem = new MyItem_Food();
-                        tempItem = globals.food[globals.shopLists[0][i].split("|")[1]].copyItem();
-                        
-                        shopList.push(new MyItem_Food());
-                        shopList[shopList.length - 1] = tempItem;
-                    }
-                }
-                    
-                for (i in 0...(Math.round(Math.random() * 5) + 1)) {
-                    switch (Math.round(Math.random() * 3)) {
-                    case 0:
-                        //Armor
-                        shopList.push(createItem("armor"));
-                    case 1:
-                        //Weapon
-                        shopList.push(createItem("weapon"));
-                    case 2:
-                        //Ring
-                        shopList.push(createItem("ring"));
-                    }
-                }
-            shopListMade = true;
-            }
-            canSell = true;
-            title = "General Store";
+        switch (shopType)
+        {
+            case "gen":
+                //General Store
             
-        //Ice cream shop has been moved to it's own function as it's not adding prebuilt items to the player's invintory
-        //Rather it's going to directly feed the player ice cream
+                // greysondn - 9 August 2020
+                // now in the CastleDB so it's not here anymore. Woops!
+            
+            //Ice cream shop has been moved to it's own function as it's not adding prebuilt items to the player's invintory
+            //Rather it's going to directly feed the player ice cream
         
-        case "rat":
-            //Black Market
+            case "rat":
+                //Black Market
             
         }
         
-        switch (shopAction) {
-        case "list":
-            //List the items the shop has to sell
-            if (shopList.length > 9) {
-                dspFirstItem = shopActionValue * 9;
-                dspItems = dspFirstItem + 9;
-            }
+        switch (shopAction)
+        {
+            case "list":
+                //List the items the shop has to sell
+                message = "The shop has the following items for sale:</p><br><p>";
             
-            if (shopList.length < dspItems) 
-                dspItems = shopList.length;
-            
-            message = "The shop has the following items for sale:</p><br><p>";
-            
-            if (shopList.length != 0) {
-                for (i in dspFirstItem...dspItems) {
-                    message += shopList[i].name + ": $" + shopList[i].value + "<br>     " + shopList[i].desc + "</p><br><p>";
-                    btns[i - dspFirstItem].setButton(shopList[i].name, null, shopType + "|item|" + i);
-                    btns[i - dspFirstItem].setClickFunc(doShop);
-                }
-                if (shopList.length > dspItems) {
-                    message += "More...";
-                    btns[10].setButton("Next", null, shopType + "|list|" + (shopActionValue + 1));
-                    btns[10].setClickFunc(doShop);
-                }
-                if (dspFirstItem != 0) {
-                    btns[9].setButton("Prev", null, shopType + "|list|" + (shopActionValue - 1));
-                    btns[9].setClickFunc(doShop);
-                } else {
-                    if (canSell) {
+                if (shopList.length != 0)
+                {
+                    if (canSell)
+                    {
                         btns[9].setButton("Sell", "Sell extra items to the shop.", shopType + "|sell|0");
-                        btns[9].setClickFunc(doShop);
                     }
                 }
-            }
-            
-            outputText(message, title);
-            
-            btns[11].setButton("Leave");
-            btns[11].setClickFunc(movePlayer);
-        case "item":
-            //Item detail view
-            title += " --- Item Detail";
-            
-            message = "Name: " + shopList[shopActionValue].name + "<br>";
-            message += "Type: " + shopList[shopActionValue].type + "<br>";
-            message += "Mass: " + shopList[shopActionValue].mass + " ";
-            message += "Value: " + shopList[shopActionValue].value + "<br>";
-            message += shopList[shopActionValue].desc + "<br>";
-            
-            switch (shopList[shopActionValue].type) {
-            case "weapon":
-                message += "Attack: " + shopList[shopActionValue].attack + " ";
-                if (shopList[shopActionValue].twoHanded) {
-                    message += "2H";
-                } else {
-                    message += "1H";
-                }
                 
-                message += "<br>Special Qualities:<br>";
-            case "armor":
-                message += "Defense: " + shopList[shopActionValue].defend + ".<br>";
-                message += "Special Qualities:<br>";
-            case "ring":
-                message += "Special Qualities:<br>";
-            case "food":
-                
-            }
+                btns[11].setButton("Leave");
+            case "item":
+                //Item detail view
+                title += " --- Item Detail";
             
-            for (i in 0...shopList[shopActionValue].specials.length) {
-                var specialSkill = shopList[shopActionValue].specials[i].split("|")[0];
-                var specialValue = shopList[shopActionValue].specials[i].split("|")[1];
-                switch(specialSkill) {
-                case "str":
-                    message += "Strength +" + specialValue;
-                case "agi":
-                    message += "Agility +" + specialValue;
-                case "end":
-                    message += "Endurance +" + specialValue;
-                case "int":
-                    message += "Intelligence +" + specialValue;
-                case "health":
-                    message += "Health +" + specialValue;
-                case "spot":
-                    message += "Spot +" + specialValue;
-                case "dodge":
-                    message += "Dodge +" + specialValue;
-                case "run":
-                    message += "Run +" + specialValue;
-                case "melee":
-                    message += "Melee +" + specialValue;
-                case "sneak":
-                    message += "Sneak +" + specialValue;
-                case "heal":
-                    message += (Std.parseFloat(specialValue) * 100) + "% Healing";
-                default:
-                    message += "{ERROR} Special not found:" + specialSkill + " with value: " + specialValue;
+                message = "Name: " + shopList[shopActionValue].name + "<br>";
+                message += "Type: " + shopList[shopActionValue].type + "<br>";
+                message += "Mass: " + shopList[shopActionValue].mass + " ";
+                message += "Value: " + shopList[shopActionValue].value + "<br>";
+                message += shopList[shopActionValue].desc + "<br>";
+            
+                switch (shopList[shopActionValue].type)
+                {
+                    case "weapon":
+                        message += "Attack: " + shopList[shopActionValue].attack + " ";
+                        
+                        if (shopList[shopActionValue].twoHanded)
+                        {
+                            message += "2H";
+                        }
+                        else
+                        {
+                            message += "1H";
+                        }
+                        
+                        message += "<br>Special Qualities:<br>";
+
+                    case "armor":
+                        message += "Defense: " + shopList[shopActionValue].defend + ".<br>";
+                        message += "Special Qualities:<br>";
+
+                    case "ring":
+                        message += "Special Qualities:<br>";
+                    case "food":
+                        // genko passes here - greysondn
                 }
-                if (i < shopList[shopActionValue].specials.length - 1)
+            
+                for (i in 0...shopList[shopActionValue].specials.length)
+                {
+                
+                    switch(specialSkill)
+                    {
+                        case "str":
+                            message += "Strength +" + specialValue;
+                        case "agi":
+                            message += "Agility +" + specialValue;
+                        case "end":
+                            message += "Endurance +" + specialValue;
+                        case "int":
+                            message += "Intelligence +" + specialValue;
+                        case "health":
+                            message += "Health +" + specialValue;
+                        case "spot":
+                            message += "Spot +" + specialValue;
+                        case "dodge":
+                            message += "Dodge +" + specialValue;
+                        case "run":
+                            message += "Run +" + specialValue;
+                        case "melee":
+                            message += "Melee +" + specialValue;
+                        case "sneak":
+                            message += "Sneak +" + specialValue;
+                        case "heal":
+                            message += (Std.parseFloat(specialValue) * 100) + "% Healing";
+                        default:
+                            message += "{ERROR} Special not found:" + specialSkill + " with value: " + specialValue;
+                    }
+                
+                    if (i < shopList[shopActionValue].specials.length - 1)
+                    {
                     message += ", ";
+                    }
             }
             
             outputText(message, title);
