@@ -323,7 +323,6 @@ class Main {
                 btns[11 - i].setClickFunc(doPoop);
             case 6:
                 //Sleep
-                message += "Your bed looks inviting.<br>";
                 btns[11 - i].setButton("Sleep");
                 //btns[11 - i].setClickFunc(doSleep);
                 btns[11 - i].disableButton();
