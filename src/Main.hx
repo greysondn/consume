@@ -6089,75 +6089,45 @@ class Main {
 		doQTE();
 	}
 	
-	static function createItem(item:String):MyItem {
-		var madeItem:MyItem = new MyItem();
-		var randItem:Int = 0;
-		var rarity:String = "";
-		var rare:Int = Math.round((Math.random() * 100));
-		
-		if (rare <= 60) {
-			rarity = "common";
-		} else if (rare > 60 && rare <= 80) {
-			rarity = "uncommon";
-		} else if (rare > 80 && rare <= 90) {
-			rarity = "rare";
-		} else if (rare > 90 && rare <= 99) {
-			rarity = "epic";
-		} else if (rare == 100) {
-			rarity = "legendary";
-		}
-		
-		switch(item) {
-		case "armor":
-			while (randItem == 0) {
-				//Don't want skin, that's not really armor
-				randItem = Math.round(Math.random() * (globals.armor.length - 1));
-			}
-			
-			madeItem = globals.armor[randItem].copyItem();
-		case "weapon":
-			while (randItem == 0) {
-				//Don't want Fists, those aren't really a weapon
-				randItem = Math.round(Math.random() * (globals.weapons.length - 1));
-			}
-			
-			madeItem = globals.weapons[randItem].copyItem();
-		case "ring":
-			randItem = Math.round(Math.random() * (globals.rings.length - 1));
-			
-			madeItem = globals.rings[randItem].copyItem();
-		default:
-			new AlertBox("Unknown item type: " + item);
-		}
-		
-		//Add special effects base on item rarity
-		madeItem.rarity = rarity;
-		switch(madeItem.rarity) {
-		case "common":
-			//Common items get one ability
-			rare = 1;
-		case "uncommon":
-			//uncommons get two
-			rare = 2;
-		case "rare":
-			//Rare get three
-			rare = 3;
-		case "epic":
-			//epics get four
-			rare = 4;
-		case "legendary":
-			//legendary get five
-			rare = 5;
-		}
-		
-		madeItem.specials = new Array();
-		
-		for (i in 0...rare) {
-			madeItem.specials.push(generateAbility(rare));
-		}
-		
-		return madeItem;
-	}
+static function createItem(item:String):MyItem
+{
+    var madeItem:MyItem = new MyItem();
+    var randItem:Int = 0;
+    var rarity:String = "";
+    var rare:Int = Math.round((Math.random() * 100));
+    
+    /*
+    // I'm going to cut a lot of rarity based code in favor of this simple chart
+
+            /-----------------------------------------------------------\
+            |          Item Rarity Generation (and meaning)             |
+            |-----------------------------------------------------------|
+            | odds (of 100) | Rarity Name (idx)   | Number of Abilities |
+            |-----------------------------------------------------------|
+            |      60       | common       (1)    |         1           |
+            |      20       | uncommon     (2)    |         2           |
+            |      10       | rare         (3)    |         3           |
+            |       9       | epic         (4)    |         4           |
+            |       1       | legendary    (5)    |         5           |
+            \-----------------------------------------------------------/
+
+    */
+    
+    switch (item)
+    {
+       // tl;dr - item is literally a flat chance for everything but
+       // skin/hands/etc intrinsics.
+    }
+    
+    madeItem.specials = new Array();
+    
+    for (i in 0...rare)
+    {
+        madeItem.specials.push(generateAbility(rare));
+    }
+    
+    return madeItem;
+}
 	
 	static function generateAbility(rarity:Int):String {
 		var abilities:Array<String> = new Array();
@@ -6950,11 +6920,11 @@ class Main {
 		 *  A - Armor
 		 */
 		
-		var genShop:Array<Dynamic> = new Array();
-		genShop = ["food|0", "food|1"]; //Item IDs for the items that are to be sold in the shop
-		
-		globals.shopLists = new Array();
-		globals.shopLists[0] = genShop;
+    var genShop:Array<Dynamic> = new Array();
+    genShop = ["food|0", "food|1"]; // Item IDs for the items that are to be sold in the shop
+    
+    globals.shopLists = new Array();
+    globals.shopLists[0] = genShop;
 		
 		//Quests
 		//			Name		dispName			hidden		stageDesc	KeyID/Stage to give
