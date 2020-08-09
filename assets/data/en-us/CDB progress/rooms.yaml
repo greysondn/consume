@@ -335,8 +335,6 @@
 -
   index: 24
   name:  "Gym - Restroom"
-  wrongFile:
-    specials: "[5]"
   permissions:
     wait: true
   desc:
@@ -396,8 +394,6 @@
 -
   index: 29
   name:  "Ice Cream Shop - Restroom"
-  wrongFile:
-    specials: "[5]"
   permissions:
     wait: true
   desc:

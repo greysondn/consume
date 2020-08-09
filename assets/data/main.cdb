@@ -909,7 +909,8 @@
 						{
 							"description": "desc.desc MISSING ITEM ????",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [],
@@ -921,7 +922,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -951,7 +953,8 @@
 						{
 							"description": "Your naked flesh",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -967,7 +970,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": false,
-							"inInvList": false
+							"inInvList": false,
+							"canPickup": false
 						}
 					],
 					"key": [
@@ -1005,7 +1009,8 @@
 						{
 							"description": "A thick leather biker's jacket. Not really intended for combat.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1024,7 +1029,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1062,7 +1068,8 @@
 						{
 							"description": "A heavy leather coat reinforced with hard plastic panels.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1081,7 +1088,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1119,7 +1127,8 @@
 						{
 							"description": "A solid peice of shaped metal. Heavy, but good protection.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1135,7 +1144,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1173,7 +1183,8 @@
 						{
 							"description": "A ripe healthy apple",
 							"onEat": "Apple eat",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1192,7 +1203,8 @@
 							"canEat": true,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1226,7 +1238,8 @@
 						{
 							"description": "A popular 'health' drink. It's basically just sugar and water.",
 							"onEat": "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little, disappointed as you don't seem to have any more bounce then you did before.",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1248,7 +1261,8 @@
 							"canEat": false,
 							"canDrink": true,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1282,7 +1296,8 @@
 						{
 							"description": "A bottle of a popular 'health' drink, BouncyButt, that has been modified in some way.",
 							"onEat": "You crack the top open on the bottle of BouncyButt and drink it down. It tastes mostly like water with just a little flavoring, though you can't quite pin down what it's supposed to be. You do feel a little better after drinking it. Curious you shake your butt a little and find there's just a little more bounce then there was before.",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1307,7 +1322,8 @@
 							"canEat": false,
 							"canDrink": true,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1345,7 +1361,8 @@
 						{
 							"description": "A thick greesy cheeseburger",
 							"onEat": "Cheeseburger eat",
-							"onFinisher": "onFinisher MISSING ITEM ????"
+							"onFinisher": "onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1364,7 +1381,8 @@
 							"canEat": true,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1398,7 +1416,8 @@
 						{
 							"description": "A large cherry pie",
 							"onEat": "Cherry pie eat",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1423,7 +1442,8 @@
 							"canEat": true,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1457,7 +1477,8 @@
 						{
 							"description": "A huge chocolate cake, you're not really going to eat the whole thing are you?",
 							"onEat": "Chocolate cake eat",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1482,7 +1503,8 @@
 							"canEat": true,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1516,7 +1538,8 @@
 						{
 							"description": "A tub of ice cream from the town's ice cream shop",
 							"onEat": "You pull the lid off the tub and start scooping the fresh ice cream into your mouth. Despite being unflavored it is delicious and filling, your stomach is quickly full of cold milky goodness.",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1541,7 +1564,8 @@
 							"canEat": true,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1569,13 +1593,44 @@
 					"type": "_0005"
 				},
 				{
+					"uid": "_0031",
+					"type": "_0007",
+					"name": "Toilet",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "There is a toilet here you can use.",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [],
+					"slots": [],
+					"stats": [],
+					"index": 12
+				},
+				{
 					"uid": "_0017",
 					"name": "Consume Red Band",
 					"description": [
 						{
 							"description": "A tight fitting band with the logo of the local club on it. You can't get it off, but you often forget you're even wearing it.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [],
@@ -1587,7 +1642,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": false,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": false
 						}
 					],
 					"key": [
@@ -1607,7 +1663,7 @@
 							"value": 0
 						}
 					],
-					"index": 12,
+					"index": 13,
 					"type": "_0006"
 				},
 				{
@@ -1641,10 +1697,11 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
-					"index": 13,
+					"index": 14,
 					"uid": "_0002",
 					"slots": [],
 					"stats": [
@@ -1661,7 +1718,8 @@
 						{
 							"description": "A key you got after agreeing to help out at the general store.",
 							"onEat": "onEat MISSING ITEM _0002",
-							"onFinisher": "onFinisher MISSING ITEM ????"
+							"onFinisher": "onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"type": "_0006"
@@ -1706,10 +1764,11 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
-					"index": 14,
+					"index": 15,
 					"uid": "_0003",
 					"slots": [],
 					"stats": [
@@ -1726,7 +1785,8 @@
 						{
 							"description": "A credit-card sized square of plastic with the gym's logo printed on it and a gold background.",
 							"onEat": "onEat MISSING ITEM _0003",
-							"onFinisher": "onFinisher MISSING ITEM ????"
+							"onFinisher": "onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"type": "_0006"
@@ -1738,7 +1798,8 @@
 						{
 							"description": "A credit-card sized square of plastic with the gym's logo printed on it and a black background",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [],
@@ -1750,7 +1811,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1770,7 +1832,7 @@
 							"value": 0
 						}
 					],
-					"index": 15,
+					"index": 16,
 					"type": "_0006"
 				},
 				{
@@ -1804,10 +1866,11 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
-					"index": 16,
+					"index": 17,
 					"uid": "_0006",
 					"slots": [],
 					"stats": [
@@ -1824,7 +1887,8 @@
 						{
 							"description": "A key you got from Shay. It opens the staff room door at the gym.",
 							"onEat": "onEat MISSING ITEM _0000",
-							"onFinisher": "onFinisher MISSING ITEM ????"
+							"onFinisher": "onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"type": "_0006"
@@ -1869,10 +1933,11 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
-					"index": 17,
+					"index": 18,
 					"uid": "_0001",
 					"slots": [],
 					"stats": [
@@ -1889,7 +1954,8 @@
 						{
 							"description": "A key you got from Bessie that will let you into the back rooms of the ice cream shop. You're pretty sure this is the same key you had when you worked there.",
 							"onEat": "onEat MISSING ITEM _0001",
-							"onFinisher": "onFinisher MISSING ITEM ????"
+							"onFinisher": "onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"type": "_0006"
@@ -1901,7 +1967,8 @@
 						{
 							"description": "A small electrum ring.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1917,7 +1984,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1941,7 +2009,7 @@
 							"value": 30
 						}
 					],
-					"index": 18,
+					"index": 19,
 					"type": "_0003"
 				},
 				{
@@ -1951,7 +2019,8 @@
 						{
 							"description": "A small electrum ring set with a professionally cut ruby.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -1967,7 +2036,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -1991,7 +2061,7 @@
 							"value": 55
 						}
 					],
-					"index": 19,
+					"index": 20,
 					"type": "_0003"
 				},
 				{
@@ -2001,7 +2071,8 @@
 						{
 							"description": "A small gold ring.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2017,7 +2088,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2041,7 +2113,7 @@
 							"value": 50
 						}
 					],
-					"index": 20,
+					"index": 21,
 					"type": "_0003"
 				},
 				{
@@ -2051,7 +2123,8 @@
 						{
 							"description": "A small gold ring set with a professionally cut ruby.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2067,7 +2140,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2091,7 +2165,7 @@
 							"value": 75
 						}
 					],
-					"index": 21,
+					"index": 22,
 					"type": "_0003"
 				},
 				{
@@ -2101,7 +2175,8 @@
 						{
 							"description": "A small silver ring.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2117,7 +2192,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2141,7 +2217,7 @@
 							"value": 25
 						}
 					],
-					"index": 22,
+					"index": 23,
 					"type": "_0003"
 				},
 				{
@@ -2151,7 +2227,8 @@
 						{
 							"description": "A small silver ring set with a professionally cut ruby.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2167,7 +2244,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2191,7 +2269,7 @@
 							"value": 50
 						}
 					],
-					"index": 23,
+					"index": 24,
 					"type": "_0003"
 				},
 				{
@@ -2201,7 +2279,8 @@
 						{
 							"description": "Your bare hands.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "You snap the [NPCNAME]'s neck, finishing [OBJ] off."
+							"onFinisher": "You snap the [NPCNAME]'s neck, finishing [OBJ] off.",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [],
@@ -2213,7 +2292,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": false,
-							"inInvList": false
+							"inInvList": false,
+							"canPickup": false
 						}
 					],
 					"key": [
@@ -2241,7 +2321,7 @@
 							"value": 0
 						}
 					],
-					"index": 24,
+					"index": 25,
 					"type": "_0004"
 				},
 				{
@@ -2251,7 +2331,8 @@
 						{
 							"description": "A basic knife, used for cooking.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2267,7 +2348,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2295,7 +2377,7 @@
 							"value": 2
 						}
 					],
-					"index": 25,
+					"index": 26,
 					"type": "_0004"
 				},
 				{
@@ -2305,7 +2387,8 @@
 						{
 							"description": "A short blade, made for combat.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2324,7 +2407,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2352,7 +2436,7 @@
 							"value": 4
 						}
 					],
-					"index": 26,
+					"index": 27,
 					"type": "_0004"
 				},
 				{
@@ -2362,7 +2446,8 @@
 						{
 							"description": "A curved balde, popular in the east.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2381,7 +2466,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2409,7 +2495,7 @@
 							"value": 6
 						}
 					],
-					"index": 27,
+					"index": 28,
 					"type": "_0004"
 				},
 				{
@@ -2419,7 +2505,8 @@
 						{
 							"description": "A heavy knight's weapon.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2438,7 +2525,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2466,7 +2554,7 @@
 							"value": 10
 						}
 					],
-					"index": 28,
+					"index": 29,
 					"type": "_0004"
 				},
 				{
@@ -2476,7 +2564,8 @@
 						{
 							"description": "A workman's tool.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2495,7 +2584,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2523,7 +2613,7 @@
 							"value": 3
 						}
 					],
-					"index": 29,
+					"index": 30,
 					"type": "_0004"
 				},
 				{
@@ -2533,7 +2623,8 @@
 						{
 							"description": "A heavy hammer made for breaking rocks.",
 							"onEat": "desc.onEat MISSING ITEM ????",
-							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+							"onFinisher": "desc.onFinisher MISSING ITEM ????",
+							"asRoomContents": ""
 						}
 					],
 					"alias": [
@@ -2555,7 +2646,8 @@
 							"canEat": false,
 							"canDrink": false,
 							"canDrop": true,
-							"inInvList": true
+							"inInvList": true,
+							"canPickup": true
 						}
 					],
 					"key": [
@@ -2583,7 +2675,7 @@
 							"value": 6
 						}
 					],
-					"index": 30,
+					"index": 31,
 					"type": "_0004"
 				}
 			],
@@ -2591,8 +2683,9 @@
 				1,
 				5,
 				12,
-				18,
-				24
+				13,
+				19,
+				25
 			],
 			"props": {
 				"hasIndex": true,
@@ -2680,11 +2773,6 @@
 							"verbose": "Your bathroom. Standard stuff for a person living alone. The important bits are the shower and the toilet."
 						}
 					],
-					"wrongfile": [
-						{
-							"specials": "[5]"
-						}
-					],
 					"uid": "_0001"
 				},
 				{
@@ -2724,10 +2812,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0003",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0003"
 				},
 				{
 					"name": "Main Street",
@@ -2739,10 +2824,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0004",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0004"
 				},
 				{
 					"name": "City Park",
@@ -2771,10 +2853,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0006",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0006"
 				},
 				{
 					"name": "Consume Entryway",
@@ -2839,10 +2918,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0010",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0010"
 				},
 				{
 					"name": "Consume - Restroom",
@@ -2854,12 +2930,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0011",
-					"wrongfile": [
-						{
-							"specials": "[5]"
-						}
-					]
+					"uid": "_0011"
 				},
 				{
 					"name": "Consume - Bar",
@@ -2871,10 +2942,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0012",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0012"
 				},
 				{
 					"name": "Consume - Stage",
@@ -2886,10 +2954,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0013",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0013"
 				},
 				{
 					"name": "Consume - Balcony",
@@ -2901,10 +2966,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0014",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0014"
 				},
 				{
 					"name": "Consume - Lounge",
@@ -2933,10 +2995,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0016",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0016"
 				},
 				{
 					"name": "Hospital - Waiting Room",
@@ -2948,10 +3007,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0017",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0017"
 				},
 				{
 					"name": "Hospital - Pharmacy",
@@ -2963,10 +3019,7 @@
 					],
 					"permission": [],
 					"description": [],
-					"uid": "_0018",
-					"wrongfile": [
-						{}
-					]
+					"uid": "_0018"
 				},
 				{
 					"name": "General Store",
@@ -3218,6 +3271,11 @@
 				},
 				{
 					"typeStr": "2",
+					"name": "canPickup",
+					"display": null
+				},
+				{
+					"typeStr": "2",
 					"name": "inInvList",
 					"display": null
 				},
@@ -3327,14 +3385,28 @@
 				{
 					"location": [
 						{
-							"room": "_0026",
-							"type": "_0000"
+							"type": "_0000",
+							"room": "_0001"
 						}
 					],
 					"object": [
 						{
-							"item": "_0001",
-							"type": "_0001"
+							"type": "_0001",
+							"item": "_0031"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0011"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0031"
 						}
 					]
 				},
@@ -3355,14 +3427,14 @@
 				{
 					"location": [
 						{
-							"room": "_0021",
-							"type": "_0000"
+							"type": "_0000",
+							"room": "_0024"
 						}
 					],
 					"object": [
 						{
-							"item": "_0000",
-							"type": "_0001"
+							"type": "_0001",
+							"item": "_0031"
 						}
 					]
 				},
@@ -3377,6 +3449,48 @@
 						{
 							"item": "_0003",
 							"type": "_0001"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"room": "_0021",
+							"type": "_0000"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0006"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"room": "_0026",
+							"type": "_0000"
+						}
+					],
+					"object": [
+						{
+							"item": "_0001",
+							"type": "_0001"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0029"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0031"
 						}
 					]
 				}
@@ -3625,6 +3739,10 @@
 					"typeStr": "1",
 					"name": "onEat",
 					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "asRoomContents"
 				},
 				{
 					"typeStr": "1",
