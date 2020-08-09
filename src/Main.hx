@@ -6940,17 +6940,6 @@ class Main {
         globals.exits[11] = ["Alley",              0];
 		
 		//Items
-        
-        // rings
-		globals.rings = new Array();
-		
-		ring.push(["Gold Ring", 0, 50, "A small gold ring."]);
-		ring.push(["Silver Ring", 0, 25, "A small silver ring."]);
-		ring.push(["Electrum Ring", 0, 30, "A small electrum ring."]);
-		ring.push(["Silver Ruby Ring", 0, 50, "A small silver ring set with a professionally cut ruby."]);
-		ring.push(["Gold Ruby Ring", 0, 75, "A small gold ring set with a professionally cut ruby."]);
-		ring.push(["Electrum Ruby Ring", 0, 55, "A small electrum ring set with a professionally cut ruby."]);
-		
 		//Shoplists
 		
 		/* Shop format
