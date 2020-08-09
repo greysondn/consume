@@ -584,6 +584,18 @@
 					"comment": "Foodstuff - includes drinks"
 				},
 				{
+					"uid": "_0007",
+					"name": "item.furniture",
+					"validUses": [
+						{
+							"itemType": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
 					"uid": "_0006",
 					"name": "item.key",
 					"validUses": [
@@ -2714,9 +2726,7 @@
 					"description": [],
 					"uid": "_0003",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2731,9 +2741,7 @@
 					"description": [],
 					"uid": "_0004",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2765,9 +2773,7 @@
 					"description": [],
 					"uid": "_0006",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2835,9 +2841,7 @@
 					"description": [],
 					"uid": "_0010",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2869,9 +2873,7 @@
 					"description": [],
 					"uid": "_0012",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2886,9 +2888,7 @@
 					"description": [],
 					"uid": "_0013",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2903,9 +2903,7 @@
 					"description": [],
 					"uid": "_0014",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2937,9 +2935,7 @@
 					"description": [],
 					"uid": "_0016",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2954,9 +2950,7 @@
 					"description": [],
 					"uid": "_0017",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{
@@ -2971,9 +2965,7 @@
 					"description": [],
 					"uid": "_0018",
 					"wrongfile": [
-						{
-							"specials": "[0]"
-						}
+						{}
 					]
 				},
 				{

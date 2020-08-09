@@ -102,8 +102,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
@@ -347,8 +345,6 @@
 -
   index: 25
   name:  "Gym - Showers"
-  wrongFile:
-    specials: "[0]"
   permissions:
     wait: true
   desc:
@@ -375,8 +371,6 @@
 -
   index: 27
   name:  "Ice Cream Shop - Backroom"
-  wrongFile:
-    specials: "[0]"
   permissions:
     wait: false
   desc:
@@ -390,8 +384,6 @@
 -
   index: 28
   name:  "Ice Cream Shop - Freezer"
-  wrongFile:
-    specials: "[0]"
   permissions:
     wait: true
   desc:
