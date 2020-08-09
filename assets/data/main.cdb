@@ -1617,10 +1617,68 @@
 							"canDrink": false
 						}
 					],
-					"key": [],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
 					"slots": [],
-					"stats": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
 					"index": 12
+				},
+				{
+					"uid": "_0032",
+					"type": "_0007",
+					"name": "Phone",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "There is a phone on the wall here.",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 13
 				},
 				{
 					"uid": "_0017",
@@ -1663,7 +1721,7 @@
 							"value": 0
 						}
 					],
-					"index": 13,
+					"index": 14,
 					"type": "_0006"
 				},
 				{
@@ -1701,7 +1759,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 14,
+					"index": 15,
 					"uid": "_0002",
 					"slots": [],
 					"stats": [
@@ -1768,7 +1826,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 15,
+					"index": 16,
 					"uid": "_0003",
 					"slots": [],
 					"stats": [
@@ -1832,7 +1890,7 @@
 							"value": 0
 						}
 					],
-					"index": 16,
+					"index": 17,
 					"type": "_0006"
 				},
 				{
@@ -1870,7 +1928,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 17,
+					"index": 18,
 					"uid": "_0006",
 					"slots": [],
 					"stats": [
@@ -1937,7 +1995,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 18,
+					"index": 19,
 					"uid": "_0001",
 					"slots": [],
 					"stats": [
@@ -2009,7 +2067,7 @@
 							"value": 30
 						}
 					],
-					"index": 19,
+					"index": 20,
 					"type": "_0003"
 				},
 				{
@@ -2061,7 +2119,7 @@
 							"value": 55
 						}
 					],
-					"index": 20,
+					"index": 21,
 					"type": "_0003"
 				},
 				{
@@ -2113,7 +2171,7 @@
 							"value": 50
 						}
 					],
-					"index": 21,
+					"index": 22,
 					"type": "_0003"
 				},
 				{
@@ -2165,7 +2223,7 @@
 							"value": 75
 						}
 					],
-					"index": 22,
+					"index": 23,
 					"type": "_0003"
 				},
 				{
@@ -2217,7 +2275,7 @@
 							"value": 25
 						}
 					],
-					"index": 23,
+					"index": 24,
 					"type": "_0003"
 				},
 				{
@@ -2269,7 +2327,7 @@
 							"value": 50
 						}
 					],
-					"index": 24,
+					"index": 25,
 					"type": "_0003"
 				},
 				{
@@ -2321,7 +2379,7 @@
 							"value": 0
 						}
 					],
-					"index": 25,
+					"index": 26,
 					"type": "_0004"
 				},
 				{
@@ -2377,7 +2435,7 @@
 							"value": 2
 						}
 					],
-					"index": 26,
+					"index": 27,
 					"type": "_0004"
 				},
 				{
@@ -2436,7 +2494,7 @@
 							"value": 4
 						}
 					],
-					"index": 27,
+					"index": 28,
 					"type": "_0004"
 				},
 				{
@@ -2495,7 +2553,7 @@
 							"value": 6
 						}
 					],
-					"index": 28,
+					"index": 29,
 					"type": "_0004"
 				},
 				{
@@ -2554,7 +2612,7 @@
 							"value": 10
 						}
 					],
-					"index": 29,
+					"index": 30,
 					"type": "_0004"
 				},
 				{
@@ -2613,7 +2671,7 @@
 							"value": 3
 						}
 					],
-					"index": 30,
+					"index": 31,
 					"type": "_0004"
 				},
 				{
@@ -2675,7 +2733,7 @@
 							"value": 6
 						}
 					],
-					"index": 31,
+					"index": 32,
 					"type": "_0004"
 				}
 			],
@@ -2683,9 +2741,9 @@
 				1,
 				5,
 				12,
-				13,
-				19,
-				25
+				14,
+				20,
+				26
 			],
 			"props": {
 				"hasIndex": true,
@@ -2793,11 +2851,6 @@
 							"longview": "",
 							"brief": "",
 							"verbose": "Your living room. Or really just the rest of your apartment. You have a cheap couch you got from a friend when you moved in. A nice TV you probably shouldn't have bought and a card table and folding chair. To the side is your kitchen, depressingly empty as usual."
-						}
-					],
-					"wrongfile": [
-						{
-							"specials": "[7]"
 						}
 					],
 					"uid": "_0002"
@@ -3393,6 +3446,20 @@
 						{
 							"type": "_0001",
 							"item": "_0031"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0002"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0032"
 						}
 					]
 				},

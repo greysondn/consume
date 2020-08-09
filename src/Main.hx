@@ -320,8 +320,6 @@ class Main {
                 btns[11].setClickFunc(doWork);
             case 5:
                 //Toilet
-                message += "There is a toilet here you can use.<br>";
-                btns[11 - i].setButton("Toilet", null, 0);
                 btns[11 - i].setClickFunc(doPoop);
             case 6:
                 //Sleep
@@ -331,7 +329,6 @@ class Main {
                 btns[11 - i].disableButton();
             case 7:
                 //Phone
-                message += "There is a phone on the wall here.<br>";
                 btns[11 - i].setButton("Phone", null, 0);
                 btns[11 - i].setClickFunc(doPhone);
             case 8:
