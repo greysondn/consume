@@ -103,19 +103,19 @@
 			"lines": [
 				{
 					"uid": "_0000",
-					"name": "ring.left.ring"
+					"name": "ring_left_ring"
 				},
 				{
 					"uid": "_0001",
-					"name": "weapon.onehanded"
+					"name": "weapon_onehanded"
 				},
 				{
 					"uid": "_0003",
-					"name": "weapon.twohanded"
+					"name": "weapon_twohanded"
 				},
 				{
 					"uid": "_0002",
-					"name": "armor.torso"
+					"name": "armor_torso"
 				}
 			],
 			"separators": [],
@@ -257,11 +257,11 @@
 					"comment": "The mass of an item, in arbitrary units.",
 					"validUses": [
 						{
-							"item.any": true,
-							"item.equipment": true,
-							"item.food": true,
-							"item.key": true,
-							"character": true
+							"character": true,
+							"item_any": true,
+							"item_equipment": true,
+							"item_food": true,
+							"item_key": true
 						}
 					]
 				},
@@ -271,11 +271,11 @@
 					"comment": "The value of an item, in dollars.",
 					"validUses": [
 						{
-							"item.any": true,
-							"item.equipment": true,
-							"item.food": true,
-							"item.key": true,
-							"character": true
+							"character": true,
+							"item_any": true,
+							"item_equipment": true,
+							"item_food": true,
+							"item_key": true
 						}
 					]
 				},
@@ -285,11 +285,11 @@
 					"comment": "Strength",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -299,11 +299,11 @@
 					"comment": "Agility",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -313,11 +313,11 @@
 					"comment": "Endurance",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -327,11 +327,11 @@
 					"comment": "Intelligence",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -341,11 +341,11 @@
 					"comment": "Health",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -355,11 +355,11 @@
 					"comment": "Spot",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -369,11 +369,11 @@
 					"comment": "Dodge",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -383,11 +383,11 @@
 					"comment": "Run",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -397,11 +397,11 @@
 					"comment": "Melee",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -411,11 +411,11 @@
 					"comment": "Sneak",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -425,11 +425,11 @@
 					"comment": "The attack stat",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -439,11 +439,11 @@
 					"comment": "The defense stat",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": true,
-							"item.food": false,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": true,
+							"item_food": false,
+							"item_key": false
 						}
 					]
 				},
@@ -453,11 +453,11 @@
 					"comment": "Percentage of health this heals",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": false,
-							"item.food": true,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": false,
+							"item_food": true,
+							"item_key": false
 						}
 					]
 				},
@@ -467,11 +467,11 @@
 					"comment": "??? No idea.",
 					"validUses": [
 						{
-							"item.any": false,
-							"item.equipment": false,
-							"item.food": true,
-							"item.key": false,
-							"character": false
+							"character": false,
+							"item_any": false,
+							"item_equipment": false,
+							"item_food": true,
+							"item_key": false
 						}
 					]
 				}
@@ -537,7 +537,7 @@
 				},
 				{
 					"uid": "_0002",
-					"name": "item.equipment.armor",
+					"name": "item_equipment_armor",
 					"validUses": [
 						{
 							"itemType": true,
@@ -549,7 +549,7 @@
 				},
 				{
 					"uid": "_0003",
-					"name": "item.equipment.ring",
+					"name": "item_equipment_ring",
 					"validUses": [
 						{
 							"itemType": true,
@@ -561,7 +561,7 @@
 				},
 				{
 					"uid": "_0004",
-					"name": "item.equipment.weapon",
+					"name": "item_equipment_weapon",
 					"validUses": [
 						{
 							"itemType": true,
@@ -573,7 +573,7 @@
 				},
 				{
 					"uid": "_0005",
-					"name": "item.food",
+					"name": "item_food",
 					"validUses": [
 						{
 							"itemType": true,
@@ -585,7 +585,7 @@
 				},
 				{
 					"uid": "_0007",
-					"name": "item.furniture",
+					"name": "item_furniture",
 					"validUses": [
 						{
 							"itemType": true,
@@ -597,7 +597,7 @@
 				},
 				{
 					"uid": "_0006",
-					"name": "item.key",
+					"name": "item_key",
 					"validUses": [
 						{
 							"itemType": true,
@@ -3502,7 +3502,7 @@
 					"object": [
 						{
 							"type": "_0001",
-							"item": "_0033"
+							"item": "_0032"
 						}
 					]
 				},
@@ -3928,22 +3928,19 @@
 			"columns": [
 				{
 					"typeStr": "2",
-					"name": "item.any"
+					"name": "item_any"
 				},
 				{
 					"typeStr": "2",
-					"name": "item.equipment",
-					"display": null
+					"name": "item_equipment"
 				},
 				{
 					"typeStr": "2",
-					"name": "item.food",
-					"display": null
+					"name": "item_food"
 				},
 				{
 					"typeStr": "2",
-					"name": "item.key",
-					"display": null
+					"name": "item_key"
 				},
 				{
 					"typeStr": "2",
@@ -3987,6 +3984,10 @@
 				{
 					"typeStr": "4",
 					"name": "sellToFactor"
+				},
+				{
+					"typeStr": "8",
+					"name": "canBeSold"
 				}
 			],
 			"lines": [
@@ -4136,7 +4137,75 @@
 						}
 					],
 					"sellToFactor": 0.5,
-					"canSellTo": true
+					"canSellTo": true,
+					"canBeSold": [
+						{
+							"item": "_0005"
+						},
+						{
+							"item": "_0014"
+						},
+						{
+							"item": "_0009"
+						},
+						{
+							"item": "_0010"
+						},
+						{
+							"item": "_0015"
+						},
+						{
+							"item": "_0004"
+						},
+						{
+							"item": "_0007"
+						},
+						{
+							"item": "_0008"
+						},
+						{
+							"item": "_0021"
+						},
+						{
+							"item": "_0027"
+						},
+						{
+							"item": "_0030"
+						},
+						{
+							"item": "_0025"
+						},
+						{
+							"item": "_0029"
+						},
+						{
+							"item": "_0023"
+						},
+						{
+							"item": "_0019"
+						},
+						{
+							"item": "_0013"
+						},
+						{
+							"item": "_0022"
+						},
+						{
+							"item": "_0026"
+						},
+						{
+							"item": "_0028"
+						},
+						{
+							"item": "_0020"
+						},
+						{
+							"item": "_0024"
+						},
+						{
+							"item": "_0011"
+						}
+					]
 				}
 			],
 			"separators": [],
@@ -4304,7 +4373,7 @@
 			]
 		},
 		{
-			"name": "stores@willBuy",
+			"name": "stores@canBeSold",
 			"props": {
 				"hide": true
 			},
