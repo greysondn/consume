@@ -6940,17 +6940,6 @@ class Main {
         globals.exits[11] = ["Alley",              0];
 		
 		//Items
-		
-		//Weapons
-		globals.weapons = new Array();
-		//Weapons    Name           Mass Value Desc                                   Attack TwoHand Finisher Specials
-		weapons.push(["Fists",        0,    0,  "Your bare hands.",                     0,    true,  "You snap the [NPCNAME]'s neck, finishing [OBJ] off.<br>",    null]);
-		weapons.push(["Knife",        3,    1, "A basic knife, used for cooking.",      2,    false, null,    null]);
-		weapons.push(["Short Sword",  5,    5, "A short blade, made for combat.",       4,    false, null,    null]);
-		weapons.push(["Curved Sword", 6,   10, "A curved balde, popular in the east.",  6,    false, null,    null]);
-		weapons.push(["Longsword",   10,   15, "A heavy knight's weapon.",             10,    true,  null,    null]);
-		weapons.push(["Hammer",       5,   11, "A workman's tool.",                     3,    false, null,    null]);
-		weapons.push(["Sledge",      20,   15, "A heavy hammer made for breaking rocks.", 6,  true,  null,    null]);
         
         // rings
 		globals.rings = new Array();

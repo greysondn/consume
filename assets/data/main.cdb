@@ -518,7 +518,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -562,7 +564,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": false,
+							"inInvList": false
 						}
 					],
 					"key": [
@@ -617,7 +621,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -672,7 +678,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -724,7 +732,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -779,7 +789,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": true,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -833,7 +845,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": true
+							"canDrink": true,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -890,7 +904,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": true
+							"canDrink": true,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -945,7 +961,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": true,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -1002,7 +1020,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": true,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -1059,7 +1079,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": true,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -1116,7 +1138,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": true,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -1160,7 +1184,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": false,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -1211,7 +1237,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"index": 13,
@@ -1274,7 +1302,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"index": 14,
@@ -1317,7 +1347,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"key": [
@@ -1368,7 +1400,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"index": 16,
@@ -1431,7 +1465,9 @@
 							"keyItem": false,
 							"unique": false,
 							"canEat": false,
-							"canDrink": false
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
 						}
 					],
 					"index": 17,
@@ -1455,12 +1491,405 @@
 						}
 					],
 					"type": "key"
+				},
+				{
+					"uid": "_0018",
+					"type": "weapon",
+					"name": "Fists",
+					"description": [
+						{
+							"description": "Your bare hands.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "You snap the [NPCNAME]'s neck, finishing [OBJ] off."
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": false,
+							"inInvList": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0003"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 0
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						},
+						{
+							"type": "_0002",
+							"value": 0
+						}
+					],
+					"index": 18
+				},
+				{
+					"uid": "_0019",
+					"type": "weapon",
+					"name": "Knife",
+					"description": [
+						{
+							"description": "A basic knife, used for cooking.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "weapon"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0001"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 3
+						},
+						{
+							"type": "_0001",
+							"value": 1
+						},
+						{
+							"type": "_0002",
+							"value": 2
+						}
+					],
+					"index": 19
+				},
+				{
+					"uid": "_0020",
+					"type": "weapon",
+					"name": "Short Sword",
+					"description": [
+						{
+							"description": "A short blade, made for combat.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "weapon"
+						},
+						{
+							"value": "sword"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0001"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 5
+						},
+						{
+							"type": "_0001",
+							"value": 5
+						},
+						{
+							"type": "_0002",
+							"value": 4
+						}
+					],
+					"index": 20
+				},
+				{
+					"uid": "_0021",
+					"type": "weapon",
+					"name": "Curved Sword",
+					"description": [
+						{
+							"description": "A curved balde, popular in the east.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "weapon"
+						},
+						{
+							"value": "sword"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0001"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 6
+						},
+						{
+							"type": "_0001",
+							"value": 10
+						},
+						{
+							"type": "_0002",
+							"value": 6
+						}
+					],
+					"index": 21
+				},
+				{
+					"uid": "_0022",
+					"type": "weapon",
+					"name": "Longsword",
+					"description": [
+						{
+							"description": "A heavy knight's weapon.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "weapon"
+						},
+						{
+							"value": "sword"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0003"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 10
+						},
+						{
+							"type": "_0001",
+							"value": 15
+						},
+						{
+							"type": "_0002",
+							"value": 10
+						}
+					],
+					"index": 22
+				},
+				{
+					"uid": "_0023",
+					"type": "weapon",
+					"name": "Hammer",
+					"description": [
+						{
+							"description": "A workman's tool.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "weapon"
+						},
+						{
+							"value": "hammer"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0001"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 5
+						},
+						{
+							"type": "_0001",
+							"value": 11
+						},
+						{
+							"type": "_0002",
+							"value": 3
+						}
+					],
+					"index": 23
+				},
+				{
+					"uid": "_0024",
+					"type": "weapon",
+					"name": "Sledge",
+					"description": [
+						{
+							"description": "A heavy hammer made for breaking rocks.",
+							"onEat": "desc.onEat MISSING ITEM ????",
+							"onFinisher": "desc.onFinisher MISSING ITEM ????"
+						}
+					],
+					"alias": [
+						{
+							"value": "weapon"
+						},
+						{
+							"value": "hammer"
+						},
+						{
+							"value": "sledgehammer"
+						}
+					],
+					"flag": [
+						{
+							"indestructible": false,
+							"keyItem": false,
+							"unique": false,
+							"canEat": false,
+							"canDrink": false,
+							"canDrop": true,
+							"inInvList": true
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [
+						{
+							"value": "_0003"
+						}
+					],
+					"stats": [
+						{
+							"type": "_0000",
+							"value": 20
+						},
+						{
+							"type": "_0001",
+							"value": 15
+						},
+						{
+							"type": "_0002",
+							"value": 6
+						}
+					],
+					"index": 24
 				}
 			],
 			"separators": [
 				1,
 				5,
-				12
+				12,
+				18
 			],
 			"props": {
 				"hasIndex": true,
@@ -2099,6 +2528,15 @@
 				{
 					"typeStr": "2",
 					"name": "unique"
+				},
+				{
+					"typeStr": "2",
+					"name": "canDrop"
+				},
+				{
+					"typeStr": "2",
+					"name": "inInvList",
+					"display": null
 				},
 				{
 					"typeStr": "2",
