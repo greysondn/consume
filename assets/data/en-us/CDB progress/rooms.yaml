@@ -4,8 +4,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
       be out here, you can't even leave from here, there's no way down. And the
@@ -16,8 +14,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The street outside your apartment. Three identical buildings
       sit side-by-side here, they all share a single parking lot accessed by an
@@ -35,8 +31,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The city park. Though you know it's only a single block, something about
       the woods makes it easy to get lost. There are usually a number of less
@@ -47,8 +41,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       Most of this area is still under construction. One building is finished,
       though most of it is still unoccupied their is a lighted door leading to
@@ -59,8 +51,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A short flight of concrete steps leading to a steel door. The landing is
       mostly taken up by the very large bouncer who eyes you as you come down
@@ -75,8 +65,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A dim alley running along the side of the club. It ends in a small
       loading dock area with a dumpster next to a locked door. There is a short
@@ -89,8 +77,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The main room of Consume is mostly taken up by a dance floor. Along one
       wall is the bar, several bartenders work behind it serving drinks to
@@ -105,8 +91,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A short hall lined with rooms on either side. Behind each door is a
       sparsely furnished room with little more then a lamp and a bed. At the
@@ -128,8 +112,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A long polished bar, running the length of the room. Like most movie
       bars the back wall of this one is backed by a mirror with interesting or
@@ -143,8 +125,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The club's stage. A drum set sits covered and ignored by the crowd. You're
       not really sure where the music is being piped in from. There's not much
@@ -171,8 +151,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The predator's lounge is a large dark room. Several groups of chairs and
       couches are arranged around the room allowing predators a place to sit
@@ -186,8 +164,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       What is probably best referred to as the town's market district. It's
       rather depressing really, there is only a single general store here,
@@ -203,8 +179,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A typical hospital waiting area, the reception desk is always occupied by
       someone looking tired and slightly haggard. You idly wonder if the
@@ -218,8 +192,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The pharmacy counter of the local hospital, the steel cage keeping
       random people out is closed and no one seems to be around at the moment.
@@ -233,8 +205,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The array of junk occupying this store is truly impressive. You feel
       that, had you the time and desire, you could find some truly remarkable
@@ -249,8 +219,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The reception room of this gym is comfortable and modern. Several
       comfortable looking chairs wait to either side, with a reception desk at
@@ -267,8 +235,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A large open room filled with machines of every type. Each one designed
       to strengthen some aspect of your body. Each machine has a sign next to
@@ -299,8 +265,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       Calling this room the 'Gold Room' is a bit of a misnomer, the room
       it's self isn't actually gold. Rather it's a smallish room with mirrors
@@ -357,8 +321,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       This back room of this gym is clearly not an area customers are intended
       to see. Two walls are covered in the lockers of the employees. The wall
@@ -380,8 +342,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
@@ -392,8 +352,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A short hallway leads to several shower stalls, providing gym goers a
       place to change and get cleaned up. Rows of small lockers are provided
@@ -407,8 +365,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       Your old place of employment, the local ice cream shop. They have all
       the basics; cones, sundaes even a few specialty items like shakes and
@@ -424,8 +380,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The back room of the ice cream shop set up as a break room, with a table
       and several chairs. The old TV you remember from when you worked here is
@@ -441,8 +395,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       The freezer, it's very cold, naturally. And it's filled with tub after
       tub of ice cream ready to be sold in the shop. A quick look around and
@@ -469,8 +421,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       While you worked here you were never allowed into this room, you were
       pretty sure it was just an office since Bessie was usually in here when
@@ -506,8 +456,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A massive warehouse under the main shop filled with more stuff then you
       could possibly sort through in several lifetimes.
@@ -519,8 +467,6 @@
   permissions:
     wait: true
   desc:
-    longview: null
-    brief: null
     verbose: >-
       A small room tucked away in the back of the hospital, almost a closet.
       The only item of note in here is a small machine, examining it closely it
