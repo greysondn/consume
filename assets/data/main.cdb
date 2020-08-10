@@ -88,7 +88,7 @@
 			}
 		},
 		{
-			"name": "eSlots",
+			"name": "eFlags",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -97,28 +97,146 @@
 				},
 				{
 					"typeStr": "1",
-					"name": "name"
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "comment",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "validUses",
+					"display": null
 				}
 			],
 			"lines": [
 				{
-					"uid": "_0000",
-					"name": "ring_left_ring"
-				},
-				{
 					"uid": "_0001",
-					"name": "weapon_onehanded"
-				},
-				{
-					"uid": "_0003",
-					"name": "weapon_twohanded"
+					"name": "indestructible",
+					"comment": "Whether an item is indestructible (cannot be destroyed violently or via digestion)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false
+						}
+					]
 				},
 				{
 					"uid": "_0002",
-					"name": "armor_torso"
+					"name": "keyItem",
+					"comment": "Whether this is a key item (primarily used to advance quests)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false
+						}
+					]
+				},
+				{
+					"uid": "_0009",
+					"name": "isKey",
+					"comment": "Whether this item can be used as a key (not to be confused with a key item)",
+					"validUses": [
+						{
+							"items": true,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
+					"uid": "_0003",
+					"name": "listInInventory",
+					"comment": "Whether this is listed in the inventory (that is, shown when an inventory listing is showed)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false
+						}
+					]
+				},
+				{
+					"uid": "_0004",
+					"name": "listInRoom",
+					"comment": "Whether this is listed in a room's contents (that is, shown when a room's inventory is shown.)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false
+						}
+					]
+				},
+				{
+					"uid": "_0000",
+					"name": "unique",
+					"comment": "Whether an item is unique (one of a kind)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false
+						}
+					]
+				},
+				{
+					"uid": "_0007",
+					"name": "isPublic",
+					"comment": "Indicates that this room is a public location.",
+					"validUses": [
+						{
+							"items": false,
+							"specificVerbs": false,
+							"rooms": true
+						}
+					]
+				},
+				{
+					"uid": "_0008",
+					"name": "disablePlayer",
+					"comment": "[... verbs ...] Players can't use this verb, it's here to provide data for engine internals. ONLY RELEVANT TO VERBS THAT PLAYERS USUALLY HAVE ACCESS TO.",
+					"validUses": [
+						{
+							"items": false,
+							"rooms": false,
+							"specificVerbs": true
+						}
+					]
+				},
+				{
+					"uid": "_0005",
+					"name": "canEat",
+					"comment": "[consume] Whether \"eat\" is a valid alias for this object's consumption.",
+					"validUses": [
+						{
+							"items": false,
+							"specificVerbs": true,
+							"rooms": false
+						}
+					]
+				},
+				{
+					"uid": "_0006",
+					"name": "canDrink",
+					"comment": "[consume] Whether \"drink\" is a valid alias for this object's consumption.",
+					"validUses": [
+						{
+							"items": false,
+							"specificVerbs": true,
+							"rooms": false
+						}
+					]
 				}
 			],
-			"separators": [],
+			"separators": [
+				6,
+				7
+			],
 			"props": {
 				"displayColumn": "name"
 			}
@@ -226,6 +344,42 @@
 			}
 		},
 		{
+			"name": "eSlots",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name"
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "ring_left_ring"
+				},
+				{
+					"uid": "_0001",
+					"name": "weapon_onehanded"
+				},
+				{
+					"uid": "_0003",
+					"name": "weapon_twohanded"
+				},
+				{
+					"uid": "_0002",
+					"name": "armor_torso"
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
 			"name": "eStats",
 			"columns": [
 				{
@@ -237,6 +391,10 @@
 					"typeStr": "1",
 					"name": "name",
 					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "default"
 				},
 				{
 					"typeStr": "8",
@@ -263,7 +421,8 @@
 							"item_food": true,
 							"item_key": true
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0001",
@@ -277,7 +436,8 @@
 							"item_food": true,
 							"item_key": true
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0006",
@@ -291,7 +451,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0007",
@@ -305,7 +466,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0008",
@@ -319,7 +481,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0009",
@@ -333,7 +496,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0010",
@@ -347,7 +511,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0011",
@@ -361,7 +526,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0012",
@@ -375,7 +541,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0013",
@@ -389,7 +556,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0014",
@@ -403,7 +571,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0015",
@@ -417,7 +586,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0002",
@@ -431,7 +601,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0003",
@@ -445,7 +616,8 @@
 							"item_food": false,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0004",
@@ -459,7 +631,8 @@
 							"item_food": true,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				},
 				{
 					"uid": "_0005",
@@ -473,7 +646,8 @@
 							"item_food": true,
 							"item_key": false
 						}
-					]
+					],
+					"default": 0
 				}
 			],
 			"separators": [
@@ -611,6 +785,225 @@
 			"separators": [
 				2
 			],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
+			"name": "eVerbs",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "inputs",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "comment",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "consume",
+					"inputs": [
+						{
+							"name": "flags",
+							"type": "list<reference<eFlags>>",
+							"comment": "Flags specific to this verb.",
+							"default": "[]"
+						}
+					],
+					"comment": "Enables consuming this object"
+				},
+				{
+					"uid": "_0001",
+					"name": "talk",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables talking to this object"
+				},
+				{
+					"uid": "_0002",
+					"name": "drop",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables dropping this object."
+				},
+				{
+					"uid": "_0003",
+					"name": "get",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables getting this object."
+				},
+				{
+					"uid": "_0004",
+					"name": "look",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables examining this object specifically."
+				},
+				{
+					"uid": "_0005",
+					"name": "lock",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables locking this object."
+				},
+				{
+					"uid": "_0006",
+					"name": "unlock",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables unlocking this object."
+				},
+				{
+					"uid": "_0007",
+					"name": "use",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables using this object."
+				},
+				{
+					"uid": "_0008",
+					"name": "equip",
+					"inputs": [
+						{
+							"name": "flags",
+							"type": "list<reference<eFlags>>",
+							"default": "[]",
+							"comment": "Flags specific to this verb."
+						},
+						{
+							"name": "slots",
+							"type": "list<reference<eSlots>>",
+							"comment": "slots this can be equipped into",
+							"default": "[]"
+						}
+					],
+					"comment": "Enables equipping this object."
+				},
+				{
+					"uid": "_0009",
+					"name": "unequip",
+					"inputs": [
+						{
+							"name": "flags",
+							"type": "list<reference<eFlags>>",
+							"comment": "Flags specific to this verb.",
+							"default": "[]"
+						}
+					],
+					"comment": "Enables unequipping this object."
+				},
+				{
+					"uid": "_0010",
+					"name": "shop",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables shop processing."
+				},
+				{
+					"uid": "_0012",
+					"name": "work",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables work processing."
+				},
+				{
+					"uid": "_0013",
+					"name": "wait",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "Enables wait processing."
+				},
+				{
+					"uid": "_0011",
+					"name": "_GOSUB",
+					"inputs": [
+						{
+							"name": "",
+							"type": "",
+							"comment": "",
+							"default": ""
+						}
+					],
+					"comment": "INTERNAL ONLY! Calls a special subroutine."
+				}
+			],
+			"separators": [],
 			"props": {
 				"displayColumn": "name"
 			}
@@ -882,17 +1275,17 @@
 				},
 				{
 					"typeStr": "8",
-					"name": "flag",
+					"name": "verbs",
 					"display": null
 				},
 				{
 					"typeStr": "8",
-					"name": "key",
+					"name": "flags",
 					"display": null
 				},
 				{
 					"typeStr": "8",
-					"name": "slots",
+					"name": "combos",
 					"display": null
 				},
 				{
@@ -914,25 +1307,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -944,7 +1318,10 @@
 						}
 					],
 					"index": 0,
-					"type": "_0006"
+					"type": "_0006",
+					"verbs": [],
+					"flags": [],
+					"combos": []
 				},
 				{
 					"uid": "_0012",
@@ -962,29 +1339,6 @@
 							"value": ""
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": false,
-							"inInvList": false,
-							"canPickup": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0002"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1000,7 +1354,45 @@
 						}
 					],
 					"index": 1,
-					"type": "_0002"
+					"type": "_0002",
+					"verbs": [
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0008"
+										}
+									]
+								},
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0002"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0008"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [],
+					"combos": []
 				},
 				{
 					"uid": "_0013",
@@ -1021,29 +1413,6 @@
 							"value": "jacket"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0002"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1051,7 +1420,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 10
+							"value": 1000
 						},
 						{
 							"type": "_0003",
@@ -1059,7 +1428,43 @@
 						}
 					],
 					"index": 2,
-					"type": "_0002"
+					"type": "_0002",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0002"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0014",
@@ -1080,29 +1485,6 @@
 							"value": "coat"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0002"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1110,7 +1492,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 15
+							"value": 1500
 						},
 						{
 							"type": "_0003",
@@ -1118,7 +1500,43 @@
 						}
 					],
 					"index": 3,
-					"type": "_0002"
+					"type": "_0002",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0002"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0015",
@@ -1136,29 +1554,6 @@
 							"value": "armor"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0002"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1166,7 +1561,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 20
+							"value": 2000
 						},
 						{
 							"type": "_0003",
@@ -1174,7 +1569,43 @@
 						}
 					],
 					"index": 4,
-					"type": "_0002"
+					"type": "_0002",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0002"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0005",
@@ -1195,25 +1626,6 @@
 							"value": "fruit"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": true,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1221,7 +1633,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 5
+							"value": 500
 						},
 						{
 							"type": "_0004",
@@ -1229,7 +1641,39 @@
 						}
 					],
 					"index": 5,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0005"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0009",
@@ -1253,25 +1697,6 @@
 							"value": "drink"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": true,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1279,7 +1704,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 1
+							"value": 100
 						},
 						{
 							"type": "_0004",
@@ -1287,7 +1712,39 @@
 						}
 					],
 					"index": 6,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0006"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0010",
@@ -1314,25 +1771,6 @@
 							"value": "bouncybutt"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": true,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1340,7 +1778,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 250
+							"value": 25000
 						},
 						{
 							"type": "_0004",
@@ -1352,7 +1790,39 @@
 						}
 					],
 					"index": 7,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0006"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0004",
@@ -1373,25 +1843,6 @@
 							"value": "burger"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": true,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1399,7 +1850,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 2
+							"value": 200
 						},
 						{
 							"type": "_0004",
@@ -1407,7 +1858,39 @@
 						}
 					],
 					"index": 8,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0005"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0007",
@@ -1434,25 +1917,6 @@
 							"value": "pie"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": true,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1460,7 +1924,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 5
+							"value": 500
 						},
 						{
 							"type": "_0004",
@@ -1468,7 +1932,39 @@
 						}
 					],
 					"index": 9,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0005"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0008",
@@ -1495,25 +1991,6 @@
 							"value": "dessert"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": true,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1521,7 +1998,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 7
+							"value": 700
 						},
 						{
 							"type": "_0004",
@@ -1529,7 +2006,39 @@
 						}
 					],
 					"index": 10,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0005"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0011",
@@ -1556,25 +2065,6 @@
 							"value": "tub"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": true,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"type": "_0000",
@@ -1582,7 +2072,7 @@
 						},
 						{
 							"type": "_0001",
-							"value": 50
+							"value": 5000
 						},
 						{
 							"type": "_0004",
@@ -1590,7 +2080,39 @@
 						}
 					],
 					"index": 11,
-					"type": "_0005"
+					"type": "_0005",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0000",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0005"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0032",
@@ -1605,25 +2127,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1634,7 +2137,14 @@
 							"value": 0
 						}
 					],
-					"index": 12
+					"index": 12,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0031",
@@ -1649,25 +2159,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1678,7 +2169,14 @@
 							"value": 0
 						}
 					],
-					"index": 13
+					"index": 13,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0033",
@@ -1697,25 +2195,6 @@
 							"value": "bed"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1726,7 +2205,14 @@
 							"value": 0
 						}
 					],
-					"index": 14
+					"index": 14,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0034",
@@ -1741,25 +2227,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1770,7 +2237,14 @@
 							"value": 0
 						}
 					],
-					"index": 15
+					"index": 15,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0035",
@@ -1785,25 +2259,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1814,7 +2269,14 @@
 							"value": 0
 						}
 					],
-					"index": 16
+					"index": 16,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0036",
@@ -1829,25 +2291,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1858,7 +2301,14 @@
 							"value": 0
 						}
 					],
-					"index": 17
+					"index": 17,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0037",
@@ -1873,25 +2323,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1902,7 +2333,14 @@
 							"value": 0
 						}
 					],
-					"index": 18
+					"index": 18,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0038",
@@ -1917,25 +2355,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1946,7 +2365,14 @@
 							"value": 0
 						}
 					],
-					"index": 19
+					"index": 19,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0039",
@@ -1961,25 +2387,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -1990,7 +2397,14 @@
 							"value": 0
 						}
 					],
-					"index": 20
+					"index": 20,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0040",
@@ -2005,25 +2419,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2034,7 +2429,14 @@
 							"value": 0
 						}
 					],
-					"index": 21
+					"index": 21,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0041",
@@ -2049,25 +2451,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2078,7 +2461,14 @@
 							"value": 0
 						}
 					],
-					"index": 22
+					"index": 22,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0042",
@@ -2093,25 +2483,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2122,7 +2493,14 @@
 							"value": 0
 						}
 					],
-					"index": 23
+					"index": 23,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0043",
@@ -2137,25 +2515,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2166,7 +2525,14 @@
 							"value": 0
 						}
 					],
-					"index": 24
+					"index": 24,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0044",
@@ -2181,25 +2547,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": true,
-							"keyItem": false,
-							"unique": false,
-							"canDrop": false,
-							"canPickup": false,
-							"inInvList": false,
-							"canEat": false,
-							"canDrink": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2210,7 +2557,78 @@
 							"value": 0
 						}
 					],
-					"index": 25
+					"index": 25,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0045",
+					"type": "_0007",
+					"name": "BouncyButt Vending Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 26,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0046",
+					"type": "_0007",
+					"name": "Shay's Contraption",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 27,
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0017",
@@ -2224,25 +2642,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": false,
-							"inInvList": true,
-							"canPickup": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2253,8 +2652,18 @@
 							"value": 0
 						}
 					],
-					"index": 26,
-					"type": "_0006"
+					"index": 28,
+					"type": "_0006",
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"name": "General Store key",
@@ -2269,31 +2678,8 @@
 							"value": "warehouse key"
 						}
 					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 1729
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"index": 27,
+					"index": 29,
 					"uid": "_0002",
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2312,7 +2698,33 @@
 							"asRoomContents": ""
 						}
 					],
-					"type": "_0006"
+					"type": "_0006",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						},
+						{
+							"flag": "_0009"
+						}
+					],
+					"combos": [
+						{
+							"value": 1729
+						}
+					]
 				},
 				{
 					"name": "Gym Gold Membership",
@@ -2336,31 +2748,8 @@
 							"value": "keycard"
 						}
 					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 8675309
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"index": 28,
+					"index": 30,
 					"uid": "_0003",
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2379,7 +2768,33 @@
 							"asRoomContents": ""
 						}
 					],
-					"type": "_0006"
+					"type": "_0006",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						},
+						{
+							"flag": "_0009"
+						}
+					],
+					"combos": [
+						{
+							"value": 8675309
+						}
+					]
 				},
 				{
 					"uid": "_0016",
@@ -2393,25 +2808,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2422,8 +2818,27 @@
 							"value": 0
 						}
 					],
-					"index": 29,
-					"type": "_0006"
+					"index": 31,
+					"type": "_0006",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"name": "Gym Staff Key",
@@ -2438,31 +2853,8 @@
 							"value": "gym key"
 						}
 					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 314159
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"index": 30,
+					"index": 32,
 					"uid": "_0006",
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2481,7 +2873,33 @@
 							"asRoomContents": ""
 						}
 					],
-					"type": "_0006"
+					"type": "_0006",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						},
+						{
+							"flag": "_0009"
+						}
+					],
+					"combos": [
+						{
+							"value": 314159
+						}
+					]
 				},
 				{
 					"name": "Ice Cream Shop Backroom key",
@@ -2505,31 +2923,8 @@
 							"value": "Bessie's key"
 						}
 					],
-					"key": [
-						{
-							"isKey": true,
-							"combo": [
-								{
-									"value": 420
-								}
-							]
-						}
-					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"index": 31,
+					"index": 33,
 					"uid": "_0001",
-					"slots": [],
 					"stats": [
 						{
 							"value": 0,
@@ -2548,7 +2943,33 @@
 							"asRoomContents": ""
 						}
 					],
-					"type": "_0006"
+					"type": "_0006",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						},
+						{
+							"flag": "_0009"
+						}
+					],
+					"combos": [
+						{
+							"value": 420
+						}
+					]
 				},
 				{
 					"uid": "_0027",
@@ -2566,29 +2987,6 @@
 							"value": "ring"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0000"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2596,11 +2994,47 @@
 						},
 						{
 							"type": "_0001",
-							"value": 30
+							"value": 3000
 						}
 					],
-					"index": 32,
-					"type": "_0003"
+					"index": 34,
+					"type": "_0003",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0030",
@@ -2618,29 +3052,6 @@
 							"value": "ring"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0000"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2648,11 +3059,47 @@
 						},
 						{
 							"type": "_0001",
-							"value": 55
+							"value": 5500
 						}
 					],
-					"index": 33,
-					"type": "_0003"
+					"index": 35,
+					"type": "_0003",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0025",
@@ -2670,29 +3117,6 @@
 							"value": "ring"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0000"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2700,11 +3124,47 @@
 						},
 						{
 							"type": "_0001",
-							"value": 50
+							"value": 5000
 						}
 					],
-					"index": 34,
-					"type": "_0003"
+					"index": 36,
+					"type": "_0003",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0029",
@@ -2722,29 +3182,6 @@
 							"value": "ring"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0000"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2752,11 +3189,47 @@
 						},
 						{
 							"type": "_0001",
-							"value": 75
+							"value": 7500
 						}
 					],
-					"index": 35,
-					"type": "_0003"
+					"index": 37,
+					"type": "_0003",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0026",
@@ -2774,29 +3247,6 @@
 							"value": "ring"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0000"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2804,11 +3254,47 @@
 						},
 						{
 							"type": "_0001",
-							"value": 25
+							"value": 2500
 						}
 					],
-					"index": 36,
-					"type": "_0003"
+					"index": 38,
+					"type": "_0003",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0028",
@@ -2826,29 +3312,6 @@
 							"value": "ring"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0000"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2856,11 +3319,47 @@
 						},
 						{
 							"type": "_0001",
-							"value": 50
+							"value": 5000
 						}
 					],
-					"index": 37,
-					"type": "_0003"
+					"index": 39,
+					"type": "_0003",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0018",
@@ -2874,29 +3373,6 @@
 						}
 					],
 					"alias": [],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": false,
-							"inInvList": false,
-							"canPickup": false
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0003"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2911,8 +3387,46 @@
 							"value": 0
 						}
 					],
-					"index": 38,
-					"type": "_0004"
+					"index": 40,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0008"
+										}
+									]
+								},
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0003"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": [
+								{
+									"name": "flags",
+									"value": [
+										{
+											"flag": "_0008"
+										}
+									]
+								}
+							]
+						}
+					],
+					"flags": [],
+					"combos": []
 				},
 				{
 					"uid": "_0019",
@@ -2930,29 +3444,6 @@
 							"value": "weapon"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0001"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -2960,15 +3451,51 @@
 						},
 						{
 							"type": "_0001",
-							"value": 1
+							"value": 100
 						},
 						{
 							"type": "_0002",
 							"value": 2
 						}
 					],
-					"index": 39,
-					"type": "_0004"
+					"index": 41,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0001"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0020",
@@ -2989,29 +3516,6 @@
 							"value": "sword"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0001"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -3019,15 +3523,51 @@
 						},
 						{
 							"type": "_0001",
-							"value": 5
+							"value": 500
 						},
 						{
 							"type": "_0002",
 							"value": 4
 						}
 					],
-					"index": 40,
-					"type": "_0004"
+					"index": 42,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0001"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0021",
@@ -3048,29 +3588,6 @@
 							"value": "sword"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0001"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -3078,15 +3595,51 @@
 						},
 						{
 							"type": "_0001",
-							"value": 10
+							"value": 1000
 						},
 						{
 							"type": "_0002",
 							"value": 6
 						}
 					],
-					"index": 41,
-					"type": "_0004"
+					"index": 43,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0001"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0022",
@@ -3107,29 +3660,6 @@
 							"value": "sword"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0003"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -3137,15 +3667,51 @@
 						},
 						{
 							"type": "_0001",
-							"value": 15
+							"value": 1500
 						},
 						{
 							"type": "_0002",
 							"value": 10
 						}
 					],
-					"index": 42,
-					"type": "_0004"
+					"index": 44,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0003"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0023",
@@ -3166,29 +3732,6 @@
 							"value": "hammer"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0001"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -3196,15 +3739,51 @@
 						},
 						{
 							"type": "_0001",
-							"value": 11
+							"value": 1100
 						},
 						{
 							"type": "_0002",
 							"value": 3
 						}
 					],
-					"index": 43,
-					"type": "_0004"
+					"index": 45,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0001"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				},
 				{
 					"uid": "_0024",
@@ -3228,29 +3807,6 @@
 							"value": "sledgehammer"
 						}
 					],
-					"flag": [
-						{
-							"indestructible": false,
-							"keyItem": false,
-							"unique": false,
-							"canEat": false,
-							"canDrink": false,
-							"canDrop": true,
-							"inInvList": true,
-							"canPickup": true
-						}
-					],
-					"key": [
-						{
-							"isKey": false,
-							"combo": []
-						}
-					],
-					"slots": [
-						{
-							"value": "_0003"
-						}
-					],
 					"stats": [
 						{
 							"type": "_0000",
@@ -3258,24 +3814,60 @@
 						},
 						{
 							"type": "_0001",
-							"value": 15
+							"value": 1500
 						},
 						{
 							"type": "_0002",
 							"value": 6
 						}
 					],
-					"index": 44,
-					"type": "_0004"
+					"index": 46,
+					"type": "_0004",
+					"verbs": [
+						{
+							"verb": "_0002",
+							"inputs": []
+						},
+						{
+							"verb": "_0003",
+							"inputs": []
+						},
+						{
+							"verb": "_0008",
+							"inputs": [
+								{
+									"name": "slots",
+									"value": [
+										{
+											"slot": "_0003"
+										}
+									]
+								}
+							]
+						},
+						{
+							"verb": "_0009",
+							"inputs": []
+						}
+					],
+					"flags": [
+						{
+							"flag": "_0003"
+						},
+						{
+							"flag": "_0004"
+						}
+					],
+					"combos": []
 				}
 			],
 			"separators": [
 				1,
 				5,
 				12,
-				26,
-				32,
-				38
+				28,
+				34,
+				40
 			],
 			"props": {
 				"hasIndex": true,
@@ -3302,11 +3894,12 @@
 				},
 				{
 					"typeStr": "8",
-					"name": "flag"
+					"name": "flags",
+					"display": null
 				},
 				{
 					"typeStr": "8",
-					"name": "permission",
+					"name": "verbs",
 					"display": null
 				},
 				{
@@ -3319,16 +3912,6 @@
 				{
 					"name": "Apartment - Bedroom",
 					"index": 0,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [
-						{
-							"wait": true
-						}
-					],
 					"description": [
 						{
 							"longview": "",
@@ -3336,21 +3919,17 @@
 							"verbose": "The bedroom of your tiny 2-room apartment. It's really only it's own room because of the divider separating it from the rest of the apartment, there isn't even a door.\\n\\n\\nContains all the normal bedroom stuff; bed, dirty clothes, clean clothes. A dresser that gets used less then it should. There's a rather nice sized closet that's currently stuffed so full of junk you don't feel safe opening the door."
 						}
 					],
-					"uid": "_0000"
+					"uid": "_0000",
+					"flags": [],
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Apartment - Bathroom",
 					"index": 1,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [
-						{
-							"wait": false
-						}
-					],
 					"description": [
 						{
 							"longview": "",
@@ -3358,21 +3937,13 @@
 							"verbose": "Your bathroom. Standard stuff for a person living alone. The important bits are the shower and the toilet."
 						}
 					],
-					"uid": "_0001"
+					"uid": "_0001",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Apartment - Living Room",
 					"index": 2,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [
-						{
-							"wait": true
-						}
-					],
 					"description": [
 						{
 							"longview": "",
@@ -3380,70 +3951,70 @@
 							"verbose": "Your living room. Or really just the rest of your apartment. You have a cheap couch you got from a friend when you moved in. A nice TV you probably shouldn't have bought and a card table and folding chair. To the side is your kitchen, depressingly empty as usual."
 						}
 					],
-					"uid": "_0002"
+					"uid": "_0002",
+					"flags": [],
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Apartment - Balcony",
 					"index": 3,
-					"flag": [
+					"description": [],
+					"uid": "_0003",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0003"
+					"verbs": []
 				},
 				{
 					"name": "Main Street",
 					"index": 4,
-					"flag": [
+					"description": [],
+					"uid": "_0004",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0004"
+					"verbs": []
 				},
 				{
 					"name": "City Park",
 					"index": 5,
-					"flag": [
-						{
-							"isPublic": true
-						}
-					],
-					"permission": [],
 					"description": [],
 					"uid": "_0005",
 					"wrongfile": [
 						{
 							"specials": "[[1, \"active\"]]"
 						}
-					]
+					],
+					"flags": [
+						{
+							"flag": "_0007"
+						}
+					],
+					"verbs": []
 				},
 				{
 					"name": "South Main Street",
 					"index": 6,
-					"flag": [
+					"description": [],
+					"uid": "_0006",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0006"
+					"verbs": []
 				},
 				{
 					"name": "Consume Entryway",
 					"index": 7,
-					"flag": [
-						{
-							"isPublic": true
-						}
-					],
-					"permission": [],
 					"description": [],
 					"uid": "_0007",
 					"wrongfile": [
@@ -3451,17 +4022,17 @@
 							"specials": "[3]",
 							"roomNPC": "0"
 						}
-					]
+					],
+					"flags": [
+						{
+							"flag": "_0007"
+						}
+					],
+					"verbs": []
 				},
 				{
 					"name": "Back Alley",
 					"index": 8,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
 					"uid": "_0008",
 					"wrongfile": [
@@ -3469,305 +4040,293 @@
 							"specials": "[3, [2, \"rat\"]]",
 							"roomNPC": "5"
 						}
-					]
+					],
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Consume - Dance Floor",
 					"index": 9,
-					"flag": [
-						{
-							"isPublic": true
-						}
-					],
-					"permission": [],
 					"description": [],
 					"uid": "_0009",
 					"wrongfile": [
 						{
 							"specials": "[[1, \"passive\"]]"
 						}
-					]
+					],
+					"flags": [
+						{
+							"flag": "_0007"
+						}
+					],
+					"verbs": []
 				},
 				{
 					"name": "Consume - Back Hall",
 					"index": 10,
-					"flag": [
+					"description": [],
+					"uid": "_0010",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0010"
+					"verbs": []
 				},
 				{
 					"name": "Consume - Restroom",
 					"index": 11,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
-					"uid": "_0011"
+					"uid": "_0011",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Consume - Bar",
 					"index": 12,
-					"flag": [
+					"description": [],
+					"uid": "_0012",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0012"
+					"verbs": []
 				},
 				{
 					"name": "Consume - Stage",
 					"index": 13,
-					"flag": [
+					"description": [],
+					"uid": "_0013",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0013"
+					"verbs": []
 				},
 				{
 					"name": "Consume - Balcony",
 					"index": 14,
-					"flag": [
+					"description": [],
+					"uid": "_0014",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0014"
+					"verbs": []
 				},
 				{
 					"name": "Consume - Lounge",
 					"index": 15,
-					"flag": [
-						{
-							"isPublic": true
-						}
-					],
-					"permission": [],
 					"description": [],
 					"uid": "_0015",
 					"wrongfile": [
 						{
 							"specials": "[15]"
 						}
-					]
+					],
+					"flags": [
+						{
+							"flag": "_0007"
+						}
+					],
+					"verbs": []
 				},
 				{
 					"name": "North Main Street",
 					"index": 16,
-					"flag": [
+					"description": [],
+					"uid": "_0016",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0016"
+					"verbs": []
 				},
 				{
 					"name": "Hospital - Waiting Room",
 					"index": 17,
-					"flag": [
+					"description": [],
+					"uid": "_0017",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0017"
+					"verbs": []
 				},
 				{
 					"name": "Hospital - Pharmacy",
 					"index": 18,
-					"flag": [
+					"description": [],
+					"uid": "_0018",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0018"
+					"verbs": []
 				},
 				{
 					"name": "General Store",
 					"index": 19,
-					"flag": [
+					"description": [],
+					"uid": "_0019",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0019"
+					"verbs": []
 				},
 				{
 					"name": "Gym - Reception",
 					"index": 20,
-					"flag": [
+					"description": [],
+					"uid": "_0020",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0020"
+					"verbs": []
 				},
 				{
 					"name": "Gym - Workout Area",
 					"index": 21,
-					"flag": [
+					"description": [],
+					"uid": "_0021",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0021"
+					"verbs": []
 				},
 				{
 					"name": "Gym - Gold Room",
 					"index": 22,
-					"flag": [
+					"description": [],
+					"uid": "_0022",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0022"
+					"verbs": []
 				},
 				{
 					"name": "Gym - Staff Room",
 					"index": 23,
-					"flag": [
+					"description": [],
+					"uid": "_0023",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0023"
+					"verbs": []
 				},
 				{
 					"name": "Gym - Restroom",
 					"index": 24,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
-					"uid": "_0024"
+					"uid": "_0024",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Gym - Showers",
 					"index": 25,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
-					"uid": "_0025"
+					"uid": "_0025",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Ice Cream Shop",
 					"index": 26,
-					"flag": [
+					"description": [],
+					"uid": "_0026",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0026"
+					"verbs": []
 				},
 				{
 					"name": "Ice Cream Shop - Backroom",
 					"index": 27,
-					"flag": [
+					"description": [],
+					"uid": "_0027",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0027"
+					"verbs": []
 				},
 				{
 					"name": "Ice Cream Shop - Freezer",
 					"index": 28,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
-					"uid": "_0028"
+					"uid": "_0028",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Ice Cream Shop - Restroom",
 					"index": 29,
-					"flag": [
+					"description": [],
+					"uid": "_0029",
+					"flags": [
 						{
-							"isPublic": true
+							"flag": "_0007"
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0029"
+					"verbs": []
 				},
 				{
 					"name": "Ice Cream Shop - Office",
 					"index": 30,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
-					"uid": "_0030"
+					"uid": "_0030",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "General Store - Warehouse",
 					"index": 31,
-					"flag": [
-						{
-							"isPublic": false
-						}
-					],
-					"permission": [],
 					"description": [],
-					"uid": "_0031"
+					"uid": "_0031",
+					"flags": [],
+					"verbs": []
 				},
 				{
 					"name": "Hospital - Backroom",
 					"index": 32,
-					"flag": [
+					"description": [],
+					"uid": "_0032",
+					"flags": [],
+					"verbs": []
+				},
+				{
+					"uid": "_0033",
+					"name": "Bethesda Graveyard",
+					"flags": [],
+					"verbs": [],
+					"description": [
 						{
-							"isPublic": false
+							"longview": "",
+							"brief": "",
+							"verbose": "How'd you even get here? ... Well, this is meant to be a place to put characters as a delta state once they're dead. An unreachable location so that they can't really do anything anymore. Anyone in here should be flagged dead, and it's likely if I did my job properly they're basically invisible.\\n\\nIf you don't understand the name, you've never seen the developers talk."
 						}
 					],
-					"permission": [],
-					"description": [],
-					"uid": "_0032"
+					"index": 33
 				}
 			],
 			"separators": [],
@@ -3775,39 +4334,6 @@
 				"displayColumn": "name",
 				"hasIndex": true
 			}
-		},
-		{
-			"name": "items@key",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "isKey",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "combo"
-				}
-			]
-		},
-		{
-			"name": "items@key@combo",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "3",
-					"name": "value"
-				}
-			]
 		},
 		{
 			"name": "items@alias",
@@ -3820,83 +4346,6 @@
 				{
 					"typeStr": "1",
 					"name": "value"
-				}
-			]
-		},
-		{
-			"name": "items@flag",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "indestructible",
-					"display": null
-				},
-				{
-					"typeStr": "2",
-					"name": "keyItem",
-					"display": null
-				},
-				{
-					"typeStr": "2",
-					"name": "unique"
-				},
-				{
-					"typeStr": "2",
-					"name": "canDrop"
-				},
-				{
-					"typeStr": "2",
-					"name": "canPickup",
-					"display": null
-				},
-				{
-					"typeStr": "2",
-					"name": "inInvList",
-					"display": null
-				},
-				{
-					"typeStr": "2",
-					"name": "canEat",
-					"display": null
-				},
-				{
-					"typeStr": "2",
-					"name": "canDrink",
-					"display": null
-				}
-			]
-		},
-		{
-			"name": "rooms@flag",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "isPublic"
-				}
-			]
-		},
-		{
-			"name": "rooms@permission",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "wait",
-					"display": null
 				}
 			]
 		},
@@ -4255,6 +4704,34 @@
 							"item": "_0031"
 						}
 					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0023"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0045"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0023"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0046"
+						}
+					]
 				}
 			],
 			"separators": [],
@@ -4448,20 +4925,6 @@
 					"typeStr": "2",
 					"name": "isHidden",
 					"display": null
-				}
-			]
-		},
-		{
-			"name": "items@slots",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "6:eSlots",
-					"name": "value"
 				}
 			]
 		},
@@ -5089,6 +5552,185 @@
 					"typeStr": "3",
 					"name": "priceOverride",
 					"opt": true
+				}
+			]
+		},
+		{
+			"name": "eVerbs@inputs",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "type",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "default",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "comment",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "items@verbs",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eVerbs",
+					"name": "verb",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "inputs",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "items@verbs@inputs",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "value",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "items@verbs@inputs@value",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "bool",
+					"opt": true
+				},
+				{
+					"typeStr": "6:eFlags",
+					"name": "flag",
+					"opt": true
+				},
+				{
+					"typeStr": "6:eSlots",
+					"name": "slot",
+					"opt": true,
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "eFlags@validUses",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "2",
+					"name": "items",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "rooms",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "specificVerbs",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "rooms@flags",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eFlags",
+					"name": "flag",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "rooms@verbs",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eVerbs",
+					"name": "verb",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "items@flags",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eFlags",
+					"name": "flag"
+				}
+			]
+		},
+		{
+			"name": "items@combos",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "value"
 				}
 			]
 		}

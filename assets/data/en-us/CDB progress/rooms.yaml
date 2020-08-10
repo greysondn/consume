@@ -309,8 +309,6 @@
 -
   index: 23
   name:  "Gym - Staff Room"
-  wrongFile:
-    specials: "[10]"
   permissions:
     wait: false
   desc:
