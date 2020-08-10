@@ -133,8 +133,6 @@
   permissions:
     wait: false
   desc:
-    longview: null
-    brief: null
     verbose: >-
       An open sided stair leads to a balcony overlooking the dance floor. A
       number of tables and chairs scattered in groups cover the area and some
@@ -228,8 +226,6 @@
 -
   index: 21
   name:  "Gym - Workout Area"
-  wrongFile:
-    specials: "[8]"
   permissions:
     wait: false
   desc:

@@ -333,7 +333,6 @@ class Main {
             case 8:
                 //Workout
                 message += "Workout equipment lines the walls.<br>";
-                btns[11 - i].setButton("Workout", null, "choose");
                 btns[11 - i].setClickFunc(doGym);
             case 9:
                 //Gold room
