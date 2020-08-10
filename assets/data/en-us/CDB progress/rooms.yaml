@@ -254,8 +254,7 @@
 -
   index: 22
   name:  "Gym - Gold Room"
-  wrongFile:
-    specials: "[9]"
+  # DON'T FORGET TO PUT SHAY IN HERE, OMFG!
   permissions:
     wait: false
   desc:

@@ -228,7 +228,7 @@ class Main {
             * [X] -  6 - Sleep
             * [X] -  7 - Phone
             * [X] -  8 - Workout
-            * [ ] -  9 - Gold Room
+            * [X] -  9 - Gold Room
             * [ ] - 10 - Staff Room
             * [ ] - 11 - Hospital, buying additional perks
             * [ ] - 12 - Ice cream shop office/Bessie's Milking Machine

@@ -1818,7 +1818,7 @@
 				},
 				{
 					"uid": "_0036",
-					"type": "_0000",
+					"type": "_0007",
 					"name": "Endurance Training Machinery",
 					"description": [
 						{
@@ -1861,6 +1861,314 @@
 					"index": 17
 				},
 				{
+					"uid": "_0037",
+					"type": "_0007",
+					"name": "GR Height Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 18
+				},
+				{
+					"uid": "_0038",
+					"type": "_0007",
+					"name": "GR Skinny Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 19
+				},
+				{
+					"uid": "_0039",
+					"type": "_0007",
+					"name": "GR Cock Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 20
+				},
+				{
+					"uid": "_0040",
+					"type": "_0007",
+					"name": "GR Balls Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 21
+				},
+				{
+					"uid": "_0041",
+					"type": "_0007",
+					"name": "GR Errection Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 22
+				},
+				{
+					"uid": "_0042",
+					"type": "_0007",
+					"name": "GR Hips Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 23
+				},
+				{
+					"uid": "_0043",
+					"type": "_0007",
+					"name": "GR Butt Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 24
+				},
+				{
 					"uid": "_0017",
 					"name": "Consume Red Band",
 					"description": [
@@ -1901,7 +2209,7 @@
 							"value": 0
 						}
 					],
-					"index": 18,
+					"index": 25,
 					"type": "_0006"
 				},
 				{
@@ -1939,7 +2247,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 19,
+					"index": 26,
 					"uid": "_0002",
 					"slots": [],
 					"stats": [
@@ -2006,7 +2314,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 20,
+					"index": 27,
 					"uid": "_0003",
 					"slots": [],
 					"stats": [
@@ -2070,7 +2378,7 @@
 							"value": 0
 						}
 					],
-					"index": 21,
+					"index": 28,
 					"type": "_0006"
 				},
 				{
@@ -2108,7 +2416,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 22,
+					"index": 29,
 					"uid": "_0006",
 					"slots": [],
 					"stats": [
@@ -2175,7 +2483,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 23,
+					"index": 30,
 					"uid": "_0001",
 					"slots": [],
 					"stats": [
@@ -2247,7 +2555,7 @@
 							"value": 30
 						}
 					],
-					"index": 24,
+					"index": 31,
 					"type": "_0003"
 				},
 				{
@@ -2299,7 +2607,7 @@
 							"value": 55
 						}
 					],
-					"index": 25,
+					"index": 32,
 					"type": "_0003"
 				},
 				{
@@ -2351,7 +2659,7 @@
 							"value": 50
 						}
 					],
-					"index": 26,
+					"index": 33,
 					"type": "_0003"
 				},
 				{
@@ -2403,7 +2711,7 @@
 							"value": 75
 						}
 					],
-					"index": 27,
+					"index": 34,
 					"type": "_0003"
 				},
 				{
@@ -2455,7 +2763,7 @@
 							"value": 25
 						}
 					],
-					"index": 28,
+					"index": 35,
 					"type": "_0003"
 				},
 				{
@@ -2507,7 +2815,7 @@
 							"value": 50
 						}
 					],
-					"index": 29,
+					"index": 36,
 					"type": "_0003"
 				},
 				{
@@ -2559,7 +2867,7 @@
 							"value": 0
 						}
 					],
-					"index": 30,
+					"index": 37,
 					"type": "_0004"
 				},
 				{
@@ -2615,7 +2923,7 @@
 							"value": 2
 						}
 					],
-					"index": 31,
+					"index": 38,
 					"type": "_0004"
 				},
 				{
@@ -2674,7 +2982,7 @@
 							"value": 4
 						}
 					],
-					"index": 32,
+					"index": 39,
 					"type": "_0004"
 				},
 				{
@@ -2733,7 +3041,7 @@
 							"value": 6
 						}
 					],
-					"index": 33,
+					"index": 40,
 					"type": "_0004"
 				},
 				{
@@ -2792,7 +3100,7 @@
 							"value": 10
 						}
 					],
-					"index": 34,
+					"index": 41,
 					"type": "_0004"
 				},
 				{
@@ -2851,7 +3159,7 @@
 							"value": 3
 						}
 					],
-					"index": 35,
+					"index": 42,
 					"type": "_0004"
 				},
 				{
@@ -2913,7 +3221,7 @@
 							"value": 6
 						}
 					],
-					"index": 36,
+					"index": 43,
 					"type": "_0004"
 				}
 			],
@@ -2921,9 +3229,9 @@
 				1,
 				5,
 				12,
-				18,
-				24,
-				30
+				25,
+				31,
+				37
 			],
 			"props": {
 				"hasIndex": true,
@@ -3614,20 +3922,6 @@
 					"location": [
 						{
 							"type": "_0000",
-							"room": "_0001"
-						}
-					],
-					"object": [
-						{
-							"type": "_0001",
-							"item": "_0031"
-						}
-					]
-				},
-				{
-					"location": [
-						{
-							"type": "_0000",
 							"room": "_0000"
 						}
 					],
@@ -3635,6 +3929,20 @@
 						{
 							"type": "_0001",
 							"item": "_0032"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0001"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0031"
 						}
 					]
 				},
@@ -3677,6 +3985,104 @@
 						{
 							"item": "_0002",
 							"type": "_0001"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0040"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0043"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0039"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0041"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0037"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0042"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0022"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0038"
 						}
 					]
 				},
@@ -4173,43 +4579,50 @@
 							"item": "_0005",
 							"infiniteStock": true,
 							"rarityOverrides": [],
-							"statOverrides": []
+							"statOverrides": [],
+							"v_052": true
 						},
 						{
 							"item": "_0009",
 							"infiniteStock": true,
 							"statOverrides": [],
-							"rarityOverrides": []
+							"rarityOverrides": [],
+							"v_052": false
 						},
 						{
 							"item": "_0010",
 							"infiniteStock": true,
 							"statOverrides": [],
-							"rarityOverrides": []
+							"rarityOverrides": [],
+							"v_052": false
 						},
 						{
 							"item": "_0004",
 							"infiniteStock": true,
 							"statOverrides": [],
-							"rarityOverrides": []
+							"rarityOverrides": [],
+							"v_052": true
 						},
 						{
 							"item": "_0007",
 							"infiniteStock": true,
 							"statOverrides": [],
-							"rarityOverrides": []
+							"rarityOverrides": [],
+							"v_052": false
 						},
 						{
 							"item": "_0008",
 							"infiniteStock": true,
 							"statOverrides": [],
-							"rarityOverrides": []
+							"rarityOverrides": [],
+							"v_052": false
 						},
 						{
 							"item": "_0011",
 							"infiniteStock": true,
 							"statOverrides": [],
-							"rarityOverrides": []
+							"rarityOverrides": [],
+							"v_052": false
 						}
 					],
 					"randomItems": [
@@ -4217,91 +4630,106 @@
 							"item": "_0014",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0015",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0021",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": true
 						},
 						{
 							"item": "_0027",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0030",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0025",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0029",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0023",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0019",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0013",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": true
 						},
 						{
 							"item": "_0022",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0026",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": true
 						},
 						{
 							"item": "_0028",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0020",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						},
 						{
 							"item": "_0024",
 							"statOverrides": [],
 							"rarityOverrides": [],
-							"odds": 1
+							"odds": 1,
+							"v_052": false
 						}
 					],
 					"randomItemCount": [
@@ -4314,70 +4742,96 @@
 					"canSellTo": true,
 					"canBeSold": [
 						{
-							"item": "_0005"
+							"item": "_0005",
+							"v_052": true,
+							"priceOverride": 300
 						},
 						{
-							"item": "_0014"
+							"item": "_0014",
+							"v_052": false
 						},
 						{
-							"item": "_0009"
+							"item": "_0009",
+							"v_052": false
 						},
 						{
-							"item": "_0010"
+							"item": "_0010",
+							"v_052": false
 						},
 						{
-							"item": "_0015"
+							"item": "_0015",
+							"v_052": false
 						},
 						{
-							"item": "_0004"
+							"item": "_0004",
+							"v_052": true,
+							"priceOverride": 100
 						},
 						{
-							"item": "_0007"
+							"item": "_0007",
+							"v_052": false
 						},
 						{
-							"item": "_0008"
+							"item": "_0008",
+							"v_052": false
 						},
 						{
-							"item": "_0021"
+							"item": "_0021",
+							"v_052": false
 						},
 						{
-							"item": "_0027"
+							"item": "_0027",
+							"v_052": false
 						},
 						{
-							"item": "_0030"
+							"item": "_0030",
+							"v_052": false
 						},
 						{
-							"item": "_0025"
+							"item": "_0025",
+							"v_052": false
 						},
 						{
-							"item": "_0029"
+							"item": "_0029",
+							"v_052": false
 						},
 						{
-							"item": "_0023"
+							"item": "_0023",
+							"v_052": false
 						},
 						{
-							"item": "_0019"
+							"item": "_0019",
+							"v_052": false
 						},
 						{
-							"item": "_0013"
+							"item": "_0013",
+							"v_052": true,
+							"priceOverride": 500
 						},
 						{
-							"item": "_0022"
+							"item": "_0022",
+							"v_052": false
 						},
 						{
-							"item": "_0026"
+							"item": "_0026",
+							"v_052": false
 						},
 						{
-							"item": "_0028"
+							"item": "_0028",
+							"v_052": false
 						},
 						{
-							"item": "_0020"
+							"item": "_0020",
+							"v_052": false
 						},
 						{
-							"item": "_0024"
+							"item": "_0024",
+							"v_052": true,
+							"priceOverride": 800
 						},
 						{
-							"item": "_0011"
+							"item": "_0011",
+							"v_052": false
 						}
 					]
 				}
@@ -4397,6 +4851,10 @@
 					"typeStr": "6:items",
 					"name": "item",
 					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "v_052"
 				},
 				{
 					"typeStr": "2",
@@ -4468,6 +4926,11 @@
 				{
 					"typeStr": "6:items",
 					"name": "item",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "v_052",
 					"display": null
 				},
 				{
@@ -4557,6 +5020,11 @@
 				{
 					"typeStr": "6:items",
 					"name": "item",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "v_052",
 					"display": null
 				},
 				{
