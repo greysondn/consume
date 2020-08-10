@@ -219,19 +219,19 @@ class Main {
         for (i in 0...currentRoom.specialButtons.length)
         {
             /* Flags
-            * 0 - Nothing
-            * 1 - Hunt, passive (Club) || active (park)
-            * 2 - Shop, shop invintory
-            * 3 - Talk
-            * 4 - Work, work time
-            * 5 - Toilet
-            * 6 - Sleep
-            * 7 - Phone
-            * 8 - Workout
-            * 9 - Gold Room
-            * 10 - Staff Room
-            * 11 - Hospital, buying additional perks
-            * 12 - Ice cream shop office/Bessie's Milking Machine
+            * [X] -  0 - Nothing
+            * [ ] -  1 - Hunt, passive (Club) || active (park)
+            * [/] -  2 - Shop, shop invintory
+            * [ ] -  3 - Talk
+            * [ ] -  4 - Work, work time
+            * [X] -  5 - Toilet
+            * [X] -  6 - Sleep
+            * [X] -  7 - Phone
+            * [X] -  8 - Workout
+            * [ ] -  9 - Gold Room
+            * [ ] - 10 - Staff Room
+            * [ ] - 11 - Hospital, buying additional perks
+            * [ ] - 12 - Ice cream shop office/Bessie's Milking Machine
             */
             
             flagType = Type.typeof(currentRoom.specialButtons[i]);
