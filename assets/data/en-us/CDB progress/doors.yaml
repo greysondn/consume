@@ -1,7 +1,6 @@
 
 -
   index: 1
-  name: ""
   travelTime: 1
   rooms:
     left:
@@ -10,8 +9,6 @@
     right:
       index: 1
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -19,20 +16,8 @@
     name:
       leftToRight: "Bathroom"
       rightToLeft: "Bedroom"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 2
-  name: ""
   travelTime: 1
   rooms:
     left:
@@ -41,8 +26,6 @@
     right:
       index: 2
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -53,17 +36,8 @@
     look:
       leftToRight: "You call it your living room, but it's really the only other room in the apartment."
       rightToLeft: "Your small balcony overlooking the parking lot."
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 3
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -72,8 +46,6 @@
     right:
       index: 4
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -84,17 +56,8 @@
     look:
       leftToRight: "Outside, where money and food comes from."
       rightToLeft: "Your apartment."
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 4
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -103,11 +66,6 @@
     right:
       index: 5
       side:  "w"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "City Park"
@@ -115,17 +73,8 @@
     look:
       leftToRight: "The city park"
       rightToLeft: "The main street of town just outside your apartment"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 5
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -134,11 +83,6 @@
     right:
       index: 6
       side:  "n"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "South Main Street"
@@ -146,17 +90,8 @@
     look:
       leftToRight: "The main street of town, featuring the new club and the location of your old place of employment"
       rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 6
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -165,11 +100,6 @@
     right:
       index: 6
       side:  "w"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "Main Street"
@@ -177,17 +107,8 @@
     look:
       leftToRight: null
       rightToLeft: "The town's newest (and only) club"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 7
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -196,8 +117,6 @@
     right:
       index: 7
       side:  "sw"
-  time:
-    timed: false
   size:
     height: 0
     width:  48
@@ -208,17 +127,11 @@
     look:
       leftToRight: null
       rightToLeft: "A short dim alley running along the side of the club"
-    lock:
-      leftToRight: null
-      rightToLeft: null
   flags:
     hidden: true
     locked: false
-  key:
-    combo: null
 -
   index: 8
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -227,8 +140,6 @@
     right:
       index: 7
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  96
@@ -236,20 +147,8 @@
     name:
       leftToRight: "Entryway"
       rightToLeft: "Dance Floor"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 9
-  name: ""
   travelTime: 2
   rooms:
     left:
@@ -258,8 +157,6 @@
     right:
       index: 9
       side:  "w"
-  time:
-    timed: false
   size:
     height: 90
     width:  50
@@ -270,17 +167,8 @@
     look:
       leftToRight: "The club's main area domanated by the dance floor"
       rightToLeft: "The back hall of the club, the restroom and consumption rooms can be found here"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 10
-  name: ""
   travelTime: 2
   rooms:
     left:
@@ -289,8 +177,6 @@
     right:
       index: 10
       side:  "n"
-  time:
-    timed: false
   size:
     height: 90
     width:  50
@@ -298,20 +184,8 @@
     name:
       leftToRight: "Back Hall"
       rightToLeft: "Restroom"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 11
-  name: ""
   travelTime: 1
   rooms:
     left:
@@ -320,29 +194,12 @@
     right:
       index: 9
       side:  "n"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "Dance Floor"
       rightToLeft: "Bar"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 12
-  name: ""
   travelTime: 1
   rooms:
     left:
@@ -351,11 +208,6 @@
     right:
       index: 13
       side:  "n"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "Stage"
@@ -363,17 +215,8 @@
     look:
       leftToRight: "An empty stage just off the dance floor"
       rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 13
-  name: ""
   travelTime: 5 # original had two values - 2 and 5
   rooms:
     left:
@@ -382,8 +225,6 @@
     right:
       index: 9
       side:  "sw"
-  time:
-    timed: false
   size:
     height: 90
     width:  50
@@ -394,17 +235,8 @@
     look:
       leftToRight: null
       rightToLeft: "An open balcony overlooking the main area of the club"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 14
-  name: ""
   travelTime: 5 # original had two values - 2 and 5
   rooms:
     left:
@@ -413,8 +245,6 @@
     right:
       index: 14
       side:  "w"
-  time:
-    timed: false
   size:
     height: 90
     width:  50 # Original had two values - 50 and 96
@@ -425,17 +255,8 @@
     look:
       leftToRight: null
       rightToLeft: "The predator-only lounge area"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 15
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -455,20 +276,8 @@
     name:
       leftToRight: "Ice Cream Shop"
       rightToLeft: "Main Street"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 16
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -477,29 +286,19 @@
     right:
       index: 27
       side:  "w"
-  time:
-    timed: false
   size:
     height: 86
     width:  50
   desc:
     name:
       leftToRight: "Back Room"
-      rightToLeft: "Front of Shop"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
+      rightToLeft: "Front of Shop"  flags:
     hidden: false
     locked: true
   key:
     combo: 420
 -
   index: 17
-  name: ""
   travelTime: 5-
   rooms:
     left:
@@ -508,8 +307,6 @@
     right:
       index: 30
       side:  "w"
-  time:
-    timed: false
   size:
     height: 86
     width:  50
@@ -517,20 +314,8 @@
     name:
       leftToRight: "Office"
       rightToLeft: "Back Room"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 18
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -539,8 +324,6 @@
     right:
       index: 27
       side:  "n"
-  time:
-    timed: false
   size:
     height: 86
     width:  50
@@ -548,20 +331,8 @@
     name:
       leftToRight: "Back Room"
       rightToLeft: "Restroom"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 19
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -570,8 +341,6 @@
     right:
       index: 28
       side:  "n"
-  time:
-    timed: false
   size:
     height: 86
     width:  50
@@ -582,17 +351,8 @@
     look:
       leftToRight: "The shop's large walk-in freezer"
       rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 20
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -601,11 +361,6 @@
     right:
       index: 4
       side:  "n"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "Main Street"
@@ -613,17 +368,8 @@
     look:
       leftToRight: null
       rightToLeft: "To the market district"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 21
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -632,8 +378,6 @@
     right:
       index: 19
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -644,17 +388,8 @@
     look:
       leftToRight: "The town's lone store, selling everything and mostly filled with junk"
       rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 22
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -663,29 +398,19 @@
     right:
       index: 31
       side:  "n"
-  time:
-    timed: false
   size:
     height: 84
     width:  55
   desc:
     name:
       leftToRight: "Warehouse"
-      rightToLeft: "Front of Store"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
+      rightToLeft: "Front of Store"  flags:
     hidden: false
     locked: true
   key:
     combo: 1729
 -
   index: 23
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -694,8 +419,6 @@
     right:
       index: 16
       side:  "n"
-  time:
-    timed: false
   size:
     height: 90
     width:  96
@@ -706,17 +429,8 @@
     look:
       leftToRight: null
       rightToLeft: "The local hospital"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 24
-  name: ""
   travelTime: 1
   rooms:
     left:
@@ -725,11 +439,6 @@
     right:
       index: 18
       side:  "w"
-  time:
-    timed: false
-  size:
-    height: 0
-    width:  0
   desc:
     name:
       leftToRight: "Pharmacy"
@@ -737,17 +446,8 @@
     look:
       leftToRight: "The hospital pharmacy counter"
       rightToLeft: "The large, mostly empty, waiting area of the hospital"
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 25
-  name: ""
   travelTime: 10 # original had two values - 10 and 1
   rooms:
     left:
@@ -756,8 +456,6 @@
     right:
       index: 17
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84 # original had two sizes - 0 and 84
     width:  55 # original had two sizes - 0 and 55
@@ -765,20 +463,8 @@
     name:
       leftToRight: "Waiting Room"
       rightToLeft: "Back Room"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 26
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -787,8 +473,6 @@
     right:
       index: 16
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84 # original had two sizes - 84 and 90
     width:  96 # original had two values - 48 and 96
@@ -796,20 +480,8 @@
     name:
       leftToRight: "Main Street"
       rightToLeft: "Gym"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 27
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -818,8 +490,6 @@
     right:
       index: 20
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -827,20 +497,8 @@
     name:
       leftToRight: "Reception"
       rightToLeft: "Workout Area"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 28
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -849,8 +507,6 @@
     right:
       index: 25
       side:  "nw"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -858,20 +514,8 @@
     name:
       leftToRight: "Showers"
       rightToLeft: "Workout Area"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 29
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -880,8 +524,6 @@
     right:
       index: 23
       side:  "n"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -892,9 +534,6 @@
     look:
       leftToRight: "The staff area of the gym"
       rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
   flags:
     hidden: false
     locked: true
@@ -902,7 +541,6 @@
     combo: 314159
 -
   index: 30
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -911,8 +549,6 @@
     right:
       index: 21
       side:  "sw"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
@@ -920,20 +556,8 @@
     name:
       leftToRight: "Workout Area"
       rightToLeft: "Restroom"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
-    hidden: false
-    locked: false
-  key:
-    combo: null
 -
   index: 31
-  name: ""
   travelTime: 5
   rooms:
     left:
@@ -942,22 +566,13 @@
     right:
       index: 21
       side:  "w"
-  time:
-    timed: false
   size:
     height: 84
     width:  48
   desc:
     name:
       leftToRight: "Workout Area"
-      rightToLeft: "Gold Room"
-    look:
-      leftToRight: null
-      rightToLeft: null
-    lock:
-      leftToRight: null
-      rightToLeft: null
-  flags:
+      rightToLeft: "Gold Room"  flags:
     hidden: false
     locked: true
   key:
