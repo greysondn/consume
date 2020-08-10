@@ -1,24 +1,5 @@
-
--
-  index: 1
-  travelTime: 1
-  rooms:
-    left:
-      index: 0
-      side:  "e"
-    right:
-      index: 1
-      side:  "w"
-  size:
-    height: 84
-    width:  48
-  desc:
-    name:
-      leftToRight: "Bathroom"
-      rightToLeft: "Bedroom"
 -
   index: 2
-  travelTime: 1
   rooms:
     left:
       index: 3
@@ -26,9 +7,6 @@
     right:
       index: 2
       side:  "w"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Living Room"
@@ -46,9 +24,6 @@
     right:
       index: 4
       side:  "w"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Main Street"
@@ -127,9 +102,6 @@
     look:
       leftToRight: null
       rightToLeft: "A short dim alley running along the side of the club"
-  flags:
-    hidden: true
-    locked: false
 -
   index: 8
   travelTime: 5
@@ -186,7 +158,6 @@
       rightToLeft: "Restroom"
 -
   index: 11
-  travelTime: 1
   rooms:
     left:
       index: 12
@@ -257,7 +228,6 @@
       rightToLeft: "The predator-only lounge area"
 -
   index: 15
-  travelTime: 5
   rooms:
     left:
       index: 6
@@ -265,10 +235,6 @@
     right:
       index: 26
       side:  "w"
-  time:
-    timed: true
-    open:   8
-    close: 20
   size:
     height: 86
     width:  50
@@ -292,11 +258,7 @@
   desc:
     name:
       leftToRight: "Back Room"
-      rightToLeft: "Front of Shop"  flags:
-    hidden: false
-    locked: true
-  key:
-    combo: 420
+      rightToLeft: "Front of Shop"
 -
   index: 17
   travelTime: 5-
@@ -378,9 +340,6 @@
     right:
       index: 19
       side:  "w"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "General Store"
@@ -404,11 +363,7 @@
   desc:
     name:
       leftToRight: "Warehouse"
-      rightToLeft: "Front of Store"  flags:
-    hidden: false
-    locked: true
-  key:
-    combo: 1729
+      rightToLeft: "Front of Store"
 -
   index: 23
   travelTime: 5
@@ -490,9 +445,6 @@
     right:
       index: 20
       side:  "w"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Reception"
@@ -507,9 +459,6 @@
     right:
       index: 25
       side:  "nw"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Showers"
@@ -524,9 +473,6 @@
     right:
       index: 23
       side:  "n"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Staff Room"
@@ -534,9 +480,6 @@
     look:
       leftToRight: "The staff area of the gym"
       rightToLeft: null
-  flags:
-    hidden: false
-    locked: true
   key:
     combo: 314159
 -
@@ -549,9 +492,6 @@
     right:
       index: 21
       side:  "sw"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Workout Area"
@@ -566,14 +506,7 @@
     right:
       index: 21
       side:  "w"
-  size:
-    height: 84
-    width:  48
   desc:
     name:
       leftToRight: "Workout Area"
-      rightToLeft: "Gold Room"  flags:
-    hidden: false
-    locked: true
-  key:
-    combo: 8675309
+      rightToLeft: "Gold Room"

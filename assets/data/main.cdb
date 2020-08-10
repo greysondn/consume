@@ -100,6 +100,67 @@
 			}
 		},
 		{
+			"name": "eDT",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "type",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"uid": "_0000",
+					"name": "Sunday",
+					"type": "day"
+				},
+				{
+					"uid": "_0001",
+					"name": "Monday",
+					"type": "day"
+				},
+				{
+					"uid": "_0002",
+					"name": "Tuesday",
+					"type": "day"
+				},
+				{
+					"uid": "_0003",
+					"name": "Wendesday",
+					"type": "day"
+				},
+				{
+					"uid": "_0004",
+					"name": "Thursday",
+					"type": "day"
+				},
+				{
+					"uid": "_0005",
+					"name": "Friday",
+					"type": "day"
+				},
+				{
+					"uid": "_0006",
+					"name": "Saturday",
+					"type": "day"
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
 			"name": "eFlag",
 			"columns": [
 				{
@@ -125,26 +186,67 @@
 			],
 			"lines": [
 				{
+					"uid": "_0010",
+					"name": "isLocked",
+					"comment": "Whether this is locked or not.",
+					"validUses": [
+						{
+							"doors": true,
+							"items": false,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
+					"uid": "_0011",
+					"name": "isTimed",
+					"comment": "Whether this is a timed door - like a shop.",
+					"validUses": [
+						{
+							"doors": true,
+							"items": false,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
+					"uid": "_0012",
+					"name": "isHidden",
+					"comment": "???",
+					"validUses": [
+						{
+							"doors": true,
+							"items": false,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
 					"uid": "_0001",
-					"name": "indestructible",
+					"name": "isIndestructible",
 					"comment": "Whether an item is indestructible (cannot be destroyed violently or via digestion)",
 					"validUses": [
 						{
 							"items": true,
 							"specificVerbs": false,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				},
 				{
 					"uid": "_0002",
-					"name": "keyItem",
+					"name": "isKeyItem",
 					"comment": "Whether this is a key item (primarily used to advance quests)",
 					"validUses": [
 						{
 							"items": true,
 							"specificVerbs": false,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				},
@@ -156,7 +258,8 @@
 						{
 							"items": true,
 							"rooms": false,
-							"specificVerbs": false
+							"specificVerbs": false,
+							"doors": false
 						}
 					]
 				},
@@ -168,7 +271,8 @@
 						{
 							"items": true,
 							"specificVerbs": false,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				},
@@ -180,19 +284,21 @@
 						{
 							"items": true,
 							"specificVerbs": false,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				},
 				{
 					"uid": "_0000",
-					"name": "unique",
+					"name": "isUnique",
 					"comment": "Whether an item is unique (one of a kind)",
 					"validUses": [
 						{
 							"items": true,
 							"specificVerbs": false,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				},
@@ -204,7 +310,8 @@
 						{
 							"items": false,
 							"specificVerbs": false,
-							"rooms": true
+							"rooms": true,
+							"doors": false
 						}
 					]
 				},
@@ -216,7 +323,8 @@
 						{
 							"items": false,
 							"rooms": false,
-							"specificVerbs": true
+							"specificVerbs": true,
+							"doors": false
 						}
 					]
 				},
@@ -228,7 +336,8 @@
 						{
 							"items": false,
 							"specificVerbs": true,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				},
@@ -240,14 +349,16 @@
 						{
 							"items": false,
 							"specificVerbs": true,
-							"rooms": false
+							"rooms": false,
+							"doors": false
 						}
 					]
 				}
 			],
 			"separators": [
-				6,
-				7
+				3,
+				9,
+				10
 			],
 			"props": {
 				"displayColumn": "name"
@@ -1028,17 +1139,17 @@
 					"name": "uid"
 				},
 				{
-					"typeStr": "1",
-					"name": "name",
+					"typeStr": "8",
+					"name": "flags",
 					"display": null
 				},
 				{
 					"typeStr": "8",
-					"name": "flag"
+					"name": "times"
 				},
 				{
-					"typeStr": "3",
-					"name": "travelTime"
+					"typeStr": "8",
+					"name": "combos"
 				},
 				{
 					"typeStr": "8",
@@ -1047,64 +1158,37 @@
 				},
 				{
 					"typeStr": "8",
-					"name": "timed",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "description",
-					"display": null
-				},
-				{
-					"typeStr": "8",
 					"name": "size",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "lock",
 					"display": null
 				}
 			],
 			"lines": [
 				{
 					"uid": "_0000",
-					"name": "Apartment - Living Room to Bedroom",
-					"flag": [
-						{
-							"isHidden": false
-						}
-					],
-					"travelTime": 1,
 					"rooms": [
 						{
 							"uid": "left",
 							"room": "_0002",
-							"side": "_0004"
+							"side": "_0004",
+							"description": [
+								{
+									"name": "Living Room",
+									"look": "You call it your living room, but it's really the only other room in the apartment.",
+									"lock": ""
+								}
+							]
 						},
 						{
 							"uid": "right",
 							"room": "_0000",
-							"side": "_0000"
-						}
-					],
-					"timed": [
-						{
-							"isTimed": false
-						}
-					],
-					"description": [
-						{
-							"uid": "leftToRight",
-							"name": "Bedroom",
-							"look": "",
-							"lock": ""
-						},
-						{
-							"uid": "rightToLeft",
-							"name": "Living Room",
-							"look": "You call it your living room, but it's really the only other room in the apartment.",
-							"lock": ""
+							"side": "_0000",
+							"description": [
+								{
+									"name": "Bedroom",
+									"look": "",
+									"lock": ""
+								}
+							]
 						}
 					],
 					"size": [
@@ -1113,18 +1197,1460 @@
 							"height": 84
 						}
 					],
-					"lock": [
+					"index": 0,
+					"flags": [],
+					"times": [
 						{
-							"isLocked": false
+							"travel": 1,
+							"schedule": []
 						}
 					],
-					"index": 0
+					"combos": []
+				},
+				{
+					"uid": "_0001",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0002",
+							"description": [
+								{
+									"name": "Bedroom",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0001",
+							"side": "_0006",
+							"description": [
+								{
+									"name": "Bathroom",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 1,
+					"times": [
+						{
+							"travel": 1,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0002",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 2,
+					"times": [
+						{
+							"travel": 1,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0003",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 3,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0004",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 4,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0005",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 5,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0006",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 6,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0007",
+					"flags": [
+						{
+							"flag": "_0012"
+						}
+					],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 7,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0008",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 8,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0009",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 9,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0010",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 10,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0011",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 11,
+					"times": [
+						{
+							"travel": 1,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0012",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 12,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0013",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 13,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0014",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 14,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0015",
+					"flags": [
+						{
+							"flag": "_0011"
+						}
+					],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 15,
+					"times": [
+						{
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0016",
+					"flags": [
+						{
+							"flag": "_0010"
+						}
+					],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 16,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": [
+						{
+							"value": 420
+						}
+					]
+				},
+				{
+					"uid": "_0017",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 17,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0018",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 18,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0019",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 19,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0020",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 20,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0021",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 21,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0022",
+					"flags": [
+						{
+							"flag": "_0010"
+						}
+					],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 22,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": [
+						{
+							"value": 1729
+						}
+					]
+				},
+				{
+					"uid": "_0023",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 23,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0024",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 24,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0025",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 25,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0026",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"height": 0,
+							"width": 0
+						}
+					],
+					"index": 26,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0027",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 27,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0028",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 28,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0029",
+					"flags": [
+						{
+							"flag": "_0010"
+						}
+					],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 29,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": [
+						{
+							"value": 314159
+						}
+					]
+				},
+				{
+					"uid": "_0030",
+					"flags": [],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 30,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": []
+				},
+				{
+					"uid": "_0031",
+					"flags": [
+						{
+							"flag": "_0010"
+						}
+					],
+					"rooms": [
+						{
+							"uid": "left",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						},
+						{
+							"uid": "right",
+							"room": "_0000",
+							"side": "_0000",
+							"description": [
+								{
+									"name": "",
+									"look": "",
+									"lock": ""
+								}
+							]
+						}
+					],
+					"size": [
+						{
+							"width": 48,
+							"height": 84
+						}
+					],
+					"index": 31,
+					"times": [
+						{
+							"travel": 0,
+							"schedule": []
+						}
+					],
+					"combos": [
+						{
+							"value": 86735309
+						}
+					]
 				}
 			],
 			"separators": [],
 			"props": {
-				"hasIndex": true,
-				"displayColumn": "name"
+				"hasIndex": true
 			}
 		},
 		{
@@ -4649,7 +6175,6 @@
 			],
 			"separators": [],
 			"props": {
-				"displayColumn": "name",
 				"hasIndex": true
 			}
 		},
@@ -5134,9 +6659,8 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "0",
-					"name": "uid",
-					"display": null
+					"typeStr": "1",
+					"name": "uid"
 				},
 				{
 					"typeStr": "6:rooms",
@@ -5144,63 +6668,13 @@
 					"display": null
 				},
 				{
+					"typeStr": "8",
+					"name": "description",
+					"display": null
+				},
+				{
 					"typeStr": "6:eDir",
 					"name": "side",
-					"display": null
-				}
-			]
-		},
-		{
-			"name": "doors@timed",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "isTimed",
-					"display": null
-				},
-				{
-					"typeStr": "3",
-					"name": "open",
-					"opt": true
-				},
-				{
-					"typeStr": "3",
-					"name": "close",
-					"opt": true
-				}
-			]
-		},
-		{
-			"name": "doors@description",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "0",
-					"name": "uid",
-					"display": null
-				},
-				{
-					"typeStr": "1",
-					"name": "name",
-					"display": null
-				},
-				{
-					"typeStr": "1",
-					"name": "look",
-					"display": null
-				},
-				{
-					"typeStr": "1",
-					"name": "lock",
 					"display": null
 				}
 			]
@@ -5220,57 +6694,6 @@
 				{
 					"typeStr": "3",
 					"name": "width"
-				}
-			]
-		},
-		{
-			"name": "doors@lock",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "isLocked",
-					"display": null
-				},
-				{
-					"typeStr": "8",
-					"name": "combo",
-					"opt": true,
-					"display": null
-				}
-			]
-		},
-		{
-			"name": "doors@lock@combo",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "3",
-					"name": "value",
-					"opt": true
-				}
-			]
-		},
-		{
-			"name": "doors@flag",
-			"props": {
-				"hide": true
-			},
-			"separators": [],
-			"lines": [],
-			"columns": [
-				{
-					"typeStr": "2",
-					"name": "isHidden",
-					"display": null
 				}
 			]
 		},
@@ -6006,6 +7429,11 @@
 			"columns": [
 				{
 					"typeStr": "2",
+					"name": "doors",
+					"display": null
+				},
+				{
+					"typeStr": "2",
 					"name": "items",
 					"display": null
 				},
@@ -6067,6 +7495,101 @@
 		},
 		{
 			"name": "items@combos",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "doors@flags",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eFlag",
+					"name": "flag",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "doors@rooms@description",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "look",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "lock",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "doors@times",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "travel"
+				},
+				{
+					"typeStr": "8",
+					"name": "schedule"
+				}
+			]
+		},
+		{
+			"name": "doors@times@schedule",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eDT",
+					"name": "day",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "open"
+				},
+				{
+					"typeStr": "3",
+					"name": "close"
+				}
+			]
+		},
+		{
+			"name": "doors@combos",
 			"props": {
 				"hide": true
 			},
