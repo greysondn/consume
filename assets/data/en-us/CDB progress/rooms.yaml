@@ -445,8 +445,6 @@
 -
   index: 32
   name:  "Hospital - Backroom"
-  wrongFile:
-    specials: "[11]"
   permissions:
     wait: true
   desc:

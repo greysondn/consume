@@ -2169,6 +2169,50 @@
 					"index": 24
 				},
 				{
+					"uid": "_0044",
+					"type": "_0007",
+					"name": "Perk Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"flag": [
+						{
+							"indestructible": true,
+							"keyItem": false,
+							"unique": false,
+							"canDrop": false,
+							"canPickup": false,
+							"inInvList": false,
+							"canEat": false,
+							"canDrink": false
+						}
+					],
+					"key": [
+						{
+							"isKey": false,
+							"combo": []
+						}
+					],
+					"slots": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 25
+				},
+				{
 					"uid": "_0017",
 					"name": "Consume Red Band",
 					"description": [
@@ -2209,7 +2253,7 @@
 							"value": 0
 						}
 					],
-					"index": 25,
+					"index": 26,
 					"type": "_0006"
 				},
 				{
@@ -2247,7 +2291,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 26,
+					"index": 27,
 					"uid": "_0002",
 					"slots": [],
 					"stats": [
@@ -2314,7 +2358,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 27,
+					"index": 28,
 					"uid": "_0003",
 					"slots": [],
 					"stats": [
@@ -2378,7 +2422,7 @@
 							"value": 0
 						}
 					],
-					"index": 28,
+					"index": 29,
 					"type": "_0006"
 				},
 				{
@@ -2416,7 +2460,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 29,
+					"index": 30,
 					"uid": "_0006",
 					"slots": [],
 					"stats": [
@@ -2483,7 +2527,7 @@
 							"canPickup": true
 						}
 					],
-					"index": 30,
+					"index": 31,
 					"uid": "_0001",
 					"slots": [],
 					"stats": [
@@ -2555,7 +2599,7 @@
 							"value": 30
 						}
 					],
-					"index": 31,
+					"index": 32,
 					"type": "_0003"
 				},
 				{
@@ -2607,7 +2651,7 @@
 							"value": 55
 						}
 					],
-					"index": 32,
+					"index": 33,
 					"type": "_0003"
 				},
 				{
@@ -2659,7 +2703,7 @@
 							"value": 50
 						}
 					],
-					"index": 33,
+					"index": 34,
 					"type": "_0003"
 				},
 				{
@@ -2711,7 +2755,7 @@
 							"value": 75
 						}
 					],
-					"index": 34,
+					"index": 35,
 					"type": "_0003"
 				},
 				{
@@ -2763,7 +2807,7 @@
 							"value": 25
 						}
 					],
-					"index": 35,
+					"index": 36,
 					"type": "_0003"
 				},
 				{
@@ -2815,7 +2859,7 @@
 							"value": 50
 						}
 					],
-					"index": 36,
+					"index": 37,
 					"type": "_0003"
 				},
 				{
@@ -2867,7 +2911,7 @@
 							"value": 0
 						}
 					],
-					"index": 37,
+					"index": 38,
 					"type": "_0004"
 				},
 				{
@@ -2923,7 +2967,7 @@
 							"value": 2
 						}
 					],
-					"index": 38,
+					"index": 39,
 					"type": "_0004"
 				},
 				{
@@ -2982,7 +3026,7 @@
 							"value": 4
 						}
 					],
-					"index": 39,
+					"index": 40,
 					"type": "_0004"
 				},
 				{
@@ -3041,7 +3085,7 @@
 							"value": 6
 						}
 					],
-					"index": 40,
+					"index": 41,
 					"type": "_0004"
 				},
 				{
@@ -3100,7 +3144,7 @@
 							"value": 10
 						}
 					],
-					"index": 41,
+					"index": 42,
 					"type": "_0004"
 				},
 				{
@@ -3159,7 +3203,7 @@
 							"value": 3
 						}
 					],
-					"index": 42,
+					"index": 43,
 					"type": "_0004"
 				},
 				{
@@ -3221,7 +3265,7 @@
 							"value": 6
 						}
 					],
-					"index": 43,
+					"index": 44,
 					"type": "_0004"
 				}
 			],
@@ -3229,9 +3273,9 @@
 				1,
 				5,
 				12,
-				25,
-				31,
-				37
+				26,
+				32,
+				38
 			],
 			"props": {
 				"hasIndex": true,
@@ -4167,6 +4211,20 @@
 						{
 							"type": "_0001",
 							"item": "_0034"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0032"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0044"
 						}
 					]
 				},

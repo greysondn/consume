@@ -230,7 +230,7 @@ class Main {
             * [X] -  8 - Workout
             * [X] -  9 - Gold Room
             * [ ] - 10 - Staff Room
-            * [ ] - 11 - Hospital, buying additional perks
+            * [X] - 11 - Hospital, buying additional perks
             * [ ] - 12 - Ice cream shop office/Bessie's Milking Machine
             */
             
