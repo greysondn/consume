@@ -394,7 +394,7 @@
 				},
 				{
 					"typeStr": "3",
-					"name": "default"
+					"name": "defaultValue"
 				},
 				{
 					"typeStr": "8",
@@ -422,7 +422,7 @@
 							"item_key": true
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0001",
@@ -437,7 +437,7 @@
 							"item_key": true
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0006",
@@ -452,7 +452,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0007",
@@ -467,7 +467,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0008",
@@ -482,7 +482,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0009",
@@ -497,7 +497,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0010",
@@ -512,7 +512,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0011",
@@ -527,7 +527,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0012",
@@ -542,7 +542,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0013",
@@ -557,7 +557,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0014",
@@ -572,7 +572,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0015",
@@ -587,7 +587,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0002",
@@ -602,7 +602,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0003",
@@ -617,7 +617,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0004",
@@ -632,7 +632,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				},
 				{
 					"uid": "_0005",
@@ -647,7 +647,7 @@
 							"item_key": false
 						}
 					],
-					"default": 0
+					"defaultValue": 0
 				}
 			],
 			"separators": [
@@ -822,7 +822,7 @@
 							"name": "flags",
 							"type": "list<reference<eFlags>>",
 							"comment": "Flags specific to this verb.",
-							"default": "[]"
+							"defaultValue": "[]"
 						}
 					],
 					"comment": "Enables consuming this object"
@@ -835,7 +835,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables talking to this object"
@@ -848,7 +848,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables dropping this object."
@@ -861,7 +861,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables getting this object."
@@ -874,7 +874,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables examining this object specifically."
@@ -887,7 +887,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables locking this object."
@@ -900,7 +900,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables unlocking this object."
@@ -913,7 +913,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables using this object."
@@ -925,14 +925,14 @@
 						{
 							"name": "flags",
 							"type": "list<reference<eFlags>>",
-							"default": "[]",
-							"comment": "Flags specific to this verb."
+							"comment": "Flags specific to this verb.",
+							"defaultValue": "[]"
 						},
 						{
 							"name": "slots",
 							"type": "list<reference<eSlots>>",
 							"comment": "slots this can be equipped into",
-							"default": "[]"
+							"defaultValue": "[]"
 						}
 					],
 					"comment": "Enables equipping this object."
@@ -945,7 +945,7 @@
 							"name": "flags",
 							"type": "list<reference<eFlags>>",
 							"comment": "Flags specific to this verb.",
-							"default": "[]"
+							"defaultValue": "[]"
 						}
 					],
 					"comment": "Enables unequipping this object."
@@ -958,7 +958,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables shop processing."
@@ -971,7 +971,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables work processing."
@@ -984,7 +984,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "Enables wait processing."
@@ -997,7 +997,7 @@
 							"name": "",
 							"type": "",
 							"comment": "",
-							"default": ""
+							"defaultValue": ""
 						}
 					],
 					"comment": "INTERNAL ONLY! Calls a special subroutine."
@@ -5575,8 +5575,7 @@
 				},
 				{
 					"typeStr": "1",
-					"name": "default",
-					"display": null
+					"name": "defaultValue"
 				},
 				{
 					"typeStr": "1",

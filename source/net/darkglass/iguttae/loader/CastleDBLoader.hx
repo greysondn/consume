@@ -9,7 +9,8 @@ import net.darkglass.iguttae.loader.CastleDBData;
 
 import openfl.Assets;
 
-class CastleDBLoader {
+class CastleDBLoader
+{
     /**
      * Singleton instance of class
      */
@@ -80,16 +81,65 @@ class CastleDBLoader {
             swp.verbose = entry.description[0].description;
             swp.name = entry.name;
             
-            // stuff for keys - as in a lock
-            if (entry.key[0].isKey)
+            // set all the flags, please
+            for (f in entry.flags)
             {
-                // is key
-                swp.isKey = true;
-
-                // combos
-                for (comboEntry in entry.key[0].combo)
+                // the flags have specific uids.
+                // I'll document them as I go about.
+                // an easier list would be to just read the database, you know.
+                // prolly be more accurate, too.
+                switch (f.flag.uid.toString())
                 {
-                    swp.combos.push(comboEntry.value);
+                    // indestructible
+                    case "_0001":
+                    {
+                        swp.isIndestructible = true;
+                    }
+
+                    // keyItem
+                    case "_0002":
+                    {
+                        swp.isKeyItem = true;
+                    }
+
+                    // unique
+                    case "_0000":
+                    {
+                        swp.isUnique = true;
+                    }
+
+                    // isKey
+                    case "_0009":
+                    {
+                        // stuff for keys, as in a lock
+                        swp.isKey = true;
+
+                        // combos
+                        for (comboEntry in entry.combos)
+                        {
+                            swp.combos.push(comboEntry.value);
+                        }
+                    }
+
+                    // listInInventory
+                    case "_0003":
+                    {
+                        // pass
+                        // TODO: write logic for listInInventory
+                    }
+
+                    // listInRoom
+                    case "_0004":
+                    {
+                        // pass
+                        // TODO: write logic for listInRoom
+                    }
+
+                    // invalid
+                    default:
+                    {
+                        throw ("INVALID KEY FOR ITEM FLAG! : " + f.flag.uid.toString());
+                    }
                 }
             }
 
@@ -100,13 +150,6 @@ class CastleDBLoader {
             {
                 swp.addAlias(aliasEntry.value);
             }
-
-            // flags
-            var flags = entry.flag[0];
-
-            swp.isIndestructible = flags.indestructible;
-            swp.isKeyItem        = flags.keyItem;
-            swp.isUnique         = flags.unique;
 
             // push into env
             env.items.add(swp);
