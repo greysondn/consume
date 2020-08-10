@@ -343,8 +343,6 @@
 -
   index: 30
   name:  "Ice Cream Shop - Office"
-  wrongFile:
-    specials: "[12]"
   desc:
     verbose: >-
       While you worked here you were never allowed into this room, you were

@@ -231,7 +231,7 @@ class Main {
             * [X] -  9 - Gold Room
             * [X] - 10 - Staff Room
             * [X] - 11 - Hospital, buying additional perks
-            * [ ] - 12 - Ice cream shop office/Bessie's Milking Machine
+            * [X] - 12 - Ice cream shop office/Bessie's Milking Machine
             */
             
             flagType = Type.typeof(currentRoom.specialButtons[i]);

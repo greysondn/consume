@@ -79,6 +79,18 @@
 					"shortname": "o",
 					"name": "out",
 					"index": 9
+				},
+				{
+					"uid": "_0010",
+					"shortname": "u",
+					"name": "up",
+					"index": 10
+				},
+				{
+					"uid": "_0011",
+					"shortname": "d",
+					"name": "down",
+					"index": 11
 				}
 			],
 			"separators": [],
@@ -2626,6 +2638,38 @@
 					"combos": []
 				},
 				{
+					"uid": "_0047",
+					"type": "_0007",
+					"name": "Bessie's Milking Machine",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 28
+				},
+				{
 					"uid": "_0017",
 					"name": "Consume Red Band",
 					"description": [
@@ -2647,7 +2691,7 @@
 							"value": 0
 						}
 					],
-					"index": 28,
+					"index": 29,
 					"type": "_0006",
 					"verbs": [],
 					"flags": [
@@ -2673,7 +2717,7 @@
 							"value": "warehouse key"
 						}
 					],
-					"index": 29,
+					"index": 30,
 					"uid": "_0002",
 					"stats": [
 						{
@@ -2743,7 +2787,7 @@
 							"value": "keycard"
 						}
 					],
-					"index": 30,
+					"index": 31,
 					"uid": "_0003",
 					"stats": [
 						{
@@ -2813,7 +2857,7 @@
 							"value": 0
 						}
 					],
-					"index": 31,
+					"index": 32,
 					"type": "_0006",
 					"verbs": [
 						{
@@ -2848,7 +2892,7 @@
 							"value": "gym key"
 						}
 					],
-					"index": 32,
+					"index": 33,
 					"uid": "_0006",
 					"stats": [
 						{
@@ -2918,7 +2962,7 @@
 							"value": "Bessie's key"
 						}
 					],
-					"index": 33,
+					"index": 34,
 					"uid": "_0001",
 					"stats": [
 						{
@@ -2992,7 +3036,7 @@
 							"value": 3000
 						}
 					],
-					"index": 34,
+					"index": 35,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3057,7 +3101,7 @@
 							"value": 5500
 						}
 					],
-					"index": 35,
+					"index": 36,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3122,7 +3166,7 @@
 							"value": 5000
 						}
 					],
-					"index": 36,
+					"index": 37,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3187,7 +3231,7 @@
 							"value": 7500
 						}
 					],
-					"index": 37,
+					"index": 38,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3252,7 +3296,7 @@
 							"value": 2500
 						}
 					],
-					"index": 38,
+					"index": 39,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3317,7 +3361,7 @@
 							"value": 5000
 						}
 					],
-					"index": 39,
+					"index": 40,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3382,7 +3426,7 @@
 							"value": 0
 						}
 					],
-					"index": 40,
+					"index": 41,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3453,7 +3497,7 @@
 							"value": 2
 						}
 					],
-					"index": 41,
+					"index": 42,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3525,7 +3569,7 @@
 							"value": 4
 						}
 					],
-					"index": 42,
+					"index": 43,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3597,7 +3641,7 @@
 							"value": 6
 						}
 					],
-					"index": 43,
+					"index": 44,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3669,7 +3713,7 @@
 							"value": 10
 						}
 					],
-					"index": 44,
+					"index": 45,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3741,7 +3785,7 @@
 							"value": 3
 						}
 					],
-					"index": 45,
+					"index": 46,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3816,7 +3860,7 @@
 							"value": 6
 						}
 					],
-					"index": 46,
+					"index": 47,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3860,9 +3904,9 @@
 				1,
 				5,
 				12,
-				28,
-				34,
-				40
+				29,
+				35,
+				41
 			],
 			"props": {
 				"hasIndex": true,
@@ -4643,6 +4687,34 @@
 				{
 					"location": [
 						{
+							"type": "_0000",
+							"room": "_0023"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0045"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0023"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0046"
+						}
+					]
+				},
+				{
+					"location": [
+						{
 							"room": "_0021",
 							"type": "_0000"
 						}
@@ -4742,6 +4814,20 @@
 					"location": [
 						{
 							"type": "_0000",
+							"room": "_0030"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0047"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
 							"room": "_0029"
 						}
 					],
@@ -4749,34 +4835,6 @@
 						{
 							"type": "_0001",
 							"item": "_0031"
-						}
-					]
-				},
-				{
-					"location": [
-						{
-							"type": "_0000",
-							"room": "_0023"
-						}
-					],
-					"object": [
-						{
-							"type": "_0001",
-							"item": "_0045"
-						}
-					]
-				},
-				{
-					"location": [
-						{
-							"type": "_0000",
-							"room": "_0023"
-						}
-					],
-					"object": [
-						{
-							"type": "_0001",
-							"item": "_0046"
 						}
 					]
 				}
