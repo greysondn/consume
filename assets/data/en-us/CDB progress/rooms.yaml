@@ -374,8 +374,6 @@
 -
   index: 31
   name:  "General Store - Warehouse"
-  wrongFile:
-    specials: "[4]"
   desc:
     verbose: >-
       A massive warehouse under the main shop filled with more stuff then you

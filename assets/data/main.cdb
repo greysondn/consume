@@ -2670,6 +2670,38 @@
 					"index": 28
 				},
 				{
+					"uid": "_0048",
+					"type": "_0007",
+					"name": "Blackjack Table",
+					"description": [
+						{
+							"description": "",
+							"onEat": "",
+							"asRoomContents": "",
+							"onFinisher": ""
+						}
+					],
+					"alias": [],
+					"verbs": [],
+					"flags": [
+						{
+							"flag": "_0001"
+						}
+					],
+					"combos": [],
+					"stats": [
+						{
+							"value": 0,
+							"type": "_0000"
+						},
+						{
+							"type": "_0001",
+							"value": 0
+						}
+					],
+					"index": 29
+				},
+				{
 					"uid": "_0017",
 					"name": "Consume Red Band",
 					"description": [
@@ -2691,7 +2723,7 @@
 							"value": 0
 						}
 					],
-					"index": 29,
+					"index": 30,
 					"type": "_0006",
 					"verbs": [],
 					"flags": [
@@ -2717,7 +2749,7 @@
 							"value": "warehouse key"
 						}
 					],
-					"index": 30,
+					"index": 31,
 					"uid": "_0002",
 					"stats": [
 						{
@@ -2787,7 +2819,7 @@
 							"value": "keycard"
 						}
 					],
-					"index": 31,
+					"index": 32,
 					"uid": "_0003",
 					"stats": [
 						{
@@ -2857,7 +2889,7 @@
 							"value": 0
 						}
 					],
-					"index": 32,
+					"index": 33,
 					"type": "_0006",
 					"verbs": [
 						{
@@ -2892,7 +2924,7 @@
 							"value": "gym key"
 						}
 					],
-					"index": 33,
+					"index": 34,
 					"uid": "_0006",
 					"stats": [
 						{
@@ -2962,7 +2994,7 @@
 							"value": "Bessie's key"
 						}
 					],
-					"index": 34,
+					"index": 35,
 					"uid": "_0001",
 					"stats": [
 						{
@@ -3036,7 +3068,7 @@
 							"value": 3000
 						}
 					],
-					"index": 35,
+					"index": 36,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3101,7 +3133,7 @@
 							"value": 5500
 						}
 					],
-					"index": 36,
+					"index": 37,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3166,7 +3198,7 @@
 							"value": 5000
 						}
 					],
-					"index": 37,
+					"index": 38,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3231,7 +3263,7 @@
 							"value": 7500
 						}
 					],
-					"index": 38,
+					"index": 39,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3296,7 +3328,7 @@
 							"value": 2500
 						}
 					],
-					"index": 39,
+					"index": 40,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3361,7 +3393,7 @@
 							"value": 5000
 						}
 					],
-					"index": 40,
+					"index": 41,
 					"type": "_0003",
 					"verbs": [
 						{
@@ -3426,7 +3458,7 @@
 							"value": 0
 						}
 					],
-					"index": 41,
+					"index": 42,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3497,7 +3529,7 @@
 							"value": 2
 						}
 					],
-					"index": 42,
+					"index": 43,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3569,7 +3601,7 @@
 							"value": 4
 						}
 					],
-					"index": 43,
+					"index": 44,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3641,7 +3673,7 @@
 							"value": 6
 						}
 					],
-					"index": 44,
+					"index": 45,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3713,7 +3745,7 @@
 							"value": 10
 						}
 					],
-					"index": 45,
+					"index": 46,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3785,7 +3817,7 @@
 							"value": 3
 						}
 					],
-					"index": 46,
+					"index": 47,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3860,7 +3892,7 @@
 							"value": 6
 						}
 					],
-					"index": 47,
+					"index": 48,
 					"type": "_0004",
 					"verbs": [
 						{
@@ -3904,9 +3936,9 @@
 				1,
 				5,
 				12,
-				29,
-				35,
-				41
+				30,
+				36,
+				42
 			],
 			"props": {
 				"hasIndex": true,
@@ -4181,11 +4213,6 @@
 					"index": 15,
 					"description": [],
 					"uid": "_0015",
-					"wrongfile": [
-						{
-							"specials": "[15]"
-						}
-					],
 					"flags": [
 						{
 							"flag": "_0007"
@@ -4390,6 +4417,9 @@
 					"verbs": [
 						{
 							"verb": "_0013"
+						},
+						{
+							"verb": "_0012"
 						}
 					]
 				},
@@ -4541,6 +4571,20 @@
 						{
 							"type": "_0001",
 							"item": "_0032"
+						}
+					]
+				},
+				{
+					"location": [
+						{
+							"type": "_0000",
+							"room": "_0015"
+						}
+					],
+					"object": [
+						{
+							"type": "_0001",
+							"item": "_0048"
 						}
 					]
 				},

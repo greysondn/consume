@@ -223,7 +223,7 @@ class Main {
             * [ ] -  1 - Hunt, passive (Club) || active (park)
             * [/] -  2 - Shop, shop invintory
             * [ ] -  3 - Talk
-            * [ ] -  4 - Work, work time
+            * [X] -  4 - Work, work time
             * [X] -  5 - Toilet
             * [X] -  6 - Sleep
             * [X] -  7 - Phone
@@ -232,6 +232,9 @@ class Main {
             * [X] - 10 - Staff Room
             * [X] - 11 - Hospital, buying additional perks
             * [X] - 12 - Ice cream shop office/Bessie's Milking Machine
+            * [?] - 13 - Sewer Entrance
+            * [?] - 14 - Sewers
+            * [X] - 15 - Blackjack Table
             */
             
             flagType = Type.typeof(currentRoom.specialButtons[i]);
