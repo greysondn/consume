@@ -3969,7 +3969,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Main Street",
@@ -3998,7 +4002,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "South Main Street",
@@ -4071,7 +4079,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Consume - Restroom",
@@ -4079,7 +4091,11 @@
 					"description": [],
 					"uid": "_0011",
 					"flags": [],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Consume - Bar",
@@ -4091,7 +4107,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Consume - Stage",
@@ -4132,7 +4152,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "North Main Street",
@@ -4156,7 +4180,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Hospital - Pharmacy",
@@ -4236,7 +4264,11 @@
 					"description": [],
 					"uid": "_0024",
 					"flags": [],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Gym - Showers",
@@ -4244,7 +4276,11 @@
 					"description": [],
 					"uid": "_0025",
 					"flags": [],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Ice Cream Shop",
@@ -4276,7 +4312,11 @@
 					"description": [],
 					"uid": "_0028",
 					"flags": [],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Ice Cream Shop - Restroom",
@@ -4288,7 +4328,11 @@
 							"flag": "_0007"
 						}
 					],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Ice Cream Shop - Office",
@@ -4304,7 +4348,11 @@
 					"description": [],
 					"uid": "_0031",
 					"flags": [],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"name": "Hospital - Backroom",
@@ -4312,7 +4360,11 @@
 					"description": [],
 					"uid": "_0032",
 					"flags": [],
-					"verbs": []
+					"verbs": [
+						{
+							"verb": "_0013"
+						}
+					]
 				},
 				{
 					"uid": "_0033",

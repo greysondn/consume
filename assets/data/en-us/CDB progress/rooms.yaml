@@ -1,8 +1,6 @@
 -
   index: 3
   name:  "Apartment - Balcony"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A tiny balcony overlooking the parking lot. There's really no reason to
@@ -11,8 +9,6 @@
 -
   index: 4
   name:  "Main Street"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The street outside your apartment. Three identical buildings
@@ -28,8 +24,6 @@
 -
   index: 5
   name:  "City Park"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       The city park. Though you know it's only a single block, something about
@@ -38,8 +32,6 @@
 -
   index: 6
   name:  "South Main Street"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       Most of this area is still under construction. One building is finished,
@@ -48,8 +40,6 @@
 -
   index: 7
   name:  "Consume Entryway"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       A short flight of concrete steps leading to a steel door. The landing is
@@ -62,8 +52,6 @@
 -
   index: 8
   name:  "Back Alley"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       A dim alley running along the side of the club. It ends in a small
@@ -74,8 +62,6 @@
 -
   index: 9
   name:  "Consume - Dance Floor"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The main room of Consume is mostly taken up by a dance floor. Along one
@@ -88,8 +74,6 @@
 -
   index: 10
   name:  "Consume - Back Hall"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A short hall lined with rooms on either side. Behind each door is a
@@ -99,16 +83,12 @@
 -
   index: 11
   name:  "Consume - Restroom"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 12
   name:  "Consume - Bar"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A long polished bar, running the length of the room. Like most movie
@@ -120,8 +100,6 @@
 -
   index: 13
   name:  "Consume - Stage"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The club's stage. A drum set sits covered and ignored by the crowd. You're
@@ -130,8 +108,6 @@
 -
   index: 14
   name:  "Consume - Balcony"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       An open sided stair leads to a balcony overlooking the dance floor. A
@@ -144,8 +120,6 @@
 -
   index: 15
   name:  "Consume - Lounge"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       The predator's lounge is a large dark room. Several groups of chairs and
@@ -157,8 +131,6 @@
 -
   index: 16
   name:  "North Main Street"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       What is probably best referred to as the town's market district. It's
@@ -172,8 +144,6 @@
 -
   index: 17
   name:  "Hospital - Waiting Room"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A typical hospital waiting area, the reception desk is always occupied by
@@ -185,8 +155,6 @@
 -
   index: 18
   name:  "Hospital - Pharmacy"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The pharmacy counter of the local hospital, the steel cage keeping
@@ -198,8 +166,6 @@
   wrongFile:
     specials: '[3, [2, "general"]]'
     npcs:     "6"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The array of junk occupying this store is truly impressive. You feel
@@ -212,8 +178,6 @@
   wrongFile:
     specials: "[3]"
     npcs:     "1"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The reception room of this gym is comfortable and modern. Several
@@ -226,8 +190,6 @@
 -
   index: 21
   name:  "Gym - Workout Area"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       A large open room filled with machines of every type. Each one designed
@@ -255,8 +217,6 @@
   index: 22
   name:  "Gym - Gold Room"
   # DON'T FORGET TO PUT SHAY IN HERE, OMFG!
-  permissions:
-    wait: false
   desc:
     verbose: >-
       Calling this room the 'Gold Room' is a bit of a misnomer, the room
@@ -309,8 +269,6 @@
 -
   index: 23
   name:  "Gym - Staff Room"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       This back room of this gym is clearly not an area customers are intended
@@ -328,16 +286,12 @@
 -
   index: 24
   name:  "Gym - Restroom"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A standard single-occupancy restroom. The door locks.
 -
   index: 25
   name:  "Gym - Showers"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A short hallway leads to several shower stalls, providing gym goers a
@@ -349,8 +303,6 @@
   name:  "Ice Cream Shop"
   wrongFile:
     specials: '[[2, "iceCream"]]'
-  permissions:
-    wait: false
   desc:
     verbose: >-
       Your old place of employment, the local ice cream shop. They have all
@@ -362,8 +314,6 @@
 -
   index: 27
   name:  "Ice Cream Shop - Backroom"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       The back room of the ice cream shop set up as a break room, with a table
@@ -375,8 +325,6 @@
 -
   index: 28
   name:  "Ice Cream Shop - Freezer"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       The freezer, it's very cold, naturally. And it's filled with tub after
@@ -387,8 +335,6 @@
 -
   index: 29
   name:  "Ice Cream Shop - Restroom"
-  permissions:
-    wait: true
   desc:
     longview: null
     brief: null
@@ -399,8 +345,6 @@
   name:  "Ice Cream Shop - Office"
   wrongFile:
     specials: "[12]"
-  permissions:
-    wait: false
   desc:
     verbose: >-
       While you worked here you were never allowed into this room, you were
@@ -434,8 +378,6 @@
   name:  "General Store - Warehouse"
   wrongFile:
     specials: "[4]"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A massive warehouse under the main shop filled with more stuff then you
@@ -443,8 +385,6 @@
 -
   index: 32
   name:  "Hospital - Backroom"
-  permissions:
-    wait: true
   desc:
     verbose: >-
       A small room tucked away in the back of the hospital, almost a closet.
