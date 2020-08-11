@@ -55,9 +55,6 @@
     right:
       index: 7
       side:  "sw"
-  size:
-    height: 0
-    width:  48
   desc:
     name:
       leftToRight: "Entryway"
@@ -74,9 +71,6 @@
     right:
       index: 7
       side:  "w"
-  size:
-    height: 84
-    width:  96
   desc:
     name:
       leftToRight: "Entryway"
@@ -90,9 +84,6 @@
     right:
       index: 9
       side:  "w"
-  size:
-    height: 90
-    width:  50
   desc:
     name:
       leftToRight: "Dance Floor"
@@ -109,9 +100,6 @@
     right:
       index: 10
       side:  "n"
-  size:
-    height: 90
-    width:  50
   desc:
     name:
       leftToRight: "Back Hall"
@@ -154,9 +142,6 @@
     right:
       index: 9
       side:  "sw"
-  size:
-    height: 90
-    width:  50
   desc:
     name:
       leftToRight: "Stage"
@@ -173,9 +158,6 @@
     right:
       index: 14
       side:  "w"
-  size:
-    height: 90
-    width:  50 # Original had two values - 50 and 96
   desc:
     name:
       leftToRight: "Balcony"
@@ -192,9 +174,6 @@
     right:
       index: 26
       side:  "w"
-  size:
-    height: 86
-    width:  50
   desc:
     name:
       leftToRight: "Ice Cream Shop"
@@ -208,9 +187,6 @@
     right:
       index: 27
       side:  "w"
-  size:
-    height: 86
-    width:  50
   desc:
     name:
       leftToRight: "Back Room"
@@ -224,9 +200,6 @@
     right:
       index: 30
       side:  "w"
-  size:
-    height: 86
-    width:  50
   desc:
     name:
       leftToRight: "Office"
@@ -240,9 +213,6 @@
     right:
       index: 27
       side:  "n"
-  size:
-    height: 86
-    width:  50
   desc:
     name:
       leftToRight: "Back Room"
@@ -256,9 +226,6 @@
     right:
       index: 28
       side:  "n"
-  size:
-    height: 86
-    width:  50
   desc:
     name:
       leftToRight: "Freezer"
@@ -307,9 +274,6 @@
     right:
       index: 31
       side:  "n"
-  size:
-    height: 84
-    width:  55
   desc:
     name:
       leftToRight: "Warehouse"
@@ -323,9 +287,6 @@
     right:
       index: 16
       side:  "n"
-  size:
-    height: 90
-    width:  96
   desc:
     name:
       leftToRight: "Main Street"
@@ -358,9 +319,6 @@
     right:
       index: 17
       side:  "w"
-  size:
-    height: 84 # original had two sizes - 0 and 84
-    width:  55 # original had two sizes - 0 and 55
   desc:
     name:
       leftToRight: "Waiting Room"
@@ -374,9 +332,6 @@
     right:
       index: 16
       side:  "w"
-  size:
-    height: 84 # original had two sizes - 84 and 90
-    width:  96 # original had two values - 48 and 96
   desc:
     name:
       leftToRight: "Main Street"
