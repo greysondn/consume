@@ -1345,24 +1345,24 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0004",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Main Street",
+									"look": "The main street of town just outside your apartment",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0005",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "City Park",
+									"look": "The city park",
 									"lock": ""
 								}
 							]
@@ -1389,11 +1389,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0004",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -1401,12 +1401,12 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0006",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "South Main Street",
+									"look": "The main street of town, featuring the new club and the location of your old place of employment",
 									"lock": ""
 								}
 							]
@@ -1433,23 +1433,23 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0007",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Consume",
+									"look": "The town's newest (and only) club",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0006",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -1481,23 +1481,23 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0008",
+							"side": "_0001",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Back Alley",
+									"look": "A short dim alley running along the side of the club",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0007",
+							"side": "_0005",
 							"description": [
 								{
-									"name": "",
+									"name": "Entryway",
 									"look": "",
 									"lock": ""
 								}
@@ -1525,11 +1525,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0009",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Dance Floor",
 									"look": "",
 									"lock": ""
 								}
@@ -1537,11 +1537,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0007",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Entryway",
 									"look": "",
 									"lock": ""
 								}
@@ -1569,24 +1569,24 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0010",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Back Hall",
+									"look": "The back hall of the club, the restroom and consumption rooms can be found here",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0009",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Dance Floor",
+									"look": "The club's main area domanated by the dance floor",
 									"lock": ""
 								}
 							]
@@ -1613,11 +1613,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0011",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Restroom",
 									"look": "",
 									"lock": ""
 								}
@@ -1625,11 +1625,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0010",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
+									"name": "Back Hall",
 									"look": "",
 									"lock": ""
 								}
@@ -1657,11 +1657,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0012",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Bar",
 									"look": "",
 									"lock": ""
 								}
@@ -1669,11 +1669,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0009",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
+									"name": "Dance Floor",
 									"look": "",
 									"lock": ""
 								}
@@ -1701,11 +1701,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0009",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Dance Floor",
 									"look": "",
 									"lock": ""
 								}
@@ -1713,12 +1713,12 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0013",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Stage",
+									"look": "An empty stage just off the dance floor",
 									"lock": ""
 								}
 							]
@@ -7172,13 +7172,13 @@
 					"display": null
 				},
 				{
-					"typeStr": "8",
-					"name": "description",
+					"typeStr": "6:eDir",
+					"name": "side",
 					"display": null
 				},
 				{
-					"typeStr": "6:eDir",
-					"name": "side",
+					"typeStr": "8",
+					"name": "description",
 					"display": null
 				}
 			]
