@@ -1257,24 +1257,24 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0003",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Balcony",
+									"look": "Your small balcony overlooking the parking lot.",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0002",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Living Room",
+									"look": "You call it your living room, but it's really the only other room in the apartment.",
 									"lock": ""
 								}
 							]
@@ -1301,24 +1301,24 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
+							"room": "_0002",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Apartment",
+									"look": "Your apartment.",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0004",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Main Street",
+									"look": "Outside, where money and food comes from.",
 									"lock": ""
 								}
 							]
@@ -1333,7 +1333,7 @@
 					"index": 3,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1377,7 +1377,7 @@
 					"index": 4,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1421,7 +1421,7 @@
 					"index": 5,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1465,7 +1465,7 @@
 					"index": 6,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1513,7 +1513,7 @@
 					"index": 7,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1557,7 +1557,7 @@
 					"index": 8,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1601,7 +1601,7 @@
 					"index": 9,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 2,
 							"schedule": []
 						}
 					],
@@ -1645,7 +1645,7 @@
 					"index": 10,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 2,
 							"schedule": []
 						}
 					],
@@ -1733,7 +1733,7 @@
 					"index": 12,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 1,
 							"schedule": []
 						}
 					],
@@ -1777,7 +1777,7 @@
 					"index": 13,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1821,7 +1821,7 @@
 					"index": 14,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 5,
 							"schedule": []
 						}
 					],
@@ -1953,8 +1953,44 @@
 					"index": 16,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": [
@@ -2001,8 +2037,44 @@
 					"index": 17,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2045,8 +2117,44 @@
 					"index": 18,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2089,8 +2197,44 @@
 					"index": 19,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2133,8 +2277,44 @@
 					"index": 20,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2177,8 +2357,44 @@
 					"index": 21,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2225,8 +2441,44 @@
 					"index": 22,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": [
@@ -2273,8 +2525,44 @@
 					"index": 23,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2317,7 +2605,7 @@
 					"index": 24,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 1,
 							"schedule": []
 						}
 					],
@@ -2361,7 +2649,7 @@
 					"index": 25,
 					"times": [
 						{
-							"travel": 0,
+							"travel": 10,
 							"schedule": []
 						}
 					],
@@ -2405,8 +2693,44 @@
 					"index": 26,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2449,8 +2773,44 @@
 					"index": 27,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2493,8 +2853,44 @@
 					"index": 28,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2541,8 +2937,44 @@
 					"index": 29,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": [
@@ -2589,8 +3021,44 @@
 					"index": 30,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": []
@@ -2637,8 +3105,44 @@
 					"index": 31,
 					"times": [
 						{
-							"travel": 0,
-							"schedule": []
+							"travel": 5,
+							"schedule": [
+								{
+									"day": "_0000",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0001",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0002",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0003",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0004",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0005",
+									"open": 8,
+									"close": 20
+								},
+								{
+									"day": "_0006",
+									"open": 8,
+									"close": 20
+								}
+							]
 						}
 					],
 					"combos": [

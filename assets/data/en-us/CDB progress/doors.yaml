@@ -1,39 +1,5 @@
 -
-  index: 2
-  rooms:
-    left:
-      index: 3
-      side:  "e"
-    right:
-      index: 2
-      side:  "w"
-  desc:
-    name:
-      leftToRight: "Living Room"
-      rightToLeft: "Balcony"
-    look:
-      leftToRight: "You call it your living room, but it's really the only other room in the apartment."
-      rightToLeft: "Your small balcony overlooking the parking lot."
--
-  index: 3
-  travelTime: 5
-  rooms:
-    left:
-      index: 2
-      side:  "n"
-    right:
-      index: 4
-      side:  "w"
-  desc:
-    name:
-      leftToRight: "Main Street"
-      rightToLeft: "Apartment"
-    look:
-      leftToRight: "Outside, where money and food comes from."
-      rightToLeft: "Your apartment."
--
   index: 4
-  travelTime: 5
   rooms:
     left:
       index: 4
@@ -50,7 +16,6 @@
       rightToLeft: "The main street of town just outside your apartment"
 -
   index: 5
-  travelTime: 5
   rooms:
     left:
       index: 4
@@ -67,7 +32,6 @@
       rightToLeft: null
 -
   index: 6
-  travelTime: 5
   rooms:
     left:
       index: 7
@@ -84,7 +48,6 @@
       rightToLeft: "The town's newest (and only) club"
 -
   index: 7
-  travelTime: 5
   rooms:
     left:
       index: 8
@@ -104,7 +67,6 @@
       rightToLeft: "A short dim alley running along the side of the club"
 -
   index: 8
-  travelTime: 5
   rooms:
     left:
       index: 9
@@ -121,7 +83,6 @@
       rightToLeft: "Dance Floor"
 -
   index: 9
-  travelTime: 2
   rooms:
     left:
       index: 10
@@ -141,7 +102,6 @@
       rightToLeft: "The back hall of the club, the restroom and consumption rooms can be found here"
 -
   index: 10
-  travelTime: 2
   rooms:
     left:
       index: 11
@@ -171,7 +131,6 @@
       rightToLeft: "Bar"
 -
   index: 12
-  travelTime: 1
   rooms:
     left:
       index: 9
@@ -188,7 +147,6 @@
       rightToLeft: null
 -
   index: 13
-  travelTime: 5 # original had two values - 2 and 5
   rooms:
     left:
       index: 14
@@ -208,7 +166,6 @@
       rightToLeft: "An open balcony overlooking the main area of the club"
 -
   index: 14
-  travelTime: 5 # original had two values - 2 and 5
   rooms:
     left:
       index: 15
@@ -244,7 +201,6 @@
       rightToLeft: "Main Street"
 -
   index: 16
-  travelTime: 5
   rooms:
     left:
       index: 26
@@ -261,7 +217,6 @@
       rightToLeft: "Front of Shop"
 -
   index: 17
-  travelTime: 5-
   rooms:
     left:
       index: 27
@@ -278,7 +233,6 @@
       rightToLeft: "Back Room"
 -
   index: 18
-  travelTime: 5
   rooms:
     left:
       index: 29
@@ -295,7 +249,6 @@
       rightToLeft: "Restroom"
 -
   index: 19
-  travelTime: 5
   rooms:
     left:
       index: 27
@@ -315,7 +268,6 @@
       rightToLeft: null
 -
   index: 20
-  travelTime: 5
   rooms:
     left:
       index: 16
@@ -332,7 +284,6 @@
       rightToLeft: "To the market district"
 -
   index: 21
-  travelTime: 5
   rooms:
     left:
       index: 16
@@ -349,7 +300,6 @@
       rightToLeft: null
 -
   index: 22
-  travelTime: 5
   rooms:
     left:
       index: 19
@@ -366,7 +316,6 @@
       rightToLeft: "Front of Store"
 -
   index: 23
-  travelTime: 5
   rooms:
     left:
       index: 17
@@ -386,7 +335,6 @@
       rightToLeft: "The local hospital"
 -
   index: 24
-  travelTime: 1
   rooms:
     left:
       index: 17
@@ -403,7 +351,6 @@
       rightToLeft: "The large, mostly empty, waiting area of the hospital"
 -
   index: 25
-  travelTime: 10 # original had two values - 10 and 1
   rooms:
     left:
       index: 32
@@ -420,7 +367,6 @@
       rightToLeft: "Back Room"
 -
   index: 26
-  travelTime: 5
   rooms:
     left:
       index: 20
@@ -437,7 +383,6 @@
       rightToLeft: "Gym"
 -
   index: 27
-  travelTime: 5
   rooms:
     left:
       index: 21
@@ -451,7 +396,6 @@
       rightToLeft: "Workout Area"
 -
   index: 28
-  travelTime: 5
   rooms:
     left:
       index: 21
@@ -465,7 +409,6 @@
       rightToLeft: "Workout Area"
 -
   index: 29
-  travelTime: 5
   rooms:
     left:
       index: 21
@@ -484,7 +427,6 @@
     combo: 314159
 -
   index: 30
-  travelTime: 5
   rooms:
     left:
       index: 24
@@ -498,7 +440,6 @@
       rightToLeft: "Restroom"
 -
   index: 31
-  travelTime: 5
   rooms:
     left:
       index: 22
