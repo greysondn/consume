@@ -154,9 +154,9 @@ class CastleDBLoader
             }
 
             // descriptions
-            swp.longview = entry.description[0].longview.toString();
-            swp.brief    = entry.description[0].brief.toString();
-            swp.verbose  = entry.description[0].verbose.toString();
+            swp.longview = this.fixNewlines(entry.description[0].longview.toString());
+            swp.brief = this.fixNewlines(entry.description[0].brief.toString());
+            swp.verbose = this.fixNewlines(entry.description[0].verbose.toString());
 
             // push into environment
             env.rooms.add(swp);
@@ -416,5 +416,19 @@ class CastleDBLoader
             loc.inventory.add(obj);
             obj.location = loc;
         }
+    }
+
+    private function fixNewlines(borked:String):String
+    {
+        var borkbork:Array<String> = borked.split("\\n");
+        var ret:String = "";
+
+        for (bork in borkbork)
+        {
+            ret = ret + bork;
+            ret = ret + "\n";
+        }
+
+        return ret;
     }
 }
