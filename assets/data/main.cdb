@@ -6679,7 +6679,8 @@
 			],
 			"separators": [],
 			"props": {
-				"hasIndex": true
+				"hasIndex": true,
+				"displayColumn": "name"
 			}
 		},
 		{
