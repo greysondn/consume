@@ -73,96 +73,10 @@ class YamlLoader
         // there. Hey, it was that or give up on having a flexible YAML
         // structure. Hell forbid.
 
-        // transitions between rooms now
-        var tranStr:String  = Assets.getText(tranSrc);
-        var tranDat:Dynamic = Yaml.parse(tranStr);
-        this.loadTransitions(env, tranDat);
-        // no validation function would work here
-
         // and now the species
         var speciesStr:String  = Assets.getText(speciesSrc);
         var speciesDat:Dynamic = Yaml.parse(speciesStr);
         this.loadSpecies(env, speciesDat);
-    }
-
-    /**
-     * Helper function to load transitions rooms
-     * 
-     * TODO: Finish documenting
-     * 
-     * @param env 
-     * @param transDat
-     */
-    private function loadTransitions(env:Environment, transDat:Array<ObjectMap<String, Dynamic>>):Void
-    {
-        for (entry in transDat)
-        {
-            // real entries have an index greater than or equal to zero
-            if (entry.get("index") >= 0)
-            {
-                // need a pair of transitions here
-                var swpL:Transition = new Transition();
-                var swpR:Transition = new Transition();
-
-                // index
-                swpL.index = entry.get("index");
-                swpR.index = entry.get("index");
-
-                // name, will do well enough for now
-                swpL.name = entry.get("desc").get("name").get("leftToRight");
-                swpR.name = entry.get("desc").get("name").get("rightToLeft");
-
-                if ("" == swpL.name || null == swpL.name)
-                {
-                    swpL.name = "Unnamed transition " + swpL.index + ".L";
-                }
-                if ("" == swpR.name || null == swpR.name)
-                {
-                    swpR.name = "Unnamed transition " + swpR.index + ".R";
-                }
-
-                // get the two rooms
-                var leftR:Actor  = cast(env.rooms.get(entry.get("rooms").get("left").get("index")), Actor);
-                var rightR:Actor = cast(env.rooms.get(entry.get("rooms").get("right").get("index")), Actor);
-
-                // set targets
-                swpL.target = rightR;
-                swpR.target = leftR;
-
-                // get sides the transitions go on
-                var sideL:Compass = this.dirClause.stringToCompass(entry.get("rooms").get("left").get("side"), env);
-                var sideR:Compass = this.dirClause.stringToCompass(entry.get("rooms").get("right").get("side"), env);
-
-                // get whether or not the rooms are locked
-                var areLocked:Bool = entry.get("flags").get("locked");
-
-                if (areLocked)
-                {
-                    // set locked
-                    swpL.locked = true;
-                    swpR.locked = true;
-
-                    // since they're locked, let's get combo for them
-                    var theirCombo:Int = entry.get("key").get("combo");
-                    
-                    swpL.combo = theirCombo;
-                    swpR.combo = theirCombo;
-                }
-                else
-                {
-                    swpL.locked = false;
-                    swpR.locked = false;
-                }
-
-                // connect rooms to swaps
-                leftR.addExit(sideL, swpL);
-                rightR.addExit(sideR, swpR);
-
-                // connect swaps to each other
-                swpL.oppositeSide = swpR;
-                swpR.oppositeSide = swpL;
-            }
-        }
     }
 
     private function loadSpecies(env:Environment, speciesDat:Array<ObjectMap<String, Dynamic>>):Void

@@ -5,8 +5,10 @@ import net.darkglass.iguttae.environment.Environment;
 import net.darkglass.iguttae.expression.clause.DirectionClause;
 
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.actor.Compass;
 import net.darkglass.iguttae.gameworld.item.Item;
 import net.darkglass.iguttae.gameworld.map.Room;
+import net.darkglass.iguttae.gameworld.map.Transition;
 
 import net.darkglass.iguttae.loader.CastleDBData;
 
@@ -72,6 +74,7 @@ class CastleDBLoader
         this.loadRooms(env);
 
         // followed by transitions between rooms
+        this.loadTransitions(env);
 
         // load items in
         this.loadItems(env);
@@ -137,14 +140,15 @@ class CastleDBLoader
                         swp.permissions.add(swp.consts.get("permission", "wait"));
                     }
                     // work - whether we can work here
-                    case "_0014":
+                    case "_0012":
                     {
                         // pass - valid, but we do nothing with it
                         // TODO: do something with this.
                     }
                     default:
                     {
-                        throw("INVALID KEY FOR ROOM VERB! : " + v.verb.uid.toString());
+                            trace("INVALID KEY FOR ROOM VERB! : " + v.verb.uid.toString());
+                            throw("INVALID KEY FOR ROOM VERB! : " + v.verb.uid.toString());
                     }
                 }
             }
@@ -264,6 +268,88 @@ class CastleDBLoader
             // just going to mention, this is more likely to indicate an issue
             // in the loader now with CDB assigning dense array indexes.
             throw "HEY DUMMY YOU BOTCHED THE ITEM LIST, FIX IT";
+        }
+    }
+
+    /**
+     * Helper function to load room transitions in
+     *
+     * @param env Environment to load transitions into. Must already have rooms
+     *            loaded into it or I can basically guarantee this will look
+     *            like utter failure.
+     */
+    private function loadTransitions(env:Environment):Void
+    {
+        for (entry in this.data.doors.all)
+        {
+            // need a pair of transitions here
+            var swpL:Transition = new Transition();
+            var swpR:Transition = new Transition();
+
+            // index
+            swpL.index = entry.index;
+            swpR.index = entry.index;
+
+            // names, which is basically what we have for now
+            swpL.name = entry.rooms[0].description[0].name;
+            swpR.name = entry.rooms[1].description[0].name;
+
+            // flags
+            for (f in entry.flags)
+            {
+                // the flags have specific uids.
+                // I'll document them as I go about.
+                // an easier list would be to just read the database, you know.
+                // prolly be more accurate, too.
+                switch (f.flag.uid.toString())
+                {
+                    // 10 locked
+                    // 11 timed
+                    // 12 hidden
+
+                    // locked
+                    case "_0010":
+                    {
+                        // just tell them they're locked
+                        swpL.locked = true;
+                        swpR.locked = true;
+
+                        // set combo
+                        // TODO: make it possible to have multiple combos
+                        swpL.combo = entry.combos[0].value;
+                        swpR.combo = entry.combos[0].value;
+                    }
+                    // timed
+                    case "_0011":
+                    {
+                        // pass
+                        // TODO: write logic here
+                    }
+                    // hidden
+                    case "_0012":
+                    {
+                        // pass
+                        // TODO: write logic here
+                    }
+                }
+            }
+
+            // get the two rooms and set them as targets
+            var roomL:Actor = cast(env.rooms.get(entry.rooms[0].room.index), Actor);
+            var roomR:Actor = cast(env.rooms.get(entry.rooms[1].room.index), Actor);
+            swpL.target = roomR;
+            swpR.target = roomL;
+
+            // get sides the transitions go on and connect them to rooms
+            var sideL:Compass = this.dirClause.stringToCompass(entry.rooms[0].side.shortname, env);
+            var sideR:Compass = this.dirClause.stringToCompass(entry.rooms[1].side.shortname, env);
+            roomL.addExit(sideL, swpL);
+            roomR.addExit(sideR, swpR);
+
+            // connect swaps to each other
+            swpL.oppositeSide = swpR;
+            swpR.oppositeSide = swpL;
+
         }
     }
 
