@@ -291,8 +291,8 @@ class CastleDBLoader
             swpR.index = entry.index;
 
             // names, which is basically what we have for now
-            swpL.name = entry.rooms[0].description[0].name;
-            swpR.name = entry.rooms[1].description[0].name;
+            swpL.name = entry.rooms[1].description[0].name;
+            swpR.name = entry.rooms[0].description[0].name;
 
             // flags
             for (f in entry.flags)
