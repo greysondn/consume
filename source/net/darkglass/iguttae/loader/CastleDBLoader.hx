@@ -2,8 +2,11 @@ package net.darkglass.iguttae.loader;
 
 import net.darkglass.iguttae.environment.Environment;
 
+import net.darkglass.iguttae.expression.clause.DirectionClause;
+
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.item.Item;
+import net.darkglass.iguttae.gameworld.map.Room;
 
 import net.darkglass.iguttae.loader.CastleDBData;
 
@@ -22,11 +25,19 @@ class CastleDBLoader
     private var data = CastleDBData;
 
     /**
+     * DirectionClause, so we can translate these slightly easier.
+     */
+    private var dirClause:DirectionClause;
+
+    /**
      * Constructor.
      */
     private function new()
     {
         // dummy so that we can have a singleton.
+
+        // also dirclause
+        this.dirClause = new DirectionClause();
     }
 
     /**
@@ -57,11 +68,103 @@ class CastleDBLoader
      */
     public function load(env:Environment):Void
     {
+        // rooms are supposed to be first
+        this.loadRooms(env);
+
+        // followed by transitions between rooms
+
         // load items in
         this.loadItems(env);
 
         // spawn objects where they go.
         this.loadSpawns(env);
+    }
+
+
+    /**
+     * Helper function to load raw room data in
+     * 
+     * @param env Environment to load rooms into
+     */
+    private function loadRooms(env:Environment):Void
+    {
+        for (entry in this.data.rooms.all)
+        {
+            // placeholder room
+            var swp:Room = new Room();
+
+            // index
+            swp.index = entry.index;
+
+            // name
+            swp.name = entry.name.toString();
+
+            // flags
+            for (f in entry.flags)
+            {
+                // the flags have specific uids.
+                // I'll document them as I go about.
+                // an easier list would be to just read the database, you know.
+                // prolly be more accurate, too.
+                switch (f.flag.uid.toString())
+                {
+                    // is public - whether or not this room is public
+                    case "_0007":
+                    {
+                        swp.permissions.add(swp.consts.get("flag", "public"));
+                    }
+
+                    // invalid
+                    default:
+                    {
+                        throw("INVALID KEY FOR ROOM FLAG! : " + f.flag.uid.toString());
+                    }
+                }
+            }
+
+            // verbs - which are wrong in engine, as permissions, sorry!
+            for (v in entry.verbs)
+            {
+                // verbs, which for now are permissions, sorry!
+                // I'll document them as I go about
+                // an easier list would be to read the database
+                // prolly be more accurate, too
+                switch (v.verb.uid.toString())
+                {
+                    // wait - whether we can wait here
+                    case "_0013":
+                    {
+                        swp.permissions.add(swp.consts.get("permission", "wait"));
+                    }
+                    // work - whether we can work here
+                    case "_0014":
+                    {
+                        // pass - valid, but we do nothing with it
+                        // TODO: do something with this.
+                    }
+                    default:
+                    {
+                        throw("INVALID KEY FOR ROOM VERB! : " + v.verb.uid.toString());
+                    }
+                }
+            }
+
+            // descriptions
+            swp.longview = entry.description[0].longview.toString();
+            swp.brief    = entry.description[0].brief.toString();
+            swp.verbose  = entry.description[0].verbose.toString();
+
+            // push into environment
+            env.rooms.add(swp);
+        }
+
+        // all rooms have been added, in theory - let's validate the list!
+        if (!env.rooms.checkIntegrity())
+        {
+            // unpossible status
+            // This is most likely in the loader code, not anything in db/etc
+            throw "Room integrity failure!";
+        }
     }
 
     /**

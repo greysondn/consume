@@ -73,17 +73,6 @@ class YamlLoader
         // there. Hey, it was that or give up on having a flexible YAML
         // structure. Hell forbid.
 
-        // rooms first
-        var roomStr:String  = Assets.getText(roomSrc);
-        var roomDat:Array<ObjectMap<String, Dynamic>> = Yaml.parse(roomStr);
-        this.loadRooms(env, roomDat);
-        
-        if(!env.rooms.checkIntegrity())
-        {
-            // unpossible status
-            throw "Room integrity failure!";
-        }
-
         // transitions between rooms now
         var tranStr:String  = Assets.getText(tranSrc);
         var tranDat:Dynamic = Yaml.parse(tranStr);
@@ -94,54 +83,6 @@ class YamlLoader
         var speciesStr:String  = Assets.getText(speciesSrc);
         var speciesDat:Dynamic = Yaml.parse(speciesStr);
         this.loadSpecies(env, speciesDat);
-    }
-
-    /**
-     * Helper function to load rooms
-     * 
-     * TODO: Finish documenting
-     * 
-     * @param env 
-     * @param roomDat
-     */
-    private function loadRooms(env:Environment, roomDat:Array<ObjectMap<String, Dynamic>>):Void
-    {
-        // first parts of this are easy, will convey as we go
-        for (entry in roomDat)
-        {
-            // real entries have an index greater than zero
-            if (entry.get("index") >= 0)
-            {
-                // need a room here
-                var swp:Room = new Room();
-
-                // index
-                swp.index = entry.get("index");
-
-                // get name
-                swp.name = entry.get("name");
-
-                // can also set up flags/permissions/etc
-                if (entry.get("flags").get("public"))
-                {
-                    // flag --> public - whether this is a public place
-                    swp.permissions.add(swp.consts.get("flag", "public"));
-                }
-                if (entry.get("permissions").get("wait"))
-                {
-                    // permissions --> wait - whether we can wait here
-                    swp.permissions.add(swp.consts.get("permission", "wait"));
-                }
-
-                // get descriptions
-                swp.longview = entry.get("desc").get("longview");
-                swp.brief    = entry.get("desc").get("brief");
-                swp.verbose  = entry.get("desc").get("verbose");
-
-                // push into environment
-                env.rooms.add(swp);
-            }
-        }
     }
 
     /**
