@@ -1745,23 +1745,23 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0014",
+							"side": "_0001",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Balcony",
+									"look": "An open balcony overlooking the main area of the club",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0009",
+							"side": "_0005",
 							"description": [
 								{
-									"name": "",
+									"name": "Stage",
 									"look": "",
 									"lock": ""
 								}
@@ -1789,23 +1789,23 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0015",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Lounge",
+									"look": "The predator-only lounge area",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0014",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Balcony",
 									"look": "",
 									"lock": ""
 								}
@@ -1837,11 +1837,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0006",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -1849,11 +1849,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0026",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Ice Cream Shop",
 									"look": "",
 									"lock": ""
 								}
@@ -1921,11 +1921,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0026",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Front of Shop",
 									"look": "",
 									"lock": ""
 								}
@@ -1933,11 +1933,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0027",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Back Room",
 									"look": "",
 									"lock": ""
 								}
@@ -2005,11 +2005,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0027",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Back Room",
 									"look": "",
 									"lock": ""
 								}
@@ -2017,11 +2017,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0030",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Office",
 									"look": "",
 									"lock": ""
 								}
@@ -2085,11 +2085,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0029",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Restroom",
 									"look": "",
 									"lock": ""
 								}
@@ -2097,11 +2097,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0027",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
+									"name": "Back Room",
 									"look": "",
 									"lock": ""
 								}
@@ -2165,11 +2165,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0027",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Back Room",
 									"look": "",
 									"lock": ""
 								}
@@ -2177,12 +2177,12 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0028",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Freezer",
+									"look": "The shop's large walk-in freezer",
 									"lock": ""
 								}
 							]
@@ -2245,23 +2245,23 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0020",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "North Main Street",
 									"look": "",
-									"lock": ""
+									"lock": "To the narket district"
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0004",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -2325,11 +2325,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0016",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -2337,12 +2337,12 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0019",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "General Store",
+									"look": "The town's lone store, selling everything and mostly filled with junk",
 									"lock": ""
 								}
 							]
@@ -2409,11 +2409,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0019",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Front of Store",
 									"look": "",
 									"lock": ""
 								}
@@ -2421,11 +2421,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0031",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
+									"name": "Warehouse",
 									"look": "",
 									"lock": ""
 								}
@@ -2493,23 +2493,23 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0017",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Hospital",
+									"look": "The local hospital",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0016",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -2573,24 +2573,24 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0017",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Waiting Room",
+									"look": "The large, mostly empty, waiting area of the hospital",
 									"lock": ""
 								}
 							]
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0018",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Pharmacy",
+									"look": "The hospital pharmacy counter",
 									"lock": ""
 								}
 							]
@@ -2617,11 +2617,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0032",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Back Room",
 									"look": "",
 									"lock": ""
 								}
@@ -2629,11 +2629,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0017",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Waiting Room",
 									"look": "",
 									"lock": ""
 								}
@@ -2661,11 +2661,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0020",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Gym",
 									"look": "",
 									"lock": ""
 								}
@@ -2673,11 +2673,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0016",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Main Street",
 									"look": "",
 									"lock": ""
 								}
@@ -2741,11 +2741,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0021",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Workout Area",
 									"look": "",
 									"lock": ""
 								}
@@ -2753,11 +2753,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0020",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Reception",
 									"look": "",
 									"lock": ""
 								}
@@ -2821,11 +2821,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0021",
+							"side": "_0003",
 							"description": [
 								{
-									"name": "",
+									"name": "Workout Area",
 									"look": "",
 									"lock": ""
 								}
@@ -2833,11 +2833,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0025",
+							"side": "_0007",
 							"description": [
 								{
-									"name": "",
+									"name": "Showers",
 									"look": "",
 									"lock": ""
 								}
@@ -2905,11 +2905,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0021",
+							"side": "_0004",
 							"description": [
 								{
-									"name": "",
+									"name": "Workout Area",
 									"look": "",
 									"lock": ""
 								}
@@ -2917,12 +2917,12 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
+							"room": "_0023",
 							"side": "_0000",
 							"description": [
 								{
-									"name": "",
-									"look": "",
+									"name": "Staff Room",
+									"look": "The staff area of the gym",
 									"lock": ""
 								}
 							]
@@ -2989,11 +2989,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0024",
+							"side": "_0001",
 							"description": [
 								{
-									"name": "",
+									"name": "Restroom",
 									"look": "",
 									"lock": ""
 								}
@@ -3001,11 +3001,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0021",
+							"side": "_0005",
 							"description": [
 								{
-									"name": "",
+									"name": "Workout Area",
 									"look": "",
 									"lock": ""
 								}
@@ -3073,11 +3073,11 @@
 					"rooms": [
 						{
 							"uid": "left",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0022",
+							"side": "_0002",
 							"description": [
 								{
-									"name": "",
+									"name": "Gold Room",
 									"look": "",
 									"lock": ""
 								}
@@ -3085,11 +3085,11 @@
 						},
 						{
 							"uid": "right",
-							"room": "_0000",
-							"side": "_0000",
+							"room": "_0021",
+							"side": "_0006",
 							"description": [
 								{
-									"name": "",
+									"name": "Workout Area",
 									"look": "",
 									"lock": ""
 								}
