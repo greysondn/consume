@@ -816,7 +816,9 @@
 						{
 							"spawnLocation": true,
 							"spawnObject": true,
-							"itemType": false
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					]
 				},
@@ -828,7 +830,9 @@
 						{
 							"spawnLocation": true,
 							"spawnObject": true,
-							"itemType": false
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					]
 				},
@@ -839,7 +843,9 @@
 						{
 							"itemType": true,
 							"spawnLocation": false,
-							"spawnObject": false
+							"spawnObject": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					],
 					"comment": "Armor items"
@@ -851,7 +857,9 @@
 						{
 							"itemType": true,
 							"spawnLocation": false,
-							"spawnObject": false
+							"spawnObject": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					],
 					"comment": "Rings"
@@ -863,7 +871,9 @@
 						{
 							"itemType": true,
 							"spawnLocation": false,
-							"spawnObject": false
+							"spawnObject": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					],
 					"comment": "Weapons"
@@ -875,7 +885,9 @@
 						{
 							"itemType": true,
 							"spawnLocation": false,
-							"spawnObject": false
+							"spawnObject": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					],
 					"comment": "Foodstuff - includes drinks"
@@ -887,7 +899,9 @@
 						{
 							"itemType": true,
 							"spawnLocation": false,
-							"spawnObject": false
+							"spawnObject": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					],
 					"comment": ""
@@ -899,14 +913,507 @@
 						{
 							"itemType": true,
 							"spawnLocation": false,
-							"spawnObject": false
+							"spawnObject": false,
+							"bodyPart": false,
+							"bodyMeasure": false
 						}
 					],
 					"comment": "Keys (not to be confused with key items)"
+				},
+				{
+					"uid": "_0008",
+					"name": "body_part_skin",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "skin, fur, feathers, scales..."
+				},
+				{
+					"uid": "_0009",
+					"name": "body_part_mouth",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "mouth, muzzle, beak..."
+				},
+				{
+					"uid": "_0010",
+					"name": "body_part_legs",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "legs"
+				},
+				{
+					"uid": "_0011",
+					"name": "body_part_arms",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "arms"
+				},
+				{
+					"uid": "_0012",
+					"name": "body_part_hands",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "hands"
+				},
+				{
+					"uid": "_0013",
+					"name": "body_part_feet",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "feet"
+				},
+				{
+					"uid": "_0014",
+					"name": "body_part_sphincter",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "bootyhole"
+				},
+				{
+					"uid": "_0015",
+					"name": "body_part_tail",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "tail"
+				},
+				{
+					"uid": "_0016",
+					"name": "body_measure_height",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "shortest female, largest male"
+				},
+				{
+					"uid": "_0017",
+					"name": "body_measure_weight",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "lightest female, heaviest male"
+				},
+				{
+					"uid": "_0018",
+					"name": "body_measure_chest",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "smallest female, largest male"
+				},
+				{
+					"uid": "_0019",
+					"name": "body_measure_waist",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "narrowest female, thickest male"
+				},
+				{
+					"uid": "_0020",
+					"name": "body_measure_hips",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "slimmest male, widest female"
+				},
+				{
+					"uid": "_0021",
+					"name": "body_measure_butt",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "smallest male, largest female"
+				},
+				{
+					"uid": "_0022",
+					"name": "body_measure_breasts",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0023",
+					"name": "body_measure_balls",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0024",
+					"name": "body_measure_erect",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "erection multiplier"
+				},
+				{
+					"uid": "_0025",
+					"name": "body_measure_penis_length",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0026",
+					"name": "body_measure_penis_width",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0027",
+					"name": "body_capacity_stomach",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0028",
+					"name": "body_capacity_bowels",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0029",
+					"name": "body_capacity_breasts",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "milk"
+				},
+				{
+					"uid": "_0030",
+					"name": "body_capacity_testes",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "spunk"
+				},
+				{
+					"uid": "_0031",
+					"name": "body_gains_fat",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0032",
+					"name": "body_gains_milk",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0033",
+					"name": "body_gains_spunk",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
+				},
+				{
+					"uid": "_0034",
+					"name": "body_digestion_damage",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how much damage per tick (minute) player's stomach does to consumed objects"
+				},
+				{
+					"uid": "_0035",
+					"name": "body_stretch_stomach_time",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
+				},
+				{
+					"uid": "_0036",
+					"name": "body_stretch_stomach_amount",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how much it stretches on stretch"
+				},
+				{
+					"uid": "_0037",
+					"name": "body_stretch_bowels_time",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
+				},
+				{
+					"uid": "_0038",
+					"name": "body_stretch_bowels_amount",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how much it stretches on stretch"
+				},
+				{
+					"uid": "_0039",
+					"name": "body_stretch_breasts_time",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
+				},
+				{
+					"uid": "_0040",
+					"name": "body_stretch_breasts_amount",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how much it stretches on stretch"
+				},
+				{
+					"uid": "_0041",
+					"name": "body_stretch_testes_time",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
+				},
+				{
+					"uid": "_0042",
+					"name": "body_stretch_testes_amount",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how much it stretches on stretch"
 				}
 			],
 			"separators": [
-				2
+				2,
+				8
 			],
 			"props": {
 				"displayColumn": "name"
@@ -7283,6 +7790,15 @@
 				},
 				{
 					"typeStr": "2",
+					"name": "bodyPart"
+				},
+				{
+					"typeStr": "2",
+					"name": "bodyMeasure",
+					"display": null
+				},
+				{
+					"typeStr": "2",
 					"name": "spawnLocation",
 					"display": null
 				},
@@ -8104,6 +8620,307 @@
 				{
 					"typeStr": "3",
 					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "bParts",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uuid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "6:eTypes",
+					"name": "slot",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "description"
+				}
+			],
+			"lines": [
+				{
+					"uuid": "_0000",
+					"name": "skin",
+					"slot": "_0008",
+					"description": [
+						{
+							"singular": "skin",
+							"plural": "skins"
+						}
+					]
+				},
+				{
+					"uuid": "_0001",
+					"name": "fur",
+					"slot": "_0008",
+					"description": [
+						{
+							"singular": "fur",
+							"plural": "furs"
+						}
+					]
+				},
+				{
+					"uuid": "_0002",
+					"name": "scales",
+					"slot": "_0008",
+					"description": [
+						{
+							"singular": "scales",
+							"plural": "scales"
+						}
+					]
+				},
+				{
+					"uuid": "_0003",
+					"name": "mouth",
+					"slot": "_0009",
+					"description": [
+						{
+							"singular": "mouth",
+							"plural": "mouths"
+						}
+					]
+				},
+				{
+					"uuid": "_0004",
+					"name": "muzzle",
+					"slot": "_0009",
+					"description": [
+						{
+							"singular": "muzzle",
+							"plural": "muzzles"
+						}
+					]
+				},
+				{
+					"uuid": "_0005",
+					"name": "maw",
+					"slot": "_0009",
+					"description": [
+						{
+							"singular": "maw",
+							"plural": "maws"
+						}
+					]
+				},
+				{
+					"uuid": "_0006",
+					"name": "legs",
+					"slot": "_0010",
+					"description": [
+						{
+							"singular": "leg",
+							"plural": "legs"
+						}
+					]
+				},
+				{
+					"uuid": "_0007",
+					"name": "arms",
+					"slot": "_0011",
+					"description": [
+						{
+							"singular": "arm",
+							"plural": "arms"
+						}
+					]
+				},
+				{
+					"uuid": "_0008",
+					"name": "hands",
+					"slot": "_0012",
+					"description": [
+						{
+							"singular": "hand",
+							"plural": "hands"
+						}
+					]
+				},
+				{
+					"uuid": "_0009",
+					"name": "handpaws",
+					"slot": "_0012",
+					"description": [
+						{
+							"singular": "handpaw",
+							"plural": "handpaws"
+						}
+					]
+				},
+				{
+					"uuid": "_0010",
+					"name": "claws",
+					"slot": "_0012",
+					"description": [
+						{
+							"singular": "claws",
+							"plural": "claws"
+						}
+					]
+				},
+				{
+					"uuid": "_0011",
+					"name": "handhoofs",
+					"slot": "_0012",
+					"description": [
+						{
+							"singular": "handhoof",
+							"plural": "handhoofs"
+						}
+					]
+				},
+				{
+					"uuid": "_0012",
+					"name": "feet",
+					"slot": "_0013",
+					"description": [
+						{
+							"singular": "foot",
+							"plural": "feet"
+						}
+					]
+				},
+				{
+					"uuid": "_0013",
+					"name": "footpaws",
+					"slot": "_0013",
+					"description": [
+						{
+							"singular": "footpaw",
+							"plural": "footpaws"
+						}
+					]
+				},
+				{
+					"uuid": "_0014",
+					"name": "foothoofs",
+					"slot": "_0013",
+					"description": [
+						{
+							"singular": "foothoof",
+							"plural": "foothoofs"
+						}
+					]
+				},
+				{
+					"uuid": "_0015",
+					"name": "asshole",
+					"slot": "_0014",
+					"description": [
+						{
+							"singular": "asshole",
+							"plural": "assholes"
+						}
+					]
+				},
+				{
+					"uuid": "_0016",
+					"name": "tailhole",
+					"slot": "_0014",
+					"description": [
+						{
+							"singular": "tailhole",
+							"plural": "tailholes"
+						}
+					]
+				},
+				{
+					"uuid": "_0017",
+					"name": "large fluffy tail",
+					"slot": "_0015",
+					"description": [
+						{
+							"singular": "large fluffy tail",
+							"plural": "large fluffy tails"
+						}
+					]
+				},
+				{
+					"uuid": "_0018",
+					"name": "thick scaly tail",
+					"slot": "_0015",
+					"description": [
+						{
+							"singular": "thick scaly tail",
+							"plural": "thick scaly tails"
+						}
+					]
+				},
+				{
+					"uuid": "_0019",
+					"name": "thin fluffy tail",
+					"slot": "_0015",
+					"description": [
+						{
+							"singular": "thin fluffy tail",
+							"plural": "thin fluffy tails"
+						}
+					]
+				},
+				{
+					"uuid": "_0020",
+					"name": "thin whiplike tail",
+					"slot": "_0015",
+					"description": [
+						{
+							"singular": "thin whiplike tail",
+							"plural": "thin whiplike tails"
+						}
+					]
+				},
+				{
+					"uuid": "_0021",
+					"name": "long fluffy tail",
+					"slot": "_0015",
+					"description": [
+						{
+							"singular": "long fluffy tail",
+							"plural": "long fluffy tails"
+						}
+					]
+				},
+				{
+					"uuid": "_0022",
+					"name": "thin hairless tail",
+					"slot": "_0015",
+					"description": [
+						{
+							"singular": "thin hairless tail",
+							"plural": "thin hairless tails"
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "bParts@description",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "singular",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "plural",
+					"display": null
 				}
 			]
 		}
