@@ -921,48 +921,6 @@
 					"comment": "Keys (not to be confused with key items)"
 				},
 				{
-					"uid": "_0008",
-					"name": "body_part_skin",
-					"validUses": [
-						{
-							"itemType": false,
-							"spawnLocation": false,
-							"spawnObject": false,
-							"bodyPart": true,
-							"bodyMeasure": false
-						}
-					],
-					"comment": "skin, fur, feathers, scales..."
-				},
-				{
-					"uid": "_0009",
-					"name": "body_part_mouth",
-					"validUses": [
-						{
-							"itemType": false,
-							"spawnLocation": false,
-							"spawnObject": false,
-							"bodyPart": true,
-							"bodyMeasure": false
-						}
-					],
-					"comment": "mouth, muzzle, beak..."
-				},
-				{
-					"uid": "_0010",
-					"name": "body_part_legs",
-					"validUses": [
-						{
-							"itemType": false,
-							"spawnLocation": false,
-							"spawnObject": false,
-							"bodyPart": true,
-							"bodyMeasure": false
-						}
-					],
-					"comment": "legs"
-				},
-				{
 					"uid": "_0011",
 					"name": "body_part_arms",
 					"validUses": [
@@ -975,6 +933,20 @@
 						}
 					],
 					"comment": "arms"
+				},
+				{
+					"uid": "_0013",
+					"name": "body_part_feet",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "feet"
 				},
 				{
 					"uid": "_0012",
@@ -991,8 +963,8 @@
 					"comment": "hands"
 				},
 				{
-					"uid": "_0013",
-					"name": "body_part_feet",
+					"uid": "_0010",
+					"name": "body_part_legs",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1002,7 +974,35 @@
 							"bodyMeasure": false
 						}
 					],
-					"comment": "feet"
+					"comment": "legs"
+				},
+				{
+					"uid": "_0009",
+					"name": "body_part_mouth",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "mouth, muzzle, beak..."
+				},
+				{
+					"uid": "_0008",
+					"name": "body_part_skin",
+					"validUses": [
+						{
+							"itemType": false,
+							"spawnLocation": false,
+							"spawnObject": false,
+							"bodyPart": true,
+							"bodyMeasure": false
+						}
+					],
+					"comment": "skin, fur, feathers, scales..."
 				},
 				{
 					"uid": "_0014",
@@ -1033,8 +1033,8 @@
 					"comment": "tail"
 				},
 				{
-					"uid": "_0016",
-					"name": "body_measure_height",
+					"uid": "_0023",
+					"name": "body_measure_balls",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1044,77 +1044,7 @@
 							"spawnObject": false
 						}
 					],
-					"comment": "shortest female, largest male"
-				},
-				{
-					"uid": "_0017",
-					"name": "body_measure_weight",
-					"validUses": [
-						{
-							"itemType": false,
-							"bodyPart": false,
-							"bodyMeasure": true,
-							"spawnLocation": false,
-							"spawnObject": false
-						}
-					],
-					"comment": "lightest female, heaviest male"
-				},
-				{
-					"uid": "_0018",
-					"name": "body_measure_chest",
-					"validUses": [
-						{
-							"itemType": false,
-							"bodyPart": false,
-							"bodyMeasure": true,
-							"spawnLocation": false,
-							"spawnObject": false
-						}
-					],
-					"comment": "smallest female, largest male"
-				},
-				{
-					"uid": "_0019",
-					"name": "body_measure_waist",
-					"validUses": [
-						{
-							"itemType": false,
-							"bodyPart": false,
-							"bodyMeasure": true,
-							"spawnLocation": false,
-							"spawnObject": false
-						}
-					],
-					"comment": "narrowest female, thickest male"
-				},
-				{
-					"uid": "_0020",
-					"name": "body_measure_hips",
-					"validUses": [
-						{
-							"itemType": false,
-							"bodyPart": false,
-							"bodyMeasure": true,
-							"spawnLocation": false,
-							"spawnObject": false
-						}
-					],
-					"comment": "slimmest male, widest female"
-				},
-				{
-					"uid": "_0021",
-					"name": "body_measure_butt",
-					"validUses": [
-						{
-							"itemType": false,
-							"bodyPart": false,
-							"bodyMeasure": true,
-							"spawnLocation": false,
-							"spawnObject": false
-						}
-					],
-					"comment": "smallest male, largest female"
+					"comment": ""
 				},
 				{
 					"uid": "_0022",
@@ -1131,8 +1061,8 @@
 					"comment": ""
 				},
 				{
-					"uid": "_0023",
-					"name": "body_measure_balls",
+					"uid": "_0021",
+					"name": "body_measure_butt",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1142,7 +1072,21 @@
 							"spawnObject": false
 						}
 					],
-					"comment": ""
+					"comment": "smallest male, largest female"
+				},
+				{
+					"uid": "_0018",
+					"name": "body_measure_chest",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "smallest female, largest male"
 				},
 				{
 					"uid": "_0024",
@@ -1157,6 +1101,34 @@
 						}
 					],
 					"comment": "erection multiplier"
+				},
+				{
+					"uid": "_0016",
+					"name": "body_measure_height",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "shortest female, largest male"
+				},
+				{
+					"uid": "_0020",
+					"name": "body_measure_hips",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "slimmest male, widest female"
 				},
 				{
 					"uid": "_0025",
@@ -1187,8 +1159,8 @@
 					"comment": ""
 				},
 				{
-					"uid": "_0027",
-					"name": "body_capacity_stomach",
+					"uid": "_0019",
+					"name": "body_measure_waist",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1198,7 +1170,21 @@
 							"spawnObject": false
 						}
 					],
-					"comment": ""
+					"comment": "narrowest female, thickest male"
+				},
+				{
+					"uid": "_0017",
+					"name": "body_measure_weight",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "lightest female, heaviest male"
 				},
 				{
 					"uid": "_0028",
@@ -1227,6 +1213,20 @@
 						}
 					],
 					"comment": "milk"
+				},
+				{
+					"uid": "_0027",
+					"name": "body_capacity_stomach",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": ""
 				},
 				{
 					"uid": "_0030",
@@ -1299,22 +1299,8 @@
 					"comment": "how much damage per tick (minute) player's stomach does to consumed objects"
 				},
 				{
-					"uid": "_0035",
-					"name": "body_stretch_stomach_time",
-					"validUses": [
-						{
-							"itemType": false,
-							"bodyPart": false,
-							"bodyMeasure": true,
-							"spawnLocation": false,
-							"spawnObject": false
-						}
-					],
-					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
-				},
-				{
-					"uid": "_0036",
-					"name": "body_stretch_stomach_amount",
+					"uid": "_0038",
+					"name": "body_stretch_bowels_amount",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1341,8 +1327,8 @@
 					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
 				},
 				{
-					"uid": "_0038",
-					"name": "body_stretch_bowels_amount",
+					"uid": "_0040",
+					"name": "body_stretch_breasts_amount",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1369,8 +1355,8 @@
 					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
 				},
 				{
-					"uid": "_0040",
-					"name": "body_stretch_breasts_amount",
+					"uid": "_0036",
+					"name": "body_stretch_stomach_amount",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1383,8 +1369,8 @@
 					"comment": "how much it stretches on stretch"
 				},
 				{
-					"uid": "_0041",
-					"name": "body_stretch_testes_time",
+					"uid": "_0035",
+					"name": "body_stretch_stomach_time",
 					"validUses": [
 						{
 							"itemType": false,
@@ -1409,11 +1395,30 @@
 						}
 					],
 					"comment": "how much it stretches on stretch"
+				},
+				{
+					"uid": "_0041",
+					"name": "body_stretch_testes_time",
+					"validUses": [
+						{
+							"itemType": false,
+							"bodyPart": false,
+							"bodyMeasure": true,
+							"spawnLocation": false,
+							"spawnObject": false
+						}
+					],
+					"comment": "how many ticks (minutes) need to be over capacity to stretch larger"
 				}
 			],
 			"separators": [
 				2,
-				8
+				8,
+				16,
+				27,
+				31,
+				34,
+				35
 			],
 			"props": {
 				"displayColumn": "name"
@@ -1637,6 +1642,113 @@
 			"props": {
 				"displayColumn": "name"
 			}
+		},
+		{
+			"name": "tMsg",
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "text",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "version"
+				},
+				{
+					"typeStr": "1",
+					"name": "comment"
+				}
+			],
+			"lines": [
+				{
+					"version": "<= 0.52.1",
+					"text": "A man chooses. A slave obeys",
+					"comment": "Bioshock"
+				},
+				{
+					"text": "Would you kindly...",
+					"version": "<= 0.52.1",
+					"comment": "Bioshock"
+				},
+				{
+					"text": "Kyra's favroite flavor is strawberry.",
+					"version": "<= 0.52.1",
+					"comment": ""
+				},
+				{
+					"text": "Kyra casts Resurrection! It failed 554 times before succeeding. Kyra fainted.",
+					"version": "<= 0.52.1",
+					"comment": "the classic notes for these strings notes that - apparently - this one is a reference to the number of days between v0.40 and v0.41."
+				},
+				{
+					"text": "See you space cowboy...",
+					"version": "<= 0.52.1",
+					"comment": "Cowboy Bebop"
+				},
+				{
+					"text": "Even the smallest person can change the course of the future.",
+					"version": "<= 0.52.1",
+					"comment": "The Lord of the Rings"
+				},
+				{
+					"text": "When you have eliminated the impossible, whatever remains, no matter how improbable, must be the truth.",
+					"version": "<= 0.52.1",
+					"comment": "Sherlock Holmes"
+				},
+				{
+					"text": "Walk down the right back alley... and you could find anything.",
+					"version": "<= 0.52.1",
+					"comment": "Sin City"
+				},
+				{
+					"text": "It is pitch black. You are likely to be eaten by a grue.",
+					"version": "<= 0.53.0pre1",
+					"comment": "Zork"
+				},
+				{
+					"text": "Oh boy, are we going to try something dangerous now?",
+					"version": "<= 0.53.0pre1",
+					"comment": "Planetfall"
+				},
+				{
+					"text": "The lion takes an experimental bite out of the basketball but spits it out.",
+					"version": "<= 0.53.0pre1",
+					"comment": "Leather Goddesses of Phobos"
+				},
+				{
+					"text": "There's a million things I haven't done, but just you wait. Just you wait.",
+					"version": "<= 0.53.0pre1",
+					"comment": "Hamilton: An American Musical"
+				},
+				{
+					"text": "Porting this mess wasn't easy, you know (Greysondn, 20 Jan 2019)",
+					"version": "0.53.0pre1",
+					"comment": ""
+				},
+				{
+					"text": "When programming work is out there to be done, to be done, a programmers lot is not a happy one, happy one. (Greysondn, 14 May 2019)",
+					"version": "0.53.0pre3",
+					"comment": "Pirates of Penzance (Greysondn was a constable in it for a high school production)"
+				},
+				{
+					"text": "YOU HAVE TO RESOLVE THE PROMISE",
+					"version": "0.53.0.pre4",
+					"comment": "13 June 2019 - Genko asks for help with his javascript bot elsewhere, that community keeps telling him the following... Hillarity later ensues..."
+				},
+				{
+					"text": "Hello Caley! (Greysondn, 13 June 2019)",
+					"version": "0.53.0.pre4",
+					"comment": "Removing this one would probably make me quit contributing."
+				},
+				{
+					"text": "Sometimes I make edits just to test entirely different projects. (Greysondn)",
+					"version": "0.53.0.pre4",
+					"comment": "24 November 2019 - Brossman asks for a favor."
+				}
+			],
+			"separators": [],
+			"props": {}
 		},
 		{
 			"name": "doors",
@@ -8902,7 +9014,9 @@
 				}
 			],
 			"separators": [],
-			"props": {}
+			"props": {
+				"displayColumn": "name"
+			}
 		},
 		{
 			"name": "bParts@description",
@@ -8921,6 +9035,1190 @@
 					"typeStr": "1",
 					"name": "plural",
 					"display": null
+				}
+			]
+		},
+		{
+			"name": "species",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uuid"
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "parts",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "measures",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "startValues"
+				}
+			],
+			"lines": [
+				{
+					"uuid": "_0000",
+					"name": "human",
+					"parts": [
+						{
+							"part": "_0000",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0003",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0008",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0012",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0015",
+							"slot": "_0014"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 63,
+							"max": 72
+						},
+						{
+							"measure": "_0017",
+							"min": 90,
+							"max": 140
+						},
+						{
+							"measure": "_0018",
+							"min": 24,
+							"max": 30
+						},
+						{
+							"measure": "_0019",
+							"min": 22,
+							"max": 29
+						},
+						{
+							"measure": "_0020",
+							"min": 22,
+							"max": 26
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 2
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 3
+						},
+						{
+							"measure": "_0023",
+							"value": 0.5
+						},
+						{
+							"measure": "_0024",
+							"value": 2
+						},
+						{
+							"measure": "_0025",
+							"value": 4
+						},
+						{
+							"measure": "_0026",
+							"value": 1
+						},
+						{
+							"measure": "_0027",
+							"value": 20
+						},
+						{
+							"measure": "_0028",
+							"value": 10
+						},
+						{
+							"measure": "_0029",
+							"value": 3
+						},
+						{
+							"measure": "_0030",
+							"value": 1
+						},
+						{
+							"measure": "_0031",
+							"value": 5
+						},
+						{
+							"measure": "_0032",
+							"value": 0.5
+						},
+						{
+							"measure": "_0033",
+							"value": 0.1
+						},
+						{
+							"measure": "_0034",
+							"value": 0.1
+						},
+						{
+							"measure": "_0038",
+							"value": 10
+						},
+						{
+							"measure": "_0037",
+							"value": 20
+						},
+						{
+							"measure": "_0040",
+							"value": 1
+						},
+						{
+							"measure": "_0039",
+							"value": 20
+						},
+						{
+							"measure": "_0036",
+							"value": 20
+						},
+						{
+							"measure": "_0035",
+							"value": 30
+						},
+						{
+							"measure": "_0042",
+							"value": 0.5
+						},
+						{
+							"measure": "_0041",
+							"value": 15
+						}
+					]
+				},
+				{
+					"uuid": "_0001",
+					"name": "fox",
+					"parts": [
+						{
+							"part": "_0001",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0004",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0009",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0013",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0016",
+							"slot": "_0014"
+						},
+						{
+							"slot": "_0015",
+							"part": "_0017"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 60,
+							"max": 69
+						},
+						{
+							"measure": "_0017",
+							"min": 85,
+							"max": 100
+						},
+						{
+							"measure": "_0018",
+							"min": 22,
+							"max": 26
+						},
+						{
+							"measure": "_0019",
+							"min": 20,
+							"max": 25
+						},
+						{
+							"measure": "_0020",
+							"min": 20,
+							"max": 24
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 3
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 8
+						},
+						{
+							"measure": "_0023",
+							"value": 0.5
+						},
+						{
+							"measure": "_0024",
+							"value": 3
+						},
+						{
+							"measure": "_0025",
+							"value": 3
+						},
+						{
+							"measure": "_0026",
+							"value": 1.5
+						},
+						{
+							"measure": "_0027",
+							"value": 15
+						},
+						{
+							"measure": "_0028",
+							"value": 15
+						},
+						{
+							"measure": "_0029",
+							"value": 2.5
+						},
+						{
+							"measure": "_0030",
+							"value": 2
+						},
+						{
+							"measure": "_0031",
+							"value": 4
+						},
+						{
+							"measure": "_0032",
+							"value": 0.3
+						},
+						{
+							"measure": "_0033",
+							"value": 0.4
+						},
+						{
+							"measure": "_0034",
+							"value": 0.2
+						},
+						{
+							"measure": "_0035",
+							"value": 15
+						},
+						{
+							"measure": "_0037",
+							"value": 10
+						},
+						{
+							"measure": "_0039",
+							"value": 15
+						},
+						{
+							"measure": "_0041",
+							"value": 20
+						},
+						{
+							"measure": "_0036",
+							"value": 15
+						},
+						{
+							"measure": "_0038",
+							"value": 15
+						},
+						{
+							"measure": "_0040",
+							"value": 1.5
+						},
+						{
+							"measure": "_0042",
+							"value": 2
+						}
+					]
+				},
+				{
+					"uuid": "_0002",
+					"name": "dragon",
+					"parts": [
+						{
+							"part": "_0002",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0005",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0010",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0012",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0016",
+							"slot": "_0014"
+						},
+						{
+							"slot": "_0015",
+							"part": "_0018"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 78,
+							"max": 82
+						},
+						{
+							"measure": "_0017",
+							"min": 150,
+							"max": 210
+						},
+						{
+							"measure": "_0018",
+							"min": 30,
+							"max": 38
+						},
+						{
+							"measure": "_0019",
+							"min": 28,
+							"max": 37
+						},
+						{
+							"measure": "_0020",
+							"min": 30,
+							"max": 34
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 4
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 10
+						},
+						{
+							"measure": "_0023",
+							"value": 1
+						},
+						{
+							"measure": "_0024",
+							"value": 3.5
+						},
+						{
+							"measure": "_0025",
+							"value": 6
+						},
+						{
+							"measure": "_0026",
+							"value": 2
+						},
+						{
+							"measure": "_0027",
+							"value": 30
+						},
+						{
+							"measure": "_0028",
+							"value": 20
+						},
+						{
+							"measure": "_0029",
+							"value": 4
+						},
+						{
+							"measure": "_0030",
+							"value": 4
+						},
+						{
+							"measure": "_0031",
+							"value": 6
+						},
+						{
+							"measure": "_0032",
+							"value": 1.5
+						},
+						{
+							"measure": "_0033",
+							"value": 0.7
+						},
+						{
+							"measure": "_0034",
+							"value": 0.5
+						},
+						{
+							"measure": "_0035",
+							"value": 40
+						},
+						{
+							"measure": "_0037",
+							"value": 10
+						},
+						{
+							"measure": "_0039",
+							"value": 5
+						},
+						{
+							"measure": "_0041",
+							"value": 5
+						},
+						{
+							"measure": "_0036",
+							"value": 40
+						},
+						{
+							"measure": "_0038",
+							"value": 5
+						},
+						{
+							"measure": "_0040",
+							"value": 10
+						},
+						{
+							"measure": "_0042",
+							"value": 2
+						}
+					]
+				},
+				{
+					"uuid": "_0003",
+					"name": "wolf",
+					"parts": [
+						{
+							"part": "_0001",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0004",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0009",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0013",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0016",
+							"slot": "_0014"
+						},
+						{
+							"slot": "_0015",
+							"part": "_0019"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 63,
+							"max": 72
+						},
+						{
+							"measure": "_0017",
+							"min": 100,
+							"max": 150
+						},
+						{
+							"measure": "_0018",
+							"min": 26,
+							"max": 32
+						},
+						{
+							"measure": "_0019",
+							"min": 26,
+							"max": 31
+						},
+						{
+							"measure": "_0020",
+							"min": 28,
+							"max": 28
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 2
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 4
+						},
+						{
+							"measure": "_0023",
+							"value": 1
+						},
+						{
+							"measure": "_0024",
+							"value": 2
+						},
+						{
+							"measure": "_0025",
+							"value": 5
+						},
+						{
+							"measure": "_0026",
+							"value": 2.5
+						},
+						{
+							"measure": "_0027",
+							"value": 25
+						},
+						{
+							"measure": "_0028",
+							"value": 10
+						},
+						{
+							"measure": "_0029",
+							"value": 5
+						},
+						{
+							"measure": "_0030",
+							"value": 1
+						},
+						{
+							"measure": "_0031",
+							"value": 3
+						},
+						{
+							"measure": "_0032",
+							"value": 1
+						},
+						{
+							"measure": "_0033",
+							"value": 2
+						},
+						{
+							"measure": "_0034",
+							"value": 1
+						},
+						{
+							"measure": "_0035",
+							"value": 30
+						},
+						{
+							"measure": "_0037",
+							"value": 20
+						},
+						{
+							"measure": "_0039",
+							"value": 10
+						},
+						{
+							"measure": "_0041",
+							"value": 10
+						},
+						{
+							"measure": "_0036",
+							"value": 30
+						},
+						{
+							"measure": "_0038",
+							"value": 10
+						},
+						{
+							"measure": "_0040",
+							"value": 10
+						},
+						{
+							"measure": "_0042",
+							"value": 5
+						}
+					]
+				},
+				{
+					"uuid": "_0004",
+					"name": "bovine",
+					"parts": [
+						{
+							"part": "_0000",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0004",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0011",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0014",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0016",
+							"slot": "_0014"
+						},
+						{
+							"slot": "_0015",
+							"part": "_0020"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 65,
+							"max": 80
+						},
+						{
+							"measure": "_0017",
+							"min": 160,
+							"max": 210
+						},
+						{
+							"measure": "_0018",
+							"min": 34,
+							"max": 36
+						},
+						{
+							"measure": "_0019",
+							"min": 30,
+							"max": 31
+						},
+						{
+							"measure": "_0020",
+							"min": 30,
+							"max": 46
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 6
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 9
+						},
+						{
+							"measure": "_0023",
+							"value": 2.5
+						},
+						{
+							"measure": "_0024",
+							"value": 4
+						},
+						{
+							"measure": "_0025",
+							"value": 8
+						},
+						{
+							"measure": "_0026",
+							"value": 3
+						},
+						{
+							"measure": "_0027",
+							"value": 40
+						},
+						{
+							"measure": "_0028",
+							"value": 30
+						},
+						{
+							"measure": "_0029",
+							"value": 10
+						},
+						{
+							"measure": "_0030",
+							"value": 6
+						},
+						{
+							"measure": "_0031",
+							"value": 10
+						},
+						{
+							"measure": "_0032",
+							"value": 3
+						},
+						{
+							"measure": "_0033",
+							"value": 0.2
+						},
+						{
+							"measure": "_0034",
+							"value": 1
+						},
+						{
+							"measure": "_0035",
+							"value": 20
+						},
+						{
+							"measure": "_0037",
+							"value": 15
+						},
+						{
+							"measure": "_0039",
+							"value": 15
+						},
+						{
+							"measure": "_0041",
+							"value": 10
+						},
+						{
+							"measure": "_0036",
+							"value": 50
+						},
+						{
+							"measure": "_0038",
+							"value": 20
+						},
+						{
+							"measure": "_0040",
+							"value": 20
+						},
+						{
+							"measure": "_0042",
+							"value": 10
+						}
+					]
+				},
+				{
+					"uuid": "_0005",
+					"name": "tiger",
+					"parts": [
+						{
+							"part": "_0001",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0004",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0009",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0013",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0016",
+							"slot": "_0014"
+						},
+						{
+							"slot": "_0015",
+							"part": "_0021"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 64,
+							"max": 73
+						},
+						{
+							"measure": "_0017",
+							"min": 95,
+							"max": 100
+						},
+						{
+							"measure": "_0018",
+							"min": 22,
+							"max": 31
+						},
+						{
+							"measure": "_0019",
+							"min": 18,
+							"max": 31
+						},
+						{
+							"measure": "_0020",
+							"min": 29,
+							"max": 32
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 5
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 2
+						},
+						{
+							"measure": "_0023",
+							"value": 1
+						},
+						{
+							"measure": "_0024",
+							"value": 2
+						},
+						{
+							"measure": "_0025",
+							"value": 4
+						},
+						{
+							"measure": "_0026",
+							"value": 2
+						},
+						{
+							"measure": "_0027",
+							"value": 25
+						},
+						{
+							"measure": "_0028",
+							"value": 20
+						},
+						{
+							"measure": "_0029",
+							"value": 3
+						},
+						{
+							"measure": "_0030",
+							"value": 3
+						},
+						{
+							"measure": "_0031",
+							"value": 2
+						},
+						{
+							"measure": "_0032",
+							"value": 1
+						},
+						{
+							"measure": "_0033",
+							"value": 0.3
+						},
+						{
+							"measure": "_0034",
+							"value": 0.6
+						},
+						{
+							"measure": "_0035",
+							"value": 40
+						},
+						{
+							"measure": "_0037",
+							"value": 30
+						},
+						{
+							"measure": "_0039",
+							"value": 30
+						},
+						{
+							"measure": "_0041",
+							"value": 15
+						},
+						{
+							"measure": "_0036",
+							"value": 5
+						},
+						{
+							"measure": "_0038",
+							"value": 10
+						},
+						{
+							"measure": "_0040",
+							"value": 5
+						},
+						{
+							"measure": "_0042",
+							"value": 2
+						}
+					]
+				},
+				{
+					"uuid": "_0006",
+					"name": "rat",
+					"parts": [
+						{
+							"part": "_0001",
+							"slot": "_0008"
+						},
+						{
+							"part": "_0004",
+							"slot": "_0009"
+						},
+						{
+							"part": "_0006",
+							"slot": "_0010"
+						},
+						{
+							"part": "_0007",
+							"slot": "_0011"
+						},
+						{
+							"part": "_0009",
+							"slot": "_0012"
+						},
+						{
+							"part": "_0013",
+							"slot": "_0013"
+						},
+						{
+							"part": "_0016",
+							"slot": "_0014"
+						},
+						{
+							"slot": "_0015",
+							"part": "_0022"
+						}
+					],
+					"measures": [
+						{
+							"measure": "_0016",
+							"min": 55,
+							"max": 59
+						},
+						{
+							"measure": "_0017",
+							"min": 70,
+							"max": 85
+						},
+						{
+							"measure": "_0018",
+							"min": 20,
+							"max": 25
+						},
+						{
+							"measure": "_0019",
+							"min": 18,
+							"max": 24
+						},
+						{
+							"measure": "_0020",
+							"min": 20,
+							"max": 25
+						},
+						{
+							"measure": "_0021",
+							"min": 1,
+							"max": 2
+						}
+					],
+					"startValues": [
+						{
+							"measure": "_0022",
+							"value": 1
+						},
+						{
+							"measure": "_0023",
+							"value": 0.25
+						},
+						{
+							"measure": "_0024",
+							"value": 1.5
+						},
+						{
+							"measure": "_0025",
+							"value": 2
+						},
+						{
+							"measure": "_0026",
+							"value": 1
+						},
+						{
+							"measure": "_0027",
+							"value": 50
+						},
+						{
+							"measure": "_0028",
+							"value": 10
+						},
+						{
+							"measure": "_0029",
+							"value": 3
+						},
+						{
+							"measure": "_0030",
+							"value": 2
+						},
+						{
+							"measure": "_0031",
+							"value": 2
+						},
+						{
+							"measure": "_0032",
+							"value": 1
+						},
+						{
+							"measure": "_0033",
+							"value": 2
+						},
+						{
+							"measure": "_0034",
+							"value": 0.5
+						},
+						{
+							"measure": "_0035",
+							"value": 70
+						},
+						{
+							"measure": "_0037",
+							"value": 40
+						},
+						{
+							"measure": "_0039",
+							"value": 30
+						},
+						{
+							"measure": "_0041",
+							"value": 10
+						},
+						{
+							"measure": "_0036",
+							"value": 20
+						},
+						{
+							"measure": "_0038",
+							"value": 20
+						},
+						{
+							"measure": "_0040",
+							"value": 10
+						},
+						{
+							"measure": "_0042",
+							"value": 5
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {
+				"displayColumn": "name"
+			}
+		},
+		{
+			"name": "species@parts",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eTypes",
+					"name": "slot",
+					"display": null
+				},
+				{
+					"typeStr": "6:bParts",
+					"name": "part",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "species@measures",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eTypes",
+					"name": "measure",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "min"
+				},
+				{
+					"typeStr": "4",
+					"name": "max"
+				}
+			]
+		},
+		{
+			"name": "species@startValues",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eTypes",
+					"name": "measure",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "value"
 				}
 			]
 		}
