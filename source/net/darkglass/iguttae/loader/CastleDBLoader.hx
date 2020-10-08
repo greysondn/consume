@@ -63,6 +63,53 @@ class CastleDBLoader
     }
 
     /**
+     * Creates the string the FAQ page needs to display.
+     * 
+     * This really should be in FAQSubstate, but it's just easier to localize it
+     * here, unfortunately.
+     * 
+     * @return String the entire FAQSubstate text block.
+     */
+    public function createFAQ():String
+    {
+        // evenutally
+        var ret:String = "";
+
+        // easier this way for me
+        var divider:String = "-----------------------------------------------";
+
+        // whether we've had at least one thus far
+        var notFirst:Bool = false;
+
+        for (entry in this.data.faq.all)
+        {
+            // only a divider if it's not the first
+            if (notFirst)
+            {
+                ret = ret + divider + "\n\n";
+            }
+            else
+            {
+                notFirst = true;
+            }
+
+            // question
+            ret = ret + "Q: ";
+            ret = ret + this.fixNewlines(entry.question);
+            ret = ret + "\n\n";
+
+            // answer
+            ret = ret + "A: ";
+            ret = ret + this.fixNewlines(entry.answer);
+            ret = ret + "\n\n";
+        }
+
+        // done?
+
+        return ret;
+    }
+
+    /**
      * Loads game into env based on main cdb source file.
      * 
      * For the time being, requires the YAML loader to run first.

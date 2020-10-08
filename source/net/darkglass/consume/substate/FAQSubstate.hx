@@ -13,10 +13,7 @@ import net.darkglass.consume.Registry;
 import net.darkglass.consume.ui.Scrollbar;
 import net.darkglass.consume.ui.WaTTY;
 
-import openfl.utils.Assets;
-
-import yaml.Yaml;
-import yaml.util.ObjectMap;
+import net.darkglass.iguttae.loader.CastleDBLoader;
 
 class FAQSubstate extends FlxUISubState
 {
@@ -25,6 +22,8 @@ class FAQSubstate extends FlxUISubState
     override public function create():Void
     {
         super.create();
+
+        var cdb:CastleDBLoader = CastleDBLoader.create();
 
         var buttonEnabledGFX:Array<String>  = registry.gfxset_buttonEnabled;
         var slicecoords:Array<Array<Int>>   = registry.gfxset_buttonEnabled_slice;
@@ -58,7 +57,7 @@ class FAQSubstate extends FlxUISubState
         wat.onLengthChange = sb.updateScrollbarPosition;
         wat.onLineChange   = sb.updateScrollbarPosition;
 
-        wat.addText(this.loadText());
+        wat.addText(cdb.createFAQ());
         wat.scrollToLine(96);
 
         var backButton:FlxUIButton = new FlxUIButton(32, 566, "Back", onClick_back);
@@ -69,42 +68,5 @@ class FAQSubstate extends FlxUISubState
     private function onClick_back():Void
     {
         this.close();
-    }
-
-    /**
-     * Helper function to load text into a string from yaml
-     */
-    private function loadText():String   
-    {
-        // eventually
-        var ret:String = "";
-
-        // easier this way for me
-        var divider:String = "-----------------------------------------------";
-
-        // load source
-        var txtSrc:String = Assets.getText("assets/data/en-us/faq.yaml");
-        var txtDat:Array<ObjectMap<String, Dynamic>> = Yaml.parse(txtSrc);
-
-        // we iterate over it
-        for (entry in txtDat)
-        {
-            // real entries have an id greater than zero
-            if (entry.get("id") >= 0)
-            {
-                // only a divider if it's not the first
-                if (entry.get("id") != 0)
-                {
-                    ret = ret + divider + "\n\n";
-                }
-
-                // question and answer
-                ret = ret + "Q: " + entry.get("q") + "\n\n";
-                ret = ret + "A: " + entry.get("a") + "\n\n";
-            }
-        }
-
-        // end?
-        return ret;
     }
 }
