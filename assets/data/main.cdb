@@ -9216,7 +9216,8 @@
 							"measure": "_0041",
 							"value": 15
 						}
-					]
+					],
+					"index": 0
 				},
 				{
 					"uuid": "_0001",
@@ -9372,7 +9373,8 @@
 							"measure": "_0042",
 							"value": 2
 						}
-					]
+					],
+					"index": 1
 				},
 				{
 					"uuid": "_0002",
@@ -9528,7 +9530,8 @@
 							"measure": "_0042",
 							"value": 2
 						}
-					]
+					],
+					"index": 2
 				},
 				{
 					"uuid": "_0003",
@@ -9684,7 +9687,8 @@
 							"measure": "_0042",
 							"value": 5
 						}
-					]
+					],
+					"index": 3
 				},
 				{
 					"uuid": "_0004",
@@ -9840,7 +9844,8 @@
 							"measure": "_0042",
 							"value": 10
 						}
-					]
+					],
+					"index": 4
 				},
 				{
 					"uuid": "_0005",
@@ -9996,7 +10001,8 @@
 							"measure": "_0042",
 							"value": 2
 						}
-					]
+					],
+					"index": 5
 				},
 				{
 					"uuid": "_0006",
@@ -10152,12 +10158,14 @@
 							"measure": "_0042",
 							"value": 5
 						}
-					]
+					],
+					"index": 6
 				}
 			],
 			"separators": [],
 			"props": {
-				"displayColumn": "name"
+				"displayColumn": "name",
+				"hasIndex": true
 			}
 		},
 		{

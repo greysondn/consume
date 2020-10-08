@@ -6,6 +6,9 @@ import net.darkglass.iguttae.expression.clause.DirectionClause;
 
 import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.actor.Compass;
+import net.darkglass.iguttae.gameworld.character.Species in IggutaeSpecies;
+import net.darkglass.iguttae.gameworld.character.body.BodyPart;
+import net.darkglass.iguttae.gameworld.character.body.Measurement;
 import net.darkglass.iguttae.gameworld.item.Item;
 import net.darkglass.iguttae.gameworld.map.Room;
 import net.darkglass.iguttae.gameworld.map.Transition;
@@ -76,13 +79,15 @@ class CastleDBLoader
         // followed by transitions between rooms
         this.loadTransitions(env);
 
+        // load species
+        this.loadSpecies(env);
+
         // load items in
         this.loadItems(env);
 
         // spawn objects where they go.
         this.loadSpawns(env);
     }
-
 
     /**
      * Helper function to load raw room data in
@@ -415,6 +420,206 @@ class CastleDBLoader
             // if we get this far, we should be okay to just insert
             loc.inventory.add(obj);
             obj.location = loc;
+        }
+    }
+
+    /**
+     * Helper function to load raw species data in
+     *
+     * @param env Environment to load species into
+     */
+    private function loadSpecies(env:Environment):Void
+    {
+        for (entry in this.data.species.all)
+        {
+            // placeholder species
+            // be aware I had to alias this. See imports.
+            var swp:IggutaeSpecies = new IggutaeSpecies();
+
+            // index
+            swp.index = entry.index;
+
+            // name
+            swp.name = entry.name;
+
+            // body parts
+            for  (part in entry.parts)
+            {
+                var swpPart:BodyPart = new BodyPart(part.slot.name, part.part.name);
+                swp.bodyParts.add(swpPart);
+            }
+
+            // the part of measures min-max, I suppose.
+            for (measure in entry.measures)
+            {
+                // just some dumb swap one, should really not be allocating this.
+                var swpMeasure:Measurement = new Measurement(0, 0);
+
+                switch (measure.measure.uid.toString())
+                {
+                    // butt
+                    case "_0021":
+                    {
+                        swpMeasure = swp.butt;
+                    }
+                    // chest
+                    case "_0018":
+                    {
+                        swpMeasure = swp.chest;
+                    }
+                    // height
+                    case "_0016":
+                    {
+                        swpMeasure = swp.height;
+                    }
+                    // hips
+                    case "_0020":
+                    {
+                        swpMeasure = swp.hips;
+                    }
+                    // waist
+                    case "_0019":
+                    {
+                        swpMeasure = swp.waist;
+                    }
+                    // weight
+                    case "_0017":
+                    {
+                        swpMeasure = swp.weight;
+                    }
+                }
+
+                // swpmeasure now points at the correct one, we can just do our
+                // thing with the values and the world is none the wiser
+                swpMeasure.min = measure.min;
+                swpMeasure.max = measure.max;
+            }
+
+            // and now, depressingly, for the part of measures start.
+            // no real way to simplify this so it just sort of has to be each
+            // case systematically
+            for (measure in entry.startValues)
+            {
+                switch(measure.measure.uid.toString())
+                {
+                    // body_measure_breasts
+                    case "_0022":
+                    {
+                        swp.breasts.measure = measure.value;
+                    }
+                    // body_measure_balls
+                    case "_0023":
+                    {
+                        swp.testes.measure = measure.value;
+                    }
+                    // body_measure_erect
+                    case "_0024":
+                    {
+                        swp.penisErectionMultiplier = measure.value;
+                    }
+                    // body_measure_penis_length
+                    case "_0025":
+                    {
+                        swp.penisLength = measure.value;
+                    }
+                    // body_measure_penis_width
+                    case "_0026":
+                    {
+                        swp.penisWidth = measure.value;
+                    }
+                    // body_capacity_stomach
+                    case "_0027":
+                    {
+                        swp.stomach.capacity = measure.value;
+                    }
+                    // body_capacity_bowels
+                    case "_0028":
+                    {
+                        swp.bowels.capacity = measure.value;
+                    }
+                    // body_capacity_breasts
+                    case "_0029":
+                    {
+                        swp.breasts.capacity = measure.value;
+                    }
+                    // body_capacity_testes
+                    case "_0030":
+                    {
+                        swp.testes.capacity = measure.value;
+                    }
+                    // body_gains_fat
+                    case "_0031":
+                    {
+                        swp.stomach.gains = measure.value;
+                    }
+                    // body_gains_milk
+                    case "_0032":
+                    {
+                        swp.breasts.gains = measure.value;
+                    }
+                    // body_gains_spunk
+                    case "_0033":
+                    {
+                        swp.testes.gains = measure.value;
+                    }
+                    // body_digestion_damage
+                    case "_0034":
+                    {
+                        swp.stomach.damage = measure.value;
+                        swp.breasts.damage = measure.value;
+                        swp.testes.damage  = measure.value;
+                    }
+                    // body_stretch_stomach_time
+                    case "_0035":
+                    {
+                        swp.stomach.stretchTime = measure.value;
+                    }
+                    // body_stretch_bowels_time
+                    case "_0037":
+                    {
+                        swp.bowels.stretchTime = measure.value;
+                    }
+                    // body_stretch_breasts_time
+                    case "_0039":
+                    {
+                        swp.breasts.stretchTime = measure.value;
+                    }
+                    // body_stretch_testes_time
+                    case "_0041":
+                    {
+                        swp.testes.stretchTime = measure.value;
+                    }
+                    // body_stretch_stomach_amount
+                    case "_0036":
+                    {
+                        swp.stomach.stretchAmount = measure.value;
+                    }
+                    // body_stretch_bowels_amount
+                    case "_0038":
+                    {
+                        swp.bowels.stretchAmount = measure.value;
+                    }
+                    // body_stretch_breasts_amount
+                    case "_0040":
+                    {
+                        swp.breasts.stretchAmount = measure.value;
+                    }
+                    // body_stretch_testes_amount
+                    case "_0042":
+                    {
+                        swp.testes.stretchAmount = measure.value;
+                    }
+                }
+            }
+
+            // species is now together, add it!
+            env.species.add(swp);
+        }
+
+        // check integrity! ... this should never fail, frankly, and is outdated.
+        if (!env.species.checkIntegrity())
+        {
+            throw "HEY DUMMY YOU BOTCHED THE SPECIES LIST, FIX IT";
         }
     }
 

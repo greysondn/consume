@@ -26,6 +26,10 @@ class Species
     public var stomach:ContainerBodyPart = new ContainerBodyPart();
     public var bowels:ContainerBodyPart  = new ContainerBodyPart();
 
+    public var penisLength:Float = 0.0;
+    public var penisWidth:Float = 0.0;
+    public var penisErectionMultiplier:Float = 0.0;
+
     /**
      * This has to be done manually I think. I know that's a bummer.
      */

@@ -32,7 +32,6 @@ import net.darkglass.util.flixel.FlxHaxeUiState;
 
 import net.darkglass.iguttae.gameworld.actor.Actor;
 
-import net.darkglass.iguttae.loader.YamlLoader;
 import net.darkglass.iguttae.loader.CastleDBLoader;
 
 
@@ -76,10 +75,6 @@ class PlayState extends FlxHaxeUiState
 
         // init iggutae
         this.interpreter = new Iguttae(this.env);
-
-        // load environment - old yaml
-        // var y:YamlLoader = YamlLoader.create();
-        // y.load(this.env);
 
         // load environment - new castledb
         var cdb:CastleDBLoader = CastleDBLoader.create();
