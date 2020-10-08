@@ -1,6 +1,5 @@
 package net.darkglass.consume;
 
-import openfl.Assets;
 import flixel.FlxG;
 import flixel.math.FlxRandom;
 import flixel.text.FlxText;
@@ -14,7 +13,7 @@ import net.darkglass.consume.substate.FAQSubstate;
 import net.darkglass.consume.substate.OptionSubstate;
 import net.darkglass.consume.substate.PreWarnSubstate;
 
-import yaml.Yaml;
+import net.darkglass.iguttae.loader.CastleDBLoader;
 
 // new version pieces
 import net.darkglass.util.flixel.FlxHaxeUiState;
@@ -91,15 +90,15 @@ class TitleState extends FlxHaxeUiState
         titleCreate.addFormat(fntcol);
         this.add(titleCreate);
 
-                // quote
+         // quote
         // pos 190x318
         // sz  469x36
         // -----
         // ... this is a bit of a doozy
         // load quotes
         // TODO: Make this capable of loading other locales
-        var _yamlFile:String = Assets.getText("assets/data/en-us/welcome_messages.yaml");
-        var msgs:Array<String> = Yaml.parse(_yamlFile);
+        var cdb = CastleDBLoader.create();
+        var msgs:Array<String> = cdb.createTitleQuote();
         var rng:FlxRandom = new FlxRandom();
 
         // get random quotes

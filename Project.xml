@@ -85,9 +85,6 @@
 	<haxelib name="castle" />
 	<haxeflag name="-lib" value="castle" />
 
-	<!-- Yeah, I like yaml WAY more than JSON. -->
-	<haxelib name="yaml" />
-
 	<!-- Test haxeui with flixel with this, what could possibly go right? -->
 	<haxelib name="haxeui-core" />
 	<haxelib name="haxeui-flixel" />

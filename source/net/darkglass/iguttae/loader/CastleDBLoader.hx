@@ -110,6 +110,24 @@ class CastleDBLoader
     }
 
     /**
+     * Creates array of title quotes to make title screen work.
+     * Another one that should maybe be elsewhere but *shrug*.
+     * 
+     * @return Array<String> All the title screen strings.
+     */
+    public function createTitleQuote():Array<String>
+    {
+        var ret:Array<String> = new Array<String>();
+
+        for (s in this.data.tMsg.all)
+        {
+            ret.push(s.text);
+        }
+
+        return ret;
+    }
+
+    /**
      * Loads game into env based on main cdb source file.
      * 
      * For the time being, requires the YAML loader to run first.
