@@ -2,6 +2,7 @@ package net.darkglass.iguttae.gameworld.character;
 
 import net.darkglass.iguttae.gameworld.character.body.Measurement;
 import net.darkglass.iguttae.gameworld.actor.Actor;
+import net.darkglass.iguttae.gameworld.character.CharacterPubsubhub;
 import net.darkglass.iguttae.gameworld.character.Species;
 import net.darkglass.iguttae.gameworld.character.Stat;
 import net.darkglass.iguttae.gameworld.character.body.ContainerBodyPart;
@@ -14,6 +15,12 @@ import net.darkglass.iguttae.gameworld.character.body.BodyPartCollection;
  */
 class Character extends Actor
 {
+    /**
+     * This character's pubsubhub, for things that happen to it which require
+     * signalling, apparently, to do worth anything.
+     */
+    public var pubsub:CharacterPubsubhub = new CharacterPubsubhub();
+
     /**
      * Pointer to a basis species. Or should be, anyway.
      */

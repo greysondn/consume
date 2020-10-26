@@ -194,7 +194,8 @@
 							"doors": true,
 							"items": false,
 							"rooms": false,
-							"specificVerbs": false
+							"specificVerbs": false,
+							"characters": false
 						}
 					]
 				},
@@ -207,7 +208,8 @@
 							"doors": true,
 							"items": false,
 							"rooms": false,
-							"specificVerbs": false
+							"specificVerbs": false,
+							"characters": false
 						}
 					]
 				},
@@ -220,7 +222,8 @@
 							"doors": true,
 							"items": false,
 							"rooms": false,
-							"specificVerbs": false
+							"specificVerbs": false,
+							"characters": false
 						}
 					]
 				},
@@ -233,7 +236,8 @@
 							"items": true,
 							"specificVerbs": false,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": true
 						}
 					]
 				},
@@ -246,7 +250,8 @@
 							"items": true,
 							"specificVerbs": false,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": false
 						}
 					]
 				},
@@ -259,7 +264,8 @@
 							"items": true,
 							"rooms": false,
 							"specificVerbs": false,
-							"doors": false
+							"doors": false,
+							"characters": false
 						}
 					]
 				},
@@ -272,7 +278,8 @@
 							"items": true,
 							"specificVerbs": false,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": true
 						}
 					]
 				},
@@ -285,7 +292,8 @@
 							"items": true,
 							"specificVerbs": false,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": true
 						}
 					]
 				},
@@ -298,7 +306,8 @@
 							"items": true,
 							"specificVerbs": false,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": true
 						}
 					]
 				},
@@ -311,7 +320,8 @@
 							"items": false,
 							"specificVerbs": false,
 							"rooms": true,
-							"doors": false
+							"doors": false,
+							"characters": false
 						}
 					]
 				},
@@ -324,7 +334,8 @@
 							"items": false,
 							"rooms": false,
 							"specificVerbs": true,
-							"doors": false
+							"doors": false,
+							"characters": false
 						}
 					]
 				},
@@ -337,7 +348,8 @@
 							"items": false,
 							"specificVerbs": true,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": true
 						}
 					]
 				},
@@ -350,7 +362,22 @@
 							"items": false,
 							"specificVerbs": true,
 							"rooms": false,
-							"doors": false
+							"doors": false,
+							"characters": true
+						}
+					]
+				},
+				{
+					"uid": "_0013",
+					"name": "isEdible",
+					"comment": "Whether this object can be consumed to begin with",
+					"validUses": [
+						{
+							"doors": false,
+							"items": true,
+							"rooms": false,
+							"specificVerbs": false,
+							"characters": true
 						}
 					]
 				}
@@ -358,7 +385,8 @@
 			"separators": [
 				3,
 				9,
-				10
+				10,
+				13
 			],
 			"props": {
 				"displayColumn": "name"
@@ -8579,6 +8607,10 @@
 					"typeStr": "2",
 					"name": "specificVerbs",
 					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "characters"
 				}
 			]
 		},
