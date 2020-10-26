@@ -1,101 +1,6 @@
 class MyCharacter
 {
-   // Physical descriptors
-    public var species:MySpecies;
-    public var skin:String;
-    public var tail:Bool;
-    public var taliDesc:String;
-    public var mouth:String;
-    public var legs:String;
-    public var arms:String;
-    public var hands:String;
-    public var feet:String;
-    public var sphincter:String;
-    // Mesurements
-    public var tall:Float; // in inches
-    // public var weight:Float; // in pounds, not including stomach contents
-    public var fat:Int; // fatness, in pounds
-    public var chestSize:Int; // bra band size, in inches
-    public var waistSize:Int; // size around waist, in inches, not including stomach
-    public var hipSize:Float; // size around hips, in inches
-    public var buttSize:Int; // size of butt, in inches, beyond hipSize
-    // Sex bits
-    public var breasts:Bool;
-    public var vagina:Bool;
-    public var penis:Bool;
-    public var balls:Bool;
-    public var lac:Bool;
-    // Sex bits sizes
-    public var breastSize:Int;
-    public var penisL:Float;
-    public var penisW:Float;
-    public var ballSize:Float;
-    public var errect:Float; // Errection multiplier
-    // Containers
-    public var stomachCap:Float; // capacity of stomach, in cubic inches
-    public var bowelsCap:Float; // capacity of bowels, in cubic inches
-    public var breastCap:Float; // milk capacity, if lactating, in gallons
-    public var cumCap:Float; // ball cum capacity, in ounces
-    // Fullness
-    public var stomachCurrent:Float; // current fullness, in cubic inches
-    public var breastCurrent:Float; // current milk fullness, in gallons
-    public var cumCurrent:Float; // in ounces
-    public var bowelsCurrent:Float = 0;
-    // Item arrays for contents
-    public var stomachContents:Array<MyNPC>; // Current contants of player's stomach
-    public var bowelsContents:Array<MyNPC>; // Current contents of player's bowels
-    public var breastContents:Array<MyNPC>;
-    public var ballContents:Array<MyNPC>;
-    // Digestion stuff
-    public var fatGain:Int; // fat gain rate
-    public var milkGain:Float; // milk gain rate
-    public var cumGain:Float; // cum gain rate
-    public var digestDamage:Float; // How much damage per tick (minute) the character's stomach does to consumed objects
-    // Streatching
-    public var stretchRateStomach:Int; // How many ticks (minutes) the character's stomach needs to be over capacity to stretch larger
-    public var stretchRateBowels:Int; // Ticks to stretch bowels
-    public var stretchRateMilk:Int; // Ticks to stretch milk
-    public var stretchRateCum:Int; // Ticks to stretch cum
-    public var stretchAmountStomach:Int; // how much the character's stomach stretches
-    public var stretchAmountBowels:Int;
-    public var stretchAmountMilk:Float;
-    public var stretchAmountCum:Float;
-    // Sins
-    public var pride:Int;
-    public var lust:Int;
-    public var greed:Int;
-    public var wrath:Int;
-    public var gluttony:Int;
-    public var sloth:Int;
-    public var envy:Int;
-    // Stats
-    public var healthCurr:Int;
-    
-    private var healthMax:Int;
-    private var str:Int;
-    private var agi:Int;
-    private var end:Int;
-    private var int:Int;
-    // Skills
-    private var dodge:Int = 0;
-    private var run:Int = 0;
-    private var melee:Int = 0;
-    private var sneak:Int = 0;
-    private var spot:Int = 0;
-    // Temps, added to by gear
-    private var tempHealth:Int = 0;
-    private var tempStr:Int = 0;
-    private var tempAgi:Int = 0;
-    private var tempEnd:Int = 0;
-    private var tempInt:Int = 0;
-    private var tempDodge:Int = 0;
-    private var tempRun:Int = 0;
-    private var tempMelee:Int = 0;
-    private var tempSneak:Int = 0;
-    private var tempSpot:Int = 0;
-    
-    public var arousal:Float;
-    
+
     private var perks:Array<MyPerk>;
     
     public function totalWeight():Float
@@ -121,56 +26,6 @@ class MyCharacter
         addedWeight += this.fat;
         
         return addedWeight;
-    }
-    
-    public function health():Int
-    {
-        return this.healthMax + this.tempHealth;
-    }
-    
-    public function strength():Int
-    {
-        return this.str + this.tempStr;
-    }
-    
-    public function agility():Int
-    {
-        return this.agi + this.tempAgi;
-    }
-    
-    public function endurance():Int
-    {
-        return this.end + this.tempEnd;
-    }
-    
-    public function intelligence():Int
-    {
-        return this.int + this.tempInt;
-    }
-    
-    public function skillDodge():Int
-    {
-        return this.dodge + this.tempDodge;
-    }
-    
-    public function skillRun():Int
-    {
-        return this.run + this.tempRun;
-    }
-    
-    public function skillMelee():Int
-    {
-        return this.melee + this.tempMelee;
-    }
-    
-    public function skillSneak():Int
-    {
-        return this.sneak + this.tempSneak;
-    }
-    
-    public function skillSpot():Int
-    {
-        return this.spot + this.tempSpot;
     }
     
     public function gender(pronoun:String):String
@@ -436,19 +291,6 @@ class MyCharacter
             message = "off the charts";
             
         return message;
-    }
-    
-    public function toFeet(inches:Float):String
-    {
-        var feet:Int = 0;
-        
-        while (inches > 11)
-        {
-            feet += 1;
-            inches -= 12;
-        }
-        
-        return (feet + "'" + inches + "\"");
     }
     
     public function breastDiam():Int

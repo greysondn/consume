@@ -469,7 +469,7 @@ class Actor extends Entity
         // verbose
         ret.verbose = this.verbose;
 
-        // weight
+        // weight, in pounds, not including contents
         ret.weight = this.weight;
 
         // aliases
