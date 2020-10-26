@@ -186,184 +186,47 @@
 			],
 			"lines": [
 				{
-					"uid": "_0010",
-					"name": "isLocked",
-					"comment": "Whether this is locked or not.",
+					"uid": "_0015",
+					"name": "hasMultipleLevels",
+					"comment": "Whether this has multiple levels",
 					"validUses": [
 						{
+							"characters": false,
+							"doors": false,
+							"items": false,
+							"perks": true,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
+					"uid": "_0017",
+					"name": "isAttackable",
+					"comment": "Whether this object can even be attacked",
+					"validUses": [
+						{
+							"characters": true,
+							"doors": false,
+							"items": false,
+							"perks": false,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
+					"uid": "_0016",
+					"name": "isDebug",
+					"comment": "Whether this is a debug object",
+					"validUses": [
+						{
+							"characters": true,
 							"doors": true,
-							"items": false,
-							"rooms": false,
-							"specificVerbs": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0011",
-					"name": "isTimed",
-					"comment": "Whether this is a timed door - like a shop.",
-					"validUses": [
-						{
-							"doors": true,
-							"items": false,
-							"rooms": false,
-							"specificVerbs": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0012",
-					"name": "isHidden",
-					"comment": "???",
-					"validUses": [
-						{
-							"doors": true,
-							"items": false,
-							"rooms": false,
-							"specificVerbs": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0001",
-					"name": "isIndestructible",
-					"comment": "Whether an item is indestructible (cannot be destroyed violently or via digestion)",
-					"validUses": [
-						{
 							"items": true,
-							"specificVerbs": false,
-							"rooms": false,
-							"doors": false,
-							"characters": true
-						}
-					]
-				},
-				{
-					"uid": "_0002",
-					"name": "isKeyItem",
-					"comment": "Whether this is a key item (primarily used to advance quests)",
-					"validUses": [
-						{
-							"items": true,
-							"specificVerbs": false,
-							"rooms": false,
-							"doors": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0009",
-					"name": "isKey",
-					"comment": "Whether this item can be used as a key (not to be confused with a key item)",
-					"validUses": [
-						{
-							"items": true,
-							"rooms": false,
-							"specificVerbs": false,
-							"doors": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0003",
-					"name": "listInInventory",
-					"comment": "Whether this is listed in the inventory (that is, shown when an inventory listing is showed)",
-					"validUses": [
-						{
-							"items": true,
-							"specificVerbs": false,
-							"rooms": false,
-							"doors": false,
-							"characters": true
-						}
-					]
-				},
-				{
-					"uid": "_0004",
-					"name": "listInRoom",
-					"comment": "Whether this is listed in a room's contents (that is, shown when a room's inventory is shown.)",
-					"validUses": [
-						{
-							"items": true,
-							"specificVerbs": false,
-							"rooms": false,
-							"doors": false,
-							"characters": true
-						}
-					]
-				},
-				{
-					"uid": "_0000",
-					"name": "isUnique",
-					"comment": "Whether an item is unique (one of a kind)",
-					"validUses": [
-						{
-							"items": true,
-							"specificVerbs": false,
-							"rooms": false,
-							"doors": false,
-							"characters": true
-						}
-					]
-				},
-				{
-					"uid": "_0007",
-					"name": "isPublic",
-					"comment": "Indicates that this room is a public location.",
-					"validUses": [
-						{
-							"items": false,
-							"specificVerbs": false,
+							"perks": true,
 							"rooms": true,
-							"doors": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0008",
-					"name": "disablePlayer",
-					"comment": "[... verbs ...] Players can't use this verb, it's here to provide data for engine internals. ONLY RELEVANT TO VERBS THAT PLAYERS USUALLY HAVE ACCESS TO.",
-					"validUses": [
-						{
-							"items": false,
-							"rooms": false,
-							"specificVerbs": true,
-							"doors": false,
-							"characters": false
-						}
-					]
-				},
-				{
-					"uid": "_0005",
-					"name": "canEat",
-					"comment": "[consume] Whether \"eat\" is a valid alias for this object's consumption.",
-					"validUses": [
-						{
-							"items": false,
-							"specificVerbs": true,
-							"rooms": false,
-							"doors": false,
-							"characters": true
-						}
-					]
-				},
-				{
-					"uid": "_0006",
-					"name": "canDrink",
-					"comment": "[consume] Whether \"drink\" is a valid alias for this object's consumption.",
-					"validUses": [
-						{
-							"items": false,
-							"specificVerbs": true,
-							"rooms": false,
-							"doors": false,
-							"characters": true
+							"specificVerbs": true
 						}
 					]
 				},
@@ -377,16 +240,242 @@
 							"items": true,
 							"rooms": false,
 							"specificVerbs": false,
-							"characters": true
+							"characters": true,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0018",
+					"name": "isDisplayed",
+					"comment": "Whether this is displayed to the player, ever, for any reason",
+					"validUses": [
+						{
+							"characters": true,
+							"doors": true,
+							"items": true,
+							"perks": true,
+							"rooms": true,
+							"specificVerbs": true
+						}
+					]
+				},
+				{
+					"uid": "_0012",
+					"name": "isHidden",
+					"comment": "???",
+					"validUses": [
+						{
+							"doors": true,
+							"items": false,
+							"rooms": false,
+							"specificVerbs": false,
+							"characters": false,
+							"perks": true
+						}
+					]
+				},
+				{
+					"uid": "_0010",
+					"name": "isLocked",
+					"comment": "Whether this is locked or not.",
+					"validUses": [
+						{
+							"doors": true,
+							"items": false,
+							"rooms": false,
+							"specificVerbs": false,
+							"characters": false,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0014",
+					"name": "isPurchasable",
+					"comment": "Whether this can be purchased",
+					"validUses": [
+						{
+							"characters": false,
+							"doors": false,
+							"items": true,
+							"perks": true,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
+				},
+				{
+					"uid": "_0011",
+					"name": "isTimed",
+					"comment": "Whether this is a timed door - like a shop.",
+					"validUses": [
+						{
+							"doors": true,
+							"items": false,
+							"rooms": false,
+							"specificVerbs": false,
+							"characters": false,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0001",
+					"name": "isIndestructible",
+					"comment": "Whether an item is indestructible (cannot be destroyed violently or via digestion)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false,
+							"doors": false,
+							"characters": true,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0002",
+					"name": "isKeyItem",
+					"comment": "Whether this is a key item (primarily used to advance quests)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false,
+							"doors": false,
+							"characters": false,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0009",
+					"name": "isKey",
+					"comment": "Whether this item can be used as a key (not to be confused with a key item)",
+					"validUses": [
+						{
+							"items": true,
+							"rooms": false,
+							"specificVerbs": false,
+							"doors": false,
+							"characters": false,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0003",
+					"name": "listInInventory",
+					"comment": "Whether this is listed in the inventory (that is, shown when an inventory listing is showed)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false,
+							"doors": false,
+							"characters": true,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0004",
+					"name": "listInRoom",
+					"comment": "Whether this is listed in a room's contents (that is, shown when a room's inventory is shown.)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false,
+							"doors": false,
+							"characters": true,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0000",
+					"name": "isUnique",
+					"comment": "Whether an item is unique (one of a kind)",
+					"validUses": [
+						{
+							"items": true,
+							"specificVerbs": false,
+							"rooms": false,
+							"doors": false,
+							"characters": true,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0007",
+					"name": "isPublic",
+					"comment": "Indicates that this room is a public location.",
+					"validUses": [
+						{
+							"items": false,
+							"specificVerbs": false,
+							"rooms": true,
+							"doors": false,
+							"characters": false,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0008",
+					"name": "disablePlayer",
+					"comment": "[... verbs ...] Players can't use this verb, it's here to provide data for engine internals. ONLY RELEVANT TO VERBS THAT PLAYERS USUALLY HAVE ACCESS TO.",
+					"validUses": [
+						{
+							"items": false,
+							"rooms": false,
+							"specificVerbs": true,
+							"doors": false,
+							"characters": false,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0005",
+					"name": "canEat",
+					"comment": "[consume] Whether \"eat\" is a valid alias for this object's consumption.",
+					"validUses": [
+						{
+							"items": false,
+							"specificVerbs": true,
+							"rooms": false,
+							"doors": false,
+							"characters": true,
+							"perks": false
+						}
+					]
+				},
+				{
+					"uid": "_0006",
+					"name": "canDrink",
+					"comment": "[consume] Whether \"drink\" is a valid alias for this object's consumption.",
+					"validUses": [
+						{
+							"items": false,
+							"specificVerbs": true,
+							"rooms": false,
+							"doors": false,
+							"characters": true,
+							"perks": false
 						}
 					]
 				}
 			],
 			"separators": [
-				3,
 				9,
-				10,
-				13
+				15,
+				16,
+				19
 			],
 			"props": {
 				"displayColumn": "name"
@@ -8590,12 +8679,21 @@
 			"columns": [
 				{
 					"typeStr": "2",
+					"name": "characters"
+				},
+				{
+					"typeStr": "2",
 					"name": "doors",
 					"display": null
 				},
 				{
 					"typeStr": "2",
 					"name": "items",
+					"display": null
+				},
+				{
+					"typeStr": "2",
+					"name": "perks",
 					"display": null
 				},
 				{
@@ -8607,10 +8705,6 @@
 					"typeStr": "2",
 					"name": "specificVerbs",
 					"display": null
-				},
-				{
-					"typeStr": "2",
-					"name": "characters"
 				}
 			]
 		},
@@ -11759,6 +11853,232 @@
 				{
 					"typeStr": "1",
 					"name": "reflexive",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "perks",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "uuid",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "shortname",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "longname",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "description",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "flags"
+				}
+			],
+			"lines": [
+				{
+					"uuid": "_0000",
+					"shortname": "comps",
+					"longname": "Compressable",
+					"description": "You can cram your body through any opening, no matter how small.",
+					"flags": [
+						{
+							"flag": "_0014"
+						}
+					]
+				},
+				{
+					"uuid": "_0001",
+					"shortname": "ineat",
+					"longname": "Inedible",
+					"description": "You cannot be eaten.",
+					"flags": [
+						{
+							"flag": "_0014"
+						}
+					]
+				},
+				{
+					"uuid": "_0002",
+					"shortname": "nskinny",
+					"longname": "Naturally Skinny",
+					"description": "Burn fat at an increased rate.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0003",
+					"shortname": "nchubby",
+					"longname": "Naturally Chubby",
+					"description": "Gain more fat from food.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0004",
+					"shortname": "narmor",
+					"longname": "Natural Armor",
+					"description": "Gain 10 armor as long as you have at least 100 fat.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0005",
+					"shortname": "bellyb",
+					"longname": "Belly Bash",
+					"description": "Gain a bash attack with your stomach as long as it contains at least 100 mass of prey.",
+					"flags": [
+						{
+							"flag": "_0014"
+						}
+					]
+				},
+				{
+					"uuid": "_0006",
+					"shortname": "httr",
+					"longname": "Heavy Hitter",
+					"description": "Deal more damage in combat with melee attacks.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0007",
+					"shortname": "fstm",
+					"longname": "Fast Metabolism",
+					"description": "Heal faster while you have prey in your stomach.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0008",
+					"shortname": "clctr",
+					"longname": "Collector",
+					"description": "More likely to find items on defeated (or eaten) foes.",
+					"flags": [
+						{
+							"flag": "_0014"
+						}
+					]
+				},
+				{
+					"uuid": "_0009",
+					"shortname": "bigbly",
+					"longname": "Big Belly",
+					"description": "Even when empty, your belly is bigger than most.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0010",
+					"shortname": "mtn",
+					"longname": "The Montian",
+					"description": "When rendered immobile you cannot be attacked.",
+					"flags": [
+						{
+							"flag": "_0014"
+						}
+					]
+				},
+				{
+					"uuid": "_0011",
+					"shortname": "pit",
+					"longname": "Bottomless Pit",
+					"description": "You are always hungry and can continue to consume prey even when immoble.",
+					"flags": [
+						{
+							"flag": "_0014"
+						}
+					]
+				},
+				{
+					"uuid": "_0012",
+					"shortname": "bgbst",
+					"longname": "Big Breasts",
+					"description": "Your breasts are larger than most.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				},
+				{
+					"uuid": "_0013",
+					"shortname": "bgcok",
+					"longname": "Big Cock",
+					"description": "Your penis is bigger than most.",
+					"flags": [
+						{
+							"flag": "_0014"
+						},
+						{
+							"flag": "_0015"
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "perks@flags",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:eFlag",
+					"name": "flag",
 					"display": null
 				}
 			]

@@ -6812,21 +6812,6 @@ static function createItem(item:String):MyItem
         globals.perks = new Array();
         
         //			Name		Display Name		Description															Effect				Buyable, if false the perk can only be granted by an event. Not bought.  Multiple levels
-        perks.push(["comps",    "Compressable",		"You can cram your body through any opening, no matter how small.", "DOOR:YES",			true,		false]);
-        
-        perks.push(["ineat",	"Inedible",			"You cannot be eaten.",												"EATEN:NO",			true,		false]);
-        perks.push(["nskinny",	"Naturally Skinny",	"Burn fat at an increased rate.",									"FAT:-10",				true,	true]);
-        perks.push(["nchubby",	"Naturally Chubby", "Gain more fat from food.",											"FAT:*2",				true,   true]);
-        perks.push(["narmor",	"Natural Armor",	"Gain 10 armor as long as you have at least 100 fat.",				"IF(FAT>100)|ARMOR:+10", true,  true]);
-        perks.push(["bellyb",	"Belly Bash",		"Gain a bash attack with your stomach as long as it contains at least 100 mass of prey.",	"IF(STOMACH>100)|BASH:10", true, false]);
-        perks.push(["httr",		"Heavy Hitter",		"Deal more damage in combat with melee attacks.",					"ATTACK:+10",			true,   true]);
-        perks.push(["fstm",		"Fast Metabolism",	"Heal faster while you have prey in your stomach.",					"DIGESTHEAL:+10",		true,   true]);
-        perks.push(["clctr",	"Collector",		"More likely to find items on defeated (or eaten) foes.",			"ITEMCHANCE:+10",		true,   false]);
-        perks.push(["bigbly",	"Big Belly",		"Even when empty, your belly is bigger than most.",					"BELLYSIZE:+100",		true,   true]);
-        perks.push(["mtn",		"The Mountian",		"When rendered immobile you cannot be attacked.", 					"IF(IMMOBLE)|ATTACK:NO", true,  false]);
-        perks.push(["pit",		"Bottomless Pit",	"You are always hungry and can continue to consume prey even when immoble.", "IF(IMMOBLE)|EAT:YES", true, false]);
-        perks.push(["bgbst",	"Big Breasts",		"Your breasts are larger than most.",								"BREASTSIZE:+4",		true,   true]);
-        perks.push(["bgcok",	"Big Cock",			"Your penis is bigger than most.",									"PENISLENGTH:+6 PENISWIDTH:+2",	true, true]);
         perks.push(["bgbls",	"Big Balls",		"Your balls are larger than most.",									"BALLSIZE:+4",			true,   true]);
         perks.push(["hpr",		"Hyper",			"Your everything is bigger than most.",								"BELLYSIZE:+200 BREASTSIZE:+6 PENISLENGTH:+6 PENISWIDTH:+4 BALLSIZE:+8", true, true]);
         perks.push(["inbal",	"Internal Balls",	"You make cum, despite not having hanging balls.",					"CUM:YES",				true,   false]);
