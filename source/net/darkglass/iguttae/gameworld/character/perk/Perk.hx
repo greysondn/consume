@@ -19,6 +19,9 @@ class Perk
     public var multilevel:Bool    = false;
     public var instanceStr:String = "";
 
+    // For now I'm just storing trash here, kill me now please.
+    
+
     /**
      * Create a new perk. Override please.
      */
@@ -49,7 +52,10 @@ class Perk
             case "amale":
                 // always male
             case "av":
-                // anal vore
+            {
+                // SIMPLE - ANALVORE
+                owner.canAV = true;
+            }
             case "bellyb":
                 // belly bash
             case "bgbls":
@@ -61,13 +67,19 @@ class Perk
             case "bigbly":
                 // big belly
             case "bv":
-                // breast vore
+            {
+                // SIMPLE - BREASTVORE
+                owner.canBV = true;
+            }
             case "clctr":
                 // collector
             case "comps":
                 // compressable
             case "cv":
-                // cock vore
+            {
+                // SIMPLE - COCKVORE
+                owner.canCV = true;
+            }
             case "dbg1":
                 // huge
             case "fstm":
@@ -99,7 +111,10 @@ class Perk
             case "taur":
                 // taur
             case "ub":
-                // unbirth
+            {
+                // SIMPLE - UNBIRTH
+                owner.canUB = true;
+            }
         }
     }
 
@@ -110,6 +125,81 @@ class Perk
      */
     public function onRemove():Void
     {
+        switch (this.shortName)
+        {
+            case "afem":
+                // always female
+            case "aherm":
+                // always herm
+            case "amale":
+                // always male
+            case "av":
+            {
+                // SIMPLE - ANALVORE
+                owner.canAV = false;
+            }
+            case "bellyb":
+                // belly bash
+            case "bgbls":
+                // big balls
+            case "bgbst":
+                // big breasts
+            case "bgcok":
+                // big cock
+            case "bigbly":
+                // big belly
+            case "bv":
+            {
+                // SIMPLE - BREASTVORE
+                owner.canBV = false;
+            }
+            case "clctr":
+                // collector
+            case "comps":
+                // compressable
+            case "cv":
+            {
+                // SIMPLE - COCKVORE
+                owner.canCV = false;
+            }
+            case "dbg1":
+                // huge
+            case "fstm":
+                // fast metabolism
+            case "hpr":
+                // hyper
+            case "httr":
+                // heavy hitter
+            case "inbal":
+                // internal balls
+            case "ineat":
+                // inedible
+            case "mscl":
+                // big muscles
+            case "mtn":
+                // the mountain
+            case "mulbo":
+                // multiboob
+            case "mulcoc":
+                // multicock
+            case "narmor":
+                // natural armor
+            case "nchubby":
+                // naturally chubby
+            case "nskinny":
+                // naturally skinny
+            case "pit":
+                // bottomless pit
+            case "taur":
+                // taur
+            case "ub":
+            {
+                // SIMPLE - UNBIRTH
+                owner.canUB = false;
+            }
+        }
+
+        // and set owner to null
         this.owner = null;
     }
 
@@ -513,70 +603,6 @@ class Perk
     private function huge():String
     {
         // BREASTSIZE:+24 BELLYSIZE:+65000 BALLSIZE:+24 PENISLENGTH:+50 PENISWIDTH:+45
-
-        // TODO:Implement
-
-        return "";
-    }
-
-    /**
-     * Cock Vore <  >
-     * 
-     * Consume prey using your cock and turn them into cum.
-     * 
-     * @return String ""
-     */
-    private function cockVore():String
-    {
-        // COCKVORE
-
-        // TODO:Implement
-
-        return "";
-    }
-
-    /**
-     * Breast Vore <  >
-     * 
-     * Consume prey using your breasts and turn them into milk.
-     * 
-     * @return String ""
-     */
-    private function breastVore():String
-    {
-        // BREASTVORE
-
-        // TODO:Implement
-
-        return "";
-    }
-
-    /**
-     * Anal Vore <  >
-     * 
-     * Consume prey using your butt, then digest them.
-     * 
-     * @return String ""
-     */
-    private function analVore():String
-    {
-        // ANALVORE
-
-        // TODO:Implement
-
-        return "";
-    }
-
-    /**
-     * Unbirth <  >
-     * 
-     * Consume prey using your vagina, then absorb them.
-     * 
-     * @return String ""
-     */
-    private function unbirth():String
-    {
-        // UNBIRTH
 
         // TODO:Implement
 

@@ -469,6 +469,21 @@
 							"perks": false
 						}
 					]
+				},
+				{
+					"uid": "_0019",
+					"name": "canCockVore",
+					"comment": "Indicates this character is capable of cock vore",
+					"validUses": [
+						{
+							"characters": true,
+							"doors": false,
+							"items": false,
+							"perks": false,
+							"rooms": false,
+							"specificVerbs": false
+						}
+					]
 				}
 			],
 			"separators": [
@@ -10374,6 +10389,10 @@
 					"display": null
 				},
 				{
+					"typeStr": "3",
+					"name": "priority"
+				},
+				{
 					"typeStr": "8",
 					"name": "pronouns",
 					"display": null
@@ -10388,59 +10407,501 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "PRONOUN",
 							"object": "PRONOUN",
-							"dPossesive": "PRONOUN",
 							"iPossessive": "PRONOUN",
-							"reflexive": "PRONOUN"
+							"reflexive": "PRONOUN",
+							"dPossessive": "PRONOUN"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
 					"index": 0,
-					"shortdesc": "custom"
+					"shortdesc": "custom",
+					"priority": 0
+				},
+				{
+					"uuid": "_0023",
+					"name": "Female",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 1
+				},
+				{
+					"uuid": "_0024",
+					"name": "Male",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 2
+				},
+				{
+					"uuid": "_0025",
+					"name": "Herm",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 3
+				},
+				{
+					"uuid": "_0026",
+					"name": "Dickgirl",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 4
+				},
+				{
+					"uuid": "_0027",
+					"name": "Doll",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 5
+				},
+				{
+					"uuid": "_0028",
+					"name": "Cuntboy",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 6
+				},
+				{
+					"uuid": "_0029",
+					"name": "Neuter",
+					"shortdesc": "",
+					"priority": -1,
+					"pronouns": [
+						{
+							"isPlural": false,
+							"subject": "I",
+							"object": "me",
+							"iPossessive": "mine",
+							"reflexive": "myself",
+							"person": "first",
+							"dPossessive": "my"
+						},
+						{
+							"person": "first",
+							"isPlural": true,
+							"subject": "we",
+							"object": "us",
+							"iPossessive": "ours",
+							"reflexive": "ourselves",
+							"dPossessive": "our"
+						},
+						{
+							"person": "second",
+							"isPlural": false,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourself",
+							"dPossessive": "your"
+						},
+						{
+							"person": "second",
+							"isPlural": true,
+							"subject": "you",
+							"object": "you",
+							"iPossessive": "yours",
+							"reflexive": "yourselves",
+							"dPossessive": "your"
+						},
+						{
+							"person": "third",
+							"isPlural": false,
+							"subject": "one",
+							"object": "one",
+							"iPossessive": "one's",
+							"reflexive": "oneself",
+							"dPossessive": "one's"
+						},
+						{
+							"person": "third",
+							"isPlural": true,
+							"subject": "they",
+							"object": "them",
+							"iPossessive": "theirs",
+							"reflexive": "themselves",
+							"dPossessive": "their"
+						}
+					],
+					"index": 7
 				},
 				{
 					"uuid": "_0001",
@@ -10451,58 +10912,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "he",
 							"object": "him",
-							"dPossesive": "his",
 							"iPossessive": "his",
-							"reflexive": "himself"
+							"reflexive": "himself",
+							"dPossessive": "his"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 1
+					"index": 8,
+					"priority": 0
 				},
 				{
 					"uuid": "_0003",
@@ -10513,58 +10975,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "it",
 							"object": "it",
-							"dPossesive": "its",
 							"iPossessive": "its",
-							"reflexive": "itself"
+							"reflexive": "itself",
+							"dPossessive": "its"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 2
+					"index": 9,
+					"priority": 0
 				},
 				{
 					"uuid": "_0004",
@@ -10575,58 +11038,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "one",
 							"object": "one",
-							"dPossesive": "one's",
 							"iPossessive": "one's",
-							"reflexive": "oneself"
+							"reflexive": "oneself",
+							"dPossessive": "one's"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 3
+					"index": 10,
+					"priority": 0
 				},
 				{
 					"uuid": "_0002",
@@ -10637,58 +11101,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "she",
 							"object": "her",
-							"dPossesive": "her",
 							"iPossessive": "hers",
-							"reflexive": "herself"
+							"reflexive": "herself",
+							"dPossessive": "her"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 4
+					"index": 11,
+					"priority": 0
 				},
 				{
 					"uuid": "_0005",
@@ -10699,58 +11164,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "theirs",
 							"iPossessive": "their",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "theirs"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 5
+					"index": 12,
+					"priority": 0
 				},
 				{
 					"uuid": "_0008",
@@ -10761,58 +11227,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "Ae",
 							"object": "aer",
-							"dPossesive": "Aer",
 							"iPossessive": "aers",
-							"reflexive": "aerself"
+							"reflexive": "aerself",
+							"dPossessive": "Aer"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 6
+					"index": 13,
+					"priority": 0
 				},
 				{
 					"uuid": "_0014",
@@ -10823,58 +11290,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "E",
 							"object": "Em",
-							"dPossesive": "Eir",
 							"iPossessive": "Eirs",
-							"reflexive": "Emself"
+							"reflexive": "Emself",
+							"dPossessive": "Eir"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 7
+					"index": 14,
+					"priority": 0
 				},
 				{
 					"uuid": "_0007",
@@ -10885,58 +11353,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "e",
 							"object": "em",
-							"dPossesive": "es",
 							"iPossessive": "es",
-							"reflexive": "emself"
+							"reflexive": "emself",
+							"dPossessive": "es"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 8
+					"index": 15,
+					"priority": 0
 				},
 				{
 					"uuid": "_0010",
@@ -10947,58 +11416,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "ey",
 							"object": "em",
-							"dPossesive": "eir",
 							"iPossessive": "eirs",
-							"reflexive": "eirself"
+							"reflexive": "eirself",
+							"dPossessive": "eir"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 9
+					"index": 16,
+					"priority": 0
 				},
 				{
 					"uuid": "_0022",
@@ -11009,58 +11479,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "fae",
 							"object": "faer",
-							"dPossesive": "faer",
 							"iPossessive": "faers",
-							"reflexive": "faerself"
+							"reflexive": "faerself",
+							"dPossessive": "faer"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 10
+					"index": 17,
+					"priority": 0
 				},
 				{
 					"uuid": "_0013",
@@ -11071,58 +11542,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "hu",
 							"object": "hum",
-							"dPossesive": "hus",
 							"iPossessive": "hus",
-							"reflexive": "humself"
+							"reflexive": "humself",
+							"dPossessive": "hus"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 11
+					"index": 18,
+					"priority": 0
 				},
 				{
 					"uuid": "_0021",
@@ -11133,58 +11605,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "peh",
 							"object": "pehm",
-							"dPossesive": "peh's",
 							"iPossessive": "peh's",
-							"reflexive": "pehself"
+							"reflexive": "pehself",
+							"dPossessive": "peh's"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 12
+					"index": 19,
+					"priority": 0
 				},
 				{
 					"uuid": "_0011",
@@ -11195,58 +11668,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "per",
 							"object": "per",
-							"dPossesive": "per",
 							"iPossessive": "pers",
-							"reflexive": "perself"
+							"reflexive": "perself",
+							"dPossessive": "per"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 13
+					"index": 20,
+					"priority": 0
 				},
 				{
 					"uuid": "_0020",
@@ -11257,58 +11731,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "sie",
 							"object": "hir",
-							"dPossesive": "hir",
 							"iPossessive": "hirs",
-							"reflexive": "hirself"
+							"reflexive": "hirself",
+							"dPossessive": "hir"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 14
+					"index": 21,
+					"priority": 0
 				},
 				{
 					"uuid": "_0006",
@@ -11319,58 +11794,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "thon",
 							"object": "thon",
-							"dPossesive": "thons",
 							"iPossessive": "thons",
-							"reflexive": "thonself"
+							"reflexive": "thonself",
+							"dPossessive": "thons"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 15
+					"index": 22,
+					"priority": 0
 				},
 				{
 					"uuid": "_0012",
@@ -11381,58 +11857,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "ve",
 							"object": "ver",
-							"dPossesive": "vis",
 							"iPossessive": "vis",
-							"reflexive": "verself"
+							"reflexive": "verself",
+							"dPossessive": "vis"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 16
+					"index": 23,
+					"priority": 0
 				},
 				{
 					"uuid": "_0009",
@@ -11443,58 +11920,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "xe",
 							"object": "xem",
-							"dPossesive": "xyr",
 							"iPossessive": "xyrs",
-							"reflexive": "xemself"
+							"reflexive": "xemself",
+							"dPossessive": "xyr"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 17
+					"index": 24,
+					"priority": 0
 				},
 				{
 					"uuid": "_0015",
@@ -11505,58 +11983,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "ze",
 							"object": "mer",
-							"dPossesive": "zer",
 							"iPossessive": "zers",
-							"reflexive": "zemself"
+							"reflexive": "zemself",
+							"dPossessive": "zer"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 18
+					"index": 25,
+					"priority": 0
 				},
 				{
 					"uuid": "_0017",
@@ -11567,58 +12046,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "sie",
 							"object": "hir",
-							"dPossesive": "hir",
 							"iPossessive": "hirs",
-							"reflexive": "hirself"
+							"reflexive": "hirself",
+							"dPossessive": "hir"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 19
+					"index": 26,
+					"priority": 0
 				},
 				{
 					"uuid": "_0016",
@@ -11629,58 +12109,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "ze",
 							"object": "hir",
-							"dPossesive": "hir",
 							"iPossessive": "hirs",
-							"reflexive": "hirself"
+							"reflexive": "hirself",
+							"dPossessive": "hir"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 20
+					"index": 27,
+					"priority": 0
 				},
 				{
 					"uuid": "_0018",
@@ -11691,58 +12172,59 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "zie",
 							"object": "hir",
-							"dPossesive": "hir",
 							"iPossessive": "hirs",
-							"reflexive": "hirself"
+							"reflexive": "hirself",
+							"dPossessive": "hir"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 21
+					"index": 28,
+					"priority": 0
 				},
 				{
 					"uuid": "_0019",
@@ -11753,63 +12235,65 @@
 							"isPlural": false,
 							"subject": "I",
 							"object": "me",
-							"dPossesive": "my",
 							"iPossessive": "mine",
 							"reflexive": "myself",
-							"person": "first"
+							"person": "first",
+							"dPossessive": "my"
 						},
 						{
 							"person": "first",
 							"isPlural": true,
 							"subject": "we",
 							"object": "us",
-							"dPossesive": "our",
 							"iPossessive": "ours",
-							"reflexive": "ourselves"
+							"reflexive": "ourselves",
+							"dPossessive": "our"
 						},
 						{
 							"person": "second",
 							"isPlural": false,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourself"
+							"reflexive": "yourself",
+							"dPossessive": "your"
 						},
 						{
 							"person": "second",
 							"isPlural": true,
 							"subject": "you",
 							"object": "you",
-							"dPossesive": "your",
 							"iPossessive": "yours",
-							"reflexive": "yourselves"
+							"reflexive": "yourselves",
+							"dPossessive": "your"
 						},
 						{
 							"person": "third",
 							"isPlural": false,
 							"subject": "zhe",
 							"object": "zhim",
-							"dPossesive": "zher",
 							"iPossessive": "zhers",
-							"reflexive": "zhe"
+							"reflexive": "zhe",
+							"dPossessive": "zher"
 						},
 						{
 							"person": "third",
 							"isPlural": true,
 							"subject": "they",
 							"object": "them",
-							"dPossesive": "their",
 							"iPossessive": "theirs",
-							"reflexive": "themselves"
+							"reflexive": "themselves",
+							"dPossessive": "their"
 						}
 					],
-					"index": 22
+					"index": 29,
+					"priority": 0
 				}
 			],
 			"separators": [
 				1,
-				6
+				8,
+				13
 			],
 			"props": {
 				"hasIndex": true
@@ -11844,7 +12328,7 @@
 				},
 				{
 					"typeStr": "1",
-					"name": "dPossesive"
+					"name": "dPossessive"
 				},
 				{
 					"typeStr": "1",

@@ -27,6 +27,42 @@ class Character extends Actor
     public var speciesBase:Species = null;
 
     /**
+     * Whether this character can cock vore
+     * 
+     * This is currently defined by a perk? Whatever.
+     * 
+     * TODO: Make this not defined by a perk. Lean in to flags.
+     */
+    public var canCV:Bool = false;
+
+    /**
+     * Whether this character can breast vore
+     *
+     * This is currently defined by a perk? Whatever.
+     *
+     * TODO: Make this not defined by a perk. Lean in to flags.
+     */
+    public var canBV:Bool = false;
+
+    /**
+     * Whether this character can anal vore
+     *
+     * This is currently defined by a perk? Whatever.
+     *
+     * TODO: Make this not defined by a perk. Lean in to flags.
+     */
+    public var canAV:Bool = false;
+
+    /**
+     * Whether this character can unbirth
+     *
+     * This is currently defined by a perk? Whatever.
+     *
+     * TODO: Make this not defined by a perk. Lean in to flags.
+     */
+    public var canUB:Bool = false;
+
+    /**
      * String used to refer to this character's species in dialogue.
      */
     public var species:String = "NO SPECIES";
