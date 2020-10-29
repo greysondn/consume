@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<<REM Guffin ported from classic code>>\n\n[[PreCondition]]",
+		"position": {
+			"x": -158,
+			"y": 68
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PreCondition",
+		"tags": "",
+		"body": "<<REM Handles conditions for early on in execution path. Guffin does not have any.>>\r\n\r\n[[GUFFINTALK_00]]",
+		"position": {
+			"x": -161,
+			"y": 387
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GUFFINTALK_00",
+		"tags": "",
+		"body": "A short white fox stands behind the counter, he smiles as you walk in then blushes when you look him over. He appears to be your typical arctic fox save for the two small horns on his head. Most of him is covered by the counter but as you step up to the counter you see him sporting a very large belly, seems someone else has been partaking of the 'free' ice cream. \"O-oh, uh... hello! M-my name is Guffin, m-may I take your order? W-what would you like to have? Just l-let me know what you'd like\"\n\n<<REM \"Okay\", originally blank desc>>\n-> Okay\n    <<ENDTALK>>",
+		"position": {
+			"x": -162,
+			"y": 654
+		},
+		"colorID": 0
+	}
+]

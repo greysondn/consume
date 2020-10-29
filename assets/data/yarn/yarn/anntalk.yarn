@@ -1,0 +1,133 @@
+title: Start
+tags: 
+colorID: 0
+position: -22,-553
+---
+<<REM Ann ported from classic code>>
+
+[[PreCondition]]
+===
+title: PreCondition
+tags: 
+colorID: 0
+position: -20,-253
+---
+<<Handles conditions for early on in execution path. Ann does not have any?>>
+
+[[ANNTALK_00]]
+===
+title: ANNTALK_00
+tags: 
+colorID: 0
+position: -18,29
+---
+Looking like your typical gymbunny (though not a literal rabbit in this case) the human receptionist of this gym is average of height, skinny of weight, blonde of hair and blue of eye. She is wearing a very tight low-cut tank top, showing off her modest breasts. She smiles brightly as you enter and chirps, "Hello! Welcome to Shay's Gym. I'll be happy to answer any questions you might have!"
+
+<<REM "Go in?">>
+[[Ask if you can go inside|ANNTALK_01]]
+
+<<REM "Gold">>
+[[Ask about the Gold membership|ANNTALK_10]]
+
+<<REM "Name?">>
+[[Ask the Perky Girl her name|ANNTALK_02]]
+
+<<REM "Eat">>
+[[Ask if you can eat her|ANNTALK_03]]
+
+<<REM "Leave", originally the desc was blank>>
+-> Leave
+    <<ENDTALK>>
+===
+title: ANNTALK_01
+tags: 
+colorID: 0
+position: -494,262
+---
+You inquire about joining the gym and a smile spreads over her face, "We offer two levels of membership, the first is our basic package. For a modest fee you get access to all our machines for the length of your visit. I can get you signed up for that one right now if you'd like, you'll have to pay each time you visit, but the nice thing is you only pay when you visit. So you don't have to worry about going on vacation or something like that. The cost for each visit is $20."
+
+She pauses for a moment before continuing, &quot;We also offer a Gold membership. That's a one time fee and gets you unlimited access for life. You also get access to the Gold Room in the back where we have a number of advanced training machines. Unfortunately at this time we don't have any Gold memberships available. Check back later, something might open up."
+
+<<REM quest 2|value 0|skip 5|action skip>>
+
+<<REM "Sign Up">>
+[[Sing up for a basic membership|ANNTALK_04]]
+
+<<REM "Not Now">>
+-> Maybe Later
+    <<ENDTALK>>
+===
+title: ANNTALK_10
+tags: 
+colorID: 0
+position: 971,483
+---
+Empty Text
+===
+title: ANNTALK_02
+tags: 
+colorID: 0
+position: -28,711
+---
+You ask her what her name is. She gives you one of her too-bright smiles and points at the name tag clipped to one breast, it reads "Ann"
+
+<<REM "Go in?">>
+[[Ask if you can go inside|ANNTALK_01]]
+
+<<REM "Gold">>
+[[Ask about the Gold Membership|ANNTALK_10]]
+
+<<REM "Eat">>
+[[Ask if you can eat her|ANNTALK_03]]
+
+<<REM "Leave", originally blank desc>>
+-> Leave
+    <<ENDTALK>>
+===
+title: ANNTALK_03
+tags: 
+colorID: 0
+position: 362,390
+---
+You grin and mention you're a little hungry. She looks puzzled for a moment then blushes, "You want to eat me?"" She shifts nervously, her eyes darting around. "You really don't. I can't imagine I taste very good, I'm all skin and bones after all!" She laughs nervously and fidgets some more.
+
+<<REM "Go in?">>
+[[Ask if you can go inside|ANNTALK_01]]
+
+<<REM "Gold">>
+[[Ask about the Gold membership|ANNTALK_10]]
+
+<<REM "Name?">>
+[[Ask the perky girl her name|ANNTALK_02]]
+
+<<REM "Leave", originally blank desc>>
+-> Leave
+    <<ENDTALK>>
+===
+title: ANNTALK_04
+tags: 
+colorID: 0
+position: -855,1166
+---
+<<REM Needs Cleaned up and converted>>
+
+"You agree to sign up, the perky receptionist takes down your name and a few other random details from you and fills out a form which she has you sign. After which she hands you a card, still warm from the little printer behind her station, it has your name and Basic Membership written on it as well as a barcode. &quot;Just slide that through the door over there and you'll automatically be charged and the door will open! Enjoy!&quot;", ["quest 2|value 1|action set|key 0|action giveKey"], [["Done", " ", -1]]]
+===
+title: ANNTALK_05
+tags: 
+colorID: 0
+position: -582,1175
+---
+<<REM Needs Cleaned up and converted>>
+
+annTalk[5] = ["You ask if you can head inside and the receptionist smiles, &quot;Just swipe your card through the reader, the door will open for you. You don't need to talk to be every time you come inside, unless you really want to anyway.&quot;", ["talk"], [["Gold", "Ask about the Gold membership", 10], ["Name?", "Ask the perky girl her name", 2], ["Eat", "Ask if you can eat her.", 3], ["Leave", " ", -1]]];
+===
+title: ANNTALK_06
+tags: 
+colorID: 0
+position: -328,1182
+---
+<<REM Needs cleaned up and converted>>
+
+["You ask the receptionist about gold memberships and she smiles, &quot;You're in luck actually, we just had a gold membership open up! If you'd like to purchase it I'd be more then happy to get you set up!&quot; She bounces a little as she talks, it would seem she's rather excited about the idea. &quot;Just so you're aware, the Gold membership is a one time fee of $2000. I know that sounds super high, but you don't have to pay for daily use of the gym anymore <i>and</i> you get access to our special Gold room! So, are you interested?&quot;", ["quest 2|value 2|skip 12|action skip"], [["Buy", "Sign up for the exclusive Gold Gym membership", 8], ["Maybe Later", "Think about it and come back later", -1]]];
+===

@@ -6945,7 +6945,7 @@ static function createItem(item:String):MyItem
         
         //Guffin
         var guffinTalk:Array<Dynamic> = new Array();
-        guffinTalk[0] = ["A short white fox stands behind the counter, he smiles as you walk in then blushes when you look him over. He appears to be your typical arctic fox save for the two small horns on his head. Most of him is covered by the counter but as you step up to the counter you see him sporting a very large belly, seems someone else has been partaking of the 'free' ice cream. &quot;O-oh, uh... hello! M-my name is Guffin, m-may I take your order? W-what would you like to have? Just l-let me know what you'd like.&quot;", ["talk"], [["Okay", " ", -1]]];
+        // ported to yarn
         
         //Bessie
         var bessieTalk:Array<Dynamic> = new Array();
