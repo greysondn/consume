@@ -77,62 +77,11 @@ class MyCharacter
             case "gender":
                 returnString = genderString;
             case "sub":
-                // Subjective pronoun
-                switch (genderString)
-                {
-                    case "Female":
-                        returnString = "She";
-                    case "Male":
-                        returnString = "He";
-                    case "Herm":
-                        returnString = "Shi";
-                    case "Dickgirl":
-                        returnString = "She";
-                    case "Doll":
-                        returnString = "She";
-                    case "Cuntboy":
-                        returnString = "He";
-                    case "Neuter":
-                        returnString = "He";
-                }
+                // ported into cdb
             case "obj":
-                // Objective pronoun
-                switch (genderString)
-                {
-                    case "Female":
-                        returnString = "Her";
-                    case "Male":
-                        returnString = "Him";
-                    case "Herm":
-                        returnString = "Hir";
-                    case "Dickgirl":
-                        returnString = "Her";
-                    case "Doll":
-                        returnString = "Her";
-                    case "Cuntboy":
-                        returnString = "Him";
-                    case "Neuter":
-                        returnString = "Him";
-                }
+                // ported into cdb
             case "pos":
-                // Possessive pronoun
-                switch (genderString)
-                {
-                    case "Female":
-                        returnString = "Her";
-                    case "Male":
-                        returnString = "His";
-                    case "Herm":
-                        returnString = "Hir";
-                    case "Dickgirl":
-                        returnString = "Her";
-                    case "Doll":
-                        returnString = "Her";
-                    case "Cuntboy":
-                        returnString = "His";
-                    case "Neuter":
-                        returnString = "His";
-                }
+                // ported into cdb
         }
         
         return returnString;

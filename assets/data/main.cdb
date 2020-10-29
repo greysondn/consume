@@ -10463,9 +10463,9 @@
 					"priority": 0
 				},
 				{
-					"uuid": "_0023",
-					"name": "Female",
-					"shortdesc": "",
+					"uuid": "_0028",
+					"name": "Cuntboy",
+					"shortdesc": "he/him/his",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10507,11 +10507,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "he",
+							"object": "him",
+							"iPossessive": "his",
+							"reflexive": "himself",
+							"dPossessive": "his"
 						},
 						{
 							"person": "third",
@@ -10526,9 +10526,9 @@
 					"index": 1
 				},
 				{
-					"uuid": "_0024",
-					"name": "Male",
-					"shortdesc": "",
+					"uuid": "_0026",
+					"name": "Dickgirl",
+					"shortdesc": "she/her/her",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10570,11 +10570,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "she",
+							"object": "her",
+							"iPossessive": "her",
+							"reflexive": "herself",
+							"dPossessive": "her"
 						},
 						{
 							"person": "third",
@@ -10589,9 +10589,9 @@
 					"index": 2
 				},
 				{
-					"uuid": "_0025",
-					"name": "Herm",
-					"shortdesc": "",
+					"uuid": "_0027",
+					"name": "Doll",
+					"shortdesc": "she/her/her",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10633,11 +10633,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "she",
+							"object": "her",
+							"iPossessive": "her",
+							"reflexive": "herself",
+							"dPossessive": "her"
 						},
 						{
 							"person": "third",
@@ -10652,9 +10652,9 @@
 					"index": 3
 				},
 				{
-					"uuid": "_0026",
-					"name": "Dickgirl",
-					"shortdesc": "",
+					"uuid": "_0023",
+					"name": "Female",
+					"shortdesc": "she/her/her",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10696,11 +10696,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "she",
+							"object": "her",
+							"iPossessive": "her",
+							"reflexive": "herself",
+							"dPossessive": "her"
 						},
 						{
 							"person": "third",
@@ -10715,9 +10715,9 @@
 					"index": 4
 				},
 				{
-					"uuid": "_0027",
-					"name": "Doll",
-					"shortdesc": "",
+					"uuid": "_0025",
+					"name": "Herm",
+					"shortdesc": "shi/hir/hir",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10759,11 +10759,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "shi",
+							"object": "hir",
+							"iPossessive": "hir",
+							"reflexive": "hirself",
+							"dPossessive": "hir"
 						},
 						{
 							"person": "third",
@@ -10778,9 +10778,9 @@
 					"index": 5
 				},
 				{
-					"uuid": "_0028",
-					"name": "Cuntboy",
-					"shortdesc": "",
+					"uuid": "_0024",
+					"name": "Male",
+					"shortdesc": "he/him/his",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10822,11 +10822,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "he",
+							"object": "him",
+							"iPossessive": "his",
+							"reflexive": "himself",
+							"dPossessive": "his"
 						},
 						{
 							"person": "third",
@@ -10843,7 +10843,7 @@
 				{
 					"uuid": "_0029",
 					"name": "Neuter",
-					"shortdesc": "",
+					"shortdesc": "he/him/his",
 					"priority": -1,
 					"pronouns": [
 						{
@@ -10885,11 +10885,11 @@
 						{
 							"person": "third",
 							"isPlural": false,
-							"subject": "one",
-							"object": "one",
-							"iPossessive": "one's",
-							"reflexive": "oneself",
-							"dPossessive": "one's"
+							"subject": "he",
+							"object": "him",
+							"iPossessive": "his",
+							"reflexive": "himself",
+							"dPossessive": "his"
 						},
 						{
 							"person": "third",
