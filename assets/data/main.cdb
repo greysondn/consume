@@ -10393,6 +10393,10 @@
 					"name": "priority"
 				},
 				{
+					"typeStr": "2",
+					"name": "visibleToPlayer"
+				},
+				{
 					"typeStr": "8",
 					"name": "pronouns",
 					"display": null
@@ -10460,13 +10464,14 @@
 					],
 					"index": 0,
 					"shortdesc": "custom",
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0028",
 					"name": "Cuntboy",
 					"shortdesc": "he/him/his",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10523,13 +10528,14 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 1
+					"index": 1,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0026",
 					"name": "Dickgirl",
 					"shortdesc": "she/her/her",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10586,13 +10592,14 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 2
+					"index": 2,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0027",
 					"name": "Doll",
 					"shortdesc": "she/her/her",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10649,13 +10656,14 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 3
+					"index": 3,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0023",
 					"name": "Female",
 					"shortdesc": "she/her/her",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10712,13 +10720,14 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 4
+					"index": 4,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0025",
 					"name": "Herm",
 					"shortdesc": "shi/hir/hir",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10775,13 +10784,14 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 5
+					"index": 5,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0024",
 					"name": "Male",
 					"shortdesc": "he/him/his",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10838,13 +10848,14 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 6
+					"index": 6,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0029",
 					"name": "Neuter",
 					"shortdesc": "he/him/his",
-					"priority": -1,
+					"priority": 0,
 					"pronouns": [
 						{
 							"isPlural": false,
@@ -10901,7 +10912,8 @@
 							"dPossessive": "their"
 						}
 					],
-					"index": 7
+					"index": 7,
+					"visibleToPlayer": true
 				},
 				{
 					"uuid": "_0001",
@@ -10964,7 +10976,8 @@
 						}
 					],
 					"index": 8,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0003",
@@ -11027,7 +11040,8 @@
 						}
 					],
 					"index": 9,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0004",
@@ -11090,7 +11104,8 @@
 						}
 					],
 					"index": 10,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0002",
@@ -11153,7 +11168,8 @@
 						}
 					],
 					"index": 11,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0005",
@@ -11216,7 +11232,8 @@
 						}
 					],
 					"index": 12,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0008",
@@ -11279,7 +11296,8 @@
 						}
 					],
 					"index": 13,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0014",
@@ -11342,7 +11360,8 @@
 						}
 					],
 					"index": 14,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0007",
@@ -11405,7 +11424,8 @@
 						}
 					],
 					"index": 15,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0010",
@@ -11468,7 +11488,8 @@
 						}
 					],
 					"index": 16,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0022",
@@ -11531,7 +11552,8 @@
 						}
 					],
 					"index": 17,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0013",
@@ -11594,7 +11616,8 @@
 						}
 					],
 					"index": 18,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0021",
@@ -11657,7 +11680,8 @@
 						}
 					],
 					"index": 19,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0011",
@@ -11720,7 +11744,8 @@
 						}
 					],
 					"index": 20,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0020",
@@ -11783,7 +11808,8 @@
 						}
 					],
 					"index": 21,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0006",
@@ -11846,7 +11872,8 @@
 						}
 					],
 					"index": 22,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0012",
@@ -11909,7 +11936,8 @@
 						}
 					],
 					"index": 23,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0009",
@@ -11972,7 +12000,8 @@
 						}
 					],
 					"index": 24,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0015",
@@ -12035,7 +12064,8 @@
 						}
 					],
 					"index": 25,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0017",
@@ -12098,7 +12128,8 @@
 						}
 					],
 					"index": 26,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0016",
@@ -12161,7 +12192,8 @@
 						}
 					],
 					"index": 27,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0018",
@@ -12224,7 +12256,8 @@
 						}
 					],
 					"index": 28,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				},
 				{
 					"uuid": "_0019",
@@ -12287,7 +12320,8 @@
 						}
 					],
 					"index": 29,
-					"priority": 0
+					"priority": 0,
+					"visibleToPlayer": false
 				}
 			],
 			"separators": [
