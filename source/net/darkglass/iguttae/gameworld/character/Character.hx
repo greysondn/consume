@@ -5,6 +5,7 @@ import net.darkglass.iguttae.gameworld.actor.Actor;
 import net.darkglass.iguttae.gameworld.character.CharacterPubsubhub;
 import net.darkglass.iguttae.gameworld.character.Species;
 import net.darkglass.iguttae.gameworld.character.Stat;
+import net.darkglass.iguttae.gameworld.character.ThresString;
 import net.darkglass.iguttae.gameworld.character.body.ContainerBodyPart;
 import net.darkglass.iguttae.gameworld.character.body.BodyPartCollection;
 
@@ -152,6 +153,12 @@ class Character extends Actor
     public var sneak:Stat = new Stat();
     public var spot:Stat  = new Stat();
 
+    // threshold sets.
+    public var stomachSizeDesc:ThresString  = new ThresString("impossible");
+    public var breastSizeDesc:ThresString   = new ThresString("off the charts");
+    public var strDesc:ThresString          = new ThresString("off the chart");
+    public var ballSizeDesc:ThresString     = new ThresString("off the charts");
+
     /**
      * How aroused this character is.
      */
@@ -170,6 +177,21 @@ class Character extends Actor
 
         // characters can hold things in inventories, whee!
         this.inventory.containerFor.add(this.consts.get("container", "inventory"));
+
+        // build threshold sets
+        // TODO: Externalize these as data
+        // TODO: These actually seem to be universal - extract to static?
+        this.stomachSizeDesc.insert( 3, "flat");
+        this.stomachSizeDesc.insert( 6, "small");
+        this.stomachSizeDesc.insert( 8, "round");
+        this.stomachSizeDesc.insert(10, "bulging");
+        this.stomachSizeDesc.insert(20, "big");
+        this.stomachSizeDesc.insert(30, "huge");
+        this.stomachSizeDesc.insert(40, "massive");
+        this.stomachSizeDesc.insert(50, "doorway-filling");
+        this.stomachSizeDesc.insert(60, "person-sized");
+        this.stomachSizeDesc.insert(80, "immobilizing");
+
     }
 
     /**

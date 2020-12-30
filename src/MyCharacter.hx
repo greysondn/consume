@@ -92,31 +92,12 @@ class MyCharacter
         var message:String = "";
         var size:Int = this.stomachSize();
         
+        // this was here but immediately overwritten
+        // by the next bit of code anyway?
         message = size + "in";
         
-        if (size <= 3)
-            message = "flat";
-        if (size > 3 && size <= 6)
-            message = "small";
-        if (size > 6 && size <= 8)
-            message = "round";
-        if (size > 8 && size <= 10)
-            message = "bulging";
-        if (size > 10 && size <= 20)
-            message = "big";
-        if (size > 20 && size <= 30)
-            message = "huge";
-        if (size > 30 && size <= 40)
-            message = "massive";
-        if (size > 40 && size <= 50)
-            message = "doorway-filling";
-        if (size > 50 && size <= 60)
-            message = "person-sized";
-        if (size > 60 && size <= 80)
-            message = "immoblizing";
-        if (size > 80)
-            message = "impossible";
-            
+        // this part is now in the new code.
+
         return message;
     }
     
