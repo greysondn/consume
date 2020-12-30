@@ -202,6 +202,14 @@ class Character extends Actor
         this.breastSizeDesc.insert( 50, "door-filling");
         this.breastSizeDesc.insert( 90, "person-sized");
         this.breastSizeDesc.insert(200, "room-filling");
+
+        this.strDesc.insert( 3, "non-existent");
+        this.strDesc.insert( 5, "small");
+        this.strDesc.insert( 7, "average");
+        this.strDesc.insert(11, "big");
+        this.strDesc.insert(20, "huge");
+        this.strDesc.insert(30, "massive");
+        this.strDesc.insert(50, "bulging");
     }
 
     /**

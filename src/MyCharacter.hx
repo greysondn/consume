@@ -144,22 +144,7 @@ class MyCharacter
             }
         }
         
-        if (size <= 3)
-            message = "non-existent";
-        if (size > 3 && size <= 5)
-            message = "small";
-        if (size > 5 && size <= 7)
-            message = "average";
-        if (size > 7 && size <= 11)
-            message = "big";
-        if (size > 11 && size <= 20)
-            message = "huge";
-        if (size > 20 && size <= 30)
-            message = "massive";
-        if (size > 30 && size <= 50)
-            message = "bulging";
-        if (size > 50)
-            message = "off the chart";
+        // strDesc - already ported to new code
             
         message += " muscles";
         
