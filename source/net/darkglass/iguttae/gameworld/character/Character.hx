@@ -210,6 +210,17 @@ class Character extends Actor
         this.strDesc.insert(20, "huge");
         this.strDesc.insert(30, "massive");
         this.strDesc.insert(50, "bulging");
+
+        this.ballSizeDesc.insert(3, "tiny");
+        this.ballSizeDesc.insert(6, "small");
+        this.ballSizeDesc.insert(8, "average");
+        this.ballSizeDesc.insert(10, "big");
+        this.ballSizeDesc.insert(14, "large");
+        this.ballSizeDesc.insert(20, "huge");
+        this.ballSizeDesc.insert(30, "massive");
+        this.ballSizeDesc.insert(50, "door-filling");
+        this.ballSizeDesc.insert(90, "person-sized");
+        this.ballSizeDesc.insert(200, "room-filling");
     }
 
     /**

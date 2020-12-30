@@ -153,33 +153,7 @@ class MyCharacter
     
     public function ballSizeDesc():String
     {
-        var message:String = "";
-        var size:Int = this.ballDiam();
-        
-        if (size <= 3)
-            message = "tiny";
-        if (size > 3 && size <= 6)
-            message = "small";
-        if (size > 6 && size <= 8)
-            message = "average";
-        if (size > 8 && size <= 10)
-            message = "big";
-        if (size > 10 && size <= 14)
-            message = "large";
-        if (size > 14 && size <= 20)
-            message = "huge";
-        if (size > 20 && size <= 30)
-            message = "massive";
-        if (size > 30 && size <= 50)
-            message = "door-filling";
-        if (size > 50 && size <= 90)
-            message = "person-sized";
-        if (size > 90 && size <= 200)
-            message = "room-filling";
-        if (size > 200)
-            message = "off the charts";
-            
-        return message;
+        // already ported to new code
     }
     
     public function breastDiam():Int
