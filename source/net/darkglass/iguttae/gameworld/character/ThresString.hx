@@ -38,7 +38,7 @@ class ThresString
      */
     public function insert(threshold:Float, value:String)
     {
-        var swp:ThresValue = new ThresValue();
+        var swp:ThresValue;
         swp.thres = threshold;
         swp.val   = value;
         
@@ -54,7 +54,7 @@ class ThresString
     public function sort()
     {
         // swap through space for one of the two thres values.
-        var swp:ThresValue = new ThresValue();
+        var swp:ThresValue;
 
         // whether we found something in the wrong place on our
         // last pass
@@ -116,7 +116,7 @@ class ThresString
      */
     public function get(threshold:Float):String
     {
-        ret = this.overflow;
+        var ret:String = this.overflow;
 
         // just iterate through and find the last one we're less than.
         for (i in 0...this.contents.length)
