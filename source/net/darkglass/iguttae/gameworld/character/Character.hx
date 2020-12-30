@@ -192,6 +192,16 @@ class Character extends Actor
         this.stomachSizeDesc.insert(60, "person-sized");
         this.stomachSizeDesc.insert(80, "immobilizing");
 
+        this.breastSizeDesc.insert( 3, "tiny");
+        this.breastSizeDesc.insert( 6, "small");
+        this.breastSizeDesc.insert( 8, "average");
+        this.breastSizeDesc.insert( 10, "big");
+        this.breastSizeDesc.insert( 14, "large");
+        this.breastSizeDesc.insert( 20, "huge");
+        this.breastSizeDesc.insert( 30, "massive");
+        this.breastSizeDesc.insert( 50, "door-filling");
+        this.breastSizeDesc.insert( 90, "person-sized");
+        this.breastSizeDesc.insert(200, "room-filling");
     }
 
     /**
