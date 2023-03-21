@@ -1,3 +1,5 @@
+// ported in full to iguttae
+
 package net.darkglass.iguttae.enums;
 
 /**

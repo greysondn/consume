@@ -1,3 +1,5 @@
+// fully ported
+
 package net.darkglass.iguttae.gameworld;
 
 /**
