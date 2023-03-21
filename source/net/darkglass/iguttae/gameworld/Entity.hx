@@ -1,3 +1,6 @@
+// fully ported
+// sort rewritten for pythonic approach
+
 package net.darkglass.iguttae.gameworld;
 
 /**
